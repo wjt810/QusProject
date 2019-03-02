@@ -1,18 +1,12 @@
 package springboot.dao;
-
 import java.util.List;
-
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Mapper;
 
 import springboot.pojo.User;
-
+import springboot.pojo.User1;
+@Mapper //自动被扫描
 public interface UserDao {
 	
-	/*
-	 * test
-	 */
-	@Select("SELECT * FROM plandnet_user WHERE puCode LIKE CONCAT('%',#{name},'%')")
-	List<User> list(@Param("name")String name);
-
+//	@Select("SELECT * FROM plandnet_user WHERE puCode LIKE CONCAT('%',#{name},'%')")
+	List<User1> selecteInfo();
 }

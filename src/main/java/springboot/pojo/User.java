@@ -16,7 +16,7 @@ public class User {
 	private String puPicture; // 用户头像
 	private Map<String, Object> map;
 	
-
+	
 	@Override
 	public String toString() {
 		return "User [puId=" + puId + ", puType=" + puType + ", puCode=" + puCode + ", puPassword=" + puPassword
