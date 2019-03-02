@@ -9,18 +9,19 @@ import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import springboot.pojo.User;
-import springboot.pojo.User1;
-import springboot.service.UserService;
+import springboot.pojo.QusUser;
+import springboot.service.qususer.QusUserService;
+
 @RestController
 public class UserController {
 	
 	Logger logger = LoggerFactory.getLogger(UserController.class);
 	
 	@Resource
-	private UserService userService;//注册
+	private QusUserService qusUserService;
+	
 	@RequestMapping("/list")
-	public List<User1> selectList(){
-		return userService.selecteInfo();
+	public List<QusUser> selectList(){
+		return qusUserService.getUserList();
 	}
 }

@@ -5,9 +5,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="springboot.dao.UserDao">
 
 <!--仅为测试 -->
-	<select id="selecteInfo" resultType="User1">
+	<!-- <select id="selecteInfo" resultType="User1">
 		SELECT * FROM smbms_user
-	</select>
+	</select> -->
 </mapper>
 
 
