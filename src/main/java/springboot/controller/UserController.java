@@ -18,7 +18,7 @@ public class UserController {
 	Logger logger = LoggerFactory.getLogger(UserController.class);
 	
 	@Resource
-	private UserService userService;
+	private UserService userService;//注册
 	@RequestMapping("/list")
 	public List<User1> selectList(){
 		return userService.selecteInfo();
