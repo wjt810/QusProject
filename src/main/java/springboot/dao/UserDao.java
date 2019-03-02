@@ -9,6 +9,9 @@ import springboot.pojo.User;
 
 public interface UserDao {
 	
+	/*
+	 * test
+	 */
 	@Select("SELECT * FROM plandnet_user WHERE puCode LIKE CONCAT('%',#{name},'%')")
 	List<User> list(@Param("name")String name);
 
