@@ -6,6 +6,9 @@ import springboot.pojo.User;
 
 public interface UserService {
 	
+	/*
+	 * test  --wjt
+	 */
 	List<User> list(String name);
 
 }
