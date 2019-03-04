@@ -10,7 +10,7 @@ import springboot.dao.qususer.QusUserDao;
 import springboot.pojo.QusUser;
 import springboot.service.qususer.QusUserService;
 
-@Service("userService")
+@Service
 public class QusUserServiceImpl implements QusUserService {
 	
 	@Resource

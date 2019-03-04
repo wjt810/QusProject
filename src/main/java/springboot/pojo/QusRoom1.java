@@ -1,8 +1,20 @@
 package springboot.pojo;
 
+import java.util.List;
+
 public class QusRoom1 {
 	private Integer r1_id; // int(11)一级科室id
 	private String r1_name; // varchar(50)一级科室名称
+	
+	private List<QusRoom2> room2s;	// 一对多关联
+	
+	public List<QusRoom2> getRoom2s() {
+		return room2s;
+	}
+
+	public void setRoom2s(List<QusRoom2> room2s) {
+		this.room2s = room2s;
+	}
 
 	public Integer getR1_id() {
 		return r1_id;
