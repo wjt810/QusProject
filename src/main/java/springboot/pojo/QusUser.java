@@ -2,6 +2,9 @@ package springboot.pojo;
 
 public class QusUser {
 
+	/*
+	 * test  --lyd
+	 */
 	private Integer u_id; // int(11)
 	private String u_name; // varchar(50)名字
 	private String u_password; // varchar(50)密码
