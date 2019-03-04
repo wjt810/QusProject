@@ -13,8 +13,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
-import springboot.pojo.User;
-import springboot.service.UserService;
 
 //@Controller
 @RestController
@@ -22,8 +20,6 @@ public class UserController {
 	
 	Logger logger = LoggerFactory.getLogger(UserController.class);
 	
-	@Resource
-	private UserService userService;
 	/**
 	 * 进入首页
 	 * @return
