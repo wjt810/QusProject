@@ -1,0 +1,195 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>帐号设置</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="keywords" content="fly,layui,前端社区">
+  <meta name="description" content="Fly社区是模块化前端UI框架Layui的官网社区，致力于为web开发提供强劲动力">
+  <link rel="stylesheet" href="pre/res1/layui/css/layui.css">
+  <link rel="stylesheet" href="pre/css/global.css">
+  <link rel="stylesheet" type="text/css" href="pre/res1/static/css/main.css">
+</head>
+<body>
+
+<div class="fly-header layui-bg-black">
+  <div class="layui-container">
+    <h1 class="mallLogo">
+      <a href="/pre" title="logo"class="title">
+        <img src="pre/images/logo.jpg"style="width: 82px;height: 60px;">预医网
+      </a>
+    </h1>
+
+    <ul class="layui-nav fly-nav-user">
+      <li class="layui-nav-item" style="margin-top: 12px">
+        <a class="fly-nav-avatar" href="javascript:;">
+          <cite class="layui-hide-xs">贤心</cite>
+          <i class="iconfont icon-renzheng layui-hide-xs" title="认证信息：layui 作者"></i>
+          <img src="https://tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg">
+        </a>
+        <dl class="layui-nav-child">
+          <dd><a href="/set"><i class="layui-icon">&#xe665;</i>管理中心</a></dd>
+          <hr style="margin: 5px 0;">
+          <dd><a href="" style="text-align: center;">退出</a></dd>
+        </dl>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="layui-container fly-marginTop fly-user-main">
+  <ul class="layui-nav layui-nav-tree layui-inline" lay-filter="user">
+
+    <li class="layui-nav-item">
+      <a href="/index">
+        <i class="layui-icon">&#xe612;</i>
+        用户信息
+      </a>
+    </li>
+    <li class="layui-nav-item layui-this">
+      <a href="/set">
+        <i class="layui-icon">&#xe665;</i>
+        管理中心
+      </a>
+    </li>
+    <li class="layui-nav-item">
+      <a href="/message">
+        <i class="layui-icon">&#xe665;</i>
+        管理中心
+      </a>
+    </li>
+  </ul>
+
+  <div class="site-tree-mobile layui-hide">
+    <i class="layui-icon">&#xe602;</i>
+  </div>
+  <div class="site-mobile-shade"></div>
+  
+  <div class="site-tree-mobile layui-hide">
+    <i class="layui-icon">&#xe602;</i>
+  </div>
+  <div class="site-mobile-shade"></div>
+  
+  
+  <div class="fly-panel fly-panel-user" pad20>
+    <div class="layui-tab layui-tab-brief" lay-filter="user">
+      <ul class="layui-tab-title" id="LAY_mine">
+        <li class="layui-this" lay-id="info">我的约单</li>
+        <li lay-id="avatar">我的优惠卷</li>
+        <li lay-id="pass">密码</li>
+        <li lay-id="bind">帐号绑定</li>
+      </ul>
+      <div class="layui-tab-content" style="padding: 20px 0;">
+        <div class="layui-form layui-form-pane layui-tab-item layui-show">
+          <table class="layui-table" lay-skin="line">
+            <tr>
+              <th>约单号</th>
+            </tr>
+            <tr>
+              <td>001</td>
+            </tr>
+            <tr>
+              <td>002</td>
+            </tr>
+            <tr>
+              <td>003</td>
+            </tr>
+          </table>
+          </div>
+          
+          <div class="layui-form layui-form-pane layui-tab-item">
+            <div class="layui-form-item">
+              <div class="avatar-add">
+                <p>建议尺寸168*168，支持jpg、png、gif，最大不能超过50KB</p>
+                <button type="button" class="layui-btn upload-img">
+                  <i class="layui-icon">&#xe67c;</i>上传头像
+                </button>
+                <img src="https://tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg">
+                <span class="loading"></span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="layui-form layui-form-pane layui-tab-item">
+            <form action="/user/repass" method="post">
+              <div class="layui-form-item">
+                <label for="L_nowpass" class="layui-form-label">当前密码</label>
+                <div class="layui-input-inline">
+                  <input type="password" id="L_nowpass" name="nowpass" required lay-verify="required" autocomplete="off" class="layui-input">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label for="L_pass" class="layui-form-label">新密码</label>
+                <div class="layui-input-inline">
+                  <input type="password" id="L_pass" name="pass" required lay-verify="required" autocomplete="off" class="layui-input">
+                </div>
+                <div class="layui-form-mid layui-word-aux">6到16个字符</div>
+              </div>
+              <div class="layui-form-item">
+                <label for="L_repass" class="layui-form-label">确认密码</label>
+                <div class="layui-input-inline">
+                  <input type="password" id="L_repass" name="repass" required lay-verify="required" autocomplete="off" class="layui-input">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <button class="layui-btn" key="set-mine" lay-filter="*" lay-submit>确认修改</button>
+              </div>
+            </form>
+          </div>
+          
+          <div class="layui-form layui-form-pane layui-tab-item">
+            <div class="layui-form-item">
+              <label for="L_nowpass" class="layui-form-label">旧手机号</label>
+              <div class="layui-input-inline">
+                <input type="password" id="L_nowpass" name="oldPhone" required lay-verify="required" autocomplete="off" class="layui-input">
+              </div>
+            </div>
+
+            <div class="layui-form-item">
+              <div>
+                <label for="L_nowpass" class="layui-form-label">验证码</label>
+              </div>
+              <div class="layui-input-inline">
+                <input type="password" id="L_nowpass" name="code" required lay-verify="required" autocomplete="off" class="layui-input">
+              </div>
+            </div>
+
+            <div class="layui-form-item">
+              <label for="L_nowpass" class="layui-form-label">新手机号</label>
+              <div class="layui-input-inline">
+                <input type="password" id="L_nowpass" name="newPhone" required lay-verify="required" autocomplete="off" class="layui-input">
+              </div>
+            </div>
+
+            <div class="layui-form-item">
+              <button class="layui-btn" key="set-mine" lay-filter="*" lay-submit>确认修改</button>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script src="pre/res1/layui/layui.all.js"></script>
+<script>
+layui.cache.page = 'user';
+layui.cache.user = {
+  username: '游客'
+  ,uid: -1
+  ,avatar: 'pre/res/images/avatar/00.jpg'
+  ,experience: 83
+  ,sex: '男'
+};
+layui.config({
+  version: "2.0.0"
+  ,base: 'pre/res/mods/'
+}).extend({
+  fly: 'index'
+}).use('fly');
+</script>
+
+</body>
+</html>

@@ -122,7 +122,6 @@ public class UserController {
 	public ModelAndView infoModify() {
 		ModelAndView mv = new ModelAndView("back/page/news/newsAdd");
 		return mv;
-		
 	}
 	/**
 	 * 用户管理
@@ -250,4 +249,5 @@ public class UserController {
 		ModelAndView mv = new ModelAndView("back/login");
 		return mv;
 	}
+	
 }
