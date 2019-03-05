@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>预医网首页</title>
+    <link rel="stylesheet" type="text/css" href="pre/res/static/css/main.css">
+    <link rel="stylesheet" type="text/css" href="pre/res/layui/css/layui.css">
+    <script type="text/javascript" src="pre/res/layui/layui.js"></script>
+    <script type="text/javascript" src="pre/js/jquery-1.12.4.js"></script>
+    <link rel="stylesheet" href="pre/css/bootstrap.css"/>
+    <script src="js/bootstrap.js"></script>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <!--轮播时间显示-->
+    <script type="pre/text/javascript" charset="utf-8" language="javascript">
+        function time1() {
+        var today = new Date();
+        var hour = today.getHours(), minute = today.getMinutes(), second = today.getSeconds();
+        minute = checkTime(minute);
+        second = checkTime(second);
+        document.getElementById('txt').innerHTML = hour + ":" + minute + ":" + second;
+        t = setTimeout('time1()', 500);
+    }
+    function checkTime(i) {
+        if (i < 10) {
+            i = "0" + i;
+        }
+        return i;
+    }    </script>
+    <!--分类鼠标悬浮-->
+    <script type="pre/text/javascript" charset="utf-8" language="javascript">
+            $(function(){
+            $(".leftNav ul li").hover(
+                    function(){
+                        $(this).find(".zj").show();
+                    }
+                    ,
+                    function(){
+                        $(this).find(".zj").hide();
+                    }
+            )
+            });
+            function time1() {
+            var today = new Date();
+            var hour = today.getHours(), minute = today.getMinutes(), second = today.getSeconds();
+            minute = checkTime(minute);
+            second = checkTime(second);
+            document.getElementById('txt').innerHTML = hour + ":" + minute + ":" + second;
+            t = setTimeout('time1()', 500);
+        }
+        function checkTime(i) {
+            if (i < 10) {
+                i = "0" + i;
+            }
+            return i;
+        }
+    </script>
+</head>
+<style>
+    .title{
+        font-family: "微软雅黑";
+        color:green;
+    }
+    .mallLogo a:hover{
+        text-decoration: none;
+    }
+    .zj_l_c a{
+        color: gray;
+    }
+    .zj_l_c a:hover{
+        color: red;
+        text-decoration: none;
+    }
+    .border a{
+        color: green;
+    }
+    .border a:hover{
+        background-color: green;
+        border: 1px solid green ;
+        color: white;
+        text-decoration: none;
+    }
+</style>
+<body id="list-cont">
+<!--导航条-->
+    <div class="site-nav-bg">
+        <div class="site-nav w1200">
+            <p class="sn-back-home">
+                <i class="layui-icon layui-icon-home"></i>
+                <a href="/pre">首页</a>
+            </p>
+            <div class="sn-quick-menu">
+                <div class="login"><a href="/login">登录</a></div>
+                <div class="sp-cart"><a href="/shopcart">我的约单</a><span>2</span></div>
+                <div class="nav1">
+                    <ul class="layui-nav">
+                        <li class="layui-nav-item" lay-unselect="">
+                            <a href="/information">个人中心</a>
+                            <dl class="layui-nav-child">
+                                <dd><a href="javascript:;">修改信息</a></dd>
+                                <dd><a href="javascript:;">安全管理</a></dd>
+                                <dd><a href="javascript:;">退出</a></dd>
+                            </dl>
+                        </li>
+                        <li class="layui-nav-item" lay-unselect="">
+                            <a href="/about">关于我们</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--头部-->
+<div class="header">
+    <div class="headerLayout w1200">
+        <div class="headerCon">
+            <h1 class="mallLogo">
+                <a href="pre/index.html" title="logo"class="title">
+                    <img src="pre/images/logo.jpg"style="width: 82px;height: 60px;">预医网
+                </a>
+            </h1>
+            <div class="mallSearch">
+                <form action="" class="layui-form" novalidate>
+                    <input type="text" name="title" required lay-verify="required" autocomplete="off"
+                           class="layui-input" placeholder="请输入要搜索的内容">
+                    <button class="layui-btn" lay-submit lay-filter="formDemo">
+                        <i class="layui-icon layui-icon-search"></i>
+                    </button>
+                    <input type="hidden" name="" value="">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--大分类-->
+<div class="content">
+    <div class="main-nav" >
+        <div class="inner-cont0" >
+            <div class="inner-cont1 w1200"  style="border-bottom: solid 1px green">
+                <div class="inner-cont2">
+                    <a href="/information" class="active">所有医生</a><!-- pre/information.html -->
+                    <a href="/Hot">热点咨询</a>
+                    <a href="/information">病理全科</a>
+                    <a href="/about">关于我们</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="category-con">
+        <div class="category-inner-con w1200">
+            <div class="category-type"style="width: 198px;">
+                <h3>全部分类</h3>
+            </div>
+            <div class="category-tab-content leftNav">
+                <div class="nav-con">
+                    <ul class="normal-nav">
+                        <li class="nav-item ins">
+                            <div class="title">内科</div>
+                            <p><a href="#">呼吸系统</a><a href="#">循环系统</a><a href="#">膳食消化</a></p>
+                            <i class="layui-icon layui-icon-right"></i>
+                            <div class="zj">
+                                <div class="zj_l_c">
+                                    <a href="#">慢性支气管炎</a>&nbsp;<a href="#"> |肺炎</a>&nbsp;<a href="#">| 慢性疾病</a>
+                                    <a href="#">高血压</a>&nbsp;|&nbsp;<a href="#">冠心病</a>&nbsp;|&nbsp;<a href="#">急性脑血管病</a>&nbsp;|&nbsp;<a href="#">心力衰竭</a>
+                                    &nbsp;|&nbsp;<a href="#">心律失常</a>&nbsp;|&nbsp;<a href="#">风湿性心脏病</a>&nbsp;|&nbsp;<a href="#">消化性溃疡</a>&nbsp;|&nbsp;
+                                    <a href="#">肝硬化</a>&nbsp;|&nbsp;<a href="#">肾炎</a>&nbsp;|&nbsp;<a href="#">更年期综合症</a>&nbsp;|&nbsp;<a href="#">病毒性肝炎</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item dermatology">
+                            <div class="title">皮肤科</div>
+                            <p><a href="#">过敏性皮肤</a><a href="#">皮肤癣</a></p>
+                            <i class="layui-icon layui-icon-right"></i>
+                            <div class="zj">
+                                <div class="zj_l_c">
+                                    <a href="#">牛皮癣</a>&nbsp;<a href="#"> |脓包</a>&nbsp;<a href="#">| 孢疹</a>&nbsp;|&nbsp;
+                                    <a href="#">化脓菌感染</a>&nbsp;|&nbsp;<a href="#">雀斑</a>&nbsp;|&nbsp;<a href="#">灰指甲</a>&nbsp;|&nbsp;<a href="#">青春痘</a>
+                                    &nbsp;|&nbsp;<a href="#">斑秃</a>&nbsp;|&nbsp;<a href="#">脱发</a>&nbsp;|&nbsp;<a href="#">湿疹</a>&nbsp;|&nbsp;
+                                    <a href="#">白癜风</a>&nbsp;|&nbsp;<a href="#">鸡眼</a>&nbsp;|&nbsp;<a href="#">硬皮病</a>&nbsp;|&nbsp;<a href="#">脱毛</a>&nbsp;|&nbsp;
+                                    <a href="#">黄褐斑</a>&nbsp;|&nbsp;<a href="#">口腔部护理</a>&nbsp;|&nbsp;<a href="#">皮肤瘙痒</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item pediatrics">
+                            <div class="title">儿科</div>
+                            <p><a href="#">小儿内科</a><a href="#">小儿外科</a></p>
+                            <i class="layui-icon layui-icon-right"></i>
+                            <div class="zj">
+                                <div class="zj_l_c">
+                                    <a href="#">小儿肺炎</a>&nbsp;<a href="#"> |小儿厌食症</a>&nbsp;<a href="#">| 小儿心肌炎</a>&nbsp;|&nbsp;
+                                    <a href="#">小儿气胸</a>&nbsp;|&nbsp;<a href="#">小儿急性胃炎</a>&nbsp;|&nbsp;<a href="#">小儿烫伤</a>&nbsp;|&nbsp;
+                                    <a href="#">新生儿发热</a>&nbsp;|&nbsp;<a href="#">早产儿</a>&nbsp;|&nbsp;<a href="#">新生儿肝炎</a>&nbsp;|&nbsp;
+                                    <a href="#">新生儿窒息</a>&nbsp;|&nbsp;<a href="#">小儿低血糖</a>&nbsp;|&nbsp;<a href="#">小儿血友病</a>&nbsp;|&nbsp;
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item ear">
+                            <div class="title">口腔鼻耳</div>
+                            <p><a href="#">眼科</a><a href="#">耳鼻喉</a><a href="#">美牙</a><a href="#">口唇</a></p>
+                            <i class="layui-icon layui-icon-right"></i>
+                            <div class="zj">
+                                <div class="zj_l_c">
+                                    <a href="#">口腔溃疡</a>&nbsp;<a href="#"> |急性舌扁桃体炎</a>&nbsp;<a href="#">| 咬肌间隙感染</a>&nbsp;|&nbsp;
+                                    <a href="#">口臭</a>&nbsp;|&nbsp;<a href="#">复发性阿弗他性</a>&nbsp;|&nbsp;<a href="#">唇腭裂</a>&nbsp;|&nbsp;
+                                    <a href="#">近视眼</a>&nbsp;|&nbsp;<a href="#">牙周病</a>&nbsp;|&nbsp;<a href="#">智齿</a>&nbsp;|&nbsp;
+                                    <a href="#">口腔癌</a>&nbsp;|&nbsp;<a href="#">白内障</a>&nbsp;|&nbsp;<a href="#">弱视</a>&nbsp;|&nbsp;
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item bone">
+                            <div class="title">骨科</div>
+                            <p><a href="#">颌骨骨折</a><a href="#">佝偻病</a></p>
+                            <i class="layui-icon layui-icon-right"></i>
+                            <div class="zj">
+                                <div class="zj_l_c">
+                                    <a href="#">脊椎骨骨髓炎</a>&nbsp;<a href="#"> |退变性关节病</a>&nbsp;<a href="#">| 肋骨骨折</a>&nbsp;|&nbsp;
+                                    <a href="#">脊髓灰质炎</a>&nbsp;|&nbsp;<a href="#">纤维肌痛综合症</a>&nbsp;|&nbsp;<a href="#">胫腓骨骨折</a>&nbsp;|&nbsp;
+                                    <a href="#">颧骨骨折</a>&nbsp;|&nbsp;<a href="#">腰部慢性劳损</a>&nbsp;|&nbsp;<a href="#">手部肌腱损伤</a>&nbsp;|&nbsp;
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item headin">
+                            <div class="title">神经内科</div>
+                            <p><a href="#">老年性耳聋</a><a href="#">面肌痉挛</a></p>
+                            <i class="layui-icon layui-icon-right"></i>
+                            <div class="zj">
+                                <div class="zj_l_c">
+                                    <a href="#">视神经炎</a>&nbsp;<a href="#"> |偏头痛</a>&nbsp;<a href="#">| 紧张性头痛</a>&nbsp;|&nbsp;
+                                    <a href="#">智力低下</a>&nbsp;|&nbsp;<a href="#">三叉神经痛</a>&nbsp;|&nbsp;<a href="#">癫痫</a>&nbsp;|&nbsp;
+                                    <a href="#">三叉神经痛</a>&nbsp;|&nbsp;<a href="#">中风</a>&nbsp;|&nbsp;<a href="#">正中神经损伤</a>&nbsp;|&nbsp;
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item headout">
+                            <div class="title">神经外科</div>
+                            <p><a href="#">颅骨骨髓炎</a><a href="#">颈椎结核</a>
+                            <i class="layui-icon layui-icon-right"></i>
+                            <div class="zj">
+                                <div class="zj_l_c">
+                                    <a href="#">脑血栓形成</a>&nbsp;<a href="#"> |急性中毒性脑炎</a>&nbsp;<a href="#">| 小儿脑积水</a>&nbsp;|&nbsp;
+                                    <a href="#">脑性瘫痪</a>&nbsp;|&nbsp;<a href="#">脑出血</a>&nbsp;|&nbsp;<a href="#">面肌抽搐</a>&nbsp;|&nbsp;
+                                    <a href="#">脑膜炎</a>&nbsp;|&nbsp;<a href="#">脑栓塞</a>&nbsp;|&nbsp;<a href="#">脑膜肉瘤</a>&nbsp;|&nbsp;
+                                    <a href="#">脑瘤</a>&nbsp;|&nbsp;<a href="#">脑血栓</a>&nbsp;|&nbsp;<a href="#">颅骨骨瘤</a>&nbsp;|&nbsp;
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item sex">
+                            <div class="title">妇科</div>
+                            <p><a href="#">滴虫性外阴炎</a><a href="#">更年期综合征</a></p>
+                            <i class="layui-icon layui-icon-right"></i>
+                            <div class="zj">
+                                <div class="zj_l_c">
+                                    <a href="#">高泌乳素血症</a>&nbsp;<a href="#"> |急性宫颈炎</a>&nbsp;<a href="#">| 急性乳腺炎</a>&nbsp;|&nbsp;
+                                    <a href="#">霉菌性外阴炎</a>&nbsp;|&nbsp;<a href="#">卵巢破裂</a>&nbsp;|&nbsp;<a href="#">月经不调</a>&nbsp;|&nbsp;
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                 </div>
+                <!-- 中心视图-->
+                <div id="myCarousel" class="carousel slide" data-ride="carousel"data-interval="2000" data-wrap="true"  style="margin-left: 16.6%;">
+                    <!--图片容器-->
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <img src="pre/images/homeSwiper1-new.png" alt="..." style="width: 1000px;height: 400px"/>
+                            <div class="carousel-caption">
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="pre/images/homeSwiper1-new.png" alt="..." style="width: 1000px;height: 400px"/>
+                        </div>
+                        <div class="item">
+                            <img src="pre/images/homeSwiper2-new.png" alt="..." style="width: 1000px;height: 400px"/>
+                        </div>
+                    </div>
+                    <!--圆圈指示符-->
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                    </ol>
+                    <!--左右控制符-->
+                    <a href="#myCarousel"class="left carousel-control" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left hidden"></span>
+                    </a>
+                    <a href="#myCarousel" class="right carousel-control"data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right hidden"></span>
+                    </a>
+                </div>
+            </div>
+         </div>
+        <!--专家号-->
+        <div class="floors">
+            <div class="sk">
+                <div class="sk_inner w1200">
+                    <div class="sk_hd">
+                        <a href="javascript:;">
+                            <img src="pre/res/static/img/s_img1.jpg">
+                        </a>
+                    </div>
+                    <div class="sk_bd">
+                        <div class="layui-carousel" id="test1">
+                            <div carousel-item>
+                                <div class="item-box">
+                                    <div class="item">
+                                        <a href="/details"><img src="pre/images/医生1.1.jpg"style="width: 150px;height: 200px"></a>
+                                        <div class="title">潘湘斌:结构性心脏病</div>
+                                        <div class="price">
+                                            <span>￥49.00</span>
+                                            <del>￥99.00</del>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <a href="javascript:;"><img src="pre/images/医生1.2.jpg"style="width: 150px;height: 200px"></a>
+                                        <div class="title">刘海波:冠心病诊治主任医师</div>
+                                        <div class="price">
+                                            <span>￥49.00</span>
+                                            <del>￥99.00</del>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <a href="javascript:;"><img src="pre/images/医生5.jpg"style="width: 150px;height: 200px"></a>
+                                        <div class="title">胡杰:神经外科主任医师</div>
+                                        <div class="price">
+                                            <span>￥49.00</span>
+                                            <del>￥99.00</del>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <a href="javascript:;"><img src="pre/images/医生1.4.jpg"style="width: 150px;height: 200px"></a>
+                                        <div class="title">许巍三:妇科主治医师</div>
+                                        <div class="price">
+                                            <span>￥49.00</span>
+                                            <del>￥99.00</del>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item-box">
+                                    <div class="item">
+                                        <a href="javascript:;"><img src="pre/images/医生1.5.jpg"style="width: 150px;height: 200px"></a>
+                                        <div class="title">黄汉源:乳腺外科门诊</div>
+                                        <div class="price">
+                                            <span>￥49.00</span>
+                                            <del>￥99.00</del>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <a href="javascript:;"><img src="pre/images/医生2.jpg"style="width: 150px;height: 200px"></a>
+                                        <div class="title">盖铭英:妇科产诊</div>
+                                        <div class="price">
+                                            <span>￥49.00</span>
+                                            <del>￥99.00</del>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <a href="javascript:;"><img src="pre/images/医生3.jpg"style="width: 150px;height: 200px"></a>
+                                        <div class="title">蔡瑾:消化专科</div>
+                                        <div class="price">
+                                            <span>￥49.00</span>
+                                            <del>￥99.00</del>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <a href="javascript:;"><img src="pre/images/医生4.jpg"style="width: 150px;height: 200px"></a>
+                                        <div class="title">陶惠人:脊柱外科</div>
+                                        <div class="price">
+                                            <span>￥49.00</span>
+                                            <del>￥99.00</del>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--热销推荐-->
+    <div class="hot-recommend-con">
+        <div class="hot-con1 w1200 layui-clear">
+            <div class="item">
+                <h4>热销推荐</h4>
+                <div>
+                    <a href="javascript:;"><img src="pre/images/护士2.jpg"style="width: 280px;height: 300px"></a>
+                </div>
+            </div>
+            <div class="item">
+                <div class="top-img">
+                    <a href="javascript:;"><img src="pre/images/20180802134722280.png"style="width: 390px;height: 200px"></a>
+                </div>
+                <div class="bottom-img">
+                    <a href="javascript:;"><img src="pre/images/20180802164554630.png" width="390px" height="200px"style="margin-top: 20px;"></a>
+                </div>
+            </div>
+            <div class="item item1 margin0 padding0">
+                <a href="javascript:;"><img src="pre/images/20180802095934685.png" width="390px" height="200px"style="margin-top: 20px;"></a>
+                <a href="javascript:;"><img class="btm-img" src="pre/images/20180806170914308.png" width="390px" height="280px"></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-cont w1200" id="product-cont">
+        <!--1F-->
+        <div class="product-item product-item1 layui-clear">
+            <div class="left-title">
+                <h4><i>1F</i></h4>
+                <img src="pre/res/static/img/icon_gou.png">
+                <h5>诊室环境</h5>
+            </div>
+            <div class="right-cont"style="margin-left: 200px;margin-top: -400px;">
+                <a href="javascript:;" class="top-img"><img src="pre/images/诊室环境1.1.jpg" alt="" width="1000" height="200"></a>
+                <div class="img-box">
+                    <a href="javascript:;"><img src="pre/images/诊室环境5.jpg"></a>
+                    <a href="javascript:;"><img src="pre/images/诊室环境2.jpg"></a>
+                    <a href="javascript:;"><img src="pre/images/诊室环境3.jpg"></a>
+                    <a href="javascript:;"><img src="pre/images/诊室环境4.jpg"></a>
+                    <a href="javascript:;"><img src="pre/images/诊室环境6.jpg"></a>
+                </div>
+            </div>
+        </div>
+        <!--2F-->
+        <div class="product-item product-item2 layui-clear">
+            <div class="left-title">
+                <h4><i>2F</i></h4>
+                <img src="pre/res/static/img/icon_gou.png">
+                <h5>医院环境</h5>
+            </div>
+            <div class="right-cont">
+                <a href="javascript:;" class="top-img"><img src="pre/images/诊室环境1.1.jpg" alt="" width="1000" height="200"></a>
+
+                <div class="img-box">
+                    <a href="javascript:;"><img src="pre/images/医院环境2.png"></a>
+                    <a href="javascript:;"><img src="pre/images/医院环境3.png"></a>
+                    <a href="javascript:;"><img src="pre/images/医院环境4.jpg"></a>
+                    <a href="javascript:;"><img src="pre/images/医院环境5.jpg"></a>
+                    <a href="javascript:;"><img src="pre/images/医院环境6.jpg"></a>
+                </div>
+            </div>
+        </div>
+        <!--3F-->
+        <div class="product-item product-item3 layui-clear">
+            <div class="left-title">
+                <h4><i>3F</i></h4>
+                <img src="pre/res/static/img/icon_gou.png">
+                <h5>软件前景</h5>
+            </div>
+            <div class="right-cont">
+                <a href="javascript:;" class="top-img"><img src="pre/images/诊室环境1.1.jpg" alt="" width="1000" height="200"></a>
+                <div class="img-box">
+                    <a href="javascript:;"><img src="pre/images/软件前景1.png" style="width: 500px;"></a>
+                    <a href="javascript:;"><img src="pre/images/软件前景3.png"style="width:500px;"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--专家推荐-->
+    <div class="product-list-box" id="product-list-box">
+        <div class="product-list-cont w1200">
+            <h4>专家推荐</h4>
+            <div class="product-item-box layui-clear">
+                <div class="list-item">
+                    <img src="pre/images/稀缺号.png" alt="" style="margin-left: 120px;position:relative;z-index:2;"/>
+                    <div  style="position:relative;z-index:1;top: -90px;">
+                        <a href="javascript:;">
+                            <img src="pre/images/专家1.png" width="126"height="190px"></a>
+                            <p>周中卓:儿科疑难重症及儿童神经遗传的...</p>
+                        <div class="border">
+                            <a class="online1" href="/online" target="_self">在线咨询</a>
+                            <a class="online2" href="/phone">电话咨询</a>
+                            <a class="online3" href="/order" target="_self">预约挂号</a>
+                            <!--<a href="#" target="_self"  class="on" >预约加号</a>-->
+                            <div class="clr"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <img src="pre/images/稀缺号.png" alt="" style="margin-left: 120px;position:relative;z-index:2;"/>
+                    <div  style="position:relative;z-index:1;top: -90px;">
+                        <a href="javascript:;">
+                            <img src="pre/images/专家2.png" width="116"height="190px"></a>
+                        <p>张居明:神经内科的多发囊肿，脑溢血...</p>
+                        <div class="border">
+                            <a class="online1" href="/online" target="_self">在线咨询</a>
+                            <a class="online2" href="/phone">电话咨询</a>
+                            <a class="online3" href="/order" target="_self">预约挂号</a>
+                            <!--<a href="#" target="_self"  class="on" >预约加号</a>-->
+                            <div class="clr"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <img src="pre/images/稀缺号.png" alt="" style="margin-left: 120px;position:relative;z-index:2;"/>
+                    <div  style="position:relative;z-index:1;top: -90px;">
+                        <a href="javascript:;">
+                            <img src="pre/images/专家3.png" width="116"height="190px"></a>
+                        <p>安冰:小儿呼吸系统疾病的并发疾病...</p>
+                        <div class="border">
+                            <a class="online1" href="/online" target="_self">在线咨询</a>
+                            <a class="online2" href="/phone">电话咨询</a>
+                            <a class="online3" href="/order" target="_self">预约挂号</a>
+                            <!--<a href="#" target="_self"  class="on" >预约加号</a>-->
+                            <div class="clr"></div>
+                        </div>
+                    </div>
+                 </div>
+                <div class="list-item">
+                    <img src="pre/images/稀缺号.png" alt="" style="margin-left: 120px;position:relative;z-index:2;"/>
+                    <div  style="position:relative;z-index:1;top: -90px;">
+                        <a href="javascript:;">
+                            <img src="pre/images/专家4.png" width="116"height="190px"></a>
+                        <p>吴栋:儿科杂病,厌食,咳嗽的疑难杂症...</p>
+                        <div class="border">
+                            <a class="online1" href="/online" target="_self">在线咨询</a>
+                            <a class="online2" href="/phone">电话咨询</a>
+                            <a class="online3" href="/order" target="_self">预约挂号</a>
+                            <!--<a href="#" target="_self"  class="on" >预约加号</a>-->
+                            <div class="clr"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <img src="pre/images/稀缺号.png" alt="" style="margin-left: 120px;position:relative;z-index:2;"/>
+                    <div  style="position:relative;z-index:1;top: -90px;">
+                        <a href="javascript:;">
+                            <img src="pre/images/专家5.jpg" width="116"height="190px"></a>
+                        <p>廖烈辉:传播疾病，白癜风湿疹皮炎，银屑病...</p>
+                        <div class="border">
+                            <a class="online1" href="/online" target="_self">在线咨询</a>
+                            <a class="online2" href="/phone">电话咨询</a>
+                            <a class="online3" href="/order" target="_self">预约挂号</a>
+                            <!--<a href="#" target="_self"  class="on" >预约加号</a>-->
+                            <div class="clr"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <img src="pre/images/稀缺号.png" alt="" style="margin-left: 120px;position:relative;z-index:2;"/>
+                    <div  style="position:relative;z-index:1;top: -90px;">
+                        <a href="javascript:;">
+                            <img src="pre/images/专家6.jpg" width="116"height="190px"></a>
+                        <p>池凤好:妇产科疑难重症及妇科内分泌疾病的诊治</p>
+                        <div class="border">
+                            <a class="online1" href="/online" target="_self">在线咨询</a>
+                            <a class="online2" href="/phone">电话咨询</a>
+                            <a class="online3" href="/order" target="_self">预约挂号</a>
+                            <!--<a href="#" target="_self"  class="on" >预约加号</a>-->
+                            <div class="clr"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <img src="pre/images/稀缺号.png" alt="" style="margin-left: 120px;position:relative;z-index:2;"/>
+                    <div  style="position:relative;z-index:1;top: -90px;">
+                        <a href="javascript:;">
+                            <img src="pre/images/专家7.png" width="116"height="190px"></a>
+                        <p>萧媛媛:儿童皮肤常见病以及多发病的诊疗,特别是对...</p>
+                        <div class="border">
+                            <a class="online1" href="/online" target="_self">在线咨询</a>
+                            <a class="online2" href="/phone">电话咨询</a>
+                            <a class="online3" href="/order" target="_self">预约挂号</a>
+                            <!--<a href="#" target="_self"  class="on" >预约加号</a>-->
+                            <div class="clr"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <img src="pre/images/稀缺号.png" alt="" style="margin-left: 120px;position:relative;z-index:2;"/>
+                    <div  style="position:relative;z-index:1;top: -90px;">
+                        <a href="javascript:;">
+                            <img src="pre/images/专家8.jpg" width="116"height="190px"></a>
+                        <p>都珊珊:内科疑难重症及心理疾病的诊治</p>
+                        <div class="border">
+                            <a class="online1" href="/online" target="_self">在线咨询</a>
+                            <a class="online2" href="/phone">电话咨询</a>
+                            <a class="online3" href="/order" target="_self">预约挂号</a>
+                            <!--<a href="#" target="_self"  class="on" >预约加号</a>-->
+                            <div class="clr"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <img src="pre/images/稀缺号.png" alt="" style="margin-left: 120px;position:relative;z-index:2;"/>
+                    <div  style="position:relative;z-index:1;top: -90px;">
+                        <a href="javascript:;">
+                            <img src="pre/images/专家9.jpg" width="116"height="190px"></a>
+                        <p>刘玉林:妇产科内分泌疾病的诊治</p>
+                        <div class="border">
+                            <a class="online1" href="/online" target="_self">在线咨询</a>
+                            <a class="online2" href="/phone">电话咨询</a>
+                            <a class="online3" href="/order" target="_self">预约挂号</a>
+                            <!--<a href="#" target="_self"  class="on" >预约加号</a>-->
+                            <div class="clr"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <img src="pre/images/稀缺号.png" alt="" style="margin-left: 120px;position:relative;z-index:2;"/>
+                    <div  style="position:relative;z-index:1;top: -90px;">
+                        <a href="javascript:;">
+                            <img src="pre/images/专家10.jpg" width="116"height="190px"></a>
+                        <p>骆宗琼:中西医脑血栓诊疗伤...</p>
+                        <div class="border">
+                            <a class="online1" href="/online" target="_self">在线咨询</a>
+                            <a class="online2" href="/phone">电话咨询</a>
+                            <a class="online3" href="/order" target="_self">预约挂号</a>
+                            <!--<a href="#" target="_self"  class="on" >预约加号</a>-->
+                            <div class="clr"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--尾部-->
+<div class="footer" style="margin-top: 220%">
+    <div class="ng-promise-box">
+        <div class="ng-promise w1200">
+            <p class="text">
+                <a class="icon1" href="javascript:;">24小时预约挂号</a>
+                <a class="icon2" href="javascript:;">满99元全场7折</a>
+                <a class="icon3" style="margin-right: 0" href="javascript:;">100%品质保证</a>
+            </p>
+        </div>
+    </div>
+    <div class="mod_help w1200">
+        <p>
+            <a href="javascript:;">关于我们</a>
+            <span>|</span>
+            <a href="javascript:;">帮助中心</a>
+            <span>|</span>
+            <a href="javascript:;">售后服务</a>
+            <span>|</span>
+            <a href="javascript:;">专家资讯</a>
+            <span>|</span>
+            <a href="javascript:;">关于医院</a>
+        </p>
+
+        <p class="coty">预医网版权所有 &copy; 2019.2.20</p>
+    </div>
+</div>
+</div>
+<script type="text/javascript">
+
+    layui.config({
+        base: 'pre/res/static/js/util/' //你存放新模块的目录，注意，不是layui的模块目录
+    }).use(['mm', 'carousel'], function () {
+        var carousel = layui.carousel,
+                mm = layui.mm;
+        var option = {
+            elem: '#test1'
+            , width: '100%' //设置容器宽度
+            , arrow: 'always'
+            , height: '298'
+            , indicator: 'none'
+        }
+        carousel.render(option);
+    });
+</script>
+</body>
+</html>
