@@ -33,13 +33,13 @@ public class QusRoomTest {
 			}
 		}
 	}
-
+	
 	/*
 	 * 删除二级科室
 	 */
 	@Test
 	public void delRoom2() {
-		Boolean isok = qusRoomService.delRoom2(59);
+		Boolean isok = qusRoomService.delRoom2(50);
 		String mes = isok ? "删除成功" : "删除失败";
 		System.out.println(mes);
 	}

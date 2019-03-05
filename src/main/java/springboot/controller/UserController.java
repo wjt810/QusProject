@@ -74,8 +74,7 @@ public class UserController {
 	@RequestMapping("infoManager")
 	public ModelAndView test3() {
 		ModelAndView mv = new ModelAndView("back/page/news/infoList");
-		return mv;
-		
+		return mv;	
 	}
 	/**
 	 * 用户管理
