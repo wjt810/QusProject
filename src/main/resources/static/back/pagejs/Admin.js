@@ -89,7 +89,7 @@ layui.config({
 		var index = layui.layer.open({
 			title : "添加管理员",
 			type : 2,
-			content : "AdminAdd.html",
+			content : "adminAdd",
 			success : function(layero, index){
 				layui.layer.tips('点击此处返回文章列表', '.layui-layer-setwin .layui-layer-close', {
 					tips: 3
@@ -157,7 +157,7 @@ layui.config({
 		var index = layui.layer.open({
 			title : "修改管理员",
 			type : 2,
-			content : "AdminAdd.html",
+			content : "adminModify",
 			success : function(layero, index){
 				layui.layer.tips('点击此处返回文章列表', '.layui-layer-setwin .layui-layer-close', {
 					tips: 3
@@ -185,23 +185,23 @@ layui.config({
 		});
 	})
 
-// 	$("body").on("click",".users_edit",function(){  //查看店铺
-// 		var index = layui.layer.open({
-// 			title : "查看店铺",
-// 			type : 2,
-// 			content : "AdminAdd.html",
-// 			success : function(layero, index){
-// 				layui.layer.tips('点击此处返回文章列表', '.layui-layer-setwin .layui-layer-close', {
-// 					tips: 3
-// 				});
-// 			}
-// 		})
-// 		//改变窗口大小时，重置弹窗的高度，防止超出可视区域（如F12调出debug的操作）
-// 		$(window).resize(function(){
-// 			layui.layer.full(index);
-// 		})
-// 		layui.layer.full(index);
-// 	})
+ 	$("body").on("click",".users_edit",function(){  //查看店铺
+ 		var index = layui.layer.open({
+ 			title : "查看店铺",
+ 			type : 2,
+ 			content : "adminShow",
+ 			success : function(layero, index){
+ 				layui.layer.tips('点击此处返回文章列表', '.layui-layer-setwin .layui-layer-close', {
+ 					tips: 3
+ 				});
+ 			}
+ 		})
+ 		//改变窗口大小时，重置弹窗的高度，防止超出可视区域（如F12调出debug的操作）
+ 		$(window).resize(function(){
+ 			layui.layer.full(index);
+ 		})
+ 		layui.layer.full(index);
+ 	})
 
 	function usersList(){
 		//渲染数据

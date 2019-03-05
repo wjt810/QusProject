@@ -43,7 +43,7 @@ public class UserController {
 	 * @return
 	 */
 	@RequestMapping("roomManager")
-	public ModelAndView test1() {
+	public ModelAndView roomManage() {
 		ModelAndView mv = new ModelAndView("back/page/news/newsList");
 		return mv;
 	}
@@ -51,12 +51,20 @@ public class UserController {
 	 * 科室管理(添加科室)
 	 * @return
 	 */
-	@RequestMapping("newsAdd")
-	public ModelAndView test1Add() {
-		ModelAndView mv = new ModelAndView("back/page/news/newsAdd");
+	@RequestMapping("roomAdd")
+	public ModelAndView roomManageAdd() {
+		ModelAndView mv = new ModelAndView("back/page/news/roomAdd");
 		return mv;
 	}
-	
+	/**
+	 * 科室管理(修改科室)
+	 * @return
+	 */
+	@RequestMapping("roomModify")
+	public ModelAndView roomManageModify() {
+		ModelAndView mv = new ModelAndView("back/page/news/roomAdd");
+		return mv;
+	}
 	/**
 	 * 订单管理
 	 * @return
@@ -68,12 +76,51 @@ public class UserController {
 		
 	}
 	/**
+	 * 订单管理（修改订单）
+	 * @return
+	 */
+	@RequestMapping("orderModify")
+	public ModelAndView orderModify() {
+		ModelAndView mv = new ModelAndView("back/page/indent/IndentAdd");
+		return mv;
+		
+	}
+	/**
+	 * 订单管理（查看订单）
+	 * @return
+	 */
+	@RequestMapping("orderShow")
+	public ModelAndView orderShow() {
+		ModelAndView mv = new ModelAndView("back/page/indent/IndentAdd");
+		return mv;
+		
+	}
+	/**
 	 * 资讯管理
 	 * @return
 	 */
 	@RequestMapping("infoManager")
 	public ModelAndView test3() {
 		ModelAndView mv = new ModelAndView("back/page/news/infoList");
+		return mv;
+	}
+	/**
+	 * 资讯管理(添加资讯)
+	 * @return
+	 */
+	@RequestMapping("infoAdd")
+	public ModelAndView infoAdd() {
+		ModelAndView mv = new ModelAndView("back/page/news/newsAdd");
+		return mv;
+		
+	}
+	/**
+	 * 资讯管理（修改资讯）
+	 * @return
+	 */
+	@RequestMapping("infoModify")
+	public ModelAndView infoModify() {
+		ModelAndView mv = new ModelAndView("back/page/news/newsAdd");
 		return mv;
 		
 	}
@@ -88,6 +135,16 @@ public class UserController {
 		
 	}
 	/**
+	 * 用户管理(修改用户)
+	 * @return
+	 */
+	@RequestMapping("userModify")
+	public ModelAndView userModify() {
+		ModelAndView mv = new ModelAndView("back/page/user/User");
+		return mv;
+		
+	}
+	/**
 	 * 管理员管理
 	 * @return
 	 */
@@ -98,12 +155,71 @@ public class UserController {
 		
 	}
 	/**
+	 * 管理员管理（添加）
+	 * @return
+	 */
+	@RequestMapping("adminAdd")
+	public ModelAndView AdminAdd() {
+		ModelAndView mv = new ModelAndView("back/page/user/AdminAdd");
+		return mv;
+		
+	}
+	/**
+	 * 管理员管理（修改）
+	 * @return
+	 */
+	@RequestMapping("adminModify")
+	public ModelAndView AdminModify() {
+		ModelAndView mv = new ModelAndView("back/page/user/AdminAdd");
+		return mv;
+	}
+	/**
+	 * 管理员管理（查看）
+	 * @return
+	 */
+	@RequestMapping("adminShow")
+	public ModelAndView AdminShow() {
+		ModelAndView mv = new ModelAndView("back/page/user/AdminAdd");
+		return mv;
+		
+	}
+	/**
 	 * 医生管理
 	 * @return
 	 */
 	@RequestMapping("doctorManager")
 	public ModelAndView test6() {
 		ModelAndView mv = new ModelAndView("back/page/doctor/Doctor");
+		return mv;
+		
+	}
+	/**
+	 * 医生管理（添加）
+	 * @return
+	 */
+	@RequestMapping("doctorAdd")
+	public ModelAndView doctorAdd() {
+		ModelAndView mv = new ModelAndView("back/page/doctor/DoctorAdd");
+		return mv;
+		
+	}
+	/**
+	 * 医生管理（修改）
+	 * @return
+	 */
+	@RequestMapping("doctorModify")
+	public ModelAndView doctorModify() {
+		ModelAndView mv = new ModelAndView("back/page/doctor/DoctorModify");
+		return mv;
+		
+	}
+	/**
+	 * 医生管理（查看）
+	 * @return
+	 */
+	@RequestMapping("doctorCheck")
+	public ModelAndView doctorCheck() {
+		ModelAndView mv = new ModelAndView("back/page/doctor/DoctorCheck");
 		return mv;
 		
 	}

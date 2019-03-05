@@ -86,11 +86,11 @@ layui.config({
 	})
 
 	//添加友情链接
-	$(".linksAdd_btn").click(function(){
+	/*$(".linksAdd_btn").click(function(){
 		var index = layui.layer.open({
 			title : "添加订单",
 			type : 2,
-			content : "IndentAdd.html",
+			content : "orderAdd",
 			success : function(layero, index){
 				layui.layer.tips('点击此处返回订单列表', '.layui-layer-setwin .layui-layer-close', {
 					tips: 3
@@ -102,7 +102,7 @@ layui.config({
 			layui.layer.full(index);
 		})
 		layui.layer.full(index);
-	})
+	})*/
 
 	//批量删除
 	$(".batchDel").click(function(){
@@ -159,7 +159,7 @@ layui.config({
 		var index = layui.layer.open({
 			title : "修改订单",
 			type : 2,
-			content : "IndentAdd.html",
+			content : "orderModify",
 			success : function(layero, index){
 				layui.layer.tips('点击此处返回订单列表', '.layui-layer-setwin .layui-layer-close', {
 					tips: 3
@@ -177,7 +177,7 @@ layui.config({
 		var index = layui.layer.open({
 			title : "查看订单",
 			type : 2,
-			content : "IndentAdd.html",
+			content : "orderShow",
 			success : function(layero, index){
 				layui.layer.tips('点击此处返回订单列表', '.layui-layer-setwin .layui-layer-close', {
 					tips: 3

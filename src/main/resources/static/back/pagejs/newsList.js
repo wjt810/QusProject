@@ -7,7 +7,7 @@ layui.config({
 		$ = layui.jquery;
 
 	//加载页面数据
-	var newsData = '';/*../../json/newsList.json*/
+	var newsData = '';
 	$.get("back/json/newsList.json", function(data){
 		var newArray = [];
 		//单击首页“待审核文章”加载的信息
@@ -27,10 +27,6 @@ layui.config({
         	newsList(newsData);
 		}else{ */   //正常加载信息
 			newsData = data;
-			/*if(window.sessionStorage.getItem("addNews")){
-				var addNews = window.sessionStorage.getItem("addNews");
-				newsData = JSON.parse(addNews).concat(newsData);
-			}*/
 			if(window.sessionStorage.getItem("addRooom")){  //添加科室后的信息
 				var addRooom = window.sessionStorage.getItem("addRooom");
 				newsData = JSON.parse(addRooom).concat(newsData);
@@ -116,7 +112,7 @@ layui.config({
 		var index = layui.layer.open({
 			title : "添加科室",
 			type : 2,
-			content : "newsAdd",
+			content : "roomAdd",
 			success : function(layero, index){
 				layui.layer.tips('点击此处返回文章列表', '.layui-layer-setwin .layui-layer-close', {
 					tips: 3
@@ -231,9 +227,9 @@ layui.config({
 	//操作
 	$("body").on("click",".news_edit",function(){  //编辑
         var index = layui.layer.open({
-            title : "修改新闻",
+            title : "修改科室",
             type : 2,
-            content : "newsAdd.html",
+            content : "roomModify",
             success : function(layero, index){
                 layui.layer.tips('点击此处返回文章列表', '.layui-layer-setwin .layui-layer-close', {
                     tips: 3

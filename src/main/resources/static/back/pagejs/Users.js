@@ -85,7 +85,7 @@ layui.config({
 	})
 
 	//添加会员
-	$(".usersAdd_btn").click(function(){
+	/*$(".usersAdd_btn").click(function(){
 		var index = layui.layer.open({
 			title : "添加会员",
 			type : 2,
@@ -101,7 +101,7 @@ layui.config({
 			layui.layer.full(index);
 		})
 		layui.layer.full(index);
-	})
+	})*/
 
     //全选
 	form.on('checkbox(allChoose)', function(data){
@@ -129,7 +129,7 @@ layui.config({
 		var index = layui.layer.open({
 			title : "修改用户",
 			type : 2,
-			content : "User.html",
+			content : "userModify",
 			success : function(layero, index){
 				layui.layer.tips('点击此处返回用户列表', '.layui-layer-setwin .layui-layer-close', {
 					tips: 3

@@ -124,7 +124,7 @@ layui.config({
 		var index = layui.layer.open({
 			title : "添加医生",
 			type : 2,
-			content : "DoctorAdd.html",
+			content : "doctorAdd",
 			success : function(layero, index){
 				layui.layer.tips('点击此处返回文章列表', '.layui-layer-setwin .layui-layer-close', {
 					tips: 3
@@ -193,7 +193,7 @@ layui.config({
 		var index = layui.layer.open({
 			title : "修改医生信息",
 			type : 2,
-			content : "DoctorModify.html",
+			content : "doctorModify",
 			success : function(layero, index){
 				layui.layer.tips('点击此处返回文章列表', '.layui-layer-setwin .layui-layer-close', {
 					tips: 3
@@ -211,7 +211,7 @@ layui.config({
 		var index = layui.layer.open({
 			title : "查看医生信息",
 			type : 2,
-			content : "DoctorCheck.html",
+			content : "doctorCheck",
 			success : function(layero, index){
 				layui.layer.tips('点击此处返回文章列表', '.layui-layer-setwin .layui-layer-close', {
 					tips: 3

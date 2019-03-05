@@ -111,7 +111,7 @@ layui.config({
 		var index = layui.layer.open({
 			title : "添加资讯",
 			type : 2,
-			content : "newsAdd.html",
+			content : "infoAdd",
 			success : function(layero, index){
 				layui.layer.tips('点击此处返回文章列表', '.layui-layer-setwin .layui-layer-close', {
 					tips: 3
@@ -214,21 +214,12 @@ layui.config({
 		form.render('checkbox');
 	})
 
-	/*//是否展示
-	form.on('switch(isShow)', function(data){
-		var index = layer.msg('修改中，请稍候',{icon: 16,time:false,shade:0.8});
-        setTimeout(function(){
-            layer.close(index);
-			layer.msg("展示状态修改成功！");
-        },2000);
-	})
- */
 	//操作
 	$("body").on("click",".news_edit",function(){  //编辑
         var index = layui.layer.open({
             title : "修改资讯",
             type : 2,
-            content : "newsAdd.html",
+            content : "infoModify",
             success : function(layero, index){
                 layui.layer.tips('点击此处返回文章列表', '.layui-layer-setwin .layui-layer-close', {
                     tips: 3
