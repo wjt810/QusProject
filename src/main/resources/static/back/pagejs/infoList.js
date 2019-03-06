@@ -8,7 +8,7 @@ layui.config({
 
 	//加载页面数据
 	var newsData = '';
-	$.get("back/json/infoList.json", function(data){
+	$.get("back/json/infoList.html", function(data){
 		var newArray = [];
 		//单击首页“待审核文章”加载的信息
 		/*if($(".top_tab li.layui-this cite",parent.document).text() == "待审核文章"){
@@ -26,6 +26,7 @@ layui.config({
         	newsData = newArray;
         	newsList(newsData);
 		}else{   */ //正常加载信息
+			
 			newsData = data;
 			if(window.sessionStorage.getItem("addNews")){
 				var addNews = window.sessionStorage.getItem("addNews");
@@ -35,7 +36,6 @@ layui.config({
 			newsList();
 		/*}*/
 	})
-
 	//查询
 	$(".search_btn").click(function(){
 		var newArray = [];
@@ -271,15 +271,15 @@ layui.config({
 				for(var i=0;i<currData.length;i++){
 					dataHtml += '<tr>'
 			    	+'<td><input type="checkbox" name="checked" lay-skin="primary" lay-filter="choose"></td>'
-			    	+'<td align="left">'+currData[i].infoTitle+'</td>'
-			    	+'<td>'+currData[i].infoContent+'</td>'
-			    	+'<td>'+currData[i].infoAuthor+'</td>'
-			    	+'<td>'+currData[i].roleName+'</td>'
-			    	+'<td>'+currData[i].newsTime+'</td>'
+			    	+'<td align="left">'+currData[i].info_title+'</td>'
+			    	+'<td>'+currData[i].info_content+'</td>'
+			    	+'<td>'+currData[i].rname+'</td>'
+			    	+'<td>'+currData[i].role_name+'</td>'
+			    	+'<td>'+currData[i].info_startTime+'</td>'
 			    	+'<td>'
 					+  '<a class="layui-btn layui-btn-mini news_edit"><i class="iconfont icon-edit"></i> 编辑</a>'
 					+  '<a class="layui-btn layui-btn-normal layui-btn-mini news_collect"><i class="layui-icon">&#xe600;</i> 收藏</a>'
-					+  '<a class="layui-btn layui-btn-danger layui-btn-mini news_del" data-id="'+data[i].newsId+'"><i class="layui-icon">&#xe640;</i> 删除</a>'
+					+  '<a class="layui-btn layui-btn-danger layui-btn-mini news_del" data-id="'+data[i].info_id+'"><i class="layui-icon">&#xe640;</i> 删除</a>'
 			        +'</td>'
 			    	+'</tr>';
 				}
@@ -290,7 +290,7 @@ layui.config({
 		}
 
 		//分页
-		var nums = 13; //每页出现的数据量
+		var nums = 6; //每页出现的数据量
 		if(that){
 			newsData = that;
 		}

@@ -1,11 +1,13 @@
 package springboot.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Resource;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.boot.autoconfigure.quartz.QuartzDataSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,17 +15,25 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.mysql.cj.xdevapi.JsonArray;
 
-//@Controller
+import springboot.pojo.QusInfo;
+import springboot.service.qusinfo.QusInfoService;
+
+
+
 @RestController
+//@Controller
 public class UserController {
 	
 	Logger logger = LoggerFactory.getLogger(UserController.class);
+
 	
 	/**
 	 * 进入首页
 	 * @return
 	 */
+	
 	@RequestMapping("list")
 	/*public ModelAndView list(@RequestParam("name") String name) {
 		List<User> list = userService.list(name);
@@ -104,6 +114,7 @@ public class UserController {
 		ModelAndView mv = new ModelAndView("back/page/news/infoList");
 		return mv;
 	}
+	
 	/**
 	 * 资讯管理(添加资讯)
 	 * @return

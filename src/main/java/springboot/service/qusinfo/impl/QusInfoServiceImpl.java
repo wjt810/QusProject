@@ -47,8 +47,22 @@ public class QusInfoServiceImpl implements QusInfoService {
 	 * 查询总量
 	 */
 	@Override
-	public int selectCount() {
-		return qusInfoDao.selectCount();
+	public int selectCount(String title) {
+		return qusInfoDao.selectCount(title);
+	}
+	/**
+	 * 查询所有的管理员--然后把selectInfoByTitle1和selectInfoByTitle2两个集合合并
+	 */
+	@Override
+	public List<QusInfo> selectInfoByTitle1(String title) {
+		return qusInfoDao.selectInfoByTitle1(title);
+	}
+	/**
+	 * 查询所有的管理员--然后把selectInfoByTitle1和selectInfoByTitle2两个集合合并
+	 */
+	@Override
+	public List<QusInfo> selectInfoByTitle2(String title) {
+		return qusInfoDao.selectInfoByTitle2(title);
 	}
 
 
