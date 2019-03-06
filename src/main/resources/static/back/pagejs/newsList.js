@@ -8,7 +8,7 @@ layui.config({
 
 	//加载页面数据
 	var newsData = '';
-	$.get("back/json/newsList.json", function(data){
+	$.get("/room/roomManager", function(data){
 		var newArray = [];
 		//单击首页“待审核文章”加载的信息
 		/*if($(".top_tab li.layui-this cite",parent.document).text() == "待审核文章"){
@@ -234,6 +234,7 @@ layui.config({
                 layui.layer.tips('点击此处返回文章列表', '.layui-layer-setwin .layui-layer-close', {
                     tips: 3
                 });
+                
             }
         })
         //改变窗口大小时，重置弹窗的高度，防止超出可视区域（如F12调出debug的操作）
@@ -279,15 +280,17 @@ layui.config({
 			}
 			if(currData.length != 0){
 				for(var i=0;i<currData.length;i++){
-					dataHtml += '<tr>'
-			    	+'<td><input type="checkbox" name="checked" lay-skin="primary" lay-filter="choose"></td>'
-			    	+'<td align="left">'+currData[i].newsName+'</td>'
-			    	+'<td>'+currData[i].newsAuthor+'</td>'
-			    	+  '<td>'
-					+   '<a class="layui-btn layui-btn-mini news_edit"><i class="iconfont icon-edit"></i> 编辑</a>'
-					+  '<a class="layui-btn layui-btn-normal layui-btn-mini news_collect"><i class="layui-icon">&#xe600;</i> 收藏</a>'
-					+  '<a class="layui-btn layui-btn-danger layui-btn-mini news_del" data-id="'+data[i].newsId+'"><i class="layui-icon">&#xe640;</i> 删除</a>'
-			        +  '</td>'
+					for (var j = 0; j < currData[i].room2s.length; j++) {
+						dataHtml += '<tr>'
+				    	+'<td><input type="checkbox" name="checked" lay-skin="primary" lay-filter="choose"></td>'
+			    		+'<td text-align="center">'+currData[i].r1_name+'</td>'
+			    		+'<td>'+currData[i].room2s[j].r2_name+'</td>'
+				    	+  '<td>'
+						+   '<a class="layui-btn layui-btn-mini news_edit"><i class="iconfont icon-edit"></i> 编辑</a>'
+						+  '<a class="layui-btn layui-btn-normal layui-btn-mini news_collect"><i class="layui-icon">&#xe600;</i> 收藏</a>'
+						+  '<a class="layui-btn layui-btn-danger layui-btn-mini news_del" data-id="'+data[i].r1_id+'"><i class="layui-icon">&#xe640;</i> 删除</a>'
+				        +  '</td>'
+					}
 			    	/*if(currData[i].newsStatus == "待审核"){
 			    		dataHtml += '<td style="color:#f00">'+currData[i].newsStatus+'</td>';
 			    	}else{
@@ -296,14 +299,14 @@ layui.config({
 			    	dataHtml += '<td>'+currData[i].newsLook+'</td>'
 			    	+'<td><input type="checkbox" name="show" lay-skin="switch" lay-text="是|否" lay-filter="isShow"'+currData[i].isShow+'></td>'
 			    	+'<td>'+currData[i].newsTime+'</td>'*/
-			    	+'<td><input type="checkbox" name="checked" lay-skin="primary" lay-filter="choose"></td>'
+			    	/*+'<td><input type="checkbox" name="checked" lay-skin="primary" lay-filter="choose"></td>'
 			    	+'<td align="left">'+currData[i].newsName+'</td>'
 			    	+'<td>'+currData[i].newsAuthor+'</td>'
 			        +  '<td>'
 					+   '<a class="layui-btn layui-btn-mini news_edit"><i class="iconfont icon-edit"></i> 编辑</a>'
 					+  '<a class="layui-btn layui-btn-normal layui-btn-mini news_collect"><i class="layui-icon">&#xe600;</i> 收藏</a>'
 					+  '<a class="layui-btn layui-btn-danger layui-btn-mini news_del" data-id="'+data[i].newsId+'"><i class="layui-icon">&#xe640;</i> 删除</a>'
-			        +  '</td>'
+			        +  '</td>'*/
 			    	+'</tr>';
 				}
 			}else{
