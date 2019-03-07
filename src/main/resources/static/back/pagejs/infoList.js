@@ -90,8 +90,6 @@ layui.config({
 		            		if(newsStr.info_startTime.indexOf(selectStr) > -1){
 			            		newsStr["info_startTime"] = changeStr(newsStr.info_startTime);
 		            		}
-	            		
-		            		
 		            		if(newsStr.info_title.indexOf(selectStr)>-1 || newsStr.info_content.indexOf(selectStr)>-1 ||newsStr.rname.indexOf(selectStr)>-1 || newsStr.role_name.indexOf(selectStr)>-1|| newsStr.info_startTime.indexOf(selectStr)>-1){
 		            			newArray.push(newsStr);
 		            		}
@@ -110,9 +108,12 @@ layui.config({
 	//添加文章
 	$(".newsAdd_btn").click(function(){
 		var index = layui.layer.open({
-			title : "添加资讯",
+			title : "添加资讯1",
 			type : 2,
-			content : "infoAdd",
+			closeBtn: 1, //是否显示关闭按钮
+			content : "infoAdd",//弹出层的url
+//			  area: ['900px', '900px'],  //弹出层页面比例
+			  shade: 0.1,  //遮罩透明度
 			success : function(layero, index){
 				layui.layer.tips('点击此处返回文章列表', '.layui-layer-setwin .layui-layer-close', {
 					tips: 3

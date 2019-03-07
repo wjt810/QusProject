@@ -27,7 +27,6 @@ public class QusInfo {
 	public void setRole_name(String role_name) {
 		this.role_name = role_name;
 	}
-
 	public Integer getInfo_id() {
 		return info_id;
 	}
