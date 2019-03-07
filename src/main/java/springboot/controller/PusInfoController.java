@@ -30,4 +30,10 @@ public class PusInfoController {
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 		return qusInfoList1;
 	}
+	@RequestMapping("/deleteById.html")
+	public int deleteById(HttpServletRequest request) {
+		int infoId =Integer.parseInt(request.getParameter("info_id"));
+		int count = qusInfoService.deleteInfoById(infoId);
+		return count;
+	}
 }

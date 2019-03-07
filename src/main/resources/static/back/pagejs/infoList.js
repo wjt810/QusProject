@@ -232,7 +232,6 @@ layui.config({
             layui.layer.full(index);
         })
         layui.layer.full(index);
-
 	})
 
 	$("body").on("click",".news_collect",function(){  //收藏.
@@ -248,9 +247,21 @@ layui.config({
 	$("body").on("click",".news_del",function(){  //删除
 		var _this = $(this);
 		layer.confirm('确定删除此信息？',{icon:3, title:'提示信息'},function(index){
-			//_this.parents("tr").remove();
+			_this.parents("tr").remove();
 			for(var i=0;i<newsData.length;i++){
-				if(newsData[i].newsId == _this.attr("data-id")){
+				if(newsData[i].info_id == _this.attr("data-id")){
+					$.ajax({
+						url : "deleteById.html",
+						type : "get",
+						data : {info_id :newsData[i].info_id },
+						dataType : "json",
+						success : function(data){
+							layer.msg("删除成功！");
+						},
+						fail : function(err) {
+							layer.msg(err)
+						}
+					})
 					newsData.splice(i,1);
 					newsList(newsData);
 				}
@@ -258,7 +269,6 @@ layui.config({
 			layer.close(index);
 		});
 	})
-
 	function newsList(that){
 		//渲染数据
 		function renderDate(data,curr){
@@ -289,7 +299,6 @@ layui.config({
 			}
 		    return dataHtml;
 		}
-
 		//分页
 		var nums = 6; //每页出现的数据量
 		if(that){
