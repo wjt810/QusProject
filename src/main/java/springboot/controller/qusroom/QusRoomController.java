@@ -23,7 +23,7 @@ public class QusRoomController {
 	private QusRoomService qusRoomService;
 
 	/**
-	 * 科室管理
+	 * 科室列表
 	 * 
 	 * @return
 	 */
@@ -38,5 +38,15 @@ public class QusRoomController {
 			}
 		}
 		return roomList;
+	}
+	
+	/**
+	 * 科室管理(修改科室)
+	 * @return
+	 */
+	@RequestMapping("/roomModify")
+	public ModelAndView roomManageModify() {
+		ModelAndView mv = new ModelAndView("back/page/news/roomAdd");
+		return mv;
 	}
 }

@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Many;
+import org.apache.ibatis.annotations.One;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Result;
 import org.apache.ibatis.annotations.Results;
@@ -24,12 +25,14 @@ public interface QusRoomDao {
 	 * 根据id查询一级科室及一级科室下的二级科室（一对多）
 	 */
 	@Select("<script>"
-			+ "SELECT r1.* FROM qus_room1 r1 "
-			+ "<if test='r1_id != null'>WHERE r1.r1_id = #{r1_id}</if>"
+			+ "SELECT * FROM qus_room1 where 1=1 "
+			+ "<if test='r1_id != null'> AND r1_id = #{r1_id}</if>"
 			+ "</script>")
 	@Results({
+		@Result(property="r1_id" ,column="r1_id"),
 		@Result(property="room2s",column="r1_id",
 				many=@Many(select="springboot.dao.qusroom.QusRoomDao.getRoom2List"))
+		
 	})
 	public List<QusRoom1> getRoom1List(@Param("r1_id")Integer r1_id);
 	
