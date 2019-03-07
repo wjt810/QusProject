@@ -12,7 +12,7 @@ public class QusInfo {
 	private Integer info_role_id; // int(11)角色id
 	private Integer info_u_d_id; // int(11)发布人
 	private String role_name;//角色名字
-	private String rname;
+	private String rname;//发布人名字
 	public String getRname() {
 		return rname;
 	}

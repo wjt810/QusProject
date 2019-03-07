@@ -48,13 +48,6 @@ public interface QusInfoDao {
 			+ "</if>"
 			+ "</script>")
 	int selectCount(@Param("title")String title);	
-//	@Select("<script> SELECT i.*,r.role_Name from qus_info i,qus_role r"
-//			+ " WHERE i.info_role_id=r.role_id"
-//			+ "<if test='title != null'>"
-//			+" and info_title LIKE CONCAT('%',#{title},'%')"
-//			+ "</if>"
-//			+" limit #{pageIndex},#{pageSize}"
-//			+ "</script>")
 	//查询所有的管理员--然后把selectInfoByTitle1和selectInfoByTitle2两个集合合并
 	@Select("<script> SELECT i.*,a_name AS rname,r.role_name FROM qus_admin a,qus_info i,qus_role r WHERE i.info_role_id = a.a_roleid AND i.info_u_d_id=a.a_id AND r.role_id=i.info_role_id"
 			+ "<if test='title != null'>"

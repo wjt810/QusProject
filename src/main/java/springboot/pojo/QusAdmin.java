@@ -20,7 +20,7 @@ public class QusAdmin {
 	private String a_des; // varchar(50)自我描述
 	private Date a_born; // datetime出生日期
 	private String a_address; // varchar(50)地址
-	private Integer a_roleid;
+	private Integer a_roleid;//为了方便 资讯的查询我在 此表加了一个字段
 	
 	public Integer getA_roleid() {
 		return a_roleid;

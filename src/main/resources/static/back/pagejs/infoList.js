@@ -43,7 +43,7 @@ layui.config({
 			var index = layer.msg('查询中，请稍候',{icon: 16,time:false,shade:0.8});
             setTimeout(function(){
             	$.ajax({
-					url : "back/json/infoList.json",
+					url : "back/json/infoList.html",
 					type : "get",
 					dataType : "json",
 					success : function(data){
@@ -71,26 +71,28 @@ layui.config({
 		            			}
 		            		}
 		            		//文章标题
-		            		if(newsStr.infoTitle.indexOf(selectStr) > -1){
-			            		newsStr["infoTitle"] = changeStr(newsStr.infoTitle);
+		            		if(newsStr.info_title.indexOf(selectStr) > -1){
+			            		newsStr["info_title"] = changeStr(newsStr.info_title);
 		            		}
 		            		//内容
-		            		if(newsStr.infoContent.indexOf(selectStr) > -1){
-			            		newsStr["infoContent"] = changeStr(newsStr.infoContent);
+		            		if(newsStr.info_content.indexOf(selectStr) > -1){
+			            		newsStr["info_content"] = changeStr(newsStr.info_content);
 		            		}
 		            		//发布人
-		            		if(newsStr.infoAuthor.indexOf(selectStr) > -1){
-			            		newsStr["infoAuthor"] = changeStr(newsStr.infoAuthor);
+		            		if(newsStr.rname.indexOf(selectStr) > -1){
+			            		newsStr["rname"] = changeStr(newsStr.rname);
 		            		}
 		            		//用户角色名称
-		            		if(newsStr.roleName.indexOf(selectStr) > -1){
-			            		newsStr["roleName"] = changeStr(newsStr.roleName);
+		            		if(newsStr.role_name.indexOf(selectStr) > -1){
+			            		newsStr["role_name"] = changeStr(newsStr.role_name);
 		            		}
 		            		//发布时间
-		            		if(newsStr.newsTime.indexOf(selectStr) > -1){
-			            		newsStr["newsTime"] = changeStr(newsStr.newsTime);
+		            		if(newsStr.info_startTime.indexOf(selectStr) > -1){
+			            		newsStr["info_startTime"] = changeStr(newsStr.info_startTime);
 		            		}
-		            		if(newsStr.infoName.indexOf(selectStr)>-1 || newsStr.infoContent.indexOf(selectStr)>-1 ||newsStr.infoAuthor.indexOf(selectStr)>-1 || newsStr.roleName.indexOf(selectStr)>-1 || newsStr.newsTime.indexOf(selectStr)>-1){
+	            		
+		            		
+		            		if(newsStr.info_title.indexOf(selectStr)>-1 || newsStr.info_content.indexOf(selectStr)>-1 ||newsStr.rname.indexOf(selectStr)>-1 || newsStr.role_name.indexOf(selectStr)>-1|| newsStr.info_startTime.indexOf(selectStr)>-1){
 		            			newArray.push(newsStr);
 		            		}
 		            	}
@@ -98,7 +100,6 @@ layui.config({
 		            	newsList(newsData);
 					}
 				})
-            	
                 layer.close(index);
             },2000);
 		}else{
@@ -298,6 +299,7 @@ layui.config({
 			cont : "page",
 			pages : Math.ceil(newsData.length/nums),
 			jump : function(obj){
+			
 				$(".news_content").html(renderDate(newsData,obj.curr));
 				$('.news_list thead input[type="checkbox"]').prop("checked",false);
 		    	form.render();
