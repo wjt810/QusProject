@@ -1,6 +1,6 @@
 package springboot.pojo;
 
-import java.sql.Date;
+import java.util.Date;
 
 /**
  * 管理员表

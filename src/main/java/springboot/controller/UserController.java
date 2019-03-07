@@ -123,7 +123,6 @@ public class UserController {
 	public ModelAndView infoAdd() {
 		ModelAndView mv = new ModelAndView("back/page/news/newsAdd");
 		return mv;
-		
 	}
 	/**
 	 * 资讯管理（修改资讯）
