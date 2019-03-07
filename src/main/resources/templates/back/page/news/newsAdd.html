@@ -54,9 +54,9 @@
 				<label class="layui-form-label">选择角色</label>
 				<div class="layui-input-inline">
 					<select name="browseLook" class="roleName" lay-filter="browseLook">
-				        <option value="0">管理员</option>
-				        <option value="1">普通医生</option>
-				        <option value="1">专家医生</option>
+				        <option value="1">管理员</option>
+				        <option value="2">普通医生</option>
+				        <option value="3">主任医师</option>
 				    </select>
 				</div>
 			</div>
@@ -76,10 +76,9 @@
 		<div class="layui-form-item">
 			<label class="layui-form-label">资讯内容</label>
 			<div class="layui-input-block">
-				<textarea class="layui-textarea layui-hide" name="content" lay-verify="content" id="news_content"></textarea>
+				<textarea class="layui-textarea layui-hide content_info" name="contact" id="news_content"></textarea>
 			</div>
 		</div>
-
 		<div class="layui-form-item">
 			<div class="layui-input-block">
 				<button class="layui-btn" lay-submit="" lay-filter="addNews">立即提交</button>
@@ -89,5 +88,7 @@
 	</form>
 	<script type="text/javascript" src="back/layui/layui.js"></script>
 	<script type="text/javascript" src="back/pagejs/newsAdd.js"></script>
+	<script type="text/javascript" src="back/js/jquery-3.3.1.js"></script>
+	
 </body>
 </html>
