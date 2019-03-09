@@ -17,5 +17,8 @@ public interface QusInfoService {
 	//根据id来修改资讯的信息    
 	int updateInfo(QusInfo info);//注意info  中包含要修改的infoId 和要修改的内容
 	//查询数据的总量
-	int selectCount();
+	int selectCount(String title);
+	//查询所有的管理员和医生--然后把selectInfoByTitle1和selectInfoByTitle2两个集合合并
+	List<QusInfo> selectInfoByTitle1(String title);
+	List<QusInfo> selectInfoByTitle2(String title);
 }

@@ -15,10 +15,26 @@ public class QusUserServiceImpl implements QusUserService {
 	
 	@Resource
 	private QusUserDao qusUserDao;
-
+	/**
+	 * 用户列表
+	 * @return
+	 */
 	@Override
 	public List<QusUser> getUserList() {
 		return qusUserDao.getUserList();
+	}
+	/**
+	 * 根据id来修改用户信息
+	 */
+	@Override
+	public int updateUser(QusUser user) {
+		// TODO Auto-generated method stub
+		return  qusUserDao.updateUser(user);
+	}
+	@Override
+	public List<QusUser> getByUser(String name) {
+		// TODO Auto-generated method stub
+		return qusUserDao.getByUserList();
 	}
 
 	@Override

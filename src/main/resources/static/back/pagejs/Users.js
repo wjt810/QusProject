@@ -8,7 +8,7 @@ layui.config({
 
 	//加载页面数据
 	var usersData = '';
-	$.get("back/json/usersList.json", function(data){
+	$.get("back/json/usersList.html", function(data){
 		usersData = data;
 		if(window.sessionStorage.getItem("addUser")){
 			var addUsers = window.sessionStorage.getItem("addUser");

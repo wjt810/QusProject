@@ -3,6 +3,7 @@ package springboot.qusinfo;
 import static org.junit.Assert.*;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -22,7 +23,7 @@ public class QusInfoTest {
 	private QusInfoService qusInfoService;
 	@Test
 	public void testSelectCount() {
-		int count = qusInfoService.selectCount();
+		int count = qusInfoService.selectCount("");
 		if (count!=0) {
 			System.out.println(count);
 		}
@@ -32,7 +33,6 @@ public class QusInfoTest {
 		List<QusInfo> qusInfoList= qusInfoService.selectInfoByTitle("关", 1, 2);
 		if(qusInfoList!=null && qusInfoList.size()!=0) {
 			System.out.println("个数是:"+qusInfoList.size());
-			
 		}else {
 			System.out.println("无数据");
 		}
@@ -76,5 +76,37 @@ public class QusInfoTest {
 		info.setInfo_startTime(time);
 		int count = qusInfoService.updateInfo(info);
 		System.out.println(count);
+	}
+	//测试
+	@Test
+	public void testSelectByTitle1() {
+		List<QusInfo> qusInfoList= qusInfoService.selectInfoByTitle1("a");
+		System.out.println(qusInfoList.size());
+		if(qusInfoList!=null && qusInfoList.size()!=0) {
+			System.out.println("个数是:"+qusInfoList.size());
+		}else {
+			System.out.println("无数据");
+		}
+	}
+	@Test
+	public void testSelectByTitle2() {
+		List<QusInfo> qusInfoList1= qusInfoService.selectInfoByTitle1("a");
+		List<QusInfo> qusInfoList2= qusInfoService.selectInfoByTitle2("a");
+		qusInfoList1.addAll(qusInfoList2);
+		List<QusInfo> tempList = new ArrayList<>();
+//		for (QusInfo qusInfo : qusInfoList1) {
+//			System.out.println(qusInfo.getRname());
+//		}
+		
+		int currentIndex =2;
+		int pageSize = 2;
+		//循环加入到集合中----获得所需要的数据
+		for (int i = (currentIndex-1)*pageSize; i < (currentIndex-1)*pageSize+pageSize; i++) {
+			tempList.add(qusInfoList1.get(i));
+		}
+		System.out.println(qusInfoList1.size());
+		for (QusInfo qusInfo : tempList) {
+			System.out.println(qusInfo.getRname());
+		}
 	}
 }
