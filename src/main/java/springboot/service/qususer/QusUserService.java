@@ -8,4 +8,11 @@ public interface QusUserService {
 	
 	List<QusUser> getUserList();
 	
+	/**
+	 * 根据u_id查询数据
+	 * @param id
+	 * @return
+	 */
+	QusUser getUser(Integer id);
+	
 }

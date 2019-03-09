@@ -21,4 +21,9 @@ public class QusUserServiceImpl implements QusUserService {
 		return qusUserDao.getUserList();
 	}
 
+	@Override
+	public QusUser getUser(Integer id) {
+		return qusUserDao.getUser(id);
+	}
+
 }
