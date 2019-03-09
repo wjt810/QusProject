@@ -12,6 +12,8 @@ import org.apache.ibatis.annotations.SelectProvider;
 import org.apache.ibatis.annotations.Update;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 
+import springboot.pojo.QusAdmin;
+import springboot.pojo.QusDoctor;
 import springboot.pojo.QusInfo;
 
 public interface QusInfoDao {
@@ -48,6 +50,7 @@ public interface QusInfoDao {
 			+ "</if>"
 			+ "</script>")
 	int selectCount(@Param("title")String title);	
+	
 	//查询所有的管理员--然后把selectInfoByTitle1和selectInfoByTitle2两个集合合并
 	@Select("<script> SELECT i.*,a_name AS rname,r.role_name FROM qus_admin a,qus_info i,qus_role r WHERE i.info_role_id = a.a_roleid AND i.info_u_d_id=a.a_id AND r.role_id=i.info_role_id"
 			+ "<if test='title != null'>"
@@ -63,4 +66,25 @@ public interface QusInfoDao {
 			+ "</if>"
 			+ "</script>")
 	List<QusInfo> selectInfoByTitle2(@Param("title")String title);
+	
+	//根据传入的资讯id查询出来对应是哪个  类型的用户发表的  --再从对应的表中查询数据
+	@Select("SELECT info_role_id FROM qus_info WHERE info_id = #{infoId}")
+	int selectRoleIdByInfoId(@Param("infoId")Integer infoId);
+	
+	//根据资讯id 从对应的表中查询出来 发布人(管理员)的信息
+	@Select("SELECT i.*,a_name AS rname,r.role_name FROM qus_admin a,qus_info i,qus_role r "
+			+ "WHERE i.info_role_id = a.a_roleid AND i.info_u_d_id=a.a_id "
+			+ "AND r.role_id=i.info_role_id "
+			+ "AND i.info_id=#{infoId}")
+	QusInfo selectAdminById(@Param("infoId")Integer infoId);
+	//根据资讯id 从对应的表中查询出来 发布人(医生|医师)的信息
+	@Select("SELECT i.*, d_name AS rname,r.role_name FROM qus_doctor d,qus_info i,qus_role r "
+			+ "WHERE i.info_role_id = d.d_role_id "
+			+ "AND i.info_u_d_id=d.d_id "
+			+ "AND r.role_id=i.info_role_id "
+			+ "AND i.info_id=#{infoId}")
+	QusInfo selectDoctorById(@Param("infoId")Integer infoId);
+	//查询杠插入一条数据的
+	@Select("SELECT MAX(info_id) FROM qus_info")
+	int selectMaxId();
 }

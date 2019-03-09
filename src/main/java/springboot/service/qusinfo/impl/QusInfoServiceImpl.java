@@ -8,6 +8,8 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
 
 import springboot.dao.qusinfo.QusInfoDao;
+import springboot.pojo.QusAdmin;
+import springboot.pojo.QusDoctor;
 import springboot.pojo.QusInfo;
 import springboot.service.qusinfo.QusInfoService;
 @Service
@@ -64,7 +66,21 @@ public class QusInfoServiceImpl implements QusInfoService {
 	public List<QusInfo> selectInfoByTitle2(String title) {
 		return qusInfoDao.selectInfoByTitle2(title);
 	}
-
-
+	@Override
+	public QusInfo selectDoctorById(Integer infoId) {
+		return qusInfoDao.selectDoctorById(infoId);
+	}
+	@Override
+	public QusInfo selectAdminById(Integer infoId) {
+		return qusInfoDao.selectAdminById(infoId);
+	}
+	@Override
+	public int selectRoleIdByInfoId(Integer infoId) {
+		return qusInfoDao.selectRoleIdByInfoId(infoId);
+	}
+	@Override
+	public int selectMaxId() {
+		return qusInfoDao.selectMaxId();
+	}
 
 }

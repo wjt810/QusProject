@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import springboot.pojo.QusAdmin;
 import springboot.pojo.QusInfo;
@@ -60,13 +61,40 @@ public class PusInfoController {
 		Date info_startTime = format.parse(request.getParameter("info_startTime"));
 		QusInfo info = new QusInfo();
 		info.setInfo_content(content);
-		System.out.println(content);
 		info.setInfo_role_id(info_role_id);
 		info.setInfo_title(title);
 		info.setInfo_u_d_id(1);//暂时设为管理员
 		info.setInfo_startTime(info_startTime);
 		int addCount = qusInfoService.addInfo(info);
-		System.out.println("addCount:"+addCount);
 		return addCount;
+	}
+	/**
+	 * 资讯管理（修改资讯
+	 * @return
+	 */
+	@RequestMapping("infoModify")
+	public ModelAndView infoModify(HttpServletRequest request) {
+		System.out.println(request.getParameter("id"));
+		Integer infoId = Integer.parseInt(request.getParameter("id"));
+		
+		QusInfo info = null;
+		int roleId = qusInfoService.selectRoleIdByInfoId(infoId);
+		System.out.println("infoId: "+infoId);
+		System.out.println("roleId: "+roleId);
+		if(roleId==1) {
+			info=qusInfoService.selectAdminById(infoId);
+		}else if(roleId==2||roleId==3) {
+			info=qusInfoService.selectDoctorById(infoId);
+		}
+		ModelAndView mv = new ModelAndView("back/page/news/newschange");
+		mv.addObject("test","aa");
+		mv.addObject("info", info);
+		return mv;
+	}
+	//查询刚插入的数据id
+	@RequestMapping("/getMaxId")
+	public String getMaxId() {
+		int count = qusInfoService.selectMaxId();
+		return "{\"infoId\":\""+count+"\"}";
 	}
 }

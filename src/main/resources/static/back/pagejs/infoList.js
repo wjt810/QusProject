@@ -35,6 +35,7 @@ layui.config({
 			//执行加载数据的方法
 			newsList();
 		/*}*/
+			
 	})
 	//查询
 	$(".search_btn").click(function(){
@@ -166,7 +167,6 @@ layui.config({
 			layer.msg("请选择需要审核的文章");
 		}
 	})
-
 	//批量删除
 	$(".batchDel").click(function(){
 		var $checkbox = $('.news_list tbody input[type="checkbox"][name="checked"]');
@@ -194,9 +194,10 @@ layui.config({
 			layer.msg("请选择需要删除的文章");
 		}
 	})
-
 	//全选
 	form.on('checkbox(allChoose)', function(data){
+		
+		
 		var child = $(data.elem).parents('table').find('tbody input[type="checkbox"]:not([name="show"])');
 		child.each(function(index, item){
 			item.checked = data.elem.checked;
@@ -215,13 +216,15 @@ layui.config({
 		}
 		form.render('checkbox');
 	})
-
 	//操作
 	$("body").on("click",".news_edit",function(){  //编辑
+		
+		var _this = $(this);
+		var id = _this.attr("data-id")
         var index = layui.layer.open({
             title : "修改资讯",
             type : 2,
-            content : "infoModify",
+            content : "infoModify?id="+id,
             success : function(layero, index){
                 layui.layer.tips('点击此处返回文章列表', '.layui-layer-setwin .layui-layer-close', {
                     tips: 3
@@ -272,12 +275,12 @@ layui.config({
 	})
 	function newsList(that){
 		//渲染数据
-		function renderDate(data,curr){
+		function renderDate(data,curr){//传入的当前页面的索引
 			var dataHtml = '';
 			if(!that){
 				currData = newsData.concat().splice(curr*nums-nums, nums);
 			}else{
-				currData = that.concat().splice(curr*nums-nums, nums);
+				currData = that.concat().splice(curr*nums-nums,nums);
 			}
 			if(currData.length != 0){
 				for(var i=0;i<currData.length;i++){
@@ -289,9 +292,9 @@ layui.config({
 			    	+'<td>'+currData[i].role_name+'</td>'
 			    	+'<td>'+currData[i].info_startTime+'</td>'
 			    	+'<td>'
-					+  '<a class="layui-btn layui-btn-mini news_edit"><i class="iconfont icon-edit"></i> 编辑</a>'
+					+  '<a class="layui-btn layui-btn-mini news_edit" data-id="'+currData[i].info_id+'"><i class="iconfont icon-edit"></i> 编辑</a>'
 					+  '<a class="layui-btn layui-btn-normal layui-btn-mini news_collect"><i class="layui-icon">&#xe600;</i> 收藏</a>'
-					+  '<a class="layui-btn layui-btn-danger layui-btn-mini news_del" data-id="'+data[i].info_id+'"><i class="layui-icon">&#xe640;</i> 删除</a>'
+					+  '<a class="layui-btn layui-btn-danger layui-btn-mini news_del" data-id="'+currData[i].info_id+'"><i class="layui-icon">&#xe640;</i> 删除</a>'
 			        +'</td>'
 			    	+'</tr>';
 				}
@@ -306,10 +309,11 @@ layui.config({
 			newsData = that;
 		}
 		laypage({
-			cont : "page",
-			pages : Math.ceil(newsData.length/nums),
-			jump : function(obj){
-			
+			curr : 1,//初始化为当前页
+			cont : "page",//分页容器的id
+			pages : Math.ceil(newsData.length/nums),//通过后台拿到的总页数
+			jump : function(obj){//出发分页后的回调
+				//var index = layer.msg(obj.curr,{icon: 16,time:1000,shade:0.8});
 				$(".news_content").html(renderDate(newsData,obj.curr));
 				$('.news_list thead input[type="checkbox"]').prop("checked",false);
 		    	form.render();

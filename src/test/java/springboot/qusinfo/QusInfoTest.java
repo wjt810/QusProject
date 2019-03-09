@@ -40,7 +40,9 @@ public class QusInfoTest {
 	//删除
 	@Test
 	public void testDelete() {
-		int count = qusInfoService.deleteInfoById(5);
+		//int count = qusInfoService.deleteInfoById(5);
+		/*System.out.println(count);*/
+		int count = (int) Math.ceil(20/7);
 		System.out.println(count);
 	}
 	//添加
@@ -108,5 +110,33 @@ public class QusInfoTest {
 		for (QusInfo qusInfo : tempList) {
 			System.out.println(qusInfo.getRname());
 		}
+	}
+	//根据资讯id查询角色id
+	@Test
+	public void testByInfoId(){
+		int infoId=4;
+		int roleId = qusInfoService.selectRoleIdByInfoId(infoId);
+		System.out.println(roleId);
+	}
+	//根据资讯id来 进而查到对应的角色  进而去相应的表中查数据
+	
+	@Test
+	public void testInfoList(){
+		int infoId=2;
+		int roleId = qusInfoService.selectRoleIdByInfoId(infoId);
+		List<QusInfo> info = new ArrayList<>();
+		QusInfo size = qusInfoService.selectDoctorById(infoId);
+		if(size!=null) {
+			System.out.println(size.getInfo_content());
+		}
+		else{
+			System.out.println("null");
+		}
+	}
+	//查询刚插入的资讯id
+	@Test
+	public void testMaxId(){
+		int count = qusInfoService.selectMaxId();
+		System.out.println(count);
 	}
 }
