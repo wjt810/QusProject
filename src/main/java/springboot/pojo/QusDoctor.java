@@ -24,6 +24,25 @@ public class QusDoctor {
 	private Integer d_r1_id; // int(11)一级科室id
 	private Integer d_r2_id; // int(11)二级科室id
 	private String d_description; // varchar(50)
+	
+	private QusRoom1 qusRoom1;  //一级科室
+	private QusRoom2 qusRoom2;  //二级科室
+
+	public QusRoom1 getQusRoom1() {
+		return qusRoom1;
+	}
+
+	public void setQusRoom1(QusRoom1 qusRoom1) {
+		this.qusRoom1 = qusRoom1;
+	}
+
+	public QusRoom2 getQusRoom2() {
+		return qusRoom2;
+	}
+
+	public void setQusRoom2(QusRoom2 qusRoom2) {
+		this.qusRoom2 = qusRoom2;
+	}
 
 	public Integer getD_id() {
 		return d_id;

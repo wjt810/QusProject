@@ -6,6 +6,16 @@ public class QusRoom2 {
 	private String r2_name; // varchar(50)二级科室名称
 	private Integer r2_r1_id; // int(11)所属的一级科室
 	
+	private QusRoom1 room1s;  //对应一级科室
+	
+	public QusRoom1 getRoom1s() {
+		return room1s;
+	}
+
+	public void setRoom1s(QusRoom1 room1s) {
+		this.room1s = room1s;
+	}
+
 	public Integer getR2_id() {
 		return r2_id;
 	}

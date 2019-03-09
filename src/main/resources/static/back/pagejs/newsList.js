@@ -280,33 +280,19 @@ layui.config({
 			}
 			if(currData.length != 0){
 				for(var i=0;i<currData.length;i++){
-					for (var j = 0; j < currData[i].room2s.length; j++) {
-						dataHtml += '<tr>'
-				    	+'<td><input type="checkbox" name="checked" lay-skin="primary" lay-filter="choose"></td>'
-			    		+'<td text-align="center">'+currData[i].r1_name+'</td>'
-			    		+'<td>'+currData[i].room2s[j].r2_name+'</td>'
-				    	+  '<td>'
-						+   '<a class="layui-btn layui-btn-mini news_edit"><i class="iconfont icon-edit"></i> 编辑</a>'
-						+  '<a class="layui-btn layui-btn-normal layui-btn-mini news_collect"><i class="layui-icon">&#xe600;</i> 收藏</a>'
-						+  '<a class="layui-btn layui-btn-danger layui-btn-mini news_del" data-id="'+data[i].r1_id+'"><i class="layui-icon">&#xe640;</i> 删除</a>'
-				        +  '</td>'
-					}
-			    	/*if(currData[i].newsStatus == "待审核"){
-			    		dataHtml += '<td style="color:#f00">'+currData[i].newsStatus+'</td>';
-			    	}else{
-			    		dataHtml += '<td>'+currData[i].newsStatus+'</td>';
-			    	}
-			    	dataHtml += '<td>'+currData[i].newsLook+'</td>'
-			    	+'<td><input type="checkbox" name="show" lay-skin="switch" lay-text="是|否" lay-filter="isShow"'+currData[i].isShow+'></td>'
-			    	+'<td>'+currData[i].newsTime+'</td>'*/
-			    	/*+'<td><input type="checkbox" name="checked" lay-skin="primary" lay-filter="choose"></td>'
-			    	+'<td align="left">'+currData[i].newsName+'</td>'
-			    	+'<td>'+currData[i].newsAuthor+'</td>'
-			        +  '<td>'
+					dataHtml += '<tr>'
+			    	+'<td><input type="checkbox" name="checked" lay-skin="primary" lay-filter="choose"></td>'
+		    		+'<td text-align="center">'+currData[i].r1_name+'</td>'
+		    		+'<td><select style="width:20%">'
+			    		for (var j = 0; j < currData[i].room2s.length; j++) {
+			    			dataHtml += '<option value="'+currData[i].room2s[j].r2_id+'">'+currData[i].room2s[j].r2_name+'</option>'
+			    		}
+                    dataHtml += '</select></td>'
+			    	+  '<td>'
 					+   '<a class="layui-btn layui-btn-mini news_edit"><i class="iconfont icon-edit"></i> 编辑</a>'
-					+  '<a class="layui-btn layui-btn-normal layui-btn-mini news_collect"><i class="layui-icon">&#xe600;</i> 收藏</a>'
-					+  '<a class="layui-btn layui-btn-danger layui-btn-mini news_del" data-id="'+data[i].newsId+'"><i class="layui-icon">&#xe640;</i> 删除</a>'
-			        +  '</td>'*/
+//					+  '<a class="layui-btn layui-btn-normal layui-btn-mini news_collect"><i class="layui-icon">&#xe600;</i> 收藏</a>'
+					+  '<a class="layui-btn layui-btn-danger layui-btn-mini news_del" data-id="'+data[i].r1_id+'"><i class="layui-icon">&#xe640;</i> 删除</a>'
+			        +  '</td>'
 			    	+'</tr>';
 				}
 			}else{
@@ -316,7 +302,7 @@ layui.config({
 		}
 
 		//分页
-		var nums = 13; //每页出现的数据量
+		var nums = 6; //每页出现的数据量
 		if(that){
 			newsData = that;
 		}

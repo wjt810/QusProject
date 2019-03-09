@@ -24,12 +24,14 @@ public interface QusRoomDao {
 	 * 根据id查询一级科室及一级科室下的二级科室（一对多）
 	 */
 	@Select("<script>"
-			+ "SELECT r1.* FROM qus_room1 r1 "
-			+ "<if test='r1_id != null'>WHERE r1.r1_id = #{r1_id}</if>"
+			+ "SELECT * FROM qus_room1 where 1=1 "
+			+ "<if test='r1_id != null'> AND r1_id = #{r1_id}</if>"
 			+ "</script>")
 	@Results({
+		@Result(property="r1_id",column="r1_id"),
 		@Result(property="room2s",column="r1_id",
 				many=@Many(select="springboot.dao.qusroom.QusRoomDao.getRoom2List"))
+		
 	})
 	public List<QusRoom1> getRoom1List(@Param("r1_id")Integer r1_id);
 	
@@ -38,4 +40,18 @@ public interface QusRoomDao {
 	 */
 	@Delete("DELETE FROM qus_room2 WHERE r2_id=#{r2_id}")
 	public void delRoom2(Integer r2_id);
+	
+	/*
+	 * 根据id获取一级科室
+	 */
+	@Select("SELECT * FROM qus_room1 WHERE r1_id = #{r1_id}")
+	public QusRoom1 getRoom1ById(@Param("r1_id")Integer r1_id);
+	
+	/*
+	 * 根据id获取二级科室
+	 */
+	@Select("SELECT * FROM qus_room2 WHERE r2_id = #{r2_id}")
+	public QusRoom2 getRoom2ById(@Param("r2_id")Integer r2_id);
+	
+	
 }
