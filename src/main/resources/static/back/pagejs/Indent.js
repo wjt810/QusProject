@@ -100,7 +100,19 @@ layui.config({
 	            	//删除数据
 	            	for(var j=0;j<$checked.length;j++){
 	            		for(var i=0;i<linksData.length;i++){
-							if(linksData[i].linksId == $checked.eq(j).parents("tr").find(".links_del").attr("data-id")){
+							if(linksData[i].o_id == $checked.eq(j).parents("tr").find(".links_del").attr("data-id")){
+								$.ajax({
+									url : "order/deleteOrder",
+									type : "get",
+									data : {o_id :linksData[i].o_id },
+									dataType : "json",
+									success : function(data){
+										layer.msg("删除成功！");
+									},
+									fail : function(err) {
+										layer.msg(err)
+									}
+								})
 								linksData.splice(i,1);
 								linksList(linksData);
 							}
@@ -141,10 +153,12 @@ layui.config({
  
 	//操作
 	$("body").on("click",".links_edit",function(){  //编辑
+		var _this = $(this);
+		var o_id = _this.attr("data-id")
 		var index = layui.layer.open({
 			title : "修改订单",
 			type : 2,
-			content : "orderModify",
+			content : "order/orderModify?o_id="+o_id,
 			success : function(layero, index){
 				layui.layer.tips('点击此处返回订单列表', '.layui-layer-setwin .layui-layer-close', {
 					tips: 3
@@ -159,10 +173,12 @@ layui.config({
 	})
 	
 	$("body").on("click",".links_see",function(){  //查看
+		var _this = $(this);
+		var o_id = _this.attr("data-id")
 		var index = layui.layer.open({
 			title : "查看订单",
 			type : 2,
-			content : "orderShow",
+			content : "order/orderShow?o_id="+o_id,
 			success : function(layero, index){
 				layui.layer.tips('点击此处返回订单列表', '.layui-layer-setwin .layui-layer-close', {
 					tips: 3

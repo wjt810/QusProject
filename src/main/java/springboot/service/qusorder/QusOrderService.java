@@ -15,4 +15,16 @@ public interface QusOrderService {
 	 * @return
 	 */
 	public Integer deleteOrder(Integer o_id);
+	/**
+	 * 根据o_id查询订单信息
+	 * @param o_id
+	 * @return
+	 */
+	public QusOrder getOrderById(Integer o_id);
+	/**
+	 * 根据o_id修改订单信息
+	 * @param o_id
+	 * @return
+	 */
+	public Integer ModifyOrderById(QusOrder order);
 }

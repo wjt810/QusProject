@@ -17,36 +17,48 @@
 		<div class="layui-form-item">
 			<label class="layui-form-label">用户名称</label>
 			<div class="layui-input-block">
-				<input type="text" class="layui-input newsName" lay-verify="required" value="">
+				<input type="text" class="layui-input newsName" name="userName" lay-verify="required" value="">
 			</div>
 		</div>
 		<div class="layui-form-item">		
 			<label class="layui-form-label">医生名称</label>
 			<div class="layui-input-block">
-				<input type="text" class="layui-input newsAuthor" lay-verify="required" placeholder="请输入单价">
+				<input type="text" class="layui-input newsAuthor" name="doctorName" lay-verify="required" value="">
+			</div>
+		</div>
+		
+		<div class="layui-form-item">
+			<label class="layui-form-label">一级科室</label>
+			<div class="layui-input-block">
+				<select id="room1" name="browseLook" class="newsLook" lay-filter="browseLook">
+					<option value="">--请选择--</option>
+				</select>
 			</div>
 		</div>
 		<div class="layui-form-item">
-			<label class="layui-form-label">科室</label>
+			<label class="layui-form-label">二级科室</label>
 			<div class="layui-input-block">
-				<input type="text" class="layui-input newsAuthor" lay-verify="required" placeholder="请输入数量">
+				<select id="room2" name="browseLook" class="newsLook" lay-filter="browseLook">
+					<option value="">--请选择--</option>
+					
+				</select>
 			</div>
 		</div>
 		<div class="layui-form-item">
 			<label class="layui-form-label">付款金额</label>
 			<div class="layui-input-block">
-				<input type="text" class="layui-input newsAuthor" lay-verify="required" placeholder="请输入付款金额">
+				<input type="text" class="layui-input price" name="price" lay-verify="required" value="">
 			</div>
 		</div>
 		<div class="layui-form-item">
 			<label class="layui-form-label">预约编号</label>
 			<div class="layui-input-block">
 				<select name="browseLook" class="newsLook" lay-filter="browseLook">
-					<option value="">--请选择--</option>
-					<option value="0">01 --- 张三</option>
+					<option value="" id="app_code"></option>
+					<!-- <option value="0">01 --- 张三</option>
 					<option value="1">02 --- 李四</option>
 					<option value="2">03 --- 王五</option>
-					<option value="3">04 --- 赵六</option>
+					<option value="3">04 --- 赵六</option> -->
 				</select>
 			</div>
 		</div>
@@ -81,5 +93,60 @@
 	</form>
 	<script type="text/javascript" src="back/layui/layui.js"></script>
 	<script type="text/javascript" src="back/pagejs/Indent.js"></script>
+	<script type="text/javascript" src="back/js/jquery-1.8.2.min.js"></script>
+	<script type="text/javascript">
+		layui.use(['jquery','form'],function(){
+			var form = layui.form();
+			roomList();
+			function roomList(){
+		 		$.ajax({
+		 			type: "GET",
+		 			url : "room/roomManager",
+					type : "get",
+					dataType : "json",
+					success : function(data){
+						var r1html = '';
+						var r2html = '';
+						for(var i=0;i<data.length;i++){
+							if(i>=0){
+								r1html+='<option value="'+data[i].r1_id+'">'+data[i].r1_name+'</option>';
+								for(var j=0;j<data[i].room2s.length;j++){
+									r2html+='<option value="'+data[i].room2s[j].r2_id+'">'+data[i].room2s[j].r2_name+'</option>';
+								}
+								continue;
+							}
+							r1html+='<option value="'+data[i].r1_id+'">'+data[i].r1_name+'</option>';
+						}
+						$("#room1").html(r1html);
+						$("#room2").html(r2html);
+						form.render();
+					}
+		 		})
+		 	}
+		}
+			/* function Modify(){
+				var userName=$("input[name='userName']").val();
+		 		var doctorName=$("input[name='doctorName']").val();
+		 		var price=$("input[name='price']").val();
+		 		$.ajax({
+		 			url:"order/ModifyOrder",
+		 			type:"get",
+		 			dataType : "json",
+		 			success : function(data){
+		 				$(".newsName").val(userName);
+		 				$(".newsAuthor").val(doctorName);
+		 				$(".price").val(price);
+		 				var index = top.layer.msg('数据提交中，请稍候',{icon:
+		 					16,time:false,shade:0.8}); setTimeout(function(){ top.layer.close(index);
+		 					top.layer.msg("文章修改成功！");
+		 					layer.closeAll("iframe");//刷新页面
+		 			},
+		 			error:function(data){
+		 				top.layer.msg("文章修改失败！");
+		 			}
+		 		});
+	 		}
+		} */
+	</script>
 </body>
 </html>

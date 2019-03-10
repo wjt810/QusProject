@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import springboot.pojo.QusOrder;
 import springboot.service.qusorder.QusOrderService;
@@ -23,6 +24,10 @@ public class QusOrderController {
 	@Resource
 	public QusOrderService qusOrderService;
 	
+	/**
+	 * 订单列表
+	 * @return
+	 */
 	@RequestMapping("/orderList")
 	public List<QusOrder> orderList() {
 		List<QusOrder> orderList=qusOrderService.orderList();
@@ -36,11 +41,44 @@ public class QusOrderController {
 		return orderList;
 	}
 	
+	/**
+	 * 根据o-id删除订单
+	 * @param request
+	 * @return
+	 */
 	@RequestMapping("/deleteOrder")
 	public int deleteOrder(HttpServletRequest request) {
 		int o_id=Integer.parseInt(request.getParameter("o_id"));
 		int count=qusOrderService.deleteOrder(o_id);
 		//System.out.println(o_id);
 		return count;
+	}
+	/**
+	 * 根据o_id修改订单
+	 * @param request
+	 * @return
+	 */
+	@RequestMapping("/orderModify")
+	public ModelAndView modifyOrder(HttpServletRequest request) {
+		System.out.println(request.getParameter("o_id"));
+		Integer o_id = Integer.parseInt(request.getParameter("o_id"));
+		QusOrder order=qusOrderService.getOrderById(o_id);
+		int count=qusOrderService.ModifyOrderById(order);
+		ModelAndView mv = new ModelAndView("back/page/indent/IndentAdd");
+		mv.addObject("order",order);
+		return mv;
+	}
+	
+	/**
+	 * 查看订单
+	 * @return
+	 */
+	@RequestMapping("/orderShow")
+	public ModelAndView ShowOrder(HttpServletRequest request) {
+		Integer o_id=Integer.parseInt(request.getParameter("o_id"));
+		QusOrder order=qusOrderService.getOrderById(o_id);
+		ModelAndView mv = new ModelAndView("back/page/indent/IndentCheck");
+		mv.addObject("order",order);
+		return mv;
 	}
 }

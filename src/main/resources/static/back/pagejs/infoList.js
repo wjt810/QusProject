@@ -112,7 +112,7 @@ layui.config({
 			type : 2,
 			closeBtn: 1, //是否显示关闭按钮
 			content : "infoAdd",//弹出层的url
-//			  area: ['900px', '900px'],  //弹出层页面比例
+			  area: ['900px', '900px'],  //弹出层页面比例
 			  shade: 0.1,  //遮罩透明度
 			success : function(layero, index){
 				layui.layer.tips('点击此处返回文章列表', '.layui-layer-setwin .layui-layer-close', {
@@ -178,7 +178,8 @@ layui.config({
 	            	//删除数据
 	            	for(var j=0;j<$checked.length;j++){
 	            		for(var i=0;i<newsData.length;i++){
-							if(newsData[i].newsId == $checked.eq(j).parents("tr").find(".news_del").attr("data-id")){
+							if(newsData[i].info_id == $checked.eq(j).parents("tr").find(".news_del").attr("data-id")){
+								
 								newsData.splice(i,1);
 								newsList(newsData);
 							}
