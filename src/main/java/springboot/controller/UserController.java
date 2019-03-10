@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -85,7 +86,6 @@ public class UserController {
 	public ModelAndView test2() {
 		ModelAndView mv = new ModelAndView("back/page/indent/Indent");
 		return mv;
-		
 	}
 	/**
 	 * 订单管理（修改订单）
@@ -126,15 +126,7 @@ public class UserController {
 		ModelAndView mv = new ModelAndView("back/page/news/newsAdd");
 		return mv;
 	}
-	/**
-	 * 资讯管理（修改资讯）
-	 * @return
-	 */
-	@RequestMapping("infoModify")
-	public ModelAndView infoModify() {
-		ModelAndView mv = new ModelAndView("back/page/news/newsAdd");
-		return mv;
-	}
+	
 	/**
 	 * 用户管理
 	 * @return

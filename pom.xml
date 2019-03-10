@@ -70,7 +70,13 @@
     		<artifactId>layui</artifactId>
     		<version>0.0.1</version>
 		</dependency>
-		
+		 <dependency>
+		 <!-- 热部署 -->
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-devtools</artifactId>
+      <scope>provided</scope>
+      <optional>true</optional>
+    </dependency>
 	</dependencies>
 	<build>
 		<plugins>
@@ -94,5 +100,4 @@
         	</plugin>
 		</plugins>
 	</build>
-	
 </project>

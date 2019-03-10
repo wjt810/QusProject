@@ -5,6 +5,8 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
+import springboot.pojo.QusAdmin;
+import springboot.pojo.QusDoctor;
 import springboot.pojo.QusInfo;
 
 public interface QusInfoService {
@@ -21,4 +23,11 @@ public interface QusInfoService {
 	//查询所有的管理员和医生--然后把selectInfoByTitle1和selectInfoByTitle2两个集合合并
 	List<QusInfo> selectInfoByTitle1(String title);
 	List<QusInfo> selectInfoByTitle2(String title);
+	//根据传入的资讯id查询出来对应是哪个  类型的用户发表的  --再从对应的表（admin|doctor）中查询数据
+	QusInfo selectDoctorById(Integer infoId);
+	QusInfo selectAdminById(Integer infoId);
+	int selectRoleIdByInfoId(Integer infoId);
+	//查询刚刚插入一条数据的id
+	int selectMaxId();
+	
 }

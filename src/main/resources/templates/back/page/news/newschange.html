@@ -17,29 +17,29 @@
 		<div class="layui-form-item">
 			<label class="layui-form-label">资讯标题</label>
 			<div class="layui-input-block">
-				<input type="text" class="layui-input infoTitle" lay-verify="required" placeholder="请输入资讯标题">
+				<input type="text" class="layui-input infoTitle" th:value="${info.info_title}" lay-verify="required" placeholder="请输入资讯标题">
 			</div>
 		</div>
 		<div class="layui-form-item">
 			<div class="layui-inline">		
 				<label class="layui-form-label">发布人</label>  
 				<div class="layui-input-inline">
-					<input type="text" class="layui-input infoAuthor"  lay-verify="required" placeholder="请输入文章作者">
+					<input type="text" class="layui-input infoAuthor" th:value="${info.rname}" lay-verify="required" placeholder="请输入文章作者">
 				</div>
 			</div>
 			<div class="layui-inline">		
 				<label class="layui-form-label">发布时间</label>
 				<div class="layui-input-inline">
-					<input type="text" class="layui-input newsTime" lay-verify="date"  onclick="layui.laydate({elem:this})">
+					<input type="text" class="layui-input newsTime" lay-verify="date" th:value="${#dates.format(info.info_startTime,'yyyy-MM-dd')}" onclick="layui.laydate({elem:this})">
 				</div>
 			</div>
 			<div class="layui-inline">
 				<label class="layui-form-label">选择角色</label>
 				<div class="layui-input-inline">
-					<select name="browseLook" class="roleName" lay-filter="browseLook">
-				         <option  value="1">管理员</option>
-				        <option value="2">普通医生</option>
-				        <option value="3">主任医师</option>
+					<select name="browseLook" class="roleName" th:value="${info.role_name}" lay-filter="browseLook">
+				         <option th:selected="${info.info_role_id='1'}" value="1">管理员</option>
+				        <option th:selected="${info.info_role_id='2'}" value="2">普通医生</option>
+				        <option th:selected="${info.info_role_id='3'}" value="3">主任医师</option>
 				    </select>
 				</div>
 			</div>
@@ -47,7 +47,7 @@
 		<div class="layui-form-item">
 			<label class="layui-form-label">资讯内容</label>
 			<div class="layui-input-block">
-				<textarea class="layui-textarea layui-hide content_info"name="contact" id="news_content"></textarea>
+				<textarea class="layui-textarea layui-hide content_info" th:text="${info.info_content}" name="contact" id="news_content"></textarea>
 			</div>
 		</div>
 		<div class="layui-form-item">
