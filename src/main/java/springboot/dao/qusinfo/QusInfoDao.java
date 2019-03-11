@@ -36,9 +36,7 @@ public interface QusInfoDao {
 	//根据id来修改资讯的信息    
 	@Update("<script> UPDATE qus_info set info_modifyTime=#{info_modifyTime},"
 			+"<if test='info_title != null'> info_title=#{info_title},</if>"
-			+"<if test='info_content != null'> info_content=#{info_content},</if>"
-			+"<if test='info_role_id != null'> info_role_id=#{info_role_id},</if>"
-			+"<if test='info_u_d_id != null'> info_u_d_id=#{info_u_d_id}</if>"
+			+"<if test='info_content != null'> info_content=#{info_content}</if>"
 			+" where info_id=#{info_id}"
 			+"</script>")
 	int updateInfo(QusInfo info);//注意info  中包含要修改的infoId 和要修改的内容

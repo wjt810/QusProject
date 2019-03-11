@@ -178,7 +178,14 @@ layui.config({
 	            	//删除数据
 	            	for(var j=0;j<$checked.length;j++){
 	            		for(var i=0;i<newsData.length;i++){
-							if(newsData[i].newsId == $checked.eq(j).parents("tr").find(".news_del").attr("data-id")){
+							if(newsData[i].info_id == $checked.eq(j).parents("tr").find(".news_del").attr("data-id")){
+								//逐个删除数据库中的数据
+								$.ajax({
+			            			url : "deleteById.html",
+			            			type : "GET",
+			            			data :{info_id : newsData[i].info_id},
+			            			dataType : "json"
+			            		})
 								newsData.splice(i,1);
 								newsList(newsData);
 							}
@@ -188,7 +195,7 @@ layui.config({
 	            	form.render();
 	                layer.close(index);
 					layer.msg("删除成功");
-	            },2000);
+	            },1500);
 	        })
 		}else{
 			layer.msg("请选择需要删除的文章");
@@ -196,15 +203,12 @@ layui.config({
 	})
 	//全选
 	form.on('checkbox(allChoose)', function(data){
-		
-		
 		var child = $(data.elem).parents('table').find('tbody input[type="checkbox"]:not([name="show"])');
 		child.each(function(index, item){
 			item.checked = data.elem.checked;
 		});
 		form.render('checkbox');
 	});
-
 	//通过判断文章是否全部选中来确定全选按钮是否选中
 	form.on("checkbox(choose)",function(data){
 		var child = $(data.elem).parents('table').find('tbody input[type="checkbox"]:not([name="show"])');
@@ -313,7 +317,7 @@ layui.config({
 			cont : "page",//分页容器的id
 			pages : Math.ceil(newsData.length/nums),//通过后台拿到的总页数
 			jump : function(obj){//出发分页后的回调
-				//var index = layer.msg(obj.curr,{icon: 16,time:1000,shade:0.8});
+				//var index = layer.msg(obj.curr, 	{icon: 16,time:1000,shade:0.8});
 				$(".news_content").html(renderDate(newsData,obj.curr));
 				$('.news_list thead input[type="checkbox"]').prop("checked",false);
 		    	form.render();

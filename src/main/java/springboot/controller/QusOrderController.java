@@ -19,10 +19,8 @@ import springboot.service.qusorder.QusOrderService;
 public class QusOrderController {
 	
 	Logger logger = LoggerFactory.getLogger(UserController.class);
-	
 	@Resource
 	public QusOrderService qusOrderService;
-	
 	@RequestMapping("/orderList")
 	public List<QusOrder> orderList() {
 		List<QusOrder> orderList=qusOrderService.orderList();
@@ -35,12 +33,10 @@ public class QusOrderController {
 		}
 		return orderList;
 	}
-	
 	@RequestMapping("/deleteOrder")
 	public int deleteOrder(HttpServletRequest request) {
 		int o_id=Integer.parseInt(request.getParameter("o_id"));
 		int count=qusOrderService.deleteOrder(o_id);
-		//System.out.println(o_id);
 		return count;
 	}
 }
