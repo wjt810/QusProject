@@ -91,22 +91,22 @@ public class UserController {
 	 * 订单管理（修改订单）
 	 * @return
 	 */
-	@RequestMapping("orderModify")
+	/*@RequestMapping("orderModify")
 	public ModelAndView orderModify() {
 		ModelAndView mv = new ModelAndView("back/page/indent/IndentAdd");
 		return mv;
 		
-	}
+	}*/
 	/**
 	 * 订单管理（查看订单）
 	 * @return
 	 */
-	@RequestMapping("orderShow")
+	/*@RequestMapping("orderShow")
 	public ModelAndView orderShow() {
-		ModelAndView mv = new ModelAndView("back/page/indent/IndentAdd");
+		ModelAndView mv = new ModelAndView("back/page/indent/IndentCheck");
 		return mv;
 		
-	}
+	}*/
 	/**
 	 * 资讯管理
 	 * @return

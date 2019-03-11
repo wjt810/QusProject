@@ -27,6 +27,15 @@ public class QusDoctor {
 	
 	private QusRoom1 qusRoom1;  //一级科室
 	private QusRoom2 qusRoom2;  //二级科室
+	private QusRole qusRole;    //角色名称
+
+	public QusRole getQusRole() {
+		return qusRole;
+	}
+
+	public void setQusRole(QusRole qusRole) {
+		this.qusRole = qusRole;
+	}
 
 	public QusRoom1 getQusRoom1() {
 		return qusRoom1;

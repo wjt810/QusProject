@@ -1,5 +1,7 @@
 package springboot.service.qusdoctor.impl;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
@@ -20,5 +22,14 @@ public class QusDoctorServiceimpl implements QusDoctorService {
 		
 		return qusDoctorDao.getDoctor(id);
 	}
+	/**
+	 * 查询医生列表
+	 */
+	@Override
+	public List<QusDoctor> getDoctorList() {
+		return qusDoctorDao.getDoctorList();
+	}
+	
+	
 
 }
