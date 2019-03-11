@@ -21,10 +21,8 @@ import springboot.service.qusorder.QusOrderService;
 public class QusOrderController {
 	
 	Logger logger = LoggerFactory.getLogger(UserController.class);
-	
 	@Resource
 	public QusOrderService qusOrderService;
-	
 	/**
 	 * 订单列表
 	 * @return
@@ -41,7 +39,6 @@ public class QusOrderController {
 		}
 		return orderList;
 	}
-	
 	/**
 	 * 根据o-id删除订单
 	 * @param request
@@ -51,7 +48,6 @@ public class QusOrderController {
 	public int deleteOrder(HttpServletRequest request) {
 		int o_id=Integer.parseInt(request.getParameter("o_id"));
 		int count=qusOrderService.deleteOrder(o_id);
-		//System.out.println(o_id);
 		return count;
 	}
 	/**

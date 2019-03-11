@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="utf-8">
 	<title>新闻列表--预医网</title>
@@ -63,7 +63,7 @@
 		</table>
 	</div>
 	<div id="page"></div>
-	<script type="text/javascript" src="back/layui/layui.js"></script>
+	<script type="text/javascript" th:src="@{/back/layui/layui.js}"></script>
 	<script type="text/javascript" src="back/pagejs/infoList.js"></script>
 	<script type="text/javascript" src="back/js/jquery-3.3.1.js"></script>
 </body>
