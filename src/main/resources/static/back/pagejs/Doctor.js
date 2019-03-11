@@ -9,7 +9,7 @@ layui.config({
 	//加载页面数据
 	var linksData = '';
 	$.ajax({
-		url : "back/json/doctorList.json",
+		url : "doctor/doctorList",
 		type : "get",
 		dataType : "json",
 		success : function(data){
@@ -26,11 +26,12 @@ layui.config({
 	//查询
 	$(".search_btn").click(function(){
 		var newArray = [];
+	    
 		if($(".search_input").val() != ''){
 			var index = layer.msg('查询中，请稍候',{icon: 16,time:false,shade:0.8});
             setTimeout(function(){
             	$.ajax({
-					url : "back/json/doctorList.json",
+					url : "doctor/doctorList",
 					type : "get",
 					dataType : "json",
 					success : function(data){
@@ -41,6 +42,10 @@ layui.config({
 							linksData = data;
 						}
 						for(var i=0;i<linksData.length;i++){
+							var date = new Date();
+						    startDate = new Date(linksData.d_born);
+						    var DocTimes = date.getYear() - startDate.getYear();//在职时间
+						    
 							var linksStr = linksData[i];
 							var selectStr = $(".search_input").val();
 		            		function changeStr(data){
@@ -58,12 +63,12 @@ layui.config({
 		            			}
 		            		}
 		            		//医生姓名
-		            		if(linksStr.DocName.indexOf(selectStr) > -1){
-			            		linksStr["DocName"] = changeStr(linksStr.DocName);
+		            		if(linksStr.d_name.indexOf(selectStr) > -1){
+			            		linksStr["d_name"] = changeStr(linksStr.d_name);
 		            		}
 		            		//性别
-		            		if(linksStr.DocSex.indexOf(selectStr) > -1){
-			            		linksStr["DocSex"] = changeStr(linksStr.DocSex);
+		            		if(linksStr.d_sex.indexOf(selectStr) > -1){
+			            		linksStr["d_sex"] = changeStr(linksStr.d_sex);
 		            		}
 		            		//电话
 		            		/*if(linksStr.DocPhone.indexOf(selectStr) > -1){
@@ -74,36 +79,40 @@ layui.config({
 			            		linksStr["DocBorn"] = changeStr(linksStr.DocBorn);
 		            		}*/
 		            		//入职时间
-		            		if(linksStr.DocStartTime.indexOf(selectStr) > -1){
-			            		linksStr["DocStartTime"] = changeStr(linksStr.DocStartTime);
+		            		if(linksStr.d_startTime.indexOf(selectStr) > -1){
+			            		linksStr["d_startTime"] = changeStr(linksStr.d_startTime);
 		            		}
 		            		//在职时间
 		            		if(linksStr.DocTimes.indexOf(selectStr) > -1){
 			            		linksStr["DocTimes"] = changeStr(linksStr.DocTimes);
 		            		}
 		            		//角色
-		            		if(linksStr.DocRole.indexOf(selectStr) > -1){
-			            		linksStr["DocRole"] = changeStr(linksStr.DocRole);
+		            		if(linksStr.qusRole.role_name.indexOf(selectStr) > -1){
+			            		linksStr["qusRole.role_name"] = changeStr(linksStr.qusRole.role_name);
 		            		}
 		            		//家庭住址
 		            		/*if(linksStr.DocAddress.indexOf(selectStr) > -1){
 			            		linksStr["DocAddress"] = changeStr(linksStr.DocAddress);
 		            		}*/
 		            		//挂号费用
-		            		if(linksStr.DocPrice.indexOf(selectStr) > -1){
-			            		linksStr["DocPrice"] = changeStr(linksStr.DocPrice);
+		            		if(linksStr.d_price.indexOf(selectStr) > -1){
+			            		linksStr["d_price"] = changeStr(linksStr.d_price);
 		            		}
 		            		//咨询费用
-		            		if(linksStr.DocConsult.indexOf(selectStr) > -1){
-			            		linksStr["DocConsult"] = changeStr(linksStr.DocConsult);
+		            		if(linksStr.d_consult.indexOf(selectStr) > -1){
+			            		linksStr["d_consult"] = changeStr(linksStr.d_consult);
 		            		}
-		            		//所属科室
-		            		if(linksStr.DocRoom.indexOf(selectStr) > -1){
-			            		linksStr["DocRoom"] = changeStr(linksStr.DocRoom);
+		            		//科室名称
+		            		if(linksStr.qusRoom1.r1_name.indexOf(selectStr) > -1){
+			            		linksStr["qusRoom1.r1_name"] = changeStr(linksStr.qusRoom1.r1_name);
 		            		}
-		            		if(linksStr.DocName.indexOf(selectStr)>-1 || linksStr.DocSex.indexOf(selectStr)>-1 || linksStr.DocStartTime.indexOf(selectStr)>-1
-		            			|| linksStr.DocTimes.indexOf(selectStr)>-1 || linksStr.DocRole.indexOf(selectStr)>-1|| linksStr.DocPrice.indexOf(selectStr)>-1
-		            			|| linksStr.DocConsult.indexOf(selectStr)>-1 || linksStr.DocRoom.indexOf(selectStr)>-1){
+		            		//科室名称
+		            		if(linksStr.qusRoom2.r2_name.indexOf(selectStr) > -1){
+			            		linksStr["qusRoom2.r2_name"] = changeStr(linksStr.qusRoom2.r2_name);
+		            		}
+		            		if(linksStr.d_name.indexOf(selectStr)>-1 || linksStr.d_sex.indexOf(selectStr)>-1 || linksStr.d_startTime.indexOf(selectStr)>-1
+		            			|| linksStr.DocTimes.indexOf(selectStr)>-1 || linksStr.qusRole.role_name.indexOf(selectStr)>-1|| linksStr.d_price.indexOf(selectStr)>-1
+		            			|| linksStr.d_consult.indexOf(selectStr)>-1 || linksStr.qusRoom1.r1_name.indexOf(selectStr)>-1|| linksStr.qusRoom2.r2_name.indexOf(selectStr)>-1){
 		            			newArray.push(linksStr);
 		            		}
 		            	}
@@ -250,21 +259,27 @@ layui.config({
 				currData = that.concat().splice(curr*nums-nums, nums);
 			}
 			if(currData.length != 0){
+				
 				for(var i=0;i<currData.length;i++){
-					dataHtml += '<tr>'
+					
+				    dataHtml += '<tr>'
 			    	+'<td><input type="checkbox" name="checked" lay-skin="primary" lay-filter="choose"></td>'
-			    	+'<td align="left">'+currData[i].DocName+'</td>'
-			    	+'<td>'+currData[i].DocSex+'</td>'
-			    	+'<td>'+currData[i].DocStartTime+'</td>'
+			    	+'<td align="left">'+currData[i].d_name+'</td>'
+			    	if(currData[i].d_sex == "0"){
+			    		dataHtml += '<td>'+"男"+'</td>';
+			    	}else if(currData[i].d_sex == "1"){
+			    		dataHtml += '<td>'+"女"+'</td>';
+			    	}
+					dataHtml +='<td>'+currData[i].d_startTime+'</td>'
 			    	+'<td>'+currData[i].DocTimes+'</td>'
-			    	+'<td>'+currData[i].DocRole+'</td>'
-			    	+'<td>'+currData[i].DocPrice+'</td>'
-			    	+'<td>'+currData[i].DocConsult+'</td>'
-			    	+'<td>'+currData[i].DocRoom+'</td>'
+			    	+'<td>'+currData[i].qusRole.role_name+'</td>'
+			    	+'<td>'+currData[i].d_price+'</td>'
+			    	+'<td>'+currData[i].d_consult+'</td>'
+			    	+'<td>'+currData[i].qusRoom1.r1_name+">"+currData[i].qusRoom2.r2_name+'</td>'
 			    	+'<td>'
-					+  '<a class="layui-btn layui-btn-mini links_edit"><i class="iconfont icon-edit"></i> 编辑</a>'
-					+  '<a class="layui-btn layui-btn-mini links_check"><i class="iconfont icon-edit"></i> 查看</a>'
-					+  '<a class="layui-btn layui-btn-danger layui-btn-mini links_del" data-id="'+data[i].linksId+'"><i class="layui-icon">&#xe640;</i> 删除</a>'
+					+  '<a class="layui-btn layui-btn-mini links_edit" data-id="'+data[i].d_id+'"><i class="iconfont icon-edit"></i> 编辑</a>'
+					+  '<a class="layui-btn layui-btn-mini links_check" data-id="'+data[i].d_id+'"><i class="iconfont icon-edit"></i> 查看</a>'
+					+  '<a class="layui-btn layui-btn-danger layui-btn-mini links_del" data-id="'+data[i].d_id+'"><i class="layui-icon">&#xe640;</i> 删除</a>'
 			        +'</td>'
 			    	+'</tr>';
 				}
