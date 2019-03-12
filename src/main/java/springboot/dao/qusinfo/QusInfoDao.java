@@ -1,7 +1,8 @@
 package springboot.dao.qusinfo;
 
 import java.util.List;
-
+import org.apache.ibatis.annotations.Many;
+import org.apache.ibatis.annotations.One;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
@@ -11,10 +12,13 @@ import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.SelectProvider;
 import org.apache.ibatis.annotations.Update;
 import org.springframework.boot.web.servlet.ServletComponentScan;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import springboot.pojo.QusAdmin;
 import springboot.pojo.QusDoctor;
 import springboot.pojo.QusInfo;
+import springboot.pojo.QusRoom1;
+import springboot.pojo.QusRoom2;
 
 public interface QusInfoDao {
 	//按照标题名称  模糊查询新闻资讯--分页查询      "LIMIT #{pageIndex},#{pageSize}",
@@ -85,4 +89,71 @@ public interface QusInfoDao {
 	//查询杠插入一条数据的
 	@Select("SELECT MAX(info_id) FROM qus_info")
 	int selectMaxId();
+	
+	//查询科室 结果集的使用  一对一的使用
+	@Select("<script> select * from qus_room1 r1 where 1=1"
+			+ "<if test='r1_id !=null'> AND r1.r1_id=#{r1_id} </if>"
+			+ "</script>")
+	@Results({
+		@Result(id=true,property="r1_id",column="r1_id"),
+		@Result(id=true,property="r1_name",column="r1_name"),
+		@Result(property="room2s",column="r1_id",
+		many=@Many(select="springboot.dao.qusinfo.QusInfoDao.selectkeShi2"))
+	})
+	public List<QusRoom1> selectKeShi(@Param("r1_id")Integer r1_id);
+	
+	@Select("select * from qus_room2 r2 WHERE r2.r2_r1_id=#{r1_id}")
+	@Results({
+		@Result(id=true,property="r2_id",column="r2_id"),
+		@Result(property="r2_name",column="r2_name"),
+		@Result(property="r2_r1_id",column="r2_r1_id")
+	})
+	public List<QusRoom2> selectkeShi2(@Param("r1_id")Integer r1_id);
+	
+	
+	
+	/**
+	 * 
+	 * @return
+	 */
+	//查询医生的信息
+	@Select("<script> select * from qus_doctor d where 1=1"
+			+ "<if test='r2_id !=null'> AND d.d_r2_id=#{r2_id} </if>"
+			+ "<if test='r1_id !=null'> AND d.d_r1_id=#{r1_id} </if>"
+			+ "</script>")
+	@Results({
+		@Result(id=true,property="d_id",column="d_id"),
+		@Result(property="qusRoom1",column="d_r1_id",one=@One(select="springboot.dao.qusinfo.QusInfoDao.selectRoom1ById")),
+		@Result(property="qusRoom2",column="d_r2_id",one=@One(select="springboot.dao.qusinfo.QusInfoDao.selectRoom2ById"))
+	})
+	public List<QusDoctor> selectDoctorList(@Param("r1_id")Integer r1_id,@Param("r2_id")Integer r2_id);
+	
+	//查询一级科室
+	@Select("select * from qus_room1 where r1_id =#{r1_id}")
+	public QusRoom1 selectRoom1ById(@Param("r1_id")Integer r1_id);
+
+	//查询二级科室
+	@Select("select * from qus_room2 where r2_id = #{r2_id}")
+	@Results({
+		@Result(id=true,property="r2_id",column="r2_id"),
+		@Result(property="r2_name",column="r2_name"),
+		@Result(property="r2_r1_id",column="r2_r1_id")
+	})
+	public QusRoom2 selectRoom2ById(@Param("r2_id")Integer r2_id);
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+//
 }

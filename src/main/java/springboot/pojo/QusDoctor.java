@@ -165,4 +165,11 @@ public class QusDoctor {
 		this.d_description = d_description;
 	}
 
+	@Override
+	public String toString() {
+		return "QusDoctor [d_id=" + d_id + ", d_name=" + d_name + ", d_password=" + d_password + ", d_sex=" + d_sex
+				+ ", d_phone=" + d_phone + ", d_startTime=" + d_startTime + ", d_born=" + d_born + ", d_address="
+				+ d_address + "]";
+	}
+	
 }

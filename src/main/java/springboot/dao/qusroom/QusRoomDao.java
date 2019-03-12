@@ -52,6 +52,4 @@ public interface QusRoomDao {
 	 */
 	@Select("SELECT * FROM qus_room2 WHERE r2_id = #{r2_id}")
 	public QusRoom2 getRoom2ById(@Param("r2_id")Integer r2_id);
-	
-	
 }
