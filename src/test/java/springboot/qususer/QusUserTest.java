@@ -7,29 +7,27 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import springboot.pojo.QusAppointment;
 import springboot.pojo.QusInfo;
 import springboot.pojo.QusUser;
-
-
+import springboot.service.qusappointment.QusAppointmentService;
 import springboot.service.qususer.QusUserService;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class QusUserTest {
 	@Resource
 	private QusUserService qusUserService;
+	
+	@Resource
+	private QusAppointmentService qusAppointmentService;
  
 	/**
     * 用户列表
     */
 	@Test
 	public void testgetList() {
-		List<QusUser> qusUserList= qusUserService.getUserList();
-		if(qusUserList!=null) {
-			System.out.println(qusUserList);
-		}else {
-			System.out.println("无数据");
-		}
-		}
+		
+	}
 	
 	/**
 	 * 修改

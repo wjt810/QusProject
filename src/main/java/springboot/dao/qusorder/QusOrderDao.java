@@ -67,10 +67,13 @@ public interface QusOrderDao {
 	 * @param o_id
 	 * @return
 	 */
-	@Update("UPDATE qus_order SET o_doc_id = #{o_doc_id} , \r\n" + 
-			"	o_user_id = #{o_user_id} , o_app_id = #{o_app_id} , \r\n" + 
-			"	o_price = #{o_price}, o_status = #{o_status} , o_type = #{o_type}	\r\n" + 
-			"	WHERE o_id = #{o_id}")
+	@Update("<script> UPDATE qus_order SET"
+			+ "<if test='o_doc_id != null'> o_doc_id = #{o_doc_id} ,</if>"
+			+ "<if test='o_user_id != null'> o_user_id = #{o_user_id} ,</if>"
+			+ "<if test='o_app_id != null'> o_app_id = #{o_app_id} ,</if>"
+			+ "	o_price = #{o_price}, o_status = #{o_status} , o_type = #{o_type}"
+			+ "	WHERE o_id = #{o_id}"
+			+"</script>")
 	
 	public Integer ModifyOrderById(QusOrder order);
 }

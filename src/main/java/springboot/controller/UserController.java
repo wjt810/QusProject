@@ -36,15 +36,6 @@ public class UserController {
 	 */
 	
 	@RequestMapping("list")
-	/*public ModelAndView list(@RequestParam("name") String name) {
-		List<User> list = userService.list(name);
-		ModelAndView mv = new ModelAndView("index");
-		for (User user : list) {
-			logger.info(user.toString());
-			mv.addObject("user", user.toString());
-		}
-		return mv;
-	}*/
 	public ModelAndView test() {
 		ModelAndView mv = new ModelAndView("back/index");
 		return mv;

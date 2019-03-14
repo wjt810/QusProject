@@ -45,13 +45,13 @@ public interface QusRoomDao {
 	 * 根据id获取一级科室
 	 */
 	@Select("SELECT * FROM qus_room1 WHERE r1_id = #{r1_id}")
-	public QusRoom1 getRoom1ById(@Param("r1_id")Integer r1_id);
+	public QusRoom1 getRoom1ById(Integer r1_id);
 	
 	/*
 	 * 根据id获取二级科室
 	 */
 	@Select("SELECT * FROM qus_room2 WHERE r2_id = #{r2_id}")
-	public QusRoom2 getRoom2ById(@Param("r2_id")Integer r2_id);
+	public QusRoom2 getRoom2ById(Integer r2_id);
 	
 	
 }

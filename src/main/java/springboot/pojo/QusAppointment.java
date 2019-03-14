@@ -17,6 +17,36 @@ public class QusAppointment {
 	private Integer app_doc_id; // int(11)医生id
 	private Integer app_priority; // int(1)0优先1不优先
 	private String app_code; // varchar(50)预约编号
+	private Integer app_sta_id;  //状态Id
+	
+	private QusUser qusUser;  //用户表
+	private QusDoctor qusDoctor;  //医生表
+	private QusStatus qusStatus;  //状态表
+	
+
+	public QusStatus getQusStatus() {
+		return qusStatus;
+	}
+
+	public void setQusStatus(QusStatus qusStatus) {
+		this.qusStatus = qusStatus;
+	}
+
+	public QusUser getQusUser() {
+		return qusUser;
+	}
+
+	public void setQusUser(QusUser qusUser) {
+		this.qusUser = qusUser;
+	}
+
+	public QusDoctor getQusDoctor() {
+		return qusDoctor;
+	}
+
+	public void setQusDoctor(QusDoctor qusDoctor) {
+		this.qusDoctor = qusDoctor;
+	}
 
 	public Integer getApp_id() {
 		return app_id;
@@ -73,5 +103,14 @@ public class QusAppointment {
 	public void setApp_code(String app_code) {
 		this.app_code = app_code;
 	}
+
+	public Integer getApp_sta_id() {
+		return app_sta_id;
+	}
+
+	public void setApp_sta_id(Integer app_sta_id) {
+		this.app_sta_id = app_sta_id;
+	}
+	
 
 }

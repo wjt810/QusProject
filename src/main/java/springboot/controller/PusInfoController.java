@@ -71,7 +71,7 @@ public class PusInfoController {
 		return addCount;
 	}
 	/**
-	 * 资讯管理（修改资讯
+	 * 资讯管理（修改资讯)
 	 * @return
 	 */
 	@RequestMapping("infoModify")
@@ -117,6 +117,7 @@ public class PusInfoController {
 		int count = qusInfoService.updateInfo(info);
 		if(count>0) {
 			mv.setViewName("back/page/news/infoList");
+			
 		}
 		return mv;
 	}

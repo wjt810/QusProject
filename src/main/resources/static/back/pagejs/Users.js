@@ -8,7 +8,7 @@ layui.config({
 
 	//加载页面数据
 	var usersData = '';
-	$.get("back/json/usersList.html", function(data){
+	/*$.get("/user/userList", function(data){
 		usersData = data;
 		if(window.sessionStorage.getItem("addUser")){
 			var addUsers = window.sessionStorage.getItem("addUser");
@@ -16,6 +16,20 @@ layui.config({
 		}
 		//执行加载数据的方法
 		usersList();
+	})*/
+	$.ajax({
+		url : "/user/userList",
+		type : "get",
+		dataType : "json",
+		success : function(data){
+			usersData = data;
+			if(window.sessionStorage.getItem("addUser")){
+				var addUsers = window.sessionStorage.getItem("addUser");
+				usersData = JSON.parse(addUsers).concat(usersData);
+			}
+			//执行加载数据的方法
+			usersList();
+		}
 	})
 
 	//查询
@@ -25,7 +39,7 @@ layui.config({
 			var index = layer.msg('查询中，请稍候',{icon: 16,time:false,shade:0.8});
             setTimeout(function(){
             	$.ajax({
-					url : "back/json/usersList.json",
+					url : "/user/userList",
 					type : "get",
 					dataType : "json",
 					success : function(data){
@@ -53,22 +67,46 @@ layui.config({
 		            			}
 		            		}
 		            		//用户名
-		            		if(usersStr.userName.indexOf(selectStr) > -1){
-			            		usersStr["userName"] = changeStr(usersStr.userName);
-		            		}
-		            		//用户邮箱
-		            		if(usersStr.userEmail.indexOf(selectStr) > -1){
-			            		usersStr["userEmail"] = changeStr(usersStr.userEmail);
+		            		if(usersStr.qusUser.u_name.indexOf(selectStr) > -1){
+			            		usersStr["qusUser.u_name"] = changeStr(usersStr.qusUser.u_name);
 		            		}
 		            		//性别
-		            		if(usersStr.userSex.indexOf(selectStr) > -1){
-			            		usersStr["userSex"] = changeStr(usersStr.userSex);
+		            		if(usersStr.qusUser.u_sex.indexOf(selectStr) > -1){
+			            		usersStr["qusUser.u_sex"] = changeStr(usersStr.qusUser.u_sex);
 		            		}
-		            		//会员等级
-		            		if(usersStr.userGrade.indexOf(selectStr) > -1){
-			            		usersStr["userGrade"] = changeStr(usersStr.userGrade);
+		            		//手机号
+		            		if(usersStr.qususer.u_phone.indexOf(selectStr) > -1){
+			            		usersStr["qususer.u_phone"] = changeStr(usersStr.qususer.u_phone);
 		            		}
-		            		if(usersStr.userName.indexOf(selectStr)>-1 || usersStr.userEmail.indexOf(selectStr)>-1 || usersStr.userSex.indexOf(selectStr)>-1 || usersStr.userGrade.indexOf(selectStr)>-1){
+		            		//科室名称
+		            		if(linksStr.qusDoctor.qusRoom1.r1_name.indexOf(selectStr) > -1){
+			            		linksStr["qusDoctor.qusRoom1.r1_name"] = changeStr(linksStr.qusDoctor.qusRoom1.r1_name);
+		            		}
+		            		//科室名称
+		            		if(linksStr.qusDoctor.qusRoom2.r2_name.indexOf(selectStr) > -1){
+			            		linksStr["qusDoctor.qusRoom2.r2_name"] = changeStr(linksStr.qusDoctor.qusRoom2.r2_name);
+		            		}
+		            		//就诊医生
+		            		if(linksStr.qusDoctor.d_name.indexOf(selectStr) > -1){
+			            		linksStr["qusDoctor.d_name"] = changeStr(linksStr.qusDoctor.d_name);
+		            		}
+		            		//状态
+		            		if(linksStr.qusStatus.sta_name.indexOf(selectStr) > -1){
+			            		linksStr["qusStatus.sta_name"] = changeStr(linksStr.qusStatus.sta_name);
+		            		}
+		            		//预约时间
+		            		if(linksStr.app_time.indexOf(selectStr) > -1){
+			            		linksStr["app_time"] = changeStr(linksStr.app_time);
+		            		}
+		            		//优先级
+		            		if(linksStr.app_priority.indexOf(selectStr) > -1){
+			            		linksStr["app_priority"] = changeStr(linksStr.app_priority);
+		            		}
+		            		if(usersStr.qusUser.u_name.indexOf(selectStr)>-1 || usersStr.qusUser.u_sex.indexOf(selectStr)>-1 
+		            				|| usersStr.qususer.u_phone.indexOf(selectStr)>-1 || usersStr.qusRoom1.r1_name.indexOf(selectStr)>-1
+		            				|| usersStr.qusDoctor.qusRoom2.r2_name.indexOf(selectStr)>-1|| usersStr.qusDoctor.d_name.indexOf(selectStr)>-1
+		            				|| usersStr.qusStatus.sta_name.indexOf(selectStr)>-1|| usersStr.app_time.indexOf(selectStr)>-1
+		            				|| usersStr.app_priority.indexOf(selectStr)>-1){
 		            			userArray.push(usersStr);
 		            		}
 		            	}
@@ -188,25 +226,38 @@ layui.config({
 			currData = usersData.concat().splice(curr*nums-nums, nums);
 			if(currData.length != 0){
 				for(var i=0;i<currData.length;i++){
+					alert(currData.length);
 					dataHtml += '<tr>'
 			    	+  '<td><input type="checkbox" name="checked" lay-skin="primary" lay-filter="choose"></td>'
-			    	+  '<td>'+currData[i].userName+'</td>'
-			    	+  '<td>'+currData[i].userSex+'</td>'
-			    	+  '<td>'+currData[i].userPhone+'</td>'
-			    	+  '<td>'+currData[i].keshiName+'</td>'
-			    	+  '<td>'+currData[i].doctor+'</td>'
-			    	if(currData[i].userStatus == "准备中"){
-			    		dataHtml += '<td style="color:#f00">'+currData[i].userStatus+'</td>';
-			    	}else if(currData[i].userStatus == "退号"){
-			    		dataHtml += '<td style="color:yellow">'+currData[i].userStatus+'</td>';
-			    	}else{
-			    		dataHtml += '<td>'+currData[i].userStatus+'</td>';
+			    	+  '<td>'+currData[i].qusUser.u_name+'</td>';
+			    	if(currData[i].qusUser.u_sex == "0"){
+			    		dataHtml += '<td>'+"男"+'</td>';
+			    	}else if(currData[i].qusUser.u_sex == "1"){
+			    		dataHtml += '<td>'+"女"+'</td>';
 			    	}
-			    	dataHtml += '<td>'+currData[i].userEndTime+'</td>'
-			    	+  '<td>'+currData[i].youxianji+'</td>'
-			    	+  '<td>'
+			    	
+					dataHtml +=  '<td>'+currData[i].qususer.u_phone+'</td>'
+			    	+  '<td>'+currData[i].qusDoctor.qusRoom1.r1_name+">"+currData[i].qusDoctor.qusRoom2.r2_name+'</td>'
+			    	+  '<td>'+currData[i].qusDoctor.d_name+'</td>';
+					
+			    	if(currData[i].qusStatus.sta_name == "准备中"){
+			    		dataHtml += '<td style="color:#f00">'+currData[i].qusStatus.sta_name+'</td>';
+			    	}else if(currData[i].qusStatus.sta_name == "退号"){
+			    		dataHtml += '<td style="color:yellow">'+currData[i].qusStatus.sta_name+'</td>';
+			    	}else{
+			    		dataHtml += '<td>'+currData[i].qusStatus.sta_name+'</td>';
+			    	}
+			    	
+			    	dataHtml += '<td>'+currData[i].app_time+'</td>';
+			    	
+			    	if(currData[i].app_priority == "0"){
+			    		dataHtml += '<td>'+"VIP号"+'</td>';
+			    	}else if(currData[i].app_priority == "1"){
+			    		dataHtml += '<td>'+"普通号"+'</td>';
+			    	}
+			    	dataHtml += '<td>'
 					+    '<a class="layui-btn layui-btn-mini users_edit"><i class="iconfont icon-edit"></i> 编辑</a>'
-					+    '<a class="layui-btn layui-btn-danger layui-btn-mini users_del" data-id="'+data[i].usersId+'"><i class="layui-icon">&#xe640;</i> 删除</a>'
+					+    '<a class="layui-btn layui-btn-danger layui-btn-mini users_del" data-id="'+data[i].qususer.u_id+'"><i class="layui-icon">&#xe640;</i> 删除</a>'
 			        +  '</td>'
 			    	+'</tr>';
 				}

@@ -34,6 +34,7 @@ public class QusOrderTest {
 					+order.getQusAppointment().getApp_code()+"\t"+order.getO_price()+"\t"+order.getO_status()+"\t"
 					+order.getO_type());
 		}
+		System.out.println("");
 	}
 	
 	/**
