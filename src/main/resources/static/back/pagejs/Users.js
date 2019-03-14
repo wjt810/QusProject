@@ -8,7 +8,7 @@ layui.config({
 
 	//加载页面数据
 	var usersData = '';
-	$.get("back/json/usersList.html", function(data){
+	$.get("user/userList", function(data){
 		usersData = data;
 		if(window.sessionStorage.getItem("addUser")){
 			var addUsers = window.sessionStorage.getItem("addUser");
@@ -25,7 +25,7 @@ layui.config({
 			var index = layer.msg('查询中，请稍候',{icon: 16,time:false,shade:0.8});
             setTimeout(function(){
             	$.ajax({
-					url : "back/json/usersList.json",
+					url : "user/userList",
 					type : "get",
 					dataType : "json",
 					success : function(data){
@@ -53,22 +53,32 @@ layui.config({
 		            			}
 		            		}
 		            		//用户名
-		            		if(usersStr.userName.indexOf(selectStr) > -1){
-			            		usersStr["userName"] = changeStr(usersStr.userName);
-		            		}
-		            		//用户邮箱
-		            		if(usersStr.userEmail.indexOf(selectStr) > -1){
-			            		usersStr["userEmail"] = changeStr(usersStr.userEmail);
+		            		if(usersStr.u_name.indexOf(selectStr) > -1){
+			            		usersStr["u_name"] = changeStr(usersStr.u_name);
 		            		}
 		            		//性别
-		            		if(usersStr.userSex.indexOf(selectStr) > -1){
-			            		usersStr["userSex"] = changeStr(usersStr.userSex);
+		            		if(usersStr.u_sex.indexOf(selectStr) > -1){
+			            		usersStr["u_sex"] = changeStr(usersStr.u_sex);
 		            		}
-		            		//会员等级
-		            		if(usersStr.userGrade.indexOf(selectStr) > -1){
-			            		usersStr["userGrade"] = changeStr(usersStr.userGrade);
+		            		//电话
+		            		if(usersStr.u_phone.indexOf(selectStr) > -1){
+			            		usersStr["u_phone"] = changeStr(usersStr.u_phone);
 		            		}
-		            		if(usersStr.userName.indexOf(selectStr)>-1 || usersStr.userEmail.indexOf(selectStr)>-1 || usersStr.userSex.indexOf(selectStr)>-1 || usersStr.userGrade.indexOf(selectStr)>-1){
+		            		//科室
+		            		if(usersStr.r1_name.indexOf(selectStr) > -1){
+			            		usersStr["r1_name"] = changeStr(usersStr.r1_name);
+		            		}
+		            		//医生
+		            		if(usersStr.d_name.indexOf(selectStr) > -1){
+			            		usersStr["d_name"] = changeStr(usersStr.d_name);
+		            		}
+		            		//状态
+		            		if(usersStr.sta_name.indexOf(selectStr) > -1){
+			            		usersStr["sta_name"] = changeStr(usersStr.sta_name);
+		            		}
+		            		if(usersStr.u_name.indexOf(selectStr)>-1 || usersStr.u_sex.indexOf(selectStr)>-1 
+		            				|| usersStr.u_phone.indexOf(selectStr)>-1 || usersStr.r1_name.indexOf(selectStr)>-1
+		            				|| usersStr.d_name.indexOf(selectStr)>-1 || usersStr.sta_name.indexOf(selectStr)>-1){
 		            			userArray.push(usersStr);
 		            		}
 		            	}
@@ -125,7 +135,7 @@ layui.config({
 	})
 
 	//操作
-	$("body").on("click",".users_edit",function(){  //编辑
+	$("body").on("click",".users_edit",function(){  //编辑修改
 		var index = layui.layer.open({
 			title : "修改用户",
 			type : 2,
@@ -188,23 +198,37 @@ layui.config({
 			currData = usersData.concat().splice(curr*nums-nums, nums);
 			if(currData.length != 0){
 				for(var i=0;i<currData.length;i++){
+					var sexStr=null;
+					if(currData[i].u_sex==0){
+						sexStr="男";
+					}else{
+						sexStr="女";
+					}
+					var app_priority=null;
+					if(currData[i].app_priority==0){
+						app_priority="优先";
+					}else{
+						app_priority="不优先";
+					}
 					dataHtml += '<tr>'
 			    	+  '<td><input type="checkbox" name="checked" lay-skin="primary" lay-filter="choose"></td>'
-			    	+  '<td>'+currData[i].userName+'</td>'
-			    	+  '<td>'+currData[i].userSex+'</td>'
-			    	+  '<td>'+currData[i].userPhone+'</td>'
-			    	+  '<td>'+currData[i].keshiName+'</td>'
-			    	+  '<td>'+currData[i].doctor+'</td>'
-			    	if(currData[i].userStatus == "准备中"){
-			    		dataHtml += '<td style="color:#f00">'+currData[i].userStatus+'</td>';
-			    	}else if(currData[i].userStatus == "退号"){
-			    		dataHtml += '<td style="color:yellow">'+currData[i].userStatus+'</td>';
-			    	}else{
-			    		dataHtml += '<td>'+currData[i].userStatus+'</td>';
+			    	+  '<td>'+currData[i].u_name+'</td>'
+					+  '<td>'+sexStr+'</td>'
+					+  '<td>'+currData[i].u_phone+'</td>'
+			    	+ '<td>'+currData[i].r1_name+'</td>'
+			    	+ '<td>'+currData[i].d_name+'</td>';
+					
+			    	if(currData[i].sta_name == "准备中"){
+			    		dataHtml += '<td style="color:#f00">'+currData[i].sta_name+'</td>';
+			    	}else if(currData[i].sta_name == "退号"){
+			    		dataHtml += '<td style="color:yellow">'+currData[i].sta_name+'</td>';
+			    	}else if(currData[i].sta_name == "就诊"){
+			    		dataHtml += '<td style="color:#f00">'+currData[i].sta_name+'</td>';
 			    	}
-			    	dataHtml += '<td>'+currData[i].userEndTime+'</td>'
-			    	+  '<td>'+currData[i].youxianji+'</td>'
-			    	+  '<td>'
+			    	
+			    	dataHtml += '<td>'+currData[i].app_time+'</td>'
+			    	+ '<td>'+app_priority+'</td>';
+			    	dataHtml += '<td>'
 					+    '<a class="layui-btn layui-btn-mini users_edit"><i class="iconfont icon-edit"></i> 编辑</a>'
 					+    '<a class="layui-btn layui-btn-danger layui-btn-mini users_del" data-id="'+data[i].usersId+'"><i class="layui-icon">&#xe640;</i> 删除</a>'
 			        +  '</td>'

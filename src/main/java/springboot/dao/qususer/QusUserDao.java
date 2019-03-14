@@ -2,16 +2,31 @@ package springboot.dao.qususer;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.One;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Result;
+import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
+import springboot.pojo.QusAppointment;
 import springboot.pojo.QusUser;
 
 public interface QusUserDao {
 	//用户列表
-	@Select("select * from qus_user")
-	List<QusUser> getUserList();
+	/*@Select("SELECT u_name,u_sex,u_phone, r1_name,d_name,sta_name,d_startTime,app_priority\r\n" + 
+			"FROM qus_user u,qus_doctor d,qus_status s,qus_appointment a,qus_room1 r1\r\n" + 
+			"WHERE u.sta_id=s.sta_id AND u.u_role_id=d.d_role_id AND a.app_user_id=u.u_id AND d.d_r1_id=r1.r1_id AND a.app_user_id=u.u_id;")*/
+/*	@Select("select * from qus_user")
+	@Results({
+		@Result(property="u_sta_id",column="u_sta_id"),
+		@Result(property="qusStatus",column="u_sta_id",
+			one=@One(select="springboot.dao.qusstatus.QusStatus.getStatus"))
+	})*/
+	@Select("SELECT u.u_name,u.u_sex,u.u_phone,app_time,app_priority,sta_name,d.d_name,r.r1_name "+ 
+			"FROM qus_user u,qus_appointment m,qus_status s,qus_doctor d,qus_room1 r "+ 
+			"WHERE s.sta_id=m.app_status AND u.u_id=m.app_id AND d.d_id=m.app_doc_id AND r.r1_id=d.d_r1_id")
+	List<QusAppointment> getUserList();
 	
 	/**
 	 * 根据u_id查询数据
@@ -44,5 +59,8 @@ public interface QusUserDao {
 	 * @return
 	 */
 	@Select("SELECT * FROM qus_user WHERE u_name LIKE CONCAT('%',#{u_name}, '%')")
-	List<QusUser>getByUserList();
+	List<QusUser>getByUserList(String name);
+	
+	
+	public int deleteUser();
 }

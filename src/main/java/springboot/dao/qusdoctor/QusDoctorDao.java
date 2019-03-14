@@ -44,4 +44,12 @@ public interface QusDoctorDao {
 				one=@One(select="springboot.dao.qusRole.QusRoleDao.getRoleById"))
 	})
 	public List<QusDoctor> getDoctorList();
+	
+	/**
+	 * 根据角色Id查找医生信息
+	 * @param d_role_id
+	 * @return
+	 */
+	@Select("SELECT * FROM qus_doctor where d_role_id=#{d_role_id}")
+	public QusDoctor getDoctors(Integer d_role_id);
 }

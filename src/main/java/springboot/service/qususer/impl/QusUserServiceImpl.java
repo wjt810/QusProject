@@ -7,6 +7,9 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 
 import springboot.dao.qususer.QusUserDao;
+import springboot.pojo.QusAppointment;
+import springboot.pojo.QusDoctor;
+import springboot.pojo.QusRoom1;
 import springboot.pojo.QusUser;
 import springboot.service.qususer.QusUserService;
 
@@ -20,7 +23,7 @@ public class QusUserServiceImpl implements QusUserService {
 	 * @return
 	 */
 	@Override
-	public List<QusUser> getUserList() {
+	public List<QusAppointment> getUserList() {
 		return qusUserDao.getUserList();
 	}
 	/**
@@ -34,12 +37,12 @@ public class QusUserServiceImpl implements QusUserService {
 	@Override
 	public List<QusUser> getByUser(String name) {
 		// TODO Auto-generated method stub
-		return qusUserDao.getByUserList();
+		return qusUserDao.getByUserList(name);
 	}
 
 	@Override
 	public QusUser getUser(Integer id) {
 		return qusUserDao.getUser(id);
 	}
-
+	
 }

@@ -11,7 +11,27 @@ public class QusUser {
 	private Integer u_sex; // int(11)0男1女
 	private String u_card; // varchar(50)身份证
 	private String u_phone; // varchar(50)手机号
-	private Integer u_role_id; // int(11)角色表id
+	private Integer u_role_id; // int(11)角色表id   
+	private Integer u_sta_id;  //状态Id
+	
+	
+	private QusStatus qusStatus;  //状态表
+	
+	public QusStatus getQusStatus() {
+		return qusStatus;
+	}
+
+	public void setQusStatus(QusStatus qusStatus) {
+		this.qusStatus = qusStatus;
+	}
+
+	public Integer getU_sta_id() {
+		return u_sta_id;
+	}
+
+	public void setU_sta_id(Integer u_sta_id) {
+		this.u_sta_id = u_sta_id;
+	}
 
 	public Integer getU_id() {
 		return u_id;
