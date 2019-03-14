@@ -66,6 +66,8 @@ layui.config({
 		            				}
 		            				dataStr += data.split(eval("/"+selectStr+"/ig"))[showNum];
 		            				return dataStr;
+		            				
+		            				
 		            			}else{
 		            				dataStr = data.split(eval("/"+selectStr+"/ig"))[0] + "<i style='color:#03c339;font-weight:bold;'>" + selectStr + "</i>" + data.split(eval("/"+selectStr+"/ig"))[1];
 		            				return dataStr;
@@ -222,7 +224,6 @@ layui.config({
 	})
 	//操作
 	$("body").on("click",".news_edit",function(){  //编辑
-		
 		var _this = $(this);
 		var id = _this.attr("data-id")
         var index = layui.layer.open({
@@ -230,9 +231,6 @@ layui.config({
             type : 2,
             content : "infoModify?id="+id,
             success : function(layero, index){
-                layui.layer.tips('点击此处返回文章列表', '.layui-layer-setwin .layui-layer-close', {
-                    tips: 3
-                });
             }
         })
         //改变窗口大小时，重置弹窗的高度，防止超出可视区域（如F12调出debug的操作）
@@ -251,7 +249,7 @@ layui.config({
 			$(this).html("<i class='iconfont icon-star'></i> 已收藏");
 		}
 	})
-
+	
 	$("body").on("click",".news_del",function(){  //删除
 		var _this = $(this);
 		layer.confirm('确定删除此信息？',{icon:3, title:'提示信息'},function(index){

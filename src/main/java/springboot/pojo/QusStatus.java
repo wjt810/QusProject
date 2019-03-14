@@ -15,4 +15,5 @@ public class QusStatus {
 	public void setSta_name(String sta_name) {
 		this.sta_name = sta_name;
 	}
+	
 }

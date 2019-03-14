@@ -8,6 +8,7 @@ import org.apache.ibatis.annotations.Select;
 import springboot.pojo.QusAdmin;
 import springboot.pojo.QusDoctor;
 import springboot.pojo.QusInfo;
+import springboot.pojo.QusRoom1;
 
 public interface QusInfoService {
 	//按照标题名称  模糊查询新闻资讯--分页查询
@@ -29,5 +30,9 @@ public interface QusInfoService {
 	int selectRoleIdByInfoId(Integer infoId);
 	//查询刚刚插入一条数据的id
 	int selectMaxId();
+	//查询科室
+	public List<QusRoom1> selectKeShi(Integer r1_id);
+	//查询医生列表
+	public List<QusDoctor> selectDoctorList(Integer r1_id,Integer r2_id);
 	
 }

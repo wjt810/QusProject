@@ -1,9 +1,7 @@
 package springboot.controller;
 
-import java.lang.reflect.Array;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -19,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import springboot.pojo.QusAdmin;
 import springboot.pojo.QusInfo;
+import springboot.pojo.QusRoom1;
 import springboot.service.qusinfo.QusInfoService;
 
 @RestController
@@ -126,5 +125,11 @@ public class PusInfoController {
 	public String getMaxId() {
 		int count = qusInfoService.selectMaxId();
 		return "{\"infoId\":\""+count+"\"}";
+	}
+	//查询科室
+	@RequestMapping("/selectKeShi")
+	public List<QusRoom1> selectKeShi(){
+		
+		return null;
 	}
 }

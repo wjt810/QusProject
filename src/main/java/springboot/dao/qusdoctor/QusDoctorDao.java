@@ -26,13 +26,13 @@ public interface QusDoctorDao {
 				one=@One(select="springboot.dao.qusroom.QusRoomDao.getRoom1ById"))
 	})
 	public QusDoctor getDoctor(@Param("id") Integer id);
-	
 	/**
 	 * 查询医生列表
 	 * @return
 	 */
 	@Select("SELECT * FROM qus_doctor")
 	@Results({
+		@Result(id=true,property="d_id",column="d_id"),
 		@Result(property="d_r1_id",column="d_r1_id"),
 		@Result(property="d_r2_id",column="d_r2_id"),
 		@Result(property="d_role_id",column="d_role_id"),
@@ -44,4 +44,12 @@ public interface QusDoctorDao {
 				one=@One(select="springboot.dao.qusRole.QusRoleDao.getRoleById"))
 	})
 	public List<QusDoctor> getDoctorList();
+	
+	/**
+	 * 根据角色Id查找医生信息
+	 * @param d_role_id
+	 * @return
+	 */
+	@Select("SELECT * FROM qus_doctor where d_role_id=#{d_role_id}")
+	public QusDoctor getDoctors(Integer d_role_id);
 }

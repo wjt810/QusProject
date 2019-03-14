@@ -9,4 +9,5 @@ public interface QusStatusService {
 	 * @return
 	 */
 	public QusStatus qusStatusBy(Integer sta_id);
+
 }

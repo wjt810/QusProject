@@ -13,6 +13,7 @@ public class QusStatusimpl implements QusStatusService {
 	
 	@Resource
 	public QusStatusDao qusStatusDao;
+	
 	@Override
 	public QusStatus qusStatusBy(Integer sta_id) {
 		return qusStatusDao.qusStatusBy(sta_id);

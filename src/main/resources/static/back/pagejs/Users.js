@@ -8,7 +8,11 @@ layui.config({
 
 	//加载页面数据
 	var usersData = '';
+<<<<<<< HEAD
 	/*$.get("/user/userList", function(data){
+=======
+	$.get("user/userList", function(data){
+>>>>>>> branch 'master' of https://github.com/wjt810/QusProject.git
 		usersData = data;
 		if(window.sessionStorage.getItem("addUser")){
 			var addUsers = window.sessionStorage.getItem("addUser");
@@ -39,7 +43,11 @@ layui.config({
 			var index = layer.msg('查询中，请稍候',{icon: 16,time:false,shade:0.8});
             setTimeout(function(){
             	$.ajax({
+<<<<<<< HEAD
 					url : "/user/userList",
+=======
+					url : "user/userList",
+>>>>>>> branch 'master' of https://github.com/wjt810/QusProject.git
 					type : "get",
 					dataType : "json",
 					success : function(data){
@@ -67,17 +75,34 @@ layui.config({
 		            			}
 		            		}
 		            		//用户名
+<<<<<<< HEAD
 		            		if(usersStr.qusUser.u_name.indexOf(selectStr) > -1){
 			            		usersStr["qusUser.u_name"] = changeStr(usersStr.qusUser.u_name);
+=======
+		            		if(usersStr.u_name.indexOf(selectStr) > -1){
+			            		usersStr["u_name"] = changeStr(usersStr.u_name);
+>>>>>>> branch 'master' of https://github.com/wjt810/QusProject.git
 		            		}
 		            		//性别
+<<<<<<< HEAD
 		            		if(usersStr.qusUser.u_sex.indexOf(selectStr) > -1){
 			            		usersStr["qusUser.u_sex"] = changeStr(usersStr.qusUser.u_sex);
+=======
+		            		if(usersStr.u_sex.indexOf(selectStr) > -1){
+			            		usersStr["u_sex"] = changeStr(usersStr.u_sex);
+>>>>>>> branch 'master' of https://github.com/wjt810/QusProject.git
 		            		}
+<<<<<<< HEAD
 		            		//手机号
 		            		if(usersStr.qususer.u_phone.indexOf(selectStr) > -1){
 			            		usersStr["qususer.u_phone"] = changeStr(usersStr.qususer.u_phone);
+=======
+		            		//电话
+		            		if(usersStr.u_phone.indexOf(selectStr) > -1){
+			            		usersStr["u_phone"] = changeStr(usersStr.u_phone);
+>>>>>>> branch 'master' of https://github.com/wjt810/QusProject.git
 		            		}
+<<<<<<< HEAD
 		            		//科室名称
 		            		if(linksStr.qusDoctor.qusRoom1.r1_name.indexOf(selectStr) > -1){
 			            		linksStr["qusDoctor.qusRoom1.r1_name"] = changeStr(linksStr.qusDoctor.qusRoom1.r1_name);
@@ -107,6 +132,23 @@ layui.config({
 		            				|| usersStr.qusDoctor.qusRoom2.r2_name.indexOf(selectStr)>-1|| usersStr.qusDoctor.d_name.indexOf(selectStr)>-1
 		            				|| usersStr.qusStatus.sta_name.indexOf(selectStr)>-1|| usersStr.app_time.indexOf(selectStr)>-1
 		            				|| usersStr.app_priority.indexOf(selectStr)>-1){
+=======
+		            		//科室
+		            		if(usersStr.r1_name.indexOf(selectStr) > -1){
+			            		usersStr["r1_name"] = changeStr(usersStr.r1_name);
+		            		}
+		            		//医生
+		            		if(usersStr.d_name.indexOf(selectStr) > -1){
+			            		usersStr["d_name"] = changeStr(usersStr.d_name);
+		            		}
+		            		//状态
+		            		if(usersStr.sta_name.indexOf(selectStr) > -1){
+			            		usersStr["sta_name"] = changeStr(usersStr.sta_name);
+		            		}
+		            		if(usersStr.u_name.indexOf(selectStr)>-1 || usersStr.u_sex.indexOf(selectStr)>-1 
+		            				|| usersStr.u_phone.indexOf(selectStr)>-1 || usersStr.r1_name.indexOf(selectStr)>-1
+		            				|| usersStr.d_name.indexOf(selectStr)>-1 || usersStr.sta_name.indexOf(selectStr)>-1){
+>>>>>>> branch 'master' of https://github.com/wjt810/QusProject.git
 		            			userArray.push(usersStr);
 		            		}
 		            	}
@@ -163,7 +205,7 @@ layui.config({
 	})
 
 	//操作
-	$("body").on("click",".users_edit",function(){  //编辑
+	$("body").on("click",".users_edit",function(){  //编辑修改
 		var index = layui.layer.open({
 			title : "修改用户",
 			type : 2,
@@ -226,16 +268,47 @@ layui.config({
 			currData = usersData.concat().splice(curr*nums-nums, nums);
 			if(currData.length != 0){
 				for(var i=0;i<currData.length;i++){
+<<<<<<< HEAD
 					alert(currData.length);
+=======
+					var sexStr=null;
+					if(currData[i].u_sex==0){
+						sexStr="男";
+					}else{
+						sexStr="女";
+					}
+					var app_priority=null;
+					if(currData[i].app_priority==0){
+						app_priority="优先";
+					}else{
+						app_priority="不优先";
+					}
+>>>>>>> branch 'master' of https://github.com/wjt810/QusProject.git
 					dataHtml += '<tr>'
 			    	+  '<td><input type="checkbox" name="checked" lay-skin="primary" lay-filter="choose"></td>'
+<<<<<<< HEAD
 			    	+  '<td>'+currData[i].qusUser.u_name+'</td>';
 			    	if(currData[i].qusUser.u_sex == "0"){
 			    		dataHtml += '<td>'+"男"+'</td>';
 			    	}else if(currData[i].qusUser.u_sex == "1"){
 			    		dataHtml += '<td>'+"女"+'</td>';
+=======
+			    	+  '<td>'+currData[i].u_name+'</td>'
+					+  '<td>'+sexStr+'</td>'
+					+  '<td>'+currData[i].u_phone+'</td>'
+			    	+ '<td>'+currData[i].r1_name+'</td>'
+			    	+ '<td>'+currData[i].d_name+'</td>';
+					
+			    	if(currData[i].sta_name == "准备中"){
+			    		dataHtml += '<td style="color:#f00">'+currData[i].sta_name+'</td>';
+			    	}else if(currData[i].sta_name == "退号"){
+			    		dataHtml += '<td style="color:yellow">'+currData[i].sta_name+'</td>';
+			    	}else if(currData[i].sta_name == "就诊"){
+			    		dataHtml += '<td style="color:#f00">'+currData[i].sta_name+'</td>';
+>>>>>>> branch 'master' of https://github.com/wjt810/QusProject.git
 			    	}
 			    	
+<<<<<<< HEAD
 					dataHtml +=  '<td>'+currData[i].qususer.u_phone+'</td>'
 			    	+  '<td>'+currData[i].qusDoctor.qusRoom1.r1_name+">"+currData[i].qusDoctor.qusRoom2.r2_name+'</td>'
 			    	+  '<td>'+currData[i].qusDoctor.d_name+'</td>';
@@ -255,6 +328,10 @@ layui.config({
 			    	}else if(currData[i].app_priority == "1"){
 			    		dataHtml += '<td>'+"普通号"+'</td>';
 			    	}
+=======
+			    	dataHtml += '<td>'+currData[i].app_time+'</td>'
+			    	+ '<td>'+app_priority+'</td>';
+>>>>>>> branch 'master' of https://github.com/wjt810/QusProject.git
 			    	dataHtml += '<td>'
 					+    '<a class="layui-btn layui-btn-mini users_edit"><i class="iconfont icon-edit"></i> 编辑</a>'
 					+    '<a class="layui-btn layui-btn-danger layui-btn-mini users_del" data-id="'+data[i].qususer.u_id+'"><i class="layui-icon">&#xe640;</i> 删除</a>'

@@ -24,7 +24,6 @@ import springboot.service.qusorder.QusOrderService;
 @RestController
 @RequestMapping("/order")
 public class QusOrderController {
-	
 	Logger logger = LoggerFactory.getLogger(UserController.class);
 	@Resource
 	public QusOrderService qusOrderService;
