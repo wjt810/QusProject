@@ -10,11 +10,14 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import springboot.pojo.QusAdmin;
 import springboot.pojo.QusInfo;
+import springboot.pojo.QusRoom1;
 import springboot.service.qusinfo.QusInfoService;
 
 @RestController
@@ -72,21 +75,48 @@ public class PusInfoController {
 	 */
 	@RequestMapping("infoModify")
 	public ModelAndView infoModify(HttpServletRequest request) {
-		System.out.println(request.getParameter("id"));
-		Integer infoId = Integer.parseInt(request.getParameter("id"));
-		
-		QusInfo info = null;
-		int roleId = qusInfoService.selectRoleIdByInfoId(infoId);
-		System.out.println("infoId: "+infoId);
-		System.out.println("roleId: "+roleId);
-		if(roleId==1) {
-			info=qusInfoService.selectAdminById(infoId);
-		}else if(roleId==2||roleId==3) {
-			info=qusInfoService.selectDoctorById(infoId);
-		}
 		ModelAndView mv = new ModelAndView("back/page/news/newschange");
-		mv.addObject("test","aa");
-		mv.addObject("info", info);
+		String infoIdString = request.getParameter("id");
+		Integer infoId =0;
+		if(infoIdString!=null) {
+			 infoId = Integer.parseInt(infoIdString);
+			QusInfo info = null;
+			int roleId = qusInfoService.selectRoleIdByInfoId(infoId);
+			System.out.println("infoId: "+infoId);
+			System.out.println("roleId: "+roleId);
+			if(roleId==1) {
+				info=qusInfoService.selectAdminById(infoId);
+			}else if(roleId==2||roleId==3) {
+				info=qusInfoService.selectDoctorById(infoId);
+			}
+			request.getSession().setAttribute("info",info);
+			mv.addObject("info", info);
+		}
+		mv.addObject("infoId",infoId);
+		return mv;
+	}
+	/**
+	 * 修改资讯  -操作数据库
+	 * @return
+	 * @throws ParseException 
+	 */
+	@RequestMapping(value="infoModifyReal",method=RequestMethod.POST)//infoContent username title
+	public ModelAndView infoModifyReal(@RequestParam("infoId")Integer infoId,@RequestParam("title")String title,@RequestParam("contact")String contact,HttpServletRequest request){
+		ModelAndView mv = new ModelAndView();
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+		QusInfo info = new QusInfo();
+		info.setInfo_content(contact);
+		info.setInfo_title(title);
+		info.setInfo_id(infoId);
+		try {
+			info.setInfo_modifyTime(format.parse(format.format(new Date())));
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		int count = qusInfoService.updateInfo(info);
+		if(count>0) {
+			mv.setViewName("back/page/news/infoList");
+		}
 		return mv;
 	}
 	//查询刚插入的数据id
@@ -94,5 +124,11 @@ public class PusInfoController {
 	public String getMaxId() {
 		int count = qusInfoService.selectMaxId();
 		return "{\"infoId\":\""+count+"\"}";
+	}
+	//查询科室
+	@RequestMapping("/selectKeShi")
+	public List<QusRoom1> selectKeShi(){
+		
+		return null;
 	}
 }

@@ -1,6 +1,11 @@
 package springboot.pojo;
 
-import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
+import org.thymeleaf.util.DateUtils;
 
 /**
  * 医生表
@@ -25,6 +30,23 @@ public class QusDoctor {
 	private Integer d_r2_id; // int(11)二级科室id
 	private String d_description; // varchar(50)
 	
+	private String DocTimes;     //工龄
+	
+	public String getDocTimes(Date d_startTime) throws ParseException {
+		   //return new Date().getYear() - d_startTime.getYear();
+		SimpleDateFormat myFormatter = new SimpleDateFormat("yyyy-MM-dd");
+		Date date=new Date(); 
+		Date mydate= d_startTime;
+		long day=(date.getTime()-mydate.getTime())/(24*60*60*1000) + 1;
+		DocTimes=new java.text.DecimalFormat("#.00").format(day/365f);
+		return DocTimes;
+	}
+
+	public void setDocTimes(String docTimes) {
+		DocTimes = docTimes;
+		
+	}
+
 	private QusRoom1 qusRoom1;  //一级科室
 	private QusRoom2 qusRoom2;  //二级科室
 	private QusRole qusRole;    //角色名称
@@ -165,4 +187,11 @@ public class QusDoctor {
 		this.d_description = d_description;
 	}
 
+	@Override
+	public String toString() {
+		return "QusDoctor [d_id=" + d_id + ", d_name=" + d_name + ", d_password=" + d_password + ", d_sex=" + d_sex
+				+ ", d_phone=" + d_phone + ", d_startTime=" + d_startTime + ", d_born=" + d_born + ", d_address="
+				+ d_address + "]";
+	}
+	
 }

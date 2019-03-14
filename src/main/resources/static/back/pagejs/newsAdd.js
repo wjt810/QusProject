@@ -7,10 +7,23 @@ layui.config({
 		layedit = layui.layedit,
 		laydate = layui.laydate,
 		$ = layui.jquery;
-	
+	//出发表单提交事件
+/*	form.on("submit(updateNews1)",function(data){
+		var index = top.layer.msg('数据提交中，请稍候',{icon: 16,time:1000,shade:0.8});
+		$.ajax({
+ 			url : "infoModifyReal",
+ 			type : "post",//
+ 			data : {info_title1:$(".infoTitle").val(),info_content:layedit.getText(editIndex)},
+ 			dataType : "json",
+ 			success : function(data){
+ 				alert("修改成功");
+ 			}
+ 		})
+	})*/
 	//创建一个编辑器
  	var editIndex = layedit.build('news_content');
  	var addNewsArray = [],addNews;
+ 	//点击提交事件
  	form.on("submit(addNews)",function(data){
  		if(layedit.getContent(editIndex)==null || layedit.getContent(editIndex)==""){
  			alert("请输入你的资讯内容");
@@ -37,7 +50,7 @@ layui.config({
 	 		$.ajax({
 	 			url : "addInfo.html",
 	 			type : "get",
-	 			data : {info_title:$(".infoTitle").val(),info_content:layedit.getText(editIndex),info_role_id:$(".roleName").val(),info_startTime:$(".newsTime").val()},
+	 			data : {info_title:$("#infoTitle1").val(),info_content:layedit.getText(editIndex),info_role_id:$(".roleName").val(),info_startTime:$(".newsTime").val()},
 	 			dataType : "json",
 	 			success : function(data){
 	 				layui.msg("成功");
@@ -69,5 +82,5 @@ layui.config({
 	 		parent.location.reload();
         },2000);
  		return false;
- 	})
+ 	})//form结尾
 })

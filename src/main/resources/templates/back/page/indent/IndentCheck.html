@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="utf-8">
 	<title>查看订单--预医网</title>
@@ -9,21 +9,21 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="format-detection" content="telephone=no">
-	<link rel="stylesheet" href="back/layui/css/layui.css" media="all" />
-	<link rel="stylesheet" href="back/css/font_eolqem241z66flxr.css" media="all" />
+	<link rel="stylesheet" th:href="@{/back/layui/css/layui.css}" media="all" />
+	<link rel="stylesheet" th:href="@{/back/css/font_eolqem241z66flxr.css}" media="all" />
 </head>
 <body class="childrenBody">
-	<form class="layui-form" style="width: 45%;margin: 0 120px;padding: 30px 100px;">
+	<form class="layui-form" style="width: 45%;margin: 0 120px;padding: 30px 100px;" th:action="@{/order/orderShow}">
 		<div class="layui-form-item">
 			<label class="layui-form-label">用户名称</label>
 			<div class="layui-input-block">
-				<input type="text" class="layui-input newsName" name="userName" lay-verify="required" value="">
+				<input type="text" class="layui-input newsName" name="userName" lay-verify="required" th:value="${order.qusUser.u_name}">
 			</div>
 		</div>
 		<div class="layui-form-item">		
 			<label class="layui-form-label">医生名称</label>
 			<div class="layui-input-block">
-				<input type="text" class="layui-input newsAuthor" name="doctorName" lay-verify="required" value="">
+				<input type="text" class="layui-input newsAuthor" name="doctorName" lay-verify="required" th:value="${order.qusDoctor.d_name}">
 			</div>
 		</div>
 		
@@ -31,7 +31,7 @@
 			<label class="layui-form-label">一级科室</label>
 			<div class="layui-input-block">
 				<select id="room1" name="browseLook" class="newsLook" lay-filter="browseLook">
-					<option value="">--请选择--</option>
+					<option th:selected="${order.qusDoctor.qusRoom1.r1_id}" th:value="${order.qusDoctor.qusRoom1.r1_id}">[[${order.qusDoctor.qusRoom1.r1_name}]]</option>
 				</select>
 			</div>
 		</div>
@@ -39,60 +39,53 @@
 			<label class="layui-form-label">二级科室</label>
 			<div class="layui-input-block">
 				<select id="room2" name="browseLook" class="newsLook" lay-filter="browseLook">
-					<option value="">--请选择--</option>
-					
+					<option th:selected="${order.qusDoctor.qusRoom2.r2_id}" value="${order.qusDoctor.qusRoom2.r2_id}">[[${order.qusDoctor.qusRoom2.r2_name}]]</option>
 				</select>
 			</div>
 		</div>
 		<div class="layui-form-item">
 			<label class="layui-form-label">付款金额</label>
 			<div class="layui-input-block">
-				<input type="text" class="layui-input price" name="price" lay-verify="required" value="">
+				<input type="text" class="layui-input price" name="price" lay-verify="required" th:value="${order.o_price}">
 			</div>
 		</div>
 		<div class="layui-form-item">
 			<label class="layui-form-label">预约编号</label>
 			<div class="layui-input-block">
-				<select name="browseLook" class="newsLook" lay-filter="browseLook">
-					<option value="" id="app_code"></option>
-					<!-- <option value="0">01 --- 张三</option>
-					<option value="1">02 --- 李四</option>
-					<option value="2">03 --- 王五</option>
-					<option value="3">04 --- 赵六</option> -->
-				</select>
+				<div class="layui-input-block">
+					<input type="text" class="layui-input code" name="code" lay-verify="required" th:value="${order.qusAppointment.app_code}">
+				</div>
 			</div>
 		</div>
 		<div class="layui-form-item">
 			<label class="layui-form-label">订单类型</label>
 			<div class="layui-input-block">
-				<select name="browseLook" class="newsLook" lay-filter="browseLook">
-					<option value="">--请选择--</option>
-					<option value="0">挂号</option>
-					<option value="1">咨询</option>
+				<select name="type" class="newsLook" lay-filter="browseLook">
+					 <option th:selected="${order.o_type='1'}" value="1">挂号</option>
+				     <option th:selected="${order.o_type='2'}" value="2">咨询</option>
 				</select>
 			</div>
 		</div>
 		<div class="layui-form-item">
 			<label class="layui-form-label">状态</label>
 			<div class="layui-input-block">
-				<select name="browseLook" class="newsLook" lay-filter="browseLook">
-					<option value="">--请选择--</option>
-					<option value="0">已付款</option>
-					<option value="1">已取消</option>
-					<option value="2">已完成</option>
+				<select name="status" class="newsLook" lay-filter="browseLook">
+					<option th:selected="${order.o_status='0'}" value="0">已付款</option>
+					<option th:selected="${order.o_status='3'}" value="2">已取消</option>
+					<option th:selected="${order.o_status='3'}" value="3">已完成</option>
 				</select>
 			</div>
 		</div>
 		
 		<div class="layui-form-item">
 			<div class="layui-input-block">
-				<button class="layui-btn" lay-submit="" lay-filter="addNews">返回</button>
+				<button class="layui-btn fanhui">返回</button>
 		    </div>
 		</div>
 	</form>
-	<script type="text/javascript" src="back/layui/layui.js"></script>
-	<script type="text/javascript" src="back/pagejs/Indent.js"></script>
-	<script type="text/javascript" src="back/js/jquery-1.8.2.min.js"></script>
+	<script type="text/javascript" th:src="@{/back/layui/layui.js}"></script>
+	<script type="text/javascript" th:src="@{/back/pagejs/Indent.js}"></script>
+	<script type="text/javascript" th:src="@{/back/js/jquery-1.8.2.min.js}"></script>
 	<script type="text/javascript">
 		layui.use(['jquery','form'],function(){
 			var form = layui.form();
@@ -122,7 +115,24 @@
 					}
 		 		})
 		 	}
-		}
+			$(".fanhui").click(function(){
+				var index = layui.layer.open({
+					content : "order/orderList",
+					success : function(layero, index){
+						layui.layer.tips('点击此处返回订单列表', '.layui-layer-setwin .layui-layer-close', {
+							tips: 3
+						});
+					}
+				})
+				//改变窗口大小时，重置弹窗的高度，防止超出可视区域（如F12调出debug的操作）
+				$(window).resize(function(){
+					layui.layer.full(index);
+				})
+				layui.layer.full(index);
+			});
+			}
+		)
+		
 	</script>
 </body>
 </html>

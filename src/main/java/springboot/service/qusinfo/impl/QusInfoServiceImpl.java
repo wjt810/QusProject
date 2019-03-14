@@ -11,6 +11,7 @@ import springboot.dao.qusinfo.QusInfoDao;
 import springboot.pojo.QusAdmin;
 import springboot.pojo.QusDoctor;
 import springboot.pojo.QusInfo;
+import springboot.pojo.QusRoom1;
 import springboot.service.qusinfo.QusInfoService;
 @Service
 public class QusInfoServiceImpl implements QusInfoService {
@@ -81,6 +82,14 @@ public class QusInfoServiceImpl implements QusInfoService {
 	@Override
 	public int selectMaxId() {
 		return qusInfoDao.selectMaxId();
+	}
+	@Override
+	public List<QusRoom1> selectKeShi(Integer r1_id) {
+		return qusInfoDao.selectKeShi(r1_id);
+	}
+	@Override
+	public List<QusDoctor> selectDoctorList(Integer r1_id,Integer r2_id) {
+		return qusInfoDao.selectDoctorList(r1_id,r2_id);
 	}
 
 }

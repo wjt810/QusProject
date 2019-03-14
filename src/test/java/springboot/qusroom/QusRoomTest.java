@@ -29,7 +29,7 @@ public class QusRoomTest {
 		for (QusRoom1 qusRoom1 : roomList) {
 			System.out.println(qusRoom1.getR1_name()+" "+qusRoom1.getR1_id());
 			for (QusRoom2 qusRoom2 : qusRoom1.getRoom2s()) {
-				System.out.println("\t\t" + qusRoom2.getR2_name()+" "+qusRoom2.getR2_id());
+				System.out.println("\t\t r2Name\t" + qusRoom2.getR2_name()+" r2Id \t"+qusRoom2.getR2_id());
 			}
 		}
 	}
