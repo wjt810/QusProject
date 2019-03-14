@@ -10,6 +10,6 @@ public interface QusRoleDao {
 	 * 根据角色ID查询角色名称
 	 * @return
 	 */
-	@Select("SELECT * FROM qus_role where role_id=#{role_id} ")
+	@Select("SELECT * FROM qus_role where role_id=#{role_id}")
 	public QusRole getRoleById(Integer role_id);
 }

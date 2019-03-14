@@ -13,13 +13,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 import com.mysql.cj.xdevapi.JsonArray;
+import springboot.pojo.QusAppointment;
 import springboot.pojo.QusInfo;
 import springboot.service.qusinfo.QusInfoService;
+import springboot.service.qususer.QusUserService;
 @RestController
 //@Controller
 public class UserController {
 	
 	Logger logger = LoggerFactory.getLogger(UserController.class);
+     @Resource
+	private QusUserService qusUserService;
 	/**
 	 * 进入首页
 	 * @return
