@@ -110,8 +110,6 @@ public interface QusInfoDao {
 	})
 	public List<QusRoom2> selectkeShi2(@Param("r1_id")Integer r1_id);
 	
-	
-	
 	/**
 	 * 
 	 * @return

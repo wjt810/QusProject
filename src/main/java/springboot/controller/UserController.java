@@ -1,11 +1,8 @@
 package springboot.controller;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.quartz.QuartzDataSource;
@@ -15,21 +12,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
-
 import com.mysql.cj.xdevapi.JsonArray;
-
 import springboot.pojo.QusInfo;
 import springboot.service.qusinfo.QusInfoService;
-
-
-
 @RestController
 //@Controller
 public class UserController {
 	
 	Logger logger = LoggerFactory.getLogger(UserController.class);
-
-	
 	/**
 	 * 进入首页
 	 * @return

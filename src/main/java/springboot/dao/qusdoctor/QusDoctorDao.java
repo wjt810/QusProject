@@ -26,13 +26,13 @@ public interface QusDoctorDao {
 				one=@One(select="springboot.dao.qusroom.QusRoomDao.getRoom1ById"))
 	})
 	public QusDoctor getDoctor(@Param("id") Integer id);
-	
 	/**
 	 * 查询医生列表
 	 * @return
 	 */
 	@Select("SELECT * FROM qus_doctor")
 	@Results({
+		@Result(id=true,property="d_id",column="d_id"),
 		@Result(property="d_r1_id",column="d_r1_id"),
 		@Result(property="d_r2_id",column="d_r2_id"),
 		@Result(property="d_role_id",column="d_role_id"),

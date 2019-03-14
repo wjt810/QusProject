@@ -66,6 +66,8 @@ layui.config({
 		            				}
 		            				dataStr += data.split(eval("/"+selectStr+"/ig"))[showNum];
 		            				return dataStr;
+		            				
+		            				
 		            			}else{
 		            				dataStr = data.split(eval("/"+selectStr+"/ig"))[0] + "<i style='color:#03c339;font-weight:bold;'>" + selectStr + "</i>" + data.split(eval("/"+selectStr+"/ig"))[1];
 		            				return dataStr;

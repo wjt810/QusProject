@@ -26,7 +26,6 @@ layui.config({
 	//查询
 	$(".search_btn").click(function(){
 		var newArray = [];
-	    
 		if($(".search_input").val() != ''){
 			var index = layer.msg('查询中，请稍候',{icon: 16,time:false,shade:0.8});
             setTimeout(function(){
@@ -42,10 +41,6 @@ layui.config({
 							linksData = data;
 						}
 						for(var i=0;i<linksData.length;i++){
-							var date = new Date();
-						    startDate = new Date(linksData.d_born);
-						    var DocTimes = date.getYear() - startDate.getYear();//在职时间
-						    
 							var linksStr = linksData[i];
 							var selectStr = $(".search_input").val();
 		            		function changeStr(data){
@@ -66,41 +61,17 @@ layui.config({
 		            		if(linksStr.d_name.indexOf(selectStr) > -1){
 			            		linksStr["d_name"] = changeStr(linksStr.d_name);
 		            		}
-		            		//性别
-		            		if(linksStr.d_sex.indexOf(selectStr) > -1){
-			            		linksStr["d_sex"] = changeStr(linksStr.d_sex);
-		            		}
-		            		//电话
-		            		/*if(linksStr.DocPhone.indexOf(selectStr) > -1){
-			            		linksStr["DocPhone"] = changeStr(linksStr.DocPhone);
-		            		}*/
-		            		//出生日期
-		            		/*if(linksStr.DocBorn.indexOf(selectStr) > -1){
-			            		linksStr["DocBorn"] = changeStr(linksStr.DocBorn);
-		            		}*/
 		            		//入职时间
 		            		if(linksStr.d_startTime.indexOf(selectStr) > -1){
 			            		linksStr["d_startTime"] = changeStr(linksStr.d_startTime);
 		            		}
-		            		//在职时间
-		            		if(linksStr.DocTimes.indexOf(selectStr) > -1){
-			            		linksStr["DocTimes"] = changeStr(linksStr.DocTimes);
-		            		}
+		            		//工龄
+		            	/*	if(String(linksStr.workTime).indexOf(selectStr) > -1){
+			            		linksStr["workTime"] = changeStr(linksStr.workTime);
+		            		}*/
 		            		//角色
 		            		if(linksStr.qusRole.role_name.indexOf(selectStr) > -1){
 			            		linksStr["qusRole.role_name"] = changeStr(linksStr.qusRole.role_name);
-		            		}
-		            		//家庭住址
-		            		/*if(linksStr.DocAddress.indexOf(selectStr) > -1){
-			            		linksStr["DocAddress"] = changeStr(linksStr.DocAddress);
-		            		}*/
-		            		//挂号费用
-		            		if(linksStr.d_price.indexOf(selectStr) > -1){
-			            		linksStr["d_price"] = changeStr(linksStr.d_price);
-		            		}
-		            		//咨询费用
-		            		if(linksStr.d_consult.indexOf(selectStr) > -1){
-			            		linksStr["d_consult"] = changeStr(linksStr.d_consult);
 		            		}
 		            		//科室名称
 		            		if(linksStr.qusRoom1.r1_name.indexOf(selectStr) > -1){
@@ -110,17 +81,20 @@ layui.config({
 		            		if(linksStr.qusRoom2.r2_name.indexOf(selectStr) > -1){
 			            		linksStr["qusRoom2.r2_name"] = changeStr(linksStr.qusRoom2.r2_name);
 		            		}
-		            		if(linksStr.d_name.indexOf(selectStr)>-1 || linksStr.d_sex.indexOf(selectStr)>-1 || linksStr.d_startTime.indexOf(selectStr)>-1
-		            			|| linksStr.DocTimes.indexOf(selectStr)>-1 || linksStr.qusRole.role_name.indexOf(selectStr)>-1|| linksStr.d_price.indexOf(selectStr)>-1
-		            			|| linksStr.d_consult.indexOf(selectStr)>-1 || linksStr.qusRoom1.r1_name.indexOf(selectStr)>-1|| linksStr.qusRoom2.r2_name.indexOf(selectStr)>-1){
-		            			newArray.push(linksStr);
+		            		/**
+		            		 *   
+			            			 || linksStr.d_price.indexOf(selectStr)>-1
+			            			
+		            		 */													//0:男  1:女
+		            		//|| linksStr.d_sex.indexOf(sexStr)>-1
+		            		if(linksStr.d_name.indexOf(selectStr)>-1 || linksStr.d_startTime.indexOf(selectStr)>-1 || linksStr.qusRole.role_name.indexOf(selectStr)>-1 || linksStr.qusRoom1.r1_name.indexOf(selectStr)>-1 || linksStr.qusRoom2.r2_name.indexOf(selectStr)>-1 ){
+		            			newArray.push(linksStr);//|| String(linksStr.workTime).indexOf(selectStr)>-1
 		            		}
 		            	}
 		            	linksData = newArray;
 		            	linksList(linksData);
 					}
 				})
-            	
                 layer.close(index);
             },2000);
 		}else{
@@ -174,7 +148,6 @@ layui.config({
 			layer.msg("请选择需要删除的医生");
 		}
 	})
-
 	//全选
 	form.on('checkbox(allChoose)', function(data){
 		var child = $(data.elem).parents('table').find('tbody input[type="checkbox"]:not([name="show"])');
@@ -196,7 +169,6 @@ layui.config({
 		}
 		form.render('checkbox');
 	})
- 
 	//操作
 	$("body").on("click",".links_edit",function(){  //编辑
 		var index = layui.layer.open({
@@ -232,15 +204,21 @@ layui.config({
 			layui.layer.full(index);
 		})
 		layui.layer.full(index);
-
 	})
 
 	$("body").on("click",".links_del",function(){  //删除
 		var _this = $(this);
 		layer.confirm('确定删除此信息？',{icon:3, title:'提示信息'},function(index){
-			//_this.parents("tr").remove();
+			_this.parents("tr").remove();
 			for(var i=0;i<linksData.length;i++){
 				if(linksData[i].linksId == _this.attr("data-id")){
+					//逐个删除数据库中的数据
+					$.ajax({
+            			url : "deleteById.html",
+            			type : "GET",
+            			data :{info_id : newsData[i].info_id},
+            			dataType : "json"
+            		})
 					linksData.splice(i,1);
 					linksList(linksData);
 				}
@@ -248,7 +226,6 @@ layui.config({
 			layer.close(index);
 		});
 	})
-
 	function linksList(that){
 		//渲染数据
 		function renderDate(data,curr){
@@ -259,9 +236,7 @@ layui.config({
 				currData = that.concat().splice(curr*nums-nums, nums);
 			}
 			if(currData.length != 0){
-				
 				for(var i=0;i<currData.length;i++){
-					
 				    dataHtml += '<tr>'
 			    	+'<td><input type="checkbox" name="checked" lay-skin="primary" lay-filter="choose"></td>'
 			    	+'<td align="left">'+currData[i].d_name+'</td>'
@@ -271,7 +246,7 @@ layui.config({
 			    		dataHtml += '<td>'+"女"+'</td>';
 			    	}
 					dataHtml +='<td>'+currData[i].d_startTime+'</td>'
-			    	+'<td>'+currData[i].DocTimes+'</td>'
+			    	+'<td>'+currData[i].workTime+'</td>' 
 			    	+'<td>'+currData[i].qusRole.role_name+'</td>'
 			    	+'<td>'+currData[i].d_price+'</td>'
 			    	+'<td>'+currData[i].d_consult+'</td>'
@@ -288,7 +263,6 @@ layui.config({
 			}
 		    return dataHtml;
 		}
-
 		//分页
 		var nums = 13; //每页出现的数据量
 		if(that){
@@ -298,6 +272,7 @@ layui.config({
 			cont : "page",
 			pages : Math.ceil(linksData.length/nums),
 			jump : function(obj){
+				$(".links_content").html("");
 				$(".links_content").html(renderDate(linksData,obj.curr));
 				$('.links_list thead input[type="checkbox"]').prop("checked",false);
 		    	form.render();
