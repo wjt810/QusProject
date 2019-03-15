@@ -2,6 +2,9 @@ package springboot.service.qusorder;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
+
 import springboot.pojo.QusOrder;
 
 public interface QusOrderService {
@@ -27,4 +30,10 @@ public interface QusOrderService {
 	 * @return
 	 */
 	public Integer ModifyOrderById(QusOrder order);
+	/**
+	 *根据 查询预约单个数
+	 * @param docId
+	 * @return
+	 */
+	public int selectOrderByDocId(Integer docId);
 }

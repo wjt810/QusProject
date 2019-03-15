@@ -42,5 +42,13 @@ public class QusOrderServiceimpl implements QusOrderService {
 	public Integer ModifyOrderById(QusOrder order) {
 		return qusOrderDao.ModifyOrderById(order);
 	}
+	/**
+	 * 根据医生id查询订单id zcx
+	 */
+	@Override
+	public int selectOrderByDocId(Integer docId) {
+		return qusOrderDao.selectOrderByDocId(docId);
+	}
+
 
 }

@@ -35,5 +35,16 @@ public class QusDoctorTest {
 			+"\t"+doctor.getQusRoom1().getR1_name()+">"+doctor.getQusRoom2().getR2_name());
 		}
 	}
-
+	//测试查询医生的预约个数  然后进行删除
+	@Test
+	public void testSelectCount() {
+		int count = qusDoctorService.selectCountByDocId(3);
+		System.out.println(count);
+	}
+	//测试删除
+	@Test
+	public void testDelete() {
+		int count = qusDoctorService.deleteByDocId(37);
+		System.out.println(count);
+	}
 }

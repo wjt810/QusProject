@@ -19,5 +19,12 @@ public class QusAppointmentServiceimpl implements QusAppointmentService {
 	public QusAppointment getAppointment(Integer id) {
 		return qusAppointmentDao.getAppointment(id);
 	}
+	/**
+	 * 删除预约单号
+	 */
+	@Override
+	public int selectAppointmentByDocId(Integer docId) {
+		return qusAppointmentDao.selectAppointmentByDocId(docId);
+	}
 
 }

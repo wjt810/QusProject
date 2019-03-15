@@ -1,5 +1,8 @@
 package springboot.service.qusappointment;
 
+import org.apache.ibatis.annotations.Delete;
+import org.apache.ibatis.annotations.Param;
+
 import springboot.pojo.QusAppointment;
 
 public interface QusAppointmentService {
@@ -8,4 +11,10 @@ public interface QusAppointmentService {
 	 * @return
 	 */
 	public QusAppointment getAppointment(Integer id);
+		/**
+		 * 查询预约单
+		 * @param docId
+		 * @return
+		 */
+		public int selectAppointmentByDocId(Integer docId);
 }

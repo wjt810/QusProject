@@ -73,4 +73,11 @@ public interface QusOrderDao {
 			"	WHERE o_id = #{o_id}")
 	
 	public Integer ModifyOrderById(QusOrder order);
+	/**
+	 * 根据医生id删除订单id
+	 * 
+	 */
+	@Select("SELECT COUNT(*) FROM qus_doctor d, qus_order o WHERE o.o_doc_id=d.d_id AND d.d_id =#{docId}")
+	public int selectOrderByDocId(@Param("docId")Integer docId);
+	
 }
