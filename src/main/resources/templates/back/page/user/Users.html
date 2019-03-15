@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="utf-8">
 	<title>普通用户--预医网</title>
@@ -61,7 +61,7 @@
 		</table>
 	</div>
 	<div id="page"></div>
-	<script type="text/javascript" src="back/layui/layui.js"></script>
-	<script type="text/javascript" src="back/pagejs/Users.js"></script>
+	<script type="text/javascript" th:src="@{back/layui/layui.js}"></script>
+	<script type="text/javascript" th:src="@{back/pagejs/Users.js}"></script>
 </body>
 </html>

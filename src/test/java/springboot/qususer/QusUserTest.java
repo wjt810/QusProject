@@ -9,20 +9,23 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import springboot.pojo.QusAppointment;
 import springboot.pojo.QusUser;
-
-
+import springboot.service.qusappointment.QusAppointmentService;
 import springboot.service.qususer.QusUserService;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class QusUserTest {
 	@Resource
 	private QusUserService qusUserService;
+	
+	@Resource
+	private QusAppointmentService qusAppointmentService;
  
 	/**
     * 用户列表
     */
 	@Test
 	public void testgetList() {
+		
 		List<QusAppointment> qusUserList= qusUserService.getUserList();
 			System.out.println("姓名\t性别\t手机号\t科室名称\t就诊医生\t状态\t预约时间\t优先级");
 			/*for(int i=0;i<qusUserList.size();i++) {

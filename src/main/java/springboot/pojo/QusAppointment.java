@@ -18,6 +18,16 @@ public class QusAppointment {
 	private Integer app_priority; // int(1)0优先1不优先
 	private String app_code; // varchar(50)预约编号
 	
+	private QusStatus qusStatus;
+	
+	public QusStatus getQusStatus() {
+		return qusStatus;
+	}
+
+	public void setQusStatus(QusStatus qusStatus) {
+		this.qusStatus = qusStatus;
+	}
+
 	private String u_name;//用户名
 	private String u_sex;//性别
 	private String u_phone;//电话

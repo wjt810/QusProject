@@ -8,14 +8,15 @@ import springboot.dao.qusstatus.QusStatusDao;
 import springboot.pojo.QusStatus;
 import springboot.service.qusstatus.QusStatusService;
 @Service
-public class QusStatusimpl implements QusStatusService {
 
+public class QusStatusimpl implements QusStatusService {
+	
 	@Resource
 	public QusStatusDao qusStatusDao;
+	
 	@Override
-	public QusStatus getStatus(Integer sta_id) {
-		
-		return qusStatusDao.getStatus(sta_id);
+	public QusStatus qusStatusBy(Integer sta_id) {
+		return qusStatusDao.qusStatusBy(sta_id);
 	}
 
 }

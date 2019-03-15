@@ -13,7 +13,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import springboot.pojo.QusAppointment;
+import springboot.pojo.QusDoctor;
 import springboot.pojo.QusOrder;
+import springboot.pojo.QusRoom1;
+import springboot.pojo.QusRoom2;
+import springboot.pojo.QusUser;
 import springboot.service.qusorder.QusOrderService;
 
 @RestController
@@ -50,16 +55,12 @@ public class QusOrderController {
 		return count;
 	}
 	/**
-	 * 根据o_id修改订单
+	 * 根据o_id修改订单（先将数据传入页面）
 	 * @param request
 	 * @return
 	 */
 	@RequestMapping(value="/orderModify")
-	public ModelAndView modifyOrder(/*@RequestParam("userName") String userName,@RequestParam("doctorName") String doctorName,
-			@RequestParam("room1") String room1,@RequestParam("room2") String room2,
-			@RequestParam("price") String price,@RequestParam("code") String code,
-			@RequestParam("type") String type,@RequestParam("status") String status,*/
-			HttpServletRequest request) {
+	public ModelAndView modifyOrder(HttpServletRequest request) {
 		System.out.println(request.getParameter("o_id"));
 		Integer o_id = Integer.parseInt(request.getParameter("o_id"));
 		QusOrder order=qusOrderService.getOrderById(o_id);
@@ -68,6 +69,56 @@ public class QusOrderController {
 		mv.addObject("order",order);
 		return mv;
 	}
+	/**
+	 * 保存修改的内容
+	 * @param o_id
+	 * @param userName
+	 * @param doctorName
+	 * @param room1_id
+	 * @param room2_id
+	 * @param price
+	 * @param code
+	 * @param type
+	 * @param status
+	 * @param request
+	 * @return
+	 */
+	@RequestMapping(value="/orderModifySave",method=RequestMethod.POST)
+	public ModelAndView modifyOrderSave(@RequestParam("o_id") String o_id,@RequestParam("u_id") String u_id,
+			@RequestParam("d_id") String d_id,@RequestParam("app_id") String app_id,
+			@RequestParam("userName") String userName,
+			@RequestParam("doctorName") String doctorName,
+			@RequestParam("room1") String room1_id,@RequestParam("room2") String room2_id,
+			@RequestParam("price") String price,@RequestParam("code") String code,
+			@RequestParam("type") String type,@RequestParam("status") String status,HttpServletRequest request) {
+		ModelAndView mv = new ModelAndView();
+		QusOrder order=new QusOrder();
+		QusUser user=new QusUser();
+		user.setU_name(userName);
+		user.setU_id(Integer.parseInt(u_id));
+		QusDoctor doctor=new QusDoctor();
+		doctor.setD_name(doctorName);
+		doctor.setD_id(Integer.parseInt(d_id));
+		doctor.setD_r1_id(Integer.parseInt(room1_id));
+		doctor.setD_r2_id(Integer.parseInt(room2_id));
+		QusAppointment app=new QusAppointment();
+		app.setApp_code(code);
+		app.setApp_id(Integer.parseInt(app_id));
+		order.setQusUser(user);
+		order.setQusDoctor(doctor);
+		order.setQusAppointment(app);
+		order.setO_price(Double.parseDouble(price));
+		order.setO_type(Integer.parseInt(type));
+		order.setO_status(Integer.parseInt(status));
+		order.setO_id(Integer.parseInt(o_id));
+		int count=qusOrderService.ModifyOrderById(order);
+		if(count>0) {
+			mv.setViewName("back/page/indent/Indent");
+			//return new ModelAndView("redirect:order/orderList");
+		}
+		return new ModelAndView("redirect:order/orderModify");
+	}
+	
 	/**
 	 * 查看订单
 	 * @return

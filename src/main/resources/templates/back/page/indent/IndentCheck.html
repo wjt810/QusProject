@@ -17,20 +17,20 @@
 		<div class="layui-form-item">
 			<label class="layui-form-label">用户名称</label>
 			<div class="layui-input-block">
-				<input type="text" class="layui-input newsName" name="userName" lay-verify="required" th:value="${order.qusUser.u_name}">
+				<input type="text" class="layui-input newsName" name="userName" lay-verify="required" th:value="${order.qusUser.u_name}" disabled="disabled">
 			</div>
 		</div>
 		<div class="layui-form-item">		
 			<label class="layui-form-label">医生名称</label>
 			<div class="layui-input-block">
-				<input type="text" class="layui-input newsAuthor" name="doctorName" lay-verify="required" th:value="${order.qusDoctor.d_name}">
+				<input type="text" class="layui-input newsAuthor" name="doctorName" lay-verify="required" th:value="${order.qusDoctor.d_name}" disabled="disabled">
 			</div>
 		</div>
 		
 		<div class="layui-form-item">
 			<label class="layui-form-label">一级科室</label>
 			<div class="layui-input-block">
-				<select id="room1" name="browseLook" class="newsLook" lay-filter="browseLook">
+				<select id="room1" name="browseLook" class="newsLook" lay-filter="browseLook" disabled="disabled">
 					<option th:selected="${order.qusDoctor.qusRoom1.r1_id}" th:value="${order.qusDoctor.qusRoom1.r1_id}">[[${order.qusDoctor.qusRoom1.r1_name}]]</option>
 				</select>
 			</div>
@@ -38,7 +38,7 @@
 		<div class="layui-form-item">
 			<label class="layui-form-label">二级科室</label>
 			<div class="layui-input-block">
-				<select id="room2" name="browseLook" class="newsLook" lay-filter="browseLook">
+				<select id="room2" name="browseLook" class="newsLook" lay-filter="browseLook" disabled="disabled">
 					<option th:selected="${order.qusDoctor.qusRoom2.r2_id}" value="${order.qusDoctor.qusRoom2.r2_id}">[[${order.qusDoctor.qusRoom2.r2_name}]]</option>
 				</select>
 			</div>
@@ -46,21 +46,21 @@
 		<div class="layui-form-item">
 			<label class="layui-form-label">付款金额</label>
 			<div class="layui-input-block">
-				<input type="text" class="layui-input price" name="price" lay-verify="required" th:value="${order.o_price}">
+				<input type="text" class="layui-input price" name="price" lay-verify="required" th:value="${order.o_price}" disabled="disabled">
 			</div>
 		</div>
 		<div class="layui-form-item">
 			<label class="layui-form-label">预约编号</label>
 			<div class="layui-input-block">
 				<div class="layui-input-block">
-					<input type="text" class="layui-input code" name="code" lay-verify="required" th:value="${order.qusAppointment.app_code}">
+					<input type="text" class="layui-input code" name="code" lay-verify="required" th:value="${order.qusAppointment.app_code}" disabled="disabled">
 				</div>
 			</div>
 		</div>
 		<div class="layui-form-item">
 			<label class="layui-form-label">订单类型</label>
 			<div class="layui-input-block">
-				<select name="type" class="newsLook" lay-filter="browseLook">
+				<select name="type" class="newsLook" lay-filter="browseLook" disabled="disabled">
 					 <option th:selected="${order.o_type='1'}" value="1">挂号</option>
 				     <option th:selected="${order.o_type='2'}" value="2">咨询</option>
 				</select>
@@ -69,7 +69,7 @@
 		<div class="layui-form-item">
 			<label class="layui-form-label">状态</label>
 			<div class="layui-input-block">
-				<select name="status" class="newsLook" lay-filter="browseLook">
+				<select name="status" class="newsLook" lay-filter="browseLook" disabled="disabled">
 					<option th:selected="${order.o_status='0'}" value="0">已付款</option>
 					<option th:selected="${order.o_status='3'}" value="2">已取消</option>
 					<option th:selected="${order.o_status='3'}" value="3">已完成</option>
@@ -79,7 +79,7 @@
 		
 		<div class="layui-form-item">
 			<div class="layui-input-block">
-				<button class="layui-btn fanhui">返回</button>
+				<button class="layui-btn fanhui" onclick="window.location.href='page/indent/Indent.html'">返回</button>
 		    </div>
 		</div>
 	</form>
@@ -114,25 +114,9 @@
 						form.render();
 					}
 		 		})
-		 	}
-			$(".fanhui").click(function(){
-				var index = layui.layer.open({
-					content : "order/orderList",
-					success : function(layero, index){
-						layui.layer.tips('点击此处返回订单列表', '.layui-layer-setwin .layui-layer-close', {
-							tips: 3
-						});
-					}
-				})
-				//改变窗口大小时，重置弹窗的高度，防止超出可视区域（如F12调出debug的操作）
-				$(window).resize(function(){
-					layui.layer.full(index);
-				})
-				layui.layer.full(index);
-			});
-			}
-		)
-		
+		 		}
+			})
+			
 	</script>
 </body>
 </html>
