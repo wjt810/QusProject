@@ -38,13 +38,14 @@ public class UserController {
 		ModelAndView mv = new ModelAndView("back/index");
 		return mv;
 	}
+	
 	/**
 	 * 科室管理
 	 * @return
 	 */
-	@RequestMapping("roomManager")
+	@RequestMapping("/roomManager")
 	public ModelAndView roomManage() {
-		ModelAndView mv = new ModelAndView("back/page/news/newsList");
+		ModelAndView mv = new ModelAndView("/back/page/news/newsList");
 		return mv;
 	}
 	/**

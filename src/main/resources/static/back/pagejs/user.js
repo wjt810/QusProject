@@ -12,12 +12,12 @@ layui.config({
 		laydate = layui.laydate;
         loadProvince();
         layui.upload({
-        	url : "back/json/userface.json",
+        	url : "back/json/a_picpath.json",
         	success: function(res){
         		var num = parseInt(4*Math.random());  //生成0-4的随机数
         		//随机显示一个头像信息
 		    	userFace.src = res.data[num].src;
-		    	window.sessionStorage.setItem('userFace',res.data[num].src);
+		    	window.sessionStorage.setItem('a_picpath',res.data[num].src);
 		    }
         });
 
@@ -41,10 +41,10 @@ layui.config({
         })
 
         //判断是否修改过头像，如果修改过则显示修改后的头像，否则显示默认头像
-        if(window.sessionStorage.getItem('userFace')){
-        	$("#userFace").attr("src",window.sessionStorage.getItem('userFace'));
+        if(window.sessionStorage.getItem('a_picpath')){
+        	$("#a_picpath").attr("src",window.sessionStorage.getItem('a_picpath'));
         }else{
-        	$("#userFace").attr("src","back/images/face.jpg");
+        	$("#a_picpath").attr("src","back/images/face.jpg");
         }
 
         //提交个人资料
@@ -57,15 +57,13 @@ layui.config({
         	return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
         })
 
-        
-
         //修改密码
         form.on("submit(changePwd)",function(data){
         	var index = layer.msg('提交中，请稍候',{icon: 16,time:false,shade:0.8});
             setTimeout(function(){
                 layer.close(index);
                 layer.msg("密码修改成功！");
-                $(".pwd").val('');
+                $(".a_password").val('');
             },2000);
         	return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
         })

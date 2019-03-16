@@ -49,7 +49,7 @@ public class PreController {
 	 * login
 	 * @return
 	 */
-	@RequestMapping("login")
+	@RequestMapping("pre/login")
 	public ModelAndView test4() {
 		ModelAndView mv=new ModelAndView("pre/login");
 		return mv;
