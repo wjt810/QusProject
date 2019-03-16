@@ -8,11 +8,7 @@ layui.config({
 
 	//加载页面数据
 	var usersData = '';
-<<<<<<< HEAD
-	/*$.get("/user/userList", function(data){
-=======
 	$.get("user/userList", function(data){
->>>>>>> branch 'master' of https://github.com/wjt810/QusProject.git
 		usersData = data;
 		if(window.sessionStorage.getItem("addUser")){
 			var addUsers = window.sessionStorage.getItem("addUser");
@@ -20,20 +16,6 @@ layui.config({
 		}
 		//执行加载数据的方法
 		usersList();
-	})*/
-	$.ajax({
-		url : "/user/userList",
-		type : "get",
-		dataType : "json",
-		success : function(data){
-			usersData = data;
-			if(window.sessionStorage.getItem("addUser")){
-				var addUsers = window.sessionStorage.getItem("addUser");
-				usersData = JSON.parse(addUsers).concat(usersData);
-			}
-			//执行加载数据的方法
-			usersList();
-		}
 	})
 
 	//查询
@@ -43,11 +25,7 @@ layui.config({
 			var index = layer.msg('查询中，请稍候',{icon: 16,time:false,shade:0.8});
             setTimeout(function(){
             	$.ajax({
-<<<<<<< HEAD
-					url : "/user/userList",
-=======
 					url : "user/userList",
->>>>>>> branch 'master' of https://github.com/wjt810/QusProject.git
 					type : "get",
 					dataType : "json",
 					success : function(data){
@@ -75,64 +53,17 @@ layui.config({
 		            			}
 		            		}
 		            		//用户名
-<<<<<<< HEAD
-		            		if(usersStr.qusUser.u_name.indexOf(selectStr) > -1){
-			            		usersStr["qusUser.u_name"] = changeStr(usersStr.qusUser.u_name);
-=======
 		            		if(usersStr.u_name.indexOf(selectStr) > -1){
 			            		usersStr["u_name"] = changeStr(usersStr.u_name);
->>>>>>> branch 'master' of https://github.com/wjt810/QusProject.git
 		            		}
 		            		//性别
-<<<<<<< HEAD
-		            		if(usersStr.qusUser.u_sex.indexOf(selectStr) > -1){
-			            		usersStr["qusUser.u_sex"] = changeStr(usersStr.qusUser.u_sex);
-=======
 		            		if(usersStr.u_sex.indexOf(selectStr) > -1){
 			            		usersStr["u_sex"] = changeStr(usersStr.u_sex);
->>>>>>> branch 'master' of https://github.com/wjt810/QusProject.git
 		            		}
-<<<<<<< HEAD
-		            		//手机号
-		            		if(usersStr.qususer.u_phone.indexOf(selectStr) > -1){
-			            		usersStr["qususer.u_phone"] = changeStr(usersStr.qususer.u_phone);
-=======
 		            		//电话
 		            		if(usersStr.u_phone.indexOf(selectStr) > -1){
 			            		usersStr["u_phone"] = changeStr(usersStr.u_phone);
->>>>>>> branch 'master' of https://github.com/wjt810/QusProject.git
 		            		}
-<<<<<<< HEAD
-		            		//科室名称
-		            		if(linksStr.qusDoctor.qusRoom1.r1_name.indexOf(selectStr) > -1){
-			            		linksStr["qusDoctor.qusRoom1.r1_name"] = changeStr(linksStr.qusDoctor.qusRoom1.r1_name);
-		            		}
-		            		//科室名称
-		            		if(linksStr.qusDoctor.qusRoom2.r2_name.indexOf(selectStr) > -1){
-			            		linksStr["qusDoctor.qusRoom2.r2_name"] = changeStr(linksStr.qusDoctor.qusRoom2.r2_name);
-		            		}
-		            		//就诊医生
-		            		if(linksStr.qusDoctor.d_name.indexOf(selectStr) > -1){
-			            		linksStr["qusDoctor.d_name"] = changeStr(linksStr.qusDoctor.d_name);
-		            		}
-		            		//状态
-		            		if(linksStr.qusStatus.sta_name.indexOf(selectStr) > -1){
-			            		linksStr["qusStatus.sta_name"] = changeStr(linksStr.qusStatus.sta_name);
-		            		}
-		            		//预约时间
-		            		if(linksStr.app_time.indexOf(selectStr) > -1){
-			            		linksStr["app_time"] = changeStr(linksStr.app_time);
-		            		}
-		            		//优先级
-		            		if(linksStr.app_priority.indexOf(selectStr) > -1){
-			            		linksStr["app_priority"] = changeStr(linksStr.app_priority);
-		            		}
-		            		if(usersStr.qusUser.u_name.indexOf(selectStr)>-1 || usersStr.qusUser.u_sex.indexOf(selectStr)>-1 
-		            				|| usersStr.qususer.u_phone.indexOf(selectStr)>-1 || usersStr.qusRoom1.r1_name.indexOf(selectStr)>-1
-		            				|| usersStr.qusDoctor.qusRoom2.r2_name.indexOf(selectStr)>-1|| usersStr.qusDoctor.d_name.indexOf(selectStr)>-1
-		            				|| usersStr.qusStatus.sta_name.indexOf(selectStr)>-1|| usersStr.app_time.indexOf(selectStr)>-1
-		            				|| usersStr.app_priority.indexOf(selectStr)>-1){
-=======
 		            		//科室
 		            		if(usersStr.r1_name.indexOf(selectStr) > -1){
 			            		usersStr["r1_name"] = changeStr(usersStr.r1_name);
@@ -148,7 +79,6 @@ layui.config({
 		            		if(usersStr.u_name.indexOf(selectStr)>-1 || usersStr.u_sex.indexOf(selectStr)>-1 
 		            				|| usersStr.u_phone.indexOf(selectStr)>-1 || usersStr.r1_name.indexOf(selectStr)>-1
 		            				|| usersStr.d_name.indexOf(selectStr)>-1 || usersStr.sta_name.indexOf(selectStr)>-1){
->>>>>>> branch 'master' of https://github.com/wjt810/QusProject.git
 		            			userArray.push(usersStr);
 		            		}
 		            	}
@@ -206,10 +136,13 @@ layui.config({
 
 	//操作
 	$("body").on("click",".users_edit",function(){  //编辑修改
+		var _this = $(this);
+		var app_id = _this.attr("data-id");
+		alert(app_id);
 		var index = layui.layer.open({
 			title : "修改用户",
 			type : 2,
-			content : "userModify",
+			content : "user/userModify?app_id="+app_id,
 			success : function(layero, index){
 				layui.layer.tips('点击此处返回用户列表', '.layui-layer-setwin .layui-layer-close', {
 					tips: 3
@@ -226,9 +159,22 @@ layui.config({
 	$("body").on("click",".users_del",function(){  //删除
 		var _this = $(this);
 		layer.confirm('确定删除此用户？',{icon:3, title:'提示信息'},function(index){
-			//_this.parents("tr").remove();
+			_this.parents("tr").remove();
 			for(var i=0;i<usersData.length;i++){
-				if(usersData[i].usersId == _this.attr("data-id")){
+				if(usersData[i].u_id == _this.attr("data-id")){
+					alert(usersData[i].u_id);
+					$.ajax({
+						url : "/user/deleteUser",
+						type : "get",
+						data : {u_id:usersData[i].u_id},
+						dataType : "json",
+						success : function(data){
+							layer.msg("删除成功！");
+						},
+						fail : function(err) {
+							layer.msg(err)
+						}
+					})
 					usersData.splice(i,1);
 					usersList(usersData);
 				}
@@ -268,9 +214,6 @@ layui.config({
 			currData = usersData.concat().splice(curr*nums-nums, nums);
 			if(currData.length != 0){
 				for(var i=0;i<currData.length;i++){
-<<<<<<< HEAD
-					alert(currData.length);
-=======
 					var sexStr=null;
 					if(currData[i].u_sex==0){
 						sexStr="男";
@@ -283,20 +226,12 @@ layui.config({
 					}else{
 						app_priority="不优先";
 					}
->>>>>>> branch 'master' of https://github.com/wjt810/QusProject.git
 					dataHtml += '<tr>'
 			    	+  '<td><input type="checkbox" name="checked" lay-skin="primary" lay-filter="choose"></td>'
-<<<<<<< HEAD
-			    	+  '<td>'+currData[i].qusUser.u_name+'</td>';
-			    	if(currData[i].qusUser.u_sex == "0"){
-			    		dataHtml += '<td>'+"男"+'</td>';
-			    	}else if(currData[i].qusUser.u_sex == "1"){
-			    		dataHtml += '<td>'+"女"+'</td>';
-=======
 			    	+  '<td>'+currData[i].u_name+'</td>'
 					+  '<td>'+sexStr+'</td>'
 					+  '<td>'+currData[i].u_phone+'</td>'
-			    	+ '<td>'+currData[i].r1_name+'</td>'
+			    	+ '<td>'+currData[i].r1_name+">"+currData[i].r2_name+'</td>'
 			    	+ '<td>'+currData[i].d_name+'</td>';
 					
 			    	if(currData[i].sta_name == "准备中"){
@@ -305,36 +240,13 @@ layui.config({
 			    		dataHtml += '<td style="color:yellow">'+currData[i].sta_name+'</td>';
 			    	}else if(currData[i].sta_name == "就诊"){
 			    		dataHtml += '<td style="color:#f00">'+currData[i].sta_name+'</td>';
->>>>>>> branch 'master' of https://github.com/wjt810/QusProject.git
 			    	}
 			    	
-<<<<<<< HEAD
-					dataHtml +=  '<td>'+currData[i].qususer.u_phone+'</td>'
-			    	+  '<td>'+currData[i].qusDoctor.qusRoom1.r1_name+">"+currData[i].qusDoctor.qusRoom2.r2_name+'</td>'
-			    	+  '<td>'+currData[i].qusDoctor.d_name+'</td>';
-					
-			    	if(currData[i].qusStatus.sta_name == "准备中"){
-			    		dataHtml += '<td style="color:#f00">'+currData[i].qusStatus.sta_name+'</td>';
-			    	}else if(currData[i].qusStatus.sta_name == "退号"){
-			    		dataHtml += '<td style="color:yellow">'+currData[i].qusStatus.sta_name+'</td>';
-			    	}else{
-			    		dataHtml += '<td>'+currData[i].qusStatus.sta_name+'</td>';
-			    	}
-			    	
-			    	dataHtml += '<td>'+currData[i].app_time+'</td>';
-			    	
-			    	if(currData[i].app_priority == "0"){
-			    		dataHtml += '<td>'+"VIP号"+'</td>';
-			    	}else if(currData[i].app_priority == "1"){
-			    		dataHtml += '<td>'+"普通号"+'</td>';
-			    	}
-=======
 			    	dataHtml += '<td>'+currData[i].app_time+'</td>'
 			    	+ '<td>'+app_priority+'</td>';
->>>>>>> branch 'master' of https://github.com/wjt810/QusProject.git
 			    	dataHtml += '<td>'
-					+    '<a class="layui-btn layui-btn-mini users_edit"><i class="iconfont icon-edit"></i> 编辑</a>'
-					+    '<a class="layui-btn layui-btn-danger layui-btn-mini users_del" data-id="'+data[i].qususer.u_id+'"><i class="layui-icon">&#xe640;</i> 删除</a>'
+					+    '<a class="layui-btn layui-btn-mini users_edit" data-id="'+currData[i].app_id+'"><i class="iconfont icon-edit"></i> 编辑</a>'
+					+    '<a class="layui-btn layui-btn-danger layui-btn-mini users_del" data-id="'+currData[i].u_id+'"><i class="layui-icon">&#xe640;</i> 删除</a>'
 			        +  '</td>'
 			    	+'</tr>';
 				}
@@ -345,7 +257,7 @@ layui.config({
 		}
 
 		//分页
-		var nums = 13; //每页出现的数据量
+		var nums = 6; //每页出现的数据量
 		laypage({
 			cont : "page",
 			pages : Math.ceil(usersData.length/nums),

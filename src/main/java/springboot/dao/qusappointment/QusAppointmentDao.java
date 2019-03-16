@@ -2,6 +2,7 @@ package springboot.dao.qusappointment;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.One;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Result;
@@ -36,4 +37,12 @@ public interface QusAppointmentDao {
 				one=@One(select="springboot.dao.qusstatus.QusStatusDao.qusStatusBy"))   //医生表
 	})
 	public List<QusAppointment> getUserByAppList();
+	
+	/**
+	 * 根据app_user_id（u_id）删除约单
+	 * @param u_id
+	 * @return
+	 */
+	@Delete("DELETE FROM qus_appointment WHERE app_user_id=#{u_id}")
+	public Integer deleteAppByuserId(@Param("u_id")Integer u_id);
 }

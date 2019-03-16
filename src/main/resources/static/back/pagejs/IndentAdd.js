@@ -11,56 +11,23 @@ layui.config({
 	roomList();
 
 	// 创建一个编辑器
- 	var editIndex = layedit.build('links_content');
- 	var addLinksArray = [],addLinks;
- 	
- 	/*function roomList(){
- 		alert("12345");
- 		$.ajax(function(){
- 			url : "room/roomManager",
-			type : "get",
+ 	/*var editIndex = layedit.build('links_content');
+ 	var addLinksArray = [],addLinks;*/
+	
+	/*from.on("submit",function(data){
+		$.ajax({
+			url : "order/orderModifySave",
+			type : "post",
+			data : {o_id :$("#o_id").val(),u_id:$("#u_id"),userName:$("#userName"),d_id :$("#d_id").val(),doctorName:$("#doctorName")
+					,room1 :$("#room1").val(),room2:$("#room2"),price :$("#price").val(),app_id:$("#app_id")
+					,code:$("#code"),type:$("#type"),status:$("#status")},
 			dataType : "json",
 			success : function(data){
-				var r1html = '';
-				var r2html = '';
-				for(var i=0;i<data.length;i++){
-					if(i==0){
-						r1html+='<option value="'+data[i].r1_id+'">'+data[i].r1_name+'</option>';
-						for(var j=0;j<data[i].room2s.length;j++){
-							r2html+='<option value="'+data[i].room2s.r2_id+'">'+data[i].room2s.r2_name+'</option>';
-						}
-						continue;
-					}
-					r1html+='<option value="'+data[i].r1_id+'">'+data[i].r1_name+'</option>';
+				var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
+					parent.layer.close(index);    //关闭弹出层
+					window.parent.location.reload();   //刷新父界面
 				}
-				$("#room1").html(r1html);
-				$("#room2").html(r2html);
-				form.render();
 			}
- 		})
- 	}*/
+	})*/
  	
- 	/*$(function) {
- 		var userName=$("input[name='userName']").val();
- 		var doctorName=$("input[name='doctorName']").val();
- 		var price=$("input[name='price']").val();
- 		$.ajax({
- 			url:"order/ModifyOrder",
- 			type:"get",
- 			dataType : "json",
- 			success : function(data){
- 				$(".newsName").val(userName);
- 				$(".newsAuthor").val(doctorName);
- 				$(".price").val(price);
- 				var index = top.layer.msg('数据提交中，请稍候',{icon:
- 					16,time:false,shade:0.8}); setTimeout(function(){ top.layer.close(index);
- 					top.layer.msg("文章修改成功！");
- 					layer.closeAll("iframe");//刷新页面
- 			},
- 			error:function(data){
- 				
- 			}
- 		});
- 	}*/
-	
 })

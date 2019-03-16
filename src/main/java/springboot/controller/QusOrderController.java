@@ -83,15 +83,14 @@ public class QusOrderController {
 	 * @param request
 	 * @return
 	 */
-	@RequestMapping(value="/orderModifySave",method=RequestMethod.POST)
-	public ModelAndView modifyOrderSave(@RequestParam("o_id") String o_id,@RequestParam("u_id") String u_id,
+	@RequestMapping("/orderModifySave")
+	public int modifyOrderSave(@RequestParam("o_id") String o_id,@RequestParam("u_id") String u_id,
 			@RequestParam("d_id") String d_id,@RequestParam("app_id") String app_id,
 			@RequestParam("userName") String userName,
 			@RequestParam("doctorName") String doctorName,
 			@RequestParam("room1") String room1_id,@RequestParam("room2") String room2_id,
 			@RequestParam("price") String price,@RequestParam("code") String code,
 			@RequestParam("type") String type,@RequestParam("status") String status,HttpServletRequest request) {
-		ModelAndView mv = new ModelAndView();
 		QusOrder order=new QusOrder();
 		QusUser user=new QusUser();
 		user.setU_name(userName);
@@ -112,11 +111,10 @@ public class QusOrderController {
 		order.setO_status(Integer.parseInt(status));
 		order.setO_id(Integer.parseInt(o_id));
 		int count=qusOrderService.ModifyOrderById(order);
-		if(count>0) {
+		/*if(count>0) {
 			mv.setViewName("back/page/indent/Indent");
-			//return new ModelAndView("redirect:order/orderList");
-		}
-		return new ModelAndView("redirect:order/orderModify");
+		}*/
+		return count;
 	}
 	
 	/**
@@ -129,6 +127,11 @@ public class QusOrderController {
 		QusOrder order=qusOrderService.getOrderById(o_id);
 		ModelAndView mv = new ModelAndView("back/page/indent/IndentCheck");
 		mv.addObject("order",order);
+		return mv;
+	}
+	@RequestMapping("/orderout")
+	public ModelAndView fanhui() {
+		ModelAndView mv=new ModelAndView("back/page/indent/Indent.html");
 		return mv;
 	}
 }

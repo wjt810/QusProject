@@ -16,4 +16,11 @@ public interface QusAppointmentService {
 	 * @return
 	 */
 	public List<QusAppointment> getUserByAppList();
+	
+	/**
+	 * 根据app_user_id(u_id)删除约单
+	 * @param u_id
+	 * @return
+	 */
+	public Integer deleteAppByuserId(Integer u_id);
 }

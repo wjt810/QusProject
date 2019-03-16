@@ -76,4 +76,12 @@ public interface QusOrderDao {
 			+"</script>")
 	
 	public Integer ModifyOrderById(QusOrder order);
+	
+	/**
+	 * 根据user_id 删除订单
+	 * @param u_id
+	 * @return
+	 */
+	@Delete("DELETE FROM qus_order WHERE o_user_id=#{u_id}")
+	public int deleteOrderByuserId(@Param("u_id")Integer u_id);
 }

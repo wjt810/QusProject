@@ -27,4 +27,11 @@ public interface QusOrderService {
 	 * @return
 	 */
 	public Integer ModifyOrderById(QusOrder order);
+	
+	/**
+	 * 根据o_user_id(u_id)删除订单
+	 * @param u_id
+	 * @return
+	 */
+	public int deleteOrderByuserId(Integer u_id);
 }

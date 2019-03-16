@@ -172,6 +172,25 @@ layui.config({
 		layui.layer.full(index);
 	})
 	
+	form.on("submit",function(data){
+				alert("dfg")
+				$.ajax({
+					url : "orderModifySave",
+					type : "get",
+					data : {o_id:$("#o_id").val(),u_id:$("#u_id").val(),d_id:$("#d_id").val(),app_id:$("#app_id").val(),
+							userName:$("#userName").val(),doctorName:$("#doctorName").val(),
+							room1:$("#room1").val(),room2:$("#room2").val(),price:$("#price").val(),
+							code:$("#code").val(),type:$("#type").val(),status:$("#status").val()},
+					dataType : "json",
+					success : function(data){
+						alert(data);
+						var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
+							parent.layer.close(index);    //关闭弹出层
+							window.parent.location.reload();   //刷新父界面
+					}
+			})
+		})
+	
 	$("body").on("click",".links_see",function(){  //查看
 		var _this = $(this);
 		var o_id = _this.attr("data-id")
@@ -192,6 +211,7 @@ layui.config({
 		layui.layer.full(index);
 	
 	})
+	
 
 	$("body").on("click",".links_del",function(){  //删除
 		var _this = $(this);
@@ -262,7 +282,7 @@ layui.config({
 		}
 
 		//分页
-		var nums = 5; //每页出现的数据量
+		var nums = 6; //每页出现的数据量
 		if(that){
 			linksData = that;
 		}
