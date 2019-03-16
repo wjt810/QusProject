@@ -20,7 +20,6 @@ layui.config({
 		    	window.sessionStorage.setItem('userFace',res.data[num].src);
 		    }
         });
-
         //添加验证规则
         /*form.verify({
             oldPwd : function(value, item){
@@ -46,19 +45,26 @@ layui.config({
         }else{
         	$("#userFace").attr("src","back/images/face.jpg");
         }
-
         //提交个人资料
-        form.on("submit(changeUser)",function(data){
-        	var index = layer.msg('提交中，请稍候',{icon: 16,time:false,shade:0.8});
+        form.on("submit(addDoctor)",function(data){
+        	var index = layer.msg('提交中，请稍候',{icon: 16,time:1000,shade:0.8});
+        	$.ajax({
+        		type: "POST",
+        		url: "doctor/submitAddInfo",
+        		data: {uName:$(".uName").val(),role:$(".role").val(),sex:$(".sex").val(),phone:$(".phone").val(),
+        			province:$(".province option:selected").text(),city:$(".city option:selected").text(),area:$(".area option:selected").text(),time:$(".time").val(),
+        			room1:$(".room1").val(),room2:$(".room2").val(),description:$(".description").val()},
+        		dateType: "JSON",
+        		success:function(data){
+        			var index1 = layer.msg('成功',{icon: 16,time:1000,shade:0.8});
+        		}	
+        	})
             setTimeout(function(){
                 layer.close(index);
                 layer.msg("提交成功！");
             },2000);
-        	return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
+        	//return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
         })
-
-        
-
         //修改密码
         form.on("submit(changePwd)",function(data){
         	var index = layer.msg('提交中，请稍候',{icon: 16,time:false,shade:0.8});
@@ -69,17 +75,15 @@ layui.config({
             },2000);
         	return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
         })
-
 })
-
- //加载省数据
+ //加载省数据  
 function loadProvince() {
-    var proHtml = '';
     for (var i = 0; i < areaData.length; i++) {
-        proHtml += '<option value="' + areaData[i].provinceCode + '_' + areaData[i].mallCityList.length + '_' + i + '">' + areaData[i].provinceName + '</option>';
+    	  var proHtml = '';
+        proHtml += '<option value="'+areaData[i].provinceCode + '_' + areaData[i].mallCityList.length + '_' + i +'">' + areaData[i].provinceName + '</option>';
+        $form.find('select[name=province]').append(proHtml);
     }
     //初始化省数据
-    $form.find('select[name=province]').append(proHtml);
     form.render();
     form.on('select(province)', function(data) {
         $form.find('select[name=area]').html('<option value="">请选择县/区</option>');
@@ -94,14 +98,22 @@ function loadProvince() {
             $form.find('select[name=city]').attr("disabled","disabled");
         }
     });
+    
+/*    form.on("select",function(data){
+    	alert(data.elem[data.elem.selectedIndex].text);
+    })*/
+    
 }
- //加载市数据
+ //加载市数据   '_' + citys[i].mallAreaList.length + '_' + i +    
 function loadCity(citys) {
-    var cityHtml = '<option value="">请选择市</option>';
+	 $form.find('select[name=city]').html("");
+	 $form.find('select[name=city]').append('<option value="">请选择市</option>');
     for (var i = 0; i < citys.length; i++) {
-        cityHtml += '<option value="' + citys[i].cityCode + '_' + citys[i].mallAreaList.length + '_' + i + '">' + citys[i].cityName + '</option>';
+    	 var cityHtml ='';
+        cityHtml += '<option value="' + citys[i].cityCode + '_' + citys[i].mallAreaList.length + '_' + i +'">' + citys[i].cityName + '</option>';
+        $form.find('select[name=city]').append(cityHtml);
     }
-    $form.find('select[name=city]').html(cityHtml).removeAttr("disabled");
+    $form.find('select[name=city]').removeAttr("disabled");
     form.render();
     form.on('select(city)', function(data) {
         var value = data.value;
@@ -118,11 +130,14 @@ function loadCity(citys) {
 }
  //加载县/区数据
 function loadArea(areas) {
-    var areaHtml = '<option value="">请选择县/区</option>';
+	$form.find('select[name=area]').html("");
+	$form.find('select[name=area]').append('<option value="">请选择县/区</option>');
     for (var i = 0; i < areas.length; i++) {
+    	var areaHtml = '';
         areaHtml += '<option value="' + areas[i].areaCode + '">' + areas[i].areaName + '</option>';
+        $form.find('select[name=area]').append(areaHtml);
     }
-    $form.find('select[name=area]').html(areaHtml).removeAttr("disabled");
+    $form.find('select[name=area]').removeAttr("disabled");
     form.render();
     form.on('select(area)', function(data) {
         //console.log(data);

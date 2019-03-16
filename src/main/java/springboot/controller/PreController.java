@@ -1,10 +1,14 @@
 package springboot.controller;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
+
+import springboot.pojo.QusUser;
 
 @RestController
 public class PreController {
@@ -135,5 +139,14 @@ public class PreController {
 	public ModelAndView test13() {
 		ModelAndView mv=new ModelAndView("pre/user/message");
 		return mv;
+	}
+	/**
+	 * 显示用户列表
+	 * @return
+	 */
+	@RequestMapping("/back/json/usersList.html")
+	public List<QusUser> getList(){
+		
+		return null;
 	}
 }

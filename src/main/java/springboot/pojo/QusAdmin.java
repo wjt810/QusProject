@@ -20,8 +20,9 @@ public class QusAdmin {
 	private String a_des; // varchar(50)自我描述
 	private Date a_born; // datetime出生日期
 	private String a_address; // varchar(50)地址
+	
 	private Integer a_createBy;//创建人id
-	private Integer a_roleid;//角色id
+	//private Integer a_roleid;//角色id
 	private String a_picpath;//头像路径
 	
 	public Integer getA_createBy() {
@@ -42,20 +43,25 @@ public class QusAdmin {
 
 	private Integer a_modifyBy;//更新人id
 
-	public Integer getA_roleid() {
-		return a_roleid;
-	}
-
-	public void setA_roleid(Integer a_roleid) {
-		this.a_roleid = a_roleid;
-	}
-
+	
+	
+		
 	public String getA_picpath() {
 		return a_picpath;
 	}
 
 	public void setA_picpath(String a_picpath) {
 		this.a_picpath = a_picpath;
+	}
+
+	private Integer a_roleid;//为了方便 资讯的查询我在 此表加了一个字段
+	
+	public Integer getA_roleid() {
+		return a_roleid;
+	}
+
+	public void setA_roleid(Integer a_roleid) {
+		this.a_roleid = a_roleid;
 	}
 
 	public Integer getA_id() {

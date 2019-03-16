@@ -1,5 +1,7 @@
+
 <!DOCTYPE html>
-<html>
+
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="utf-8">
 	<title>新闻列表--预医网</title>
@@ -9,11 +11,12 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="format-detection" content="telephone=no">
-	<link rel="stylesheet" href="back/layui/css/layui.css" media="all" />
+	<link rel="stylesheet" th:href="@{back/layui/css/layui.css}" media="all" />
 	<link rel="stylesheet" href="back/css/font_eolqem241z66flxr.css" media="all" />
 	<link rel="stylesheet" href="back/css/news.css" media="all" />
 </head>
 <body class="childrenBody">
+
 	<blockquote class="layui-elem-quote news_search">
 		<div class="layui-inline">
 		    <div class="layui-input-inline">
@@ -60,7 +63,8 @@
 		</table>
 	</div>
 	<div id="page"></div>
-	<script type="text/javascript" src="back/layui/layui.js"></script>
+	<script type="text/javascript" th:src="@{/back/layui/layui.js}"></script>
 	<script type="text/javascript" src="back/pagejs/infoList.js"></script>
+	<script type="text/javascript" src="back/js/jquery-3.3.1.js"></script>
 </body>
 </html>

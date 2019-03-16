@@ -24,12 +24,12 @@ public class QusRoomTest {
 
 	@Test
 	public void getRoom() {
-		List<QusRoom1> roomList = qusRoomService.getRoom1List(2);
+		List<QusRoom1> roomList = qusRoomService.getRoom1List(null);
 		System.out.println("一级科室名称\t二级科室名称");
 		for (QusRoom1 qusRoom1 : roomList) {
-			System.out.println(qusRoom1.getR1_name());
+			System.out.println(qusRoom1.getR1_name()+" "+qusRoom1.getR1_id());
 			for (QusRoom2 qusRoom2 : qusRoom1.getRoom2s()) {
-				System.out.println("\t\t" + qusRoom2.getR2_name());
+				System.out.println("\t\t r2Name\t" + qusRoom2.getR2_name()+" r2Id \t"+qusRoom2.getR2_id());
 			}
 		}
 	}

@@ -187,7 +187,7 @@ layui.config({
 
  	$("body").on("click",".users_edit",function(){  //查看店铺
  		var index = layui.layer.open({
- 			title : "查看店铺",
+ 			title : "查看管理员",
  			type : 2,
  			content : "adminShow",
  			success : function(layero, index){

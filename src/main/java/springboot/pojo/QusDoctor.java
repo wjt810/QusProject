@@ -1,6 +1,11 @@
 package springboot.pojo;
 
-import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
+import org.thymeleaf.util.DateUtils;
 
 /**
  * 医生表
@@ -24,6 +29,43 @@ public class QusDoctor {
 	private Integer d_r1_id; // int(11)一级科室id
 	private Integer d_r2_id; // int(11)二级科室id
 	private String d_description; // varchar(50)
+	
+	private int workTime; //工龄
+	public int getWorkTime() {
+		return workTime;
+	}
+	public void setWorkTime(int workTime) {
+		this.workTime = workTime;
+	}
+
+	private QusRoom1 qusRoom1;  //一级科室
+	
+
+	private QusRoom2 qusRoom2;  //二级科室
+	private QusRole qusRole;    //角色名称
+
+	public QusRole getQusRole() {
+		return qusRole;
+	}
+	public void setQusRole(QusRole qusRole) {
+		this.qusRole = qusRole;
+	}
+
+	public QusRoom1 getQusRoom1() {
+		return qusRoom1;
+	}
+
+	public void setQusRoom1(QusRoom1 qusRoom1) {
+		this.qusRoom1 = qusRoom1;
+	}
+
+	public QusRoom2 getQusRoom2() {
+		return qusRoom2;
+	}
+
+	public void setQusRoom2(QusRoom2 qusRoom2) {
+		this.qusRoom2 = qusRoom2;
+	}
 
 	public Integer getD_id() {
 		return d_id;
@@ -137,4 +179,11 @@ public class QusDoctor {
 		this.d_description = d_description;
 	}
 
+	@Override
+	public String toString() {
+		return "QusDoctor [d_id=" + d_id + ", d_name=" + d_name + ", d_password=" + d_password + ", d_sex=" + d_sex
+				+ ", d_phone=" + d_phone + ", d_startTime=" + d_startTime + ", d_born=" + d_born + ", d_address="
+				+ d_address + "]";
+	}
+	
 }

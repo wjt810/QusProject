@@ -8,7 +8,10 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
 
 import springboot.dao.qusinfo.QusInfoDao;
+import springboot.pojo.QusAdmin;
+import springboot.pojo.QusDoctor;
 import springboot.pojo.QusInfo;
+import springboot.pojo.QusRoom1;
 import springboot.service.qusinfo.QusInfoService;
 @Service
 public class QusInfoServiceImpl implements QusInfoService {
@@ -47,10 +50,46 @@ public class QusInfoServiceImpl implements QusInfoService {
 	 * 查询总量
 	 */
 	@Override
-	public int selectCount() {
-		return qusInfoDao.selectCount();
+	public int selectCount(String title) {
+		return qusInfoDao.selectCount(title);
 	}
-
-
+	/**
+	 * 查询所有的管理员--然后把selectInfoByTitle1和selectInfoByTitle2两个集合合并
+	 */
+	@Override
+	public List<QusInfo> selectInfoByTitle1(String title) {
+		return qusInfoDao.selectInfoByTitle1(title);
+	}
+	/**
+	 * 查询所有的管理员--然后把selectInfoByTitle1和selectInfoByTitle2两个集合合并
+	 */
+	@Override
+	public List<QusInfo> selectInfoByTitle2(String title) {
+		return qusInfoDao.selectInfoByTitle2(title);
+	}
+	@Override
+	public QusInfo selectDoctorById(Integer infoId) {
+		return qusInfoDao.selectDoctorById(infoId);
+	}
+	@Override
+	public QusInfo selectAdminById(Integer infoId) {
+		return qusInfoDao.selectAdminById(infoId);
+	}
+	@Override
+	public int selectRoleIdByInfoId(Integer infoId) {
+		return qusInfoDao.selectRoleIdByInfoId(infoId);
+	}
+	@Override
+	public int selectMaxId() {
+		return qusInfoDao.selectMaxId();
+	}
+	@Override
+	public List<QusRoom1> selectKeShi(Integer r1_id) {
+		return qusInfoDao.selectKeShi(r1_id);
+	}
+	@Override
+	public List<QusDoctor> selectDoctorList(Integer r1_id,Integer r2_id) {
+		return qusInfoDao.selectDoctorList(r1_id,r2_id);
+	}
 
 }

@@ -9,6 +9,38 @@ public class QusOrder {
 	private double o_price; // double订单费用
 	private Integer o_status; // int(11)订单状态(0已付款1已取消2已完成)
 	private Integer o_type; // int(11)订单类型(0挂号1咨询)
+	
+	
+	private QusDoctor qusDoctor;//医生表信息
+	private QusUser qusUser;    //用户表信息
+	private QusAppointment qusAppointment;//预约单表
+	
+
+	public QusDoctor getQusDoctor() {
+		return qusDoctor;
+	}
+
+	public void setQusDoctor(QusDoctor qusDoctor) {
+		this.qusDoctor = qusDoctor;
+	}
+
+	public QusUser getQusUser() {
+		return qusUser;
+	}
+
+	public void setQusUser(QusUser qusUser) {
+		this.qusUser = qusUser;
+	}
+
+	public QusAppointment getQusAppointment() {
+		return qusAppointment;
+	}
+
+	public void setQusAppointment(QusAppointment qusAppointment) {
+		this.qusAppointment = qusAppointment;
+	}
+
+	
 
 	public Integer getO_id() {
 		return o_id;
