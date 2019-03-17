@@ -2,6 +2,7 @@ package springboot.service.qusorder;
 
 import java.util.List;
 
+
 import springboot.pojo.QusOrder;
 
 public interface QusOrderService {
@@ -34,4 +35,10 @@ public interface QusOrderService {
 	 * @return
 	 */
 	public int deleteOrderByuserId(Integer u_id);
+	/**
+	 *根据 查询预约单个数
+	 * @param docId
+	 * @return
+	 */
+	public int selectOrderByDocId(Integer docId);
 }

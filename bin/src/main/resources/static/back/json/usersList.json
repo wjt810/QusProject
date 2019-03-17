@@ -1,0 +1,31 @@
+[{
+    "usersId" : "1",
+    "userName" : "贤心",
+    "userSex" : "男",
+    "userPhone" : "13123456789",
+    "keshiName" : "内科",
+    "doctor" : "admin",
+    "userStatus" : "就诊",
+    "userEndTime" : "2017-05-14 15:35",
+    "youxianji" : "VIP"
+},{
+    "usersId" : "2",
+    "userName" : "小小",
+    "userSex" : "女",
+    "userPhone" : "13123456789",
+    "keshiName" : "内科",
+    "doctor" : "juni",
+    "userStatus" : "准备中",
+    "userEndTime" : "2017-05-20 15:35",
+    "youxianji" : "VIP"
+},{
+    "usersId" : "3",
+    "userName" : "小乔",
+    "userSex" : "女",
+    "userPhone" : "13123456789",
+    "keshiName" : "神经科",
+    "doctor" : "Lili",
+    "userStatus" : "退号",
+    "userEndTime" : "2017-05-14 15:35",
+    "youxianji" : "VIP"
+}]

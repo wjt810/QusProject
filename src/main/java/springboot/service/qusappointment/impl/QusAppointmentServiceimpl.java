@@ -21,13 +21,19 @@ public class QusAppointmentServiceimpl implements QusAppointmentService {
 	public QusAppointment getAppointment(Integer id) {
 		return qusAppointmentDao.getAppointment(id);
 	}
-	
+	/**
+	 * 删除预约单号
+	 */
+	@Override
+	public int selectAppointmentByDocId(Integer docId) {
+		return qusAppointmentDao.selectAppointmentByDocId(docId);
+	}
 	/**
 	 * 查找约单的详细信息----实则查询用户信息
 	 */
 	@Override
-	public List<QusAppointment> getUserByAppList() {
-		return qusAppointmentDao.getUserByAppList();
+	public List<QusAppointment> getUserByAppLists() {
+		return qusAppointmentDao.getUserByAppLists();
 	}
 	/**
 	 * 根据app_user_id(u_id)删除约单表

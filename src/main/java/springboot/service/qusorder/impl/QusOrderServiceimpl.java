@@ -49,5 +49,13 @@ public class QusOrderServiceimpl implements QusOrderService {
 	public int deleteOrderByuserId(Integer u_id) {
 		return qusOrderDao.deleteOrderByuserId(u_id);
 	}
+	/**
+	 * 根据医生id查询订单id zcx
+	 */
+	@Override
+	public int selectOrderByDocId(Integer docId) {
+		return qusOrderDao.selectOrderByDocId(docId);
+	}
+
 
 }

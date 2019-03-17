@@ -132,7 +132,22 @@ layui.config({
 	            	//删除数据
 	            	for(var j=0;j<$checked.length;j++){
 	            		for(var i=0;i<linksData.length;i++){
-							if(linksData[i].linksId == $checked.eq(j).parents("tr").find(".links_del").attr("data-id")){
+							if(linksData[i].d_id == $checked.eq(j).parents("tr").find(".links_del").attr("data-id")){
+								//逐个删除数据库中的数据
+								$.ajax({
+			            			url : "doctor/deleteById.html",
+			            			type : "GET",
+			            			data :{docId : linksData[i].d_id},
+			            			dataType : "json"/*,
+			            			success:function(data){
+			            				if(data>=1){
+			            					var index1 = layer.msg('删除成功',{icon: 16,time:1000,shade:0.8});
+			            					
+			            				}else{
+			            					var index1 = layer.msg('删除失败',{icon: 16,time:1000,shade:0.8});
+			            				}
+			            			}*/
+			            		})
 								linksData.splice(i,1);
 								linksList(linksData);
 							}
@@ -211,13 +226,20 @@ layui.config({
 		layer.confirm('确定删除此信息？',{icon:3, title:'提示信息'},function(index){
 			_this.parents("tr").remove();
 			for(var i=0;i<linksData.length;i++){
-				if(linksData[i].linksId == _this.attr("data-id")){
+				if(linksData[i].d_id == _this.attr("data-id")){
 					//逐个删除数据库中的数据
 					$.ajax({
-            			url : "deleteById.html",
+            			url : "doctor/deleteById.html",
             			type : "GET",
-            			data :{info_id : newsData[i].info_id},
-            			dataType : "json"
+            			data :{docId : linksData[i].d_id},
+            			dataType : "json",
+            			success:function(data){
+            				if(data>=1){
+            					var index1 = layer.msg('删除成功',{icon: 16,time:1000,shade:0.8});
+            				}else{
+            					var index1 = layer.msg('删除失败',{icon: 16,time:1000,shade:0.8});
+            				}
+            			}
             		})
 					linksData.splice(i,1);
 					linksList(linksData);
@@ -252,9 +274,8 @@ layui.config({
 			    	+'<td>'+currData[i].d_consult+'</td>'
 			    	+'<td>'+currData[i].qusRoom1.r1_name+">"+currData[i].qusRoom2.r2_name+'</td>'
 			    	+'<td>'
-					+  '<a class="layui-btn layui-btn-mini links_edit" data-id="'+data[i].d_id+'"><i class="iconfont icon-edit"></i> 编辑</a>'
-					+  '<a class="layui-btn layui-btn-mini links_check" data-id="'+data[i].d_id+'"><i class="iconfont icon-edit"></i> 查看</a>'
-					+  '<a class="layui-btn layui-btn-danger layui-btn-mini links_del" data-id="'+data[i].d_id+'"><i class="layui-icon">&#xe640;</i> 删除</a>'
+					+  '<a class="layui-btn layui-btn-mini links_edit" data-id="'+currData[i].d_id+'"><i class="iconfont icon-edit"></i> 编辑</a>'
+					+  '<a class="layui-btn layui-btn-danger layui-btn-mini links_del" data-id="'+currData[i].d_id+'"><i class="layui-icon">&#xe640;</i> 删除</a>'
 			        +'</td>'
 			    	+'</tr>';
 				}

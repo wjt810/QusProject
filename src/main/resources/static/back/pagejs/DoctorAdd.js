@@ -76,7 +76,6 @@ layui.config({
         	return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
         })
 })
-
  //加载省数据  
 function loadProvince() {
     for (var i = 0; i < areaData.length; i++) {

@@ -26,7 +26,7 @@ public class QusAppointmentController {
 	 */
 	@RequestMapping("/appointmentList")
 	public List<QusAppointment> getUserList(){
-		List<QusAppointment> userList=qusAppointmentService.getUserByAppList();
+		List<QusAppointment> userList=qusAppointmentService.getUserByAppLists();
 		System.out.println("姓名\t性别\t手机号\t科室名称\t就诊医生\t状态\t预约时间\t优先级");
 		for(QusAppointment user:userList) {
 			System.out.println(user.getQusUser().getU_name()+"\t"+user.getQusUser().getU_sex()+"\t"+user.getQusUser().getU_phone()
