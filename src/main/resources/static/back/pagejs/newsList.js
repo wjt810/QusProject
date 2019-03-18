@@ -5,27 +5,11 @@ layui.config({
 		layer = parent.layer === undefined ? layui.layer : parent.layer,
 		laypage = layui.laypage,
 		$ = layui.jquery;
-
+	
 	//加载页面数据
 	var newsData = '';
 	$.get("/room/roomManager", function(data){
 		var newArray = [];
-		//单击首页“待审核文章”加载的信息
-		/*if($(".top_tab li.layui-this cite",parent.document).text() == "待审核文章"){
-			if(window.sessionStorage.getItem("addNews")){
-				var addNews = window.sessionStorage.getItem("addNews");
-				newsData = JSON.parse(addNews).concat(data);
-			}else{
-				newsData = data;
-			}
-			for(var i=0;i<newsData.length;i++){
-        		if(newsData[i].newsStatus == "待审核"){
-					newArray.push(newsData[i]);
-        		}
-        	}
-        	newsData = newArray;
-        	newsList(newsData);
-		}else{ */   //正常加载信息
 			newsData = data;
 			if(window.sessionStorage.getItem("addRooom")){  //添加科室后的信息
 				var addRooom = window.sessionStorage.getItem("addRooom");
@@ -34,7 +18,6 @@ layui.config({
 			
 			//执行加载数据的方法
 			newsList();
-		/*}*/
 	})
 
 	//查询
@@ -112,7 +95,7 @@ layui.config({
 		var index = layui.layer.open({
 			title : "添加科室",
 			type : 2,
-			content : "roomAdd",
+			content : "/room/roomAdd?type=add",
 			success : function(layero, index){
 				layui.layer.tips('点击此处返回文章列表', '.layui-layer-setwin .layui-layer-close', {
 					tips: 3
@@ -125,54 +108,35 @@ layui.config({
 		})
 		layui.layer.full(index);
 	})
-
-	//推荐文章
-	/*$(".recommend").click(function(){
-		var $checkbox = $(".news_list").find('tbody input[type="checkbox"]:not([name="show"])');
-		if($checkbox.is(":checked")){
-			var index = layer.msg('推荐中，请稍候',{icon: 16,time:false,shade:0.8});
-            setTimeout(function(){
-                layer.close(index);
-				layer.msg("推荐成功");
-            },2000);
-		}else{
-			layer.msg("请选择需要推荐的文章");
-		}
-	})
-
-	//审核文章
-	$(".audit_btn").click(function(){
-		var $checkbox = $('.news_list tbody input[type="checkbox"][name="checked"]');
-		var $checked = $('.news_list tbody input[type="checkbox"][name="checked"]:checked');
-		if($checkbox.is(":checked")){
-			var index = layer.msg('审核中，请稍候',{icon: 16,time:false,shade:0.8});
-            setTimeout(function(){
-            	for(var j=0;j<$checked.length;j++){
-            		for(var i=0;i<newsData.length;i++){
-						if(newsData[i].newsId == $checked.eq(j).parents("tr").find(".news_del").attr("data-id")){
-							//修改列表中的文字
-							$checked.eq(j).parents("tr").find("td:eq(3)").text("审核通过").removeAttr("style");
-							//将选中状态删除
-							$checked.eq(j).parents("tr").find('input[type="checkbox"][name="checked"]').prop("checked",false);
-							form.render();
-						}
-					}
-            	}
-                layer.close(index);
-				layer.msg("审核成功");
-            },2000);
-		}else{
-			layer.msg("请选择需要审核的文章");
-		}
-	})*/
-
-	//批量删除
+	
 	$(".batchDel").click(function(){
 		var $checkbox = $('.news_list tbody input[type="checkbox"][name="checked"]');
 		var $checked = $('.news_list tbody input[type="checkbox"][name="checked"]:checked');
+		var chk_value =[]; 
+		$('.input[type="checkbox"][name="checked"]:checked').each(function(){ 
+			 chk_value.push($(this).val()); 
+		});
 		if($checkbox.is(":checked")){
 			layer.confirm('确定删除选中的信息？',{icon:3, title:'提示信息'},function(index){
-				var index = layer.msg('删除中，请稍候',{icon: 16,time:false,shade:0.8});
+				$.ajax({
+		 			type : "GET",
+		 			url : "/room/delMore",
+		 			dataType : "json",
+		 			data : {r1_id:r1,r2_id:r2},
+		 			success: function(data){
+		 				var re = data["result"];
+		 				if(re == "SUR1"){
+		 					alert("成功删除一级科室");
+		 					window.location.reload();   //刷新当前界面
+		 				}if(re == "SUR2"){
+		 					alert("成功删除二级科室");
+		 					window.location.reload();   //刷新当前界面
+		 				}else{
+		 					window.location.reload();   //刷新当前界面
+		 				}
+		 			}
+		 		})
+				/*var index = layer.msg('删除中，请稍候',{icon: 16,time:false,shade:0.8});
 	            setTimeout(function(){
 	            	//删除数据
 	            	for(var j=0;j<$checked.length;j++){
@@ -187,10 +151,10 @@ layui.config({
 	            	form.render();
 	                layer.close(index);
 					layer.msg("删除成功");
-	            },2000);
+	            },2000);*/
 	        })
 		}else{
-			layer.msg("请选择需要删除的文章");
+			layer.msg("请选择需要删除的科室");
 		}
 	})
 
@@ -215,21 +179,16 @@ layui.config({
 		form.render('checkbox');
 	})
 
-	//是否展示
-	/*form.on('switch(isShow)', function(data){
-		var index = layer.msg('修改中，请稍候',{icon: 16,time:false,shade:0.8});
-        setTimeout(function(){
-            layer.close(index);
-			layer.msg("展示状态修改成功！");
-        },2000);
-	})*/
  
 	//操作
-	$("body").on("click",".news_edit",function(){  //编辑
+	$("body").on("click",".news_edit",function(){  //修改
+		var _this = $(this);
+		var r1_id = _this.attr("r1-id");
+		var r2_id = _this.attr("r2-id");
         var index = layui.layer.open({
             title : "修改科室",
             type : 2,
-            content : "roomModify",
+            content : "/room/roomModify?r1_id="+r1_id+"&r2_id="+r2_id+"&type=edit",
             success : function(layero, index){
                 layui.layer.tips('点击此处返回文章列表', '.layui-layer-setwin .layui-layer-close', {
                     tips: 3
@@ -242,7 +201,27 @@ layui.config({
             layui.layer.full(index);
         })
         layui.layer.full(index);
-
+	})
+	
+	//操作
+	$("body").on("click",".news_add",function(){  //添加
+		var _this = $(this);
+		var r1_id = _this.attr("r1-id");
+        var index = layui.layer.open({
+            title : "添加科室",
+            type : 2,
+            content : "/room/roomAddR2?r1_id="+r1_id+"&type=addr2",
+            success : function(layero, index){
+                layui.layer.tips('点击此处返回文章列表', '.layui-layer-setwin .layui-layer-close', {
+                    tips: 3
+                });
+            }
+        })
+        //改变窗口大小时，重置弹窗的高度，防止超出可视区域（如F12调出debug的操作）
+        $(window).resize(function(){
+            layui.layer.full(index);
+        })
+        layui.layer.full(index);
 	})
 
 	$("body").on("click",".news_collect",function(){  //收藏.
@@ -257,14 +236,28 @@ layui.config({
 
 	$("body").on("click",".news_del",function(){  //删除
 		var _this = $(this);
+		var r1 = _this.attr("r1-id");
+		var r2 = _this.attr("r2-id");
 		layer.confirm('确定删除此信息？',{icon:3, title:'提示信息'},function(index){
 			//_this.parents("tr").remove();
-			for(var i=0;i<newsData.length;i++){
-				if(newsData[i].newsId == _this.attr("data-id")){
-					newsData.splice(i,1);
-					newsList(newsData);
-				}
-			}
+			$.ajax({
+	 			type : "GET",
+	 			url : "/room/del",
+	 			dataType : "json",
+	 			data : {r1_id:r1,r2_id:r2},
+	 			success: function(data){
+	 				var re = data["result"];
+	 				if(re == "SUR1"){
+	 					alert("成功删除一级科室");
+	 					window.location.reload();   //刷新当前界面
+	 				}if(re == "SUR2"){
+	 					alert("成功删除二级科室");
+	 					window.location.reload();   //刷新当前界面
+	 				}else{
+	 					window.location.reload();   //刷新当前界面
+	 				}
+	 			}
+	 		})
 			layer.close(index);
 		});
 	})
@@ -281,25 +274,43 @@ layui.config({
 			if(currData.length != 0){
 				for(var i=0;i<currData.length;i++){
 					dataHtml += '<tr>'
-			    	+'<td><input type="checkbox" name="checked" lay-skin="primary" lay-filter="choose"></td>'
-		    		+'<td text-align="center">'+currData[i].r1_name+'</td>'
-		    		+'<td><select style="width:20%">'
+			    	+ '<td><input type="checkbox" name="checked" lay-skin="primary" lay-filter="choose"></td>'
+		    		+ '<td text-align="center">'+currData[i].r1_name+'</td>'
+		    		if(currData[i].room2s.length != 0){
+		    			dataHtml += '<td><select style="width:20%">';
 			    		for (var j = 0; j < currData[i].room2s.length; j++) {
 			    			dataHtml += '<option value="'+currData[i].room2s[j].r2_id+'">'+currData[i].room2s[j].r2_name+'</option>'
 			    		}
-                    dataHtml += '</select></td>'
-			    	+  '<td>'
-					+   '<a class="layui-btn layui-btn-mini news_edit"><i class="iconfont icon-edit"></i> 编辑</a>'
-//					+  '<a class="layui-btn layui-btn-normal layui-btn-mini news_collect"><i class="layui-icon">&#xe600;</i> 收藏</a>'
-					+  '<a class="layui-btn layui-btn-danger layui-btn-mini news_del" data-id="'+data[i].r1_id+'"><i class="layui-icon">&#xe640;</i> 删除</a>'
-			        +  '</td>'
-			    	+'</tr>';
+			    		dataHtml += '</select></td>'
+					}else{
+						dataHtml += '<td>暂无数据</td>'
+					}
+			    	dataHtml += '<td>'
+			    	if(currData[i].room2s.length != 0){
+			    		dataHtml += '<a class="layui-btn layui-btn-mini news_edit" r1-id="'+currData[i].r1_id+'" r2-id="'+currData[i].room2s[0].r2_id+'"><i class="iconfont icon-edit"></i>修改</a>'
+			    	}else{
+			    		dataHtml += '<a class="layui-btn layui-btn-mini news_edit" r1-id="'+currData[i].r1_id+'" r2-id="null"><i class="iconfont icon-edit"></i>修改</a>'
+			    	}
+					dataHtml += '<a class="layui-btn layui-btn-mini news_add" r1-id="'+currData[i].r1_id+'"><i class="iconfont icon-edit"></i>添加</a>'
+					if(currData[i].room2s.length != 0){
+			    		dataHtml += '<a class="layui-btn layui-btn-danger layui-btn-mini news_del" r1-id="'+currData[i].r1_id+'" r2-id="'+currData[i].room2s[0].r2_id+'"><i class="layui-icon">&#xe640;</i> 删除</a>'
+			    	}else{
+			    		dataHtml += '<a class="layui-btn layui-btn-danger layui-btn-mini news_del" r1-id="'+currData[i].r1_id+'" r2-id="0"><i class="layui-icon">&#xe640;</i> 删除</a>'
+			    	}
+			        dataHtml += '</td>'
+			    	+ '</tr>';
 				}
 			}else{
 				dataHtml = '<tr><td colspan="8">暂无数据</td></tr>';
 			}
 		    return dataHtml;
 		}
+		
+		// 下拉框change事件
+		form.on("select", function(data){
+			$(".news_edit").attr("r2-id", data.value);
+			$(".news_del").attr("r2-id", data.value);
+		});
 
 		//分页
 		var nums = 6; //每页出现的数据量

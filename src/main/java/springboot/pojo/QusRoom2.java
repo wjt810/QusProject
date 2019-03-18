@@ -8,6 +8,19 @@ public class QusRoom2 {
 	
 	private QusRoom1 room1s;  //对应一级科室
 	
+	
+	public QusRoom2() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public QusRoom2(Integer r2_id, String r2_name, Integer r2_r1_id) {
+		super();
+		this.r2_id = r2_id;
+		this.r2_name = r2_name;
+		this.r2_r1_id = r2_r1_id;
+	}
+
 	public QusRoom1 getRoom1s() {
 		return room1s;
 	}
