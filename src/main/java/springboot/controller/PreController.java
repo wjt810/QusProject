@@ -149,4 +149,13 @@ public class PreController {
 		
 		return null;
 	}
+	/**
+	 * 资讯页面
+	 * @return
+	 */
+	@RequestMapping("Hotre")
+	public ModelAndView test14() {
+		ModelAndView mv=new ModelAndView("pre/Hotre");
+		return mv;
+	}
 }
