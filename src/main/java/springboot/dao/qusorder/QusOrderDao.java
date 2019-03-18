@@ -67,10 +67,28 @@ public interface QusOrderDao {
 	 * @param o_id
 	 * @return
 	 */
-	@Update("UPDATE qus_order SET o_doc_id = #{o_doc_id} , \r\n" + 
-			"	o_user_id = #{o_user_id} , o_app_id = #{o_app_id} , \r\n" + 
-			"	o_price = #{o_price}, o_status = #{o_status} , o_type = #{o_type}	\r\n" + 
-			"	WHERE o_id = #{o_id}")
+	@Update("<script> UPDATE qus_order SET"
+			+ "<if test='o_doc_id != null'> o_doc_id = #{o_doc_id} ,</if>"
+			+ "<if test='o_user_id != null'> o_user_id = #{o_user_id} ,</if>"
+			+ "<if test='o_app_id != null'> o_app_id = #{o_app_id} ,</if>"
+			+ "	o_price = #{o_price}, o_status = #{o_status} , o_type = #{o_type}"
+			+ "	WHERE o_id = #{o_id}"
+			+"</script>")
 	
 	public Integer ModifyOrderById(QusOrder order);
+	
+	/**
+	 * 根据user_id 删除订单
+	 * @param u_id
+	 * @return
+	 */
+	@Delete("DELETE FROM qus_order WHERE o_user_id=#{u_id}")
+	public int deleteOrderByuserId(@Param("u_id")Integer u_id);
+	/**
+	 * 根据医生id删除订单id
+	 * 
+	 */
+	@Select("SELECT COUNT(*) FROM qus_doctor d, qus_order o WHERE o.o_doc_id=d.d_id AND d.d_id =#{docId}")
+	public int selectOrderByDocId(@Param("docId")Integer docId);
+	
 }

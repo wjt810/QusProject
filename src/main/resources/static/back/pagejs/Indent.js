@@ -172,6 +172,25 @@ layui.config({
 		layui.layer.full(index);
 	})
 	
+	form.on("submit",function(data){
+				alert("dfg")
+				$.ajax({
+					url : "orderModifySave",
+					type : "get",
+					data : {o_id:$("#o_id").val(),u_id:$("#u_id").val(),d_id:$("#d_id").val(),app_id:$("#app_id").val(),
+							userName:$("#userName").val(),doctorName:$("#doctorName").val(),
+							room1:$("#room1").val(),room2:$("#room2").val(),price:$("#price").val(),
+							code:$("#code").val(),type:$("#type").val(),status:$("#status").val()},
+					dataType : "json",
+					success : function(data){
+						alert(data);
+						var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
+							parent.layer.close(index);    //关闭弹出层
+							window.parent.location.reload();   //刷新父界面
+					}
+			})
+		})
+	
 	$("body").on("click",".links_see",function(){  //查看
 		var _this = $(this);
 		var o_id = _this.attr("data-id")
@@ -192,6 +211,7 @@ layui.config({
 		layui.layer.full(index);
 	
 	})
+	
 
 	$("body").on("click",".links_del",function(){  //删除
 		var _this = $(this);
@@ -236,17 +256,17 @@ layui.config({
 			    	+'<td><a style="color:#1E9FFF;" target="_blank" href="'+currData[i].qusDoctor.d_name+'">'+currData[i].qusDoctor.d_name+'</a></td>'
 			    	+'<td>'+currData[i].qusDoctor.qusRoom1.r1_name+">"+currData[i].qusDoctor.qusRoom2.r2_name+'</td>'
 			    	+'<td>'+currData[i].o_price+'</td>';
+					if(currData[i].o_type == "0"){
+			    		dataHtml += '<td style="color:#f00">'+"挂号"+'</td>';
+			    	}else if(currData[i].o_type == "1"){
+			    		dataHtml += '<td style="color:green">'+"咨询"+'</td>';
+			    	}
 			    	if(currData[i].o_status == "0"){
 			    		dataHtml += '<td style="color:#f00">'+"已付款"+'</td>';
 			    	}else if(currData[i].o_status == "1"){
 			    		dataHtml += '<td style="color:green">'+"已完成"+'</td>';
 			    	}else if(currData[i].o_status == "2"){
 			    		dataHtml += '<td>'+"已取消"+'</td>';
-			    	}
-					if(currData[i].o_type == "0"){
-			    		dataHtml += '<td style="color:#f00">'+"挂号"+'</td>';
-			    	}else if(currData[i].o_type == "1"){
-			    		dataHtml += '<td style="color:green">'+"咨询"+'</td>';
 			    	}
 					dataHtml +='<td>'
 					+  '<a class="layui-btn layui-btn-mini links_edit" data-id="'+currData[i].o_id+'"><i class="iconfont icon-edit"></i> 编辑</a>'
@@ -262,7 +282,7 @@ layui.config({
 		}
 
 		//分页
-		var nums = 5; //每页出现的数据量
+		var nums = 6; //每页出现的数据量
 		if(that){
 			linksData = that;
 		}

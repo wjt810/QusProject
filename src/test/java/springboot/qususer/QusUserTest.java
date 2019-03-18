@@ -9,20 +9,27 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import springboot.pojo.QusAppointment;
 import springboot.pojo.QusUser;
-
-
+import springboot.service.qusappointment.QusAppointmentService;
+import springboot.service.qusorder.QusOrderService;
 import springboot.service.qususer.QusUserService;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class QusUserTest {
 	@Resource
 	private QusUserService qusUserService;
+	
+	@Resource
+	private QusAppointmentService qusAppointmentService;
+	
+	@Resource
+	private QusOrderService qusOrderService;
  
 	/**
     * 用户列表
     */
 	@Test
 	public void testgetList() {
+		
 		List<QusAppointment> qusUserList= qusUserService.getUserList();
 			System.out.println("姓名\t性别\t手机号\t科室名称\t就诊医生\t状态\t预约时间\t优先级");
 			/*for(int i=0;i<qusUserList.size();i++) {
@@ -73,5 +80,32 @@ public class QusUserTest {
 					);
 		  }
 	}
+	
+	/**
+	 * 删除用户
+	 */
+	@Test
+	public void testDelUser() {
+		int u_id=2;
+		int count=qusOrderService.deleteOrderByuserId(u_id);
+		if(count>0) {
+			System.out.println("delSuccess");
+		}
+		int count2=qusAppointmentService.deleteAppByuserId(u_id);
+		if(count2>0) {
+			System.out.println("delSuccess");
+		}
+		int count3=qusUserService.deleteUserByuserId(u_id);
+		if(count3>0) {
+			System.out.println("delSuccess");
+		}
+	}
 
+	
+	@Test
+	public void testUserById() {
+		Integer app_id=7;
+		QusAppointment user=qusUserService.getUserById(app_id);
+		System.out.println(user.getApp_id());
+	}
 }

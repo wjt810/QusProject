@@ -30,31 +30,23 @@ public class QusDoctor {
 	private Integer d_r2_id; // int(11)二级科室id
 	private String d_description; // varchar(50)
 	
-	private String DocTimes;     //工龄
-	
-	public String getDocTimes(Date d_startTime) throws ParseException {
-		   //return new Date().getYear() - d_startTime.getYear();
-		SimpleDateFormat myFormatter = new SimpleDateFormat("yyyy-MM-dd");
-		Date date=new Date(); 
-		Date mydate= d_startTime;
-		long day=(date.getTime()-mydate.getTime())/(24*60*60*1000) + 1;
-		DocTimes=new java.text.DecimalFormat("#.00").format(day/365f);
-		return DocTimes;
+	private int workTime; //工龄
+	public int getWorkTime() {
+		return workTime;
 	}
-
-	public void setDocTimes(String docTimes) {
-		DocTimes = docTimes;
-		
+	public void setWorkTime(int workTime) {
+		this.workTime = workTime;
 	}
 
 	private QusRoom1 qusRoom1;  //一级科室
+	
+
 	private QusRoom2 qusRoom2;  //二级科室
 	private QusRole qusRole;    //角色名称
 
 	public QusRole getQusRole() {
 		return qusRole;
 	}
-
 	public void setQusRole(QusRole qusRole) {
 		this.qusRole = qusRole;
 	}

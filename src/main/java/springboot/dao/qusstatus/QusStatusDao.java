@@ -1,15 +1,17 @@
 package springboot.dao.qusstatus;
 
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
 import springboot.pojo.QusStatus;
 
 public interface QusStatusDao {
+	
 	/**
-	 * 根据状态id查找信息
+	 * 根据Id查询状态信息
 	 * @param sta_id
 	 * @return
 	 */
-	@Select("select * FROM qus_status where sta_id=#{sta_id}")
-	public QusStatus getStatus(Integer sta_id);
+	@Select("SELECT * FROM qus_status WHERE sta_id=#{sta_id}")
+	public QusStatus qusStatusBy(Integer sta_id);
 }

@@ -18,7 +18,6 @@ import springboot.service.qusdoctor.QusDoctorService;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class QusDoctorTest {
-
 	@Resource
 	private QusDoctorService qusDoctorService;
 	/**
@@ -28,11 +27,6 @@ public class QusDoctorTest {
 	public void Doctortest() {
 		List<QusDoctor> doctorList=qusDoctorService.getDoctorList();
 		System.out.println("医生姓名\t性别\t入职时间\t工龄\t角色\t挂号费用\t咨询费用\t所属科室");
-		/* // 获得今天的时间
-	    var date = new Date();
-	    startDate = new Date(startDate);
-	    var newDate = date.getTime() - startDate.getTime();*/
-		
 		for(QusDoctor doctor:doctorList) {
 			int time=new Date().getYear()-doctor.getD_born().getYear();
 			System.out.println(time);
@@ -41,5 +35,16 @@ public class QusDoctorTest {
 			+"\t"+doctor.getQusRoom1().getR1_name()+">"+doctor.getQusRoom2().getR2_name());
 		}
 	}
-
+	//测试查询医生的预约个数  然后进行删除
+	@Test
+	public void testSelectCount() {
+		int count = qusDoctorService.selectCountByDocId(3);
+		System.out.println(count);
+	}
+	//测试删除
+	@Test
+	public void testDelete() {
+		int count = qusDoctorService.deleteByDocId(37);
+		System.out.println(count);
+	}
 }

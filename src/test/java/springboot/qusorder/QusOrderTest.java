@@ -34,6 +34,7 @@ public class QusOrderTest {
 					+order.getQusAppointment().getApp_code()+"\t"+order.getO_price()+"\t"+order.getO_status()+"\t"
 					+order.getO_type());
 		}
+		System.out.println("");
 	}
 	
 	/**
@@ -75,6 +76,14 @@ public class QusOrderTest {
 				+order.getQusDoctor().getQusRoom1().getR1_name()+">"+order.getQusDoctor().getQusRoom2().getR2_name()+"\t"
 				+order.getQusAppointment().getApp_code()+"\t"+order.getO_price()+"\t"+order.getO_status()+"\t"
 				+order.getO_type());
+	}
+	/**
+	 * 根据医生id查询订单个数 赵创新
+	 */
+	@Test
+	public void testOrderyDocId() {
+	//	int count = qusOrderService.selectAppointmentByDocId(4);
+	//	System.out.println(count);
 	}
 
 }

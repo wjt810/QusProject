@@ -136,10 +136,13 @@ layui.config({
 
 	//操作
 	$("body").on("click",".users_edit",function(){  //编辑修改
+		var _this = $(this);
+		var app_id = _this.attr("data-id");
+		alert(app_id);
 		var index = layui.layer.open({
 			title : "修改用户",
 			type : 2,
-			content : "userModify",
+			content : "user/userModify?app_id="+app_id,
 			success : function(layero, index){
 				layui.layer.tips('点击此处返回用户列表', '.layui-layer-setwin .layui-layer-close', {
 					tips: 3
@@ -156,9 +159,22 @@ layui.config({
 	$("body").on("click",".users_del",function(){  //删除
 		var _this = $(this);
 		layer.confirm('确定删除此用户？',{icon:3, title:'提示信息'},function(index){
-			//_this.parents("tr").remove();
+			_this.parents("tr").remove();
 			for(var i=0;i<usersData.length;i++){
-				if(usersData[i].usersId == _this.attr("data-id")){
+				if(usersData[i].u_id == _this.attr("data-id")){
+					alert(usersData[i].u_id);
+					$.ajax({
+						url : "/user/deleteUser",
+						type : "get",
+						data : {u_id:usersData[i].u_id},
+						dataType : "json",
+						success : function(data){
+							layer.msg("删除成功！");
+						},
+						fail : function(err) {
+							layer.msg(err)
+						}
+					})
 					usersData.splice(i,1);
 					usersList(usersData);
 				}
@@ -215,7 +231,7 @@ layui.config({
 			    	+  '<td>'+currData[i].u_name+'</td>'
 					+  '<td>'+sexStr+'</td>'
 					+  '<td>'+currData[i].u_phone+'</td>'
-			    	+ '<td>'+currData[i].r1_name+'</td>'
+			    	+ '<td>'+currData[i].r1_name+">"+currData[i].r2_name+'</td>'
 			    	+ '<td>'+currData[i].d_name+'</td>';
 					
 			    	if(currData[i].sta_name == "准备中"){
@@ -229,8 +245,8 @@ layui.config({
 			    	dataHtml += '<td>'+currData[i].app_time+'</td>'
 			    	+ '<td>'+app_priority+'</td>';
 			    	dataHtml += '<td>'
-					+    '<a class="layui-btn layui-btn-mini users_edit"><i class="iconfont icon-edit"></i> 编辑</a>'
-					+    '<a class="layui-btn layui-btn-danger layui-btn-mini users_del" data-id="'+data[i].usersId+'"><i class="layui-icon">&#xe640;</i> 删除</a>'
+					+    '<a class="layui-btn layui-btn-mini users_edit" data-id="'+currData[i].app_id+'"><i class="iconfont icon-edit"></i> 编辑</a>'
+					+    '<a class="layui-btn layui-btn-danger layui-btn-mini users_del" data-id="'+currData[i].u_id+'"><i class="layui-icon">&#xe640;</i> 删除</a>'
 			        +  '</td>'
 			    	+'</tr>';
 				}
@@ -241,7 +257,7 @@ layui.config({
 		}
 
 		//分页
-		var nums = 13; //每页出现的数据量
+		var nums = 6; //每页出现的数据量
 		laypage({
 			cont : "page",
 			pages : Math.ceil(usersData.length/nums),

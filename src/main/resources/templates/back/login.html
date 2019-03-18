@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>后台登录</title>
+    <script src="back/js/jquery-1.12.4.js"></script>
     <style>
         * { margin: 0; padding: 0; }
         html { height: 100%; }
@@ -36,34 +37,23 @@
     </style>
 </head>
 <body>
+<form action="admin/login" method="post">
     <div class="dowebok">
         <div class="logo"></div>
         <div style="margin: 20px auto 40px; text-align: center;font-size: 30px;font-weight: bold">预医网后台管理系统</div>
         <div class="form-item">
-            <input id="username" type="text" autocomplete="off" placeholder="用户名">
+            <input name="a_name" id="a_name" type="text" autocomplete="off" placeholder="用户名">
             <p class="tip">请输入正确的用户名</p>
         </div>
         <div class="form-item">
-            <input id="password" type="password" autocomplete="off" placeholder="登录密码">
+            <input name="a_password" id="a_password" type="password" autocomplete="off" placeholder="登录密码">
             <p class="tip">用户名或密码不正确</p>
         </div>
         <div class="form-item"><button id="submit">登 录</button></div>
         <div class="reg-bar">
         </div>
     </div>
-    <script src="back/images/jquery.min.js"></script>
-    <script>
-        $(function () {
-            $('input').val('')
-            $('#submit').on('click', function () {
-                $('.tip').show();
-                location.href = 'index.html'
-            })
-        })
-    </script>
-
-<div style="text-align:center;">
-</div>
-
+</form>
+<div style="text-align:center;"></div>
 </body>
 </html>

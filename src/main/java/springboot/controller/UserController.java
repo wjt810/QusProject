@@ -1,30 +1,11 @@
 package springboot.controller;
-
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.boot.autoconfigure.quartz.QuartzDataSource;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
-
-import com.mysql.cj.xdevapi.JsonArray;
-
-import springboot.pojo.QusAppointment;
-import springboot.pojo.QusInfo;
-import springboot.service.qusinfo.QusInfoService;
 import springboot.service.qususer.QusUserService;
-
-
-
 @RestController
 //@Controller
 public class UserController {
@@ -38,17 +19,17 @@ public class UserController {
 	 */
 	
 	@RequestMapping("list")
-	/*public ModelAndView list(@RequestParam("name") String name) {
-		List<User> list = userService.list(name);
-		ModelAndView mv = new ModelAndView("index");
-		for (User user : list) {
-			logger.info(user.toString());
-			mv.addObject("user", user.toString());
-		}
-		return mv;
-	}*/
 	public ModelAndView test() {
 		ModelAndView mv = new ModelAndView("back/index");
+		return mv;
+	}
+	/**
+	 * 登录
+	 * @return
+	 */
+	@RequestMapping("backLogin")
+	public ModelAndView login() {
+		ModelAndView mv = new ModelAndView("back/login");
 		return mv;
 	}
 	

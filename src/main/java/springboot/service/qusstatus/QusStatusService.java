@@ -4,9 +4,10 @@ import springboot.pojo.QusStatus;
 
 public interface QusStatusService {
 	/**
-	 * 根据状态Id查找信息
+	 * 根据id查找状态信息
 	 * @param sta_id
 	 * @return
 	 */
-	public QusStatus getStatus(Integer sta_id);
+	public QusStatus qusStatusBy(Integer sta_id);
+
 }

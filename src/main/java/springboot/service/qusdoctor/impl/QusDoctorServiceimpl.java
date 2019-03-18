@@ -29,7 +29,12 @@ public class QusDoctorServiceimpl implements QusDoctorService {
 	public List<QusDoctor> getDoctorList() {
 		return qusDoctorDao.getDoctorList();
 	}
-	
-	
-
+	@Override
+	public int selectCountByDocId(Integer docId) {
+		return qusDoctorDao.selectCountByDocId(docId);
+	}
+	@Override
+	public int deleteByDocId(Integer docId) {
+		return qusDoctorDao.deleteByDocId(docId);
+	}
 }

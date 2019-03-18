@@ -2,6 +2,7 @@ package springboot.dao.qusdoctor;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.One;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Result;
@@ -26,13 +27,13 @@ public interface QusDoctorDao {
 				one=@One(select="springboot.dao.qusroom.QusRoomDao.getRoom1ById"))
 	})
 	public QusDoctor getDoctor(@Param("id") Integer id);
-	
 	/**
 	 * 查询医生列表
 	 * @return
 	 */
 	@Select("SELECT * FROM qus_doctor")
 	@Results({
+		@Result(id=true,property="d_id",column="d_id"),
 		@Result(property="d_r1_id",column="d_r1_id"),
 		@Result(property="d_r2_id",column="d_r2_id"),
 		@Result(property="d_role_id",column="d_role_id"),
@@ -52,4 +53,14 @@ public interface QusDoctorDao {
 	 */
 	@Select("SELECT * FROM qus_doctor where d_role_id=#{d_role_id}")
 	public QusDoctor getDoctors(Integer d_role_id);
+	/**
+	 * 查询改医生的预约单号的个数  如果为0个可以删除
+	 * @param docId
+	 * @return
+	 */
+	@Select("SELECT COUNT(1) FROM qus_appointment a,qus_doctor d WHERE a.app_doc_id = d.d_id AND  d.d_id =#{docId}")
+	public int selectCountByDocId(@Param("docId")Integer docId);
+	//删除医生
+	@Delete("DELETE FROM  qus_doctor WHERE d_id = #{docId}")
+	public int deleteByDocId(@Param("docId")Integer docId);
 }
