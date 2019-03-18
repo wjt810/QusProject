@@ -8,7 +8,7 @@ layui.config({
 
 	//加载页面数据
 	var usersData = '';
-	$.get("back/json/adminList.json", function(data){
+	$.get("admin/list", function(data){
 		usersData = data;
 		if(window.sessionStorage.getItem("addUser")){
 			var addUsers = window.sessionStorage.getItem("addUser");
@@ -187,7 +187,7 @@ layui.config({
 
  	$("body").on("click",".users_edit",function(){  //查看店铺
  		var index = layui.layer.open({
- 			title : "查看店铺",
+ 			title : "查看管理员",
  			type : 2,
  			content : "adminShow",
  			success : function(layero, index){
@@ -212,11 +212,15 @@ layui.config({
 				for(var i=0;i<currData.length;i++){
 					dataHtml += '<tr>'
 			    	+  '<td><input type="checkbox" name="checked" lay-skin="primary" lay-filter="choose"></td>'
-			    	+  '<td>'+currData[i].userName+'</td>'
-					+  '<td>'+currData[i].userPhone+'</td>'
-			    	+  '<td>'+currData[i].userEmail+'</td>'
-			    	+  '<td>'+currData[i].userSex+'</td>'
-			    	+  '<td>'+currData[i].userEndTime+'</td>'
+			    	+  '<td>'+currData[i].a_name+'</td>'
+					+  '<td>'+currData[i].a_phone+'</td>'
+			    	+  '<td>'+currData[i].a_email+'</td>'
+			    	if(currData[i].a_sex == 1){
+			    		dataHtml += '<td>'+"女"+'</td>';
+			    	}else if(currData[i].a_sex == 0){
+			    		dataHtml += '<td>'+"男"+'</td>';
+			    	}
+					dataHtml += '<td>'+currData[i].a_born+'</td>'
 			    	+  '<td>'
 					+    '<a class="layui-btn layui-btn-mini users_edit"><i class="iconfont icon-edit"></i> 编辑</a>'
 					+    '<a class="layui-btn layui-btn-mini users_edit"><i class="iconfont icon-edit"></i> 查看</a>'

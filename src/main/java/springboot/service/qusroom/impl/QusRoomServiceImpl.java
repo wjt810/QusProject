@@ -31,6 +31,22 @@ public class QusRoomServiceImpl implements QusRoomService {
 		}
 		return true;
 	}
+
+	/**
+	 * 根据id获取一级科室
+	 */
+	@Override
+	public QusRoom1 getRoom1ById(Integer r1_id) {
+		return qusRoomDao.getRoom1ById(r1_id);
+	}
+	
+	/**
+	 * 根据id获取二级科室
+	 */
+	@Override
+	public QusRoom2 getRoom2ById(Integer r2_id) {
+		return qusRoomDao.getRoom2ById(r2_id);
+	}
 	
 	@Override
 	public boolean delRoom1(Integer r1_id) {

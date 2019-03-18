@@ -6,7 +6,7 @@ var navs = [{
 }, {
     "title": "科室管理",
     "icon": "icon-text",
-    "href": "roomManager",
+    "href": "/roomManager",
     "spread": false
 },{
 	 "title": "订单管理",

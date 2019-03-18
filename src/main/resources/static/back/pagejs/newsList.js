@@ -10,6 +10,10 @@ layui.config({
 	var newsData = '';
 	$.get("/room/roomManager", function(data){
 		var newArray = [];
+<<<<<<< HEAD
+=======
+   //正常加载信息
+>>>>>>> branch 'master' of https://github.com/wjt810/QusProject.git
 			newsData = data;
 			if(window.sessionStorage.getItem("addRooom")){  //添加科室后的信息
 				var addRooom = window.sessionStorage.getItem("addRooom");
@@ -62,18 +66,6 @@ layui.config({
 		            		if(newsStr.newsAuthor.indexOf(selectStr) > -1){
 			            		newsStr["newsAuthor"] = changeStr(newsStr.newsAuthor);
 		            		}
-		            		//审核状态
-		            		/*if(newsStr.newsStatus.indexOf(selectStr) > -1){
-			            		newsStr["newsStatus"] = changeStr(newsStr.newsStatus);
-		            		}
-		            		//浏览权限
-		            		if(newsStr.newsLook.indexOf(selectStr) > -1){
-			            		newsStr["newsLook"] = changeStr(newsStr.newsLook);
-		            		}
-		            		//发布时间
-		            		if(newsStr.newsTime.indexOf(selectStr) > -1){
-			            		newsStr["newsTime"] = changeStr(newsStr.newsTime);
-		            		}*/
 		            		if(newsStr.newsName.indexOf(selectStr)>-1 || newsStr.newsAuthor.indexOf(selectStr)>-1){
 		            			newArray.push(newsStr);
 		            		}
@@ -108,14 +100,23 @@ layui.config({
 		})
 		layui.layer.full(index);
 	})
+<<<<<<< HEAD
 	
+=======
+	//批量删除
+>>>>>>> branch 'master' of https://github.com/wjt810/QusProject.git
 	$(".batchDel").click(function(){
+<<<<<<< HEAD
 		var $checkbox = $('.news_list tbody input[type="checkbox"][name="checked"]');
 		var $checked = $('.news_list tbody input[type="checkbox"][name="checked"]:checked');
 		var chk_value =[]; 
 		$('.input[type="checkbox"][name="checked"]:checked').each(function(){ 
 			 chk_value.push($(this).val()); 
 		});
+=======
+		var $checkbox = $('.news_list tbody input[type="checkbox"][name="checked"]');//每一条之前的单选按钮  --集合
+		var $checked = $('.news_list tbody input[type="checkbox"][name="checked"]:checked');//被选中的集合
+>>>>>>> branch 'master' of https://github.com/wjt810/QusProject.git
 		if($checkbox.is(":checked")){
 			layer.confirm('确定删除选中的信息？',{icon:3, title:'提示信息'},function(index){
 				$.ajax({
@@ -142,8 +143,8 @@ layui.config({
 	            	for(var j=0;j<$checked.length;j++){
 	            		for(var i=0;i<newsData.length;i++){
 							if(newsData[i].newsId == $checked.eq(j).parents("tr").find(".news_del").attr("data-id")){
-								newsData.splice(i,1);
-								newsList(newsData);
+								newsData.splice(i,1);//从第i个位置删除一个元素
+								newsList(newsData);//重新加载一下数据
 							}
 						}
 	            	}

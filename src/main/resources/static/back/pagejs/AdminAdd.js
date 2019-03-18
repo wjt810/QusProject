@@ -32,13 +32,16 @@ layui.config({
  			userStatus = "限制用户";
  		}
 
- 		addUser = '{"usersId":"'+ new Date().getTime() +'",';//id
- 		addUser += '"userName":"'+ $(".userName").val() +'",';  //登录名
- 		addUser += '"userEmail":"'+ $(".userEmail").val() +'",';	 //邮箱
- 		addUser += '"userSex":"'+ data.field.sex +'",'; //性别
- 		addUser += '"userStatus":"'+ userStatus +'",'; //会员等级
- 		addUser += '"userGrade":"'+ userGrade +'",'; //会员状态
- 		addUser += '"userEndTime":"'+ formatTime(new Date()) +'"}';  //登录时间
+ 		addUser = '{"a_id":"'+ new Date().getTime() +'",';//id
+ 		addUser += '"a_name":"'+ $(".a_name").val() +'",';  //登录名
+ 		addUser += '"a_sex":"'+ data.field.sex +'",'; //性别
+ 		addUser += '"a_password":"'+ $(".a_password").val() +'",';  //登录名
+ 		addUser += '"a_realName":"'+ a_realName +'",'; //管理员真实姓名
+ 		addUser += '"a_email":"'+ a_email +'",'; //管理员邮箱
+ 		addUser += '"a_des":"'+ a_des +'",'; //管理员简介
+ 		addUser += '"a_address":"'+ a_address +'",'; //管理员邮箱
+ 		addUser += '"a_picpath":"'+ a_picpath +'",'; //管理员头像
+ 		addUser += '"a_born":"'+ formatTime(new Date()) +'"}';  //出生日期
  		console.log(addUser);
  		addUserArray.unshift(JSON.parse(addUser));
  		window.sessionStorage.setItem("addUser",JSON.stringify(addUserArray));

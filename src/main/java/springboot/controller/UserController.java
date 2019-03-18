@@ -1,51 +1,35 @@
 package springboot.controller;
-
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.annotation.Resource;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.boot.autoconfigure.quartz.QuartzDataSource;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
-
-import com.mysql.cj.xdevapi.JsonArray;
-
-import springboot.pojo.QusInfo;
-import springboot.service.qusinfo.QusInfoService;
-
-
-
+import springboot.service.qususer.QusUserService;
 @RestController
 //@Controller
 public class UserController {
 	
 	Logger logger = LoggerFactory.getLogger(UserController.class);
-
-	
+     @Resource
+	private QusUserService qusUserService;
 	/**
 	 * 进入首页
 	 * @return
 	 */
 	
 	@RequestMapping("list")
-	/*public ModelAndView list(@RequestParam("name") String name) {
-		List<User> list = userService.list(name);
-		ModelAndView mv = new ModelAndView("index");
-		for (User user : list) {
-			logger.info(user.toString());
-			mv.addObject("user", user.toString());
-		}
-		return mv;
-	}*/
 	public ModelAndView test() {
 		ModelAndView mv = new ModelAndView("back/index");
+		return mv;
+	}
+	/**
+	 * 登录
+	 * @return
+	 */
+	@RequestMapping("backLogin")
+	public ModelAndView login() {
+		ModelAndView mv = new ModelAndView("back/login");
 		return mv;
 	}
 	
@@ -85,28 +69,27 @@ public class UserController {
 	public ModelAndView test2() {
 		ModelAndView mv = new ModelAndView("back/page/indent/Indent");
 		return mv;
-		
 	}
 	/**
 	 * 订单管理（修改订单）
 	 * @return
 	 */
-	@RequestMapping("orderModify")
+	/*@RequestMapping("orderModify")
 	public ModelAndView orderModify() {
 		ModelAndView mv = new ModelAndView("back/page/indent/IndentAdd");
 		return mv;
 		
-	}
+	}*/
 	/**
 	 * 订单管理（查看订单）
 	 * @return
 	 */
-	@RequestMapping("orderShow")
+	/*@RequestMapping("orderShow")
 	public ModelAndView orderShow() {
-		ModelAndView mv = new ModelAndView("back/page/indent/IndentAdd");
+		ModelAndView mv = new ModelAndView("back/page/indent/IndentCheck");
 		return mv;
 		
-	}
+	}*/
 	/**
 	 * 资讯管理
 	 * @return
@@ -126,15 +109,7 @@ public class UserController {
 		ModelAndView mv = new ModelAndView("back/page/news/newsAdd");
 		return mv;
 	}
-	/**
-	 * 资讯管理（修改资讯）
-	 * @return
-	 */
-	@RequestMapping("infoModify")
-	public ModelAndView infoModify() {
-		ModelAndView mv = new ModelAndView("back/page/news/newsAdd");
-		return mv;
-	}
+	
 	/**
 	 * 用户管理
 	 * @return

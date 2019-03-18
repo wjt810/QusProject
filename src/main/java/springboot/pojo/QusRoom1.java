@@ -43,4 +43,10 @@ public class QusRoom1 {
 		this.r1_name = r1_name;
 	}
 
+	@Override
+	public String toString() {
+		return "QusRoom1 [r1_id=" + r1_id + ", r1_name=" + r1_name + ", room2s=" + room2s + "]";
+	}
+	
+
 }

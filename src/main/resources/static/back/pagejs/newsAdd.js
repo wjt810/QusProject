@@ -7,10 +7,23 @@ layui.config({
 		layedit = layui.layedit,
 		laydate = layui.laydate,
 		$ = layui.jquery;
-	
+	//出发表单提交事件
+/*	form.on("submit(updateNews1)",function(data){
+		var index = top.layer.msg('数据提交中，请稍候',{icon: 16,time:1000,shade:0.8});
+		$.ajax({
+ 			url : "infoModifyReal",
+ 			type : "post",//
+ 			data : {info_title1:$(".infoTitle").val(),info_content:layedit.getText(editIndex)},
+ 			dataType : "json",
+ 			success : function(data){
+ 				alert("修改成功");
+ 			}
+ 		})
+	})*/
 	//创建一个编辑器
  	var editIndex = layedit.build('news_content');
  	var addNewsArray = [],addNews;
+ 	//点击提交事件
  	form.on("submit(addNews)",function(data){
  		if(layedit.getContent(editIndex)==null || layedit.getContent(editIndex)==""){
  			alert("请输入你的资讯内容");
@@ -26,6 +39,7 @@ layui.config({
 	 		    }
 	 	};
 	 	//向数据库中添加一条数据
+	 	 	var infoId;
 	 		var roleId = $(".roleName").val();
 	 		var roleName = "管理员";
 	 		if(roleId==2){
@@ -33,23 +47,31 @@ layui.config({
 	 		}else if(roleId==3){
 	 			roleName="主任医师";
 	 		}
- 		addNews = '{"info_title":"'+$(".infoTitle").val()+'",';  //资讯标题
- 		addNews += '"info_content":"'+layedit.getContent(editIndex)+'",'; //使用larui的方式来获取textarea中的数据
- 		addNews += '"rname":"'+$(".infoAuthor").val()+'",'; //发布人名称
- 		addNews += '"role_name":"'+roleName+'",'; //角色名称
- 		addNews += '"info_role_id":"'+$(".roleName").val()+'",'; //发布人角色
- 		addNews += '"info_startTime":"'+$(".newsTime").val()+'"}'; //发布时间
- 		addNewsArray.unshift(JSON.parse(addNews));
- 		window.sessionStorage.setItem("addNews",JSON.stringify(addNewsArray));
- 		$.ajax({
- 			url : "addInfo.html",
- 			type : "get",
- 			data : {info_title:$(".infoTitle").val(),info_content:layedit.getContent(editIndex),info_role_id:$(".roleName").val(),info_startTime:$(".newsTime").val()},
- 			dataType : "json",
- 			success : function(data){
- 				layui.msg("成功")
- 			}
- 		})
+	 		$.ajax({
+	 			url : "addInfo.html",
+	 			type : "get",
+	 			data : {info_title:$("#infoTitle1").val(),info_content:layedit.getText(editIndex),info_role_id:$(".roleName").val(),info_startTime:$(".newsTime").val()},
+	 			dataType : "json",
+	 			success : function(data){
+	 				layui.msg("成功");
+	 				$.ajax({
+	 		 			url : "getMaxId",
+	 		 			type : "get",
+	 		 			dataType : "json",
+	 		 			success : function(data){
+	 		 				addNews = '{"info_title":"'+$(".infoTitle").val()+'",';  //资讯标题
+	 		 			 	addNews +='"info_id":"'+data.infoId+'",';  //资讯标题
+	 		 		 		addNews += '"info_content":"'+layedit.getContent(editIndex)+'",'; //使用larui的方式来获取textarea中的数据
+	 		 		 		addNews += '"rname":"'+$(".infoAuthor").val()+'",'; //发布人名称
+	 		 		 		addNews += '"role_name":"'+roleName+'",'; //角色名称
+	 		 		 		addNews += '"info_role_id":"'+$(".roleName").val()+'",'; //发布人角色
+	 		 		 		addNews += '"info_startTime":"'+$(".newsTime").val()+'"}'; //发布时间
+	 		 		 		addNewsArray.unshift(JSON.parse(addNews));
+	 		 		 		window.sessionStorage.setItem("addNews",JSON.stringify(addNewsArray));
+	 		 			}
+	 		 		})
+	 			}
+	 		})
  		//弹出loading
  		var index = top.layer.msg('数据提交中，请稍候',{icon: 16,time:false,shade:0.8});
         setTimeout(function(){
@@ -60,5 +82,5 @@ layui.config({
 	 		parent.location.reload();
         },2000);
  		return false;
- 	})
+ 	})//form结尾
 })

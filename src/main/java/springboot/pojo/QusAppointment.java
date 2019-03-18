@@ -1,6 +1,6 @@
 package springboot.pojo;
 
-import java.sql.Date;
+import java.util.Date;
 
 /**
  * 预约表
@@ -17,6 +17,118 @@ public class QusAppointment {
 	private Integer app_doc_id; // int(11)医生id
 	private Integer app_priority; // int(1)0优先1不优先
 	private String app_code; // varchar(50)预约编号
+	private Integer app_sta_id;  //用户状态
+	
+	
+	public Integer getApp_sta_id() {
+		return app_sta_id;
+	}
+
+	public void setApp_sta_id(Integer app_sta_id) {
+		this.app_sta_id = app_sta_id;
+	}
+
+	private QusStatus qusStatus;
+	
+	public QusStatus getQusStatus() {
+		return qusStatus;
+	}
+
+	public void setQusStatus(QusStatus qusStatus) {
+		this.qusStatus = qusStatus;
+	}
+
+	private Integer u_id;
+	private String u_name;//用户名
+	private String u_sex;//性别
+	private String u_phone;//电话
+	private String sta_name;//状态名称
+	private String d_name;//医生
+	private String r1_name;//科室名称
+	private String r2_name;//二级科室
+	
+	public Integer getU_id() {
+		return u_id;
+	}
+
+	public void setU_id(Integer u_id) {
+		this.u_id = u_id;
+	}
+
+	public String getU_name() {
+		return u_name;
+	}
+
+	public void setU_name(String u_name) {
+		this.u_name = u_name;
+	}
+
+	public String getU_sex() {
+		return u_sex;
+	}
+
+	public void setU_sex(String u_sex) {
+		this.u_sex = u_sex;
+	}
+
+	public String getU_phone() {
+		return u_phone;
+	}
+
+	public void setU_phone(String u_phone) {
+		this.u_phone = u_phone;
+	}
+
+	public String getSta_name() {
+		return sta_name;
+	}
+
+	public void setSta_name(String sta_name) {
+		this.sta_name = sta_name;
+	}
+
+	public String getD_name() {
+		return d_name;
+	}
+
+	public void setD_name(String d_name) {
+		this.d_name = d_name;
+	}
+
+	public String getR1_name() {
+		return r1_name;
+	}
+
+	public void setR1_name(String r1_name) {
+		this.r1_name = r1_name;
+	}
+	
+	public String getR2_name() {
+		return r2_name;
+	}
+
+	public void setR2_name(String r2_name) {
+		this.r2_name = r2_name;
+	}
+
+	private QusUser qusUser;    //用户表
+	private QusDoctor qusDoctor;//医生表
+
+	public QusUser getQusUser() {
+		return qusUser;
+	}
+
+	public void setQusUser(QusUser qusUser) {
+		this.qusUser = qusUser;
+	}
+
+	public QusDoctor getQusDoctor() {
+		return qusDoctor;
+	}
+
+	public void setQusDoctor(QusDoctor qusDoctor) {
+		this.qusDoctor = qusDoctor;
+	}
 
 	public Integer getApp_id() {
 		return app_id;
@@ -73,5 +185,13 @@ public class QusAppointment {
 	public void setApp_code(String app_code) {
 		this.app_code = app_code;
 	}
+
+	@Override
+	public String toString() {
+		return "QusAppointment [app_id=" + app_id + ", app_time=" + app_time + ", app_status=" + app_status
+				+ ", app_user_id=" + app_user_id + ", app_doc_id=" + app_doc_id + ", app_priority=" + app_priority
+				+ ", app_code=" + app_code + ", qusUser=" + qusUser + ", qusDoctor=" + qusDoctor + "]";
+	}
+	
 
 }
