@@ -2,6 +2,8 @@ package springboot.service.qususer;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
+
 import springboot.pojo.QusAppointment;
 import springboot.pojo.QusUser;
 
@@ -19,6 +21,22 @@ public interface QusUserService {
 	 * @param id
 	 * @return
 	 */
-	QusUser getUser(Integer id);
+	QusUser getUser(@Param("id")Integer id);
+	
+	/**
+	 * 根据app_id查询数据
+	 * @param id
+	 * @return
+	 */
+	QusAppointment getUserById(Integer app_id);
+	
+	/**
+	 * 根据u_id删除用户
+	 * @param u_id
+	 * @return
+	 */
+	public int deleteUserByuserId(Integer u_id);
+	
+	
 	
 }

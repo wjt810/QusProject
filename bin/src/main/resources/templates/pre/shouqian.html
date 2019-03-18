@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>支付界面</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <link rel="stylesheet" type="text/css" href="pre/res/static/css/main.css">
+    <link rel="stylesheet" type="text/css" href="pre/res/layui/css/layui.css">
+    <link rel="stylesheet" href="http://www.mingyihui.net/templates/skins/red2017/css/orderPay.css?v=20171222" xmlns="http://www.w3.org/1999/html"/>
+    <link href="http://www.mingyihui.net/templates/skins/red2017/css/consult_services.css?v=20160924" rel="stylesheet">
+    <link href="http://www.mingyihui.net/templates/skins/red2017/css/header.css?v=20171018" rel="stylesheet">
+    <script type="text/javascript" src="pre/res/layui/layui.js"></script>
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <style id="znBdcsStyle" type="text/css">
+        div#popup-searchbox{position:fixed;bottom:0;z-index:10;font-size:12px}#popup-searchbox .popupbox-item{border:solid 1px;position:relative}#popup-box-detail .bdcs-container .bdcs-hot{margin-top:5px}#popup-top{border-bottom:solid 1px #ececec}#popup-back{padding-right:5px;padding-left:5px;display:inline-block;*display:inline;*zoom:1;font-size:18px;border-left:solid 1px;height:29px;cursor:pointer;float:right}#popup-top .top-bg{margin-left:10px;float:left}#popup-box-detail{padding:20px}#popup-searchbox input{border:solid 1px;margin-right:0;text-indent:.5em}#popup-box-detail #popup-search-form-submit{}#popup-searchbox .popup-icon{height:40px;width:40px;background:url(http://znsv.baidu.com/static/customer-search/img/search-icon.png) no-repeat center center}#popup-searchbox .pop-submit-magnifier{background:url(http://znsv.baidu.com/static/customer-search/img/search-icon.png) no-repeat center center;text-indent:-999em}#popup-searchbox #popup-search-form-submit{padding:0;width:40px;text-align:center;position:relative}html[data-useragent*='MSIE 10.0'] #popup-box #popup-searchbox #popup-search-form-submit{top:0}#popup-box-detail a{font-size:12px;text-decoration:none;padding:3px;display:inline-block}#popup-hot{float:none;width:100%;margin-top:10px;overflow:hidden}.popup-search-sug-list-item{cursor:pointer}.popup-search-sug-list-item-value{position:relative;left:5px}.popup-search-sug-list-item-author-novel,.popup-search-sug-list-item-author-music,.popup-search-sug-list-item-type-movie{color:#BABABA}.popup-search-sug-list-item-author-novel,.popup-search-sug-list-item-author-music{position:relative;left:5px}.popup-search-sug-list-item-music{overflow:hidden;*zoom:1}#popup-search-sug .popup-search-sug-list-item-current{background-color:#F5F5F5}#popup-search-sug .popup-search-sug-list-item-value-movie{float:left}#popup-search-sug .popup-search-sug-list-item-type-movie{float:right;margin-right:5px}#popup-search-form-input{border-radius:0;float:none;padding:0;vertical-align:middle}#popup-search-form-submit{border-radius:0;float:none;vertical-align:middle}div#popup-searchbox .popup-channel-meun{position:relative;width:75px;display:inline-block;vertical-align:middle;background:#fff;cursor:pointer}div#popup-searchbox .popup-channel-current{border:1px solid;position:relative;width:100%;border-right:0}div#popup-searchbox .popup-channel-current span{margin-left:8px}div#popup-searchbox .popup-channel-current i{overflow:hidden;width:0;height:0;border-width:6px 6px 0;border-color:#9E9E9E #fff;border-style:solid;display:block;position:absolute;right:10px;top:15px}div.cse-popup-channel-container{display:block;position:absolute;z-index:30061000000}div.cse-popup-channel-container .popup-channel-list{display:none;width:99%;list-style:none;background:#fff;border:1px solid #DDD;border-top:0;margin:0;padding:0;overflow:auto;height:62px}div.cse-popup-channel-container .popup-channel-list li{background:0 0;line-height:21px;list-style:none;padding-left:7px;cursor:pointer;display:block}div.cse-popup-channel-container .popup-channel-list li:hover{background:#DDD}#popup-searchbox .popupbox-item{height:150px;width:350px;border-color:#ececec;}#popup-top{background-color:#f5f5f5;height:30px;color:#666666;font-family:微软雅黑;font-size:14px;font-weight:normal;}#popup-box-detail{background-color:#fff;}#popup-searchbox .popup-icon{background-color:#1a89ed;}#popup-searchbox input{height:35px;width:250px;border-color:#ececec;background-color:#fff;color:#666666;font-family:微软雅黑;font-size:12px;font-weight:normal;}#popup-searchbox input:focus{border-color:#1a89ed;}#popup-searchbox #popup-search-form-submit{background-color:#1a89ed;border-color:#1a89ed;color:#ffffff;font-family:微软雅黑;font-size:14px;font-weight:normal;}#popup-top{border-bottom-color:}#popup-back{border-left-color:}#popup-back{color:}#popup-searchbox #popup-search-form-submit{position:relative;left:0px}#popup-hot{width:310px}#popup-box-detail{height:120px}#popup-searchbox #popup-search-form-submit{height:35px}#popup-search-form-input{line-height:35px;}#popup-searchbox{position:fixed;left:0px;}#bdcs-rec{display:none;}</style>
+    <script src="http://www.googletagservices.com/activeview/js/current/osd.js?cb=%2Fr20100101"></script>
+    <script src="http://pagead2.googlesyndication.com/pub-config/r20160913/ca-pub-4047296578432934.js"></script>
+    <script id="google_shimpl" src="http://pagead2.googlesyndication.com/pagead/js/r20190214/r20190131/show_ads_impl.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="http://znsv.baidu.com/customer_search/api/js?sid=11363081882486450138&amp;plate_url=http%3A%2F%2Fwww.mingyihui.net%2Fask%2F%2Fconsult%2Fservices.html&amp;t=430729" type="text/javascript" async=""></script><script src="http://www.google-analytics.com/analytics.js" async=""></script><script src=" http://hm.baidu.com/h.js?d9d2e52c92d7e2ea3334b898b5eda1c6"></script>
+    <link href="http://www.mingyihui.net/templates/skins/red2017/css/reset.css?v=20160924" rel="stylesheet">
+    <link href="http://www.mingyihui.net/templates/skins/red2017/css/style.css?v=20160924" rel="stylesheet">
+    <link href="http://www.mingyihui.net/templates/skins/red2017/css/popup.css?v=20160924" rel="stylesheet">
+    <link href="http://www.mingyihui.net/templates/skins/red2017/css/consult_services.css?v=20160924" rel="stylesheet">
+    <link href="http://www.mingyihui.net/templates/skins/red2017/css/header.css?v=20171018" rel="stylesheet">
+    <script src="http://www.mingyihui.net/templates/skins/red2017/js/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="http://www.mingyihui.net/templates/skins/red2017/js/jquery.SuperSlide.js" type="text/javascript"></script>
+    <script type="text/javascript" src="http://www.mingyihui.net/templates/skins/red2017/js/iconfont.js?v=20171017}"></script><!--微信支付宝图标-->
+    <script src="http://www.mingyihui.net/templates/skins/red2017/js/myjs.js?v=20160924" type="text/javascript"></script><!--右边悬浮二维码-->
+    <link rel="stylesheet" type="text/css" href="../res/static/css/main.css"><!--尾部样式导入-->
+    <link rel="stylesheet" type="text/css" href="../res/layui/css/layui.css"><!--预医网logo样式-->
+    <link rel="stylesheet" href="http://www.mingyihui.net/templates/skins/red2017/css/login.css?v=20160924"/>
+    <link rel="stylesheet" href="http://www.mingyihui.net/templates/skins/red2017/css/iconfont.css?v=20171017"/>
+    <link rel="stylesheet" href="http://www.mingyihui.net/templates/skins/red2017/css/doctorreg.css?v=20171017"/>
+    <link rel="stylesheet" href="http://www.mingyihui.net/templates/skins/red2017/css/login1.css?v=20181129"/>
+</head>
+<style>
+    .title{
+        font-family: "微软雅黑";
+        color:green;
+        font-size: 28px;
+        text-decoration: none;
+    }
+    .tit2{
+        position: relative;
+        left: 250px;
+        text-decoration: none;
+    }
+    .g_top_contant div.H_top_nav li a:hover{
+        color: green;
+        text-decoration: none;
+    }
+    .g_top_contant div.H_top_nav li:nth-last-child(2) a:hover{
+        color: green;
+        text-decoration: none;
+    }
+    .login-registration li a{
+        text-decoration: none;
+        color: green;
+    }
+    .H_nav .fr li a:hover{
+        text-decoration: none;
+        color: green;
+    }
+    .H_nav .fl li a:hover{
+        background-color:green;
+        text-decoration: none;
+    }
+    .H_nav{
+        border-bottom: 2px solid green;
+    }
+</style>
+<body>
+<!--头部导航-->
+<div class="head">
+    <a name="top"></a>
+    <!--头部导航-->
+    <div class="g_top">
+        <div class="w1200 g_top_contant">
+            <div class="w1200 g_top_contant">
+                <!--未登录-->
+                <div class="fl" id="notLogin">
+                    <ul class="login-registration">
+                        <li class="on popup_li">
+                            <a href="javascript:jumpLogin();" target="_self"style="color: green;">登录</a>
+                        </li>
+                        <li class="on zhuce">
+                            <a href="javascript:jumpRegister();" target="_self"style="color: green;">注册</a>
+                        </li>
+                    </ul>
+                    <ul class="login-registration">
+                        <li class="on popup_li">
+                            <span class="top_nav_icon"></span>
+                        </li>
+                        <li class="on zhuce">
+                            <a href="javascript:;" target="_self"style="color: green;">医生注册</a>
+                        </li>
+                    </ul>
+                    <div class="clr"></div>
+                </div>
+                <!--头部导航右部-->
+                <div class="fr H_top_nav fnone">
+                    <ul id="topRight">
+                        <li class="fl">
+                            <a title="下载APP" href="javascript:;">APP下载</a>
+                            <div class="app-bg jsnavBox" style="display: none;"></div>
+                        </li>
+                        <li class="f2">
+                            <a title="帮助中心" href="#"> 帮助中心</a>
+                        </li>
+                        <li class="f3">
+                            <a rel="nofollow">就医交流群: &nbsp;</a>
+                        </li>
+                        <div class="clr"style="background: green"></div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--logo-->
+    <div class="w1200">
+        <div class="H_logo fl fnone">
+            <h2>
+                <a href="/pre" title="logo"class="title">
+                    <img src="pre/images/logo.jpg"style="width: 100px;height: 75px;">预医网
+                </a>
+            </h2>
+        </div>
+        <div class="clr"></div>
+    </div>
+    <!-- 导航2 -->
+    <div class="H_nav w100 ">
+        <a class="phone_nav" href="javascript:void(0);"></a>
+            <ul class="fl">
+                <li  class="tit2">
+                    <a title="预医网" href="/pre"style="background: green;color:white;">首页</a>
+                </li>
+            </ul>
+    </div>
+</div>
+<!--中心-->
+<div class="payChannelMain">
+    <!-- 支付渠道 -->
+    <div class="payChannelTitle">
+        <img src="#" alt="">
+        <h1>收银台</h1>
+        <div class="priceShow">
+        <p>本次订单服务支付金额：</p>
+        <span>￥9.90元</span>
+        <p>支付成功之后，医生会在1小时内回复您的咨询</p>
+    </div>
+    </div>
+    <!--支付方式-->
+    <div class="zhifuCard">
+        <div class="weixinPay" style="display: none;">
+            <div class="zixunPopulBox" style="left: 560px; top: 373.5px; position: absolute;">
+                <h5>微信支付</h5>
+                <img src="pre/images/weixin.png" alt=""class="submissionText"/>
+                <i>×</i>
+            </div>
+        </div>
+        <div class="zhifubaoPay" style="display: none;">
+            <div class="zixunPopulBox" style="left: 560px; top: 373.5px; position: absolute;">
+                <h5>支付宝支付</h5>
+                <img src="pre/images/zhifubao.jpg" alt=""id="submissionText"/>
+                <i>×</i>
+            </div>
+        </div>
+    </div>
+    <div class="payMethod">
+        <div class="showPayType">
+            <span class="payTitle"style="font-size: 15px">支付方式</span>
+            <div class="paySelect">
+                <p>网上支付，支付宝支付的用户请尽量谷歌浏览器下支付，如支付过程中遇到问题请拨打:135-2664-5280</p>
+                <!--选择微信支付宝-->
+                <ul class="paySel">
+                    <li>
+                        <label>
+                            <input type="radio" name="payexted" class="payType" checked value="1">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-weixinzhifu"></use>
+                            </svg>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="payexted" class="payType" value="2">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-zhifubao"></use>
+                            </svg>
+                        </label>
+                    </li>
+                </ul>
+                <span class="submitPay"onclick="start()">开始支付</span>
+            </div>
+        </div>
+        <div class="PayQRcode" style="display: none;">
+            <span class="payTitle">支付方式</span>
+            <div class="paySelect">
+                <svg class="icon selweiixn" aria-hidden="true">
+                    <use xlink:href="#icon-weixinzhifu"></use>
+                </svg>
+                <div class="weixinPay">
+                    <div class="weixinCard">
+                        <p>请使用微信扫描以下二维码完成支付</p>
+                        <div class="weixinBg">
+                            <img id="wxToPay" src="pre/images/weixin.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="zfbPay">
+                    <div class="zfbCard">
+                        <p>请使用支付宝扫描以下二维码完成支付</p>
+                        <div class="zhifubaoBg">
+                            <img id="zfbToPay"src="pre/images/zhifubao.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="paymentHintsPopul">
+    <div class="paymentHintsBox">
+        <div class="paymentHintsText">
+            <h6>支付结果</h6>
+            <p>请您在新弹出的支付平台付款完成支付！</p>
+        </div>
+        <div class="payBtnMain">
+            <span class="payBtn payBtn1">支付成功</span>
+            <span class="payBtn payBtn2">支付失败<span>（继续支付）</span></span>
+        </div>
+        <p class="paymentHintsText2">如果新窗口未能正常打开，请检查您的浏览器是否设置屏蔽，或
+            <a href="">点击这里联系在线客服</a>请在支付后，根据您的情况，点击上面的按钮，谢谢！</p>
+        <span class="closePopul">&times;</span>
+    </div>
+</div>
+<!-- 浮动窗口 -->
+<Div class="H_posi">
+    <ul>
+        <li class="shouji">
+            <a href="javascript:;" target="_self"></a>
+            <img src="pre/images/weixin.png" />
+        </li>
+        <li class="erweima">
+            <a href="javascript:;" target="_self"></a>
+            <img src="pre/images/yuyinwang.png" />
+        </li>
+        <li class="H_on">
+            <a href="#" target="_self"></a>
+        </li>
+        <li class="top">
+            <a href="#top" target="_self"></a>
+        </li>
+    </ul>
+</Div>
+<script type="text/javascript">
+    function tijiao(){
+        $(".zixunPopul").show();
+    }
+    $(".submissionText").on("click",function(){
+        $(".zixunPopul").hide();
+    });
+    $(".zixunPopulBox i").on("click",function(){
+        $(".zixunPopul").hide();
+    });
+</script>
+<style>
+    .footer {
+        width: 100%;
+        border-top: 1px solid #ddd;
+        overflow: hidden;
+    }
+
+    .footer-pd {
+        width: 1200px;
+        padding: 30px 0;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+
+    .about-myh {
+        width: 25%;
+        height: 100px;
+    }
+
+
+    .about-line {
+        width: 50%;
+    }
+
+    .myh-line {
+        width: 77%;
+        padding-bottom: 30px;
+    }
+
+    .myh-line li {
+        float: left;
+        padding: 0 20px;
+        border-right: 1px solid #ccc;
+    }
+
+    .myh-line li:last-child {
+        border-right: 0;
+        padding-right: 0;
+    }
+
+    .myh-line li a {
+        color: #333;
+    }
+
+    .about-line, .about-myh {
+        height: 100px;
+        border-right: 1px solid #e8e8e8;
+    }
+
+    .about-line p {
+        padding-left: 90px;
+        line-height: 1.8;
+        color: #999;
+    }
+
+    .about-myh a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: url(http://www.mingyihui.net/templates/skins/red2017/images/about-myh.png) center no-repeat;
+    }
+
+    .footer-email,
+    .footer-law {
+        padding: 4px 0 0 52px;
+        height: 44px;
+        color: #6c6d70;
+        line-height: 20px;
+        width: 155px;
+        margin-left: 85px;
+    }
+
+    .footer-email {
+        background: url(http://www.mingyihui.net/templates/skins/red2017/images/888_25.jpg) left center no-repeat;
+        margin-bottom: 10px;
+    }
+
+    .footer-law {
+        background: url(http://www.mingyihui.net/templates/skins/red2017/images/888_31.jpg) left center no-repeat
+    }
+
+    .cooperative-partner {
+        padding-bottom: 30px;
+    }
+
+    .cooperative-partner p {
+        padding: 15px 0;
+        border-bottom: 1px solid #eee;
+        font-size: 24px;
+    }
+
+    .cooperative-partner ul {
+        padding: 25px 0;
+        overflow: hidden;
+    }
+
+    .cooperative-partner ul li {
+        padding-right: 115px;
+        float: left;
+    }
+</style>
+    <!--尾部-->
+    <div class="footer" style="margin-top: 5%">
+        <div class="ng-promise-box">
+            <div class="ng-promise w1200">
+                <p class="text">
+                    <a class="icon1" href="javascript:;">24小时预约挂号</a>
+                    <a class="icon2" href="javascript:;">满99元全场7折</a>
+                    <a class="icon3" style="margin-right: 0" href="javascript:;">100%品质保证</a>
+                </p>
+            </div>
+        </div>
+        <div class="mod_help w1200">
+            <p>
+                <a href="javascript:;">关于我们</a>
+                <span>|</span>
+                <a href="javascript:;">帮助中心</a>
+                <span>|</span>
+                <a href="javascript:;">售后服务</a>
+                <span>|</span>
+                <a href="javascript:;">专家资讯</a>
+                <span>|</span>
+                <a href="javascript:;">关于医院</a>
+            </p>
+
+            <p class="coty">预医网版权所有 &copy; 2019.2.20</p>
+        </div>
+    </div>
+</body>
+</html>
+
+</body>
+</html>

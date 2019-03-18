@@ -17,5 +17,12 @@ public interface QusAppointmentService {
 	 * 查找约单的详细信息----实则查询用户信息
 	 * @return
 	 */
-	public List<QusAppointment> getUserByAppList();
+	public List<QusAppointment> getUserByAppLists();
+	
+	/**
+	 * 根据app_user_id(u_id)删除约单
+	 * @param u_id
+	 * @return
+	 */
+	public Integer deleteAppByuserId(Integer u_id);
 }

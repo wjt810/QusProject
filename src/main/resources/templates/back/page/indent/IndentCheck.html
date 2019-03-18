@@ -12,17 +12,20 @@
 	<link rel="stylesheet" th:href="@{/back/layui/css/layui.css}" media="all" />
 	<link rel="stylesheet" th:href="@{/back/css/font_eolqem241z66flxr.css}" media="all" />
 </head>
-<body class="childrenBody">
-	<form class="layui-form" style="width: 45%;margin: 0 120px;padding: 30px 100px;" th:action="@{/order/orderShow}">
+<body class="childrenBody"><!--  th:methed="@{/order/orderList}" -->
+	<form class="layui-form" style="width: 45%;margin: 0 120px;padding: 30px 100px;">
+		<input name="o_id" type="hidden" id="o_id" th:value="${order.o_id}"/>
 		<div class="layui-form-item">
 			<label class="layui-form-label">用户名称</label>
 			<div class="layui-input-block">
+			<input name="u_id" type="hidden" id="u_id" th:value="${order.o_user_id}"/>
 				<input type="text" class="layui-input newsName" name="userName" lay-verify="required" th:value="${order.qusUser.u_name}" disabled="disabled">
 			</div>
 		</div>
 		<div class="layui-form-item">		
 			<label class="layui-form-label">医生名称</label>
 			<div class="layui-input-block">
+			<input name="d_id" type="hidden" id="d_id" th:value="${order.o_doc_id}"/>
 				<input type="text" class="layui-input newsAuthor" name="doctorName" lay-verify="required" th:value="${order.qusDoctor.d_name}" disabled="disabled">
 			</div>
 		</div>
@@ -53,6 +56,7 @@
 			<label class="layui-form-label">预约编号</label>
 			<div class="layui-input-block">
 				<div class="layui-input-block">
+				<input name="app_id" id="app_id" type="hidden" th:value="${order.o_app_id}"/>
 					<input type="text" class="layui-input code" name="code" lay-verify="required" th:value="${order.qusAppointment.app_code}" disabled="disabled">
 				</div>
 			</div>
@@ -79,7 +83,7 @@
 		
 		<div class="layui-form-item">
 			<div class="layui-input-block">
-				<button class="layui-btn fanhui" onclick="window.location.href='page/indent/Indent.html'">返回</button>
+				<button class="layui-btn">返回</button>
 		    </div>
 		</div>
 	</form>
@@ -91,32 +95,51 @@
 			var form = layui.form();
 			roomList();
 			function roomList(){
-		 		$.ajax({
-		 			type: "GET",
-		 			url : "room/roomManager",
-					type : "get",
-					dataType : "json",
-					success : function(data){
-						var r1html = '';
-						var r2html = '';
-						for(var i=0;i<data.length;i++){
-							if(i>=0){
-								r1html+='<option value="'+data[i].r1_id+'">'+data[i].r1_name+'</option>';
-								for(var j=0;j<data[i].room2s.length;j++){
-									r2html+='<option value="'+data[i].room2s[j].r2_id+'">'+data[i].room2s[j].r2_name+'</option>';
+			 		$.ajax({
+			 			type: "GET",
+			 			url : "/room/roomManager",
+						type : "get",
+						dataType : "json",
+						success : function(data){
+							var r1html = '';
+							var r2html = '';
+							for(var i=0;i<data.length;i++){
+								if(i>=0){
+									r1html+='<option value="'+data[i].r1_id+'">'+data[i].r1_name+'</option>';
+									for(var j=0;j<data[i].room2s.length;j++){
+										r2html+='<option value="'+data[i].room2s[j].r2_id+'">'+data[i].room2s[j].r2_name+'</option>';
+									}
+									continue;
 								}
-								continue;
+								r1html+='<option value="'+data[i].r1_id+'">'+data[i].r1_name+'</option>';
 							}
-							r1html+='<option value="'+data[i].r1_id+'">'+data[i].r1_name+'</option>';
+							$("#room1").html(r1html);
+							$("#room2").html(r2html);
+							form.render();
 						}
-						$("#room1").html(r1html);
-						$("#room2").html(r2html);
-						form.render();
-					}
-		 		})
+			 		})
 		 		}
+			$(function(){   //返回监听
+				pushHistory(); 
+				window.addEventListener("popstate", function(e) { 
+				alert("我监听到了浏览器的返回按钮事件啦");//根据自己的需求实现自己的功能 
+					// window.location = 'back/page/indent/Indent.html';
+				}, false); 
+				function pushHistory() { 
+					var state = { 
+					title: "返回", 
+					url: "/order/orderout"
+					}; 
+					
+				window.history.pushState(state, "返回", "/order/orderout"); 
+				/* var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
+				parent.layer.close(index);    //关闭弹出层
+				window.parent.location.reload();   //刷新父界面 */
+				} 
+				});
 			})
 			
 	</script>
+	
 </body>
 </html>

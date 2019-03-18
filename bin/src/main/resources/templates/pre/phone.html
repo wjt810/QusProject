@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>电话咨询</title>
+    <link rel="stylesheet" type="text/css" href="pre/res/static/css/main.css">
+    <link rel="stylesheet" type="text/css" href="pre/res/layui/css/layui.css">
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <script type="text/javascript" src="pre/res/layui/layui.js"></script>
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+</head>
+<style>
+    .title{
+        font-family: "微软雅黑";
+        color:green;
+    }
+    .mallLogo a:hover{
+        text-decoration: none;
+    }
+    .zj_l_c a{
+        color: gray;
+    }
+    .zj_l_c a:hover{
+        color: red;
+        text-decoration: none;
+    }
+    .border a{
+        color: green;
+    }
+    .border a:hover{
+        background-color: green;
+        border: 1px solid green ;
+        color: white;
+        text-decoration: none;
+    }
+</style>
+<body id="list-cont">
+<!--导航条-->
+<div class="site-nav-bg">
+    <div class="site-nav w1200">
+        <p class="sn-back-home">
+            <i class="layui-icon layui-icon-home"></i>
+            <a href="/pre">首页</a>
+        </p>
+        <div class="sn-quick-menu">
+            <div class="login"><a href="/login">登录</a></div>
+            <div class="sp-cart"><a href="/shopcart">我的约单</a><span>2</span></div>
+            <div class="nav1">
+                <ul class="layui-nav">
+                    <li class="layui-nav-item" lay-unselect="">
+                        <a href="/information">个人中心</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="javascript:;">修改信息</a></dd>
+                            <dd><a href="javascript:;">安全管理</a></dd>
+                            <dd><a href="javascript:;">退出</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item" lay-unselect="">
+                        <a href="/about">关于我们</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--头部-->
+<div class="header">
+    <div class="headerLayout w1200">
+        <div class="headerCon">
+            <h1 class="mallLogo">
+                <a href="/pre" title="logo"class="title">
+                    <img src="pre/images/logo.jpg"style="width: 82px;height: 60px;">预医网
+                </a>
+            </h1>
+        </div>
+    </div>
+</div>
+<!--大分类-->
+<div class="content">
+    <div class="main-nav" >
+        <div class="inner-cont0"style="margin-left: -50px" >
+            <div class="inner-cont1 w1200"  style="border-bottom: solid 1px green">
+                <div class="inner-cont2">
+                    <a href="#" class="active">电话咨询</a>
+                    <a href="/Hot">热点咨询</a>
+                    <a href="/information">病理全科</a>
+                    <a href="/about">关于我们</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--视频通话者-->
+<div class="phone1"style="position: relative;top: 20px;left:100px;">
+    <video id="video" width="640" height="480" style="background:#000;" autoplay></video>
+    <canvas style="display:none" id="canvas" width="320" height="320"></canvas>
+</div>
+<!--接视频者-->
+<div class="phone3"style="position: relative;top: -470px;left:780px;">
+    <video id="video2" width="640" height="480" style="background:#000;" autoplay></video>
+    <canvas style="display:none" id="canvas2" width="320" height="320"></canvas>
+</div>
+<!--确定联系医生-->
+<div class="phone2"style="position: relative;top: -450px;left:720px;">
+    <button class="bojiao"style="background: green;color: #FFFFFF;font-size: 16px;width: 80px;height: 30px;" onclick="show_confirm()">拨叫</button>
+</div>
+<!--尾部-->
+<div class="footer" style="margin-top: -410px">
+    <div class="ng-promise-box">
+        <div class="ng-promise w1200">
+            <p class="text">
+                <a class="icon1" href="javascript:;">24小时预约挂号</a>
+                <a class="icon2" href="javascript:;">满99元全场7折</a>
+                <a class="icon3" style="margin-right: 0" href="javascript:;">100%品质保证</a>
+            </p>
+        </div>
+    </div>
+    <div class="mod_help w1200">
+        <p>
+            <a href="javascript:;">关于我们</a>
+            <span>|</span>
+            <a href="javascript:;">帮助中心</a>
+            <span>|</span>
+            <a href="javascript:;">售后服务</a>
+            <span>|</span>
+            <a href="javascript:;">专家资讯</a>
+            <span>|</span>
+            <a href="javascript:;">关于医院</a>
+        </p>
+        <p class="coty">预医网版权所有 &copy; 2019.2.20</p>
+    </div>
+</div>
+</body>
+<!-- 拨叫弹窗 -->
+<script type="text/javascript">
+    function show_confirm()
+    {
+        var r=confirm("将呼叫医生，确定吗!");
+        if (r==true)
+        {
+            alert("正在呼叫医生，请稍后...");
+        }
+        else
+        {
+            alert("已取消！！!");
+        }
+    }
+</script>
+<!--视频通话样式-->
+<script type="text/javascript">
+    $(function () {
+        var video = document.getElementById("video");
+        var canvas = document.getElementById("canvas"),
+                context = canvas.getContext("2d");
+        var w;
+        if (navigator.webkitGetUserMedia) {
+            navigator.webkitGetUserMedia(
+                    { video: true },
+                    function (stream) {
+                        video.srcObject=stream;
+                        video.play();
+                        w = new WebSocket(url);
+                        w.onopen = function () {
+                            sendImg();
+                        }
+                        w.onmessage = function (e) {
+                            sendImg();
+                        }
+
+                    }, function () {
+                        console.log("video error");
+                    });
+
+
+            var host = 'localhost';
+            var port = 8888;
+            var url = 'ws://' + host + ':' + port + '/';
+
+            function sendImg() {
+                context.drawImage(video, 0, 0, 320, 320);
+                var imgData = canvas.toDataURL();
+                w.send(imgData);
+            }
+        }
+    });
+</script>
+<script src="js/jquery-1.8.2.min.js"></script>
+<scipt src="js/node.js"></scipt>
+</html>

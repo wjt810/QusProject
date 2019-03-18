@@ -55,13 +55,13 @@ public class FileUploadController {
             // 上传图片 
             picture.transferTo(new File(url));  
             // 将相对路径写回（json格式）  
-            org.json.JSONObject jsonObject = new org.json.JSONObject();  
+            //JSONObject jsonObject = new JSONObject();  
             // 将图片上传到本地  
-            jsonObject.put("path", path);  
+            //jsonObject.put("path", path);  
             // 设置响应数据的类型json  
             response.setContentType("application/json; charset=utf-8");  
             // 写回  
-            response.getWriter().write(jsonObject.toString());  
+            //response.getWriter().write(jsonObject.toString());  
         } catch (Exception e) {  
             throw new RuntimeException("服务器繁忙，上传图片失败");  
         }  */

@@ -39,5 +39,16 @@ public interface QusAppointmentDao {
 		@Result(property="qusStatus",column="app_sta_id",
 				one=@One(select="springboot.dao.qusstatus.QusStatusDao.qusStatusBy"))   //医生表
 	})
-	public List<QusAppointment> getUserByAppList();
+	public List<QusAppointment> getUserByAppLists();
+	
+	/**
+	 * 根据app_user_id（u_id）删除约单
+	 * @param u_id
+	 * @return
+	 */
+	@Delete("DELETE FROM qus_appointment WHERE app_user_id=#{u_id}")
+	public Integer deleteAppByuserId(@Param("u_id")Integer u_id);
+	
+	
+//	public List<QusAppointment> getUserByAppList();
 }

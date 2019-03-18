@@ -32,8 +32,15 @@ public class QusAppointmentServiceimpl implements QusAppointmentService {
 	 * 查找约单的详细信息----实则查询用户信息
 	 */
 	@Override
-	public List<QusAppointment> getUserByAppList() {
-		return qusAppointmentDao.getUserByAppList();
+	public List<QusAppointment> getUserByAppLists() {
+		return qusAppointmentDao.getUserByAppLists();
+	}
+	/**
+	 * 根据app_user_id(u_id)删除约单表
+	 */
+	@Override
+	public Integer deleteAppByuserId(Integer u_id) {
+		return qusAppointmentDao.deleteAppByuserId(u_id);
 	}
 
 }

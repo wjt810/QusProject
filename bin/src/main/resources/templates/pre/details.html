@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>医生详情</title>
+    <link rel="stylesheet" type="text/css" href="pre/res/static/css/main.css">
+    <link rel="stylesheet" type="text/css" href="pre/res/layui/css/layui.css">
+    <script type="text/javascript" src="pre/res/layui/layui.js"></script>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+</head>
+<style>
+    .title{
+        font-family: "微软雅黑";
+        color:green;
+    }
+    .inner-cont2{
+        position: relative;
+        right:220px;
+    }
+    .choose-btn button{
+        width: 90px;
+        height: 40px;
+        margin-left: 20px;
+    }
+    .choose-btn button:hover {
+        background-color:green ;
+        color: white;
+    }
+    .choose-btn .order2{
+        color: white;
+    }
+    .aside{
+        width: 1200px;
+    }
+    .item-list div{
+        display: inline-block;
+        margin-left: 60px;
+
+    }
+</style>
+
+<body>
+<!--导航-->
+<div class="site-nav-bg">
+    <div class="site-nav w1200">
+        <p class="sn-back-home">
+            <i class="layui-icon layui-icon-home"></i>
+            <a href="/pre">首页</a>
+        </p>
+        <div class="sn-quick-menu">
+            <div class="login"><a href="/login">登录</a></div>
+            <div class="sp-cart"><a href="/shopcart">我的约单</a><span>2</span></div>
+
+            <div class="nav1">
+                <ul class="layui-nav">
+                    <li class="layui-nav-item" lay-unselect="">
+                        <a href="javascript:;">个人中心</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="javascript:;">修改信息</a></dd>
+                            <dd><a href="javascript:;">安全管理</a></dd>
+                            <dd><a href="javascript:;">退出</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item" lay-unselect="">
+                        <a href="/about">关于我们</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--导航2-->
+<div class="header">
+    <div class="headerLayout w1200">
+        <div class="headerCon">
+            <h1 class="mallLogo">
+                <a href="/pre" title="logo"class="title">
+                    <img src="pre/images/logo.jpg"style="width: 82px;height: 60px;">预医网
+                </a>
+            </h1>
+            <!--搜索栏-->
+            <div class="mallSearch">
+                <form action="" class="layui-form" novalidate>
+                    <input type="text" name="title" required lay-verify="required" autocomplete="off"
+                           class="layui-input" placeholder="请输入">
+                    <button class="layui-btn" lay-submit lay-filter="formDemo">
+                        <i class="layui-icon layui-icon-search"></i>
+                    </button>
+                    <input type="hidden" name="" value="">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--导航3-->
+<div class="content content-nav-base datails-content">
+    <div class="main-nav">
+        <div class="inner-cont0">
+            <div class="inner-cont1 w1200">
+                <div class="inner-cont2">
+                    <a href="commodity.html" class="active">医生详情</a>
+                    <a href="/Hot">热点咨询</a>
+                    <a href="/information">病理全科</a>
+                    <a href="/about">关于我们</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="data-cont-wrap w1200">
+        <div class="crumb">
+            <a href="javascript:;">首页</a>
+            <span>></span>
+            <a href="javascript:;">所有医生</a>
+            <span>></span>
+            <a href="javascript:;">医生详情</a>
+        </div>
+        <div class="product-intro layui-clear">
+            <div class="preview-wrap">
+                <a href="javascript:;"><img src="pre/images/医生1.1.jpg"style="width: 250px;height: 300px"></a>
+            </div>
+            <div class="itemInfo-wrap">
+                <div class="itemInfo">
+                    <div class="title">
+                        <h4>潘湘斌:结构性心脏病</h4>
+                        <span><i class="layui-icon layui-icon-rate-solid"></i>收藏</span>
+                    </div>
+                    <div class="summary">
+                        <p class="reference"><span>参考价</span>
+                            <del>￥280.00</del>
+                        </p>
+                        <p class="activity"><span>活动价</span><strong class="price"><i>￥</i>49.00</strong></p>
+                        <p class="address-box">
+                            <span>时&nbsp;&nbsp;&nbsp;&nbsp;间</span>
+                            <select name="time" id="time1">
+                                <option value="1">上午</option>
+                                <option value="1">8:00--9:00</option>
+                                <option value="1">9:00--10:00</option>
+                                <option value="1">10:00--11:00</option>
+                                <option value="1">11:00--12:00</option>
+                            </select>
+                            <select name="time" id="time2">
+                                <option value="1">下午</option>
+                                <option value="1">2:30--3:30</option>
+                                <option value="1">3:30--4:30</option>
+                                <option value="1">4:30--5:30</option>
+                                <option value="1">5:30--6:30</option>
+                            </select>&nbsp;&nbsp;(上下午各有4小时，每个小时由医生安排时间)</p>
+                    </div>
+                    <div class="choose-btn">
+                        <button class="order1">立刻预约</button>
+                        <button class="order2"style="background: green;height: 40px;">
+                            <i class="layui-icon layui-icon-cart-simple"></i>加入约单
+                        </button>
+                        <br/><br/>
+                        <button class="online order"onclick="window.location.href='/online'">在线咨询</button>
+                        <button class="phone order"onclick="window.location.href='/phone'">电话咨询</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-clear">
+            <!--医生详情-->
+            <div class="detail">
+            <h4>医生详情</h4>
+            <div class="item">
+                <div style="position: relative;left: 0px;">
+                    <div style="font-size: 16px;width:1200px;font-family: 微软雅黑;">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span style="color:green;font-size: 18px;font-weight: 500">潘湘斌</span>
+                        <span style="color: yellowgreen;">，男，研究生导师，卫生部“经外科途径心血管疾病介入诊疗专家组”秘书长，
+                        北京协和医学院，中国医学科学院阜外心血管病医院心脏外科医师。</span><br/><br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;具有“北协和南湘雅”美誉的中南大学湘雅医学院及北
+                        京协和医学院获得硕士及博士学位。在长期从事心脏外科手术的基础上，赴欧洲及美国学习介入技术，是我国第
+                        一批能够同时完成心血管疾病经皮介入、复合技术及常规外科手术的医师。拥有心脏外科及经皮介入执照，担任
+                        卫生部“经外科途径心血管疾病介入诊疗专家工作组秘书长，并执笔编写全国培训教材。<br/><br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: yellowgreen;">现负责阜外心血管病医院28病房的医疗工作<br/></span>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1、经胸小切口及侧切口房间隔、室间隔缺损修补术、心内膜垫缺损矫治术、法洛四联症矫治术；<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2、经皮房间隔、室间隔缺损、动脉导管未闭封堵术，肺动脉瓣狭窄扩张术、主动脉弓缩窄扩张术；复合技术<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3、经胸微小切口房间隔、室间隔缺损、动脉导管未闭封堵术，经胸主动脉瓣球囊扩张术等三类微创手术。<br/><br/>　
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;潘湘斌医师是极少数能够同时完成开胸、经皮及复合技术的医生，所以非常了解三种技术的优缺点，
+                        能根据不同患者的情况，制定个体化的治疗方案，不但能够最大限度地减轻手术创伤，而且能够明显降低手术风险，
+                        让孩子以最小的代价获得新生。<br/><br/>
+                    </div>
+                 </div>
+            </div>
+        </div>
+            <!--热销稀缺号推荐-->
+            <div class="aside">
+                <h4>热销稀缺号推荐</h4>
+                <div class="item-list">
+                    <div class="item">
+                        <img src="pre/images/ys1.png">
+                        <p>
+                            <span>戴传昌：整复外科</span>
+                            <span class="pric">￥49.00</span>
+                        </p>
+                        <button class="yesPhone"style="margin-top: -10px;"onclick="window.location.href='/phone'">电话咨询</button>
+                        <button class="yesOrder"style="margin-top: -10px;"onclick="window.location.href='/order'">即可预约</button>
+                        <button class="yesonline"style="margin-top: -10px;"onclick="window.location.href='/online'">在线咨询</button>
+                    </div>
+                    <div class="item">
+                        <img src="pre/images/ys2.jpg">
+                        <p><span>邱伟华：普外科</span><span class="pric">￥49.00</span></p>
+                        <button class="yesPhone"style="margin-top: -10px;"onclick="window.location.href='/phone'">电话咨询</button>
+                        <button class="yesOrder"style="margin-top: -10px;"onclick="window.location.href='/order'">即可预约</button>
+                        <button class="yesonline"style="margin-top: -10px;"onclick="window.location.href='/online'">在线咨询</button>
+                    </div>
+                    <div class="item">
+                        <img src="pre/images/ys3.png">
+                        <p><span>方有生：手外科</span><span class="pric">￥49.00</span></p>
+                        <button class="yesPhone"style="margin-top: -10px;"onclick="window.location.href='/phone'">电话咨询</button>
+                        <button class="yesOrder"style="margin-top: -10px;"onclick="window.location.href='/order'">即可预约</button>
+                        <button class="yesonline"style="margin-top: -10px;"onclick="window.location.href='/online'">在线咨询</button>
+                    </div>
+                    <div class="item">
+                        <img src="pre/images/ys4.jpg"style="width: 190px;height: 200px;">
+                        <p><span>林晓羲：整复外科</span><span class="pric">￥49.00</span></p>
+                        <button class="yesPhone"style="margin-top: -10px;"onclick="window.location.href='/phone'">电话咨询</button>
+                        <button class="yesOrder"style="margin-top: -10px;"onclick="window.location.href='/order'">即可预约</button>
+                        <button class="yesonline"style="margin-top: -10px;"onclick="window.location.href='/online'">在线咨询</button>
+                    </div>
+                    <div class="item">
+                        <img src="pre/images/ys5.jpg"style="width: 200px;height: 200px;">
+                        <p><span>陶惠人：脊椎外科</span><span class="pric">￥49.00</span></p>
+                        <button class="yesPhone"style="margin-top: -10px;"onclick="window.location.href='/phone'">电话咨询</button>
+                        <button class="yesOrder"style="margin-top: -10px;"onclick="window.location.href='/order'">即可预约</button>
+                        <button class="yesonline"style="margin-top: -10px;"onclick="window.location.href='/online'">在线咨询</button>
+                    </div>
+                    <div class="item">
+                        <img src="pre/images/ys6.jpg">
+                        <p><span>李辉：肛肠内科</span><span class="pric">￥49.00</span></p>
+                        <button class="yesPhone"style="margin-top: -10px;"onclick="window.location.href='/phone'">电话咨询</button>
+                        <button class="yesOrder"style="margin-top: -10px;"onclick="window.location.href='/order'">即可预约</button>
+                        <button class="yesonline"style="margin-top: -10px;"onclick="window.location.href='/online'">在线咨询</button>
+                    </div>
+                    <div class="item">
+                        <img src="pre/images/ys7.jpg">
+                        <p><span>虞先濬：胰腺肝胆外科 </span><span class="pric">￥49.00</span></p>
+                        <button class="yesPhone"style="margin-top: -10px;"onclick="window.location.href='/phone'">电话咨询</button>
+                        <button class="yesOrder"style="margin-top: -10px;"onclick="window.location.href='/order'">即可预约</button>
+                        <button class="yesonline"style="margin-top: -10px;"onclick="window.location.href='/online'">在线咨询</button>
+                    </div>
+                    <div class="item">
+                        <img src="pre/images/ys8.jpg">
+                        <p><span>徐斌：神经外科</span><span class="pric">￥49.00</span></p>
+                        <button class="yesPhone"style="margin-top: -10px;"onclick="window.location.href='/phone'">电话咨询</button>
+                        <button class="yesOrder"style="margin-top: -10px;"onclick="window.location.href='/order'">即可预约</button>
+                        <button class="yesonline"style="margin-top: -10px;"onclick="window.location.href='/online'">在线咨询</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--尾部-->
+    <div class="footer" style="margin-top: 3%">
+        <div class="ng-promise-box">
+            <div class="ng-promise w1200">
+                <p class="text">
+                    <a class="icon1" href="javascript:;">24小时预约挂号</a>
+                    <a class="icon2" href="javascript:;">满99元全场7折</a>
+                    <a class="icon3" style="margin-right: 0" href="javascript:;">100%品质保证</a>
+                </p>
+            </div>
+        </div>
+        <div class="mod_help w1200">
+            <p>
+                <a href="javascript:;">关于我们</a>
+                <span>|</span>
+                <a href="javascript:;">帮助中心</a>
+                <span>|</span>
+                <a href="javascript:;">售后服务</a>
+                <span>|</span>
+                <a href="javascript:;">专家资讯</a>
+                <span>|</span>
+                <a href="javascript:;">关于医院</a>
+            </p>
+
+            <p class="coty">预医网版权所有 &copy; 2019.2.20</p>
+        </div>
+    </div>
+</div>
+<style>
+    .item button:hover{
+        color: white;
+        background: green;
+    }
+</style>
+<script type="text/javascript">
+    layui.config({
+        base: 'pre/res/static/js/util/' //你存放新模块的目录，注意，不是layui的模块目录
+    }).use(['mm', 'jquery'], function () {
+        var mm = layui.mm, $ = layui.$;
+        var cur = $('.number-cont input').val();
+        $('.number-cont .btn').on('click', function () {
+            if ($(this).hasClass('add')) {
+                cur++;
+
+            } else {
+                if (cur > 1) {
+                    cur--;
+                }
+            }
+            $('.number-cont input').val(cur)
+        })
+
+    });
+</script>
+
+
+</body>
+</html>
