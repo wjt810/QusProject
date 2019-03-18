@@ -50,11 +50,11 @@ layui.config({
 	 		$.ajax({
 	 			url : "addInfo.html",
 	 			type : "get",
-	 			data : {info_title:$("#infoTitle1").val(),info_content:layedit.getText(editIndex),info_role_id:$(".roleName").val(),info_startTime:$(".newsTime").val()},
+	 			data : {info_title:$(".infoTitle").val(),info_content:layedit.getText(editIndex),info_role_id:$(".roleName").val(),info_startTime:$(".newsTime").val()},
 	 			dataType : "json",
 	 			success : function(data){
-	 				layui.msg("成功");
-	 				$.ajax({
+	 				//layui.msg("成功");
+	 				/*$.ajax({
 	 		 			url : "getMaxId",
 	 		 			type : "get",
 	 		 			dataType : "json",
@@ -69,7 +69,7 @@ layui.config({
 	 		 		 		addNewsArray.unshift(JSON.parse(addNews));
 	 		 		 		window.sessionStorage.setItem("addNews",JSON.stringify(addNewsArray));
 	 		 			}
-	 		 		})
+	 		 		})*/
 	 			}
 	 		})
  		//弹出loading
@@ -79,7 +79,7 @@ layui.config({
 			top.layer.msg("文章添加成功！");
  			layer.closeAll("iframe");
 	 		//刷新父页面
-	 		parent.location.reload();
+ 			window.parent.location.reload();
         },2000);
  		return false;
  	})//form结尾

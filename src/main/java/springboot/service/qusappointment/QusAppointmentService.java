@@ -1,7 +1,4 @@
 package springboot.service.qusappointment;
-
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Param;
 import java.util.List;
 import springboot.pojo.QusAppointment;
 public interface QusAppointmentService {

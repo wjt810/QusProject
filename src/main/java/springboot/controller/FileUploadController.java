@@ -32,10 +32,10 @@ public class FileUploadController {
 		return "upLoad";
 	}
 	
-    @RequestMapping(value="upload/uploadPic.do",method=RequestMethod.POST)  
-    public void uploadPic(@RequestParam("picture")MultipartFile picture, HttpServletRequest request, HttpServletResponse response) throws IllegalStateException, IOException {  
+    @RequestMapping(value="upload/uploadPic.do",method=RequestMethod.POST)  //@RequestParam("picture")MultipartFile picture,
+    public void uploadPic( HttpServletRequest request, HttpServletResponse response) throws IllegalStateException, IOException {  
     	System.out.println("aa");
-    	try {  
+    	/*try {  
             // 获取图片原始文件名  
             String originalFilename = picture.getOriginalFilename();  
             System.out.println(originalFilename);  
@@ -64,6 +64,7 @@ public class FileUploadController {
             response.getWriter().write(jsonObject.toString());  
         } catch (Exception e) {  
             throw new RuntimeException("服务器繁忙，上传图片失败");  
-        }  
+        }  */
+    	
     } 
 }

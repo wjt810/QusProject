@@ -129,7 +129,6 @@ layui.config({
 		})
 		layui.layer.full(index);
 	})
-
 	//推荐文章
 	$(".recommend").click(function(){
 		var $checkbox = $(".news_list").find('tbody input[type="checkbox"]:not([name="show"])');

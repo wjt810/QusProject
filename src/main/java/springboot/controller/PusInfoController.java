@@ -42,6 +42,7 @@ public class PusInfoController {
 		String title =null;
 		List<QusInfo> qusInfoList1= qusInfoService.selectInfoByTitle1(title);//查询所有的管理员
 		List<QusInfo> qusInfoList2= qusInfoService.selectInfoByTitle2(title);//查询所有的医生 和主任信息
+		System.out.println("qusInfoList2 Size:  \t"+qusInfoList2.size());
 		qusInfoList1.addAll(qusInfoList2);//把两个集合合并
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 		return qusInfoList1;
@@ -64,7 +65,7 @@ public class PusInfoController {
 		info.setInfo_content(content);
 		info.setInfo_role_id(info_role_id);
 		info.setInfo_title(title);
-		info.setInfo_u_d_id(1);//暂时设为管理员
+		info.setInfo_u_d_id(1);   //暂时设为管理员
 		info.setInfo_startTime(info_startTime);
 		int addCount = qusInfoService.addInfo(info);
 		return addCount;

@@ -40,7 +40,6 @@ public interface QusRoomDao {
 	 */
 	@Delete("DELETE FROM qus_room2 WHERE r2_id=#{r2_id}")
 	public void delRoom2(Integer r2_id);
-	
 	/*
 	 * 根据id获取一级科室
 	 */
