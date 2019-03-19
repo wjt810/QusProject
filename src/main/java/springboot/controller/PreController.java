@@ -2,17 +2,25 @@ package springboot.controller;
 
 import java.util.List;
 
+import javax.annotation.Resource;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import springboot.pojo.QusRoom1;
 import springboot.pojo.QusUser;
+import springboot.service.qusroom.QusRoomService;
 
 @RestController
 public class PreController {
 	Logger logger = LoggerFactory.getLogger(UserController.class);
+	
+	@Resource
+	private QusRoomService qusRoomService ;
+	
 	/**
 	 * 进入首页
 	 *@return
@@ -20,6 +28,9 @@ public class PreController {
 	@RequestMapping("pre")
 	public ModelAndView test() {
 		ModelAndView mv = new ModelAndView("pre/index");
+		// 查询科室
+		List<QusRoom1> roomList = qusRoomService.getRoom1List(null);
+		mv.addObject("roomlist", roomList);
 		return mv;
 	}
 	/**

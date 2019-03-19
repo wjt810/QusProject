@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>预医网首页</title>
@@ -61,6 +61,9 @@
     .title{
         font-family: "微软雅黑";
         color:green;
+    }
+    .title:hover{
+        background: rgba(50,200,50,0.3);
     }
     .mallLogo a:hover{
         text-decoration: none;
@@ -150,110 +153,20 @@
     <div class="category-con">
         <div class="category-inner-con w1200">
             <div class="category-type"style="width: 198px;">
-                <h3>全部分类</h3>
+                <div class="h4">全部分类</div>
             </div>
-            <div class="category-tab-content leftNav">
-                <div class="nav-con">
-                    <ul class="normal-nav">
-                        <li class="nav-item ins">
-                            <div class="title">内科</div>
-                            <p><a href="#">呼吸系统</a><a href="#">循环系统</a><a href="#">膳食消化</a></p>
-                            <i class="layui-icon layui-icon-right"></i>
-                            <div class="zj">
-                                <div class="zj_l_c">
-                                    <a href="#">慢性支气管炎</a>&nbsp;<a href="#"> |肺炎</a>&nbsp;<a href="#">| 慢性疾病</a>
-                                    <a href="#">高血压</a>&nbsp;|&nbsp;<a href="#">冠心病</a>&nbsp;|&nbsp;<a href="#">急性脑血管病</a>&nbsp;|&nbsp;<a href="#">心力衰竭</a>
-                                    &nbsp;|&nbsp;<a href="#">心律失常</a>&nbsp;|&nbsp;<a href="#">风湿性心脏病</a>&nbsp;|&nbsp;<a href="#">消化性溃疡</a>&nbsp;|&nbsp;
-                                    <a href="#">肝硬化</a>&nbsp;|&nbsp;<a href="#">肾炎</a>&nbsp;|&nbsp;<a href="#">更年期综合症</a>&nbsp;|&nbsp;<a href="#">病毒性肝炎</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="nav-item dermatology">
-                            <div class="title">皮肤科</div>
-                            <p><a href="#">过敏性皮肤</a><a href="#">皮肤癣</a></p>
-                            <i class="layui-icon layui-icon-right"></i>
-                            <div class="zj">
-                                <div class="zj_l_c">
-                                    <a href="#">牛皮癣</a>&nbsp;<a href="#"> |脓包</a>&nbsp;<a href="#">| 孢疹</a>&nbsp;|&nbsp;
-                                    <a href="#">化脓菌感染</a>&nbsp;|&nbsp;<a href="#">雀斑</a>&nbsp;|&nbsp;<a href="#">灰指甲</a>&nbsp;|&nbsp;<a href="#">青春痘</a>
-                                    &nbsp;|&nbsp;<a href="#">斑秃</a>&nbsp;|&nbsp;<a href="#">脱发</a>&nbsp;|&nbsp;<a href="#">湿疹</a>&nbsp;|&nbsp;
-                                    <a href="#">白癜风</a>&nbsp;|&nbsp;<a href="#">鸡眼</a>&nbsp;|&nbsp;<a href="#">硬皮病</a>&nbsp;|&nbsp;<a href="#">脱毛</a>&nbsp;|&nbsp;
-                                    <a href="#">黄褐斑</a>&nbsp;|&nbsp;<a href="#">口腔部护理</a>&nbsp;|&nbsp;<a href="#">皮肤瘙痒</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="nav-item pediatrics">
-                            <div class="title">儿科</div>
-                            <p><a href="#">小儿内科</a><a href="#">小儿外科</a></p>
-                            <i class="layui-icon layui-icon-right"></i>
-                            <div class="zj">
-                                <div class="zj_l_c">
-                                    <a href="#">小儿肺炎</a>&nbsp;<a href="#"> |小儿厌食症</a>&nbsp;<a href="#">| 小儿心肌炎</a>&nbsp;|&nbsp;
-                                    <a href="#">小儿气胸</a>&nbsp;|&nbsp;<a href="#">小儿急性胃炎</a>&nbsp;|&nbsp;<a href="#">小儿烫伤</a>&nbsp;|&nbsp;
-                                    <a href="#">新生儿发热</a>&nbsp;|&nbsp;<a href="#">早产儿</a>&nbsp;|&nbsp;<a href="#">新生儿肝炎</a>&nbsp;|&nbsp;
-                                    <a href="#">新生儿窒息</a>&nbsp;|&nbsp;<a href="#">小儿低血糖</a>&nbsp;|&nbsp;<a href="#">小儿血友病</a>&nbsp;|&nbsp;
-                                </div>
-                            </div>
-                        </li>
-                        <li class="nav-item ear">
-                            <div class="title">口腔鼻耳</div>
-                            <p><a href="#">眼科</a><a href="#">耳鼻喉</a><a href="#">美牙</a><a href="#">口唇</a></p>
-                            <i class="layui-icon layui-icon-right"></i>
-                            <div class="zj">
-                                <div class="zj_l_c">
-                                    <a href="#">口腔溃疡</a>&nbsp;<a href="#"> |急性舌扁桃体炎</a>&nbsp;<a href="#">| 咬肌间隙感染</a>&nbsp;|&nbsp;
-                                    <a href="#">口臭</a>&nbsp;|&nbsp;<a href="#">复发性阿弗他性</a>&nbsp;|&nbsp;<a href="#">唇腭裂</a>&nbsp;|&nbsp;
-                                    <a href="#">近视眼</a>&nbsp;|&nbsp;<a href="#">牙周病</a>&nbsp;|&nbsp;<a href="#">智齿</a>&nbsp;|&nbsp;
-                                    <a href="#">口腔癌</a>&nbsp;|&nbsp;<a href="#">白内障</a>&nbsp;|&nbsp;<a href="#">弱视</a>&nbsp;|&nbsp;
-                                </div>
-                            </div>
-                        </li>
-                        <li class="nav-item bone">
-                            <div class="title">骨科</div>
-                            <p><a href="#">颌骨骨折</a><a href="#">佝偻病</a></p>
-                            <i class="layui-icon layui-icon-right"></i>
-                            <div class="zj">
-                                <div class="zj_l_c">
-                                    <a href="#">脊椎骨骨髓炎</a>&nbsp;<a href="#"> |退变性关节病</a>&nbsp;<a href="#">| 肋骨骨折</a>&nbsp;|&nbsp;
-                                    <a href="#">脊髓灰质炎</a>&nbsp;|&nbsp;<a href="#">纤维肌痛综合症</a>&nbsp;|&nbsp;<a href="#">胫腓骨骨折</a>&nbsp;|&nbsp;
-                                    <a href="#">颧骨骨折</a>&nbsp;|&nbsp;<a href="#">腰部慢性劳损</a>&nbsp;|&nbsp;<a href="#">手部肌腱损伤</a>&nbsp;|&nbsp;
-                                </div>
-                            </div>
-                        </li>
-                        <li class="nav-item headin">
-                            <div class="title">神经内科</div>
-                            <p><a href="#">老年性耳聋</a><a href="#">面肌痉挛</a></p>
-                            <i class="layui-icon layui-icon-right"></i>
-                            <div class="zj">
-                                <div class="zj_l_c">
-                                    <a href="#">视神经炎</a>&nbsp;<a href="#"> |偏头痛</a>&nbsp;<a href="#">| 紧张性头痛</a>&nbsp;|&nbsp;
-                                    <a href="#">智力低下</a>&nbsp;|&nbsp;<a href="#">三叉神经痛</a>&nbsp;|&nbsp;<a href="#">癫痫</a>&nbsp;|&nbsp;
-                                    <a href="#">三叉神经痛</a>&nbsp;|&nbsp;<a href="#">中风</a>&nbsp;|&nbsp;<a href="#">正中神经损伤</a>&nbsp;|&nbsp;
-                                </div>
-                            </div>
-                        </li>
-                        <li class="nav-item headout">
-                            <div class="title">神经外科</div>
-                            <p><a href="#">颅骨骨髓炎</a><a href="#">颈椎结核</a>
-                            <i class="layui-icon layui-icon-right"></i>
-                            <div class="zj">
-                                <div class="zj_l_c">
-                                    <a href="#">脑血栓形成</a>&nbsp;<a href="#"> |急性中毒性脑炎</a>&nbsp;<a href="#">| 小儿脑积水</a>&nbsp;|&nbsp;
-                                    <a href="#">脑性瘫痪</a>&nbsp;|&nbsp;<a href="#">脑出血</a>&nbsp;|&nbsp;<a href="#">面肌抽搐</a>&nbsp;|&nbsp;
-                                    <a href="#">脑膜炎</a>&nbsp;|&nbsp;<a href="#">脑栓塞</a>&nbsp;|&nbsp;<a href="#">脑膜肉瘤</a>&nbsp;|&nbsp;
-                                    <a href="#">脑瘤</a>&nbsp;|&nbsp;<a href="#">脑血栓</a>&nbsp;|&nbsp;<a href="#">颅骨骨瘤</a>&nbsp;|&nbsp;
-                                </div>
-                            </div>
-                        </li>
-                        <li class="nav-item sex">
-                            <div class="title">妇科</div>
-                            <p><a href="#">滴虫性外阴炎</a><a href="#">更年期综合征</a></p>
-                            <i class="layui-icon layui-icon-right"></i>
-                            <div class="zj">
-                                <div class="zj_l_c">
-                                    <a href="#">高泌乳素血症</a>&nbsp;<a href="#"> |急性宫颈炎</a>&nbsp;<a href="#">| 急性乳腺炎</a>&nbsp;|&nbsp;
-                                    <a href="#">霉菌性外阴炎</a>&nbsp;|&nbsp;<a href="#">卵巢破裂</a>&nbsp;|&nbsp;<a href="#">月经不调</a>&nbsp;|&nbsp;
-                                </div>
+            <div class="category-tab-content leftNav" style="overflow:hidden">
+                <div class="nav-con" style="width:200px">
+                    <ul class="normal-nav nav" style="padding:0px">
+                    	<li class="nav-item ins" th:each="room1:${roomlist}">
+                            <div class="title" th:text="${room1.r1_name}"></div>
+                            <!-- <p><a href="#">呼吸系统</a><a href="#">循环系统</a><a href="#">膳食消化</a></p>
+                            <i class="layui-icon layui-icon-right"></i> -->
+                            <div class="zj" style="display:none">
+                                <div class="zj_l_c" >
+                                <p th:each="room2:${room1.room2s}" style="padding-left:30px;">
+                                    <a href="#" th:text="${room2.r2_name}"></a>&nbsp;&nbsp;
+                                </p></div>
                             </div>
                         </li>
                     </ul>
