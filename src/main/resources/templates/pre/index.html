@@ -215,69 +215,23 @@
                         <div class="layui-carousel" id="test1">
                             <div carousel-item>
                                 <div class="item-box">
-                                    <div class="item">
+                                    <div class="item" th:each="doc:${doclist}" th:if="${docStat.even}">
                                         <a href="/details"><img src="pre/images/医生1.1.jpg"style="width: 150px;height: 200px"></a>
-                                        <div class="title">潘湘斌:结构性心脏病</div>
+                                        <div class="id" th:text="${doc.d_id}" style="display:none;"></div>
+                                        <div class="title"><i th:text="${doc.d_name}"></i>:<i th:text="${doc.qusRoom2.r2_name}"></i></div>
                                         <div class="price">
-                                            <span>￥49.00</span>
-                                            <del>￥99.00</del>
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <a href="javascript:;"><img src="pre/images/医生1.2.jpg"style="width: 150px;height: 200px"></a>
-                                        <div class="title">刘海波:冠心病诊治主任医师</div>
-                                        <div class="price">
-                                            <span>￥49.00</span>
-                                            <del>￥99.00</del>
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <a href="javascript:;"><img src="pre/images/医生5.jpg"style="width: 150px;height: 200px"></a>
-                                        <div class="title">胡杰:神经外科主任医师</div>
-                                        <div class="price">
-                                            <span>￥49.00</span>
-                                            <del>￥99.00</del>
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <a href="javascript:;"><img src="pre/images/医生1.4.jpg"style="width: 150px;height: 200px"></a>
-                                        <div class="title">许巍三:妇科主治医师</div>
-                                        <div class="price">
-                                            <span>￥49.00</span>
+                                            <span th:text="${doc.d_price}"></span>
                                             <del>￥99.00</del>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="item-box">
-                                    <div class="item">
+                                    <div class="item" th:each="doc,docStat:${doclist}" th:if="${docStat.odd}">
                                         <a href="javascript:;"><img src="pre/images/医生1.5.jpg"style="width: 150px;height: 200px"></a>
-                                        <div class="title">黄汉源:乳腺外科门诊</div>
+                                        <div class="id" th:text="${doc.d_id}" style="display:none;"></div>
+                                        <div class="title"><i th:text="${doc.d_name}"></i>:<i th:text="${doc.qusRoom2.r2_name}"></i></div>
                                         <div class="price">
-                                            <span>￥49.00</span>
-                                            <del>￥99.00</del>
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <a href="javascript:;"><img src="pre/images/医生2.jpg"style="width: 150px;height: 200px"></a>
-                                        <div class="title">盖铭英:妇科产诊</div>
-                                        <div class="price">
-                                            <span>￥49.00</span>
-                                            <del>￥99.00</del>
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <a href="javascript:;"><img src="pre/images/医生3.jpg"style="width: 150px;height: 200px"></a>
-                                        <div class="title">蔡瑾:消化专科</div>
-                                        <div class="price">
-                                            <span>￥49.00</span>
-                                            <del>￥99.00</del>
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <a href="javascript:;"><img src="pre/images/医生4.jpg"style="width: 150px;height: 200px"></a>
-                                        <div class="title">陶惠人:脊柱外科</div>
-                                        <div class="price">
-                                            <span>￥49.00</span>
+                                            <span th:text="${doc.d_price}"></span>
                                             <del>￥99.00</del>
                                         </div>
                                     </div>
@@ -371,147 +325,14 @@
         <div class="product-list-cont w1200">
             <h4>专家推荐</h4>
             <div class="product-item-box layui-clear">
-                <div class="list-item">
+                <div class="list-item" th:each="doc,docStat:${doclist}" th:if="${docStat.even}">
                     <img src="pre/images/稀缺号.png" alt="" style="margin-left: 120px;position:relative;z-index:2;"/>
-                    <div  style="position:relative;z-index:1;top: -90px;">
+                    <div style="position:relative;z-index:1;top: -90px;">
+                    	<div class="d_id" style="display:none" th:text="${doc.d_id}"></div>
                         <a href="javascript:;">
                             <img src="pre/images/专家1.png" width="126"height="190px"></a>
-                            <p>周中卓:儿科疑难重症及儿童神经遗传的...</p>
-                        <div class="border">
-                            <a class="online1" href="/online" target="_self">在线咨询</a>
-                            <a class="online2" href="/phone">电话咨询</a>
-                            <a class="online3" href="/order" target="_self">预约挂号</a>
-                            <!--<a href="#" target="_self"  class="on" >预约加号</a>-->
-                            <div class="clr"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="list-item">
-                    <img src="pre/images/稀缺号.png" alt="" style="margin-left: 120px;position:relative;z-index:2;"/>
-                    <div  style="position:relative;z-index:1;top: -90px;">
-                        <a href="javascript:;">
-                            <img src="pre/images/专家2.png" width="116"height="190px"></a>
-                        <p>张居明:神经内科的多发囊肿，脑溢血...</p>
-                        <div class="border">
-                            <a class="online1" href="/online" target="_self">在线咨询</a>
-                            <a class="online2" href="/phone">电话咨询</a>
-                            <a class="online3" href="/order" target="_self">预约挂号</a>
-                            <!--<a href="#" target="_self"  class="on" >预约加号</a>-->
-                            <div class="clr"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="list-item">
-                    <img src="pre/images/稀缺号.png" alt="" style="margin-left: 120px;position:relative;z-index:2;"/>
-                    <div  style="position:relative;z-index:1;top: -90px;">
-                        <a href="javascript:;">
-                            <img src="pre/images/专家3.png" width="116"height="190px"></a>
-                        <p>安冰:小儿呼吸系统疾病的并发疾病...</p>
-                        <div class="border">
-                            <a class="online1" href="/online" target="_self">在线咨询</a>
-                            <a class="online2" href="/phone">电话咨询</a>
-                            <a class="online3" href="/order" target="_self">预约挂号</a>
-                            <!--<a href="#" target="_self"  class="on" >预约加号</a>-->
-                            <div class="clr"></div>
-                        </div>
-                    </div>
-                 </div>
-                <div class="list-item">
-                    <img src="pre/images/稀缺号.png" alt="" style="margin-left: 120px;position:relative;z-index:2;"/>
-                    <div  style="position:relative;z-index:1;top: -90px;">
-                        <a href="javascript:;">
-                            <img src="pre/images/专家4.png" width="116"height="190px"></a>
-                        <p>吴栋:儿科杂病,厌食,咳嗽的疑难杂症...</p>
-                        <div class="border">
-                            <a class="online1" href="/online" target="_self">在线咨询</a>
-                            <a class="online2" href="/phone">电话咨询</a>
-                            <a class="online3" href="/order" target="_self">预约挂号</a>
-                            <!--<a href="#" target="_self"  class="on" >预约加号</a>-->
-                            <div class="clr"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="list-item">
-                    <img src="pre/images/稀缺号.png" alt="" style="margin-left: 120px;position:relative;z-index:2;"/>
-                    <div  style="position:relative;z-index:1;top: -90px;">
-                        <a href="javascript:;">
-                            <img src="pre/images/专家5.jpg" width="116"height="190px"></a>
-                        <p>廖烈辉:传播疾病，白癜风湿疹皮炎，银屑病...</p>
-                        <div class="border">
-                            <a class="online1" href="/online" target="_self">在线咨询</a>
-                            <a class="online2" href="/phone">电话咨询</a>
-                            <a class="online3" href="/order" target="_self">预约挂号</a>
-                            <!--<a href="#" target="_self"  class="on" >预约加号</a>-->
-                            <div class="clr"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="list-item">
-                    <img src="pre/images/稀缺号.png" alt="" style="margin-left: 120px;position:relative;z-index:2;"/>
-                    <div  style="position:relative;z-index:1;top: -90px;">
-                        <a href="javascript:;">
-                            <img src="pre/images/专家6.jpg" width="116"height="190px"></a>
-                        <p>池凤好:妇产科疑难重症及妇科内分泌疾病的诊治</p>
-                        <div class="border">
-                            <a class="online1" href="/online" target="_self">在线咨询</a>
-                            <a class="online2" href="/phone">电话咨询</a>
-                            <a class="online3" href="/order" target="_self">预约挂号</a>
-                            <!--<a href="#" target="_self"  class="on" >预约加号</a>-->
-                            <div class="clr"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="list-item">
-                    <img src="pre/images/稀缺号.png" alt="" style="margin-left: 120px;position:relative;z-index:2;"/>
-                    <div  style="position:relative;z-index:1;top: -90px;">
-                        <a href="javascript:;">
-                            <img src="pre/images/专家7.png" width="116"height="190px"></a>
-                        <p>萧媛媛:儿童皮肤常见病以及多发病的诊疗,特别是对...</p>
-                        <div class="border">
-                            <a class="online1" href="/online" target="_self">在线咨询</a>
-                            <a class="online2" href="/phone">电话咨询</a>
-                            <a class="online3" href="/order" target="_self">预约挂号</a>
-                            <!--<a href="#" target="_self"  class="on" >预约加号</a>-->
-                            <div class="clr"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="list-item">
-                    <img src="pre/images/稀缺号.png" alt="" style="margin-left: 120px;position:relative;z-index:2;"/>
-                    <div  style="position:relative;z-index:1;top: -90px;">
-                        <a href="javascript:;">
-                            <img src="pre/images/专家8.jpg" width="116"height="190px"></a>
-                        <p>都珊珊:内科疑难重症及心理疾病的诊治</p>
-                        <div class="border">
-                            <a class="online1" href="/online" target="_self">在线咨询</a>
-                            <a class="online2" href="/phone">电话咨询</a>
-                            <a class="online3" href="/order" target="_self">预约挂号</a>
-                            <!--<a href="#" target="_self"  class="on" >预约加号</a>-->
-                            <div class="clr"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="list-item">
-                    <img src="pre/images/稀缺号.png" alt="" style="margin-left: 120px;position:relative;z-index:2;"/>
-                    <div  style="position:relative;z-index:1;top: -90px;">
-                        <a href="javascript:;">
-                            <img src="pre/images/专家9.jpg" width="116"height="190px"></a>
-                        <p>刘玉林:妇产科内分泌疾病的诊治</p>
-                        <div class="border">
-                            <a class="online1" href="/online" target="_self">在线咨询</a>
-                            <a class="online2" href="/phone">电话咨询</a>
-                            <a class="online3" href="/order" target="_self">预约挂号</a>
-                            <!--<a href="#" target="_self"  class="on" >预约加号</a>-->
-                            <div class="clr"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="list-item">
-                    <img src="pre/images/稀缺号.png" alt="" style="margin-left: 120px;position:relative;z-index:2;"/>
-                    <div  style="position:relative;z-index:1;top: -90px;">
-                        <a href="javascript:;">
-                            <img src="pre/images/专家10.jpg" width="116"height="190px"></a>
-                        <p>骆宗琼:中西医脑血栓诊疗伤...</p>
+                            <p><i style="color:rgba(50,200,50,0.6);" th:text="${doc.d_name}"></i>&nbsp;:&nbsp; 
+                            <i th:text="${doc.d_description}"></i></p>
                         <div class="border">
                             <a class="online1" href="/online" target="_self">在线咨询</a>
                             <a class="online2" href="/phone">电话咨询</a>
