@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>所有医生列表</title>
     <link rel="stylesheet" type="text/css" href="pre/res1/static/css/main.css">
     <link rel="stylesheet" type="text/css" href="pre/res1/layui/css/layui.css">
     <script type="text/javascript" src="pre/res1/layui/layui.js"></script>
@@ -10,11 +10,9 @@
           content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <style>
-
         .data span {
             font-size: 15px;
             color: green;
-
         }
         .info-cont span{
             font-size: 15px;
@@ -23,23 +21,19 @@
         .info-cont a{
             color: green;
         }
-           .registration  span{
-
-            position: relative;
-               right: auto ;
-
-            display: inline;
-            width: 148px;
-            border-radius: 3px;
-
-            font-size: 14px;
-            height: 30px;
-            border: 1px solid green;
-               padding: 3px;
-            text-align:center;
+        .registration  span{
+			position: relative;
+			right: auto ;
+			display: inline;
+			width: 148px;
+			border-radius: 3px;
+			font-size: 14px;
+			height: 30px;
+			border: 1px solid green;
+			padding: 3px;
+			text-align:center;
         }
         .registration a.on {
-
             padding: 3px;
             border-radius: 3px;
             background: green;
@@ -56,23 +50,18 @@
             color: #fff;
             border: 1px solid green;
         }
-
     </style>
 </head>
 <body>
-
-
 <div class="site-nav-bg">
     <div class="site-nav w1200">
         <p class="sn-back-home">
             <i class="layui-icon layui-icon-home"></i>
             <a href="/pre">首页</a>
         </p>
-
         <div class="sn-quick-menu">
             <div class="login"><a href="/login">登录</a></div>
             <div class="sp-cart"><a href="/shopcart">我的约单</a><span>2</span></div>
-
             <div class="nav1">
                 <ul class="layui-nav">
                     <li class="layui-nav-item" lay-unselect="">
@@ -83,26 +72,19 @@
                             <dd><a href="javascript:;">退了</a></dd>
                         </dl>
                     </li>
-
-
                     <li class="layui-nav-item" lay-unselect="">
                         <a href="javascript:;">关于我们</a>
-
                     </li>
                 </ul>
-
             </div>
         </div>
     </div>
 </div>
-
-
 <div class="header">
     <div class="headerLayout w1200">
         <div class="headerCon">
             <h1 class="mallLogo">
                 <a href="#" title="母婴商城">
-
                     <h1 class="mallLogo">
                         <a href="/pre" title="logo"class="title">
                             <img src="pre/res1/static/img/logo.jpg"style="width: 82px;height: 60px;">预医网
@@ -110,7 +92,6 @@
                     </h1>
                 </a>
             </h1>
-
             <div class="mallSearch">
                 <form action="" class="layui-form" novalidate>
                     <input type="text" name="title" required lay-verify="required" autocomplete="off"
@@ -124,20 +105,16 @@
         </div>
     </div>
 </div>
-
-
 <div class="content content-nav-base information-content">
     <div class="main-nav">
         <div class="inner-cont0">
             <div class="inner-cont1 w1200">
                 <div class="inner-cont2">
-                    <a href="#">所有商品</a>
+                    <a href="/pre">全部分类</a>
+                    <a href="/information" class="active">所有医生</a>
                     <a href="#">今日团购</a>
-                    <a href="/information" class="active">病例百科</a>
                     <a href="/about">关于我们</a>
-
                   <!--  &lt;!&ndash;搜索框&ndash;&gt;
-
                     <div class="mallSearch">
                         <form action="" class="layui-form" novalidate>
                             <input type="text" name="title" required lay-verify="required" autocomplete="off"
@@ -148,333 +125,28 @@
                             <input type="hidden" name="" value="">
                         </form>
                     </div>-->
-
-
                 </div>
             </div>
         </div>
     </div>
-
-
     <div class="info-list-box">
         <div class="info-list w1200">
             <div class="item-box layui-clear" id="list-cont">
-                <div class="item">
+                <div class="item" th:each="doc:${doclist}">
+                	<div class="doc_id" style="display:none" th:text="${doc.d_id}"></div>
                     <div class="img">
                         <img src="pre/res1/static/img/1.jpg" alt="" width="260" height="280">
                     </div>
                     <div class="text">
-                        <h4>翟桂荣</h4>
-                        <p class="data"><span>坐诊科室:</span>北京妇产医院妇科</p>
-                        <p class="info-cont"><span>擅长:</span>高危妊娠的处理，疑难杂症，妊高症，
-                            多胎妊娠的管理，妊娠合并子宫肌瘤及卵巢肿物的处理及手术治疗。<a href="">详细介绍>></a> </p>
+                        <h4 th:text="${doc.d_name}"></h4>
+                        <p class="data"><span>坐诊科室:</span><i th:text="${doc.qusRoom1.r1_name+doc.qusRoom2.r2_name}"></i></p>
+                        <p class="info-cont"><span>擅长:</span><i th:text="${doc.d_description}"></i><a href="">详细介绍>></a> </p>
                     </div>
-                            <div class="registration left">
-                                <a href="/phone"><span>电话咨询</span></a>
-                               <a  class="on" href="/order"><span>预约挂号</span></a>
-                                <a href="/online"><span>在线咨询</span></a>
-                            </div>
-
-
-                </div>
-                <div class="item">
-                    <div class="img">
-                        <img src="pre/res1/static/img/2.jpg" alt="" width="260" height="280">
-                    </div>
-                    <div class="text">
-                        <h4>张巨朋</h4>
-
-                        <p class="data"><span>坐诊科室:</span>北京中医医院儿科</p>
-                        <p class="info-cont"><span>擅长:</span>小儿呼吸系统疾病：发热、咳嗽、哮喘、易感；小儿消化系统疾病：
-                            厌食、腹痛、腹泻、便秘；
-                            <a href="">详细介绍>></a> </p>
-
-                    </div>
-
                     <div class="registration left">
-                        <a href="pre/phone"><span>电话咨询</span></a>
-                        <a  class="on" href="pre/order"><span>预约挂号</span></a>
-                        <a href="pre/online"><span>在线咨询</span></a>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="img">
-                        <img src="pre/res1/static/img/3.jpg" alt="" width="260" height="280">
-                    </div>
-                    <div class="text">
-                        <h4>安冰</h4>
-
-                        <p class="data"><span>坐诊科室:</span>北京306医院儿科</p>
-                        <p class="info-cont"><span>擅长:</span>小儿泌尿系统疾病，尤其在气囊扩充法治疗包茎
-                            <a href="">详细介绍>></a> </p>
-                    </div>
-
-                    <div class="registration left">
-                        <a href="pre/phone"><span>电话咨询</span></a>
-                        <a  class="on" href="pre/order"><span>预约挂号</span></a>
-                        <a href="pre/online"><span>在线咨询</span></a>
-                    </div>
-
-                </div>
-                <div class="item">
-                    <div class="img">
-                        <img src="pre/res1/static/img/4.jpg" alt="" width="260" height="280">
-                    </div>
-                    <div class="text">
-                        <h4>周忠蜀</h4>
-                        <p class="data"><span>坐诊科室:</span>北京中日友好医院儿科</p>
-                        <p class="info-cont"><span>擅长:</span>儿科神经遗传、如癫痫、PKU及小儿呼吸、消化营养、
-                            <a href="">详细介绍>></a> </p>
-
-                    </div>
-
-                    <div class="registration left">
-                        <a href="/phone"><span>电话咨询</span></a>
-                        <a  class="on" href="/order"><span>预约挂号</span></a>
-                        <a href="/online"><span>在线咨询</span></a>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="img">
-                        <img src="pre/res1/static/img/5.jpg" alt="" width="260" height="280">
-                    </div>
-                    <div class="text">
-                        <h4>欧阳卫权</h4>
-                        <p class="data"><span>坐诊科室:</span>广东省中医院大学城医院皮肤科</p>
-                        <p class="info-cont"><span>擅长:</span>皮肤真菌病、痤疮、湿疹、荨麻疹、银屑病、硬皮病、红斑狼疮、
-
-                            <a href="">详细介绍>></a> </p>
-
-                    </div>
-
-                    <div class="registration left">
-                        <a href="/phone"><span>电话咨询</span></a>
-                        <a  class="on" href="/order"><span>预约挂号</span></a>
-                        <a href="/online"><span>在线咨询</span></a>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="img">
-                        <img src="pre/res1/static/img/6.jpg" alt="" width="260" height="280">
-                    </div>
-                    <div class="text">
-                        <h4>肖媛媛</h4>
-                        <p class="data"><span>坐诊科室:</span>北京儿童医院皮肤科</p>
-                        <p class="info-cont"><span>擅长:</span>
-                            儿童皮肤常见病和多发病的诊疗，对儿童感染性皮肤病，特别是皮肤真菌病有深入研究
-                            <a href="">详细介绍>></a> </p>
-
-                    </div>
-
-                    <div class="registration left">
-                        <a href="/phone"><span>电话咨询</span></a>
-                        <a  class="on" href="/order"><span>预约挂号</span></a>
-                        <a href="/online"><span>在线咨询</span></a>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="img">
-                        <img src="pre/res1/static/img/7.png" alt="" width="260" height="280">
-                    </div>
-                    <div class="text">
-                        <h4>赵利杰</h4>
-
-                        <p class="data"><span>坐诊科室:</span>北京宣武医院神经内科</p>
-                        <p class="info-cont"><span>擅长:</span>
-                            中西医治疗脑血管病、帕金森氏病等
-                            <a href="">详细介绍>></a> </p>
-
-                    </div>
-
-                    <div class="registration left">
-                        <a href="/phone"><span>电话咨询</span></a>
-                        <a  class="on" href="/order"><span>预约挂号</span></a>
-
-                        <a href="/online"><span>在线咨询</span></a>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="img">
-                        <img src="pre/res1/static/img/8.jpg" alt="" width="260" height="280">
-                    </div>
-                    <div class="text">
-                        <h4>刘玉琳</h4>
-
-                        <p class="data"><span>坐诊科室:</span>首都儿科研究所呼吸内科</p>
-                        <p class="info-cont"><span>擅长:</span>
-                            儿童肺炎,支原体肺炎,流行性喘憋性肺炎,儿童哮喘
-                            <a href="">详细介绍>></a> </p>
-                    </div>
-
-                    <div class="registration left">
-                        <a href="/phone"><span>电话咨询</span></a>
-                        <a  class="on" href="/order"><span>预约挂号</span></a>
-
-                        <a href="/online"><span>在线咨询</span></a>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="img">
-                        <img src="pre/res1/static/img/9.jpg" alt="" width="260" height="280">
-                    </div>
-                    <div class="text">
-                        <h4>刘海波</h4>
-                        <p class="data"><span>坐诊科室:</span>北京医学科学院阜外医院特需心血管科</p>
-                        <p class="info-cont"><span>擅长:</span>
-                            冠心病的诊断及介入
-                            <a href="">详细介绍>></a> </p>
-
-                    </div>
-
-                    <div class="registration left">
-                        <a href="/phone"><span>电话咨询</span></a>
-                        <a  class="on" href="/order"><span>预约挂号</span></a>
-                        <a href="/online"><span>在线咨询</span></a>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="img">
-                        <img src="pre/res1/static/img/10.jpg" alt="" width="260" height="280">
-                    </div>
-                    <div class="text">
-                        <h4>邱伟华</h4>
-                        <p class="data"><span>坐诊科室:</span>上海交通大学医学院附属瑞金医院北院普外科</p>
-                        <p class="info-cont"><span>擅长:</span>
-                            消化道肿瘤
-                            <a href="">详细介绍>></a> </p>
-
-                    </div>
-
-                    <div class="registration left">
-                        <a href="/phone"><span>电话咨询</span></a>
-                        <a  class="on" href="/order"><span>预约挂号</span></a>
-
-                        <a href="/online"><span>在线咨询</span></a>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="img">
-                        <img src="pre/res1/static/img/11.png" alt="" width="260" height="280">
-                    </div>
-                    <div class="text">
-                        <h4>秦智勇</h4>
-                        <p class="data"><span>坐诊科室:</span>中国医学科学院皮肤病研究所皮肤科</p>
-                        <p class="info-cont"><span>擅长:</span>
-                            脑积水
-
-                            <a href="">详细介绍>></a> </p>
-
-                    </div>
-
-                    <div class="registration left">
-                        <a href="/phone"><span>电话咨询</span></a>
-                        <a  class="on" href="/order"><span>预约挂号</span></a>
-
-                        <a href="/online"><span>在线咨询</span></a>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="img">
-                        <img src="pre/res1/static/img/12.jpg" alt="" width="260" height="280">
-                    </div>
-                    <div class="text">
-                        <h4>贾虹</h4>
-                        <p class="data"><span>坐诊科室:</span>复旦大学附属华山医院北院神经外科</p>
-                        <p class="info-cont"><span>擅长:</span>
-                            治疗色素性皮肤病
-                            <a href="">详细介绍>></a> </p>
-
-
-                    </div>
-
-                    <div class="registration left">
-                        <a href="/phone"><span>电话咨询</span></a>
-                        <a  class="on" href="/order"><span>预约挂号</span></a>
-
-                        <a href="/online"><span>在线咨询</span></a>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="img">
-                        <img src="pre/res1/static/img/13.jpg" alt="" width="260" height="280">
-                    </div>
-                    <div class="text">
-                        <h4>林晓曦</h4>
-                        <p class="data"><span>坐诊科室:</span>第九人民医院整复外科特需部整复外科</p>
-                        <p class="info-cont"><span>擅长:</span>
-                            面部美容与年轻化
-                            <a href="">详细介绍>></a> </p>
-
-                    </div>
-
-                    <div class="registration left">
-                        <a href="/phone"><span>电话咨询</span></a>
-                        <a  class="on" href="/order"><span>预约挂号</span></a>
-
-                        <a href="/online"><span>在线咨询</span></a>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="img">
-                        <img src="pre/res1/static/img/14.png" alt="" width="260" height="280">
-                    </div>
-                    <div class="text">
-                        <h4>杨希川</h4>
-                        <p class="data"><span>坐诊科室:</span>重庆西南医院皮肤科</p>
-                        <p class="info-cont"><span>擅长:</span>
-                            湿疹，痤疮/青春痘
-
-                            <a href="">详细介绍>></a> </p>
-
-                    </div>
-
-                    <div class="registration left">
-                        <a href="/phone"><span>电话咨询（</span></a>
-                        <a  class="on" href="/online"><span>预约挂号</span></a>
-
-                        <a href="/online"><span>在线咨询</span></a>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="img">
-                        <img src="pre/res1/static/img/15.jpg" alt="" width="260" height="280">
-                    </div>
-                    <div class="text">
-                        <h4>皇甫小乔</h4>
-                        <p class="data"><span>坐诊科室:</span>上海市第六人民医院骨科-运动学科</p>
-                        <p class="info-cont"><span>擅长:</span>
-                            关节镜下微创治疗肩、膝、髋、肘关节的运动损伤及其关节疾患
-                            <a href="">详细介绍>></a> </p>
-
-
-                    </div>
-
-                    <div class="registration left">
-                        <a href="/phone"><span>电话咨询</span></a>
-                        <a  class="on" href="/order"><span>预约挂号</span></a>
-
-                        <a href="/online"><span>在线咨询</span></a>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="img">
-                        <img src="pre/res1/static/img/16.jpg" alt="" width="260" height="280">
-                    </div>
-                    <div class="text">
-                        <h4>李春英</h4>
-                        <p class="data"><span>坐诊科室:</span>西京医院皮肤科</p>
-                        <p class="info-cont"><span>擅长:</span>
-                            白癜风，恶性黑素瘤，皮肤肿瘤、免疫性皮肤病，皮肤美容
-                            <a href="">详细介绍>></a> </p>
-
-                    </div>
-
-                    <div class="registration left">
-                        <a href="/phone"><span>电话咨询</span></a>
-                        <a  class="on" href="/order"><span>预约挂号</span></a>
-
-                        <a href="/online"><span>在线咨询</span></a>
-                    </div>
+                    	<sa href="/phone"><span>电话咨询</span></a>
+                    	<a  class="on" href="/order"><span>预约挂号</span></a>
+                    	<a href="/online"><span>在线咨询</span></a>
+                   	</div>
                 </div>
             </div>
             <div id="demo0" style="text-align: center;"></div>

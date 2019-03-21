@@ -8,6 +8,16 @@ public class QusRoom1 {
 	private String r1_name; // varchar(50)一级科室名称
 
 	private List<QusRoom2> room2s; // 一对多关联
+	
+	public QusRoom1() {
+		
+	}
+	
+	public QusRoom1(Integer r1_id, String r1_name) {
+		super();
+		this.r1_id = r1_id;
+		this.r1_name = r1_name;
+	}
 
 	public List<QusRoom2> getRoom2s() {
 		return room2s;

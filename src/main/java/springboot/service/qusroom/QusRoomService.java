@@ -13,6 +13,15 @@ public interface QusRoomService {
 	
 	public boolean delRoom2(Integer r2_id);
 	
+	public boolean delRoom1(Integer r1_id);
+	
+	public boolean editRoom1(QusRoom1 room1);
+	
+	public boolean editRoom2(QusRoom2 room2);
+	
+	public boolean addRoom2(Integer r1_id,String r2_name);
+	
+	public boolean addRoom1(String r1_name);
 	/**
 	 * 根据id获取一级科室
 	 * @param r1_id
