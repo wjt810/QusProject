@@ -64,10 +64,10 @@
 					<li class="layui-nav-item lockcms" pc>
 						<a href="javascript:;"><i class="iconfont icon-lock1"></i><cite>锁屏</cite></a>
 					</li>
-					<li class="layui-nav-item" pc>
+					<li class="layui-nav-item" pc><!-- th:switch="${session.role.role_id}" --> 
 						<a href="javascript:;">
-							<img src="../back/images/face.jpg" class="layui-circle" width="35" height="35">
-							<cite>请叫我马哥</cite>
+							<img th:src="${session.qusAdmin.a_picpath}" class="layui-circle" width="35" height="35">
+							<cite th:value="${session.qusAdmin.a_name}">[[${session.qusAdmin.a_name}]]</cite>
 						</a>
 						<dl class="layui-nav-child">
 							<dd><a href="javascript:;" data-url="userInfo"><i class="iconfont icon-zhanghu" data-icon="icon-zhanghu"></i><cite>个人资料</cite></a></dd>
@@ -81,8 +81,11 @@
 		<!-- 左侧导航 -->
 		<div class="layui-side layui-bg-black">
 			<div class="user-photo">
-				<a class="img" title="我的头像" ><img src="../back/images/face.jpg"></a>
-				<p>你好！<span class="a_name">请叫我马哥</span>, 欢迎登录</p>
+				<a class="img" title="我的头像" >
+				<img th:src="${session.qusAdmin.a_picpath}">
+				</a>
+				<p>你好！
+				<span class="a_name">[[${session.qusAdmin.a_name}]]</span>, 欢迎登录</p>
 			</div>
 			<div class="navBar layui-side-scroll"></div>
 		</div>
@@ -103,8 +106,8 @@
 
 	<!-- 锁屏 -->
 	<div class="admin-header-lock" id="lock-box" style="display: none;">
-		<div class="admin-header-lock-img"><img src="../back/images/face.jpg"/></div>
-		<div class="admin-header-lock-name" id="a_name">请叫我马哥</div>
+		<div class="admin-header-lock-img"><img th:src="${session.qusAdmin.a_picpath}"></div>
+		<div class="admin-header-lock-name" id="a_name">[[${session.qusAdmin.a_name}]]</div>
 		<div class="input_btn">
 			<input type="password" class="admin-header-lock-input layui-input" placeholder="请输入密码解锁.." name="lockPwd" id="lockPwd" />
 			<button class="layui-btn" id="unlock">解锁</button>
@@ -114,11 +117,11 @@
 	<!-- 移动导航 -->
 	<div class="site-tree-mobile layui-hide"><i class="layui-icon">&#xe602;</i></div>
 	<div class="site-mobile-shade"></div>
-	<script type="text/javascript" th:src="@{/back/js/jquery-1.12.4.js}"></script>
-	<script type="text/javascript" th:src="@{/back/layui/layui.js}"></script>
-	<script type="text/javascript" th:src="@{/back/js/nav.js}"></script>
-	<script type="text/javascript" th:src="@{/back/js/leftNav.js}"></script>
-	<script type="text/javascript" th:src="@{/back/js/index.js}"></script>
+	<script type="text/javascript" src="/back/js/jquery-1.12.4.js"></script>
+	<script type="text/javascript" src="/back/layui/layui.js"></script>
+	<script type="text/javascript" src="/back/js/nav.js"></script>
+	<script type="text/javascript" src="/back/js/leftNav.js"></script>
+	<script type="text/javascript" src="/back/js/index.js"></script>
 	<script type="text/javascript" th:src="@{/back/js/bodyTab.js}"></script>
 </body>
 </html>

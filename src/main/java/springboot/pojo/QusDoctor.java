@@ -30,6 +30,16 @@ public class QusDoctor {
 	private Integer d_r2_id; // int(11)二级科室id
 	private String d_description; // varchar(50)
 	
+	private String d_picpath;//路径
+	
+	
+	public String getD_picpath() {
+		return d_picpath;
+	}
+	public void setD_picpath(String d_picpath) {
+		this.d_picpath = d_picpath;
+	}
+
 	private int workTime; //工龄
 	public int getWorkTime() {
 		return workTime;

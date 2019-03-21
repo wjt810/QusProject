@@ -32,16 +32,30 @@ public class QusAdminServiceImpl implements QusAdminService{
 		return qusAdminDao.AddAdmin(qusAdmin);
 	}
 
+	/**
+	 * 修改管理員
+	 */
 	@Override
-	public List<QusAdmin> UpdateAdmin(int a_id) {
-		// TODO Auto-generated method stub
-		return qusAdminDao.UpdateAdmin(a_id);
+	public Integer UpdateAdmin(QusAdmin admin) {
+		return qusAdminDao.UpdateAdmin(admin);
+	}
+	
+	/**
+	 * 根据a_id删除管理员
+	 */
+	@Override
+	public Integer deleteAdmin(Integer a_id) {
+		return qusAdminDao.deleteAdmin(a_id);
+	}
+	
+	/**
+	 * 根据a_id查看管理员信息
+	 */
+	@Override
+	public QusAdmin getAdminById(Integer a_id) {
+		return qusAdminDao.getAdminById(a_id);
 	}
 
-	@Override
-	public List<QusAdmin> DelAdmin(int a_id) {
-		// TODO Auto-generated method stub
-		return qusAdminDao.DelAdmin(a_id);
-	}
+	
 
 }

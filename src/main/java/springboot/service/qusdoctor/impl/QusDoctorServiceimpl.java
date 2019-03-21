@@ -37,4 +37,11 @@ public class QusDoctorServiceimpl implements QusDoctorService {
 	public int deleteByDocId(Integer docId) {
 		return qusDoctorDao.deleteByDocId(docId);
 	}
+	/**
+	 * 医生登录
+	 */
+	@Override
+	public List<QusDoctor> doctorLogin(String d_name, String d_password) {
+		return qusDoctorDao.doctorLogin(d_name, d_password);
+	}
 }

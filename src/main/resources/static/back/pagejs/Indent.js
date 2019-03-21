@@ -1,5 +1,5 @@
 layui.config({
-	base : "back/js/"
+	base : "/back/js/"
 }).use(['form','layer','jquery','laypage'],function(){
 	var form = layui.form(),
 		layer = parent.layer === undefined ? layui.layer : parent.layer,
@@ -173,7 +173,6 @@ layui.config({
 	})
 	
 	form.on("submit",function(data){
-				alert("dfg")
 				$.ajax({
 					url : "orderModifySave",
 					type : "get",
@@ -183,7 +182,6 @@ layui.config({
 							code:$("#code").val(),type:$("#type").val(),status:$("#status").val()},
 					dataType : "json",
 					success : function(data){
-						alert(data);
 						var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
 							parent.layer.close(index);    //关闭弹出层
 							window.parent.location.reload();   //刷新父界面
