@@ -72,22 +72,22 @@
 			<div class="layui-form-item">
 			    <label class="layui-form-label">选择科室</label>
 			    <div class="layui-input-inline">
-	                <select name="room1" class="room1" lay-filter="room1">
+	                <select name="room1" id="room1" class="room1" lay-filter="room1">
 	                    <option value="">请选择一级科室</option>
-	                    <option>内科</option>
+	                   <!--  <option>内科</option>
 	                    <option>妇产科</option>
 	                    <option>中医科</option>
-	                    <option>骨科</option>
+	                    <option>骨科</option> -->
 	                </select>
 	            </div>
 	            <div class="layui-input-inline">
 	                <select name="room2" class="room2" lay-filter="room2">
 	                    <option value="">请选择二级科室</option>
-	                    <option>心血管内科</option>
+	                    <!-- <option>心血管内科</option>
 	                    <option>呼吸内科</option>
 	                    <option>神经内科</option>
 	                    <option>血液内科</option>
-	                    <option>分泌内科</option>
+	                    <option>分泌内科</option> -->
 	                </select>
 	            </div>
 			</div>
@@ -110,13 +110,14 @@
 		    </div>
 		</div>
 	</form>
-	<script type="text/javascript" src="back/js/jquery.form.js"></script>
+	<!-- <script type="text/javascript" src="back/js/jquery.form.js"></script> -->
 	<script type="text/javascript" src="back/layui/layui.js"></script>
+	<script type="text/javascript" th:src="@{/webjars/jquery/3.3.1-2/jquery.js}"></script>
 	<script type="text/javascript" src="back/pagejs/address.js"></script>
 	<script type="text/javascript" src="back/pagejs/DoctorAdd.js"></script>
 	<script type="text/javascript">  
     function uploadPic() { 
-      // 上传设置  
+     /*  // 上传设置  
       var options = {  
                 // 规定把请求发送到那个URL  
                 url: "upload/uploadPic.do",  
@@ -129,10 +130,30 @@
                     // 图片显示地址  
                    // $("#allUrl").attr("src", data.path);  
                     alert(data+" aaa "+status+"  xhr:"+ xhr);
-                }  
-        };  
-        $("#jvForm").ajaxSubmit(options);  
-    }  
+                }
+        };
+        $("#jvForm").ajaxSubmit(options);   */
+    	  /*   var uName = document.myForm.uName.value;
+    	    var picture = document.myForm.picture.files[0];
+    	    var fm = new FormData();
+    	    fm.append('uName', uName);
+    	    fm.append('picture', picture);
+    	    $.ajax(
+    	        {
+    	            url: 'upload/uploadPic.do',
+    	            type: 'POST',
+    	            data: fm,
+    	            contentType: false, //禁止设置请求类型
+    	            processData: false, //禁止jquery对DAta数据的处理,默认会处理
+    	            //禁止的原因是,FormData已经帮我们做了处理
+    	            success: function (result) {
+    	                //测试是否成功 
+    	                //但需要你后端有返回值
+    	                alert("");
+    	            }
+    	        }
+    	    ); */
+    }
 </script>
 </body>
 </html>

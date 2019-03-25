@@ -19,7 +19,24 @@ layui.config({
 		    	userFace.src = res.data[num].src;
 		    	window.sessionStorage.setItem('userFace',res.data[num].src);
 		    }
-        });
+        });//.append('<option value="'+data[i].r1_id+'">'+data[i].r1_name+'</option>');
+        var test = "";
+        $.ajax({
+        	type: "get",
+        	url: "room/roomManager",
+        	dataType: "json",
+        	success:function(data){
+        		$('#room1').each(data,function(i,d){
+        			test+= "<option>'"+d.r1_name+"'</option>";
+        		})
+        			$('#room1').html(test);
+        		/*for (var i = 0; i < data.length; i++) {
+					var room1 = '';
+					room1 += '<option value="' + data.get(i).r1_id + '">' + data.get(i).r1_name + '</option>';
+			        $form.find('#room1').append(room1);
+				}*/
+        	}
+        })
         //添加验证规则
         /*form.verify({
             oldPwd : function(value, item){
@@ -38,7 +55,6 @@ layui.config({
                 }
             }
         })*/
-
         //判断是否修改过头像，如果修改过则显示修改后的头像，否则显示默认头像
         if(window.sessionStorage.getItem('userFace')){
         	$("#userFace").attr("src",window.sessionStorage.getItem('userFace'));
@@ -105,29 +121,29 @@ function loadProvince() {
     
 }
  //加载市数据   '_' + citys[i].mallAreaList.length + '_' + i +    
-function loadCity(citys) {
-	 $form.find('select[name=city]').html("");
-	 $form.find('select[name=city]').append('<option value="">请选择市</option>');
-    for (var i = 0; i < citys.length; i++) {
-    	 var cityHtml ='';
-        cityHtml += '<option value="' + citys[i].cityCode + '_' + citys[i].mallAreaList.length + '_' + i +'">' + citys[i].cityName + '</option>';
-        $form.find('select[name=city]').append(cityHtml);
-    }
-    $form.find('select[name=city]').removeAttr("disabled");
-    form.render();
-    form.on('select(city)', function(data) {
-        var value = data.value;
-        var d = value.split('_');
-        var code = d[0];
-        var count = d[1];
-        var index = d[2];
-        if (count > 0) {
-            loadArea(citys[index].mallAreaList);
-        } else {
-            $form.find('select[name=area]').attr("disabled","disabled");
-        }
-    });
-}
+	function loadCity(citys) {
+		 $form.find('select[name=city]').html("");
+		 $form.find('select[name=city]').append('<option value="">请选择市</option>');
+	    for (var i = 0; i < citys.length; i++) {
+	    	 var cityHtml ='';
+	        cityHtml += '<option value="' + citys[i].cityCode + '_' + citys[i].mallAreaList.length + '_' + i +'">' + citys[i].cityName + '</option>';
+	        $form.find('select[name=city]').append(cityHtml);
+	    }
+	    $form.find('select[name=city]').removeAttr("disabled");
+	    form.render();
+	    form.on('select(city)', function(data) {
+	        var value = data.value;
+	        var d = value.split('_');
+	        var code = d[0];
+	        var count = d[1];
+	        var index = d[2];
+	        if (count > 0) {
+	            loadArea(citys[index].mallAreaList);
+	        } else {
+	            $form.find('select[name=area]').attr("disabled","disabled");
+	        }
+	    });
+	}
  //加载县/区数据
 function loadArea(areas) {
 	$form.find('select[name=area]').html("");
@@ -140,6 +156,5 @@ function loadArea(areas) {
     $form.find('select[name=area]').removeAttr("disabled");
     form.render();
     form.on('select(area)', function(data) {
-        //console.log(data);
     });
 }

@@ -22,7 +22,6 @@ layui.config({
 			linksList();
 		}
 	})
-
 	//查询
 	$(".search_btn").click(function(){
 		var newArray = [];
@@ -171,7 +170,6 @@ layui.config({
 		});
 		form.render('checkbox');
 	});
-
 	//通过判断文章是否全部选中来确定全选按钮是否选中
 	form.on("checkbox(choose)",function(data){
 		var child = $(data.elem).parents('table').find('tbody input[type="checkbox"]:not([name="show"])');
@@ -226,7 +224,7 @@ layui.config({
 		layer.confirm('确定删除此信息？',{icon:3, title:'提示信息'},function(index){
 			_this.parents("tr").remove();
 			for(var i=0;i<linksData.length;i++){
-				if(linksData[i].d_id == _this.attr("data-id")){
+				if(linksData[i].d_id == _this.attr("data-id")){  
 					//逐个删除数据库中的数据
 					$.ajax({
             			url : "doctor/deleteById.html",

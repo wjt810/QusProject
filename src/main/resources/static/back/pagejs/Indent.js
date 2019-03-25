@@ -261,9 +261,9 @@ layui.config({
 			    	}
 			    	if(currData[i].o_status == "0"){
 			    		dataHtml += '<td style="color:#f00">'+"已付款"+'</td>';
-			    	}else if(currData[i].o_status == "1"){
-			    		dataHtml += '<td style="color:green">'+"已完成"+'</td>';
 			    	}else if(currData[i].o_status == "2"){
+			    		dataHtml += '<td style="color:green">'+"已完成"+'</td>';
+			    	}else if(currData[i].o_status == "1"){
 			    		dataHtml += '<td>'+"已取消"+'</td>';
 			    	}
 					dataHtml +='<td>'

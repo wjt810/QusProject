@@ -9,23 +9,23 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="format-detection" content="telephone=no">
-	<link rel="stylesheet" href="back/layui/css/layui.css" media="all" />
-	<link rel="stylesheet" href="back/css/font_eolqem241z66flxr.css" media="all" />
+	<link rel="stylesheet" th:href="@{/back/layui/css/layui.css}" media="all" />
+	<link rel="stylesheet" th:href="@{/back/css/font_eolqem241z66flxr.css}" media="all" />
 </head>
-<body class="childrenBody">
-	<form class="layui-form" th:action="@{/infoModifyReal}" method="post">
-		<input name="infoId" type="hidden" th:value="${infoId}"/>
+<body class="childrenBody"><!-- th:action="@{/infoModifyReal}" method="post" -->
+	<form class="layui-form" >
+		<input name="info_id" type="hidden" id="info_id" th:value="${info.info_id}"/>
 		<div class="layui-form-item">
 			<label class="layui-form-label">资讯标题</label>
 			<div class="layui-input-block"><!--th:value=""  -->
-				<input type="text" name="title" class="layui-input infoTitle" id="infoTitle1" th:value="${info.info_title}" lay-verify="required" placeholder="请输入资讯标题">
+				<input type="text" class="layui-input infoTitle" id="info_title" name="info_title" lay-verify="required" th:value="${info.info_title}">
 			</div><!--th:attr="value=${info.info_title}"-->  <!--th:attr="value=${info.info_title}"-->
 		</div>  
 		<div class="layui-form-item">
 			<div class="layui-inline">		 
 				<label class="layui-form-label">发布人</label>  
 				<div class="layui-input-inline">
-					<input type="text" name="username" class="layui-input infoAuthor" th:inline="none" th:value="${info.rname}" lay-verify="required" placeholder="请输入文章作者">
+					<input disabled type="text" name="username" id="username" class="layui-input infoAuthor" th:inline="none" th:value="${info.rname}" lay-verify="required" placeholder="请输入文章作者">
 				</div>
 			</div>
 			<!-- <div class="layui-inline">		
@@ -37,7 +37,7 @@
 			<div class="layui-inline">
 				<label class="layui-form-label">选择角色</label>
 				<div class="layui-input-inline">
-					<select name="browseLook" class="roleName"  lay-filter="browseLook">
+					<select name="browseLook" disabled class="roleName" lay-filter="browseLook">
 				        <option th:selected="${info.info_role_id == 1}" value="1">管理员</option>
 				        <option th:selected="${info.info_role_id == 2}" value="2">普通医生</option>
 				        <option th:selected="${info.info_role_id == 3}" value="3">主任医师</option>
@@ -48,18 +48,18 @@
 		<div class="layui-form-item">
 			<label class="layui-form-label">资讯内容</label>
 			<div class="layui-input-block">
-				<textarea  clname="infoContent"ass="layui-textarea layui-hide content_info" th:text="${info.info_content}" name="contact" id="news_content"></textarea>
+				<textarea  name="content" class="layui-textarea content_info" id="content" th:text="${info.info_content}">${info.info_content}</textarea>
 			</div>
 		</div>
 		<div class="layui-form-item">
 			<div class="layui-input-block">
-				<button class="layui-btn" lay-submit lay-filter="updateNews1">提交更新</button><!-- addNews -->
+				<button class="layui-btn" type="submit" lay-submit="" lay-filter="updateNews1">提交更新</button><!-- addNews -->
 				<button type="reset" class="layui-btn layui-btn-primary">重置</button>
 		    </div>
 		</div>
 	</form>
-	<script type="text/javascript" src="back/layui/layui.js"></script>
-	<script type="text/javascript" src="back/pagejs/newsAdd.js"></script>
-	<script type="text/javascript" src="back/js/jquery-3.3.1.js"></script>
+	<script type="text/javascript" th:src="@{/back/layui/layui.js}"></script>
+	<script type="text/javascript" th:src="@{/back/pagejs/newsAdd.js}"></script>
+	<!-- <script type="text/javascript" th:src="@{back/js/jquery-3.3.1.js}"></script> -->
 </body>
 </html>

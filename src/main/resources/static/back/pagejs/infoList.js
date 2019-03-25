@@ -129,7 +129,6 @@ layui.config({
 		})
 		layui.layer.full(index);
 	})
-
 	//推荐文章
 	$(".recommend").click(function(){
 		var $checkbox = $(".news_list").find('tbody input[type="checkbox"]:not([name="show"])');
@@ -239,7 +238,21 @@ layui.config({
         })
         layui.layer.full(index);
 	})
-
+	//提交修改
+	/*form.on("submit",function(data){
+				$.ajax({
+					url : "infoModifyReal",
+					type : "get",
+					data : {info_id:$("#info_id").val(),info_title:$("#info_title").val(),content:$("#content").val()},
+					dataType : "json",
+					success : function(data){
+						var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
+							parent.layer.close(index);    //关闭弹出层
+							window.parent.location.reload();   //刷新父界面
+					}
+			})
+		})*/
+	
 	$("body").on("click",".news_collect",function(){  //收藏.
 		if($(this).text().indexOf("已收藏") > 0){
 			layer.msg("取消收藏成功！");
