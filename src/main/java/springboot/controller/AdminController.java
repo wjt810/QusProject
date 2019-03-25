@@ -179,4 +179,12 @@ Logger logger = LoggerFactory.getLogger(AdminController.class);
 			return mv;
 		}
 	*/
+	
+	@RequestMapping("/changPwd")
+	public void changPwd(HttpServletRequest request,HttpSession session,
+			@RequestParam("newPwd")String newPwd) {
+		Integer id=((QusAdmin) session.getAttribute("qusAdmin")).getA_id();
+		qusAdminService.changPwd(id, newPwd);
+		System.out.println("修改密码成功");
+	}
 }

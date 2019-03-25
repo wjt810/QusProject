@@ -55,6 +55,12 @@ public interface QusAdminDao {
 	@Select("SELECT * FROM qus_admin where a_id=#{a_id}")
 	QusAdmin getAdminById(@Param("a_id") Integer a_id);
 	
+	/*
+	 * 根据id修改密码
+	 */
+	@Update("UPDATE qus_admin SET a_password = #{pwd} WHERE a_id = #{id}")
+	int changPwd(@Param("id")Integer id,@Param("pwd")String pwd);
+	
 	
 	
 	

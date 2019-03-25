@@ -1,13 +1,16 @@
 package springboot.controller;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
+import org.apache.ibatis.annotations.Param;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
 import springboot.pojo.QusDoctor;
 import springboot.service.qusappointment.QusAppointmentService;
@@ -46,9 +50,6 @@ public class QusDoctorController {
 		for(QusDoctor doctor:doctorList) {
 			int time=new Date().getYear()-doctor.getD_startTime().getYear();
 			doctor.setWorkTime(time);
-			/*System.out.println(doctor.getD_name()+"\t"+doctor.getD_sex()+"\t"+doctor.getD_startTime()
-			+"\t"+time+"\t"+doctor.getQusRole().getRole_name()+"\t"+doctor.getD_price()+"\t"+doctor.getD_consult()
-			+"\t"+doctor.getQusRoom1().getR1_name()+">"+doctor.getQusRoom2().getR2_name());*/
 		}
 		return doctorList;
 	}
@@ -117,5 +118,19 @@ public class QusDoctorController {
 			result = -1;
 		}
 		return result;
+	}
+	
+	@RequestMapping("/seldoc")
+	public ModelAndView seldoc(HttpSession session,@RequestParam("r1_id")Integer r1_id) {
+		ModelAndView mv = new ModelAndView("pre/information");
+		List<QusDoctor> doclist = qusDoctorService.getDoctorList();
+		List<QusDoctor> dlist = new ArrayList<QusDoctor>();
+		for (QusDoctor qusDoctor : doclist) {
+			if(qusDoctor.getD_r1_id() == r1_id) {
+				dlist.add(qusDoctor);
+			}
+		}
+		mv.addObject("doclist", dlist);
+		return mv;
 	}
 }
