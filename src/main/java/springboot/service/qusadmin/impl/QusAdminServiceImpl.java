@@ -56,6 +56,9 @@ public class QusAdminServiceImpl implements QusAdminService{
 		return qusAdminDao.getAdminById(a_id);
 	}
 
-	
+	@Override
+	public void changPwd(Integer id, String pwd) {
+		qusAdminDao.changPwd(id, pwd);
+	}
 
 }

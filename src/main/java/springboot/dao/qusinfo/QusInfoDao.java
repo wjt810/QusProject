@@ -31,18 +31,15 @@ public interface QusInfoDao {
 			+ "</script>")
 	List<QusInfo> selectInfoByTitle(@Param("title")String title,@Param("pageIndex")Integer pageIndex,@Param("pageSize")Integer pageSize);
 	//添加资讯标题
-	@Insert("INSERT INTO qus_info(info_title, info_content, info_startTime, info_modifyTime, info_role_id, info_u_d_id) VALUES(#{info_title},#{info_content}, #{info_startTime},#{info_modifyTime},#{info_role_id},#{info_u_d_id})")
+	@Insert("INSERT INTO qus_info(info_title, info_content, info_startTime, info_role_id, info_u_d_id) VALUES(#{info_title},#{info_content},#{info_startTime},#{info_role_id},#{info_u_d_id})")
 	int addInfo(QusInfo info);
 	//根据资讯id删除资讯
 	@Delete("DELETE FROM qus_info WHERE info_id = #{infoId}")
 	int deleteInfoById(Integer infoId);
 	
 	//根据id来修改资讯的信息    
-	@Update("<script> UPDATE qus_info set info_modifyTime=#{info_modifyTime},"
-			+"<if test='info_title != null'> info_title=#{info_title},</if>"
-			+"<if test='info_content != null'> info_content=#{info_content}</if>"
-			+" where info_id=#{info_id}"
-			+"</script>")
+	@Update("UPDATE qus_info SET info_title=#{info_title},info_content=#{info_content},info_modifyTime=#{info_modifyTime} "
+			+ "WHERE info_id =#{info_id}")
 	int updateInfo(QusInfo info);//注意info  中包含要修改的infoId 和要修改的内容
 	
 	//查询数据的总量

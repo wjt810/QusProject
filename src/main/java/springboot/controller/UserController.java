@@ -1,4 +1,5 @@
 package springboot.controller;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -51,15 +52,14 @@ public class UserController {
 			@RequestParam String a_password, 
 			HttpSession session,
 			HttpServletRequest request) {
-		System.out.println("8888888888888");
 		ModelAndView mv=new ModelAndView();
 		List<QusAdmin> qusAdmin = qusAdminService.AdminLogin(a_name,a_password);
-		//List<QusDoctor> qusDoctor=qusDoctorService.doctorLogin(a_name, a_password);
-		//List<QusRole> role=qusRoleService.getRoleList();
-		//session.setAttribute("role", role.get(0));//&& qusDoctor.size()<0
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        String hh=simpleDateFormat.format(qusAdmin.get(0).getA_born());
 			if(qusAdmin.size()>0) {
 				if(qusAdmin.get(0).getA_roleid()==1) {
 					session.setAttribute("qusAdmin", qusAdmin.get(0));
+					session.setAttribute("born", hh);
 					System.out.println("管理员");
 					mv=new ModelAndView("/back/index");
 				}
@@ -67,13 +67,7 @@ public class UserController {
 				System.out.println("无此账户");
 				request.setAttribute("error", "用户名或密码不正确");
 				mv=new ModelAndView("/back/login");
-			}/*else if(qusDoctor.size()>0) {
-				if(qusDoctor.get(0).getD_role_id()==2 || qusDoctor.get(0).getD_role_id()==3) {
-					session.setAttribute("qusDoctor", qusDoctor.get(0));
-					System.out.println("医生");
-					mv=new ModelAndView("back/index");
-				}
-			}*/
+			}
 			return mv;
 	}
 	

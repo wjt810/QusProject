@@ -26,10 +26,8 @@ import springboot.service.qusroom.QusRoomService;
 @RestController
 @RequestMapping("/room")
 public class QusRoomController {
-
 	@Resource
 	private QusRoomService qusRoomService;
-
 	/**
 	 * 科室列表
 	 * 

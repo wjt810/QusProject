@@ -29,4 +29,6 @@ public interface QusAdminService {
 	 * @return
 	 */
 	QusAdmin getAdminById(@Param("a_id") Integer a_id);
+	
+	void changPwd(Integer id,String pwd);
 }

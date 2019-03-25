@@ -7,6 +7,7 @@ import java.util.List;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -42,6 +43,7 @@ public class PusInfoController {
 		String title =null;
 		List<QusInfo> qusInfoList1= qusInfoService.selectInfoByTitle1(title);//查询所有的管理员
 		List<QusInfo> qusInfoList2= qusInfoService.selectInfoByTitle2(title);//查询所有的医生 和主任信息
+		System.out.println("qusInfoList2 Size:  \t"+qusInfoList2.size());
 		qusInfoList1.addAll(qusInfoList2);//把两个集合合并
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 		return qusInfoList1;
@@ -53,19 +55,16 @@ public class PusInfoController {
 		return count;
 	}
 	@RequestMapping("/addInfo.html")
-	public int addNewsInfo(HttpServletRequest request) throws ParseException {
-		System.out.println("add");
-		String title = request.getParameter("info_title");
-		String content = request.getParameter("info_content");
-		Integer info_role_id = Integer.parseInt(request.getParameter("info_role_id"));
-		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-		Date info_startTime = format.parse(request.getParameter("info_startTime"));
+	public int addNewsInfo(HttpServletRequest request,HttpSession session,@RequestParam("info_title") String info_title,
+			@RequestParam("`")String info_content) throws ParseException {
 		QusInfo info = new QusInfo();
-		info.setInfo_content(content);
-		info.setInfo_role_id(info_role_id);
-		info.setInfo_title(title);
-		info.setInfo_u_d_id(1);//暂时设为管理员
-		info.setInfo_startTime(info_startTime);
+		
+		info.setInfo_content(info_content);
+		info.setInfo_role_id(1);//暂时设为管理员
+		info.setInfo_title(info_title);
+		info.setInfo_u_d_id(((QusAdmin)session.getAttribute("qusAdmin")).getA_id());   
+		info.setInfo_startTime(new Date());
+		
 		int addCount = qusInfoService.addInfo(info);
 		return addCount;
 	}
@@ -73,7 +72,7 @@ public class PusInfoController {
 	 * 资讯管理（修改资讯)
 	 * @return
 	 */
-	@RequestMapping("infoModify")
+	@RequestMapping("/infoModify")
 	public ModelAndView infoModify(HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("back/page/news/newschange");
 		String infoIdString = request.getParameter("id");
@@ -100,25 +99,22 @@ public class PusInfoController {
 	 * @return
 	 * @throws ParseException 
 	 */
-	@RequestMapping(value="infoModifyReal",method=RequestMethod.POST)//infoContent username title
-	public ModelAndView infoModifyReal(@RequestParam("infoId")Integer infoId,@RequestParam("title")String title,@RequestParam("contact")String contact,HttpServletRequest request){
-		ModelAndView mv = new ModelAndView();
+	@RequestMapping(value="/infoModifyReal",method=RequestMethod.GET)//infoContent username title
+	public int infoModifyReal(@RequestParam("info_id")String info_id,@RequestParam("info_title") String info_title,
+				@RequestParam("content")String content,HttpServletRequest request){
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 		QusInfo info = new QusInfo();
-		info.setInfo_content(contact);
-		info.setInfo_title(title);
-		info.setInfo_id(infoId);
+		info.setInfo_id(Integer.parseInt(info_id));
+		info.setInfo_title(info_title);
+		info.setInfo_content(content);
+		info.setInfo_modifyTime(new Date());
 		try {
 			info.setInfo_modifyTime(format.parse(format.format(new Date())));
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
 		int count = qusInfoService.updateInfo(info);
-		if(count>0) {
-			mv.setViewName("back/page/news/infoList");
-			
-		}
-		return mv;
+		return count;
 	}
 	//查询刚插入的数据id
 	@RequestMapping("/getMaxId")
