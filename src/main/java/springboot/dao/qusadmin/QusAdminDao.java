@@ -29,25 +29,31 @@ public interface QusAdminDao {
 	List<QusAdmin> AddAdmin(QusAdmin qusAdmin);
 	
 	//修改管理员信息
-	@Update("UPDATE qus_admin \r\n" + 
-			"SET\r\n" + 
-			"	a_name = #{a_name}, \r\n" + 
-			"	a_password = #{a_password}, \r\n" + 
-			"	a_sex = #{a_sex} , \r\n" + 
-			"	a_phone =#{a_phone} , \r\n" + 
-			"	a_realName =#{a_realName} , \r\n" + 
-			"	a_email = #{a_email} , \r\n" + 
-			"	a_ddes = #{a_des} , \r\n" + 
-			"	a_born = #{a_born}, \r\n" + 
-			"	a_address = #{a_address}  \r\n" + 
-			"	WHERE\r\n" + 
-			"	a_id = #{a_id};")
-	List<QusAdmin> UpdateAdmin(int a_id);
+	@Update("<script> UPDATE qus_admin SET " 
+			+"<if test='a_name != null'> a_name = #{a_name} ,</if>" 
+			+"<if test='a_password != null'> a_password = #{a_password}, </if>"  
+			+"<if test='a_sex != null'> a_sex = #{a_sex}, </if>"  
+			+"<if test='a_phone != null'> a_phone =#{a_phone} , </if>" 
+			+"<if test='a_realName != null'> a_realName =#{a_realName} , </if>" 
+			+"<if test='a_email != null'> a_email = #{a_email} , </if>"  
+			+"<if test='a_des != null'> a_des = #{a_des} , </if>" 
+			+"<if test='a_born != null'> a_born = #{a_born}, </if>" 
+			+"<if test='a_address != null'> a_address = #{a_address} </if>"
+			+"	WHERE a_id = #{a_id};"
+			+"</script>")
+	Integer UpdateAdmin(QusAdmin admin);
 	
 	//删除管理员
 	@Delete("DELETE FROM qus_admin WHERE a_id =#{a_id} ;")
-	List<QusAdmin>	DelAdmin(int a_id);
+	Integer deleteAdmin(@Param("a_id") Integer a_id);
 	
+	/**
+	 * 根据a_id查看管理员信息
+	 * @param a_id
+	 * @return
+	 */
+	@Select("SELECT * FROM qus_admin where a_id=#{a_id}")
+	QusAdmin getAdminById(@Param("a_id") Integer a_id);
 	
 	
 	

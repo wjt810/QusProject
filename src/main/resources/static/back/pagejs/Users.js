@@ -162,7 +162,6 @@ layui.config({
 			_this.parents("tr").remove();
 			for(var i=0;i<usersData.length;i++){
 				if(usersData[i].u_id == _this.attr("data-id")){
-					alert(usersData[i].u_id);
 					$.ajax({
 						url : "/user/deleteUser",
 						type : "get",

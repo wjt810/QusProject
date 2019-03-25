@@ -2,6 +2,10 @@ package springboot.pojo;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 /**
  * 管理员表
  * 
@@ -18,6 +22,8 @@ public class QusAdmin {
 	private String a_realName; // varchar(50)真实姓名
 	private String a_email; // varchar(50)邮箱
 	private String a_des; // varchar(50)自我描述
+	@DateTimeFormat(pattern="yyyy-MM-dd")
+	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date a_born; // datetime出生日期
 	private String a_address; // varchar(50)地址
 	
@@ -44,8 +50,6 @@ public class QusAdmin {
 	private Integer a_modifyBy;//更新人id
 
 	
-	
-		
 	public String getA_picpath() {
 		return a_picpath;
 	}
@@ -142,6 +146,14 @@ public class QusAdmin {
 
 	public void setA_address(String a_address) {
 		this.a_address = a_address;
+	}
+
+	@Override
+	public String toString() {
+		return "QusAdmin [a_id=" + a_id + ", a_name=" + a_name + ", a_password=" + a_password + ", a_sex=" + a_sex
+				+ ", a_phone=" + a_phone + ", a_realName=" + a_realName + ", a_email=" + a_email + ", a_des=" + a_des
+				+ ", a_born=" + a_born + ", a_address=" + a_address + ", a_createBy=" + a_createBy + ", a_picpath="
+				+ a_picpath + ", a_modifyBy=" + a_modifyBy + ", a_roleid=" + a_roleid + "]";
 	}
 
 }

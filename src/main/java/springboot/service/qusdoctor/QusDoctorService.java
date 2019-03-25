@@ -30,4 +30,12 @@ public interface QusDoctorService {
 	 * @return
 	 */
 	public int deleteByDocId(@Param("docId")Integer docId);
+	
+	/**
+	 * 医生登录
+	 * @param d_name
+	 * @param d_password
+	 * @return
+	 */
+	public List<QusDoctor> doctorLogin(@Param("d_name") String d_name,@Param("d_password") String d_password);
 }

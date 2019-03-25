@@ -1,49 +1,49 @@
-/ *£¡
+/*ï¼
  * jQuery JavaScript Library v3.3.1
  * https://jquery.com/
  *
- *°üÀ¨Sizzle.js
+ *åŒ…æ‹¬Sizzle.js
  * https://sizzlejs.com/
  *
- *°æÈ¨ËùÓĞJS»ù½ğ»áºÍÆäËû¹±Ï×Õß
- *¸ù¾İMITĞí¿ÉÖ¤·¢²¼
+ *ç‰ˆæƒæ‰€æœ‰JSåŸºé‡‘ä¼šå’Œå…¶ä»–è´¡çŒ®è€…
+ *æ ¹æ®MITè®¸å¯è¯å‘å¸ƒ
  * https://jquery.org/license
  *
- *ÈÕÆÚ£º2018-01-20T17£º24Z
+ *æ—¥æœŸï¼š2018-01-20T17ï¼š24Z
  * /
-£¨¹¦ÄÜ£¨È«Çò£¬¹¤³§£©{
+ï¼ˆåŠŸèƒ½ï¼ˆå…¨çƒï¼Œå·¥å‚ï¼‰{
 
-	¡°ÑÏ¸ñÊ¹ÓÃ¡±;
+	â€œä¸¥æ ¼ä½¿ç”¨â€;
 
-	if£¨typeof module ===¡°object¡±&& typeof module.exports ===¡°object¡±£©{
+	ifï¼ˆtypeof module ===â€œobjectâ€&& typeof module.exports ===â€œobjectâ€ï¼‰{
 
-		//ÊÊÓÃÓÚCommonJSºÍÀàËÆCommonJSµÄ»·¾³£¬ÆäÖĞÓĞÒ»¸öÕıÈ·µÄ¡°´°¿Ú¡±
-		//´æÔÚ£¬Ö´ĞĞ¹¤³§²¢»ñÈ¡jQuery¡£
-		//¶ÔÓÚÃ»ÓĞ´ø¡°ÎÄµµ¡±µÄ¡°´°¿Ú¡±µÄ»·¾³
-		//£¨ÀıÈçNode.js£©£¬½«¹¤³§¹«¿ªÎªmodule.exports¡£
-		//ÕâÍ»³öÁË´´½¨Ò»¸öÕæÕıµÄ¡°´°¿Ú¡±µÄĞèÒª¡£
-		//ÀıÈçvar jQuery = require£¨¡°jquery¡±£©£¨window£©;
-		//ÓĞ¹ØÏêÏ¸ĞÅÏ¢£¬Çë²ÎÔÄ££14549Æ±¡£
-		module.exports = global.document£¿
-			¹¤³§£¨È«Çò£¬ÕæÊµ£©£º
-			function£¨w£©{
-				if£¨£¡w.document£©{
-					Å×³öĞÂ´íÎó£¨¡°jQueryĞèÒªÒ»¸ö´øÎÄµµµÄ´°¿Ú¡±£©;
+		//é€‚ç”¨äºCommonJSå’Œç±»ä¼¼CommonJSçš„ç¯å¢ƒï¼Œå…¶ä¸­æœ‰ä¸€ä¸ªæ­£ç¡®çš„â€œçª—å£â€
+		//å­˜åœ¨ï¼Œæ‰§è¡Œå·¥å‚å¹¶è·å–jQueryã€‚
+		//å¯¹äºæ²¡æœ‰å¸¦â€œæ–‡æ¡£â€çš„â€œçª—å£â€çš„ç¯å¢ƒ
+		//ï¼ˆä¾‹å¦‚Node.jsï¼‰ï¼Œå°†å·¥å‚å…¬å¼€ä¸ºmodule.exportsã€‚
+		//è¿™çªå‡ºäº†åˆ›å»ºä¸€ä¸ªçœŸæ­£çš„â€œçª—å£â€çš„éœ€è¦ã€‚
+		//ä¾‹å¦‚var jQuery = requireï¼ˆâ€œjqueryâ€ï¼‰ï¼ˆwindowï¼‰;
+		//æœ‰å…³è¯¦ç»†ä¿¡æ¯ï¼Œè¯·å‚é˜…ï¼ƒ14549ç¥¨ã€‚
+		module.exports = global.documentï¼Ÿ
+			å·¥å‚ï¼ˆå…¨çƒï¼ŒçœŸå®ï¼‰ï¼š
+			functionï¼ˆwï¼‰{
+				ifï¼ˆï¼w.documentï¼‰{
+					æŠ›å‡ºæ–°é”™è¯¯ï¼ˆâ€œjQueryéœ€è¦ä¸€ä¸ªå¸¦æ–‡æ¡£çš„çª—å£â€ï¼‰;
 				}
-				·µ³§£¨w£©;
+				è¿”å‚ï¼ˆwï¼‰;
 			};
 	} else {
-		¹¤³§£¨È«Çò£©;
+		å·¥å‚ï¼ˆå…¨çƒï¼‰;
 	}
 
-//Èç¹ûÉĞÎ´¶¨Òå´°¿Ú£¬Çë´«µİ´ËÏî
-}£©£¨typeof window£¡==¡°undefined¡±£¿window£ºthis£¬function£¨window£¬noGlobal£©{
+//å¦‚æœå°šæœªå®šä¹‰çª—å£ï¼Œè¯·ä¼ é€’æ­¤é¡¹
+}ï¼‰ï¼ˆtypeof windowï¼==â€œundefinedâ€ï¼Ÿwindowï¼šthisï¼Œfunctionï¼ˆwindowï¼ŒnoGlobalï¼‰{
 
-// Edge <= 12  -  13 +£¬Firefox <= 18  -  45 +£¬IE 10  -  11£¬Safari 5.1  -  9 +£¬iOS 6  -  9.1
-//µ±·ÇÑÏ¸ñ´úÂë£¨ÀıÈç£¬ASP.NET 4.5£©·ÃÎÊÑÏ¸ñÄ£Ê½Ê±Å×³öÒì³£
-// arguments.callee.caller£¨trac-13335£©¡£µ«ÊÇ´ÓjQuery 3.0£¨2016£©¿ªÊ¼£¬ÑÏ¸ñÄ£Ê½Ó¦¸ÃÊÇ³£¼ûµÄ
-//×ãÒÔÈÃËùÓĞÕâĞ©³¢ÊÔ¶¼ÔÚtry¿éÖĞµÃµ½±£»¤¡£
-¡°ÑÏ¸ñÊ¹ÓÃ¡±;
+// Edge <= 12  -  13 +ï¼ŒFirefox <= 18  -  45 +ï¼ŒIE 10  -  11ï¼ŒSafari 5.1  -  9 +ï¼ŒiOS 6  -  9.1
+//å½“éä¸¥æ ¼ä»£ç ï¼ˆä¾‹å¦‚ï¼ŒASP.NET 4.5ï¼‰è®¿é—®ä¸¥æ ¼æ¨¡å¼æ—¶æŠ›å‡ºå¼‚å¸¸
+// arguments.callee.callerï¼ˆtrac-13335ï¼‰ã€‚ä½†æ˜¯ä»jQuery 3.0ï¼ˆ2016ï¼‰å¼€å§‹ï¼Œä¸¥æ ¼æ¨¡å¼åº”è¯¥æ˜¯å¸¸è§çš„
+//è¶³ä»¥è®©æ‰€æœ‰è¿™äº›å°è¯•éƒ½åœ¨tryå—ä¸­å¾—åˆ°ä¿æŠ¤ã€‚
+â€œä¸¥æ ¼ä½¿ç”¨â€;
 
 var arr = [];
 
@@ -67,773 +67,773 @@ var hasOwn = class2type.hasOwnProperty;
 
 var fnToString = hasOwn.toString;
 
-var ObjectFunctionString = fnToString.call£¨Object£©;
+var ObjectFunctionString = fnToString.callï¼ˆObjectï¼‰;
 
 var support = {};
 
-var isFunction = function isFunction£¨obj£©{
+var isFunction = function isFunctionï¼ˆobjï¼‰{
 
-      //Ö§³Ö£ºChrome <= 57£¬Firefox <= 52
-      //ÔÚÄ³Ğ©ä¯ÀÀÆ÷ÖĞ£¬typeofÎªHTML <object>ÔªËØ·µ»Ø¡°function¡±
-      //£¨¼´`typeof document.createElement£¨¡°object¡±£©===¡°function¡±`£©¡£
-      //ÎÒÃÇ²»Ïë½«* any * DOM½Úµã¹éÀàÎªº¯Êı¡£
-      return typeof obj ===¡°function¡±&& typeof obj.nodeType£¡==¡°number¡±;
+      //æ”¯æŒï¼šChrome <= 57ï¼ŒFirefox <= 52
+      //åœ¨æŸäº›æµè§ˆå™¨ä¸­ï¼Œtypeofä¸ºHTML <object>å…ƒç´ è¿”å›â€œfunctionâ€
+      //ï¼ˆå³`typeof document.createElementï¼ˆâ€œobjectâ€ï¼‰===â€œfunctionâ€`ï¼‰ã€‚
+      //æˆ‘ä»¬ä¸æƒ³å°†* any * DOMèŠ‚ç‚¹å½’ç±»ä¸ºå‡½æ•°ã€‚
+      return typeof obj ===â€œfunctionâ€&& typeof obj.nodeTypeï¼==â€œnumberâ€;
   };
 
 
-var isWindow = function isWindow£¨obj£©{
-		return obj£¡= null && obj === obj.window;
+var isWindow = function isWindowï¼ˆobjï¼‰{
+		return objï¼= null && obj === obj.window;
 	};
 
 
 
 
 	var preservedScriptAttributes = {
-		ÀàĞÍ£ºtrue£¬
-		src£ºÊÇµÄ£¬
-		noModule£ºÊÇµÄ
+		ç±»å‹ï¼štrueï¼Œ
+		srcï¼šæ˜¯çš„ï¼Œ
+		noModuleï¼šæ˜¯çš„
 	};
 
-	function DOMEval£¨code£¬doc£¬node£©{
-		doc = doc || ÎÄÏ×;
+	function DOMEvalï¼ˆcodeï¼Œdocï¼Œnodeï¼‰{
+		doc = doc || æ–‡çŒ®;
 
-		var i£¬
-			script = doc.createElement£¨¡°script¡±£©;
+		var iï¼Œ
+			script = doc.createElementï¼ˆâ€œscriptâ€ï¼‰;
 
 		script.text = code;
-		if£¨node£©{
-			for£¨i in preservedScriptAttributes£©{
-				if£¨node [i]£©{
+		ifï¼ˆnodeï¼‰{
+			forï¼ˆi in preservedScriptAttributesï¼‰{
+				ifï¼ˆnode [i]ï¼‰{
 					script [i] = node [i];
 				}
 			}
 		}
-		doc.head.appendChild£¨script£©.parentNode.removeChild£¨script£©;
+		doc.head.appendChildï¼ˆscriptï¼‰.parentNode.removeChildï¼ˆscriptï¼‰;
 	}
 
 
-function toType£¨obj£©{
-	if£¨obj == null£©{
-		return obj +¡°¡±;
+function toTypeï¼ˆobjï¼‰{
+	ifï¼ˆobj == nullï¼‰{
+		return obj +â€œâ€;
 	}
 
-	//Ö§³Ö£ºAndroid <= 2.3£¨¹¦ÄÜRegExp£©
-	return typeof obj ===¡°object¡±|| typeof obj ===¡°¹¦ÄÜ¡±£¿
-		class2type [toString.call£¨obj£©] || ¡°¶ÔÏó¡±£º
-		¶ÔÏóÀàĞÍ;
+	//æ”¯æŒï¼šAndroid <= 2.3ï¼ˆåŠŸèƒ½RegExpï¼‰
+	return typeof obj ===â€œobjectâ€|| typeof obj ===â€œåŠŸèƒ½â€ï¼Ÿ
+		class2type [toString.callï¼ˆobjï¼‰] || â€œå¯¹è±¡â€ï¼š
+		å¯¹è±¡ç±»å‹;
 }
-/ *È«Çò·ûºÅ* /
-//ÔÚ.eslintrc.jsonÖĞ¶¨Òå´ËÈ«¾Ö»á²úÉúÊ¹ÓÃÈ«¾ÖµÄÎ£ÏÕ
-//ÔÚÁíÒ»¸öµØ·½ÎŞÈË¿´ÊØ£¬ÎªÕâ¸öÄ£¿é¶¨ÒåÈ«¾ÖËÆºõ¸ü°²È«
+/ *å…¨çƒç¬¦å·* /
+//åœ¨.eslintrc.jsonä¸­å®šä¹‰æ­¤å…¨å±€ä¼šäº§ç”Ÿä½¿ç”¨å…¨å±€çš„å±é™©
+//åœ¨å¦ä¸€ä¸ªåœ°æ–¹æ— äººçœ‹å®ˆï¼Œä¸ºè¿™ä¸ªæ¨¡å—å®šä¹‰å…¨å±€ä¼¼ä¹æ›´å®‰å…¨
 
 
 
 VAR
-	version =¡°3.3.1¡±£¬
+	version =â€œ3.3.1â€ï¼Œ
 
-	//¶¨ÒåjQueryµÄ±¾µØ¸±±¾
-	jQuery = function£¨selector£¬context£©{
+	//å®šä¹‰jQueryçš„æœ¬åœ°å‰¯æœ¬
+	jQuery = functionï¼ˆselectorï¼Œcontextï¼‰{
 
-		// jQuery¶ÔÏóÊµ¼ÊÉÏÖ»ÊÇinit¹¹Ôìº¯Êı'enhanced'
-		//Èç¹ûµ÷ÓÃÁËjQuery£¬ÔòĞèÒªinit£¨Èç¹û²»°üº¬ÔòÔÊĞíÅ×³ö´íÎó£©
-		·µ»ØĞÂµÄjQuery.fn.init£¨selector£¬context£©;
-	}£¬
+		// jQueryå¯¹è±¡å®é™…ä¸Šåªæ˜¯initæ„é€ å‡½æ•°'enhanced'
+		//å¦‚æœè°ƒç”¨äº†jQueryï¼Œåˆ™éœ€è¦initï¼ˆå¦‚æœä¸åŒ…å«åˆ™å…è®¸æŠ›å‡ºé”™è¯¯ï¼‰
+		è¿”å›æ–°çš„jQuery.fn.initï¼ˆselectorï¼Œcontextï¼‰;
+	}ï¼Œ
 
-	//Ö§³Ö£ºAndroid <= 4.0
-	//È·±£ÎÒÃÇĞŞ¼ôBOMºÍNBSP
+	//æ”¯æŒï¼šAndroid <= 4.0
+	//ç¡®ä¿æˆ‘ä»¬ä¿®å‰ªBOMå’ŒNBSP
 	rtrim = / ^ [\ s \ uFEFF \ xA0] + | [\ s \ uFEFF \ xA0] + $ / g;
 
 jQuery.fn = jQuery.prototype = {
 
-	//ÕıÔÚÊ¹ÓÃµÄjQueryµÄµ±Ç°°æ±¾
-	jquery£º°æ±¾£¬
+	//æ­£åœ¨ä½¿ç”¨çš„jQueryçš„å½“å‰ç‰ˆæœ¬
+	jqueryï¼šç‰ˆæœ¬ï¼Œ
 
-	¹¹Ôìº¯Êı£ºjQuery£¬
+	æ„é€ å‡½æ•°ï¼šjQueryï¼Œ
 
-	// jQuery¶ÔÏóµÄÄ¬ÈÏ³¤¶ÈÎª0
-	³¤¶È£º0£¬
+	// jQueryå¯¹è±¡çš„é»˜è®¤é•¿åº¦ä¸º0
+	é•¿åº¦ï¼š0ï¼Œ
 
-	toArray£ºfunction£¨£©{
-		return slice.call£¨this£©;
-	}£¬
+	toArrayï¼šfunctionï¼ˆï¼‰{
+		return slice.callï¼ˆthisï¼‰;
+	}ï¼Œ
 
-	//»ñÈ¡Æ¥ÅäÔªËØ¼¯ORÖĞµÄµÚN¸öÔªËØ
-	//½«Õû¸öÆ¥ÅäµÄÔªËØ¼¯×÷Îª¸É¾»Êı×é
-	get£ºfunction£¨num£©{
+	//è·å–åŒ¹é…å…ƒç´ é›†ORä¸­çš„ç¬¬Nä¸ªå…ƒç´ 
+	//å°†æ•´ä¸ªåŒ¹é…çš„å…ƒç´ é›†ä½œä¸ºå¹²å‡€æ•°ç»„
+	getï¼šfunctionï¼ˆnumï¼‰{
 
-		//·µ»Ø¸É¾»Êı×éÖĞµÄËùÓĞÔªËØ
-		if£¨num == null£©{
-			return slice.call£¨this£©;
+		//è¿”å›å¹²å‡€æ•°ç»„ä¸­çš„æ‰€æœ‰å…ƒç´ 
+		ifï¼ˆnum == nullï¼‰{
+			return slice.callï¼ˆthisï¼‰;
 		}
 
-		//Ö»·µ»Ø¼¯ºÏÖĞµÄÒ»¸öÔªËØ
-		·µ»Ønum <0£¿Õâ[num + this.length]£ºÕâ¸ö[num];
-	}£¬
+		//åªè¿”å›é›†åˆä¸­çš„ä¸€ä¸ªå…ƒç´ 
+		è¿”å›num <0ï¼Ÿè¿™[num + this.length]ï¼šè¿™ä¸ª[num];
+	}ï¼Œ
 
-	//»ñÈ¡Ò»ÏµÁĞÔªËØ²¢½«ÆäÍÆÈë¶ÑÕ»
-	//£¨·µ»ØĞÂµÄÆ¥ÅäÔªËØ¼¯£©
-	pushStack£ºfunction£¨elems£©{
+	//è·å–ä¸€ç³»åˆ—å…ƒç´ å¹¶å°†å…¶æ¨å…¥å †æ ˆ
+	//ï¼ˆè¿”å›æ–°çš„åŒ¹é…å…ƒç´ é›†ï¼‰
+	pushStackï¼šfunctionï¼ˆelemsï¼‰{
 
-		//¹¹½¨Ò»¸öĞÂµÄjQueryÆ¥ÅäÔªËØ¼¯
-		var ret = jQuery.merge£¨this.constructor£¨£©£¬elems£©;
+		//æ„å»ºä¸€ä¸ªæ–°çš„jQueryåŒ¹é…å…ƒç´ é›†
+		var ret = jQuery.mergeï¼ˆthis.constructorï¼ˆï¼‰ï¼Œelemsï¼‰;
 
-		//½«¾É¶ÔÏóÌí¼Óµ½¶ÑÕ»ÖĞ£¨×÷Îª²Î¿¼£©
+		//å°†æ—§å¯¹è±¡æ·»åŠ åˆ°å †æ ˆä¸­ï¼ˆä½œä¸ºå‚è€ƒï¼‰
 		ret.prevObject = this;
 
-		//·µ»ØĞÂĞÎ³ÉµÄÔªËØ¼¯
-		·µ»Ø;
-	}£¬
+		//è¿”å›æ–°å½¢æˆçš„å…ƒç´ é›†
+		è¿”å›;
+	}ï¼Œ
 
-	//¶ÔÆ¥Åä¼¯ÖĞµÄÃ¿¸öÔªËØÖ´ĞĞ»Øµ÷¡£
-	each£ºfunction£¨callback£©{
-		return jQuery.each£¨this£¬callback£©;
-	}£¬
+	//å¯¹åŒ¹é…é›†ä¸­çš„æ¯ä¸ªå…ƒç´ æ‰§è¡Œå›è°ƒã€‚
+	eachï¼šfunctionï¼ˆcallbackï¼‰{
+		return jQuery.eachï¼ˆthisï¼Œcallbackï¼‰;
+	}ï¼Œ
 
-	map£ºfunction£¨callback£©{
-		return this.pushStack£¨jQuery.map£¨this£¬function£¨elem£¬i£©{
-			return callback.call£¨elem£¬i£¬elem£©;
-		}£©;;
-	}£¬
+	mapï¼šfunctionï¼ˆcallbackï¼‰{
+		return this.pushStackï¼ˆjQuery.mapï¼ˆthisï¼Œfunctionï¼ˆelemï¼Œiï¼‰{
+			return callback.callï¼ˆelemï¼Œiï¼Œelemï¼‰;
+		}ï¼‰;;
+	}ï¼Œ
 
-	slice£ºfunction£¨£©{
-		return this.pushStack£¨slice.apply£¨this£¬arguments£©£©;
-	}£¬
+	sliceï¼šfunctionï¼ˆï¼‰{
+		return this.pushStackï¼ˆslice.applyï¼ˆthisï¼Œargumentsï¼‰ï¼‰;
+	}ï¼Œ
 
-	µÚÒ»Ãû£ºfunction£¨£©{
-		return this.eq£¨0£©;
-	}£¬
+	ç¬¬ä¸€åï¼šfunctionï¼ˆï¼‰{
+		return this.eqï¼ˆ0ï¼‰;
+	}ï¼Œ
 
-	last£ºfunction£¨£©{
-		return this.eq£¨-1£©;
-	}£¬
+	lastï¼šfunctionï¼ˆï¼‰{
+		return this.eqï¼ˆ-1ï¼‰;
+	}ï¼Œ
 
-	eq£ºfunction£¨i£©{
-		var len = this.length£¬
-			j = + i +£¨i <0£¿len£º0£©;
-		return this.pushStack£¨j> = 0 && j <len£¿[this [j]]£º[]£©;
-	}£¬
+	eqï¼šfunctionï¼ˆiï¼‰{
+		var len = this.lengthï¼Œ
+			j = + i +ï¼ˆi <0ï¼Ÿlenï¼š0ï¼‰;
+		return this.pushStackï¼ˆj> = 0 && j <lenï¼Ÿ[this [j]]ï¼š[]ï¼‰;
+	}ï¼Œ
 
-	½áÊø£ºfunction£¨£©{
-		·µ»Øthis.prevObject || this.constructor£¨£©;
-	}£¬
+	ç»“æŸï¼šfunctionï¼ˆï¼‰{
+		è¿”å›this.prevObject || this.constructorï¼ˆï¼‰;
+	}ï¼Œ
 
-	// ½öÏŞÄÚ²¿Ê¹ÓÃ¡£
-	//±íÏÖµÃÏñÒ»¸öArrayµÄ·½·¨£¬¶ø²»ÊÇÏñjQuery·½·¨¡£
-	ÍÆÍÆ£¬
-	sort£ºarr.sort£¬
-	Æ´½Ó£ºarr.splice
+	// ä»…é™å†…éƒ¨ä½¿ç”¨ã€‚
+	//è¡¨ç°å¾—åƒä¸€ä¸ªArrayçš„æ–¹æ³•ï¼Œè€Œä¸æ˜¯åƒjQueryæ–¹æ³•ã€‚
+	æ¨æ¨ï¼Œ
+	sortï¼šarr.sortï¼Œ
+	æ‹¼æ¥ï¼šarr.splice
 };
 
-jQuery.extend = jQuery.fn.extend = function£¨£©{
-	var options£¬name£¬src£¬copy£¬copyIsArray£¬clone£¬
-		target = arguments [0] || {}£¬
-		i = 1£¬
-		length = arguments.length£¬
+jQuery.extend = jQuery.fn.extend = functionï¼ˆï¼‰{
+	var optionsï¼Œnameï¼Œsrcï¼Œcopyï¼ŒcopyIsArrayï¼Œcloneï¼Œ
+		target = arguments [0] || {}ï¼Œ
+		i = 1ï¼Œ
+		length = arguments.lengthï¼Œ
 		deep = false;
 
-	//´¦ÀíÉî²ã¸´ÖÆÇé¿ö
-	if£¨typeof target ===¡°boolean¡±£©{
+	//å¤„ç†æ·±å±‚å¤åˆ¶æƒ…å†µ
+	ifï¼ˆtypeof target ===â€œbooleanâ€ï¼‰{
 		deep = target;
 
-		//Ìø¹ı²¼¶ûÖµºÍÄ¿±ê
+		//è·³è¿‡å¸ƒå°”å€¼å’Œç›®æ ‡
 		target = arguments [i] || {};
-		ÎÒ++;
+		æˆ‘++;
 	}
 
-	//µ±Ä¿±êÊÇ×Ö·û´®»òÆäËû¶«Î÷Ê±´¦Àí´óĞ¡Ğ´£¨¿ÉÄÜÔÚÉî²ã¸±±¾ÖĞ£©
-	if£¨typeof target£¡==¡°object¡±&&£¡isFunction£¨target£©£©{
+	//å½“ç›®æ ‡æ˜¯å­—ç¬¦ä¸²æˆ–å…¶ä»–ä¸œè¥¿æ—¶å¤„ç†å¤§å°å†™ï¼ˆå¯èƒ½åœ¨æ·±å±‚å‰¯æœ¬ä¸­ï¼‰
+	ifï¼ˆtypeof targetï¼==â€œobjectâ€&&ï¼isFunctionï¼ˆtargetï¼‰ï¼‰{
 		target = {};
 	}
 
-	//Èç¹ûÖ»´«µİÒ»¸ö²ÎÊı£¬ÔòÀ©Õ¹jQuery±¾Éí
-	if£¨i === length£©{
+	//å¦‚æœåªä¼ é€’ä¸€ä¸ªå‚æ•°ï¼Œåˆ™æ‰©å±•jQueryæœ¬èº«
+	ifï¼ˆi === lengthï¼‰{
 		target = this;
-		Ò»ÊÀ - ;
+		ä¸€ä¸– - ;
 	}
 
-	for£¨; i <length; i ++£©{
+	forï¼ˆ; i <length; i ++ï¼‰{
 
-		//½ö´¦Àí·Çnull /Î´¶¨ÒåµÄÖµ
-		if£¨£¨options = arguments [i]£©£¡= null£©{
+		//ä»…å¤„ç†énull /æœªå®šä¹‰çš„å€¼
+		ifï¼ˆï¼ˆoptions = arguments [i]ï¼‰ï¼= nullï¼‰{
 
-			//À©Õ¹»ù´¡¶ÔÏó
-			for£¨Ñ¡ÏîÖĞµÄÃû³Æ£©{
+			//æ‰©å±•åŸºç¡€å¯¹è±¡
+			forï¼ˆé€‰é¡¹ä¸­çš„åç§°ï¼‰{
 				src = target [name];
 				copy = options [name];
 
-				//·ÀÖ¹ÓÀÎŞÖ¹¾³µÄÑ­»·
-				if£¨target === copy£©{
-					¼ÌĞø;
+				//é˜²æ­¢æ°¸æ— æ­¢å¢ƒçš„å¾ªç¯
+				ifï¼ˆtarget === copyï¼‰{
+					ç»§ç»­;
 				}
 
-				//Èç¹ûÎÒÃÇÒªºÏ²¢ÆÕÍ¨¶ÔÏó»òÊı×é£¬Çëµİ¹é
-				if£¨deep && copy &&£¨jQuery.isPlainObject£¨copy£©||
-					£¨copyIsArray = Array.isArray£¨copy£©£©£©£©{
+				//å¦‚æœæˆ‘ä»¬è¦åˆå¹¶æ™®é€šå¯¹è±¡æˆ–æ•°ç»„ï¼Œè¯·é€’å½’
+				ifï¼ˆdeep && copy &&ï¼ˆjQuery.isPlainObjectï¼ˆcopyï¼‰||
+					ï¼ˆcopyIsArray = Array.isArrayï¼ˆcopyï¼‰ï¼‰ï¼‰ï¼‰{
 
-					if£¨copyIsArray£©{
+					ifï¼ˆcopyIsArrayï¼‰{
 						copyIsArray = false;
-						clone = src && Array.isArray£¨src£©£¿src£º[];
+						clone = src && Array.isArrayï¼ˆsrcï¼‰ï¼Ÿsrcï¼š[];
 
 					} else {
-						clone = src && jQuery.isPlainObject£¨src£©£¿src£º{};
+						clone = src && jQuery.isPlainObjectï¼ˆsrcï¼‰ï¼Ÿsrcï¼š{};
 					}
 
-					//ÓÀÔ¶²»ÒªÒÆ¶¯Ô­Ê¼¶ÔÏó£¬¿ËÂ¡ËüÃÇ
-					target [name] = jQuery.extend£¨deep£¬clone£¬copy£©;
+					//æ°¸è¿œä¸è¦ç§»åŠ¨åŸå§‹å¯¹è±¡ï¼Œå…‹éš†å®ƒä»¬
+					target [name] = jQuery.extendï¼ˆdeepï¼Œcloneï¼Œcopyï¼‰;
 
-				//²»ÒªÒıÈëÎ´¶¨ÒåµÄÖµ
-				} else if£¨copy£¡== undefined£©{
+				//ä¸è¦å¼•å…¥æœªå®šä¹‰çš„å€¼
+				} else ifï¼ˆcopyï¼== undefinedï¼‰{
 					target [name] = copy;
 				}
 			}
 		}
 	}
 
-	//·µ»ØĞŞ¸ÄºóµÄ¶ÔÏó
-	»Ø¹éÄ¿±ê;
+	//è¿”å›ä¿®æ”¹åçš„å¯¹è±¡
+	å›å½’ç›®æ ‡;
 };
 
-jQuery.extend£¨{
+jQuery.extendï¼ˆ{
 
-	//¶ÔÓÚÒ³ÃæÉÏµÄÃ¿¸öjQuery¸±±¾¶¼ÊÇÎ¨Ò»µÄ
-	expando£º¡°jQuery¡±+£¨version + Math.random£¨£©£©.replace£¨/ \ D / g£¬¡°¡±£©£¬
+	//å¯¹äºé¡µé¢ä¸Šçš„æ¯ä¸ªjQueryå‰¯æœ¬éƒ½æ˜¯å”¯ä¸€çš„
+	expandoï¼šâ€œjQueryâ€+ï¼ˆversion + Math.randomï¼ˆï¼‰ï¼‰.replaceï¼ˆ/ \ D / gï¼Œâ€œâ€ï¼‰ï¼Œ
 
-	//¼ÙÉèÃ»ÓĞreadyÄ£¿é¾Í×¼±¸ºÃÁËjQuery
-	isReady£ºÊÇµÄ£¬
+	//å‡è®¾æ²¡æœ‰readyæ¨¡å—å°±å‡†å¤‡å¥½äº†jQuery
+	isReadyï¼šæ˜¯çš„ï¼Œ
 
-	´íÎó£ºfunction£¨msg£©{
-		Å×³öĞÂ´íÎó£¨msg£©;
-	}£¬
+	é”™è¯¯ï¼šfunctionï¼ˆmsgï¼‰{
+		æŠ›å‡ºæ–°é”™è¯¯ï¼ˆmsgï¼‰;
+	}ï¼Œ
 
-	noop£ºfunction£¨£©{}£¬
+	noopï¼šfunctionï¼ˆï¼‰{}ï¼Œ
 
-	isPlainObject£ºfunction£¨obj£©{
-		var proto£¬Ctor;
+	isPlainObjectï¼šfunctionï¼ˆobjï¼‰{
+		var protoï¼ŒCtor;
 
-		//¼ì²âÃ÷ÏÔµÄ·ñ¶¨
-		//Ê¹ÓÃtoString¶ø²»ÊÇjQuery.typeÀ´²¶»ñËŞÖ÷¶ÔÏó
-		if£¨£¡obj || toString.call£¨obj£©£¡==¡°[object Object]¡±£©{
-			·µ»Øfalse;
+		//æ£€æµ‹æ˜æ˜¾çš„å¦å®š
+		//ä½¿ç”¨toStringè€Œä¸æ˜¯jQuery.typeæ¥æ•è·å®¿ä¸»å¯¹è±¡
+		ifï¼ˆï¼obj || toString.callï¼ˆobjï¼‰ï¼==â€œ[object Object]â€ï¼‰{
+			è¿”å›false;
 		}
 
-		proto = getProto£¨obj£©;
+		proto = getProtoï¼ˆobjï¼‰;
 
-		//Ã»ÓĞÔ­ĞÍµÄ¶ÔÏó£¨ÀıÈç£¬`Object.create£¨null£©`£©ÊÇÆÕÍ¨µÄ
-		if£¨£¡proto£©{
-			·µ»Øtrue;
+		//æ²¡æœ‰åŸå‹çš„å¯¹è±¡ï¼ˆä¾‹å¦‚ï¼Œ`Object.createï¼ˆnullï¼‰`ï¼‰æ˜¯æ™®é€šçš„
+		ifï¼ˆï¼protoï¼‰{
+			è¿”å›true;
 		}
 
-		//¾ßÓĞÔ­ĞÍµÄ¶ÔÏóÊÇ´¿´âµÄ£¬Èç¹ûËüÃÇÊÇÓÉÈ«¾ÖObjectº¯Êı¹¹ÔìµÄ
-		Ctor = hasOwn.call£¨proto£¬¡°constructor¡±£©&& proto.constructor;
-		·µ»Øtypeof Ctor ===¡°function¡±&& fnToString.call£¨Ctor£©=== ObjectFunctionString;
-	}£¬
+		//å…·æœ‰åŸå‹çš„å¯¹è±¡æ˜¯çº¯ç²¹çš„ï¼Œå¦‚æœå®ƒä»¬æ˜¯ç”±å…¨å±€Objectå‡½æ•°æ„é€ çš„
+		Ctor = hasOwn.callï¼ˆprotoï¼Œâ€œconstructorâ€ï¼‰&& proto.constructor;
+		è¿”å›typeof Ctor ===â€œfunctionâ€&& fnToString.callï¼ˆCtorï¼‰=== ObjectFunctionString;
+	}ï¼Œ
 
-	isEmptyObject£ºfunction£¨obj£©{
+	isEmptyObjectï¼šfunctionï¼ˆobjï¼‰{
 
 		/ * eslint-disable no-unused-vars * /
-		//Çë²ÎÔÄhttps://github.com/eslint/eslint/issues/6125
+		//è¯·å‚é˜…https://github.com/eslint/eslint/issues/6125
 		var name;
 
-		for£¨objÖĞµÄÃû×Ö£©{
-			·µ»Øfalse;
+		forï¼ˆobjä¸­çš„åå­—ï¼‰{
+			è¿”å›false;
 		}
-		·µ»Øtrue;
-	}£¬
+		è¿”å›true;
+	}ï¼Œ
 
-	//ÔÚÈ«¾ÖÉÏÏÂÎÄÖĞÆÀ¹À½Å±¾
-	globalEval£ºfunction£¨code£©{
-		DOMEval£¨´úÂë£©;
-	}£¬
+	//åœ¨å…¨å±€ä¸Šä¸‹æ–‡ä¸­è¯„ä¼°è„šæœ¬
+	globalEvalï¼šfunctionï¼ˆcodeï¼‰{
+		DOMEvalï¼ˆä»£ç ï¼‰;
+	}ï¼Œ
 
-	each£ºfunction£¨obj£¬callback£©{
-		var length£¬i = 0;
+	eachï¼šfunctionï¼ˆobjï¼Œcallbackï¼‰{
+		var lengthï¼Œi = 0;
 
-		if£¨isArrayLike£¨obj£©£©{
+		ifï¼ˆisArrayLikeï¼ˆobjï¼‰ï¼‰{
 			length = obj.length;
-			for£¨; i <length; i ++£©{
-				if£¨callback.call£¨obj [i]£¬i£¬obj [i]£©=== false£©{
-					´òÆÆ;
+			forï¼ˆ; i <length; i ++ï¼‰{
+				ifï¼ˆcallback.callï¼ˆobj [i]ï¼Œiï¼Œobj [i]ï¼‰=== falseï¼‰{
+					æ‰“ç ´;
 				}
 			}
 		} else {
-			for£¨i in obj£©{
-				if£¨callback.call£¨obj [i]£¬i£¬obj [i]£©=== false£©{
-					´òÆÆ;
+			forï¼ˆi in objï¼‰{
+				ifï¼ˆcallback.callï¼ˆobj [i]ï¼Œiï¼Œobj [i]ï¼‰=== falseï¼‰{
+					æ‰“ç ´;
 				}
 			}
 		}
 
-		·µ»Øobj;
-	}£¬
+		è¿”å›obj;
+	}ï¼Œ
 
-	//Ö§³Ö£ºAndroid <= 4.0
-	trim£ºfunction£¨text£©{
-		return text == null£¿
-			¡°¡±£º
-			£¨text +¡°¡±£©¡£replace£¨rtrim£¬¡°¡±£©;
-	}£¬
+	//æ”¯æŒï¼šAndroid <= 4.0
+	trimï¼šfunctionï¼ˆtextï¼‰{
+		return text == nullï¼Ÿ
+			â€œâ€ï¼š
+			ï¼ˆtext +â€œâ€ï¼‰ã€‚replaceï¼ˆrtrimï¼Œâ€œâ€ï¼‰;
+	}ï¼Œ
 
-	//½á¹û½ö¹©ÄÚ²¿Ê¹ÓÃ
-	makeArray£ºfunction£¨arr£¬results£©{
+	//ç»“æœä»…ä¾›å†…éƒ¨ä½¿ç”¨
+	makeArrayï¼šfunctionï¼ˆarrï¼Œresultsï¼‰{
 		var ret = results || [];
 
-		if£¨arr£¡= null£©{
-			if£¨isArrayLike£¨Object£¨arr£©£©£©{
-				jQuery.merge£¨ret£¬
-					typeof arr ===¡°string¡±£¿
-					[arr]£ºarr
-				£©;
+		ifï¼ˆarrï¼= nullï¼‰{
+			ifï¼ˆisArrayLikeï¼ˆObjectï¼ˆarrï¼‰ï¼‰ï¼‰{
+				jQuery.mergeï¼ˆretï¼Œ
+					typeof arr ===â€œstringâ€ï¼Ÿ
+					[arr]ï¼šarr
+				ï¼‰;
 			} else {
-				push.call£¨ret£¬arr£©;
+				push.callï¼ˆretï¼Œarrï¼‰;
 			}
 		}
 
-		·µ»Ø;
-	}£¬
+		è¿”å›;
+	}ï¼Œ
 
-	inArray£ºfunction£¨elem£¬arr£¬i£©{
-		return arr == null£¿-1£ºindexOf.call£¨arr£¬elem£¬i£©;
-	}£¬
+	inArrayï¼šfunctionï¼ˆelemï¼Œarrï¼Œiï¼‰{
+		return arr == nullï¼Ÿ-1ï¼šindexOf.callï¼ˆarrï¼Œelemï¼Œiï¼‰;
+	}ï¼Œ
 
-	//Ö§³Ö£º½öÏŞAndroid <= 4.0£¬½öÏŞPhantomJS 1
-	// push.apply£¨_£¬arraylike£©Å×³ö¹ÅÀÏµÄWebKit
-	ºÏ²¢£º¹¦ÄÜ£¨µÚÒ»£¬µÚ¶ş£©{
-		var len = + second.length£¬
-			j = 0£¬
+	//æ”¯æŒï¼šä»…é™Android <= 4.0ï¼Œä»…é™PhantomJS 1
+	// push.applyï¼ˆ_ï¼Œarraylikeï¼‰æŠ›å‡ºå¤è€çš„WebKit
+	åˆå¹¶ï¼šåŠŸèƒ½ï¼ˆç¬¬ä¸€ï¼Œç¬¬äºŒï¼‰{
+		var len = + second.lengthï¼Œ
+			j = 0ï¼Œ
 			i = first.length;
 
-		for£¨; j <len; j ++£©{
+		forï¼ˆ; j <len; j ++ï¼‰{
 			first [i ++] = second [j];
 		}
 
 		first.length = i;
 
-		ÏÈ»ØÀ´;
-	}£¬
+		å…ˆå›æ¥;
+	}ï¼Œ
 
-	grep£ºfunction£¨elems£¬callback£¬invert£©{
-		var callbackInverse£¬
-			matches = []£¬
-			i = 0£¬
-			length = elems.length£¬
-			callbackExpect =£¡invert;
+	grepï¼šfunctionï¼ˆelemsï¼Œcallbackï¼Œinvertï¼‰{
+		var callbackInverseï¼Œ
+			matches = []ï¼Œ
+			i = 0ï¼Œ
+			length = elems.lengthï¼Œ
+			callbackExpect =ï¼invert;
 
-		//ä¯ÀÀÊı×é£¬Ö»±£´æÏîÄ¿
-		//´«µİÑéÖ¤Æ÷º¯Êı
-		for£¨; i <length; i ++£©{
-			callbackInverse =£¡callback£¨elems [i]£¬i£©;
-			if£¨callbackInverse£¡== callbackExpect£©{
-				matches.push£¨elems [i]£©;
+		//æµè§ˆæ•°ç»„ï¼Œåªä¿å­˜é¡¹ç›®
+		//ä¼ é€’éªŒè¯å™¨å‡½æ•°
+		forï¼ˆ; i <length; i ++ï¼‰{
+			callbackInverse =ï¼callbackï¼ˆelems [i]ï¼Œiï¼‰;
+			ifï¼ˆcallbackInverseï¼== callbackExpectï¼‰{
+				matches.pushï¼ˆelems [i]ï¼‰;
 			}
 		}
 
-		»Ø¹é±ÈÈü;
-	}£¬
+		å›å½’æ¯”èµ›;
+	}ï¼Œ
 
-	// arg½ö¹©ÄÚ²¿Ê¹ÓÃ
-	map£ºfunction£¨elems£¬callback£¬arg£©{
-		var length£¬value£¬
-			i = 0£¬
+	// argä»…ä¾›å†…éƒ¨ä½¿ç”¨
+	mapï¼šfunctionï¼ˆelemsï¼Œcallbackï¼Œargï¼‰{
+		var lengthï¼Œvalueï¼Œ
+			i = 0ï¼Œ
 			ret = [];
 
-		//ä¯ÀÀÊı×é£¬½«Ã¿¸öÏîÄ¿×ª»»ÎªĞÂÖµ
-		if£¨isArrayLike£¨elems£©£©{
+		//æµè§ˆæ•°ç»„ï¼Œå°†æ¯ä¸ªé¡¹ç›®è½¬æ¢ä¸ºæ–°å€¼
+		ifï¼ˆisArrayLikeï¼ˆelemsï¼‰ï¼‰{
 			length = elems.length;
-			for£¨; i <length; i ++£©{
-				value = callback£¨elems [i]£¬i£¬arg£©;
+			forï¼ˆ; i <length; i ++ï¼‰{
+				value = callbackï¼ˆelems [i]ï¼Œiï¼Œargï¼‰;
 
-				if£¨value£¡= null£©{
-					ret.push£¨value£©;
+				ifï¼ˆvalueï¼= nullï¼‰{
+					ret.pushï¼ˆvalueï¼‰;
 				}
 			}
 
-		//ä¯ÀÀ¶ÔÏóÉÏµÄÃ¿¸ö¼ü£¬
+		//æµè§ˆå¯¹è±¡ä¸Šçš„æ¯ä¸ªé”®ï¼Œ
 		} else {
-			for£¨i in elems£©{
-				value = callback£¨elems [i]£¬i£¬arg£©;
+			forï¼ˆi in elemsï¼‰{
+				value = callbackï¼ˆelems [i]ï¼Œiï¼Œargï¼‰;
 
-				if£¨value£¡= null£©{
-					ret.push£¨value£©;
+				ifï¼ˆvalueï¼= nullï¼‰{
+					ret.pushï¼ˆvalueï¼‰;
 				}
 			}
 		}
 
-		//Õ¹Æ½ÈÎºÎÇ¶Ì×Êı×é
-		return concat.apply£¨[]£¬ret£©;
-	}£¬
+		//å±•å¹³ä»»ä½•åµŒå¥—æ•°ç»„
+		return concat.applyï¼ˆ[]ï¼Œretï¼‰;
+	}ï¼Œ
 
-	//¶ÔÏóµÄÈ«¾ÖGUID¼ÆÊıÆ÷
-	guid£º1£¬
+	//å¯¹è±¡çš„å…¨å±€GUIDè®¡æ•°å™¨
+	guidï¼š1ï¼Œ
 
-	// jQuery.supportÎ´ÔÚCoreÖĞÊ¹ÓÃ£¬µ«ÆäËûÏîÄ¿¸½¼ÓÁËËüÃÇ
-	//ËüµÄÊôĞÔËùÒÔËüĞèÒª´æÔÚ¡£
-	Ö§³Ö£ºÖ§³Ö
-}£©;
+	// jQuery.supportæœªåœ¨Coreä¸­ä½¿ç”¨ï¼Œä½†å…¶ä»–é¡¹ç›®é™„åŠ äº†å®ƒä»¬
+	//å®ƒçš„å±æ€§æ‰€ä»¥å®ƒéœ€è¦å­˜åœ¨ã€‚
+	æ”¯æŒï¼šæ”¯æŒ
+}ï¼‰;
 
-if£¨typeof Symbol ===¡°function¡±£©{
+ifï¼ˆtypeof Symbol ===â€œfunctionâ€ï¼‰{
 	jQuery.fn [Symbol.iterator] = arr [Symbol.iterator];
 }
 
-//Ìî³äclass2typeÓ³Éä
-jQuery.each£¨¡°²¼¶ûÖµÊı×Ö×Ö·û´®º¯ÊıÊı×éÈÕÆÚRegExp¶ÔÏó´íÎó·ûºÅ¡±.split£¨¡°¡±£©£¬
-function£¨i£¬name£©{
-	class2type [¡°[object¡±+ name +¡°]¡±] = name.toLowerCase£¨£©;
-}£©;
+//å¡«å……class2typeæ˜ å°„
+jQuery.eachï¼ˆâ€œå¸ƒå°”å€¼æ•°å­—å­—ç¬¦ä¸²å‡½æ•°æ•°ç»„æ—¥æœŸRegExpå¯¹è±¡é”™è¯¯ç¬¦å·â€.splitï¼ˆâ€œâ€ï¼‰ï¼Œ
+functionï¼ˆiï¼Œnameï¼‰{
+	class2type [â€œ[objectâ€+ name +â€œ]â€] = name.toLowerCaseï¼ˆï¼‰;
+}ï¼‰;
 
-function isArrayLike£¨obj£©{
+function isArrayLikeï¼ˆobjï¼‰{
 
-	//Ö§³Ö£º½öÏŞÕæÕıµÄiOS 8.2£¨ÔÚÄ£ÄâÆ÷ÖĞ²»¿ÉÖØÏÖ£©
-	//`in`¼ì²éÓÃÓÚ·ÀÖ¹JIT´íÎó£¨gh-2145£©
-	//ÓÉÓÚÂ©±¨£¬Òò´Ë²»Ê¹ÓÃhasOwn
-	//¹ØÓÚIEÖĞµÄNodelist³¤¶È
-	ÔÚobj && obj.lengthÖĞ£¬var length = !! obj &&¡°length¡±£¬
-		type = toType£¨obj£©;
+	//æ”¯æŒï¼šä»…é™çœŸæ­£çš„iOS 8.2ï¼ˆåœ¨æ¨¡æ‹Ÿå™¨ä¸­ä¸å¯é‡ç°ï¼‰
+	//`in`æ£€æŸ¥ç”¨äºé˜²æ­¢JITé”™è¯¯ï¼ˆgh-2145ï¼‰
+	//ç”±äºæ¼æŠ¥ï¼Œå› æ­¤ä¸ä½¿ç”¨hasOwn
+	//å…³äºIEä¸­çš„Nodelisté•¿åº¦
+	åœ¨obj && obj.lengthä¸­ï¼Œvar length = !! obj &&â€œlengthâ€ï¼Œ
+		type = toTypeï¼ˆobjï¼‰;
 
-	if£¨isFunction£¨obj£©|| isWindow£¨obj£©£©{
-		·µ»Øfalse;
+	ifï¼ˆisFunctionï¼ˆobjï¼‰|| isWindowï¼ˆobjï¼‰ï¼‰{
+		è¿”å›false;
 	}
 
-	·µ»ØÀàĞÍ===¡°Êı×é¡±|| ³¤¶È=== 0 ||
-		typeof length ===¡°number¡±&& length> 0 &&£¨length  -  1£©in obj;
+	è¿”å›ç±»å‹===â€œæ•°ç»„â€|| é•¿åº¦=== 0 ||
+		typeof length ===â€œnumberâ€&& length> 0 &&ï¼ˆlength  -  1ï¼‰in obj;
 }
 var Sizzle =
-/ *£¡
+/ *ï¼
  * Sizzle CSS Selector Engine v2.3.3
  * https://sizzlejs.com/
  *
- *°æÈ¨jQuery FoundationºÍÆäËû¹±Ï×Õß
- *¸ù¾İMITĞí¿ÉÖ¤·¢²¼
+ *ç‰ˆæƒjQuery Foundationå’Œå…¶ä»–è´¡çŒ®è€…
+ *æ ¹æ®MITè®¸å¯è¯å‘å¸ƒ
  * http://jquery.org/license
  *
- *ÈÕÆÚ£º2016-08-08
+ *æ—¥æœŸï¼š2016-08-08
  * /
-£¨¹¦ÄÜ£¨´°¿Ú£©{
+ï¼ˆåŠŸèƒ½ï¼ˆçª—å£ï¼‰{
 
-var i£¬
-	Ö§³Ö£¬
-	EXPR£¬
-	gettextµÄ£¬
-	isXML£¬
-	¼ÇºÅ»¯£¬
-	±àÒë£¬
-	Ñ¡Ôñ£¬
-	outermostContext£¬
-	sortInput£¬
-	hasDuplicate£¬
+var iï¼Œ
+	æ”¯æŒï¼Œ
+	EXPRï¼Œ
+	gettextçš„ï¼Œ
+	isXMLï¼Œ
+	è®°å·åŒ–ï¼Œ
+	ç¼–è¯‘ï¼Œ
+	é€‰æ‹©ï¼Œ
+	outermostContextï¼Œ
+	sortInputï¼Œ
+	hasDuplicateï¼Œ
 
-	//±¾µØÎÄµµ±äÁ¿
-	setDocument£¬
-	ÎÄÏ×£¬
-	docElem£¬
-	documentIsHTML£¬
-	rbuggyQSA£¬
-	rbuggyMatches£¬
-	»ğ²ñ£¬
-	°üº¬£¬
+	//æœ¬åœ°æ–‡æ¡£å˜é‡
+	setDocumentï¼Œ
+	æ–‡çŒ®ï¼Œ
+	docElemï¼Œ
+	documentIsHTMLï¼Œ
+	rbuggyQSAï¼Œ
+	rbuggyMatchesï¼Œ
+	ç«æŸ´ï¼Œ
+	åŒ…å«ï¼Œ
 
-	//ÌØ¶¨ÓÚÊµÀıµÄÊı¾İ
-	expando =¡°sizzle¡±+ 1 * new Date£¨£©£¬
-	preferredDoc = window.document£¬
-	dirruns = 0£¬
-	Íê³É= 0£¬
-	classCache = createCache£¨£©£¬
-	tokenCache = createCache£¨£©£¬
-	compilerCache = createCache£¨£©£¬
-	sortOrder = function£¨a£¬b£©{
-		if£¨a === b£©{
+	//ç‰¹å®šäºå®ä¾‹çš„æ•°æ®
+	expando =â€œsizzleâ€+ 1 * new Dateï¼ˆï¼‰ï¼Œ
+	preferredDoc = window.documentï¼Œ
+	dirruns = 0ï¼Œ
+	å®Œæˆ= 0ï¼Œ
+	classCache = createCacheï¼ˆï¼‰ï¼Œ
+	tokenCache = createCacheï¼ˆï¼‰ï¼Œ
+	compilerCache = createCacheï¼ˆï¼‰ï¼Œ
+	sortOrder = functionï¼ˆaï¼Œbï¼‰{
+		ifï¼ˆa === bï¼‰{
 			hasDuplicate = true;
 		}
-		·µ»Ø0;
-	}£¬
+		è¿”å›0;
+	}ï¼Œ
 
-	//ÊµÀı·½·¨
-	hasOwn =£¨{}£©¡£hasOwnProperty£¬
-	arr = []£¬
-	pop = arr.pop£¬
-	push_native = arr.push£¬
-	push = arr.push£¬
-	slice = arr.slice£¬
-	//Ê¹ÓÃ¾«¼òµÄindexOf£¬ÒòÎªËü±Ènative¸ü¿ì
+	//å®ä¾‹æ–¹æ³•
+	hasOwn =ï¼ˆ{}ï¼‰ã€‚hasOwnPropertyï¼Œ
+	arr = []ï¼Œ
+	pop = arr.popï¼Œ
+	push_native = arr.pushï¼Œ
+	push = arr.pushï¼Œ
+	slice = arr.sliceï¼Œ
+	//ä½¿ç”¨ç²¾ç®€çš„indexOfï¼Œå› ä¸ºå®ƒæ¯”nativeæ›´å¿«
 	// https://jsperf.com/thor-indexof-vs-for/5
-	indexOf = function£¨list£¬elem£©{
-		var i = 0£¬
+	indexOf = functionï¼ˆlistï¼Œelemï¼‰{
+		var i = 0ï¼Œ
 			len = list.length;
-		for£¨; i <len; i ++£©{
-			if£¨list [i] === elem£©{
-				»Ø¹éÎÒ;
+		forï¼ˆ; i <len; i ++ï¼‰{
+			ifï¼ˆlist [i] === elemï¼‰{
+				å›å½’æˆ‘;
 			}
 		}
-		·µ»Ø-1;
-	}£¬
+		è¿”å›-1;
+	}ï¼Œ
 
-	booleans =¡°checked | selected | async | autofocus | autoplay | controls | defer | disabled | hidden | ismap | loop | multiple | open | readonly | required | scoped¡±£¬
+	booleans =â€œchecked | selected | async | autofocus | autoplay | controls | defer | disabled | hidden | ismap | loop | multiple | open | readonly | required | scopedâ€ï¼Œ
 
-	// ³£ÓÃ±í´ï
+	// å¸¸ç”¨è¡¨è¾¾
 
 	// http://www.w3.org/TR/css3-selectors/#whitespace
-	whitespace =¡°[\\ x20 \\ t \\ r \\ n \\ f]¡±£¬
+	whitespace =â€œ[\\ x20 \\ t \\ r \\ n \\ f]â€ï¼Œ
 
 	// http://www.w3.org/TR/CSS21/syndata.html#value-def-identifier
-	identifier =¡°£¨£¿£º\\\\¡£| [\\ w-] | [^ \ 0  -  \\ xa0]£©+¡±£¬
+	identifier =â€œï¼ˆï¼Ÿï¼š\\\\ã€‚| [\\ w-] | [^ \ 0  -  \\ xa0]ï¼‰+â€ï¼Œ
 
-	//ÊôĞÔÑ¡ÔñÆ÷£ºhttp£º//www.w3.org/TR/selectors/#attribute-selectors
-	attributes =¡°\\ [¡±+ whitespace +¡°*£¨¡±+ identifier +¡°£©£¨£¿£º¡±+ whitespace +
-		//ÔËËã·û£¨²¶»ñ2£©
-		¡°*£¨[* ^ $ |£¡?]£¿=£©¡±+¿Õ°×+
-		//¡°ÊôĞÔÖµ±ØĞëÊÇCSS±êÊ¶·û[capture 5]»ò×Ö·û´®[capture 3»òcapture 4]¡±
-		¡°*£¨£¿£º '£¨£¨£¿£º\\\\ | [^ \\\\']£©*£©'| \ ¡°£¨£¨£¿£º\\\\ | [^ \\\\\¡±] £©*£©\¡°|£¨¡±+±êÊ¶·û+¡°£©£©|£©¡±+¿Õ°×+
-		¡°* \\]¡±£¬
+	//å±æ€§é€‰æ‹©å™¨ï¼šhttpï¼š//www.w3.org/TR/selectors/#attribute-selectors
+	attributes =â€œ\\ [â€+ whitespace +â€œ*ï¼ˆâ€+ identifier +â€œï¼‰ï¼ˆï¼Ÿï¼šâ€+ whitespace +
+		//è¿ç®—ç¬¦ï¼ˆæ•è·2ï¼‰
+		â€œ*ï¼ˆ[* ^ $ |ï¼?]ï¼Ÿ=ï¼‰â€+ç©ºç™½+
+		//â€œå±æ€§å€¼å¿…é¡»æ˜¯CSSæ ‡è¯†ç¬¦[capture 5]æˆ–å­—ç¬¦ä¸²[capture 3æˆ–capture 4]â€
+		â€œ*ï¼ˆï¼Ÿï¼š 'ï¼ˆï¼ˆï¼Ÿï¼š\\\\ | [^ \\\\']ï¼‰*ï¼‰'| \ â€œï¼ˆï¼ˆï¼Ÿï¼š\\\\ | [^ \\\\\â€] ï¼‰*ï¼‰\â€œ|ï¼ˆâ€+æ ‡è¯†ç¬¦+â€œï¼‰ï¼‰|ï¼‰â€+ç©ºç™½+
+		â€œ* \\]â€ï¼Œ
 
-	pseudos =¡°:(¡±+ identifier +¡°£©£¨£¿£º\\£¨£¨¡±+
-		//Òª¼õÉÙpreFilterÖĞĞèÒªtokenizeµÄÑ¡ÔñÆ÷ÊıÁ¿£¬Çë¸üÏ²»¶²ÎÊı£º
-		// 1.ÒıÓÃ£¨²¶»ñ3;²¶»ñ4»ò²¶»ñ5£©
-		¡°£¨ '£¨£¨£¿£º\\\\ | [^ \\\\']£©*£©'| \ ¡°£¨£¨£¿£º\\\\ | [^ \\\\\¡±]£©*£© \¡°£©|¡±+
-		// 2.¼òµ¥£¨²¶»ñ6£©
-		¡°£¨£¨£¿£º\\\\¡£| [^ \\\\£¨£©[\\]] |¡±+ÊôĞÔ+¡°£©*£©|¡± +
-		// 3.ÆäËûÈÎºÎ¶«Î÷£¨²¶»ñ2£©
-		¡°¡£*¡±+
-		¡°£©\\£©|£©¡±£¬
+	pseudos =â€œ:(â€+ identifier +â€œï¼‰ï¼ˆï¼Ÿï¼š\\ï¼ˆï¼ˆâ€+
+		//è¦å‡å°‘preFilterä¸­éœ€è¦tokenizeçš„é€‰æ‹©å™¨æ•°é‡ï¼Œè¯·æ›´å–œæ¬¢å‚æ•°ï¼š
+		// 1.å¼•ç”¨ï¼ˆæ•è·3;æ•è·4æˆ–æ•è·5ï¼‰
+		â€œï¼ˆ 'ï¼ˆï¼ˆï¼Ÿï¼š\\\\ | [^ \\\\']ï¼‰*ï¼‰'| \ â€œï¼ˆï¼ˆï¼Ÿï¼š\\\\ | [^ \\\\\â€]ï¼‰*ï¼‰ \â€œï¼‰|â€+
+		// 2.ç®€å•ï¼ˆæ•è·6ï¼‰
+		â€œï¼ˆï¼ˆï¼Ÿï¼š\\\\ã€‚| [^ \\\\ï¼ˆï¼‰[\\]] |â€+å±æ€§+â€œï¼‰*ï¼‰|â€ +
+		// 3.å…¶ä»–ä»»ä½•ä¸œè¥¿ï¼ˆæ•è·2ï¼‰
+		â€œã€‚*â€+
+		â€œï¼‰\\ï¼‰|ï¼‰â€ï¼Œ
 
-	//Ç°µ¼ºÍ·Ç×ªÒåÎ²Ëæ¿Õ¸ñ£¬²¶»ñºóÕßÖ®Ç°µÄÒ»Ğ©·Ç¿Õ°××Ö·û
-	rwhitespace = new RegExp£¨¿Õ¸ñ+¡°+¡±£¬¡°g¡±£©£¬
-	rtrim = new RegExp£¨¡°^¡±+ whitespace +¡°+ |£¨£¨£¿£º^ | [^ \\\\]£©£¨£¿£º\\\\¡££©*£©¡±+ whitespace +¡°+ $¡±£¬¡°g ¡°£©£¬
+	//å‰å¯¼å’Œéè½¬ä¹‰å°¾éšç©ºæ ¼ï¼Œæ•è·åè€…ä¹‹å‰çš„ä¸€äº›éç©ºç™½å­—ç¬¦
+	rwhitespace = new RegExpï¼ˆç©ºæ ¼+â€œ+â€ï¼Œâ€œgâ€ï¼‰ï¼Œ
+	rtrim = new RegExpï¼ˆâ€œ^â€+ whitespace +â€œ+ |ï¼ˆï¼ˆï¼Ÿï¼š^ | [^ \\\\]ï¼‰ï¼ˆï¼Ÿï¼š\\\\ã€‚ï¼‰*ï¼‰â€+ whitespace +â€œ+ $â€ï¼Œâ€œg â€œï¼‰ï¼Œ
 
-	rcomma = new RegExp£¨¡°^¡±+ whitespace +¡°*£¬¡±+ whitespace +¡°*¡±£©£¬
-	rcombinators = new RegExp£¨¡°^¡±+ whitespace +¡°*£¨[> +?] |¡±+ whitespace +¡°£©¡±+ whitespace +¡°*¡±£©£¬
+	rcomma = new RegExpï¼ˆâ€œ^â€+ whitespace +â€œ*ï¼Œâ€+ whitespace +â€œ*â€ï¼‰ï¼Œ
+	rcombinators = new RegExpï¼ˆâ€œ^â€+ whitespace +â€œ*ï¼ˆ[> +?] |â€+ whitespace +â€œï¼‰â€+ whitespace +â€œ*â€ï¼‰ï¼Œ
 
-	rattributeQuotes = new RegExp£¨¡°=¡±+ whitespace +¡°*£¨[^ \\]'\¡±] *£¿£©¡°+ whitespace +¡±* \\]¡°£¬¡±g¡°£©£¬
+	rattributeQuotes = new RegExpï¼ˆâ€œ=â€+ whitespace +â€œ*ï¼ˆ[^ \\]'\â€] *ï¼Ÿï¼‰â€œ+ whitespace +â€* \\]â€œï¼Œâ€gâ€œï¼‰ï¼Œ
 
-	rpseudo =ĞÂµÄRegExp£¨Î±£©£¬
-	ridentifier = new RegExp£¨¡°^¡±+ identifier +¡°$¡±£©£¬
+	rpseudo =æ–°çš„RegExpï¼ˆä¼ªï¼‰ï¼Œ
+	ridentifier = new RegExpï¼ˆâ€œ^â€+ identifier +â€œ$â€ï¼‰ï¼Œ
 
 	matchExpr = {
-		¡°ID¡±£ºĞÂµÄRegExp£¨¡°^£££¨¡±+ + identifier +¡°£©¡±£©£¬
-		¡°CLASS¡±£ºĞÂµÄRegExp£¨¡°^ \\¡££¨¡±+ identifier +¡°£©¡±£©£¬
-		¡°TAG¡±£ºĞÂµÄRegExp£¨¡°^£¨¡±+ identifier +¡°| [*]£©¡±£©£¬
-		¡°ATTR¡±£ºĞÂµÄRegExp£¨¡°^¡±+ÊôĞÔ£©£¬
-		¡°PSEUDO¡±£ºĞÂµÄRegExp£¨¡°^¡±+ pseudos£©£¬
-		¡°CHILD¡±£ºĞÂµÄRegExp£¨¡°^ :(½ö|µÚÒ»|×îºó|µÚn |µÚn  - ×îºó£© - £¨×ÓÀàĞÍ£©£¨£¿£º\\£¨¡±+ + whitespace +
-			¡°*£¨Å¼Êı|ÆæÊı|£¨£¨[+  - ] |£©£¨\\ d *£©n |£©¡±+¿Õ¸ñ+¡°*£¨£¿£º£¨[+  - ] |£©¡±+¿Õ°×+
-			¡°*£¨\\ d +£©|£©£©¡±+ whitespace +¡°* \\£©|£©¡±£¬¡°i¡±£©£¬
-		¡°bool¡±£ºĞÂµÄRegExp£¨¡°^£¨£¿£º¡±+ booleans +¡°£©$¡±£¬¡°i¡±£©£¬
-		//ÓÃÓÚÊµÏÖ.is£¨£©µÄ¿â
-		//ÎÒÃÇÔÚ`select`ÖĞÊ¹ÓÃËü½øĞĞPOSÆ¥Åä
-		¡°needsContext¡±£ºĞÂµÄRegExp£¨¡°^¡±+¿Õ¸ñ+¡°* [> +?] | :(Å¼Êı|ÆæÊı| eq | gt | lt | nth | first | last£©£¨£¿£º\\£¨¡±+
-			¿Õ¸ñ+¡°*£¨£¨£¿£º -  \\ d£©£¿\\ d *£©¡±+¿Õ¸ñ+¡°* \\£©|£©£¨£¿= [^  - ] | $£©¡±£¬¡°i¡±£©
-	}£¬
+		â€œIDâ€ï¼šæ–°çš„RegExpï¼ˆâ€œ^ï¼ƒï¼ˆâ€+ + identifier +â€œï¼‰â€ï¼‰ï¼Œ
+		â€œCLASSâ€ï¼šæ–°çš„RegExpï¼ˆâ€œ^ \\ã€‚ï¼ˆâ€+ identifier +â€œï¼‰â€ï¼‰ï¼Œ
+		â€œTAGâ€ï¼šæ–°çš„RegExpï¼ˆâ€œ^ï¼ˆâ€+ identifier +â€œ| [*]ï¼‰â€ï¼‰ï¼Œ
+		â€œATTRâ€ï¼šæ–°çš„RegExpï¼ˆâ€œ^â€+å±æ€§ï¼‰ï¼Œ
+		â€œPSEUDOâ€ï¼šæ–°çš„RegExpï¼ˆâ€œ^â€+ pseudosï¼‰ï¼Œ
+		â€œCHILDâ€ï¼šæ–°çš„RegExpï¼ˆâ€œ^ :(ä»…|ç¬¬ä¸€|æœ€å|ç¬¬n |ç¬¬n  - æœ€åï¼‰ - ï¼ˆå­ç±»å‹ï¼‰ï¼ˆï¼Ÿï¼š\\ï¼ˆâ€+ + whitespace +
+			â€œ*ï¼ˆå¶æ•°|å¥‡æ•°|ï¼ˆï¼ˆ[+  - ] |ï¼‰ï¼ˆ\\ d *ï¼‰n |ï¼‰â€+ç©ºæ ¼+â€œ*ï¼ˆï¼Ÿï¼šï¼ˆ[+  - ] |ï¼‰â€+ç©ºç™½+
+			â€œ*ï¼ˆ\\ d +ï¼‰|ï¼‰ï¼‰â€+ whitespace +â€œ* \\ï¼‰|ï¼‰â€ï¼Œâ€œiâ€ï¼‰ï¼Œ
+		â€œboolâ€ï¼šæ–°çš„RegExpï¼ˆâ€œ^ï¼ˆï¼Ÿï¼šâ€+ booleans +â€œï¼‰$â€ï¼Œâ€œiâ€ï¼‰ï¼Œ
+		//ç”¨äºå®ç°.isï¼ˆï¼‰çš„åº“
+		//æˆ‘ä»¬åœ¨`select`ä¸­ä½¿ç”¨å®ƒè¿›è¡ŒPOSåŒ¹é…
+		â€œneedsContextâ€ï¼šæ–°çš„RegExpï¼ˆâ€œ^â€+ç©ºæ ¼+â€œ* [> +?] | :(å¶æ•°|å¥‡æ•°| eq | gt | lt | nth | first | lastï¼‰ï¼ˆï¼Ÿï¼š\\ï¼ˆâ€+
+			ç©ºæ ¼+â€œ*ï¼ˆï¼ˆï¼Ÿï¼š -  \\ dï¼‰ï¼Ÿ\\ d *ï¼‰â€+ç©ºæ ¼+â€œ* \\ï¼‰|ï¼‰ï¼ˆï¼Ÿ= [^  - ] | $ï¼‰â€ï¼Œâ€œiâ€ï¼‰
+	}ï¼Œ
 
-	rinputs = / ^£¨£¿£ºinput | select | textarea | button£©$ / i£¬
-	rheader = / ^ h \ d $ / i£¬
+	rinputs = / ^ï¼ˆï¼Ÿï¼šinput | select | textarea | buttonï¼‰$ / iï¼Œ
+	rheader = / ^ h \ d $ / iï¼Œ
 
-	rnative = / ^ [^ {] + \ {\ s * \ [native \ w /£¬
+	rnative = / ^ [^ {] + \ {\ s * \ [native \ w /ï¼Œ
 
-	//Ò×ÓÚ½âÎö/¿É¼ìË÷µÄID»òTAG»òCLASSÑ¡ÔñÆ÷
-	rquickExpr = /^(?:#([\w-]+)|(\w+)|\ .( [.w-] +£©£©$ /£¬
+	//æ˜“äºè§£æ/å¯æ£€ç´¢çš„IDæˆ–TAGæˆ–CLASSé€‰æ‹©å™¨
+	rquickExpr = /^(?:#([\w-]+)|(\w+)|\ .( [.w-] +ï¼‰ï¼‰$ /ï¼Œ
 
-	rsibling = / [+?] /£¬
+	rsibling = / [+?] /ï¼Œ
 
-	// CSSÌÓÍÑ
+	// CSSé€ƒè„±
 	// http://www.w3.org/TR/CSS21/syndata.html#escaped-characters
-	runescape = new RegExp£¨¡°\\\\£¨[\\ da-f] {1,6}¡±+¿Õ¸ñ+¡°£¿£¨|¡±+¿Õ¸ñ+¡°£©|¡££©¡±£¬¡°ig¡±£©£¬
-	funescape = function£¨_£¬escaped£¬escapedWhitespace£©{
-		var high =¡°0x¡±+×ªÒå -  0x10000;
-		// NaN±íÊ¾·Ç´úÂëµã
-		//Ö§³Ö£ºFirefox <24
-		//½â¾ö´íÎóµÄÊı×Ö½âÊÍ+¡°0x¡±
-		·µ»Ø¸ß£¡==¸ß|| ÌÓ¹ı°×Ìì£¿
-			ÌÓÍÑ£º
-			¸ß<0£¿
-				// BMP´úÂëµã
-				String.fromCharCode£¨high + 0x10000£©£º
-				//²¹³äÆ½Ãæ´úÂëµã£¨´úÀí¶Ô£©
-				String.fromCharCode£¨high >> 10 | 0xD800£¬high£¦0x3FF | 0xDC00£©;
-	}£¬
+	runescape = new RegExpï¼ˆâ€œ\\\\ï¼ˆ[\\ da-f] {1,6}â€+ç©ºæ ¼+â€œï¼Ÿï¼ˆ|â€+ç©ºæ ¼+â€œï¼‰|ã€‚ï¼‰â€ï¼Œâ€œigâ€ï¼‰ï¼Œ
+	funescape = functionï¼ˆ_ï¼Œescapedï¼ŒescapedWhitespaceï¼‰{
+		var high =â€œ0xâ€+è½¬ä¹‰ -  0x10000;
+		// NaNè¡¨ç¤ºéä»£ç ç‚¹
+		//æ”¯æŒï¼šFirefox <24
+		//è§£å†³é”™è¯¯çš„æ•°å­—è§£é‡Š+â€œ0xâ€
+		è¿”å›é«˜ï¼==é«˜|| é€ƒè¿‡ç™½å¤©ï¼Ÿ
+			é€ƒè„±ï¼š
+			é«˜<0ï¼Ÿ
+				// BMPä»£ç ç‚¹
+				String.fromCharCodeï¼ˆhigh + 0x10000ï¼‰ï¼š
+				//è¡¥å……å¹³é¢ä»£ç ç‚¹ï¼ˆä»£ç†å¯¹ï¼‰
+				String.fromCharCodeï¼ˆhigh >> 10 | 0xD800ï¼Œhighï¼†0x3FF | 0xDC00ï¼‰;
+	}ï¼Œ
 
-	// CSS×Ö·û´®/±êÊ¶·ûĞòÁĞ»¯
+	// CSSå­—ç¬¦ä¸²/æ ‡è¯†ç¬¦åºåˆ—åŒ–
 	// https://drafts.c??sswg.org/cssom/#common-serializing-idioms
-	rcssescape = /£¨[\ 0- \ x1f \ x7f] | ^  - £¿\ d£©| ^  -  $ | [^ \ 0- \ x1f \ x7f- \ uFFFF \ w  - ] / g£¬
-	fcssescape = function£¨ch£¬asCodePoint£©{
-		if£¨asCodePoint£©{
+	rcssescape = /ï¼ˆ[\ 0- \ x1f \ x7f] | ^  - ï¼Ÿ\ dï¼‰| ^  -  $ | [^ \ 0- \ x1f \ x7f- \ uFFFF \ w  - ] / gï¼Œ
+	fcssescape = functionï¼ˆchï¼ŒasCodePointï¼‰{
+		ifï¼ˆasCodePointï¼‰{
 
-			// U + 0000 NULL±äÎªU + FFFD REPLACEMENT CHARACTER
-			if£¨ch ===¡°\ 0¡±£©{
-				·µ»Ø¡°\ uFFFD¡±;
+			// U + 0000 NULLå˜ä¸ºU + FFFD REPLACEMENT CHARACTER
+			ifï¼ˆch ===â€œ\ 0â€ï¼‰{
+				è¿”å›â€œ\ uFFFDâ€;
 			}
 
-			//¿ØÖÆ×Ö·ûºÍ£¨È¡¾öÓÚÎ»ÖÃ£©Êı×Ö×÷Îª´úÂëµã×ªÒå
-			return ch.slice£¨0£¬-1£©+¡°\\¡±+ ch.charCodeAt£¨ch.length  -  1£©.toString£¨16£©+¡°¡±;
+			//æ§åˆ¶å­—ç¬¦å’Œï¼ˆå–å†³äºä½ç½®ï¼‰æ•°å­—ä½œä¸ºä»£ç ç‚¹è½¬ä¹‰
+			return ch.sliceï¼ˆ0ï¼Œ-1ï¼‰+â€œ\\â€+ ch.charCodeAtï¼ˆch.length  -  1ï¼‰.toStringï¼ˆ16ï¼‰+â€œâ€;
 		}
 
-		//ÆäËû¿ÉÄÜÌØÊâµÄASCII×Ö·û»ñµÃ·´Ğ±¸Ü×ªÒå
-		·µ»Ø¡°\\¡±+ ch;
-	}£¬
+		//å…¶ä»–å¯èƒ½ç‰¹æ®Šçš„ASCIIå­—ç¬¦è·å¾—åæ–œæ è½¬ä¹‰
+		è¿”å›â€œ\\â€+ ch;
+	}ï¼Œ
 
-	//ÓÃÓÚiframe
-	//Çë²ÎÔÄsetDocument£¨£©
-	//É¾³ıº¯Êı°ü×°µ¼ÖÂ¡°È¨ÏŞ±»¾Ü¾ø¡±
-	// IEÖĞµÄ´íÎó
-	unloadHandler = function£¨£©{
-		setDocument£¨£©;
-	}£¬
+	//ç”¨äºiframe
+	//è¯·å‚é˜…setDocumentï¼ˆï¼‰
+	//åˆ é™¤å‡½æ•°åŒ…è£…å¯¼è‡´â€œæƒé™è¢«æ‹’ç»â€
+	// IEä¸­çš„é”™è¯¯
+	unloadHandler = functionï¼ˆï¼‰{
+		setDocumentï¼ˆï¼‰;
+	}ï¼Œ
 
-	disabledAncestor = addCombinator£¨
-		function£¨elem£©{
-			return elem.disabled === true &&£¨elemÖĞµÄ¡°form¡±| elemÖĞµÄ¡°form¡±£©;
-		}£¬
-		{dir£º¡°parentNode¡±£¬ÏÂÒ»¸ö£º¡°legend¡±}
-	£©;
+	disabledAncestor = addCombinatorï¼ˆ
+		functionï¼ˆelemï¼‰{
+			return elem.disabled === true &&ï¼ˆelemä¸­çš„â€œformâ€| elemä¸­çš„â€œformâ€ï¼‰;
+		}ï¼Œ
+		{dirï¼šâ€œparentNodeâ€ï¼Œä¸‹ä¸€ä¸ªï¼šâ€œlegendâ€}
+	ï¼‰;
 
-//ÓÅ»¯push.apply£¨_£¬NodeList£©
-³¢ÊÔ{
-	push.apply£¨
-		£¨arr = slice.call£¨preferredDoc.childNodes£©£©£¬
+//ä¼˜åŒ–push.applyï¼ˆ_ï¼ŒNodeListï¼‰
+å°è¯•{
+	push.applyï¼ˆ
+		ï¼ˆarr = slice.callï¼ˆpreferredDoc.childNodesï¼‰ï¼‰ï¼Œ
 		preferredDoc.childNodes
-	£©;
-	//Ö§³Ö£ºAndroid <4.0
-	//ÎŞÉùµØ¼ì²âµ½push.applyÊ§°Ü
+	ï¼‰;
+	//æ”¯æŒï¼šAndroid <4.0
+	//æ— å£°åœ°æ£€æµ‹åˆ°push.applyå¤±è´¥
 	arr [preferredDoc.childNodes.length] .nodeType;
-} catch£¨e£©{
-	push = {apply£ºarr.length£¿
+} catchï¼ˆeï¼‰{
+	push = {applyï¼šarr.lengthï¼Ÿ
 
-		//Èç¹û¿ÉÄÜ£¬ÀûÓÃÇĞÆ¬
-		function£¨target£¬els£©{
-			push_native.apply£¨target£¬slice.call£¨els£©£©;
-		}£º
+		//å¦‚æœå¯èƒ½ï¼Œåˆ©ç”¨åˆ‡ç‰‡
+		functionï¼ˆtargetï¼Œelsï¼‰{
+			push_native.applyï¼ˆtargetï¼Œslice.callï¼ˆelsï¼‰ï¼‰;
+		}ï¼š
 
-		//Ö§³Ö£ºIE <9
-		//·ñÔòÖ±½Ó¸½¼Ó
-		function£¨target£¬els£©{
-			var j = target.length£¬
+		//æ”¯æŒï¼šIE <9
+		//å¦åˆ™ç›´æ¥é™„åŠ 
+		functionï¼ˆtargetï¼Œelsï¼‰{
+			var j = target.lengthï¼Œ
 				i = 0;
-			//²»ÄÜĞÅÈÎNodeList.length
-			while£¨£¨target [j ++] = els [i ++]£©£©{}
+			//ä¸èƒ½ä¿¡ä»»NodeList.length
+			whileï¼ˆï¼ˆtarget [j ++] = els [i ++]ï¼‰ï¼‰{}
 			target.length = j  -  1;
 		}
 	};
 }
 
-function Sizzle£¨Ñ¡ÔñÆ÷£¬ÉÏÏÂÎÄ£¬½á¹û£¬ÖÖ×Ó£©{
-	var m£¬i£¬elem£¬nid£¬match£¬groups£¬newSelector£¬
-		newContext = context && context.ownerDocument£¬
+function Sizzleï¼ˆé€‰æ‹©å™¨ï¼Œä¸Šä¸‹æ–‡ï¼Œç»“æœï¼Œç§å­ï¼‰{
+	var mï¼Œiï¼Œelemï¼Œnidï¼Œmatchï¼Œgroupsï¼ŒnewSelectorï¼Œ
+		newContext = context && context.ownerDocumentï¼Œ
 
-		// nodeTypeÄ¬ÈÏÎª9£¬ÒòÎªÉÏÏÂÎÄÄ¬ÈÏÎªdocument
-		nodeType = context£¿context.nodeType£º9;
+		// nodeTypeé»˜è®¤ä¸º9ï¼Œå› ä¸ºä¸Šä¸‹æ–‡é»˜è®¤ä¸ºdocument
+		nodeType = contextï¼Ÿcontext.nodeTypeï¼š9;
 
-	½á¹û=½á¹û|| [];
+	ç»“æœ=ç»“æœ|| [];
 
-	//´ÓÎŞĞ§Ñ¡ÔñÆ÷»òÉÏÏÂÎÄµÄµ÷ÓÃÖĞÌáÇ°·µ»Ø
-	if£¨typeof selector£¡==¡°string¡±||£¡selector ||
-		nodeType£¡== 1 && nodeType£¡== 9 && nodeType£¡== 11£©{
+	//ä»æ— æ•ˆé€‰æ‹©å™¨æˆ–ä¸Šä¸‹æ–‡çš„è°ƒç”¨ä¸­æå‰è¿”å›
+	ifï¼ˆtypeof selectorï¼==â€œstringâ€||ï¼selector ||
+		nodeTypeï¼== 1 && nodeTypeï¼== 9 && nodeTypeï¼== 11ï¼‰{
 
-		·µ»Ø½á¹û;
+		è¿”å›ç»“æœ;
 	}
 
-	//³¢ÊÔÔÚHTMLÎÄµµÖĞ¿ì½İ²éÕÒ²Ù×÷£¨¶ø²»ÊÇ¹ıÂËÆ÷£©
-	if£¨£¡seed£©{
+	//å°è¯•åœ¨HTMLæ–‡æ¡£ä¸­å¿«æ·æŸ¥æ‰¾æ“ä½œï¼ˆè€Œä¸æ˜¯è¿‡æ»¤å™¨ï¼‰
+	ifï¼ˆï¼seedï¼‰{
 
-		if£¨£¨context£¿context.ownerDocument || context£ºpreferredDoc£©£¡== document£©{
-			setDocument£¨context£©;
+		ifï¼ˆï¼ˆcontextï¼Ÿcontext.ownerDocument || contextï¼špreferredDocï¼‰ï¼== documentï¼‰{
+			setDocumentï¼ˆcontextï¼‰;
 		}
-		context = context || ÎÄÏ×;
+		context = context || æ–‡çŒ®;
 
-		if£¨documentIsHTML£©{
+		ifï¼ˆdocumentIsHTMLï¼‰{
 
-			//Èç¹ûÑ¡ÔñÆ÷×ã¹»¼òµ¥£¬Çë³¢ÊÔÊ¹ÓÃ¡°get * By *¡±DOM·½·¨
-			//£¨³ıÁËDocumentFragmentÉÏÏÂÎÄ£¬ÆäÖĞ·½·¨²»´æÔÚ£©
-			if£¨nodeType£¡== 11 &&£¨match = rquickExpr.exec£¨selector£©£©£©{
+			//å¦‚æœé€‰æ‹©å™¨è¶³å¤Ÿç®€å•ï¼Œè¯·å°è¯•ä½¿ç”¨â€œget * By *â€DOMæ–¹æ³•
+			//ï¼ˆé™¤äº†DocumentFragmentä¸Šä¸‹æ–‡ï¼Œå…¶ä¸­æ–¹æ³•ä¸å­˜åœ¨ï¼‰
+			ifï¼ˆnodeTypeï¼== 11 &&ï¼ˆmatch = rquickExpr.execï¼ˆselectorï¼‰ï¼‰ï¼‰{
 
-				// IDÑ¡ÔñÆ÷
-				if£¨£¨m = match [1]£©£©{
+				// IDé€‰æ‹©å™¨
+				ifï¼ˆï¼ˆm = match [1]ï¼‰ï¼‰{
 
-					//ÎÄµµÉÏÏÂÎÄ
-					if£¨nodeType === 9£©{
-						if£¨£¨elem = context.getElementById£¨m£©£©£©{
+					//æ–‡æ¡£ä¸Šä¸‹æ–‡
+					ifï¼ˆnodeType === 9ï¼‰{
+						ifï¼ˆï¼ˆelem = context.getElementByIdï¼ˆmï¼‰ï¼‰ï¼‰{
 
-							//Ö§³Ö£ºIE£¬Opera£¬Webkit
-							// TODO£ºÊ¶±ğ°æ±¾
-							// getElementById¿ÉÒÔ°´Ãû³Æ¶ø²»ÊÇIDÆ¥ÅäÔªËØ
-							if£¨elem.id === m£©{
-								results.push£¨elem£©;
-								·µ»Ø½á¹û;
+							//æ”¯æŒï¼šIEï¼ŒOperaï¼ŒWebkit
+							// TODOï¼šè¯†åˆ«ç‰ˆæœ¬
+							// getElementByIdå¯ä»¥æŒ‰åç§°è€Œä¸æ˜¯IDåŒ¹é…å…ƒç´ 
+							ifï¼ˆelem.id === mï¼‰{
+								results.pushï¼ˆelemï¼‰;
+								è¿”å›ç»“æœ;
 							}
 						} else {
-							·µ»Ø½á¹û;
+							è¿”å›ç»“æœ;
 						}
 
-					//ÔªËØÉÏÏÂÎÄ
+					//å…ƒç´ ä¸Šä¸‹æ–‡
 					} else {
 
-						//Ö§³Ö£ºIE£¬Opera£¬Webkit
-						// TODO£ºÊ¶±ğ°æ±¾
-						// getElementById¿ÉÒÔ°´Ãû³Æ¶ø²»ÊÇIDÆ¥ÅäÔªËØ
-						if£¨newContext &&£¨elem = newContext.getElementById£¨m£©£©&&
-							°üº¬£¨context£¬elem£©&&
-							elem.id === m£©{
+						//æ”¯æŒï¼šIEï¼ŒOperaï¼ŒWebkit
+						// TODOï¼šè¯†åˆ«ç‰ˆæœ¬
+						// getElementByIdå¯ä»¥æŒ‰åç§°è€Œä¸æ˜¯IDåŒ¹é…å…ƒç´ 
+						ifï¼ˆnewContext &&ï¼ˆelem = newContext.getElementByIdï¼ˆmï¼‰ï¼‰&&
+							åŒ…å«ï¼ˆcontextï¼Œelemï¼‰&&
+							elem.id === mï¼‰{
 
-							results.push£¨elem£©;
-							·µ»Ø½á¹û;
+							results.pushï¼ˆelemï¼‰;
+							è¿”å›ç»“æœ;
 						}
 					}
 
-				//ÀàĞÍÑ¡ÔñÆ÷
-				} else if£¨match [2]£©{
-					push.apply£¨results£¬context.getElementsByTagName£¨selector£©£©;
-					·µ»Ø½á¹û;
+				//ç±»å‹é€‰æ‹©å™¨
+				} else ifï¼ˆmatch [2]ï¼‰{
+					push.applyï¼ˆresultsï¼Œcontext.getElementsByTagNameï¼ˆselectorï¼‰ï¼‰;
+					è¿”å›ç»“æœ;
 
-				//ÀàÑ¡ÔñÆ÷
-				} else if£¨£¨m = match [3]£©&& support.getElementsByClassName &&
-					context.getElementsByClassName£©{
+				//ç±»é€‰æ‹©å™¨
+				} else ifï¼ˆï¼ˆm = match [3]ï¼‰&& support.getElementsByClassName &&
+					context.getElementsByClassNameï¼‰{
 
-					push.apply£¨results£¬context.getElementsByClassName£¨m£©£©;
-					·µ»Ø½á¹û;
+					push.applyï¼ˆresultsï¼Œcontext.getElementsByClassNameï¼ˆmï¼‰ï¼‰;
+					è¿”å›ç»“æœ;
 				}
 			}
 
-			//ÀûÓÃquerySelectorAll
-			if£¨support.qsa &&
-				£¡compilerCache [selector +¡°¡±] &&
-				£¨£¡rbuggyQSA ||£¡rbuggyQSA.test£¨selector£©£©£©{
+			//åˆ©ç”¨querySelectorAll
+			ifï¼ˆsupport.qsa &&
+				ï¼compilerCache [selector +â€œâ€] &&
+				ï¼ˆï¼rbuggyQSA ||ï¼rbuggyQSA.testï¼ˆselectorï¼‰ï¼‰ï¼‰{
 
-				if£¨nodeType£¡== 1£©{
+				ifï¼ˆnodeTypeï¼== 1ï¼‰{
 					newContext = context;
 					newSelector = selector;
 
-				// qSA²é¿´ElementÉÏÏÂÎÄ£¬Õâ²»ÊÇÎÒÃÇÏëÒªµÄ
-				//¸ĞĞ»Andrew DupontÌá¹©µÄÕâÖÖ½â¾ö·½·¨
-				//Ö§³Ö£ºIE <= 8
-				//ÅÅ³ı¶ÔÏóÔªËØ
-				} else if£¨context.nodeName.toLowerCase£¨£©£¡==¡°object¡±£©{
+				// qSAæŸ¥çœ‹Elementä¸Šä¸‹æ–‡ï¼Œè¿™ä¸æ˜¯æˆ‘ä»¬æƒ³è¦çš„
+				//æ„Ÿè°¢Andrew Dupontæä¾›çš„è¿™ç§è§£å†³æ–¹æ³•
+				//æ”¯æŒï¼šIE <= 8
+				//æ’é™¤å¯¹è±¡å…ƒç´ 
+				} else ifï¼ˆcontext.nodeName.toLowerCaseï¼ˆï¼‰ï¼==â€œobjectâ€ï¼‰{
 
-					//²¶»ñÉÏÏÂÎÄID£¬±ØÒªÊ±ÏÈÉèÖÃËü
-					if£¨£¨nid = context.getAttribute£¨¡°id¡±£©£©£©{
-						nid = nid.replace£¨rcssescape£¬fcssescape£©;
+					//æ•è·ä¸Šä¸‹æ–‡IDï¼Œå¿…è¦æ—¶å…ˆè®¾ç½®å®ƒ
+					ifï¼ˆï¼ˆnid = context.getAttributeï¼ˆâ€œidâ€ï¼‰ï¼‰ï¼‰{
+						nid = nid.replaceï¼ˆrcssescapeï¼Œfcssescapeï¼‰;
 					} else {
-						context.setAttribute£¨¡°id¡±£¬£¨nid = expando£©£©;
+						context.setAttributeï¼ˆâ€œidâ€ï¼Œï¼ˆnid = expandoï¼‰ï¼‰;
 					}
 
-					//ÔÚÁĞ±íÖĞÌí¼ÓÃ¿¸öÑ¡ÔñÆ÷µÄÇ°×º
-					groups = tokenize£¨selector£©;
+					//åœ¨åˆ—è¡¨ä¸­æ·»åŠ æ¯ä¸ªé€‰æ‹©å™¨çš„å‰ç¼€
+					groups = tokenizeï¼ˆselectorï¼‰;
 					i = groups.length;
-					µ±ÎÒ -  £© {
-						groups [i] =¡°££¡±+ nid +¡°¡±+ toSelector£¨groups [i]£©;
+					å½“æˆ‘ -  ï¼‰ {
+						groups [i] =â€œï¼ƒâ€+ nid +â€œâ€+ toSelectorï¼ˆgroups [i]ï¼‰;
 					}
-					newSelector = groups.join£¨¡°£¬¡±£©;
+					newSelector = groups.joinï¼ˆâ€œï¼Œâ€ï¼‰;
 
-					//Õ¹¿ªĞÖµÜÑ¡ÔñÆ÷µÄÉÏÏÂÎÄ
-					newContext = rsibling.test£¨selector£©&& testContext£¨context.parentNode£©||
-						ÉÏÏÂÎÄ;
+					//å±•å¼€å…„å¼Ÿé€‰æ‹©å™¨çš„ä¸Šä¸‹æ–‡
+					newContext = rsibling.testï¼ˆselectorï¼‰&& testContextï¼ˆcontext.parentNodeï¼‰||
+						ä¸Šä¸‹æ–‡;
 				}
 
-				if£¨newSelector£©{
-					³¢ÊÔ{
-						push.apply£¨½á¹û£¬
-							newContext.querySelectorAll£¨newSelector£©
-						£©;
-						·µ»Ø½á¹û;
-					} catch£¨qsaError£©{
+				ifï¼ˆnewSelectorï¼‰{
+					å°è¯•{
+						push.applyï¼ˆç»“æœï¼Œ
+							newContext.querySelectorAllï¼ˆnewSelectorï¼‰
+						ï¼‰;
+						è¿”å›ç»“æœ;
+					} catchï¼ˆqsaErrorï¼‰{
 					} finally {
-						if£¨nid === expando£©{
-							context.removeAttribute£¨¡°id¡±£©;
+						ifï¼ˆnid === expandoï¼‰{
+							context.removeAttributeï¼ˆâ€œidâ€ï¼‰;
 						}
 					}
 				}
@@ -841,338 +841,338 @@ function Sizzle£¨Ñ¡ÔñÆ÷£¬ÉÏÏÂÎÄ£¬½á¹û£¬ÖÖ×Ó£©{
 		}
 	}
 
-	// ËùÓĞÆäËûÈË
-	return select£¨selector.replace£¨rtrim£¬¡°$ 1¡±£©£¬context£¬results£¬seed£©;
+	// æ‰€æœ‰å…¶ä»–äºº
+	return selectï¼ˆselector.replaceï¼ˆrtrimï¼Œâ€œ$ 1â€ï¼‰ï¼Œcontextï¼Œresultsï¼Œseedï¼‰;
 }
 
 / **
- *´´½¨ÓĞÏŞ´óĞ¡µÄ¼üÖµ»º´æ
- * @returns {function£¨string£¬object£©}½«¶ÔÏóÊı¾İ´æ´¢ÔÚ×ÔÉíºó£¬·µ»Ø¶ÔÏóÊı¾İ
- *ÊôĞÔÃû³Æ£¨´ø¿Õ¸ñµÄ£©×Ö·û´®ºÍ£¨Èç¹û»º´æ´óÓÚExpr.cacheLength£©
- *É¾³ı×î¾ÉµÄÌõÄ¿
+ *åˆ›å»ºæœ‰é™å¤§å°çš„é”®å€¼ç¼“å­˜
+ * @returns {functionï¼ˆstringï¼Œobjectï¼‰}å°†å¯¹è±¡æ•°æ®å­˜å‚¨åœ¨è‡ªèº«åï¼Œè¿”å›å¯¹è±¡æ•°æ®
+ *å±æ€§åç§°ï¼ˆå¸¦ç©ºæ ¼çš„ï¼‰å­—ç¬¦ä¸²å’Œï¼ˆå¦‚æœç¼“å­˜å¤§äºExpr.cacheLengthï¼‰
+ *åˆ é™¤æœ€æ—§çš„æ¡ç›®
  * /
-function createCache£¨£©{
+function createCacheï¼ˆï¼‰{
 	var keys = [];
 
-	function cache£¨key£¬value£©{
-		//Ê¹ÓÃ£¨¼ü+¡°¡±£©±ÜÃâÓë±¾»úÔ­ĞÍÊôĞÔ³åÍ»£¨Çë²ÎÔÄÎÊÌâ££157£©
-		if£¨keys.push£¨key +¡°¡±£©> Expr.cacheLength£©{
-			//½ö±£Áô×îĞÂµÄÌõÄ¿
-			delete cache [keys.shift£¨£©];
+	function cacheï¼ˆkeyï¼Œvalueï¼‰{
+		//ä½¿ç”¨ï¼ˆé”®+â€œâ€ï¼‰é¿å…ä¸æœ¬æœºåŸå‹å±æ€§å†²çªï¼ˆè¯·å‚é˜…é—®é¢˜ï¼ƒ157ï¼‰
+		ifï¼ˆkeys.pushï¼ˆkey +â€œâ€ï¼‰> Expr.cacheLengthï¼‰{
+			//ä»…ä¿ç•™æœ€æ–°çš„æ¡ç›®
+			delete cache [keys.shiftï¼ˆï¼‰];
 		}
-		return£¨cache [key +¡°¡±] = value£©;
+		returnï¼ˆcache [key +â€œâ€] = valueï¼‰;
 	}
-	·µ»Ø»º´æ;
+	è¿”å›ç¼“å­˜;
 }
 
 / **
- *±ê¼ÇSizzleÌØÊâÓÃÍ¾µÄ¹¦ÄÜ
- * @param {Function} fnÒª±ê¼ÇµÄ¹¦ÄÜ
+ *æ ‡è®°Sizzleç‰¹æ®Šç”¨é€”çš„åŠŸèƒ½
+ * @param {Function} fnè¦æ ‡è®°çš„åŠŸèƒ½
  * /
-function markFunction£¨fn£©{
+function markFunctionï¼ˆfnï¼‰{
 	fn [expando] = true;
-	·µ»Øfn;
+	è¿”å›fn;
 }
 
 / **
- *Ö§³ÖÊ¹ÓÃÔªËØ½øĞĞ²âÊÔ
- * @param {Function} fn´«µİ´´½¨µÄÔªËØ²¢·µ»Ø²¼¶û½á¹û
+ *æ”¯æŒä½¿ç”¨å…ƒç´ è¿›è¡Œæµ‹è¯•
+ * @param {Function} fnä¼ é€’åˆ›å»ºçš„å…ƒç´ å¹¶è¿”å›å¸ƒå°”ç»“æœ
  * /
-function assert£¨fn£©{
-	var el = document.createElement£¨¡°fieldset¡±£©;
+function assertï¼ˆfnï¼‰{
+	var el = document.createElementï¼ˆâ€œfieldsetâ€ï¼‰;
 
-	³¢ÊÔ{
-		return !! fn£¨el£©;
-	} catch£¨e£©{
-		·µ»Øfalse;
+	å°è¯•{
+		return !! fnï¼ˆelï¼‰;
+	} catchï¼ˆeï¼‰{
+		è¿”å›false;
 	} finally {
-		//Ä¬ÈÏÇé¿öÏÂ´ÓÆä¸¸ÏîÖĞÉ¾³ı
-		if£¨el.parentNode£©{
-			el.parentNode.removeChild£¨el£©;
+		//é»˜è®¤æƒ…å†µä¸‹ä»å…¶çˆ¶é¡¹ä¸­åˆ é™¤
+		ifï¼ˆel.parentNodeï¼‰{
+			el.parentNode.removeChildï¼ˆelï¼‰;
 		}
-		//ÔÚIEÖĞÊÍ·ÅÄÚ´æ
+		//åœ¨IEä¸­é‡Šæ”¾å†…å­˜
 		el = null;
 	}
 }
 
 / **
- *ÎªËùÓĞÖ¸¶¨µÄattrsÌí¼ÓÏàÍ¬µÄ´¦Àí³ÌĞò
- * @param {String} attrsÒÔ¹ÜµÀ·Ö¸ôµÄÊôĞÔÁĞ±í
- * @param {Function} handler½«Ó¦ÓÃµÄ·½·¨
+ *ä¸ºæ‰€æœ‰æŒ‡å®šçš„attrsæ·»åŠ ç›¸åŒçš„å¤„ç†ç¨‹åº
+ * @param {String} attrsä»¥ç®¡é“åˆ†éš”çš„å±æ€§åˆ—è¡¨
+ * @param {Function} handlerå°†åº”ç”¨çš„æ–¹æ³•
  * /
-function addHandle£¨attrs£¬handler£©{
-	var arr = attrs.split£¨¡°|¡±£©£¬
+function addHandleï¼ˆattrsï¼Œhandlerï¼‰{
+	var arr = attrs.splitï¼ˆâ€œ|â€ï¼‰ï¼Œ
 		i = arr.length;
 
-	µ±ÎÒ -  £© {
-		Expr.attrHandle [arr [i]] =´¦Àí³ÌĞò;
+	å½“æˆ‘ -  ï¼‰ {
+		Expr.attrHandle [arr [i]] =å¤„ç†ç¨‹åº;
 	}
 }
 
 / **
- *¼ì²éÁ½¸öĞÖµÜ½ãÃÃµÄÎÄ¼şË³Ğò
+ *æ£€æŸ¥ä¸¤ä¸ªå…„å¼Ÿå§å¦¹çš„æ–‡ä»¶é¡ºåº
  * @param {Element} a
  * @param {Element} b
- * @returns {Number}Èç¹ûaÔÚbÖ®Ç°£¬Ôò·µ»ØĞ¡ÓÚ0£¬Èç¹ûa¸úËæb£¬Ôò·µ»Ø´óÓÚ0
+ * @returns {Number}å¦‚æœaåœ¨bä¹‹å‰ï¼Œåˆ™è¿”å›å°äº0ï¼Œå¦‚æœaè·Ÿéšbï¼Œåˆ™è¿”å›å¤§äº0
  * /
-function siblingCheck£¨a£¬b£©{
-	var cur = b && a£¬
+function siblingCheckï¼ˆaï¼Œbï¼‰{
+	var cur = b && aï¼Œ
 		diff = cur && a.nodeType === 1 && b.nodeType === 1 &&
 			a.sourceIndex  -  b.sourceIndex;
 
-	//Èç¹ûÔÚÁ½¸ö½ÚµãÉÏ¶¼¿ÉÓÃ£¬ÔòÊ¹ÓÃIE sourceIndex
-	if£¨diff£©{
-		·µ»Ø²îÒì;
+	//å¦‚æœåœ¨ä¸¤ä¸ªèŠ‚ç‚¹ä¸Šéƒ½å¯ç”¨ï¼Œåˆ™ä½¿ç”¨IE sourceIndex
+	ifï¼ˆdiffï¼‰{
+		è¿”å›å·®å¼‚;
 	}
 
-	//¼ì²ébÊÇ·ñ¸úËæa
-	if£¨cur£©{
-		while£¨£¨cur = cur.nextSibling£©£©{
-			if£¨cur === b£©{
-				·µ»Ø-1;
+	//æ£€æŸ¥bæ˜¯å¦è·Ÿéša
+	ifï¼ˆcurï¼‰{
+		whileï¼ˆï¼ˆcur = cur.nextSiblingï¼‰ï¼‰{
+			ifï¼ˆcur === bï¼‰{
+				è¿”å›-1;
 			}
 		}
 	}
 
-	»ØÀ´ÁË£¿1£º-1;
+	å›æ¥äº†ï¼Ÿ1ï¼š-1;
 }
 
 / **
- *·µ»ØÔÚÎ±ÊäÈëÖĞÓÃÓÚÊäÈëÀàĞÍµÄº¯Êı
- * @param {String}ÀàĞÍ
+ *è¿”å›åœ¨ä¼ªè¾“å…¥ä¸­ç”¨äºè¾“å…¥ç±»å‹çš„å‡½æ•°
+ * @param {String}ç±»å‹
  * /
-function createInputPseudo£¨type£©{
-	returnº¯Êı£¨elem£©{
-		var name = elem.nodeName.toLowerCase£¨£©;
-		·µ»ØÃû³Æ===¡°ÊäÈë¡±&& elem.type === type;
+function createInputPseudoï¼ˆtypeï¼‰{
+	returnå‡½æ•°ï¼ˆelemï¼‰{
+		var name = elem.nodeName.toLowerCaseï¼ˆï¼‰;
+		è¿”å›åç§°===â€œè¾“å…¥â€&& elem.type === type;
 	};
 }
 
 / **
- *·µ»ØÒ»¸öÓÃÓÚ°´Å¥µÄÎ±º¯Êı
- * @param {String}ÀàĞÍ
+ *è¿”å›ä¸€ä¸ªç”¨äºæŒ‰é’®çš„ä¼ªå‡½æ•°
+ * @param {String}ç±»å‹
  * /
-function createButtonPseudo£¨type£©{
-	returnº¯Êı£¨elem£©{
-		var name = elem.nodeName.toLowerCase£¨£©;
-		return£¨name ===¡°input¡±|| name ===¡°button¡±£©&& elem.type === type;
+function createButtonPseudoï¼ˆtypeï¼‰{
+	returnå‡½æ•°ï¼ˆelemï¼‰{
+		var name = elem.nodeName.toLowerCaseï¼ˆï¼‰;
+		returnï¼ˆname ===â€œinputâ€|| name ===â€œbuttonâ€ï¼‰&& elem.type === type;
 	};
 }
 
 / **
- *·µ»ØÔÚÎ±ÖĞÊ¹ÓÃµÄº¯Êı£ºenabled /£ºdisabled
- * @param {Boolean}½ûÓÃtrue±íÊ¾£ºÒÑ½ûÓÃ; false for£ºÆôÓÃ
+ *è¿”å›åœ¨ä¼ªä¸­ä½¿ç”¨çš„å‡½æ•°ï¼šenabled /ï¼šdisabled
+ * @param {Boolean}ç¦ç”¨trueè¡¨ç¤ºï¼šå·²ç¦ç”¨; false forï¼šå¯ç”¨
  * /
-function createDisabledPseudo£¨disabled£©{
+function createDisabledPseudoï¼ˆdisabledï¼‰{
 
-	//ÒÑÖª£º½ûÓÃÎó±¨£ºfieldset [disabled]> legend£ºnth-??of-type£¨n + 2£©£ºcan-disable
-	returnº¯Êı£¨elem£©{
+	//å·²çŸ¥ï¼šç¦ç”¨è¯¯æŠ¥ï¼šfieldset [disabled]> legendï¼šnth-??of-typeï¼ˆn + 2ï¼‰ï¼šcan-disable
+	returnå‡½æ•°ï¼ˆelemï¼‰{
 
-		//Ö»ÓĞÄ³Ğ©ÔªËØ¿ÉÒÔÆ¥Åä£ºÆôÓÃ»ò£º½ûÓÃ
+		//åªæœ‰æŸäº›å…ƒç´ å¯ä»¥åŒ¹é…ï¼šå¯ç”¨æˆ–ï¼šç¦ç”¨
 		// https://html.spec.whatwg.org/multipage/scripting.html#selector-enabled
 		// https://html.spec.whatwg.org/multipage/scripting.html#selector-disabled
-		if£¨elemÖĞµÄ¡°form¡±£©{
+		ifï¼ˆelemä¸­çš„â€œformâ€ï¼‰{
 
-			//¼ì²éÏà¹Ø·Ç½ûÓÃÔªËØµÄ¼Ì³Ğ½ûÓÃ£º
-			// *ÔÚ½ûÓÃµÄ×Ö¶Î¼¯ÖĞÁĞ³öÓë±íµ¥Ïà¹ØµÄÔªËØ
+			//æ£€æŸ¥ç›¸å…³éç¦ç”¨å…ƒç´ çš„ç»§æ‰¿ç¦ç”¨ï¼š
+			// *åœ¨ç¦ç”¨çš„å­—æ®µé›†ä¸­åˆ—å‡ºä¸è¡¨å•ç›¸å…³çš„å…ƒç´ 
 			// https://html.spec.whatwg.org/multipage/forms.html#category-listed
 			// https://html.spec.whatwg.org/multipage/forms.html#concept-fe-disabled
-			// *½ûÓÃµÄoptgroupÖĞµÄÑ¡ÏîÔªËØ
+			// *ç¦ç”¨çš„optgroupä¸­çš„é€‰é¡¹å…ƒç´ 
 			// https://html.spec.whatwg.org/multipage/forms.html#concept-option-disabled
-			//ËùÓĞÕâĞ©ÔªËØ¶¼ÓĞÒ»¸ö¡°form¡±ÊôĞÔ¡£
-			if£¨elem.parentNode && elem.disabled === false£©{
+			//æ‰€æœ‰è¿™äº›å…ƒç´ éƒ½æœ‰ä¸€ä¸ªâ€œformâ€å±æ€§ã€‚
+			ifï¼ˆelem.parentNode && elem.disabled === falseï¼‰{
 
-				//Ñ¡ÏîÔªËØÈç¹û´æÔÚ£¬ÔòÍÆ³Ùµ½¸¸Ñ¡Ôñ×é
-				if£¨elemÖĞµÄ¡°label¡±£©{
-					if£¨elem.parentNodeÖĞµÄ¡°label¡±£©{
+				//é€‰é¡¹å…ƒç´ å¦‚æœå­˜åœ¨ï¼Œåˆ™æ¨è¿Ÿåˆ°çˆ¶é€‰æ‹©ç»„
+				ifï¼ˆelemä¸­çš„â€œlabelâ€ï¼‰{
+					ifï¼ˆelem.parentNodeä¸­çš„â€œlabelâ€ï¼‰{
 						return elem.parentNode.disabled === disabled;
 					} else {
 						return elem.disabled === disabled;
 					}
 				}
 
-				//Ö§³Ö£ºIE 6  -  11
-				//Ê¹ÓÃisDisabled¿ì½İ·½Ê½ÊôĞÔ¼ì²é½ûÓÃµÄ×Ö¶Î¼¯×æÏÈ
+				//æ”¯æŒï¼šIE 6  -  11
+				//ä½¿ç”¨isDisabledå¿«æ·æ–¹å¼å±æ€§æ£€æŸ¥ç¦ç”¨çš„å­—æ®µé›†ç¥–å…ˆ
 				return elem.isDisabled === disabled ||
 
-					//Èç¹ûÃ»ÓĞisDisabled£¬ÇëÊÖ¶¯¼ì²é
+					//å¦‚æœæ²¡æœ‰isDisabledï¼Œè¯·æ‰‹åŠ¨æ£€æŸ¥
 					/ * jshint -W018 * /
-					elem.isDisabled£¡==£¡½ûÓÃ&&
-						disabledAncestor£¨elem£©=== disabled;
+					elem.isDisabledï¼==ï¼ç¦ç”¨&&
+						disabledAncestorï¼ˆelemï¼‰=== disabled;
 			}
 
 			return elem.disabled === disabled;
 
-		//ÔÚĞÅÈÎdisabledÊôĞÔÖ®Ç°£¬³¢ÊÔÇå³ıÎŞ·¨½ûÓÃµÄÔªËØ¡£
-		//ÓĞĞ©ÊÜº¦Õß±»ÎÒÃÇµÄÍøÂç£¨±êÇ©£¬Í¼Àı£¬²Ëµ¥£¬ÇúÄ¿£©×¥×¡ÁË£¬µ«²»Ó¦¸Ã
-		//ÉõÖÁ´æÔÚÓÚËüÃÇÉÏÃæ£¬¸ü²»ÓÃËµÓĞÒ»¸ö²¼¶ûÖµ¡£
-		} else if£¨elemÖĞµÄ¡°label¡±£©{
+		//åœ¨ä¿¡ä»»disabledå±æ€§ä¹‹å‰ï¼Œå°è¯•æ¸…é™¤æ— æ³•ç¦ç”¨çš„å…ƒç´ ã€‚
+		//æœ‰äº›å—å®³è€…è¢«æˆ‘ä»¬çš„ç½‘ç»œï¼ˆæ ‡ç­¾ï¼Œå›¾ä¾‹ï¼Œèœå•ï¼Œæ›²ç›®ï¼‰æŠ“ä½äº†ï¼Œä½†ä¸åº”è¯¥
+		//ç”šè‡³å­˜åœ¨äºå®ƒä»¬ä¸Šé¢ï¼Œæ›´ä¸ç”¨è¯´æœ‰ä¸€ä¸ªå¸ƒå°”å€¼ã€‚
+		} else ifï¼ˆelemä¸­çš„â€œlabelâ€ï¼‰{
 			return elem.disabled === disabled;
 		}
 
-		//Ê£ÓàµÄÔªËØ¼È²»ÊÇ£ºenabledÒ²²»ÊÇ£ºdisabled
-		·µ»Øfalse;
+		//å‰©ä½™çš„å…ƒç´ æ—¢ä¸æ˜¯ï¼šenabledä¹Ÿä¸æ˜¯ï¼šdisabled
+		è¿”å›false;
 	};
 }
 
 / **
- *·µ»ØÒ»¸öÔÚpseudosÖĞÓÃÓÚ¶¨Î»µÄº¯Êı
+ *è¿”å›ä¸€ä¸ªåœ¨pseudosä¸­ç”¨äºå®šä½çš„å‡½æ•°
  * @param {Function} fn
  * /
-function createPositionalPseudo£¨fn£©{
-	return markFunction£¨function£¨argument£©{
+function createPositionalPseudoï¼ˆfnï¼‰{
+	return markFunctionï¼ˆfunctionï¼ˆargumentï¼‰{
 		argument = + argument;
-		return markFunction£¨function£¨seed£¬matches£©{
-			var j£¬
-				matchIndexes = fn£¨[]£¬seed.length£¬argument£©£¬
+		return markFunctionï¼ˆfunctionï¼ˆseedï¼Œmatchesï¼‰{
+			var jï¼Œ
+				matchIndexes = fnï¼ˆ[]ï¼Œseed.lengthï¼Œargumentï¼‰ï¼Œ
 				i = matchIndexes.length;
 
-			//Æ¥ÅäÔÚÖ¸¶¨Ë÷Òı´¦ÕÒµ½µÄÔªËØ
-			µ±ÎÒ -  £© {
-				if£¨seed [£¨j = matchIndexes [i]£©]£©{
-					seed [j] =£¡£¨Æ¥Åä[j] = seed [j]£©;
+			//åŒ¹é…åœ¨æŒ‡å®šç´¢å¼•å¤„æ‰¾åˆ°çš„å…ƒç´ 
+			å½“æˆ‘ -  ï¼‰ {
+				ifï¼ˆseed [ï¼ˆj = matchIndexes [i]ï¼‰]ï¼‰{
+					seed [j] =ï¼ï¼ˆåŒ¹é…[j] = seed [j]ï¼‰;
 				}
 			}
-		}£©;
-	}£©;
+		}ï¼‰;
+	}ï¼‰;
 }
 
 / **
- *¼ì²é½ÚµãµÄÓĞĞ§ĞÔ×÷ÎªSizzleÉÏÏÂÎÄ
- * @param {Element | Object =}ÉÏÏÂÎÄ
- * @returns {Element | Object | Boolean}ÊäÈë½Úµã£¨Èç¹û¿É½ÓÊÜ£©£¬·ñÔòÎª¼ÙÖµ
+ *æ£€æŸ¥èŠ‚ç‚¹çš„æœ‰æ•ˆæ€§ä½œä¸ºSizzleä¸Šä¸‹æ–‡
+ * @param {Element | Object =}ä¸Šä¸‹æ–‡
+ * @returns {Element | Object | Boolean}è¾“å…¥èŠ‚ç‚¹ï¼ˆå¦‚æœå¯æ¥å—ï¼‰ï¼Œå¦åˆ™ä¸ºå‡å€¼
  * /
-function testContext£¨context£©{
-	return context && typeof context.getElementsByTagName£¡==¡°undefined¡±&& context;
+function testContextï¼ˆcontextï¼‰{
+	return context && typeof context.getElementsByTagNameï¼==â€œundefinedâ€&& context;
 }
 
-//Îª·½±ãÆğ¼û£¬¹«¿ªÖ§³Ö±äÁ¿
+//ä¸ºæ–¹ä¾¿èµ·è§ï¼Œå…¬å¼€æ”¯æŒå˜é‡
 support = Sizzle.support = {};
 
 / **
- *¼ì²âXML½Úµã
- * @param {Element | Object} elemÔªËØ»òÎÄµµ
- * @returns {Boolean}Èç¹ûiff elemÊÇ·ÇHTML XML½Úµã£¬ÔòÎªtrue
+ *æ£€æµ‹XMLèŠ‚ç‚¹
+ * @param {Element | Object} elemå…ƒç´ æˆ–æ–‡æ¡£
+ * @returns {Boolean}å¦‚æœiff elemæ˜¯éHTML XMLèŠ‚ç‚¹ï¼Œåˆ™ä¸ºtrue
  * /
-isXML = Sizzle.isXML = function£¨elem£©{
-	//¶ÔÓÚÉĞÎ´´æÔÚµÄÇé¿ö£¬»áÑéÖ¤documentElement
-	//£¨ÀıÈçÔÚIEÖĞ¼ÓÔØiframe  - ££4833£©
-	var documentElement = elem &&£¨elem.ownerDocument || elem£©.documentElement;
-	return documentElement£¿documentElement.nodeName£¡==¡°HTML¡±£ºfalse;
+isXML = Sizzle.isXML = functionï¼ˆelemï¼‰{
+	//å¯¹äºå°šæœªå­˜åœ¨çš„æƒ…å†µï¼Œä¼šéªŒè¯documentElement
+	//ï¼ˆä¾‹å¦‚åœ¨IEä¸­åŠ è½½iframe  - ï¼ƒ4833ï¼‰
+	var documentElement = elem &&ï¼ˆelem.ownerDocument || elemï¼‰.documentElement;
+	return documentElementï¼ŸdocumentElement.nodeNameï¼==â€œHTMLâ€ï¼šfalse;
 };
 
 / **
- *¸ù¾İµ±Ç°ÎÄµµÉèÖÃÒ»´ÎÓëÎÄµµÏà¹ØµÄ±äÁ¿
- * @param {Element | Object} [doc]ÓÃÓÚÉèÖÃÎÄµµµÄÔªËØ»òÎÄµµ¶ÔÏó
- * @returns {Object}·µ»Øµ±Ç°ÎÄµµ
+ *æ ¹æ®å½“å‰æ–‡æ¡£è®¾ç½®ä¸€æ¬¡ä¸æ–‡æ¡£ç›¸å…³çš„å˜é‡
+ * @param {Element | Object} [doc]ç”¨äºè®¾ç½®æ–‡æ¡£çš„å…ƒç´ æˆ–æ–‡æ¡£å¯¹è±¡
+ * @returns {Object}è¿”å›å½“å‰æ–‡æ¡£
  * /
-setDocument = Sizzle.setDocument = function£¨node£©{
-	var hasCompare£¬subWindow£¬
-		doc = node£¿node.ownerDocument || node£ºpreferredDoc;
+setDocument = Sizzle.setDocument = functionï¼ˆnodeï¼‰{
+	var hasCompareï¼ŒsubWindowï¼Œ
+		doc = nodeï¼Ÿnode.ownerDocument || nodeï¼špreferredDoc;
 
-	//Èç¹ûdocÎŞĞ§»òÒÑ¾­Ñ¡ÖĞ£¬ÔòÌáÇ°·µ»Ø
-	if£¨doc === document || doc.nodeType£¡== 9 ||£¡doc.documentElement£©{
-		ÍË»õÎÄ¼ş;
+	//å¦‚æœdocæ— æ•ˆæˆ–å·²ç»é€‰ä¸­ï¼Œåˆ™æå‰è¿”å›
+	ifï¼ˆdoc === document || doc.nodeTypeï¼== 9 ||ï¼doc.documentElementï¼‰{
+		é€€è´§æ–‡ä»¶;
 	}
 
-	//¸üĞÂÈ«¾Ö±äÁ¿
+	//æ›´æ–°å…¨å±€å˜é‡
 	document = doc;
 	docElem = document.documentElement;
-	documentIsHTML =£¡isXML£¨document£©;
+	documentIsHTML =ï¼isXMLï¼ˆdocumentï¼‰;
 
-	//Ö§³Ö£ºIE 9-11£¬Edge
-	//Ğ¶ÔØºó·ÃÎÊiframeÎÄµµ»áÅ×³ö¡°È¨ÏŞ±»¾Ü¾ø¡±´íÎó£¨jQuery££13936£©
-	if£¨preferredDoc£¡== document &&
-		£¨subWindow = document.defaultView£©&& subWindow.top£¡== subWindow£©{
+	//æ”¯æŒï¼šIE 9-11ï¼ŒEdge
+	//å¸è½½åè®¿é—®iframeæ–‡æ¡£ä¼šæŠ›å‡ºâ€œæƒé™è¢«æ‹’ç»â€é”™è¯¯ï¼ˆjQueryï¼ƒ13936ï¼‰
+	ifï¼ˆpreferredDocï¼== document &&
+		ï¼ˆsubWindow = document.defaultViewï¼‰&& subWindow.topï¼== subWindowï¼‰{
 
-		//Ö§³Ö£ºIE 11£¬Edge
-		if£¨subWindow.addEventListener£©{
-			subWindow.addEventListener£¨¡°unload¡±£¬unloadHandler£¬false£©;
+		//æ”¯æŒï¼šIE 11ï¼ŒEdge
+		ifï¼ˆsubWindow.addEventListenerï¼‰{
+			subWindow.addEventListenerï¼ˆâ€œunloadâ€ï¼ŒunloadHandlerï¼Œfalseï¼‰;
 
-		//Ö§³Ö£º½öÏŞIE 9  -  10
-		} else if£¨subWindow.attachEvent£©{
-			subWindow.attachEvent£¨¡°onunload¡±£¬unloadHandler£©;
+		//æ”¯æŒï¼šä»…é™IE 9  -  10
+		} else ifï¼ˆsubWindow.attachEventï¼‰{
+			subWindow.attachEventï¼ˆâ€œonunloadâ€ï¼ŒunloadHandlerï¼‰;
 		}
 	}
 
-	/ *ÊôĞÔ
+	/ *å±æ€§
 	-------------------------------------------------- -------------------- * /
 
-	//Ö§³Ö£ºIE <8
-	//È·ÈÏgetAttributeÈ·Êµ·µ»ØÊôĞÔ¶ø²»ÊÇÊôĞÔ
-	//£¨IE8²¼¶û³ıÍâ£©
-	support.attributes = assert£¨function£¨el£©{
-		el.className =¡°i¡±;
-		return£¡el.getAttribute£¨¡°className¡±£©;
-	}£©;
+	//æ”¯æŒï¼šIE <8
+	//ç¡®è®¤getAttributeç¡®å®è¿”å›å±æ€§è€Œä¸æ˜¯å±æ€§
+	//ï¼ˆIE8å¸ƒå°”é™¤å¤–ï¼‰
+	support.attributes = assertï¼ˆfunctionï¼ˆelï¼‰{
+		el.className =â€œiâ€;
+		returnï¼el.getAttributeï¼ˆâ€œclassNameâ€ï¼‰;
+	}ï¼‰;
 
-	/ * getElement£¨s£©By *
+	/ * getElementï¼ˆsï¼‰By *
 	-------------------------------------------------- -------------------- * /
 
-	//¼ì²égetElementsByTagName£¨¡°*¡±£©ÊÇ·ñ½ö·µ»ØÔªËØ
-	support.getElementsByTagName = assert£¨function£¨el£©{
-		el.appendChild£¨document.createComment£¨¡°¡±£©£©;
-		return£¡el.getElementsByTagName£¨¡°*¡±£©¡£length;
-	}£©;
+	//æ£€æŸ¥getElementsByTagNameï¼ˆâ€œ*â€ï¼‰æ˜¯å¦ä»…è¿”å›å…ƒç´ 
+	support.getElementsByTagName = assertï¼ˆfunctionï¼ˆelï¼‰{
+		el.appendChildï¼ˆdocument.createCommentï¼ˆâ€œâ€ï¼‰ï¼‰;
+		returnï¼el.getElementsByTagNameï¼ˆâ€œ*â€ï¼‰ã€‚length;
+	}ï¼‰;
 
-	//Ö§³Ö£ºIE <9
-	support.getElementsByClassName = rnative.test£¨document.getElementsByClassName£©;
+	//æ”¯æŒï¼šIE <9
+	support.getElementsByClassName = rnative.testï¼ˆdocument.getElementsByClassNameï¼‰;
 
-	//Ö§³Ö£ºIE <10
-	//¼ì²égetElementByIdÊÇ·ñ°´Ãû³Æ·µ»ØÔªËØ
-	//ÆÆ»µµÄgetElementById·½·¨²»»áÒÔ±à³Ì·½Ê½ÉèÖÃÃû³Æ£¬
-	//ËùÒÔÊ¹ÓÃ»·ĞÎ½»²æ¿ÚgetElementsByName²âÊÔ
-	support.getById = assert£¨function£¨el£©{
-		docElem.appendChild£¨el£©.id = expando;
-		return£¡document.getElementsByName || £¡document.getElementsByName£¨expando£©.length;
-	}£©;
+	//æ”¯æŒï¼šIE <10
+	//æ£€æŸ¥getElementByIdæ˜¯å¦æŒ‰åç§°è¿”å›å…ƒç´ 
+	//ç ´åçš„getElementByIdæ–¹æ³•ä¸ä¼šä»¥ç¼–ç¨‹æ–¹å¼è®¾ç½®åç§°ï¼Œ
+	//æ‰€ä»¥ä½¿ç”¨ç¯å½¢äº¤å‰å£getElementsByNameæµ‹è¯•
+	support.getById = assertï¼ˆfunctionï¼ˆelï¼‰{
+		docElem.appendChildï¼ˆelï¼‰.id = expando;
+		returnï¼document.getElementsByName || ï¼document.getElementsByNameï¼ˆexpandoï¼‰.length;
+	}ï¼‰;
 
-	// ID¹ıÂË²¢²éÕÒ
-	if£¨support.getById£©{
-		Expr.filter [¡°ID¡±] =º¯Êı£¨id£©{
-			var attrId = id.replace£¨runescape£¬funescape£©;
-			returnº¯Êı£¨elem£©{
-				return elem.getAttribute£¨¡°id¡±£©=== attrId;
+	// IDè¿‡æ»¤å¹¶æŸ¥æ‰¾
+	ifï¼ˆsupport.getByIdï¼‰{
+		Expr.filter [â€œIDâ€] =å‡½æ•°ï¼ˆidï¼‰{
+			var attrId = id.replaceï¼ˆrunescapeï¼Œfunescapeï¼‰;
+			returnå‡½æ•°ï¼ˆelemï¼‰{
+				return elem.getAttributeï¼ˆâ€œidâ€ï¼‰=== attrId;
 			};
 		};
-		Expr.find [¡°ID¡±] = function£¨id£¬context£©{
-			if£¨typeof context.getElementById£¡==¡°undefined¡±&& documentIsHTML£©{
-				var elem = context.getElementById£¨id£©;
-				·µ»ØÔªËØ£¿[elem]£º[];
+		Expr.find [â€œIDâ€] = functionï¼ˆidï¼Œcontextï¼‰{
+			ifï¼ˆtypeof context.getElementByIdï¼==â€œundefinedâ€&& documentIsHTMLï¼‰{
+				var elem = context.getElementByIdï¼ˆidï¼‰;
+				è¿”å›å…ƒç´ ï¼Ÿ[elem]ï¼š[];
 			}
 		};
 	} else {
-		Expr.filter [¡°ID¡±] =º¯Êı£¨id£©{
-			var attrId = id.replace£¨runescape£¬funescape£©;
-			returnº¯Êı£¨elem£©{
-				var node = typeof elem.getAttributeNode£¡==¡°undefined¡±&&
-					elem.getAttributeNode£¨ ¡°ID¡±£©;
+		Expr.filter [â€œIDâ€] =å‡½æ•°ï¼ˆidï¼‰{
+			var attrId = id.replaceï¼ˆrunescapeï¼Œfunescapeï¼‰;
+			returnå‡½æ•°ï¼ˆelemï¼‰{
+				var node = typeof elem.getAttributeNodeï¼==â€œundefinedâ€&&
+					elem.getAttributeNodeï¼ˆ â€œIDâ€ï¼‰;
 				return node && node.value === attrId;
 			};
 		};
 
-		//Ö§³Ö£º½öÏŞIE 6  -  7
-		// getElementById×÷Îª²éÕÒ¿ì½İ·½Ê½²»¿É¿¿
-		Expr.find [¡°ID¡±] = function£¨id£¬context£©{
-			if£¨typeof context.getElementById£¡==¡°undefined¡±&& documentIsHTML£©{
-				var node£¬i£¬elems£¬
-					elem = context.getElementById£¨id£©;
+		//æ”¯æŒï¼šä»…é™IE 6  -  7
+		// getElementByIdä½œä¸ºæŸ¥æ‰¾å¿«æ·æ–¹å¼ä¸å¯é 
+		Expr.find [â€œIDâ€] = functionï¼ˆidï¼Œcontextï¼‰{
+			ifï¼ˆtypeof context.getElementByIdï¼==â€œundefinedâ€&& documentIsHTMLï¼‰{
+				var nodeï¼Œiï¼Œelemsï¼Œ
+					elem = context.getElementByIdï¼ˆidï¼‰;
 
-				if£¨elem£©{
+				ifï¼ˆelemï¼‰{
 
-					//ÑéÖ¤idÊôĞÔ
-					node = elem.getAttributeNode£¨¡°id¡±£©;
-					if£¨node && node.value === id£©{
-						·µ»Ø[elem];
+					//éªŒè¯idå±æ€§
+					node = elem.getAttributeNodeï¼ˆâ€œidâ€ï¼‰;
+					ifï¼ˆnode && node.value === idï¼‰{
+						è¿”å›[elem];
 					}
 
-					//»Øµ½getElementsByName
-					elems = context.getElementsByName£¨id£©;
+					//å›åˆ°getElementsByName
+					elems = context.getElementsByNameï¼ˆidï¼‰;
 					i = 0;
-					while£¨£¨elem = elems [i ++]£©£©{
-						node = elem.getAttributeNode£¨¡°id¡±£©;
-						if£¨node && node.value === id£©{
-							·µ»Ø[elem];
+					whileï¼ˆï¼ˆelem = elems [i ++]ï¼‰ï¼‰{
+						node = elem.getAttributeNodeï¼ˆâ€œidâ€ï¼‰;
+						ifï¼ˆnode && node.value === idï¼‰{
+							è¿”å›[elem];
 						}
 					}
 				}
@@ -1182,954 +1182,954 @@ setDocument = Sizzle.setDocument = function£¨node£©{
 		};
 	}
 
-	// ±êÇ©
-	Expr.find [¡°TAG¡±] = support.getElementsByTagName£¿
-		function£¨tag£¬context£©{
-			if£¨typeof context.getElementsByTagName£¡==¡°undefined¡±£©{
-				return context.getElementsByTagName£¨tag£©;
+	// æ ‡ç­¾
+	Expr.find [â€œTAGâ€] = support.getElementsByTagNameï¼Ÿ
+		functionï¼ˆtagï¼Œcontextï¼‰{
+			ifï¼ˆtypeof context.getElementsByTagNameï¼==â€œundefinedâ€ï¼‰{
+				return context.getElementsByTagNameï¼ˆtagï¼‰;
 
-			// DocumentFragment½ÚµãÃ»ÓĞgEBTN
-			} else if£¨support.qsa£©{
-				return context.querySelectorAll£¨tag£©;
+			// DocumentFragmentèŠ‚ç‚¹æ²¡æœ‰gEBTN
+			} else ifï¼ˆsupport.qsaï¼‰{
+				return context.querySelectorAllï¼ˆtagï¼‰;
 			}
-		}£º
+		}ï¼š
 
-		function£¨tag£¬context£©{
-			var elem£¬
-				tmp = []£¬
-				i = 0£¬
-				//ĞÒÔËµÄÊÇÇÉºÏ£¬Ò»¸ö£¨ÆÆËéµÄ£©gEBTNÒ²³öÏÖÔÚDocumentFragment½ÚµãÉÏ
-				results = context.getElementsByTagName£¨tag£©;
+		functionï¼ˆtagï¼Œcontextï¼‰{
+			var elemï¼Œ
+				tmp = []ï¼Œ
+				i = 0ï¼Œ
+				//å¹¸è¿çš„æ˜¯å·§åˆï¼Œä¸€ä¸ªï¼ˆç ´ç¢çš„ï¼‰gEBTNä¹Ÿå‡ºç°åœ¨DocumentFragmentèŠ‚ç‚¹ä¸Š
+				results = context.getElementsByTagNameï¼ˆtagï¼‰;
 
-			//¹ıÂËµô¿ÉÄÜµÄÆÀÂÛ
-			if£¨tag ===¡°*¡±£©{
-				while£¨£¨elem = results [i ++]£©£©{
-					if£¨elem.nodeType === 1£©{
-						tmp.push£¨elem£©;
+			//è¿‡æ»¤æ‰å¯èƒ½çš„è¯„è®º
+			ifï¼ˆtag ===â€œ*â€ï¼‰{
+				whileï¼ˆï¼ˆelem = results [i ++]ï¼‰ï¼‰{
+					ifï¼ˆelem.nodeType === 1ï¼‰{
+						tmp.pushï¼ˆelemï¼‰;
 					}
 				}
 
-				·µ»Øtmp;
+				è¿”å›tmp;
 			}
-			·µ»Ø½á¹û;
+			è¿”å›ç»“æœ;
 		};
 
-	//Àà
-	Expr.find [¡°CLASS¡±] = support.getElementsByClassName && function£¨className£¬context£©{
-		if£¨typeof context.getElementsByClassName£¡==¡°undefined¡±&& documentIsHTML£©{
-			return context.getElementsByClassName£¨className£©;
+	//ç±»
+	Expr.find [â€œCLASSâ€] = support.getElementsByClassName && functionï¼ˆclassNameï¼Œcontextï¼‰{
+		ifï¼ˆtypeof context.getElementsByClassNameï¼==â€œundefinedâ€&& documentIsHTMLï¼‰{
+			return context.getElementsByClassNameï¼ˆclassNameï¼‰;
 		}
 	};
 
 	/ * QSA / matchesSelector
 	-------------------------------------------------- -------------------- * /
 
-	// QSAºÍmatchesSelectorÖ§³Ö
+	// QSAå’ŒmatchesSelectoræ”¯æŒ
 
-	// matchesSelector£¨£ºactive£©ÔÚÎªtrueÊ±±¨¸æÎªfalse£¨IE9 / Opera 11.5£©
+	// matchesSelectorï¼ˆï¼šactiveï¼‰åœ¨ä¸ºtrueæ—¶æŠ¥å‘Šä¸ºfalseï¼ˆIE9 / Opera 11.5ï¼‰
 	rbuggyMatches = [];
 
-	// qSa£¨£ºfocus£©ÔÚÎªtrueÊ±±¨¸æÎªfalse£¨Chrome 21£©
-	//ÎÒÃÇÔÊĞíÕâÑù×ö£¬ÒòÎªIE8 / 9ÖĞµÄ´íÎó»áÒı·¢´íÎó
-	//Ã¿µ±ÔÚiframeÉÏ·ÃÎÊ`document.activeElement`Ê±
-	//ËùÒÔ£¬ÎÒÃÇÔÊĞí£º½¹µãÒ»Ö±Í¨¹ıQSAÀ´±ÜÃâIE´íÎó
-	//Çë²ÎÔÄhttps://bugs.jquery.com/ticket/13378
+	// qSaï¼ˆï¼šfocusï¼‰åœ¨ä¸ºtrueæ—¶æŠ¥å‘Šä¸ºfalseï¼ˆChrome 21ï¼‰
+	//æˆ‘ä»¬å…è®¸è¿™æ ·åšï¼Œå› ä¸ºIE8 / 9ä¸­çš„é”™è¯¯ä¼šå¼•å‘é”™è¯¯
+	//æ¯å½“åœ¨iframeä¸Šè®¿é—®`document.activeElement`æ—¶
+	//æ‰€ä»¥ï¼Œæˆ‘ä»¬å…è®¸ï¼šç„¦ç‚¹ä¸€ç›´é€šè¿‡QSAæ¥é¿å…IEé”™è¯¯
+	//è¯·å‚é˜…https://bugs.jquery.com/ticket/13378
 	rbuggyQSA = [];
 
-	if£¨£¨support.qsa = rnative.test£¨document.querySelectorAll£©£©£©{
-		//¹¹½¨QSAÕıÔò±í´ïÊ½
-		//À´×ÔDiego PeriniµÄÕıÔò±í´ïÊ½²ßÂÔ
-		¶ÏÑÔ£¨function£¨el£©{
-			// SelectÓĞÒâÉèÖÃÎª¿Õ×Ö·û´®
-			//ÕâÊÇÎªÁË²âÊÔIEµÄÎ´Ã÷È·´¦Àí
-			//ÉèÖÃ²¼¶ûÄÚÈİÊôĞÔ£¬
-			//ÒòÎªËüµÄ´æÔÚÓ¦¸Ã×ã¹»ÁË
+	ifï¼ˆï¼ˆsupport.qsa = rnative.testï¼ˆdocument.querySelectorAllï¼‰ï¼‰ï¼‰{
+		//æ„å»ºQSAæ­£åˆ™è¡¨è¾¾å¼
+		//æ¥è‡ªDiego Periniçš„æ­£åˆ™è¡¨è¾¾å¼ç­–ç•¥
+		æ–­è¨€ï¼ˆfunctionï¼ˆelï¼‰{
+			// Selectæœ‰æ„è®¾ç½®ä¸ºç©ºå­—ç¬¦ä¸²
+			//è¿™æ˜¯ä¸ºäº†æµ‹è¯•IEçš„æœªæ˜ç¡®å¤„ç†
+			//è®¾ç½®å¸ƒå°”å†…å®¹å±æ€§ï¼Œ
+			//å› ä¸ºå®ƒçš„å­˜åœ¨åº”è¯¥è¶³å¤Ÿäº†
 			// https://bugs.jquery.com/ticket/12359
-			docElem.appendChild£¨el£©.innerHTML =¡°<a id ='" + expando +¡±'> </a>¡°+
-				¡°<select id ='¡±+ expando +¡° -  \ r \\'msallowcapture =''>¡±+
-				¡°<option selected =''> </ option> </ select>¡±;
+			docElem.appendChildï¼ˆelï¼‰.innerHTML =â€œ<a id ='" + expando +â€'> </a>â€œ+
+				â€œ<select id ='â€+ expando +â€œ -  \ r \\'msallowcapture =''>â€+
+				â€œ<option selected =''> </ option> </ select>â€;
 
-			//Ö§³Ö£ºIE8£¬Opera 11-12.16
-			//µ±¿Õ×Ö·û´®¸úËæ^ =»ò$ =»ò* =Ê±£¬²»Ó¦Ñ¡ÔñÈÎºÎÄÚÈİ
-			//²âÊÔÊôĞÔÔÚOperaÖĞ±ØĞëÊÇÎ´ÖªµÄ£¬µ«¶ÔWinRTÀ´ËµÊÇ¡°°²È«µÄ¡±
+			//æ”¯æŒï¼šIE8ï¼ŒOpera 11-12.16
+			//å½“ç©ºå­—ç¬¦ä¸²è·Ÿéš^ =æˆ–$ =æˆ–* =æ—¶ï¼Œä¸åº”é€‰æ‹©ä»»ä½•å†…å®¹
+			//æµ‹è¯•å±æ€§åœ¨Operaä¸­å¿…é¡»æ˜¯æœªçŸ¥çš„ï¼Œä½†å¯¹WinRTæ¥è¯´æ˜¯â€œå®‰å…¨çš„â€
 			// https://msdn.microsoft.com/en-us/library/ie/hh465388.aspx#attribute_section
-			if£¨el.querySelectorAll£¨¡°[msallowcapture ^ ='']¡±£©¡£length£©{
-				rbuggyQSA.push£¨¡°[* ^ $] =¡±+ whitespace +¡°*£¨£¿£º''| \¡±\¡°£©¡±£©;
+			ifï¼ˆel.querySelectorAllï¼ˆâ€œ[msallowcapture ^ ='']â€ï¼‰ã€‚lengthï¼‰{
+				rbuggyQSA.pushï¼ˆâ€œ[* ^ $] =â€+ whitespace +â€œ*ï¼ˆï¼Ÿï¼š''| \â€\â€œï¼‰â€ï¼‰;
 			}
 
-			//Ö§³Ö£ºIE8
-			//²¼¶ûÊôĞÔºÍ¡°Öµ¡±Î´µÃµ½ÕıÈ·´¦Àí
-			if£¨£¡el.querySelectorAll£¨¡°[selected]¡±£©¡£length£©{
-				rbuggyQSA.push£¨¡°\\ [¡±+ whitespace +¡°*£¨?: value |¡±+ booleans +¡°£©¡±£©;
+			//æ”¯æŒï¼šIE8
+			//å¸ƒå°”å±æ€§å’Œâ€œå€¼â€æœªå¾—åˆ°æ­£ç¡®å¤„ç†
+			ifï¼ˆï¼el.querySelectorAllï¼ˆâ€œ[selected]â€ï¼‰ã€‚lengthï¼‰{
+				rbuggyQSA.pushï¼ˆâ€œ\\ [â€+ whitespace +â€œ*ï¼ˆ?: value |â€+ booleans +â€œï¼‰â€ï¼‰;
 			}
 
-			//Ö§³Ö£ºChrome <29£¬Android <4.4£¬Safari <7.0 +£¬iOS <7.0+£¬PhantomJS <1.9.8+
-			if£¨£¡el.querySelectorAll£¨¡°[id~ =¡±+ expando +¡° - ]¡±£©¡£length£©{
-				rbuggyQSA.push£¨ ¡°?=¡±£©;
+			//æ”¯æŒï¼šChrome <29ï¼ŒAndroid <4.4ï¼ŒSafari <7.0 +ï¼ŒiOS <7.0+ï¼ŒPhantomJS <1.9.8+
+			ifï¼ˆï¼el.querySelectorAllï¼ˆâ€œ[id~ =â€+ expando +â€œ - ]â€ï¼‰ã€‚lengthï¼‰{
+				rbuggyQSA.pushï¼ˆ â€œ?=â€ï¼‰;
 			}
 
-			// Webkit / Opera  - £ºcheckedÓ¦·µ»ØÑ¡¶¨µÄÑ¡ÏîÔªËØ
+			// Webkit / Opera  - ï¼šcheckedåº”è¿”å›é€‰å®šçš„é€‰é¡¹å…ƒç´ 
 			// http://www.w3.org/TR/2011/REC-css3-selectors-20110929/#checked
-			// IE8ÔÚÕâÀïÅ×³ö´íÎó£¬²»»á¿´µ½ÒÔºóµÄ²âÊÔ
-			if£¨£¡el.querySelectorAll£¨¡°£ºchecked¡±£©¡£length£©{
-				rbuggyQSA.push£¨ ¡°£º¼ì²é¡±£©;
+			// IE8åœ¨è¿™é‡ŒæŠ›å‡ºé”™è¯¯ï¼Œä¸ä¼šçœ‹åˆ°ä»¥åçš„æµ‹è¯•
+			ifï¼ˆï¼el.querySelectorAllï¼ˆâ€œï¼šcheckedâ€ï¼‰ã€‚lengthï¼‰{
+				rbuggyQSA.pushï¼ˆ â€œï¼šæ£€æŸ¥â€ï¼‰;
 			}
 
-			//Ö§³Ö£ºSafari 8 +£¬iOS 8+
+			//æ”¯æŒï¼šSafari 8 +ï¼ŒiOS 8+
 			// https://bugs.webkit.org/show_bug.cgi?id=136851
-			//Ò³ÄÚ`selector #idĞÖµÜ×éºÏÑ¡ÔñÆ÷'Ê§°Ü
-			if£¨£¡el.querySelectorAll£¨¡°a££¡±+ expando +¡°+ *¡±£©¡£length£©{
-				rbuggyQSA.push£¨ ¡°££+ [+?]¡£¡±£©;
+			//é¡µå†…`selector #idå…„å¼Ÿç»„åˆé€‰æ‹©å™¨'å¤±è´¥
+			ifï¼ˆï¼el.querySelectorAllï¼ˆâ€œaï¼ƒâ€+ expando +â€œ+ *â€ï¼‰ã€‚lengthï¼‰{
+				rbuggyQSA.pushï¼ˆ â€œï¼ƒ+ [+?]ã€‚â€ï¼‰;
 			}
-		}£©;
+		}ï¼‰;
 
-		¶ÏÑÔ£¨function£¨el£©{
-			el.innerHTML =¡°<a href=''disable='disabled'> </a>¡±+
-				¡°<select disabled ='disabled'> <option /> </ select>¡±;
+		æ–­è¨€ï¼ˆfunctionï¼ˆelï¼‰{
+			el.innerHTML =â€œ<a href=''disable='disabled'> </a>â€+
+				â€œ<select disabled ='disabled'> <option /> </ select>â€;
 
-			//Ö§³Ö£ºWindows 8 Native Apps
-			//ÔÚ.innerHTML¸³ÖµÆÚ¼ä£¬ÀàĞÍºÍÃû³ÆÊôĞÔÊÜµ½ÏŞÖÆ
-			var input = document.createElement£¨¡°input¡±£©;
-			input.setAttribute£¨¡°type¡±£¬¡°hidden¡±£©;
-			el.appendChild£¨input£©.setAttribute£¨¡°name¡±£¬¡°D¡±£©;
+			//æ”¯æŒï¼šWindows 8 Native Apps
+			//åœ¨.innerHTMLèµ‹å€¼æœŸé—´ï¼Œç±»å‹å’Œåç§°å±æ€§å—åˆ°é™åˆ¶
+			var input = document.createElementï¼ˆâ€œinputâ€ï¼‰;
+			input.setAttributeï¼ˆâ€œtypeâ€ï¼Œâ€œhiddenâ€ï¼‰;
+			el.appendChildï¼ˆinputï¼‰.setAttributeï¼ˆâ€œnameâ€ï¼Œâ€œDâ€ï¼‰;
 
-			//Ö§³Ö£ºIE8
-			//Ç¿ÖÆÊ¹ÓÃnameÊôĞÔÇø·Ö´óĞ¡Ğ´
-			if£¨el.querySelectorAll£¨¡°[name = d]¡±£©¡£length£©{
-				rbuggyQSA.push£¨¡°name¡±+ whitespace +¡°* [* ^ $ |£¡?]£¿=¡±£©;
-			}
-
-			// FF 3.5  - £ºÆôÓÃ/£º½ûÓÃºÍÒş²ØÔªËØ£¨Òş²ØÔªËØÈÔÈ»ÆôÓÃ£©
-			// IE8ÔÚÕâÀïÅ×³ö´íÎó£¬²»»á¿´µ½ÒÔºóµÄ²âÊÔ
-			if£¨el.querySelectorAll£¨¡°£ºenabled¡±£©¡£length£¡== 2£©{
-				rbuggyQSA.push£¨¡°£ºenabled¡±£¬¡°£ºdisabled¡±£©;
+			//æ”¯æŒï¼šIE8
+			//å¼ºåˆ¶ä½¿ç”¨nameå±æ€§åŒºåˆ†å¤§å°å†™
+			ifï¼ˆel.querySelectorAllï¼ˆâ€œ[name = d]â€ï¼‰ã€‚lengthï¼‰{
+				rbuggyQSA.pushï¼ˆâ€œnameâ€+ whitespace +â€œ* [* ^ $ |ï¼?]ï¼Ÿ=â€ï¼‰;
 			}
 
-			//Ö§³Ö£ºIE9-11 +
-			// IE£º½ûÓÃµÄÑ¡ÔñÆ÷²»»áÊ°È¡½ûÓÃµÄ×Ö¶Î¼¯µÄ×Ó½Úµã
-			docElem.appendChild£¨el£©.disabled = true;
-			if£¨el.querySelectorAll£¨¡°£ºdisabled¡±£©¡£length£¡== 2£©{
-				rbuggyQSA.push£¨¡°£ºenabled¡±£¬¡°£ºdisabled¡±£©;
+			// FF 3.5  - ï¼šå¯ç”¨/ï¼šç¦ç”¨å’Œéšè—å…ƒç´ ï¼ˆéšè—å…ƒç´ ä»ç„¶å¯ç”¨ï¼‰
+			// IE8åœ¨è¿™é‡ŒæŠ›å‡ºé”™è¯¯ï¼Œä¸ä¼šçœ‹åˆ°ä»¥åçš„æµ‹è¯•
+			ifï¼ˆel.querySelectorAllï¼ˆâ€œï¼šenabledâ€ï¼‰ã€‚lengthï¼== 2ï¼‰{
+				rbuggyQSA.pushï¼ˆâ€œï¼šenabledâ€ï¼Œâ€œï¼šdisabledâ€ï¼‰;
 			}
 
-			// Opera 10-11²»»áÅ×³ö¶ººÅºóµÄÎŞĞ§Î±
-			el.querySelectorAll£¨ ¡°* ,: X¡±£©;
-			rbuggyQSA.push£¨ ¡°*£º¡±£©;
-		}£©;
+			//æ”¯æŒï¼šIE9-11 +
+			// IEï¼šç¦ç”¨çš„é€‰æ‹©å™¨ä¸ä¼šæ‹¾å–ç¦ç”¨çš„å­—æ®µé›†çš„å­èŠ‚ç‚¹
+			docElem.appendChildï¼ˆelï¼‰.disabled = true;
+			ifï¼ˆel.querySelectorAllï¼ˆâ€œï¼šdisabledâ€ï¼‰ã€‚lengthï¼== 2ï¼‰{
+				rbuggyQSA.pushï¼ˆâ€œï¼šenabledâ€ï¼Œâ€œï¼šdisabledâ€ï¼‰;
+			}
+
+			// Opera 10-11ä¸ä¼šæŠ›å‡ºé€—å·åçš„æ— æ•ˆä¼ª
+			el.querySelectorAllï¼ˆ â€œ* ,: Xâ€ï¼‰;
+			rbuggyQSA.pushï¼ˆ â€œ*ï¼šâ€ï¼‰;
+		}ï¼‰;
 	}
 
-	if£¨£¨support.matchesSelector = rnative.test£¨£¨matches = docElem.matches ||
+	ifï¼ˆï¼ˆsupport.matchesSelector = rnative.testï¼ˆï¼ˆmatches = docElem.matches ||
 		docElem.webkitMatchesSelector ||
 		docElem.mozMatchesSelector ||
 		docElem.oMatchesSelector ||
-		docElem.msMatchesSelector£©£©£©£©{
+		docElem.msMatchesSelectorï¼‰ï¼‰ï¼‰ï¼‰{
 
-		¶ÏÑÔ£¨function£¨el£©{
-			//¼ì²éÊÇ·ñ¿ÉÒÔÖ´ĞĞmatchesSelector
-			//ÔÚ¶Ï¿ªÁ¬½ÓµÄ½ÚµãÉÏ£¨IE 9£©
-			support.disconnectedMatch = matches.call£¨el£¬¡°*¡±£©;
+		æ–­è¨€ï¼ˆfunctionï¼ˆelï¼‰{
+			//æ£€æŸ¥æ˜¯å¦å¯ä»¥æ‰§è¡ŒmatchesSelector
+			//åœ¨æ–­å¼€è¿æ¥çš„èŠ‚ç‚¹ä¸Šï¼ˆIE 9ï¼‰
+			support.disconnectedMatch = matches.callï¼ˆelï¼Œâ€œ*â€ï¼‰;
 
-			//ÕâÓ¦¸ÃÊ§°Ü²¢³öÏÖÒì³£
-			// GeckoÃ»ÓĞ´íÎó£¬¶øÊÇ·µ»Øfalse
-			matches.call£¨el£¬¡°[s£¡='']£ºx¡±£©;
-			rbuggyMatches.push£¨¡°£¡=¡±£¬pseudos£©;
-		}£©;
+			//è¿™åº”è¯¥å¤±è´¥å¹¶å‡ºç°å¼‚å¸¸
+			// Geckoæ²¡æœ‰é”™è¯¯ï¼Œè€Œæ˜¯è¿”å›false
+			matches.callï¼ˆelï¼Œâ€œ[sï¼='']ï¼šxâ€ï¼‰;
+			rbuggyMatches.pushï¼ˆâ€œï¼=â€ï¼Œpseudosï¼‰;
+		}ï¼‰;
 	}
 
-	rbuggyQSA = rbuggyQSA.length && new RegExp£¨rbuggyQSA.join£¨¡°|¡±£©£©;
-	rbuggyMatches = rbuggyMatches.length && new RegExp£¨rbuggyMatches.join£¨¡°|¡±£©£©;
+	rbuggyQSA = rbuggyQSA.length && new RegExpï¼ˆrbuggyQSA.joinï¼ˆâ€œ|â€ï¼‰ï¼‰;
+	rbuggyMatches = rbuggyMatches.length && new RegExpï¼ˆrbuggyMatches.joinï¼ˆâ€œ|â€ï¼‰ï¼‰;
 
-	/ *°üº¬
+	/ *åŒ…å«
 	-------------------------------------------------- -------------------- * /
-	hasCompare = rnative.test£¨docElem.compareDocumentPosition£©;
+	hasCompare = rnative.testï¼ˆdocElem.compareDocumentPositionï¼‰;
 
-	//ÔªËØ°üº¬ÁíÒ»¸ö
-	//ÓĞÄ¿µÄµØ×ÔÎÒÅÅ³â
-	//ÔÚÖĞ£¬ÔªËØ²»°üº¬×ÔÉí
-	contains = hasCompare || rnative.test£¨docElem.contains£©£¿
-		function£¨a£¬b£©{
-			var adown = a.nodeType === 9£¿a.documentElement£ºa£¬
+	//å…ƒç´ åŒ…å«å¦ä¸€ä¸ª
+	//æœ‰ç›®çš„åœ°è‡ªæˆ‘æ’æ–¥
+	//åœ¨ä¸­ï¼Œå…ƒç´ ä¸åŒ…å«è‡ªèº«
+	contains = hasCompare || rnative.testï¼ˆdocElem.containsï¼‰ï¼Ÿ
+		functionï¼ˆaï¼Œbï¼‰{
+			var adown = a.nodeType === 9ï¼Ÿa.documentElementï¼šaï¼Œ
 				bup = b && b.parentNode;
-			·µ»Ø=== bup || !!£¨bup && bup.nodeType === 1 &&£¨
-				adown.contains£¿
-					adown.contains£¨bup£©£º
-					a.compareDocumentPosition && a.compareDocumentPosition£¨bup£©£¦16
-			£©£©;
-		}£º
-		function£¨a£¬b£©{
-			if£¨b£©{
-				while£¨£¨b = b.parentNode£©£©{
-					if£¨b === a£©{
-						·µ»Øtrue;
+			è¿”å›=== bup || !!ï¼ˆbup && bup.nodeType === 1 &&ï¼ˆ
+				adown.containsï¼Ÿ
+					adown.containsï¼ˆbupï¼‰ï¼š
+					a.compareDocumentPosition && a.compareDocumentPositionï¼ˆbupï¼‰ï¼†16
+			ï¼‰ï¼‰;
+		}ï¼š
+		functionï¼ˆaï¼Œbï¼‰{
+			ifï¼ˆbï¼‰{
+				whileï¼ˆï¼ˆb = b.parentNodeï¼‰ï¼‰{
+					ifï¼ˆb === aï¼‰{
+						è¿”å›true;
 					}
 				}
 			}
-			·µ»Øfalse;
+			è¿”å›false;
 		};
 
-	/ *ÅÅĞò
+	/ *æ’åº
 	-------------------------------------------------- -------------------- * /
 
-	//ÎÄµµ¶©µ¥ÅÅĞò
-	sortOrder = hasCompare£¿
-	function£¨a£¬b£©{
+	//æ–‡æ¡£è®¢å•æ’åº
+	sortOrder = hasCompareï¼Ÿ
+	functionï¼ˆaï¼Œbï¼‰{
 
-		//ÖØ¸´É¾³ı±ê¼Ç
-		if£¨a === b£©{
+		//é‡å¤åˆ é™¤æ ‡è®°
+		ifï¼ˆa === bï¼‰{
 			hasDuplicate = true;
-			·µ»Ø0;
+			è¿”å›0;
 		}
 
-		//Èç¹ûÖ»ÓĞÒ»¸öÊäÈë¾ßÓĞcompareDocumentPosition£¬ÔòÅÅĞò·½·¨´æÔÚ
-		var compare =£¡a.compareDocumentPosition  - £¡b.compareDocumentPosition;
-		if£¨compare£©{
-			»Ø±¨±È½Ï;
+		//å¦‚æœåªæœ‰ä¸€ä¸ªè¾“å…¥å…·æœ‰compareDocumentPositionï¼Œåˆ™æ’åºæ–¹æ³•å­˜åœ¨
+		var compare =ï¼a.compareDocumentPosition  - ï¼b.compareDocumentPosition;
+		ifï¼ˆcompareï¼‰{
+			å›æŠ¥æ¯”è¾ƒ;
 		}
 
-		//Èç¹ûÁ½¸öÊäÈë¶¼ÊôÓÚÍ¬Ò»ÎÄµµ£¬Ôò¼ÆËãÎ»ÖÃ
-		compare =£¨a.ownerDocument || a£©===£¨b.ownerDocument || b£©£¿
-			a.compareDocumentPosition£¨b£©£º
+		//å¦‚æœä¸¤ä¸ªè¾“å…¥éƒ½å±äºåŒä¸€æ–‡æ¡£ï¼Œåˆ™è®¡ç®—ä½ç½®
+		compare =ï¼ˆa.ownerDocument || aï¼‰===ï¼ˆb.ownerDocument || bï¼‰ï¼Ÿ
+			a.compareDocumentPositionï¼ˆbï¼‰ï¼š
 
-			//·ñÔòÎÒÃÇÖªµÀËûÃÇÒÑ¶Ï¿ªÁ¬½Ó
+			//å¦åˆ™æˆ‘ä»¬çŸ¥é“ä»–ä»¬å·²æ–­å¼€è¿æ¥
 			1;
 
-		//ÒÑ¶Ï¿ªÁ¬½ÓµÄ½Úµã
-		if£¨±È½Ï£¦1 ||
-			£¨£¡support.sortDetached && b.compareDocumentPosition£¨a£©=== compare£©£©{
+		//å·²æ–­å¼€è¿æ¥çš„èŠ‚ç‚¹
+		ifï¼ˆæ¯”è¾ƒï¼†1 ||
+			ï¼ˆï¼support.sortDetached && b.compareDocumentPositionï¼ˆaï¼‰=== compareï¼‰ï¼‰{
 
-			//Ñ¡ÔñÓëÎÒÃÇÊ×Ñ¡ÎÄµµÏà¹ØµÄµÚÒ»¸öÔªËØ
-			if£¨a === document || a.ownerDocument === preferredDoc && contains£¨preferredDoc£¬a£©£©{
-				·µ»Ø-1;
+			//é€‰æ‹©ä¸æˆ‘ä»¬é¦–é€‰æ–‡æ¡£ç›¸å…³çš„ç¬¬ä¸€ä¸ªå…ƒç´ 
+			ifï¼ˆa === document || a.ownerDocument === preferredDoc && containsï¼ˆpreferredDocï¼Œaï¼‰ï¼‰{
+				è¿”å›-1;
 			}
-			if£¨b === document || b.ownerDocument === preferredDoc && contains£¨preferredDoc£¬b£©£©{
-				·µ»Ø1;
+			ifï¼ˆb === document || b.ownerDocument === preferredDoc && containsï¼ˆpreferredDocï¼Œbï¼‰ï¼‰{
+				è¿”å›1;
 			}
 
-			//±£³ÖÔ­Ê¼¶©µ¥
-			·µ»ØsortInput£¿
-				£¨indexOf£¨sortInput£¬a£© -  indexOf£¨sortInput£¬b£©£©£º
+			//ä¿æŒåŸå§‹è®¢å•
+			è¿”å›sortInputï¼Ÿ
+				ï¼ˆindexOfï¼ˆsortInputï¼Œaï¼‰ -  indexOfï¼ˆsortInputï¼Œbï¼‰ï¼‰ï¼š
 				0;
 		}
 
-		·µ»Ø±È½Ï£¦4£¿-1£º1;
-	}£º
-	function£¨a£¬b£©{
-		//Èç¹û½ÚµãÏàÍ¬£¬ÔòÌáÇ°ÍË³ö
-		if£¨a === b£©{
+		è¿”å›æ¯”è¾ƒï¼†4ï¼Ÿ-1ï¼š1;
+	}ï¼š
+	functionï¼ˆaï¼Œbï¼‰{
+		//å¦‚æœèŠ‚ç‚¹ç›¸åŒï¼Œåˆ™æå‰é€€å‡º
+		ifï¼ˆa === bï¼‰{
 			hasDuplicate = true;
-			·µ»Ø0;
+			è¿”å›0;
 		}
 
-		var cur£¬
-			i = 0£¬
-			aup = a.parentNode£¬
-			bup = b.parentNode£¬
-			ap = [a]£¬
+		var curï¼Œ
+			i = 0ï¼Œ
+			aup = a.parentNodeï¼Œ
+			bup = b.parentNodeï¼Œ
+			ap = [a]ï¼Œ
 			bp = [b];
 
-		//ÎŞ¸¸½ÚµãÊÇÎÄµµ»ò¶Ï¿ªÁ¬½Ó
-		if£¨£¡aup ||£¡bup£©{
-			·µ»ØÒ»¸ö===ÎÄ¼ş£¿-1£º
-				b ===ÎÄ¼ş£¿1£º
-				°¥£¿-1£º
-				bup£¿1£º
-				sortInput£¿
-				£¨indexOf£¨sortInput£¬a£© -  indexOf£¨sortInput£¬b£©£©£º
+		//æ— çˆ¶èŠ‚ç‚¹æ˜¯æ–‡æ¡£æˆ–æ–­å¼€è¿æ¥
+		ifï¼ˆï¼aup ||ï¼bupï¼‰{
+			è¿”å›ä¸€ä¸ª===æ–‡ä»¶ï¼Ÿ-1ï¼š
+				b ===æ–‡ä»¶ï¼Ÿ1ï¼š
+				å“ï¼Ÿ-1ï¼š
+				bupï¼Ÿ1ï¼š
+				sortInputï¼Ÿ
+				ï¼ˆindexOfï¼ˆsortInputï¼Œaï¼‰ -  indexOfï¼ˆsortInputï¼Œbï¼‰ï¼‰ï¼š
 				0;
 
-		//Èç¹û½ÚµãÊÇĞÖµÜ½Úµã£¬ÎÒÃÇ¿ÉÒÔ¿ìËÙ¼ì²é
-		} else if£¨aup === bup£©{
-			return siblingCheck£¨a£¬b£©;
+		//å¦‚æœèŠ‚ç‚¹æ˜¯å…„å¼ŸèŠ‚ç‚¹ï¼Œæˆ‘ä»¬å¯ä»¥å¿«é€Ÿæ£€æŸ¥
+		} else ifï¼ˆaup === bupï¼‰{
+			return siblingCheckï¼ˆaï¼Œbï¼‰;
 		}
 
-		//·ñÔòÎÒÃÇĞèÒªËûÃÇµÄ×æÏÈµÄÍêÕûÁĞ±í½øĞĞ±È½Ï
+		//å¦åˆ™æˆ‘ä»¬éœ€è¦ä»–ä»¬çš„ç¥–å…ˆçš„å®Œæ•´åˆ—è¡¨è¿›è¡Œæ¯”è¾ƒ
 		cur = a;
-		while£¨£¨cur = cur.parentNode£©£©{
-			ap.unshift£¨cur£©;
+		whileï¼ˆï¼ˆcur = cur.parentNodeï¼‰ï¼‰{
+			ap.unshiftï¼ˆcurï¼‰;
 		}
 		cur = b;
-		while£¨£¨cur = cur.parentNode£©£©{
-			bp.unshift£¨cur£©;
+		whileï¼ˆï¼ˆcur = cur.parentNodeï¼‰ï¼‰{
+			bp.unshiftï¼ˆcurï¼‰;
 		}
 
-		//×ßÏÂÊ÷Ñ°ÕÒ²îÒì
-		while£¨ap [i] === bp [i]£©{
-			ÎÒ++;
+		//èµ°ä¸‹æ ‘å¯»æ‰¾å·®å¼‚
+		whileï¼ˆap [i] === bp [i]ï¼‰{
+			æˆ‘++;
 		}
 
-		»ØÀ´ÎÒ£¿
-			//×öĞÖµÜ¼ì²é½ÚµãÊÇ·ñÓĞ¹²Í¬µÄ×æÏÈ
-			siblingCheck£¨ap [i]£¬bp [i]£©£º
+		å›æ¥æˆ‘ï¼Ÿ
+			//åšå…„å¼Ÿæ£€æŸ¥èŠ‚ç‚¹æ˜¯å¦æœ‰å…±åŒçš„ç¥–å…ˆ
+			siblingCheckï¼ˆap [i]ï¼Œbp [i]ï¼‰ï¼š
 
-			//·ñÔòÎÒÃÇÎÄµµÖĞµÄ½ÚµãÊ×ÏÈÅÅĞò
-			ap [i] === preferredDoc£¿-1£º
-			bp [i] === preferredDoc£¿1£º
+			//å¦åˆ™æˆ‘ä»¬æ–‡æ¡£ä¸­çš„èŠ‚ç‚¹é¦–å…ˆæ’åº
+			ap [i] === preferredDocï¼Ÿ-1ï¼š
+			bp [i] === preferredDocï¼Ÿ1ï¼š
 			0;
 	};
 
-	ÍË»õÎÄ¼ş;
+	é€€è´§æ–‡ä»¶;
 };
 
-Sizzle.matches = function£¨expr£¬elements£©{
-	return Sizzle£¨expr£¬null£¬null£¬elements£©;
+Sizzle.matches = functionï¼ˆexprï¼Œelementsï¼‰{
+	return Sizzleï¼ˆexprï¼Œnullï¼Œnullï¼Œelementsï¼‰;
 };
 
-Sizzle.matchesSelector = function£¨elem£¬expr£©{
-	//Èç¹ûĞèÒª£¬ÉèÖÃÎÄµµ±äÁ¿
-	if£¨£¨elem.ownerDocument || elem£©£¡== document£©{
-		setDocument£¨elem£©;
+Sizzle.matchesSelector = functionï¼ˆelemï¼Œexprï¼‰{
+	//å¦‚æœéœ€è¦ï¼Œè®¾ç½®æ–‡æ¡£å˜é‡
+	ifï¼ˆï¼ˆelem.ownerDocument || elemï¼‰ï¼== documentï¼‰{
+		setDocumentï¼ˆelemï¼‰;
 	}
 
-	//È·±£ÒıÓÃÊôĞÔÑ¡ÔñÆ÷
-	expr = expr.replace£¨rattributeQuotes£¬¡°='$ 1']¡±£©;
+	//ç¡®ä¿å¼•ç”¨å±æ€§é€‰æ‹©å™¨
+	expr = expr.replaceï¼ˆrattributeQuotesï¼Œâ€œ='$ 1']â€ï¼‰;
 
-	if£¨support.matchesSelector && documentIsHTML &&
-		£¡compilerCache [expr +¡°¡±] &&
-		£¨£¡rbuggyMatches ||£¡rbuggyMatches.test£¨expr£©£©&&
-		£¨£¡rbuggyQSA ||£¡rbuggyQSA.test£¨expr£©£©£©{
+	ifï¼ˆsupport.matchesSelector && documentIsHTML &&
+		ï¼compilerCache [expr +â€œâ€] &&
+		ï¼ˆï¼rbuggyMatches ||ï¼rbuggyMatches.testï¼ˆexprï¼‰ï¼‰&&
+		ï¼ˆï¼rbuggyQSA ||ï¼rbuggyQSA.testï¼ˆexprï¼‰ï¼‰ï¼‰{
 
-		³¢ÊÔ{
-			var ret = matches.call£¨elem£¬expr£©;
+		å°è¯•{
+			var ret = matches.callï¼ˆelemï¼Œexprï¼‰;
 
-			// IE 9µÄmatchesSelectorÔÚ¶Ï¿ªÁ¬½ÓµÄ½ÚµãÉÏ·µ»Øfalse
-			if£¨ret || support.disconnectedMatch ||
-					//Í¬Ñù£¬¶Ï¿ªÁ¬½ÓµÄ½ÚµãÒ²±»³ÆÎªÎÄµµ
-					// IE 9ÖĞµÄÆ¬¶Î
-					elem.document && elem.document.nodeType£¡== 11£©{
-				·µ»Ø;
+			// IE 9çš„matchesSelectoråœ¨æ–­å¼€è¿æ¥çš„èŠ‚ç‚¹ä¸Šè¿”å›false
+			ifï¼ˆret || support.disconnectedMatch ||
+					//åŒæ ·ï¼Œæ–­å¼€è¿æ¥çš„èŠ‚ç‚¹ä¹Ÿè¢«ç§°ä¸ºæ–‡æ¡£
+					// IE 9ä¸­çš„ç‰‡æ®µ
+					elem.document && elem.document.nodeTypeï¼== 11ï¼‰{
+				è¿”å›;
 			}
-		} catch£¨e£©{}
+		} catchï¼ˆeï¼‰{}
 	}
 
-	return Sizzle£¨expr£¬document£¬null£¬[elem]£©¡£length> 0;
+	return Sizzleï¼ˆexprï¼Œdocumentï¼Œnullï¼Œ[elem]ï¼‰ã€‚length> 0;
 };
 
-Sizzle.contains = function£¨context£¬elem£©{
-	//Èç¹ûĞèÒª£¬ÉèÖÃÎÄµµ±äÁ¿
-	if£¨£¨context.ownerDocument || context£©£¡== document£©{
-		setDocument£¨context£©;
+Sizzle.contains = functionï¼ˆcontextï¼Œelemï¼‰{
+	//å¦‚æœéœ€è¦ï¼Œè®¾ç½®æ–‡æ¡£å˜é‡
+	ifï¼ˆï¼ˆcontext.ownerDocument || contextï¼‰ï¼== documentï¼‰{
+		setDocumentï¼ˆcontextï¼‰;
 	}
-	return contains£¨context£¬elem£©;
+	return containsï¼ˆcontextï¼Œelemï¼‰;
 };
 
-Sizzle.attr = function£¨elem£¬name£©{
-	//Èç¹ûĞèÒª£¬ÉèÖÃÎÄµµ±äÁ¿
-	if£¨£¨elem.ownerDocument || elem£©£¡== document£©{
-		setDocument£¨elem£©;
+Sizzle.attr = functionï¼ˆelemï¼Œnameï¼‰{
+	//å¦‚æœéœ€è¦ï¼Œè®¾ç½®æ–‡æ¡£å˜é‡
+	ifï¼ˆï¼ˆelem.ownerDocument || elemï¼‰ï¼== documentï¼‰{
+		setDocumentï¼ˆelemï¼‰;
 	}
 
-	var fn = Expr.attrHandle [name.toLowerCase£¨£©]£¬
-		//²»Òª±»Object.prototypeÊôĞÔÓŞÅª£¨jQuery££13807£©
-		val = fn && hasOwn.call£¨Expr.attrHandle£¬name.toLowerCase£¨£©£©£¿
-			fn£¨elem£¬name£¬£¡documentIsHTML£©£º
-			²»È·¶¨µÄ;
+	var fn = Expr.attrHandle [name.toLowerCaseï¼ˆï¼‰]ï¼Œ
+		//ä¸è¦è¢«Object.prototypeå±æ€§æ„šå¼„ï¼ˆjQueryï¼ƒ13807ï¼‰
+		val = fn && hasOwn.callï¼ˆExpr.attrHandleï¼Œname.toLowerCaseï¼ˆï¼‰ï¼‰ï¼Ÿ
+			fnï¼ˆelemï¼Œnameï¼Œï¼documentIsHTMLï¼‰ï¼š
+			ä¸ç¡®å®šçš„;
 
-	return val£¡== undefined£¿
-		val£º
-		support.attributes || £¡documentIsHTML£¿
-			elem.getAttribute£¨name£©£º
-			£¨val = elem.getAttributeNode£¨name£©£©&& val.specified£¿
-				val.value£º
-				¿ÕÖµ;
+	return valï¼== undefinedï¼Ÿ
+		valï¼š
+		support.attributes || ï¼documentIsHTMLï¼Ÿ
+			elem.getAttributeï¼ˆnameï¼‰ï¼š
+			ï¼ˆval = elem.getAttributeNodeï¼ˆnameï¼‰ï¼‰&& val.specifiedï¼Ÿ
+				val.valueï¼š
+				ç©ºå€¼;
 };
 
-Sizzle.escape = function£¨sel£©{
-	return£¨sel +¡°¡±£©.replace£¨rcssescape£¬fcssescape£©;
+Sizzle.escape = functionï¼ˆselï¼‰{
+	returnï¼ˆsel +â€œâ€ï¼‰.replaceï¼ˆrcssescapeï¼Œfcssescapeï¼‰;
 };
 
-Sizzle.error = function£¨msg£©{
-	Å×³öĞÂ´íÎó£¨¡°Óï·¨´íÎó£¬ÎŞ·¨Ê¶±ğµÄ±í´ïÊ½£º¡±+ msg£©;
+Sizzle.error = functionï¼ˆmsgï¼‰{
+	æŠ›å‡ºæ–°é”™è¯¯ï¼ˆâ€œè¯­æ³•é”™è¯¯ï¼Œæ— æ³•è¯†åˆ«çš„è¡¨è¾¾å¼ï¼šâ€+ msgï¼‰;
 };
 
 / **
- *ÎÄ¼ş·ÖÀàºÍÉ¾³ıÖØ¸´
- * @param {ArrayLike}½á¹û
+ *æ–‡ä»¶åˆ†ç±»å’Œåˆ é™¤é‡å¤
+ * @param {ArrayLike}ç»“æœ
  * /
-Sizzle.uniqueSort = function£¨results£©{
-	var elem£¬
-		duplicates = []£¬
-		j = 0£¬
+Sizzle.uniqueSort = functionï¼ˆresultsï¼‰{
+	var elemï¼Œ
+		duplicates = []ï¼Œ
+		j = 0ï¼Œ
 		i = 0;
 
-	//³ı·ÇÎÒÃÇ*ÖªµÀ*ÎÒÃÇ¿ÉÒÔ¼ì²âµ½ÖØ¸´£¬·ñÔòÇë¼ÙÉèËüÃÇ´æÔÚ
-	hasDuplicate =£¡support.detectDuplicates;
-	sortInput =£¡support.sortStable && results.slice£¨0£©;
-	results.sort£¨sortOrder£©;
+	//é™¤éæˆ‘ä»¬*çŸ¥é“*æˆ‘ä»¬å¯ä»¥æ£€æµ‹åˆ°é‡å¤ï¼Œå¦åˆ™è¯·å‡è®¾å®ƒä»¬å­˜åœ¨
+	hasDuplicate =ï¼support.detectDuplicates;
+	sortInput =ï¼support.sortStable && results.sliceï¼ˆ0ï¼‰;
+	results.sortï¼ˆsortOrderï¼‰;
 
-	if£¨hasDuplicate£©{
-		while£¨£¨elem = results [i ++]£©£©{
-			if£¨elem === results [i]£©{
-				j = duplicates.push£¨i£©;
+	ifï¼ˆhasDuplicateï¼‰{
+		whileï¼ˆï¼ˆelem = results [i ++]ï¼‰ï¼‰{
+			ifï¼ˆelem === results [i]ï¼‰{
+				j = duplicates.pushï¼ˆiï¼‰;
 			}
 		}
-		while£¨j--£©{
-			results.splice£¨duplicates [j]£¬1£©;
+		whileï¼ˆj--ï¼‰{
+			results.spliceï¼ˆduplicates [j]ï¼Œ1ï¼‰;
 		}
 	}
 
-	//ÅÅĞòºóÇå³ıÊäÈëÒÔÊÍ·Å¶ÔÏó
-	//Çë²ÎÔÄhttps://github.com/jquery/sizzle/pull/225
+	//æ’åºåæ¸…é™¤è¾“å…¥ä»¥é‡Šæ”¾å¯¹è±¡
+	//è¯·å‚é˜…https://github.com/jquery/sizzle/pull/225
 	sortInput = null;
 
-	·µ»Ø½á¹û;
+	è¿”å›ç»“æœ;
 };
 
 / **
- *ÊµÓÃ³ÌĞòº¯Êı£¬ÓÃÓÚ¼ìË÷DOM½ÚµãÊı×éµÄÎÄ±¾Öµ
+ *å®ç”¨ç¨‹åºå‡½æ•°ï¼Œç”¨äºæ£€ç´¢DOMèŠ‚ç‚¹æ•°ç»„çš„æ–‡æœ¬å€¼
  * @param {Array | Element} elem
  * /
-getText = Sizzle.getText = function£¨elem£©{
-	var½Úµã£¬
-		ret =¡°¡±£¬
-		i = 0£¬
+getText = Sizzle.getText = functionï¼ˆelemï¼‰{
+	varèŠ‚ç‚¹ï¼Œ
+		ret =â€œâ€ï¼Œ
+		i = 0ï¼Œ
 		nodeType = elem.nodeType;
 
-	if£¨£¡nodeType£©{
-		//Èç¹ûÃ»ÓĞnodeType£¬ÄÇÃ´ÕâÓ¦¸ÃÊÇÒ»¸öÊı×é
-		while£¨£¨node = elem [i ++]£©£©{
-			//²»Òª±éÀúÆÀÂÛ½Úµã
-			ret + = getText£¨node£©;
+	ifï¼ˆï¼nodeTypeï¼‰{
+		//å¦‚æœæ²¡æœ‰nodeTypeï¼Œé‚£ä¹ˆè¿™åº”è¯¥æ˜¯ä¸€ä¸ªæ•°ç»„
+		whileï¼ˆï¼ˆnode = elem [i ++]ï¼‰ï¼‰{
+			//ä¸è¦éå†è¯„è®ºèŠ‚ç‚¹
+			ret + = getTextï¼ˆnodeï¼‰;
 		}
-	} else if£¨nodeType === 1 || nodeType === 9 || nodeType === 11£©{
-		//¶ÔÔªËØÊ¹ÓÃtextContent
-		//É¾³ıÁËinnerTextÓÃ·¨ÒÔ±£Ö¤ĞÂĞĞµÄÒ»ÖÂĞÔ£¨jQuery££11153£©
-		if£¨typeof elem.textContent ===¡°string¡±£©{
+	} else ifï¼ˆnodeType === 1 || nodeType === 9 || nodeType === 11ï¼‰{
+		//å¯¹å…ƒç´ ä½¿ç”¨textContent
+		//åˆ é™¤äº†innerTextç”¨æ³•ä»¥ä¿è¯æ–°è¡Œçš„ä¸€è‡´æ€§ï¼ˆjQueryï¼ƒ11153ï¼‰
+		ifï¼ˆtypeof elem.textContent ===â€œstringâ€ï¼‰{
 			return elem.textContent;
 		} else {
-			//´©Ô½ËüµÄº¢×Ó
-			for£¨elem = elem.firstChild; elem; elem = elem.nextSibling£©{
-				ret + = getText£¨elem£©;
+			//ç©¿è¶Šå®ƒçš„å­©å­
+			forï¼ˆelem = elem.firstChild; elem; elem = elem.nextSiblingï¼‰{
+				ret + = getTextï¼ˆelemï¼‰;
 			}
 		}
-	} else if£¨nodeType === 3 || nodeType === 4£©{
+	} else ifï¼ˆnodeType === 3 || nodeType === 4ï¼‰{
 		return elem.nodeValue;
 	}
-	//²»°üÀ¨×¢ÊÍ»ò´¦ÀíÖ¸Áî½Úµã
+	//ä¸åŒ…æ‹¬æ³¨é‡Šæˆ–å¤„ç†æŒ‡ä»¤èŠ‚ç‚¹
 
-	·µ»Ø;
+	è¿”å›;
 };
 
 Expr = Sizzle.selectors = {
 
-	//¿ÉÒÔÓÉÓÃ»§µ÷Õû
-	cacheLength£º50£¬
+	//å¯ä»¥ç”±ç”¨æˆ·è°ƒæ•´
+	cacheLengthï¼š50ï¼Œ
 
-	createPseudo£ºmarkFunction£¬
+	createPseudoï¼šmarkFunctionï¼Œ
 
-	Æ¥Åä£ºmatchExpr£¬
+	åŒ¹é…ï¼šmatchExprï¼Œ
 
-	attrHandle£º{}£¬
+	attrHandleï¼š{}ï¼Œ
 
-	ÕÒ£º {}£¬
+	æ‰¾ï¼š {}ï¼Œ
 
-	Ç×Æİ£º{
-		¡°>¡±£º{dir£º¡°parentNode¡±£¬first£ºtrue}£¬
-		¡°¡±£º{dir£º¡°parentNode¡±}£¬
-		¡°+¡±£º{dir£º¡°previousSibling¡±£¬first£ºtrue}£¬
-		¡°?¡±£º{dir£º¡°previousSibling¡±}
-	}£¬
+	äº²æˆšï¼š{
+		â€œ>â€ï¼š{dirï¼šâ€œparentNodeâ€ï¼Œfirstï¼štrue}ï¼Œ
+		â€œâ€ï¼š{dirï¼šâ€œparentNodeâ€}ï¼Œ
+		â€œ+â€ï¼š{dirï¼šâ€œpreviousSiblingâ€ï¼Œfirstï¼štrue}ï¼Œ
+		â€œ?â€ï¼š{dirï¼šâ€œpreviousSiblingâ€}
+	}ï¼Œ
 
-	preFilter£º{
-		¡°ATTR¡±£ºfunction£¨match£©{
-			match [1] = match [1] .replace£¨runescape£¬funescape£©;
+	preFilterï¼š{
+		â€œATTRâ€ï¼šfunctionï¼ˆmatchï¼‰{
+			match [1] = match [1] .replaceï¼ˆrunescapeï¼Œfunescapeï¼‰;
 
-			//ÒÆ¶¯¸ø¶¨ÖµÒÔÆ¥Åä[3]ÊÇÒıÓÃ»¹ÊÇ²»ÒıÓÃ
-			match [3] =£¨match [3] || match [4] || match [5] ||¡°¡±£©.replace£¨runescape£¬funescape£©;
+			//ç§»åŠ¨ç»™å®šå€¼ä»¥åŒ¹é…[3]æ˜¯å¼•ç”¨è¿˜æ˜¯ä¸å¼•ç”¨
+			match [3] =ï¼ˆmatch [3] || match [4] || match [5] ||â€œâ€ï¼‰.replaceï¼ˆrunescapeï¼Œfunescapeï¼‰;
 
-			if£¨match [2] ===¡°?=¡±£©{
-				match [3] =¡°¡±+ match [3] +¡°¡±;
+			ifï¼ˆmatch [2] ===â€œ?=â€ï¼‰{
+				match [3] =â€œâ€+ match [3] +â€œâ€;
 			}
 
-			return match.slice£¨0,4£©;
-		}£¬
+			return match.sliceï¼ˆ0,4ï¼‰;
+		}ï¼Œ
 
-		¡°CHILD¡±£ºfunction£¨match£©{
-			/ *Æ¥ÅäÀ´×ÔmatchExpr [¡°CHILD¡±]
-				1ÖÖÀàĞÍ£¨½ö| nth | ...£©
-				2Ê²Ã´£¨º¢×ÓµÄÀàĞÍ£©
-				3¸ö²ÎÊı£¨Å¼Êı|ÆæÊı| \ d * | \ d * n£¨[+  - ] \ d +£©£¿| ...£©
-				xn + y²ÎÊıµÄ4 xn·ÖÁ¿£¨[+  - ]£¿\ d * n |£©
-				5¸öxn·ÖÁ¿µÄ·ûºÅ
+		â€œCHILDâ€ï¼šfunctionï¼ˆmatchï¼‰{
+			/ *åŒ¹é…æ¥è‡ªmatchExpr [â€œCHILDâ€]
+				1ç§ç±»å‹ï¼ˆä»…| nth | ...ï¼‰
+				2ä»€ä¹ˆï¼ˆå­©å­çš„ç±»å‹ï¼‰
+				3ä¸ªå‚æ•°ï¼ˆå¶æ•°|å¥‡æ•°| \ d * | \ d * nï¼ˆ[+  - ] \ d +ï¼‰ï¼Ÿ| ...ï¼‰
+				xn + yå‚æ•°çš„4 xnåˆ†é‡ï¼ˆ[+  - ]ï¼Ÿ\ d * n |ï¼‰
+				5ä¸ªxnåˆ†é‡çš„ç¬¦å·
 				6 x xn-component
-				y·ÖÁ¿µÄ7¸ö·ûºÅ
-				yÔªËØ8 y
+				yåˆ†é‡çš„7ä¸ªç¬¦å·
+				yå…ƒç´ 8 y
 			* /
-			match [1] = match [1] .toLowerCase£¨£©;
+			match [1] = match [1] .toLowerCaseï¼ˆï¼‰;
 
-			if£¨match [1] .slice£¨0,3£©===¡°nth¡±£©{
-				// nth- *ĞèÒª²ÎÊı
-				if£¨£¡match [3]£©{
-					Sizzle.error£¨Æ¥Åä[0]£©;
+			ifï¼ˆmatch [1] .sliceï¼ˆ0,3ï¼‰===â€œnthâ€ï¼‰{
+				// nth- *éœ€è¦å‚æ•°
+				ifï¼ˆï¼match [3]ï¼‰{
+					Sizzle.errorï¼ˆåŒ¹é…[0]ï¼‰;
 				}
 
-				// Expr.filter.CHILDµÄÊı×ÖxºÍy²ÎÊı
-				//¼Ç×¡false / true·Ö±ğÎª0/1
-				match [4] = +£¨match [4]£¿match [5] +£¨match [6] || 1£©£º2 *£¨match [3] ===¡°even¡±|| match [3] ===¡°Ææ¹ÖµÄ¡°£©£©;
-				match [5] = +£¨£¨match [7] + match [8]£©|| match [3] ===¡°odd¡±£©;
+				// Expr.filter.CHILDçš„æ•°å­—xå’Œyå‚æ•°
+				//è®°ä½false / trueåˆ†åˆ«ä¸º0/1
+				match [4] = +ï¼ˆmatch [4]ï¼Ÿmatch [5] +ï¼ˆmatch [6] || 1ï¼‰ï¼š2 *ï¼ˆmatch [3] ===â€œevenâ€|| match [3] ===â€œå¥‡æ€ªçš„â€œï¼‰ï¼‰;
+				match [5] = +ï¼ˆï¼ˆmatch [7] + match [8]ï¼‰|| match [3] ===â€œoddâ€ï¼‰;
 
-			//ÆäËûÀàĞÍ½ûÖ¹²ÎÊı
-			} else if£¨match [3]£©{
-				Sizzle.error£¨Æ¥Åä[0]£©;
+			//å…¶ä»–ç±»å‹ç¦æ­¢å‚æ•°
+			} else ifï¼ˆmatch [3]ï¼‰{
+				Sizzle.errorï¼ˆåŒ¹é…[0]ï¼‰;
 			}
 
-			»Ø¹é±ÈÈü;
-		}£¬
+			å›å½’æ¯”èµ›;
+		}ï¼Œ
 
-		¡°PSEUDO¡±£ºfunction£¨match£©{
-			var¹ıÊ££¬
-				unquoted =£¡match [6] && match [2];
+		â€œPSEUDOâ€ï¼šfunctionï¼ˆmatchï¼‰{
+			varè¿‡å‰©ï¼Œ
+				unquoted =ï¼match [6] && match [2];
 
-			if£¨matchExpr [¡°CHILD¡±]¡£test£¨match [0]£©£©{
+			ifï¼ˆmatchExpr [â€œCHILDâ€]ã€‚testï¼ˆmatch [0]ï¼‰ï¼‰{
 				return null;
 			}
 
-			//°´Ô­Ñù½ÓÊÜÒıÓÃµÄ²ÎÊı
-			if£¨Æ¥Åä[3]£©{
-				Æ¥Åä[2] =Æ¥Åä[4] || Æ¥Åä[5] || ¡°¡±;
+			//æŒ‰åŸæ ·æ¥å—å¼•ç”¨çš„å‚æ•°
+			ifï¼ˆåŒ¹é…[3]ï¼‰{
+				åŒ¹é…[2] =åŒ¹é…[4] || åŒ¹é…[5] || â€œâ€;
 
-			//´Ó²»´øÒıºÅµÄ²ÎÊıÖĞÉ¾³ı¶àÓàµÄ×Ö·û
-			} else if£¨unquoted && rpseudo.test£¨unquoted£©&&
-				//´ÓtokenizeÖĞ»ñÈ¡¶àÓà£¨µİ¹é£©
-				£¨excess = tokenize£¨unquoted£¬true£©£©&&
-				//Ç°½øµ½ÏÂÒ»¸öÓÒÀ¨ºÅ
-				£¨excess = unquoted.indexOf£¨¡°£©¡±£¬unquoted.length  -  excess£© -  unquoted.length£©£©{
+			//ä»ä¸å¸¦å¼•å·çš„å‚æ•°ä¸­åˆ é™¤å¤šä½™çš„å­—ç¬¦
+			} else ifï¼ˆunquoted && rpseudo.testï¼ˆunquotedï¼‰&&
+				//ä»tokenizeä¸­è·å–å¤šä½™ï¼ˆé€’å½’ï¼‰
+				ï¼ˆexcess = tokenizeï¼ˆunquotedï¼Œtrueï¼‰ï¼‰&&
+				//å‰è¿›åˆ°ä¸‹ä¸€ä¸ªå³æ‹¬å·
+				ï¼ˆexcess = unquoted.indexOfï¼ˆâ€œï¼‰â€ï¼Œunquoted.length  -  excessï¼‰ -  unquoted.lengthï¼‰ï¼‰{
 
-				//¶àÓàÊÇ¸ºÖ¸Êı
-				match [0] = match [0] .slice£¨0£¬excess£©;
-				match [2] = unquoted.slice£¨0£¬excess£©;
+				//å¤šä½™æ˜¯è´ŸæŒ‡æ•°
+				match [0] = match [0] .sliceï¼ˆ0ï¼Œexcessï¼‰;
+				match [2] = unquoted.sliceï¼ˆ0ï¼Œexcessï¼‰;
 			}
 
-			//½ö·µ»ØÎ±¹ıÂËÆ÷·½·¨ËùĞèµÄ²¶»ñ£¨ÀàĞÍºÍ²ÎÊı£©
-			return match.slice£¨0,3£©;
+			//ä»…è¿”å›ä¼ªè¿‡æ»¤å™¨æ–¹æ³•æ‰€éœ€çš„æ•è·ï¼ˆç±»å‹å’Œå‚æ•°ï¼‰
+			return match.sliceï¼ˆ0,3ï¼‰;
 		}
-	}£¬
+	}ï¼Œ
 
-	¹ıÂËÆ÷£º{
+	è¿‡æ»¤å™¨ï¼š{
 
-		¡°TAG¡±£ºfunction£¨nodeNameSelector£©{
-			var nodeName = nodeNameSelector.replace£¨runescape£¬funescape£©.toLowerCase£¨£©;
-			return nodeNameSelector ===¡°*¡±£¿
-				function£¨£©{return true; }£º
-				function£¨elem£©{
-					return elem.nodeName && elem.nodeName.toLowerCase£¨£©=== nodeName;
+		â€œTAGâ€ï¼šfunctionï¼ˆnodeNameSelectorï¼‰{
+			var nodeName = nodeNameSelector.replaceï¼ˆrunescapeï¼Œfunescapeï¼‰.toLowerCaseï¼ˆï¼‰;
+			return nodeNameSelector ===â€œ*â€ï¼Ÿ
+				functionï¼ˆï¼‰{return true; }ï¼š
+				functionï¼ˆelemï¼‰{
+					return elem.nodeName && elem.nodeName.toLowerCaseï¼ˆï¼‰=== nodeName;
 				};
-		}£¬
+		}ï¼Œ
 
-		¡°CLASS¡±£ºfunction£¨className£©{
-			var pattern = classCache [className +¡°¡±];
+		â€œCLASSâ€ï¼šfunctionï¼ˆclassNameï¼‰{
+			var pattern = classCache [className +â€œâ€];
 
-			·µ»ØÄ£Ê½||
-				£¨pattern = new RegExp£¨¡°£¨^ |¡±+ whitespace +¡°£©¡±+ className +¡°£¨¡±+ whitespace +¡°| $£©¡±£©£©&&
-				classCache£¨className£¬function£¨elem£©{
-					return pattern.test£¨typeof elem.className ===¡°string¡±&& elem.className || typeof elem.getAttribute£¡==¡°undefined¡±&& elem.getAttribute£¨¡°class¡±£©||¡°¡±£©;
-				}£©;
-		}£¬
+			è¿”å›æ¨¡å¼||
+				ï¼ˆpattern = new RegExpï¼ˆâ€œï¼ˆ^ |â€+ whitespace +â€œï¼‰â€+ className +â€œï¼ˆâ€+ whitespace +â€œ| $ï¼‰â€ï¼‰ï¼‰&&
+				classCacheï¼ˆclassNameï¼Œfunctionï¼ˆelemï¼‰{
+					return pattern.testï¼ˆtypeof elem.className ===â€œstringâ€&& elem.className || typeof elem.getAttributeï¼==â€œundefinedâ€&& elem.getAttributeï¼ˆâ€œclassâ€ï¼‰||â€œâ€ï¼‰;
+				}ï¼‰;
+		}ï¼Œ
 
-		¡°ATTR¡±£ºº¯Êı£¨Ãû³Æ£¬ÔËËã·û£¬¼ì²é£©{
-			returnº¯Êı£¨elem£©{
-				var result = Sizzle.attr£¨elem£¬name£©;
+		â€œATTRâ€ï¼šå‡½æ•°ï¼ˆåç§°ï¼Œè¿ç®—ç¬¦ï¼Œæ£€æŸ¥ï¼‰{
+			returnå‡½æ•°ï¼ˆelemï¼‰{
+				var result = Sizzle.attrï¼ˆelemï¼Œnameï¼‰;
 
-				if£¨result == null£©{
-					return operator ===¡°£¡=¡±;
+				ifï¼ˆresult == nullï¼‰{
+					return operator ===â€œï¼=â€;
 				}
-				if£¨£¡operator£©{
-					·µ»Øtrue;
+				ifï¼ˆï¼operatorï¼‰{
+					è¿”å›true;
 				}
 
-				½á¹û+ =¡°¡±;
+				ç»“æœ+ =â€œâ€;
 
-				return operator ===¡°=¡±£¿½á¹û===¼ì²é£º
-					operator ===¡°£¡=¡±£¿½á¹û£¡==¼ì²é£º
-					operator ===¡°^ =¡±£¿check && result.indexOf£¨check£©=== 0£º
-					operator ===¡°* =¡±£¿check && result.indexOf£¨check£©> -1£º
-					operator ===¡°$ =¡±£¿check && result.slice£¨-check.length£©=== check£º
-					operator ===¡°?=¡±£¿£¨¡°¡±+ result.replace£¨rwhitespace£¬¡°¡±£©+¡°¡±£©¡£indexOf£¨check£©> -1£º
-					operator ===¡°| =¡±£¿½á¹û===¼ì²é|| result.slice£¨0£¬check.length + 1£©=== check +¡° - ¡±£º
-					¼Ù;
+				return operator ===â€œ=â€ï¼Ÿç»“æœ===æ£€æŸ¥ï¼š
+					operator ===â€œï¼=â€ï¼Ÿç»“æœï¼==æ£€æŸ¥ï¼š
+					operator ===â€œ^ =â€ï¼Ÿcheck && result.indexOfï¼ˆcheckï¼‰=== 0ï¼š
+					operator ===â€œ* =â€ï¼Ÿcheck && result.indexOfï¼ˆcheckï¼‰> -1ï¼š
+					operator ===â€œ$ =â€ï¼Ÿcheck && result.sliceï¼ˆ-check.lengthï¼‰=== checkï¼š
+					operator ===â€œ?=â€ï¼Ÿï¼ˆâ€œâ€+ result.replaceï¼ˆrwhitespaceï¼Œâ€œâ€ï¼‰+â€œâ€ï¼‰ã€‚indexOfï¼ˆcheckï¼‰> -1ï¼š
+					operator ===â€œ| =â€ï¼Ÿç»“æœ===æ£€æŸ¥|| result.sliceï¼ˆ0ï¼Œcheck.length + 1ï¼‰=== check +â€œ - â€ï¼š
+					å‡;
 			};
-		}£¬
+		}ï¼Œ
 
-		¡°CHILD¡±£ºº¯Êı£¨ÀàĞÍ£¬ÄÚÈİ£¬²ÎÊı£¬µÚÒ»¸ö£¬×îºóÒ»¸ö£©{
-			var simple = type.slice£¨0,3£©£¡==¡°nth¡±£¬
-				forward = type.slice£¨-4£©£¡==¡°last¡±£¬
-				ofType = what ===¡°of-type¡±;
+		â€œCHILDâ€ï¼šå‡½æ•°ï¼ˆç±»å‹ï¼Œå†…å®¹ï¼Œå‚æ•°ï¼Œç¬¬ä¸€ä¸ªï¼Œæœ€åä¸€ä¸ªï¼‰{
+			var simple = type.sliceï¼ˆ0,3ï¼‰ï¼==â€œnthâ€ï¼Œ
+				forward = type.sliceï¼ˆ-4ï¼‰ï¼==â€œlastâ€ï¼Œ
+				ofType = what ===â€œof-typeâ€;
 
-			ÏÈÍË»Ø=== 1 && last === 0£¿
+			å…ˆé€€å›=== 1 && last === 0ï¼Ÿ
 
-				//¿ì½İ·½Ê½£ºµÚn  -  *£¨n£©
-				function£¨elem£©{
+				//å¿«æ·æ–¹å¼ï¼šç¬¬n  -  *ï¼ˆnï¼‰
+				functionï¼ˆelemï¼‰{
 					return !! elem.parentNode;
-				}£º
+				}ï¼š
 
-				function£¨elem£¬context£¬xml£©{
-					var cache£¬uniqueCache£¬outerCache£¬node£¬nodeIndex£¬start£¬
-						dir =¼òµ¥£¡==×ª·¢£¿¡°nextSibling¡±£º¡°previousSibling¡±£¬
-						parent = elem.parentNode£¬
-						name = ofType && elem.nodeName.toLowerCase£¨£©£¬
-						useCache =£¡xml &&£¡ofType£¬
+				functionï¼ˆelemï¼Œcontextï¼Œxmlï¼‰{
+					var cacheï¼ŒuniqueCacheï¼ŒouterCacheï¼Œnodeï¼ŒnodeIndexï¼Œstartï¼Œ
+						dir =ç®€å•ï¼==è½¬å‘ï¼Ÿâ€œnextSiblingâ€ï¼šâ€œpreviousSiblingâ€ï¼Œ
+						parent = elem.parentNodeï¼Œ
+						name = ofType && elem.nodeName.toLowerCaseï¼ˆï¼‰ï¼Œ
+						useCache =ï¼xml &&ï¼ofTypeï¼Œ
 						diff = false;
 
-					if£¨parent£©{
+					ifï¼ˆparentï¼‰{
 
-						// :( first | last | only£© - £¨child | of-type£©
-						if£¨simple£©{
-							while£¨dir£©{
+						// :( first | last | onlyï¼‰ - ï¼ˆchild | of-typeï¼‰
+						ifï¼ˆsimpleï¼‰{
+							whileï¼ˆdirï¼‰{
 								node = elem;
-								while£¨£¨node = node [dir]£©£©{
-									if£¨ofType£¿
-										node.nodeName.toLowerCase£¨£©=== name£º
-										node.nodeType === 1£©{
+								whileï¼ˆï¼ˆnode = node [dir]ï¼‰ï¼‰{
+									ifï¼ˆofTypeï¼Ÿ
+										node.nodeName.toLowerCaseï¼ˆï¼‰=== nameï¼š
+										node.nodeType === 1ï¼‰{
 
-										·µ»Øfalse;
+										è¿”å›false;
 									}
 								}
-								//·´Ïò£º½ö -  *£¨Èç¹ûÎÒÃÇ»¹Ã»ÓĞÕâÑù×ö£©
-								start = dir = type ===¡°only¡±&&£¡start &&¡°nextSibling¡±;
+								//åå‘ï¼šä»… -  *ï¼ˆå¦‚æœæˆ‘ä»¬è¿˜æ²¡æœ‰è¿™æ ·åšï¼‰
+								start = dir = type ===â€œonlyâ€&&ï¼start &&â€œnextSiblingâ€;
 							}
-							·µ»Øtrue;
+							è¿”å›true;
 						}
 
-						¿ªÊ¼= [Ç°½ø£¿parent.firstChild£ºparent.lastChild];
+						å¼€å§‹= [å‰è¿›ï¼Ÿparent.firstChildï¼šparent.lastChild];
 
-						// non-xml£ºnth-??child£¨...£©½«»º´æÊı¾İ´æ´¢ÔÚ`parent`ÉÏ
-						if£¨forward && useCache£©{
+						// non-xmlï¼šnth-??childï¼ˆ...ï¼‰å°†ç¼“å­˜æ•°æ®å­˜å‚¨åœ¨`parent`ä¸Š
+						ifï¼ˆforward && useCacheï¼‰{
 
-							//´ÓÏÈÇ°»º´æµÄË÷ÒıÖĞËÑË÷`elem`
+							//ä»å…ˆå‰ç¼“å­˜çš„ç´¢å¼•ä¸­æœç´¢`elem`
 
-							// ...ÒÔgzipÓÑºÃµÄ·½Ê½
+							// ...ä»¥gzipå‹å¥½çš„æ–¹å¼
 							node = parent;
-							outerCache = node [expando] || £¨node [expando] = {}£©;
+							outerCache = node [expando] || ï¼ˆnode [expando] = {}ï¼‰;
 
-							//Ö§³Ö£ºIE <9
-							//µÖÓù¿ËÂ¡µÄattroperties£¨jQuery gh-1709£©
+							//æ”¯æŒï¼šIE <9
+							//æŠµå¾¡å…‹éš†çš„attropertiesï¼ˆjQuery gh-1709ï¼‰
 							uniqueCache = outerCache [node.uniqueID] ||
-								£¨outerCache [node.uniqueID] = {}£©;
+								ï¼ˆouterCache [node.uniqueID] = {}ï¼‰;
 
 							cache = uniqueCache [type] || [];
 							nodeIndex = cache [0] === dirruns && cache [1];
 							diff = nodeIndex && cache [2];
 							node = nodeIndex && parent.childNodes [nodeIndex];
 
-							while£¨£¨node = ++ nodeIndex && node && node [dir] ||
+							whileï¼ˆï¼ˆnode = ++ nodeIndex && node && node [dir] ||
 
-								//´ÓÒ»¿ªÊ¼¾Í»Øµ½Ñ°Çó¡°elem¡±
-								£¨diff = nodeIndex = 0£©|| start.pop£¨£©£©£©{
+								//ä»ä¸€å¼€å§‹å°±å›åˆ°å¯»æ±‚â€œelemâ€
+								ï¼ˆdiff = nodeIndex = 0ï¼‰|| start.popï¼ˆï¼‰ï¼‰ï¼‰{
 
-								//ÕÒµ½ºó£¬ÔÚ`parent`ÉÏ»º´æË÷Òı²¢ÖĞ¶Ï
-								if£¨node.nodeType === 1 && ++ diff && node === elem£©{
-									uniqueCache [type] = [dirruns£¬nodeIndex£¬diff];
-									´òÆÆ;
+								//æ‰¾åˆ°åï¼Œåœ¨`parent`ä¸Šç¼“å­˜ç´¢å¼•å¹¶ä¸­æ–­
+								ifï¼ˆnode.nodeType === 1 && ++ diff && node === elemï¼‰{
+									uniqueCache [type] = [dirrunsï¼ŒnodeIndexï¼Œdiff];
+									æ‰“ç ´;
 								}
 							}
 
 						} else {
-							//Ê¹ÓÃÏÈÇ°»º´æµÄÔªËØË÷Òı£¨Èç¹û¿ÉÓÃ£©
-							if£¨useCache£©{
-								// ...ÒÔgzipÓÑºÃµÄ·½Ê½
+							//ä½¿ç”¨å…ˆå‰ç¼“å­˜çš„å…ƒç´ ç´¢å¼•ï¼ˆå¦‚æœå¯ç”¨ï¼‰
+							ifï¼ˆuseCacheï¼‰{
+								// ...ä»¥gzipå‹å¥½çš„æ–¹å¼
 								node = elem;
-								outerCache = node [expando] || £¨node [expando] = {}£©;
+								outerCache = node [expando] || ï¼ˆnode [expando] = {}ï¼‰;
 
-								//Ö§³Ö£ºIE <9
-								//µÖÓù¿ËÂ¡µÄattroperties£¨jQuery gh-1709£©
+								//æ”¯æŒï¼šIE <9
+								//æŠµå¾¡å…‹éš†çš„attropertiesï¼ˆjQuery gh-1709ï¼‰
 								uniqueCache = outerCache [node.uniqueID] ||
-									£¨outerCache [node.uniqueID] = {}£©;
+									ï¼ˆouterCache [node.uniqueID] = {}ï¼‰;
 
 								cache = uniqueCache [type] || [];
 								nodeIndex = cache [0] === dirruns && cache [1];
 								diff = nodeIndex;
 							}
 
-							// xml£ºnth-??child£¨...£©
-							//»ò£ºnth-??last-child£¨...£©»ò£ºnth£¨-last£©£¿ -  of-type£¨...£©
-							if£¨diff === false£©{
-								//Ê¹ÓÃÓëÉÏÃæÏàÍ¬µÄÑ­»·´ÓÍ·¿ªÊ¼Ñ°ÕÒ`elem`
-								while£¨£¨node = ++ nodeIndex && node && node [dir] ||
-									£¨diff = nodeIndex = 0£©|| start.pop£¨£©£©£©{
+							// xmlï¼šnth-??childï¼ˆ...ï¼‰
+							//æˆ–ï¼šnth-??last-childï¼ˆ...ï¼‰æˆ–ï¼šnthï¼ˆ-lastï¼‰ï¼Ÿ -  of-typeï¼ˆ...ï¼‰
+							ifï¼ˆdiff === falseï¼‰{
+								//ä½¿ç”¨ä¸ä¸Šé¢ç›¸åŒçš„å¾ªç¯ä»å¤´å¼€å§‹å¯»æ‰¾`elem`
+								whileï¼ˆï¼ˆnode = ++ nodeIndex && node && node [dir] ||
+									ï¼ˆdiff = nodeIndex = 0ï¼‰|| start.popï¼ˆï¼‰ï¼‰ï¼‰{
 
-									if£¨£¨ofType£¿
-										node.nodeName.toLowerCase£¨£©=== name£º
-										node.nodeType === 1£©&&
-										++ diff£©{
+									ifï¼ˆï¼ˆofTypeï¼Ÿ
+										node.nodeName.toLowerCaseï¼ˆï¼‰=== nameï¼š
+										node.nodeType === 1ï¼‰&&
+										++ diffï¼‰{
 
-										//»º´æÃ¿¸öÓöµ½ÔªËØµÄË÷Òı
-										if£¨useCache£©{
-											outerCache = node [expando] || £¨node [expando] = {}£©;
+										//ç¼“å­˜æ¯ä¸ªé‡åˆ°å…ƒç´ çš„ç´¢å¼•
+										ifï¼ˆuseCacheï¼‰{
+											outerCache = node [expando] || ï¼ˆnode [expando] = {}ï¼‰;
 
-											//Ö§³Ö£ºIE <9
-											//µÖÓù¿ËÂ¡µÄattroperties£¨jQuery gh-1709£©
+											//æ”¯æŒï¼šIE <9
+											//æŠµå¾¡å…‹éš†çš„attropertiesï¼ˆjQuery gh-1709ï¼‰
 											uniqueCache = outerCache [node.uniqueID] ||
-												£¨outerCache [node.uniqueID] = {}£©;
+												ï¼ˆouterCache [node.uniqueID] = {}ï¼‰;
 
-											uniqueCache [type] = [dirruns£¬diff];
+											uniqueCache [type] = [dirrunsï¼Œdiff];
 										}
 
-										if£¨node === elem£©{
-											´òÆÆ;
+										ifï¼ˆnode === elemï¼‰{
+											æ‰“ç ´;
 										}
 									}
 								}
 							}
 						}
 
-						//ºÏ²¢Æ«ÒÆÁ¿£¬È»ºó¼ì²éÑ­»·´óĞ¡
+						//åˆå¹¶åç§»é‡ï¼Œç„¶åæ£€æŸ¥å¾ªç¯å¤§å°
 						diff  -  = last;
-						return diff === first || £¨diff£¥first === 0 && diff / first> = 0£©;
+						return diff === first || ï¼ˆdiffï¼…first === 0 && diff / first> = 0ï¼‰;
 					}
 				};
-		}£¬
+		}ï¼Œ
 
-		¡°PSEUDO¡±£ºfunction£¨Î±£¬²ÎÊı£©{
-			//Î±ÀàÃû³Æ²»Çø·Ö´óĞ¡Ğ´
+		â€œPSEUDOâ€ï¼šfunctionï¼ˆä¼ªï¼Œå‚æ•°ï¼‰{
+			//ä¼ªç±»åç§°ä¸åŒºåˆ†å¤§å°å†™
 			// http://www.w3.org/TR/selectors/#pseudo-classes
-			//Í¨¹ıÔÚ¿ÇÌåµÄ¶¨ÖÆ¼ÙµãµÄÇé¿öÏÂµÄÁéÃô¶ÈÓÅÏÈ±»Ìí¼ÓÒÔ´óĞ´Éı°£ÌØË¹
-			//¼Ç×¡setFilters¼Ì³Ğ×Ôpseudos
-			var args£¬
-				fn = Expr.pseudos [Î±] || Expr.setFilters [pseudo.toLowerCase£¨£©] ||
-					Sizzle.error£¨¡°unsupported pseudo£º¡±+ pseudo£©;
+			//é€šè¿‡åœ¨å£³ä½“çš„å®šåˆ¶å‡ç‚¹çš„æƒ…å†µä¸‹çš„çµæ•åº¦ä¼˜å…ˆè¢«æ·»åŠ ä»¥å¤§å†™å‡åŸƒç‰¹æ–¯
+			//è®°ä½setFiltersç»§æ‰¿è‡ªpseudos
+			var argsï¼Œ
+				fn = Expr.pseudos [ä¼ª] || Expr.setFilters [pseudo.toLowerCaseï¼ˆï¼‰] ||
+					Sizzle.errorï¼ˆâ€œunsupported pseudoï¼šâ€+ pseudoï¼‰;
 
-			//ÓÃ»§¿ÉÒÔÊ¹ÓÃcreatePseudoÀ´Ö¸Ê¾
-			//´´½¨¹ıÂËº¯ÊıĞèÒª²ÎÊı
-			//ÕıÈçSizzleËù×öµÄÄÇÑù
-			if£¨fn [expando]£©{
-				return fn£¨argument£©;
+			//ç”¨æˆ·å¯ä»¥ä½¿ç”¨createPseudoæ¥æŒ‡ç¤º
+			//åˆ›å»ºè¿‡æ»¤å‡½æ•°éœ€è¦å‚æ•°
+			//æ­£å¦‚Sizzleæ‰€åšçš„é‚£æ ·
+			ifï¼ˆfn [expando]ï¼‰{
+				return fnï¼ˆargumentï¼‰;
 			}
 
-			//µ«±£³Ö¶Ô¾ÉÇ©ÃûµÄÖ§³Ö
-			if£¨fn.length> 1£©{
-				args = [Î±£¬Î±£¬¡°¡±£¬²ÎÊı];
-				·µ»ØExpr.setFilters.hasOwnProperty£¨pseudo.toLowerCase£¨£©£©£¿
-					markFunction£¨function£¨seed£¬matches£©{
-						var idx£¬
-							Æ¥Åä= fn£¨ÖÖ×Ó£¬²ÎÊı£©£¬
+			//ä½†ä¿æŒå¯¹æ—§ç­¾åçš„æ”¯æŒ
+			ifï¼ˆfn.length> 1ï¼‰{
+				args = [ä¼ªï¼Œä¼ªï¼Œâ€œâ€ï¼Œå‚æ•°];
+				è¿”å›Expr.setFilters.hasOwnPropertyï¼ˆpseudo.toLowerCaseï¼ˆï¼‰ï¼‰ï¼Ÿ
+					markFunctionï¼ˆfunctionï¼ˆseedï¼Œmatchesï¼‰{
+						var idxï¼Œ
+							åŒ¹é…= fnï¼ˆç§å­ï¼Œå‚æ•°ï¼‰ï¼Œ
 							i = matched.length;
-						µ±ÎÒ -  £© {
-							idx = indexOf£¨seed£¬matched [i]£©;
-							seed [idx] =£¡£¨Æ¥Åä[idx] = matched [i]£©;
+						å½“æˆ‘ -  ï¼‰ {
+							idx = indexOfï¼ˆseedï¼Œmatched [i]ï¼‰;
+							seed [idx] =ï¼ï¼ˆåŒ¹é…[idx] = matched [i]ï¼‰;
 						}
-					}£©£º
-					function£¨elem£©{
-						return fn£¨elem£¬0£¬args£©;
+					}ï¼‰ï¼š
+					functionï¼ˆelemï¼‰{
+						return fnï¼ˆelemï¼Œ0ï¼Œargsï¼‰;
 					};
 			}
 
-			·µ»Øfn;
+			è¿”å›fn;
 		}
-	}£¬
+	}ï¼Œ
 
-	Î±£º{
-		//¿ÉÄÜÊÇ¸´ÔÓµÄÎ±
-		¡°not¡±£ºmarkFunction£¨function£¨selector£©{
-			//ĞŞ¼ô´«µİ¸ø±àÒëÆ÷µÄÑ¡ÔñÆ÷
-			//±ÜÃâ´¦ÀíÇ°µ¼ºÍÎ²Ëæ
-			//×÷Îª×éºÏÆ÷µÄ¿Õ¸ñ
-			var input = []£¬
-				results = []£¬
-				matcher = compile£¨selector.replace£¨rtrim£¬¡°$ 1¡±£©£©;
+	ä¼ªï¼š{
+		//å¯èƒ½æ˜¯å¤æ‚çš„ä¼ª
+		â€œnotâ€ï¼šmarkFunctionï¼ˆfunctionï¼ˆselectorï¼‰{
+			//ä¿®å‰ªä¼ é€’ç»™ç¼–è¯‘å™¨çš„é€‰æ‹©å™¨
+			//é¿å…å¤„ç†å‰å¯¼å’Œå°¾éš
+			//ä½œä¸ºç»„åˆå™¨çš„ç©ºæ ¼
+			var input = []ï¼Œ
+				results = []ï¼Œ
+				matcher = compileï¼ˆselector.replaceï¼ˆrtrimï¼Œâ€œ$ 1â€ï¼‰ï¼‰;
 
-			·µ»ØÆ¥ÅäÆ÷[expando]£¿
-				markFunction£¨function£¨seed£¬matches£¬context£¬xml£©{
-					var elem£¬
-						unmatched = matcher£¨seed£¬null£¬xml£¬[]£©£¬
+			è¿”å›åŒ¹é…å™¨[expando]ï¼Ÿ
+				markFunctionï¼ˆfunctionï¼ˆseedï¼Œmatchesï¼Œcontextï¼Œxmlï¼‰{
+					var elemï¼Œ
+						unmatched = matcherï¼ˆseedï¼Œnullï¼Œxmlï¼Œ[]ï¼‰ï¼Œ
 						i = seed.length;
 
-					//Æ¥Åä`matcher`ÎŞ·¨Æ¥ÅäµÄÔªËØ
-					µ±ÎÒ -  £© {
-						if£¨£¨elem = unmatched [i]£©£©{
-							seed [i] =£¡£¨Æ¥Åä[i] = elem£©;
+					//åŒ¹é…`matcher`æ— æ³•åŒ¹é…çš„å…ƒç´ 
+					å½“æˆ‘ -  ï¼‰ {
+						ifï¼ˆï¼ˆelem = unmatched [i]ï¼‰ï¼‰{
+							seed [i] =ï¼ï¼ˆåŒ¹é…[i] = elemï¼‰;
 						}
 					}
-				}£©£º
-				function£¨elem£¬context£¬xml£©{
+				}ï¼‰ï¼š
+				functionï¼ˆelemï¼Œcontextï¼Œxmlï¼‰{
 					input [0] = elem;
-					matcher£¨ÊäÈë£¬null£¬xml£¬½á¹û£©;
-					//²»Òª±£ÁôÔªËØ£¨ÎÊÌâ££299£©
+					matcherï¼ˆè¾“å…¥ï¼Œnullï¼Œxmlï¼Œç»“æœï¼‰;
+					//ä¸è¦ä¿ç•™å…ƒç´ ï¼ˆé—®é¢˜ï¼ƒ299ï¼‰
 					input [0] = null;
-					return£¡results.pop£¨£©;
+					returnï¼results.popï¼ˆï¼‰;
 				};
-		}£©£¬
+		}ï¼‰ï¼Œ
 
-		¡°has¡±£ºmarkFunction£¨function£¨selector£©{
-			returnº¯Êı£¨elem£©{
-				return Sizzle£¨selector£¬elem£©.length> 0;
+		â€œhasâ€ï¼šmarkFunctionï¼ˆfunctionï¼ˆselectorï¼‰{
+			returnå‡½æ•°ï¼ˆelemï¼‰{
+				return Sizzleï¼ˆselectorï¼Œelemï¼‰.length> 0;
 			};
-		}£©£¬
+		}ï¼‰ï¼Œ
 
-		¡°contains¡±£ºmarkFunction£¨function£¨text£©{
-			text = text.replace£¨runescape£¬funescape£©;
-			returnº¯Êı£¨elem£©{
-				return£¨elem.textContent || elem.innerText || getText£¨elem£©£©¡£indexOf£¨text£©> -1;
+		â€œcontainsâ€ï¼šmarkFunctionï¼ˆfunctionï¼ˆtextï¼‰{
+			text = text.replaceï¼ˆrunescapeï¼Œfunescapeï¼‰;
+			returnå‡½æ•°ï¼ˆelemï¼‰{
+				returnï¼ˆelem.textContent || elem.innerText || getTextï¼ˆelemï¼‰ï¼‰ã€‚indexOfï¼ˆtextï¼‰> -1;
 			};
-		}£©£¬
+		}ï¼‰ï¼Œ
 
-		//¡°ÔªËØÊÇ·ñÓÉ£ºlang£¨£©Ñ¡ÔñÆ÷±íÊ¾
-		//½ö»ùÓÚÔªËØµÄÓïÑÔÖµ
-		//µÈÓÚ±êÊ¶·ûC£¬
-		//»òÕßÒÔ±êÊ¶·ûC¿ªÍ·£¬ºóÃæ½ô¸ú¡° - ¡±¡£
-		//²»Çø·Ö´óĞ¡Ğ´µØÖ´ĞĞCÓëÔªËØÓïÑÔÖµµÄÆ¥Åä¡£
-		//±êÊ¶·ûC²»±ØÊÇÓĞĞ§µÄÓïÑÔÃû³Æ¡£¡°
+		//â€œå…ƒç´ æ˜¯å¦ç”±ï¼šlangï¼ˆï¼‰é€‰æ‹©å™¨è¡¨ç¤º
+		//ä»…åŸºäºå…ƒç´ çš„è¯­è¨€å€¼
+		//ç­‰äºæ ‡è¯†ç¬¦Cï¼Œ
+		//æˆ–è€…ä»¥æ ‡è¯†ç¬¦Cå¼€å¤´ï¼Œåé¢ç´§è·Ÿâ€œ - â€ã€‚
+		//ä¸åŒºåˆ†å¤§å°å†™åœ°æ‰§è¡ŒCä¸å…ƒç´ è¯­è¨€å€¼çš„åŒ¹é…ã€‚
+		//æ ‡è¯†ç¬¦Cä¸å¿…æ˜¯æœ‰æ•ˆçš„è¯­è¨€åç§°ã€‚â€œ
 		// http://www.w3.org/TR/selectors/#lang-pseudo
-		¡°lang¡±£ºmarkFunction£¨function£¨lang£©{
-			// langÖµ±ØĞëÊÇÓĞĞ§µÄ±êÊ¶·û
-			if£¨£¡ridentifier.test£¨lang ||¡°¡±£©£©{
-				Sizzle.error£¨¡°²»Ö§³Ölang£º¡±+ lang£©;
+		â€œlangâ€ï¼šmarkFunctionï¼ˆfunctionï¼ˆlangï¼‰{
+			// langå€¼å¿…é¡»æ˜¯æœ‰æ•ˆçš„æ ‡è¯†ç¬¦
+			ifï¼ˆï¼ridentifier.testï¼ˆlang ||â€œâ€ï¼‰ï¼‰{
+				Sizzle.errorï¼ˆâ€œä¸æ”¯æŒlangï¼šâ€+ langï¼‰;
 			}
-			lang = lang.replace£¨runescape£¬funescape£©.toLowerCase£¨£©;
-			returnº¯Êı£¨elem£©{
+			lang = lang.replaceï¼ˆrunescapeï¼Œfunescapeï¼‰.toLowerCaseï¼ˆï¼‰;
+			returnå‡½æ•°ï¼ˆelemï¼‰{
 				var elemLang;
-				×ö{
-					if£¨£¨elemLang = documentIsHTML£¿
-						elem.lang£º
-						elem.getAttribute£¨¡°xml£ºlang¡±£©|| elem.getAttribute£¨¡°lang¡±£©£©£©{
+				åš{
+					ifï¼ˆï¼ˆelemLang = documentIsHTMLï¼Ÿ
+						elem.langï¼š
+						elem.getAttributeï¼ˆâ€œxmlï¼šlangâ€ï¼‰|| elem.getAttributeï¼ˆâ€œlangâ€ï¼‰ï¼‰ï¼‰{
 
-						elemLang = elemLang.toLowerCase£¨£©;
-						·µ»ØelemLang === lang || elemLang.indexOf£¨lang +¡° - ¡±£©=== 0;
+						elemLang = elemLang.toLowerCaseï¼ˆï¼‰;
+						è¿”å›elemLang === lang || elemLang.indexOfï¼ˆlang +â€œ - â€ï¼‰=== 0;
 					}
-				}£¨£¨elem = elem.parentNode£©&& elem.nodeType === 1£©;
-				·µ»Øfalse;
+				}ï¼ˆï¼ˆelem = elem.parentNodeï¼‰&& elem.nodeType === 1ï¼‰;
+				è¿”å›false;
 			};
-		}£©£¬
+		}ï¼‰ï¼Œ
 
-		//ÔÓÏî
-		¡°target¡±£ºfunction£¨elem£©{
+		//æ‚é¡¹
+		â€œtargetâ€ï¼šfunctionï¼ˆelemï¼‰{
 			var hash = window.location && window.location.hash;
-			return hash && hash.slice£¨1£©=== elem.id;
-		}£¬
+			return hash && hash.sliceï¼ˆ1ï¼‰=== elem.id;
+		}ï¼Œ
 
-		¡°root¡±£ºfunction£¨elem£©{
+		â€œrootâ€ï¼šfunctionï¼ˆelemï¼‰{
 			return elem === docElem;
-		}£¬
+		}ï¼Œ
 
-		¡°focus¡±£ºfunction£¨elem£©{
-			return elem === document.activeElement &&£¨£¡document.hasFocus || document.hasFocus£¨£©£©&& !!£¨elem.type || elem.href || ~elem.tabIndex£©;
-		}£¬
+		â€œfocusâ€ï¼šfunctionï¼ˆelemï¼‰{
+			return elem === document.activeElement &&ï¼ˆï¼document.hasFocus || document.hasFocusï¼ˆï¼‰ï¼‰&& !!ï¼ˆelem.type || elem.href || ~elem.tabIndexï¼‰;
+		}ï¼Œ
 
-		//²¼¶ûÊôĞÔ
-		¡°enabled¡±£ºcreateDisabledPseudo£¨false£©£¬
-		¡°disabled¡±£ºcreateDisabledPseudo£¨true£©£¬
+		//å¸ƒå°”å±æ€§
+		â€œenabledâ€ï¼šcreateDisabledPseudoï¼ˆfalseï¼‰ï¼Œ
+		â€œdisabledâ€ï¼šcreateDisabledPseudoï¼ˆtrueï¼‰ï¼Œ
 
-		¡°checked¡±£ºfunction£¨elem£©{
-			//ÔÚCSS3ÖĞ£¬£ºcheckedÓ¦·µ»ØÒÑÑ¡ÖĞºÍÒÑÑ¡ÖĞµÄÔªËØ
+		â€œcheckedâ€ï¼šfunctionï¼ˆelemï¼‰{
+			//åœ¨CSS3ä¸­ï¼Œï¼šcheckedåº”è¿”å›å·²é€‰ä¸­å’Œå·²é€‰ä¸­çš„å…ƒç´ 
 			// http://www.w3.org/TR/2011/REC-css3-selectors-20110929/#checked
-			var nodeName = elem.nodeName.toLowerCase£¨£©;
-			return£¨nodeName ===¡°input¡±&& !! elem.checked£©|| £¨nodeName ===¡°option¡±&& !! elem.selected£©;
-		}£¬
+			var nodeName = elem.nodeName.toLowerCaseï¼ˆï¼‰;
+			returnï¼ˆnodeName ===â€œinputâ€&& !! elem.checkedï¼‰|| ï¼ˆnodeName ===â€œoptionâ€&& !! elem.selectedï¼‰;
+		}ï¼Œ
 
-		¡°selected¡±£ºfunction£¨elem£©{
-			//·ÃÎÊ´ËÊôĞÔ»áÄ¬ÈÏÑ¡ÖĞ
-			// SafariÖĞµÄÑ¡ÏîÕı³£¹¤×÷
-			if£¨elem.parentNode£©{
+		â€œselectedâ€ï¼šfunctionï¼ˆelemï¼‰{
+			//è®¿é—®æ­¤å±æ€§ä¼šé»˜è®¤é€‰ä¸­
+			// Safariä¸­çš„é€‰é¡¹æ­£å¸¸å·¥ä½œ
+			ifï¼ˆelem.parentNodeï¼‰{
 				elem.parentNode.selectedIndex;
 			}
 
 			return elem.selected === true;
-		}£¬
+		}ï¼Œ
 
-		//ÄÚÈİ
-		¡°empty¡±£ºfunction£¨elem£©{
+		//å†…å®¹
+		â€œemptyâ€ï¼šfunctionï¼ˆelemï¼‰{
 			// http://www.w3.org/TR/selectors/#empty-pseudo
-			//£ºemptyÓÉelement£¨1£©»òÄÚÈİ½Úµã£¨text£º3; cdata£º4; entity ref£º5£©È¡Ïû£¬
-			//µ«²»ÊÇÆäËûÈË£¨ÆÀÂÛ£º8;´¦ÀíÖ¸Áî£º7;µÈ£©
-			// nodeType <6ÓĞĞ§£¬ÒòÎªattributes£¨2£©²»ÏÔÊ¾Îª×ÓÏî
-			for£¨elem = elem.firstChild; elem; elem = elem.nextSibling£©{
-				if£¨elem.nodeType <6£©{
-					·µ»Øfalse;
+			//ï¼šemptyç”±elementï¼ˆ1ï¼‰æˆ–å†…å®¹èŠ‚ç‚¹ï¼ˆtextï¼š3; cdataï¼š4; entity refï¼š5ï¼‰å–æ¶ˆï¼Œ
+			//ä½†ä¸æ˜¯å…¶ä»–äººï¼ˆè¯„è®ºï¼š8;å¤„ç†æŒ‡ä»¤ï¼š7;ç­‰ï¼‰
+			// nodeType <6æœ‰æ•ˆï¼Œå› ä¸ºattributesï¼ˆ2ï¼‰ä¸æ˜¾ç¤ºä¸ºå­é¡¹
+			forï¼ˆelem = elem.firstChild; elem; elem = elem.nextSiblingï¼‰{
+				ifï¼ˆelem.nodeType <6ï¼‰{
+					è¿”å›false;
 				}
 			}
-			·µ»Øtrue;
-		}£¬
+			è¿”å›true;
+		}ï¼Œ
 
-		¡°parent¡±£ºfunction£¨elem£©{
-			·µ»Ø£¡Expr.pseudos [¡°empty¡±]£¨elem£©;
-		}£¬
+		â€œparentâ€ï¼šfunctionï¼ˆelemï¼‰{
+			è¿”å›ï¼Expr.pseudos [â€œemptyâ€]ï¼ˆelemï¼‰;
+		}ï¼Œ
 
-		//ÔªËØ/ÊäÈëÀàĞÍ
-		¡°header¡±£ºfunction£¨elem£©{
-			return rheader.test£¨elem.nodeName£©;
-		}£¬
+		//å…ƒç´ /è¾“å…¥ç±»å‹
+		â€œheaderâ€ï¼šfunctionï¼ˆelemï¼‰{
+			return rheader.testï¼ˆelem.nodeNameï¼‰;
+		}ï¼Œ
 
-		¡°input¡±£ºfunction£¨elem£©{
-			return rinputs.test£¨elem.nodeName£©;
-		}£¬
+		â€œinputâ€ï¼šfunctionï¼ˆelemï¼‰{
+			return rinputs.testï¼ˆelem.nodeNameï¼‰;
+		}ï¼Œ
 
-		¡°button¡±£ºfunction£¨elem£©{
-			var name = elem.nodeName.toLowerCase£¨£©;
-			·µ»ØÃû³Æ===¡°ÊäÈë¡±&& elem.type ===¡°°´Å¥¡±|| name ===¡°button¡±;
-		}£¬
+		â€œbuttonâ€ï¼šfunctionï¼ˆelemï¼‰{
+			var name = elem.nodeName.toLowerCaseï¼ˆï¼‰;
+			è¿”å›åç§°===â€œè¾“å…¥â€&& elem.type ===â€œæŒ‰é’®â€|| name ===â€œbuttonâ€;
+		}ï¼Œ
 
-		¡°text¡±£ºfunction£¨elem£©{
+		â€œtextâ€ï¼šfunctionï¼ˆelemï¼‰{
 			var attr;
-			return elem.nodeName.toLowerCase£¨£©===¡°input¡±&&
-				elem.type ===¡°text¡±&&
+			return elem.nodeName.toLowerCaseï¼ˆï¼‰===â€œinputâ€&&
+				elem.type ===â€œtextâ€&&
 
-				//Ö§³Ö£ºIE <8
-				//ĞÂµÄHTML5ÊôĞÔÖµ£¨ÀıÈç¡°ËÑË÷¡±£©Óëelem.type ===¡°text¡±Ò»Æğ³öÏÖ
-				£¨£¨attr = elem.getAttribute£¨¡°type¡±£©£©== null || attr.toLowerCase£¨£©===¡°text¡±£©;
-		}£¬
+				//æ”¯æŒï¼šIE <8
+				//æ–°çš„HTML5å±æ€§å€¼ï¼ˆä¾‹å¦‚â€œæœç´¢â€ï¼‰ä¸elem.type ===â€œtextâ€ä¸€èµ·å‡ºç°
+				ï¼ˆï¼ˆattr = elem.getAttributeï¼ˆâ€œtypeâ€ï¼‰ï¼‰== null || attr.toLowerCaseï¼ˆï¼‰===â€œtextâ€ï¼‰;
+		}ï¼Œ
 
-		//ÊÕ¼¯Î»ÖÃ
-		¡°first¡±£ºcreatePositionalPseudo£¨function£¨£©{
+		//æ”¶é›†ä½ç½®
+		â€œfirstâ€ï¼šcreatePositionalPseudoï¼ˆfunctionï¼ˆï¼‰{
 			return [0];
-		}£©£¬
+		}ï¼‰ï¼Œ
 
-		¡°last¡±£ºcreatePositionalPseudo£¨function£¨matchIndexes£¬length£©{
+		â€œlastâ€ï¼šcreatePositionalPseudoï¼ˆfunctionï¼ˆmatchIndexesï¼Œlengthï¼‰{
 			return [length  -  1];
-		}£©£¬
+		}ï¼‰ï¼Œ
 
-		¡°eq¡±£ºcreatePositionalPseudo£¨function£¨matchIndexes£¬length£¬argument£©{
-			return [²ÎÊı<0£¿argument + length£ºargument];
-		}£©£¬
+		â€œeqâ€ï¼šcreatePositionalPseudoï¼ˆfunctionï¼ˆmatchIndexesï¼Œlengthï¼Œargumentï¼‰{
+			return [å‚æ•°<0ï¼Ÿargument + lengthï¼šargument];
+		}ï¼‰ï¼Œ
 
-		¡°even¡±£ºcreatePositionalPseudo£¨function£¨matchIndexes£¬length£©{
+		â€œevenâ€ï¼šcreatePositionalPseudoï¼ˆfunctionï¼ˆmatchIndexesï¼Œlengthï¼‰{
 			var i = 0;
-			for£¨; i <length; i + = 2£©{
-				matchIndexes.push£¨i£©;
+			forï¼ˆ; i <length; i + = 2ï¼‰{
+				matchIndexes.pushï¼ˆiï¼‰;
 			}
 			return matchIndexes;
-		}£©£¬
+		}ï¼‰ï¼Œ
 
-		¡°odd¡±£ºcreatePositionalPseudo£¨function£¨matchIndexes£¬length£©{
+		â€œoddâ€ï¼šcreatePositionalPseudoï¼ˆfunctionï¼ˆmatchIndexesï¼Œlengthï¼‰{
 			var i = 1;
-			for£¨; i <length; i + = 2£©{
-				matchIndexes.push£¨i£©;
+			forï¼ˆ; i <length; i + = 2ï¼‰{
+				matchIndexes.pushï¼ˆiï¼‰;
 			}
 			return matchIndexes;
-		}£©£¬
+		}ï¼‰ï¼Œ
 
-		¡°lt¡±£ºcreatePositionalPseudo£¨function£¨matchIndexes£¬length£¬argument£©{
-			var i =²ÎÊı<0£¿²ÎÊı+³¤¶È£º²ÎÊı;
-			for£¨; --i> = 0;£©{
-				matchIndexes.push£¨i£©;
+		â€œltâ€ï¼šcreatePositionalPseudoï¼ˆfunctionï¼ˆmatchIndexesï¼Œlengthï¼Œargumentï¼‰{
+			var i =å‚æ•°<0ï¼Ÿå‚æ•°+é•¿åº¦ï¼šå‚æ•°;
+			forï¼ˆ; --i> = 0;ï¼‰{
+				matchIndexes.pushï¼ˆiï¼‰;
 			}
 			return matchIndexes;
-		}£©£¬
+		}ï¼‰ï¼Œ
 
-		¡°gt¡±£ºcreatePositionalPseudo£¨function£¨matchIndexes£¬length£¬argument£©{
-			var i =²ÎÊı<0£¿²ÎÊı+³¤¶È£º²ÎÊı;
-			for£¨; ++ i <length;£©{
-				matchIndexes.push£¨i£©;
+		â€œgtâ€ï¼šcreatePositionalPseudoï¼ˆfunctionï¼ˆmatchIndexesï¼Œlengthï¼Œargumentï¼‰{
+			var i =å‚æ•°<0ï¼Ÿå‚æ•°+é•¿åº¦ï¼šå‚æ•°;
+			forï¼ˆ; ++ i <length;ï¼‰{
+				matchIndexes.pushï¼ˆiï¼‰;
 			}
 			return matchIndexes;
-		}£©
+		}ï¼‰
 	}
 };
 
-Expr.pseudos [¡°nth¡±] = Expr.pseudos [¡°eq¡±];
+Expr.pseudos [â€œnthâ€] = Expr.pseudos [â€œeqâ€];
 
-//Ìí¼Ó°´Å¥/ÊäÈëÀàĞÍÎ±
-for£¨i in {radio£ºtrue£¬checkbox£ºtrue£¬file£ºtrue£¬password£ºtrue£¬image£ºtrue}£©{
-	Expr.pseudos [i] = createInputPseudo£¨i£©;
+//æ·»åŠ æŒ‰é’®/è¾“å…¥ç±»å‹ä¼ª
+forï¼ˆi in {radioï¼štrueï¼Œcheckboxï¼štrueï¼Œfileï¼štrueï¼Œpasswordï¼štrueï¼Œimageï¼štrue}ï¼‰{
+	Expr.pseudos [i] = createInputPseudoï¼ˆiï¼‰;
 }
-for£¨i in {submit£ºtrue£¬reset£ºtrue}£©{
-	Expr.pseudos [i] = createButtonPseudo£¨i£©;
+forï¼ˆi in {submitï¼štrueï¼Œresetï¼štrue}ï¼‰{
+	Expr.pseudos [i] = createButtonPseudoï¼ˆiï¼‰;
 }
 
-//ÓÃÓÚ´´½¨ĞÂsetFiltersµÄEasy API
-function setFilters£¨£©{}
+//ç”¨äºåˆ›å»ºæ–°setFiltersçš„Easy API
+function setFiltersï¼ˆï¼‰{}
 setFilters.prototype = Expr.filters = Expr.pseudos;
-Expr.setFilters = new setFilters£¨£©;
+Expr.setFilters = new setFiltersï¼ˆï¼‰;
 
-tokenize = Sizzle.tokenize = function£¨selector£¬parseOnly£©{
-	varÆ¥Åä£¬Æ¥Åä£¬ÁîÅÆ£¬ÀàĞÍ£¬
+tokenize = Sizzle.tokenize = functionï¼ˆselectorï¼ŒparseOnlyï¼‰{
+	varåŒ¹é…ï¼ŒåŒ¹é…ï¼Œä»¤ç‰Œï¼Œç±»å‹ï¼Œ
 		soFar, groups, preFilters,
 		cached = tokenCache[ selector + " " ];
 
@@ -2147,164 +2147,164 @@ tokenize = Sizzle.tokenize = function£¨selector£¬parseOnly£©{
 		if ( !matched || (match = rcomma.exec( soFar )) ) {
 			if ( match ) {
 				// Don't consume trailing commas as valid
-				soFar = soFar.slice£¨match [0] .length£©|| ÖÁ½ñ;
+				soFar = soFar.sliceï¼ˆmatch [0] .lengthï¼‰|| è‡³ä»Š;
 			}
-			groups.push£¨£¨tokens = []£©£©;
+			groups.pushï¼ˆï¼ˆtokens = []ï¼‰ï¼‰;
 		}
 
-		Æ¥Åä=¼Ù;
+		åŒ¹é…=å‡;
 
-		//×éºÏ
-		if£¨£¨match = rcombinators.exec£¨soFar£©£©£©{
-			matched = match.shift£¨£©;
-			tokens.push£¨{
-				¼ÛÖµ£ºÆ¥Åä£¬
-				//½«ºó´ú×éºÏ×ÓÍ¶Éäµ½¿Õ¼ä
-				type£ºmatch [0] .replace£¨rtrim£¬¡°¡±£©
-			}£©;
-			soFar = soFar.slice£¨matched.length£©;
+		//ç»„åˆ
+		ifï¼ˆï¼ˆmatch = rcombinators.execï¼ˆsoFarï¼‰ï¼‰ï¼‰{
+			matched = match.shiftï¼ˆï¼‰;
+			tokens.pushï¼ˆ{
+				ä»·å€¼ï¼šåŒ¹é…ï¼Œ
+				//å°†åä»£ç»„åˆå­æŠ•å°„åˆ°ç©ºé—´
+				typeï¼šmatch [0] .replaceï¼ˆrtrimï¼Œâ€œâ€ï¼‰
+			}ï¼‰;
+			soFar = soFar.sliceï¼ˆmatched.lengthï¼‰;
 		}
 
-		//¹ıÂËÆ÷
-		for£¨ÔÚExpr.filterÖĞÊäÈë£©{
-			if£¨£¨match = matchExpr [type] .exec£¨soFar£©£©&&£¨£¡preFilters [type] ||
-				£¨match = preFilters [type]£¨match£©£©£©£©{
-				matched = match.shift£¨£©;
-				tokens.push£¨{
-					¼ÛÖµ£ºÆ¥Åä£¬
-					ÀàĞÍ£ºÀàĞÍ£¬
-					Æ¥Åä£ºÆ¥Åä
-				}£©;
-				soFar = soFar.slice£¨matched.length£©;
+		//è¿‡æ»¤å™¨
+		forï¼ˆåœ¨Expr.filterä¸­è¾“å…¥ï¼‰{
+			ifï¼ˆï¼ˆmatch = matchExpr [type] .execï¼ˆsoFarï¼‰ï¼‰&&ï¼ˆï¼preFilters [type] ||
+				ï¼ˆmatch = preFilters [type]ï¼ˆmatchï¼‰ï¼‰ï¼‰ï¼‰{
+				matched = match.shiftï¼ˆï¼‰;
+				tokens.pushï¼ˆ{
+					ä»·å€¼ï¼šåŒ¹é…ï¼Œ
+					ç±»å‹ï¼šç±»å‹ï¼Œ
+					åŒ¹é…ï¼šåŒ¹é…
+				}ï¼‰;
+				soFar = soFar.sliceï¼ˆmatched.lengthï¼‰;
 			}
 		}
 
-		if£¨£¡matched£©{
-			´òÆÆ;
+		ifï¼ˆï¼matchedï¼‰{
+			æ‰“ç ´;
 		}
 	}
 
-	//·µ»ØÎŞĞ§¶àÓàµÄ³¤¶È
-	//Èç¹ûÎÒÃÇÖ»ÊÇ½âÎö
-	//·ñÔò£¬Å×³ö´íÎó»ò·µ»ØÁîÅÆ
-	·µ»ØparseOnly£¿
-		soFar.length£º
-		ÖÁ½ñ £¿
-			Sizzle.error£¨Ñ¡ÔñÆ÷£©£º
-			//»º´æÁîÅÆ
-			tokenCache£¨selector£¬groups£©.slice£¨0£©;
+	//è¿”å›æ— æ•ˆå¤šä½™çš„é•¿åº¦
+	//å¦‚æœæˆ‘ä»¬åªæ˜¯è§£æ
+	//å¦åˆ™ï¼ŒæŠ›å‡ºé”™è¯¯æˆ–è¿”å›ä»¤ç‰Œ
+	è¿”å›parseOnlyï¼Ÿ
+		soFar.lengthï¼š
+		è‡³ä»Š ï¼Ÿ
+			Sizzle.errorï¼ˆé€‰æ‹©å™¨ï¼‰ï¼š
+			//ç¼“å­˜ä»¤ç‰Œ
+			tokenCacheï¼ˆselectorï¼Œgroupsï¼‰.sliceï¼ˆ0ï¼‰;
 };
 
-function toSelector£¨tokens£©{
-	var i = 0£¬
-		len = tokens.length£¬
-		selector =¡°¡±;
-	for£¨; i <len; i ++£©{
+function toSelectorï¼ˆtokensï¼‰{
+	var i = 0ï¼Œ
+		len = tokens.lengthï¼Œ
+		selector =â€œâ€;
+	forï¼ˆ; i <len; i ++ï¼‰{
 		selector + = tokens [i] .value;
 	}
-	·µ»ØÑ¡ÔñÆ÷;
+	è¿”å›é€‰æ‹©å™¨;
 }
 
-function addCombinator£¨matcher£¬combinator£¬base£©{
-	var dir = combinator.dir£¬
-		skip = combinator.next£¬
-		key = skip || DIR£¬
-		checkNonElements = base && key ===¡°parentNode¡±£¬
+function addCombinatorï¼ˆmatcherï¼Œcombinatorï¼Œbaseï¼‰{
+	var dir = combinator.dirï¼Œ
+		skip = combinator.nextï¼Œ
+		key = skip || DIRï¼Œ
+		checkNonElements = base && key ===â€œparentNodeâ€ï¼Œ
 		doneName = done ++;
 
-	·µ»Øcombinator.first£¿
-		//¼ì²é×î½üµÄ×æÏÈ/Ç°Ò»¸öÔªËØ
-		function£¨elem£¬context£¬xml£©{
-			while£¨£¨elem = elem [dir]£©£©{
-				if£¨elem.nodeType === 1 || checkNonElements£©{
-					return matcher£¨elem£¬context£¬xml£©;
+	è¿”å›combinator.firstï¼Ÿ
+		//æ£€æŸ¥æœ€è¿‘çš„ç¥–å…ˆ/å‰ä¸€ä¸ªå…ƒç´ 
+		functionï¼ˆelemï¼Œcontextï¼Œxmlï¼‰{
+			whileï¼ˆï¼ˆelem = elem [dir]ï¼‰ï¼‰{
+				ifï¼ˆelem.nodeType === 1 || checkNonElementsï¼‰{
+					return matcherï¼ˆelemï¼Œcontextï¼Œxmlï¼‰;
 				}
 			}
-			·µ»Øfalse;
-		}£º
+			è¿”å›false;
+		}ï¼š
 
-		//¼ì²éËùÓĞ×æÏÈ/Ç°ÃæµÄÔªËØ
-		function£¨elem£¬context£¬xml£©{
-			var oldCache£¬uniqueCache£¬outerCache£¬
-				newCache = [dirruns£¬doneName];
+		//æ£€æŸ¥æ‰€æœ‰ç¥–å…ˆ/å‰é¢çš„å…ƒç´ 
+		functionï¼ˆelemï¼Œcontextï¼Œxmlï¼‰{
+			var oldCacheï¼ŒuniqueCacheï¼ŒouterCacheï¼Œ
+				newCache = [dirrunsï¼ŒdoneName];
 
-			//ÎÒÃÇÎŞ·¨ÔÚXML½ÚµãÉÏÉèÖÃÈÎÒâÊı¾İ£¬Òò´ËËüÃÇÎŞ·¨´Ó×éºÏ»º´æÖĞÊÜÒæ
-			if£¨xml£©{
-				while£¨£¨elem = elem [dir]£©£©{
-					if£¨elem.nodeType === 1 || checkNonElements£©{
-						if£¨matcher£¨elem£¬context£¬xml£©£©{
-							·µ»Øtrue;
+			//æˆ‘ä»¬æ— æ³•åœ¨XMLèŠ‚ç‚¹ä¸Šè®¾ç½®ä»»æ„æ•°æ®ï¼Œå› æ­¤å®ƒä»¬æ— æ³•ä»ç»„åˆç¼“å­˜ä¸­å—ç›Š
+			ifï¼ˆxmlï¼‰{
+				whileï¼ˆï¼ˆelem = elem [dir]ï¼‰ï¼‰{
+					ifï¼ˆelem.nodeType === 1 || checkNonElementsï¼‰{
+						ifï¼ˆmatcherï¼ˆelemï¼Œcontextï¼Œxmlï¼‰ï¼‰{
+							è¿”å›true;
 						}
 					}
 				}
 			} else {
-				while£¨£¨elem = elem [dir]£©£©{
-					if£¨elem.nodeType === 1 || checkNonElements£©{
-						outerCache = elem [expando] || £¨elem [expando] = {}£©;
+				whileï¼ˆï¼ˆelem = elem [dir]ï¼‰ï¼‰{
+					ifï¼ˆelem.nodeType === 1 || checkNonElementsï¼‰{
+						outerCache = elem [expando] || ï¼ˆelem [expando] = {}ï¼‰;
 
-						//Ö§³Ö£ºIE <9
-						//µÖÓù¿ËÂ¡µÄattroperties£¨jQuery gh-1709£©
-						uniqueCache = outerCache [elem.uniqueID] || £¨outerCache [elem.uniqueID] = {}£©;
+						//æ”¯æŒï¼šIE <9
+						//æŠµå¾¡å…‹éš†çš„attropertiesï¼ˆjQuery gh-1709ï¼‰
+						uniqueCache = outerCache [elem.uniqueID] || ï¼ˆouterCache [elem.uniqueID] = {}ï¼‰;
 
-						if£¨skip && skip === elem.nodeName.toLowerCase£¨£©£©{
+						ifï¼ˆskip && skip === elem.nodeName.toLowerCaseï¼ˆï¼‰ï¼‰{
 							elem = elem [dir] || ELEM;
-						} else if£¨£¨oldCache = uniqueCache [key]£©&&
-							oldCache [0] === dirruns && oldCache [1] === doneName£©{
+						} else ifï¼ˆï¼ˆoldCache = uniqueCache [key]ï¼‰&&
+							oldCache [0] === dirruns && oldCache [1] === doneNameï¼‰{
 
-							//·ÖÅä¸ønewCache£¬ÒÔ±ã½á¹û·´Ïò´«²¥µ½ÒÔÇ°µÄÔªËØ
-							return£¨newCache [2] = oldCache [2]£©;
+							//åˆ†é…ç»™newCacheï¼Œä»¥ä¾¿ç»“æœåå‘ä¼ æ’­åˆ°ä»¥å‰çš„å…ƒç´ 
+							returnï¼ˆnewCache [2] = oldCache [2]ï¼‰;
 						} else {
-							//ÖØÓÃnewcache£¬Ê¹½á¹û·´Ïò´«²¥µ½Ç°ÃæµÄÔªËØ
+							//é‡ç”¨newcacheï¼Œä½¿ç»“æœåå‘ä¼ æ’­åˆ°å‰é¢çš„å…ƒç´ 
 							uniqueCache [key] = newCache;
 
-							//Ò»³¡±ÈÈüÒâÎ¶×ÅÎÒÃÇÒÑ¾­Íê³ÉÁË; Ê§°ÜÒâÎ¶×ÅÎÒÃÇ±ØĞë¼ÌĞø¼ì²é
-							if£¨£¨newCache [2] = matcher£¨elem£¬context£¬xml£©£©£©{
-								·µ»Øtrue;
+							//ä¸€åœºæ¯”èµ›æ„å‘³ç€æˆ‘ä»¬å·²ç»å®Œæˆäº†; å¤±è´¥æ„å‘³ç€æˆ‘ä»¬å¿…é¡»ç»§ç»­æ£€æŸ¥
+							ifï¼ˆï¼ˆnewCache [2] = matcherï¼ˆelemï¼Œcontextï¼Œxmlï¼‰ï¼‰ï¼‰{
+								è¿”å›true;
 							}
 						}
 					}
 				}
 			}
-			·µ»Øfalse;
+			è¿”å›false;
 		};
 }
 
-function elementMatcher£¨matchers£©{
-	return matchers.length> 1£¿
-		function£¨elem£¬context£¬xml£©{
+function elementMatcherï¼ˆmatchersï¼‰{
+	return matchers.length> 1ï¼Ÿ
+		functionï¼ˆelemï¼Œcontextï¼Œxmlï¼‰{
 			var i = matchers.length;
-			µ±ÎÒ -  £© {
-				if£¨£¡matchers [i]£¨elem£¬context£¬xml£©£©{
-					·µ»Øfalse;
+			å½“æˆ‘ -  ï¼‰ {
+				ifï¼ˆï¼matchers [i]ï¼ˆelemï¼Œcontextï¼Œxmlï¼‰ï¼‰{
+					è¿”å›false;
 				}
 			}
-			·µ»Øtrue;
-		}£º
-		Æ¥ÅäÆ÷[0];
+			è¿”å›true;
+		}ï¼š
+		åŒ¹é…å™¨[0];
 }
 
-function multipleContexts£¨selector£¬contexts£¬results£©{
-	var i = 0£¬
+function multipleContextsï¼ˆselectorï¼Œcontextsï¼Œresultsï¼‰{
+	var i = 0ï¼Œ
 		len = contexts.length;
-	for£¨; i <len; i ++£©{
-		Sizzle£¨Ñ¡ÔñÆ÷£¬contexts [i]£¬½á¹û£©;
+	forï¼ˆ; i <len; i ++ï¼‰{
+		Sizzleï¼ˆé€‰æ‹©å™¨ï¼Œcontexts [i]ï¼Œç»“æœï¼‰;
 	}
-	·µ»Ø½á¹û;
+	è¿”å›ç»“æœ;
 }
 
-function condense£¨unmatched£¬map£¬filter£¬context£¬xml£©{
-	var elem£¬
-		newUnmatched = []£¬
-		i = 0£¬
-		len = unmatched.length£¬
-		mapped = map£¡= null;
+function condenseï¼ˆunmatchedï¼Œmapï¼Œfilterï¼Œcontextï¼Œxmlï¼‰{
+	var elemï¼Œ
+		newUnmatched = []ï¼Œ
+		i = 0ï¼Œ
+		len = unmatched.lengthï¼Œ
+		mapped = mapï¼= null;
 
-	for£¨; i <len; i ++£©{
-		if£¨£¨elem = unmatched [i]£©£©{
-			if£¨£¡filter || filter£¨elem£¬context£¬xml£©£©{
-				newUnmatched.push£¨elem£©;
-				if£¨mapped£©{
-					map.push£¨i£©;
+	forï¼ˆ; i <len; i ++ï¼‰{
+		ifï¼ˆï¼ˆelem = unmatched [i]ï¼‰ï¼‰{
+			ifï¼ˆï¼filter || filterï¼ˆelemï¼Œcontextï¼Œxmlï¼‰ï¼‰{
+				newUnmatched.pushï¼ˆelemï¼‰;
+				ifï¼ˆmappedï¼‰{
+					map.pushï¼ˆiï¼‰;
 				}
 			}
 		}
@@ -2313,125 +2313,125 @@ function condense£¨unmatched£¬map£¬filter£¬context£¬xml£©{
 	return newUnmatched;
 }
 
-function setMatcher£¨preFilter£¬selector£¬matcher£¬postFilter£¬postFinder£¬postSelector£©{
-	if£¨postFilter &&£¡postFilter [expando]£©{
-		postFilter = setMatcher£¨postFilter£©;
+function setMatcherï¼ˆpreFilterï¼Œselectorï¼Œmatcherï¼ŒpostFilterï¼ŒpostFinderï¼ŒpostSelectorï¼‰{
+	ifï¼ˆpostFilter &&ï¼postFilter [expando]ï¼‰{
+		postFilter = setMatcherï¼ˆpostFilterï¼‰;
 	}
-	if£¨postFinder &&£¡postFinder [expando]£©{
-		postFinder = setMatcher£¨postFinder£¬postSelector£©;
+	ifï¼ˆpostFinder &&ï¼postFinder [expando]ï¼‰{
+		postFinder = setMatcherï¼ˆpostFinderï¼ŒpostSelectorï¼‰;
 	}
-	return markFunction£¨function£¨seed£¬results£¬context£¬xml£©{
-		var temp£¬i£¬elem£¬
-			preMap = []£¬
-			postMap = []£¬
-			preexisting = results.length£¬
+	return markFunctionï¼ˆfunctionï¼ˆseedï¼Œresultsï¼Œcontextï¼Œxmlï¼‰{
+		var tempï¼Œiï¼Œelemï¼Œ
+			preMap = []ï¼Œ
+			postMap = []ï¼Œ
+			preexisting = results.lengthï¼Œ
 
-			//´ÓÖÖ×Ó»òÉÏÏÂÎÄÖĞ»ñÈ¡³õÊ¼ÔªËØ
-			elems =ÖÖ×Ó|| multipleContexts£¨selector ||¡°*¡±£¬context.nodeType£¿[context]£ºcontext£¬[]£©£¬
+			//ä»ç§å­æˆ–ä¸Šä¸‹æ–‡ä¸­è·å–åˆå§‹å…ƒç´ 
+			elems =ç§å­|| multipleContextsï¼ˆselector ||â€œ*â€ï¼Œcontext.nodeTypeï¼Ÿ[context]ï¼šcontextï¼Œ[]ï¼‰ï¼Œ
 
-			// Prefilter»ñÈ¡Æ¥ÅäÆ÷ÊäÈë£¬±£ÁôÖÖ×Ó½á¹ûÍ¬²½µÄÓ³Éä
-			matcherIn = preFilter &&£¨seed ||£¡selector£©£¿
-				Ñ¹Ëõ£¨elems£¬preMap£¬preFilter£¬context£¬xml£©£º
-				elemsµÄ£¬
+			// Prefilterè·å–åŒ¹é…å™¨è¾“å…¥ï¼Œä¿ç•™ç§å­ç»“æœåŒæ­¥çš„æ˜ å°„
+			matcherIn = preFilter &&ï¼ˆseed ||ï¼selectorï¼‰ï¼Ÿ
+				å‹ç¼©ï¼ˆelemsï¼ŒpreMapï¼ŒpreFilterï¼Œcontextï¼Œxmlï¼‰ï¼š
+				elemsçš„ï¼Œ
 
-			matcherOut = matcher£¿
-				//Èç¹ûÎÒÃÇÓĞpostFinder£¬»ò¹ıÂËµÄÖÖ×Ó£¬»ò·ÇÖÖ×ÓpostFilter»òÔ¤ÏÈ´æÔÚµÄ½á¹û£¬
-				postFinder || £¨ÖÖ×Ó£¿preFilter£ºpreexisting || postFilter£©£¿
+			matcherOut = matcherï¼Ÿ
+				//å¦‚æœæˆ‘ä»¬æœ‰postFinderï¼Œæˆ–è¿‡æ»¤çš„ç§å­ï¼Œæˆ–éç§å­postFilteræˆ–é¢„å…ˆå­˜åœ¨çš„ç»“æœï¼Œ
+				postFinder || ï¼ˆç§å­ï¼ŸpreFilterï¼špreexisting || postFilterï¼‰ï¼Ÿ
 
-					// ...ÖĞ¼ä´¦ÀíÊÇ±ØÒªµÄ
-					[]£º
+					// ...ä¸­é—´å¤„ç†æ˜¯å¿…è¦çš„
+					[]ï¼š
 
-					// ...·ñÔòÖ±½ÓÊ¹ÓÃ½á¹û
-					½á¹û£º
+					// ...å¦åˆ™ç›´æ¥ä½¿ç”¨ç»“æœ
+					ç»“æœï¼š
 				matcherIn;
 
-		//²éÕÒÖ÷ÒªÆ¥ÅäÏî
-		if£¨matcher£©{
-			matcher£¨matcherIn£¬matcherOut£¬context£¬xml£©;
+		//æŸ¥æ‰¾ä¸»è¦åŒ¹é…é¡¹
+		ifï¼ˆmatcherï¼‰{
+			matcherï¼ˆmatcherInï¼ŒmatcherOutï¼Œcontextï¼Œxmlï¼‰;
 		}
 
-		//Ó¦ÓÃpostFilter
-		if£¨postFilter£©{
-			temp = condense£¨matcherOut£¬postMap£©;
-			postFilter£¨temp£¬[]£¬context£¬xml£©;
+		//åº”ç”¨postFilter
+		ifï¼ˆpostFilterï¼‰{
+			temp = condenseï¼ˆmatcherOutï¼ŒpostMapï¼‰;
+			postFilterï¼ˆtempï¼Œ[]ï¼Œcontextï¼Œxmlï¼‰;
 
-			//Í¨¹ı½«Ê§°ÜÔªËØÒÆ»ØmatcherInÀ´Ê¹ÆäÊ§°Ü
+			//é€šè¿‡å°†å¤±è´¥å…ƒç´ ç§»å›matcherInæ¥ä½¿å…¶å¤±è´¥
 			i = temp.length;
-			µ±ÎÒ -  £© {
-				if£¨£¨elem = temp [i]£©£©{
-					matcherOut [postMap [i]] =£¡£¨matcherIn [postMap [i]] = elem£©;
+			å½“æˆ‘ -  ï¼‰ {
+				ifï¼ˆï¼ˆelem = temp [i]ï¼‰ï¼‰{
+					matcherOut [postMap [i]] =ï¼ï¼ˆmatcherIn [postMap [i]] = elemï¼‰;
 				}
 			}
 		}
 
-		if£¨seed£©{
-			if£¨postFinder || preFilter£©{
-				if£¨postFinder£©{
-					//Í¨¹ı½«´ËÖĞ¼äÏîÑ¹Ëõµ½postFinderÉÏÏÂÎÄÖĞÀ´»ñÈ¡×îÖÕµÄmatcherOut
+		ifï¼ˆseedï¼‰{
+			ifï¼ˆpostFinder || preFilterï¼‰{
+				ifï¼ˆpostFinderï¼‰{
+					//é€šè¿‡å°†æ­¤ä¸­é—´é¡¹å‹ç¼©åˆ°postFinderä¸Šä¸‹æ–‡ä¸­æ¥è·å–æœ€ç»ˆçš„matcherOut
 					temp = [];
 					i = matcherOut.length;
-					µ±ÎÒ -  £© {
-						if£¨£¨elem = matcherOut [i]£©£©{
-							//»Ö¸´matcherInÒòÎªelem»¹²»ÊÇ×îÖÕÆ¥Åä
-							temp.push£¨£¨matcherIn [i] = elem£©£©;
+					å½“æˆ‘ -  ï¼‰ {
+						ifï¼ˆï¼ˆelem = matcherOut [i]ï¼‰ï¼‰{
+							//æ¢å¤matcherInå› ä¸ºelemè¿˜ä¸æ˜¯æœ€ç»ˆåŒ¹é…
+							temp.pushï¼ˆï¼ˆmatcherIn [i] = elemï¼‰ï¼‰;
 						}
 					}
-					postFinder£¨null£¬£¨matcherOut = []£©£¬temp£¬xml£©;
+					postFinderï¼ˆnullï¼Œï¼ˆmatcherOut = []ï¼‰ï¼Œtempï¼Œxmlï¼‰;
 				}
 
-				//½«Æ¥ÅäµÄÔªËØ´ÓÖÖ×ÓÒÆ¶¯µ½½á¹ûÒÔÊ¹ËüÃÇ±£³ÖÍ¬²½
+				//å°†åŒ¹é…çš„å…ƒç´ ä»ç§å­ç§»åŠ¨åˆ°ç»“æœä»¥ä½¿å®ƒä»¬ä¿æŒåŒæ­¥
 				i = matcherOut.length;
-				µ±ÎÒ -  £© {
-					if£¨£¨elem = matcherOut [i]£©&&
-						£¨temp = postFinder£¿indexOf£¨seed£¬elem£©£ºpreMap [i]£©> -1£©{
+				å½“æˆ‘ -  ï¼‰ {
+					ifï¼ˆï¼ˆelem = matcherOut [i]ï¼‰&&
+						ï¼ˆtemp = postFinderï¼ŸindexOfï¼ˆseedï¼Œelemï¼‰ï¼špreMap [i]ï¼‰> -1ï¼‰{
 
-						seed [temp] =£¡£¨results [temp] = elem£©;
+						seed [temp] =ï¼ï¼ˆresults [temp] = elemï¼‰;
 					}
 				}
 			}
 
-		//Èç¹ûÒÑ¶¨Òå£¬ÔòÍ¨¹ıpostFinderÏò½á¹ûÖĞÌí¼ÓÔªËØ
+		//å¦‚æœå·²å®šä¹‰ï¼Œåˆ™é€šè¿‡postFinderå‘ç»“æœä¸­æ·»åŠ å…ƒç´ 
 		} else {
-			matcherOut =Å¨Ëõ£¨
-				matcherOut ===½á¹û£¿
-					matcherOut.splice£¨preexisting£¬matcherOut.length£©£º
+			matcherOut =æµ“ç¼©ï¼ˆ
+				matcherOut ===ç»“æœï¼Ÿ
+					matcherOut.spliceï¼ˆpreexistingï¼ŒmatcherOut.lengthï¼‰ï¼š
 					matcherOut
-			£©;
-			if£¨postFinder£©{
-				postFinder£¨null£¬results£¬matcherOut£¬xml£©;
+			ï¼‰;
+			ifï¼ˆpostFinderï¼‰{
+				postFinderï¼ˆnullï¼Œresultsï¼ŒmatcherOutï¼Œxmlï¼‰;
 			} else {
-				push.apply£¨results£¬matcherOut£©;
+				push.applyï¼ˆresultsï¼ŒmatcherOutï¼‰;
 			}
 		}
-	}£©;
+	}ï¼‰;
 }
 
-function matcherFromTokens£¨tokens£©{
-	var checkContext£¬matcher£¬j£¬
-		len = tokens.length£¬
-		leadingRelative = Expr.relative [tokens [0] .type]£¬
-		implicitRelative = leadingRelative || Expr.relative [¡°¡±]£¬
-		ÎÒ=ÁìÏÈÏà¶Ô£¿1£º0£¬
+function matcherFromTokensï¼ˆtokensï¼‰{
+	var checkContextï¼Œmatcherï¼Œjï¼Œ
+		len = tokens.lengthï¼Œ
+		leadingRelative = Expr.relative [tokens [0] .type]ï¼Œ
+		implicitRelative = leadingRelative || Expr.relative [â€œâ€]ï¼Œ
+		æˆ‘=é¢†å…ˆç›¸å¯¹ï¼Ÿ1ï¼š0ï¼Œ
 
-		//»ù´¡Æ¥ÅäÆ÷È·±£ÔªËØ¿É´Ó¶¥²ãÉÏÏÂÎÄ·ÃÎÊ
-		matchContext = addCombinator£¨function£¨elem£©{
+		//åŸºç¡€åŒ¹é…å™¨ç¡®ä¿å…ƒç´ å¯ä»é¡¶å±‚ä¸Šä¸‹æ–‡è®¿é—®
+		matchContext = addCombinatorï¼ˆfunctionï¼ˆelemï¼‰{
 			return elem === checkContext;
-		}£¬implicitRelative£¬true£©£¬
-		matchAnyContext = addCombinator£¨function£¨elem£©{
-			return indexOf£¨checkContext£¬elem£©> -1;
-		}£¬implicitRelative£¬true£©£¬
-		matchers = [function£¨elem£¬context£¬xml£©{
-			var ret =£¨£¡leadingRelative &&£¨xml || context£¡== outermostContext£©£©|| £¨
-				£¨checkContext = context£©.nodeType£¿
-					matchContext£¨elem£¬context£¬xml£©£º
-					matchAnyContext£¨elem£¬context£¬xml£©£©;
-			//±ÜÃâ¹ÒÔÚÔªËØÉÏ£¨ÎÊÌâ££299£©
+		}ï¼ŒimplicitRelativeï¼Œtrueï¼‰ï¼Œ
+		matchAnyContext = addCombinatorï¼ˆfunctionï¼ˆelemï¼‰{
+			return indexOfï¼ˆcheckContextï¼Œelemï¼‰> -1;
+		}ï¼ŒimplicitRelativeï¼Œtrueï¼‰ï¼Œ
+		matchers = [functionï¼ˆelemï¼Œcontextï¼Œxmlï¼‰{
+			var ret =ï¼ˆï¼leadingRelative &&ï¼ˆxml || contextï¼== outermostContextï¼‰ï¼‰|| ï¼ˆ
+				ï¼ˆcheckContext = contextï¼‰.nodeTypeï¼Ÿ
+					matchContextï¼ˆelemï¼Œcontextï¼Œxmlï¼‰ï¼š
+					matchAnyContextï¼ˆelemï¼Œcontextï¼Œxmlï¼‰ï¼‰;
+			//é¿å…æŒ‚åœ¨å…ƒç´ ä¸Šï¼ˆé—®é¢˜ï¼ƒ299ï¼‰
 			checkContext = null;
-			·µ»Ø;
+			è¿”å›;
 		}];
 
-	for£¨; i <len; i ++£©{
-		if£¨£¨matcher = Expr.relative [tokens [i] .type]£©£©{
+	forï¼ˆ; i <len; i ++ï¼‰{
+		ifï¼ˆï¼ˆmatcher = Expr.relative [tokens [i] .type]ï¼‰ï¼‰{
 			matchers = [ addCombinator(elementMatcher( matchers ), matcher) ];
 		} else {
 			matcher = Expr.filter[ tokens[i].type ].apply( null, tokens[i].matches );
@@ -2446,318 +2446,318 @@ function matcherFromTokens£¨tokens£©{
 					}
 				}
 				return setMatcher(
-					i> 1 && elementMatcher£¨matchers£©£¬
-					i> 1 && toSelector£¨
-						//Èç¹ûÇ°ÃæµÄ±ê¼ÇÊÇºó´ú×éºÏ×Ó£¬Ôò²åÈëÒ»¸öÒşÊ½µÄÈÎÒâÔªËØ`*`
-						tokens.slice£¨0£¬i  -  1£©.concat£¨{value£ºtokens [i  -  2] .type ===¡°¡±£¿¡°*¡±£º¡°¡±}£©
-					£©.replace£¨rtrim£¬¡°$ 1¡±£©£¬
-					Æ¥Åä£¬
-					ÎÒ<j && matcherFromTokens£¨tokens.slice£¨i£¬j£©£©£¬
-					j <len && matcherFromTokens£¨£¨tokens = tokens.slice£¨j£©£©£©£¬
-					j <len && toSelector£¨ÁîÅÆ£©
-				£©;
+					i> 1 && elementMatcherï¼ˆmatchersï¼‰ï¼Œ
+					i> 1 && toSelectorï¼ˆ
+						//å¦‚æœå‰é¢çš„æ ‡è®°æ˜¯åä»£ç»„åˆå­ï¼Œåˆ™æ’å…¥ä¸€ä¸ªéšå¼çš„ä»»æ„å…ƒç´ `*`
+						tokens.sliceï¼ˆ0ï¼Œi  -  1ï¼‰.concatï¼ˆ{valueï¼štokens [i  -  2] .type ===â€œâ€ï¼Ÿâ€œ*â€ï¼šâ€œâ€}ï¼‰
+					ï¼‰.replaceï¼ˆrtrimï¼Œâ€œ$ 1â€ï¼‰ï¼Œ
+					åŒ¹é…ï¼Œ
+					æˆ‘<j && matcherFromTokensï¼ˆtokens.sliceï¼ˆiï¼Œjï¼‰ï¼‰ï¼Œ
+					j <len && matcherFromTokensï¼ˆï¼ˆtokens = tokens.sliceï¼ˆjï¼‰ï¼‰ï¼‰ï¼Œ
+					j <len && toSelectorï¼ˆä»¤ç‰Œï¼‰
+				ï¼‰;
 			}
-			matchers.push£¨matcher£©;
+			matchers.pushï¼ˆmatcherï¼‰;
 		}
 	}
 
-	return elementMatcher£¨matchers£©;
+	return elementMatcherï¼ˆmatchersï¼‰;
 }
 
-function matcherFromGroupMatchers£¨elementMatchers£¬setMatchers£©{
-	var bySet = setMatchers.length> 0£¬
-		byElement = elementMatchers.length> 0£¬
-		superMatcher = function£¨seed£¬context£¬xml£¬results£¬outermost£©{
-			var elem£¬j£¬matcher£¬
-				matchedCount = 0£¬
-				i =¡°0¡±£¬
-				unmatched = seed && []£¬
-				setMatched = []£¬
-				contextBackup = outermostContext£¬
-				//ÎÒÃÇ±ØĞëÊ¼ÖÕÓµÓĞÖÖ×ÓÔªËØ»ò×îÍâ²ãµÄÉÏÏÂÎÄ
-				elems =ÖÖ×Ó|| byElement && Expr.find [¡°TAG¡±]£¨¡°*¡±£¬×îÍâ²ã£©£¬
-				//Ê¹ÓÃÕûÊıdirruns iffÕâÊÇ×îÍâ²ãµÄÆ¥ÅäÆ÷
-				dirrunsUnique =£¨dirruns + = contextBackup == null£¿1£ºMath.random£¨£©|| 0.1£©£¬
+function matcherFromGroupMatchersï¼ˆelementMatchersï¼ŒsetMatchersï¼‰{
+	var bySet = setMatchers.length> 0ï¼Œ
+		byElement = elementMatchers.length> 0ï¼Œ
+		superMatcher = functionï¼ˆseedï¼Œcontextï¼Œxmlï¼Œresultsï¼Œoutermostï¼‰{
+			var elemï¼Œjï¼Œmatcherï¼Œ
+				matchedCount = 0ï¼Œ
+				i =â€œ0â€ï¼Œ
+				unmatched = seed && []ï¼Œ
+				setMatched = []ï¼Œ
+				contextBackup = outermostContextï¼Œ
+				//æˆ‘ä»¬å¿…é¡»å§‹ç»ˆæ‹¥æœ‰ç§å­å…ƒç´ æˆ–æœ€å¤–å±‚çš„ä¸Šä¸‹æ–‡
+				elems =ç§å­|| byElement && Expr.find [â€œTAGâ€]ï¼ˆâ€œ*â€ï¼Œæœ€å¤–å±‚ï¼‰ï¼Œ
+				//ä½¿ç”¨æ•´æ•°dirruns iffè¿™æ˜¯æœ€å¤–å±‚çš„åŒ¹é…å™¨
+				dirrunsUnique =ï¼ˆdirruns + = contextBackup == nullï¼Ÿ1ï¼šMath.randomï¼ˆï¼‰|| 0.1ï¼‰ï¼Œ
 				len = elems.length;
 
-			if£¨outermost£©{
-				outermostContext = context === document || ÉÏÏÂÎÄ|| ×îÍâ²ã;
+			ifï¼ˆoutermostï¼‰{
+				outermostContext = context === document || ä¸Šä¸‹æ–‡|| æœ€å¤–å±‚;
 			}
 
-			//Ìí¼Ó½«elementMatchersÖ±½Ó´«µİ¸ø½á¹ûµÄÔªËØ
-			//Ö§³Ö£ºIE <9£¬Safari
-			//Í¨¹ıidÈİÈÌNodeListÊôĞÔ£¨IE£º¡°length¡±; Safari£º<number>£©Æ¥ÅäÔªËØ
-			for£¨; i£¡== len &&£¨elem = elems [i]£©£¡= null; i ++£©{
-				if£¨byElement && elem£©{
+			//æ·»åŠ å°†elementMatchersç›´æ¥ä¼ é€’ç»™ç»“æœçš„å…ƒç´ 
+			//æ”¯æŒï¼šIE <9ï¼ŒSafari
+			//é€šè¿‡idå®¹å¿NodeListå±æ€§ï¼ˆIEï¼šâ€œlengthâ€; Safariï¼š<number>ï¼‰åŒ¹é…å…ƒç´ 
+			forï¼ˆ; iï¼== len &&ï¼ˆelem = elems [i]ï¼‰ï¼= null; i ++ï¼‰{
+				ifï¼ˆbyElement && elemï¼‰{
 					j = 0;
-					if£¨£¡context && elem.ownerDocument£¡== document£©{
-						setDocument£¨elem£©;
-						xml =£¡documentIsHTML;
+					ifï¼ˆï¼context && elem.ownerDocumentï¼== documentï¼‰{
+						setDocumentï¼ˆelemï¼‰;
+						xml =ï¼documentIsHTML;
 					}
-					while£¨£¨matcher = elementMatchers [j ++]£©£©{
-						if£¨matcher£¨elem£¬context || document£¬xml£©£©{
-							results.push£¨elem£©;
-							´òÆÆ;
+					whileï¼ˆï¼ˆmatcher = elementMatchers [j ++]ï¼‰ï¼‰{
+						ifï¼ˆmatcherï¼ˆelemï¼Œcontext || documentï¼Œxmlï¼‰ï¼‰{
+							results.pushï¼ˆelemï¼‰;
+							æ‰“ç ´;
 						}
 					}
-					if£¨outermost£©{
+					ifï¼ˆoutermostï¼‰{
 						dirruns = dirrunsUnique;
 					}
 				}
 
-				//¸ú×ÙÉèÖÃ¹ıÂËÆ÷µÄ²»Æ¥ÅäÔªËØ
-				if£¨bySet£©{
-					//ËûÃÇ½«¾­ÀúËùÓĞ¿ÉÄÜµÄÆ¥Åä
-					if£¨£¨elem =£¡matcher && elem£©£©{
+				//è·Ÿè¸ªè®¾ç½®è¿‡æ»¤å™¨çš„ä¸åŒ¹é…å…ƒç´ 
+				ifï¼ˆbySetï¼‰{
+					//ä»–ä»¬å°†ç»å†æ‰€æœ‰å¯èƒ½çš„åŒ¹é…
+					ifï¼ˆï¼ˆelem =ï¼matcher && elemï¼‰ï¼‰{
 						matchedCount--;
 					}
 
-					//ÎªÃ¿¸öÔªËØÑÓ³¤Êı×é£¬Æ¥ÅäÓë·ñ
-					if£¨seed£©{
-						unmatched.push£¨elem£©;
+					//ä¸ºæ¯ä¸ªå…ƒç´ å»¶é•¿æ•°ç»„ï¼ŒåŒ¹é…ä¸å¦
+					ifï¼ˆseedï¼‰{
+						unmatched.pushï¼ˆelemï¼‰;
 					}
 				}
 			}
 
-			//`i`ÏÖÔÚÊÇÉÏÃæ·ÃÎÊ¹ıµÄÔªËØµÄÊıÁ¿£¬²¢½«ËüÌí¼Óµ½`matchedCount`
-			//Ê¹ºóÕßÎª·Ç¸ºÊı¡£
+			//`i`ç°åœ¨æ˜¯ä¸Šé¢è®¿é—®è¿‡çš„å…ƒç´ çš„æ•°é‡ï¼Œå¹¶å°†å®ƒæ·»åŠ åˆ°`matchedCount`
+			//ä½¿åè€…ä¸ºéè´Ÿæ•°ã€‚
 			matchedCount + = i;
 
-			//½«¼¯ºÏ¹ıÂËÆ÷Ó¦ÓÃÓÚ²»Æ¥ÅäµÄÔªËØ
-			//×¢Òâ£ºÈç¹ûÃ»ÓĞ²»Æ¥ÅäµÄÔªËØ£¨¼´`matchedCount`£©£¬¿ÉÒÔÌø¹ıÕâ¸ö
-			//µÈÓÚ`i`£©£¬³ı·ÇÎÒÃÇÃ»ÓĞ·ÃÎÊÉÏÃæÑ­»·ÖĞµÄ_any_ÔªËØ£¬ÒòÎªÎÒÃÇÓĞ
-			//Ã»ÓĞÔªËØÆ¥Åä£¬Ã»ÓĞÖÖ×Ó¡£
-			//Ôö¼ÓÒ»¸ö³õÊ¼×Ö·û´®¡°0¡±`i`ÔÊĞí`i`Ö»±£ÁôÒ»¸ö×Ö·û´®
-			// case£¬Õâ½«µ¼ÖÂ¡°00¡±`matchedCount`Óë`i`²»Í¬£¬µ«Ò²ÊÇ
-			//Êı×ÖÎªÁã
-			if£¨bySet && i£¡== matchedCount£©{
+			//å°†é›†åˆè¿‡æ»¤å™¨åº”ç”¨äºä¸åŒ¹é…çš„å…ƒç´ 
+			//æ³¨æ„ï¼šå¦‚æœæ²¡æœ‰ä¸åŒ¹é…çš„å…ƒç´ ï¼ˆå³`matchedCount`ï¼‰ï¼Œå¯ä»¥è·³è¿‡è¿™ä¸ª
+			//ç­‰äº`i`ï¼‰ï¼Œé™¤éæˆ‘ä»¬æ²¡æœ‰è®¿é—®ä¸Šé¢å¾ªç¯ä¸­çš„_any_å…ƒç´ ï¼Œå› ä¸ºæˆ‘ä»¬æœ‰
+			//æ²¡æœ‰å…ƒç´ åŒ¹é…ï¼Œæ²¡æœ‰ç§å­ã€‚
+			//å¢åŠ ä¸€ä¸ªåˆå§‹å­—ç¬¦ä¸²â€œ0â€`i`å…è®¸`i`åªä¿ç•™ä¸€ä¸ªå­—ç¬¦ä¸²
+			// caseï¼Œè¿™å°†å¯¼è‡´â€œ00â€`matchedCount`ä¸`i`ä¸åŒï¼Œä½†ä¹Ÿæ˜¯
+			//æ•°å­—ä¸ºé›¶
+			ifï¼ˆbySet && iï¼== matchedCountï¼‰{
 				j = 0;
-				while£¨£¨matcher = setMatchers [j ++]£©£©{
-					matcher£¨²»Æ¥Åä£¬setMatched£¬context£¬xml£©;
+				whileï¼ˆï¼ˆmatcher = setMatchers [j ++]ï¼‰ï¼‰{
+					matcherï¼ˆä¸åŒ¹é…ï¼ŒsetMatchedï¼Œcontextï¼Œxmlï¼‰;
 				}
 
-				if£¨seed£©{
-					//ÖØĞÂÕûºÏÔªËØÆ¥ÅäÒÔÏû³ıÅÅĞòµÄĞèÒª
-					if£¨matchedCount> 0£©{
-						µ±ÎÒ -  £© {
-							if£¨£¡£¨unmatched [i] || setMatched [i]£©£©{
-								setMatched [i] = pop.call£¨results£©;
+				ifï¼ˆseedï¼‰{
+					//é‡æ–°æ•´åˆå…ƒç´ åŒ¹é…ä»¥æ¶ˆé™¤æ’åºçš„éœ€è¦
+					ifï¼ˆmatchedCount> 0ï¼‰{
+						å½“æˆ‘ -  ï¼‰ {
+							ifï¼ˆï¼ï¼ˆunmatched [i] || setMatched [i]ï¼‰ï¼‰{
+								setMatched [i] = pop.callï¼ˆresultsï¼‰;
 							}
 						}
 					}
 
-					//¶ªÆúË÷ÒıÕ¼Î»·ûÖµÒÔ½ö»ñÈ¡Êµ¼ÊÆ¥Åä
-					setMatched = condense£¨setMatched£©;
+					//ä¸¢å¼ƒç´¢å¼•å ä½ç¬¦å€¼ä»¥ä»…è·å–å®é™…åŒ¹é…
+					setMatched = condenseï¼ˆsetMatchedï¼‰;
 				}
 
-				//Îª½á¹ûÌí¼ÓÆ¥ÅäÏî
-				push.apply£¨results£¬setMatched£©;
+				//ä¸ºç»“æœæ·»åŠ åŒ¹é…é¡¹
+				push.applyï¼ˆresultsï¼ŒsetMatchedï¼‰;
 
-				//ÎŞºË¼¯Æ¥Åä³É¹¦Æ¥Åä¶à¸ö³É¹¦µÄÆ¥ÅäÆ÷¹æ¶¨ÅÅĞò
-				if£¨outermost &&£¡seed && setMatched.length> 0 &&
-					£¨matchedCount + setMatchers.length£©> 1£©{
+				//æ— æ ¸é›†åŒ¹é…æˆåŠŸåŒ¹é…å¤šä¸ªæˆåŠŸçš„åŒ¹é…å™¨è§„å®šæ’åº
+				ifï¼ˆoutermost &&ï¼seed && setMatched.length> 0 &&
+					ï¼ˆmatchedCount + setMatchers.lengthï¼‰> 1ï¼‰{
 
-					Sizzle.uniqueSort£¨½á¹û£©;
+					Sizzle.uniqueSortï¼ˆç»“æœï¼‰;
 				}
 			}
 
-			//Í¨¹ıÇ¶Ì×Æ¥ÅäÆ÷¸²¸ÇÈ«¾Ö±äÁ¿µÄ²Ù×÷
-			if£¨outermost£©{
+			//é€šè¿‡åµŒå¥—åŒ¹é…å™¨è¦†ç›–å…¨å±€å˜é‡çš„æ“ä½œ
+			ifï¼ˆoutermostï¼‰{
 				dirruns = dirrunsUnique;
 				outermostContext = contextBackup;
 			}
 
-			»Ø¹éÎŞÓëÂ×±È;
+			å›å½’æ— ä¸ä¼¦æ¯”;
 		};
 
-	·µ»ØbySet£¿
-		markFunction£¨superMatcher£©£º
+	è¿”å›bySetï¼Ÿ
+		markFunctionï¼ˆsuperMatcherï¼‰ï¼š
 		superMatcher;
 }
 
-compile = Sizzle.compile = function£¨Ñ¡ÔñÆ÷£¬Æ¥Åä/ *½ö¹©ÄÚ²¿Ê¹ÓÃ* /£©{
-	var i£¬
-		setMatchers = []£¬
-		elementMatchers = []£¬
-		cached = compilerCache [selector +¡°¡±];
+compile = Sizzle.compile = functionï¼ˆé€‰æ‹©å™¨ï¼ŒåŒ¹é…/ *ä»…ä¾›å†…éƒ¨ä½¿ç”¨* /ï¼‰{
+	var iï¼Œ
+		setMatchers = []ï¼Œ
+		elementMatchers = []ï¼Œ
+		cached = compilerCache [selector +â€œâ€];
 
-	if£¨£¡cached£©{
-		//Éú³Éµİ¹éº¯ÊıµÄº¯Êı£¬¿ÉÓÃÓÚ¼ì²éÃ¿¸öÔªËØ
-		if£¨£¡match£©{
-			match = tokenize£¨selector£©;
+	ifï¼ˆï¼cachedï¼‰{
+		//ç”Ÿæˆé€’å½’å‡½æ•°çš„å‡½æ•°ï¼Œå¯ç”¨äºæ£€æŸ¥æ¯ä¸ªå…ƒç´ 
+		ifï¼ˆï¼matchï¼‰{
+			match = tokenizeï¼ˆselectorï¼‰;
 		}
 		i = match.length;
-		µ±ÎÒ -  £© {
-			cached = matcherFromTokens£¨match [i]£©;
-			if£¨cached [expando]£©{
-				setMatchers.push£¨cached£©;
+		å½“æˆ‘ -  ï¼‰ {
+			cached = matcherFromTokensï¼ˆmatch [i]ï¼‰;
+			ifï¼ˆcached [expando]ï¼‰{
+				setMatchers.pushï¼ˆcachedï¼‰;
 			} else {
-				elementMatchers.push£¨cached£©;
+				elementMatchers.pushï¼ˆcachedï¼‰;
 			}
 		}
 
-		//»º´æÒÑ±àÒëµÄº¯Êı
-		cached = compilerCache£¨selector£¬matcherFromGroupMatchers£¨elementMatchers£¬setMatchers£©£©;
+		//ç¼“å­˜å·²ç¼–è¯‘çš„å‡½æ•°
+		cached = compilerCacheï¼ˆselectorï¼ŒmatcherFromGroupMatchersï¼ˆelementMatchersï¼ŒsetMatchersï¼‰ï¼‰;
 
-		//±£´æÑ¡ÔñÆ÷ºÍ±ê¼Ç»¯
+		//ä¿å­˜é€‰æ‹©å™¨å’Œæ ‡è®°åŒ–
 		cached.selector = selector;
 	}
-	·µ»Ø»º´æ;
+	è¿”å›ç¼“å­˜;
 };
 
 / **
- *µÍ¼¶Ñ¡Ôñ¹¦ÄÜ£¬ÊÊÓÃÓÚSizzleµÄ±àÒë
- *Ñ¡ÔñÆ÷¹¦ÄÜ
- * @param {String | Function}Ñ¡ÔñÆ÷Ñ¡ÔñÆ÷»òÔ¤±àÒëÆ÷
- *Ê¹ÓÃSizzle.compile¹¹½¨µÄÑ¡ÔñÆ÷¹¦ÄÜ
- * @param {Element}ÉÏÏÂÎÄ
- * @param {Êı×é} [½á¹û]
- * @param {Array} [seed]ÒªÆ¥ÅäµÄÒ»×éÔªËØ
+ *ä½çº§é€‰æ‹©åŠŸèƒ½ï¼Œé€‚ç”¨äºSizzleçš„ç¼–è¯‘
+ *é€‰æ‹©å™¨åŠŸèƒ½
+ * @param {String | Function}é€‰æ‹©å™¨é€‰æ‹©å™¨æˆ–é¢„ç¼–è¯‘å™¨
+ *ä½¿ç”¨Sizzle.compileæ„å»ºçš„é€‰æ‹©å™¨åŠŸèƒ½
+ * @param {Element}ä¸Šä¸‹æ–‡
+ * @param {æ•°ç»„} [ç»“æœ]
+ * @param {Array} [seed]è¦åŒ¹é…çš„ä¸€ç»„å…ƒç´ 
  * /
-select = Sizzle.select = function£¨Ñ¡ÔñÆ÷£¬ÉÏÏÂÎÄ£¬½á¹û£¬ÖÖ×Ó£©{
-	var i£¬tokens£¬token£¬type£¬find£¬
-		compiled = typeof selector ===¡°function¡±&& selector£¬
-		match =£¡seed && tokenize£¨£¨selector = compiled.selector || selector£©£©;
+select = Sizzle.select = functionï¼ˆé€‰æ‹©å™¨ï¼Œä¸Šä¸‹æ–‡ï¼Œç»“æœï¼Œç§å­ï¼‰{
+	var iï¼Œtokensï¼Œtokenï¼Œtypeï¼Œfindï¼Œ
+		compiled = typeof selector ===â€œfunctionâ€&& selectorï¼Œ
+		match =ï¼seed && tokenizeï¼ˆï¼ˆselector = compiled.selector || selectorï¼‰ï¼‰;
 
-	½á¹û=½á¹û|| [];
+	ç»“æœ=ç»“æœ|| [];
 
-	//Èç¹ûÁĞ±íÖĞÖ»ÓĞÒ»¸öÑ¡ÔñÆ÷ÇÒÃ»ÓĞÖÖ×Ó£¬Çë³¢ÊÔ×îĞ¡»¯²Ù×÷
-	//£¨ºóÕß±£Ö¤ÎÒÃÇµÄ±³¾°£©
-	if£¨match.length === 1£©{
+	//å¦‚æœåˆ—è¡¨ä¸­åªæœ‰ä¸€ä¸ªé€‰æ‹©å™¨ä¸”æ²¡æœ‰ç§å­ï¼Œè¯·å°è¯•æœ€å°åŒ–æ“ä½œ
+	//ï¼ˆåè€…ä¿è¯æˆ‘ä»¬çš„èƒŒæ™¯ï¼‰
+	ifï¼ˆmatch.length === 1ï¼‰{
 
-		//Èç¹ûÇ°µ¼¸´ºÏÑ¡ÔñÆ÷ÊÇID£¬Ôò¼õÉÙÉÏÏÂÎÄ
-		tokens = match [0] = match [0] .slice£¨0£©;
-		if£¨tokens.length> 2 &&£¨token = tokens [0]£©¡£type ===¡°ID¡±&&
-				context.nodeType === 9 && documentIsHTML && Expr.relative [tokens [1] .type]£©{
+		//å¦‚æœå‰å¯¼å¤åˆé€‰æ‹©å™¨æ˜¯IDï¼Œåˆ™å‡å°‘ä¸Šä¸‹æ–‡
+		tokens = match [0] = match [0] .sliceï¼ˆ0ï¼‰;
+		ifï¼ˆtokens.length> 2 &&ï¼ˆtoken = tokens [0]ï¼‰ã€‚type ===â€œIDâ€&&
+				context.nodeType === 9 && documentIsHTML && Expr.relative [tokens [1] .type]ï¼‰{
 
-			context =£¨Expr.find [¡°ID¡±]£¨token.matches [0] .replace£¨runescape£¬funescape£©£¬context£©|| []£©[0];
-			if£¨£¡context£©{
-				·µ»Ø½á¹û;
+			context =ï¼ˆExpr.find [â€œIDâ€]ï¼ˆtoken.matches [0] .replaceï¼ˆrunescapeï¼Œfunescapeï¼‰ï¼Œcontextï¼‰|| []ï¼‰[0];
+			ifï¼ˆï¼contextï¼‰{
+				è¿”å›ç»“æœ;
 
-			//Ô¤±àÒëµÄÆ¥ÅäÆ÷ÈÔ½«ÑéÖ¤×æÏÈ£¬Òò´ËÉı¼¶Ò»¸ö¼¶±ğ
-			} else if£¨compiled£©{
+			//é¢„ç¼–è¯‘çš„åŒ¹é…å™¨ä»å°†éªŒè¯ç¥–å…ˆï¼Œå› æ­¤å‡çº§ä¸€ä¸ªçº§åˆ«
+			} else ifï¼ˆcompiledï¼‰{
 				context = context.parentNode;
 			}
 
-			selector = selector.slice£¨tokens.shift£¨£©¡£value.length£©;
+			selector = selector.sliceï¼ˆtokens.shiftï¼ˆï¼‰ã€‚value.lengthï¼‰;
 		}
 
-		//»ñÈ¡´ÓÓÒµ½×óÆ¥ÅäµÄÖÖ×Ó¼¯
-		i = matchExpr [¡°needsContext¡±]¡£test£¨selector£©£¿0£ºtokens.length;
-		µ±ÎÒ -  £© {
+		//è·å–ä»å³åˆ°å·¦åŒ¹é…çš„ç§å­é›†
+		i = matchExpr [â€œneedsContextâ€]ã€‚testï¼ˆselectorï¼‰ï¼Ÿ0ï¼štokens.length;
+		å½“æˆ‘ -  ï¼‰ {
 			token = tokens [i];
 
-			//Èç¹ûÎÒÃÇ»÷ÖĞ×éºÏÆ÷¾ÍÖĞÖ¹
-			if£¨Expr.relative [£¨type = token.type£©]£©{
-				´òÆÆ;
+			//å¦‚æœæˆ‘ä»¬å‡»ä¸­ç»„åˆå™¨å°±ä¸­æ­¢
+			ifï¼ˆExpr.relative [ï¼ˆtype = token.typeï¼‰]ï¼‰{
+				æ‰“ç ´;
 			}
-			if£¨£¨find = Expr.find [type]£©£©{
-				//ËÑË÷£¬À©Õ¹Ö÷ÒªĞÖµÜ×éºÏ×ÓµÄÉÏÏÂÎÄ
-				if£¨£¨seed = find£¨
-					token.matches [0] .replace£¨runescape£¬funescape£©£¬
-					rsibling.test£¨tokens [0] .type£©&& testContext£¨context.parentNode£©|| ÉÏÏÂÎÄ
-				£©£©£©{
+			ifï¼ˆï¼ˆfind = Expr.find [type]ï¼‰ï¼‰{
+				//æœç´¢ï¼Œæ‰©å±•ä¸»è¦å…„å¼Ÿç»„åˆå­çš„ä¸Šä¸‹æ–‡
+				ifï¼ˆï¼ˆseed = findï¼ˆ
+					token.matches [0] .replaceï¼ˆrunescapeï¼Œfunescapeï¼‰ï¼Œ
+					rsibling.testï¼ˆtokens [0] .typeï¼‰&& testContextï¼ˆcontext.parentNodeï¼‰|| ä¸Šä¸‹æ–‡
+				ï¼‰ï¼‰ï¼‰{
 
-					//Èç¹ûÖÖ×ÓÊÇ¿ÕµÄ»òÃ»ÓĞÁîÅÆ£¬ÎÒÃÇ¿ÉÒÔÌáÇ°·µ»Ø
-					tokens.splice£¨i£¬1£©;
-					selector = seed.length && toSelector£¨tokens£©;
-					if£¨£¡selector£©{
-						push.apply£¨½á¹û£¬ÖÖ×Ó£©;
-						·µ»Ø½á¹û;
+					//å¦‚æœç§å­æ˜¯ç©ºçš„æˆ–æ²¡æœ‰ä»¤ç‰Œï¼Œæˆ‘ä»¬å¯ä»¥æå‰è¿”å›
+					tokens.spliceï¼ˆiï¼Œ1ï¼‰;
+					selector = seed.length && toSelectorï¼ˆtokensï¼‰;
+					ifï¼ˆï¼selectorï¼‰{
+						push.applyï¼ˆç»“æœï¼Œç§å­ï¼‰;
+						è¿”å›ç»“æœ;
 					}
 
-					´òÆÆ;
+					æ‰“ç ´;
 				}
 			}
 		}
 	}
 
-	//Èç¹ûÎ´Ìá¹©¹ıÂË¹¦ÄÜ£¬Çë±àÒë²¢Ö´ĞĞ¹ıÂË¹¦ÄÜ
-	//Èç¹ûÎÒÃÇĞŞ¸ÄÁËÉÏÃæµÄÑ¡ÔñÆ÷£¬ÇëÌá¹©`match`ÒÔ±ÜÃâÖØĞÂÊ¶±ğ
-	£¨±àÒë|| compile£¨Ñ¡ÔñÆ÷£¬Æ¥Åä£©£©£¨
-		ÖÖ×Ó£¬
-		±³¾°ÏÂ£¬
-		£¡documentIsHTML£¬
-		½á¹û£¬
-		£¡context || rsibling.test£¨selector£©&& testContext£¨context.parentNode£©|| ÉÏÏÂÎÄ
-	£©;
-	·µ»Ø½á¹û;
+	//å¦‚æœæœªæä¾›è¿‡æ»¤åŠŸèƒ½ï¼Œè¯·ç¼–è¯‘å¹¶æ‰§è¡Œè¿‡æ»¤åŠŸèƒ½
+	//å¦‚æœæˆ‘ä»¬ä¿®æ”¹äº†ä¸Šé¢çš„é€‰æ‹©å™¨ï¼Œè¯·æä¾›`match`ä»¥é¿å…é‡æ–°è¯†åˆ«
+	ï¼ˆç¼–è¯‘|| compileï¼ˆé€‰æ‹©å™¨ï¼ŒåŒ¹é…ï¼‰ï¼‰ï¼ˆ
+		ç§å­ï¼Œ
+		èƒŒæ™¯ä¸‹ï¼Œ
+		ï¼documentIsHTMLï¼Œ
+		ç»“æœï¼Œ
+		ï¼context || rsibling.testï¼ˆselectorï¼‰&& testContextï¼ˆcontext.parentNodeï¼‰|| ä¸Šä¸‹æ–‡
+	ï¼‰;
+	è¿”å›ç»“æœ;
 };
 
-//Ò»´ÎĞÔ×÷Òµ
+//ä¸€æ¬¡æ€§ä½œä¸š
 
-//ÅÅĞòÎÈ¶¨ĞÔ
-support.sortStable = expando.split£¨¡°¡±£©¡£sort£¨sortOrder£©.join£¨¡°¡±£©=== expando;
+//æ’åºç¨³å®šæ€§
+support.sortStable = expando.splitï¼ˆâ€œâ€ï¼‰ã€‚sortï¼ˆsortOrderï¼‰.joinï¼ˆâ€œâ€ï¼‰=== expando;
 
-//Ö§³Ö£ºChrome 14-35 +
-//Èç¹ûÃ»ÓĞ´«µİ¸ø±È½Ïº¯Êı£¬ÔòÊ¼ÖÕ¼ÙÉèÖØ¸´
+//æ”¯æŒï¼šChrome 14-35 +
+//å¦‚æœæ²¡æœ‰ä¼ é€’ç»™æ¯”è¾ƒå‡½æ•°ï¼Œåˆ™å§‹ç»ˆå‡è®¾é‡å¤
 support.detectDuplicates = !! hasDuplicate;
 
-//Õë¶ÔÄ¬ÈÏÎÄµµ³õÊ¼»¯
-setDocument£¨£©;
+//é’ˆå¯¹é»˜è®¤æ–‡æ¡£åˆå§‹åŒ–
+setDocumentï¼ˆï¼‰;
 
-//Ö§³Ö£ºWebkit <537.32  -  Safari 6.0.3 / Chrome 25£¨ÔÚChrome 27ÖĞĞŞ¸´£©
-//·ÖÀëµÄ½Úµã»ìÏıµØ¸úËæ*±Ë´Ë*
-support.sortDetached = assert£¨function£¨el£©{
-	//Ó¦·µ»Ø1£¬µ«·µ»Ø4£¨ÒÔÏÂ£©
-	return el.compareDocumentPosition£¨document.createElement£¨¡°fieldset¡±£©£©£¦1;
-}£©;
+//æ”¯æŒï¼šWebkit <537.32  -  Safari 6.0.3 / Chrome 25ï¼ˆåœ¨Chrome 27ä¸­ä¿®å¤ï¼‰
+//åˆ†ç¦»çš„èŠ‚ç‚¹æ··æ·†åœ°è·Ÿéš*å½¼æ­¤*
+support.sortDetached = assertï¼ˆfunctionï¼ˆelï¼‰{
+	//åº”è¿”å›1ï¼Œä½†è¿”å›4ï¼ˆä»¥ä¸‹ï¼‰
+	return el.compareDocumentPositionï¼ˆdocument.createElementï¼ˆâ€œfieldsetâ€ï¼‰ï¼‰ï¼†1;
+}ï¼‰;
 
-//Ö§³Ö£ºIE <8
-//·ÀÖ¹ÊôĞÔ/ÊôĞÔ¡°²åÖµ¡±
+//æ”¯æŒï¼šIE <8
+//é˜²æ­¢å±æ€§/å±æ€§â€œæ’å€¼â€
 // https://msdn.microsoft.com/en-us/library/ms536429%28VS.85%29.aspx
-if£¨£¡assert£¨function£¨el£©{
-	el.innerHTML =¡°<a href='#'> </a>¡±;
-	return el.firstChild.getAttribute£¨¡°href¡±£©===¡°££¡±;
-}£©£©{
-	addHandle£¨¡°type | href | height | width¡±£¬function£¨elem£¬name£¬isXML£©{
-		if£¨£¡isXML£©{
-			return elem.getAttribute£¨name£¬name.toLowerCase£¨£©===¡°type¡±£¿1£º2£©;
+ifï¼ˆï¼assertï¼ˆfunctionï¼ˆelï¼‰{
+	el.innerHTML =â€œ<a href='#'> </a>â€;
+	return el.firstChild.getAttributeï¼ˆâ€œhrefâ€ï¼‰===â€œï¼ƒâ€;
+}ï¼‰ï¼‰{
+	addHandleï¼ˆâ€œtype | href | height | widthâ€ï¼Œfunctionï¼ˆelemï¼Œnameï¼ŒisXMLï¼‰{
+		ifï¼ˆï¼isXMLï¼‰{
+			return elem.getAttributeï¼ˆnameï¼Œname.toLowerCaseï¼ˆï¼‰===â€œtypeâ€ï¼Ÿ1ï¼š2ï¼‰;
 		}
-	}£©;
+	}ï¼‰;
 }
 
-//Ö§³Ö£ºIE <9
-//Ê¹ÓÃdefaultValue´úÌægetAttribute£¨¡°value¡±£©
-if£¨£¡support.attributes ||£¡assert£¨function£¨el£©{
-	el.innerHTML =¡°<input />¡±;
-	el.firstChild.setAttribute£¨¡°value¡±£¬¡°¡±£©;
-	return el.firstChild.getAttribute£¨¡°value¡±£©===¡°¡±;
-}£©£©{
-	addHandle£¨¡°value¡±£¬function£¨elem£¬name£¬isXML£©{
-		if£¨£¡isXML && elem.nodeName.toLowerCase£¨£©===¡°input¡±£©{
+//æ”¯æŒï¼šIE <9
+//ä½¿ç”¨defaultValueä»£æ›¿getAttributeï¼ˆâ€œvalueâ€ï¼‰
+ifï¼ˆï¼support.attributes ||ï¼assertï¼ˆfunctionï¼ˆelï¼‰{
+	el.innerHTML =â€œ<input />â€;
+	el.firstChild.setAttributeï¼ˆâ€œvalueâ€ï¼Œâ€œâ€ï¼‰;
+	return el.firstChild.getAttributeï¼ˆâ€œvalueâ€ï¼‰===â€œâ€;
+}ï¼‰ï¼‰{
+	addHandleï¼ˆâ€œvalueâ€ï¼Œfunctionï¼ˆelemï¼Œnameï¼ŒisXMLï¼‰{
+		ifï¼ˆï¼isXML && elem.nodeName.toLowerCaseï¼ˆï¼‰===â€œinputâ€ï¼‰{
 			return elem.defaultValue;
 		}
-	}£©;
+	}ï¼‰;
 }
 
-//Ö§³Ö£ºIE <9
-//µ±getAttributeËùÔÚÊ±£¬Ê¹ÓÃgetAttributeNode»ñÈ¡²¼¶ûÖµ
-if£¨£¡assert£¨function£¨el£©{
-	return el.getAttribute£¨¡°disabled¡±£©== null;
-}£©£©{
-	addHandle£¨²¼¶ûÖµ£¬º¯Êı£¨elem£¬name£¬isXML£©{
+//æ”¯æŒï¼šIE <9
+//å½“getAttributeæ‰€åœ¨æ—¶ï¼Œä½¿ç”¨getAttributeNodeè·å–å¸ƒå°”å€¼
+ifï¼ˆï¼assertï¼ˆfunctionï¼ˆelï¼‰{
+	return el.getAttributeï¼ˆâ€œdisabledâ€ï¼‰== null;
+}ï¼‰ï¼‰{
+	addHandleï¼ˆå¸ƒå°”å€¼ï¼Œå‡½æ•°ï¼ˆelemï¼Œnameï¼ŒisXMLï¼‰{
 		var val;
-		if£¨£¡isXML£©{
-			return elem [name] === true£¿name.toLowerCase£¨£©£º
-					£¨val = elem.getAttributeNode£¨name£©£©&& val.specified£¿
-					val.value£º
-				¿ÕÖµ;
+		ifï¼ˆï¼isXMLï¼‰{
+			return elem [name] === trueï¼Ÿname.toLowerCaseï¼ˆï¼‰ï¼š
+					ï¼ˆval = elem.getAttributeNodeï¼ˆnameï¼‰ï¼‰&& val.specifiedï¼Ÿ
+					val.valueï¼š
+				ç©ºå€¼;
 		}
-	}£©;
+	}ï¼‰;
 }
 
-·µ»ØSizzle;
+è¿”å›Sizzle;
 
-}£©£¨´°¿Ú£©;
+}ï¼‰ï¼ˆçª—å£ï¼‰;
 
 
 
 jQuery.find = Sizzle;
 jQuery.expr = Sizzle.selectors;
 
-//ÒÑÆúÓÃ
-jQuery.expr [¡°£º¡±] = jQuery.expr.pseudos;
+//å·²å¼ƒç”¨
+jQuery.expr [â€œï¼šâ€] = jQuery.expr.pseudos;
 jQuery.uniqueSort = jQuery.unique = Sizzle.uniqueSort;
 jQuery.text = Sizzle.getText;
 jQuery.isXMLDoc = Sizzle.isXML;
@@ -2767,9 +2767,9 @@ jQuery.escapeSelector = Sizzle.escape;
 
 
 
-var dir = function£¨elem£¬dir£¬until£©{
-	var matched = []£¬
-		truncate = until£¡== undefined;
+var dir = functionï¼ˆelemï¼Œdirï¼Œuntilï¼‰{
+	var matched = []ï¼Œ
+		truncate = untilï¼== undefined;
 
 	while ( ( elem = elem[ dir ] ) && elem.nodeType !== 9 ) {
 		if ( elem.nodeType === 1 ) {
@@ -2800,131 +2800,131 @@ var rneedsContext = jQuery.expr.match.needsContext;
 
 
 
-function nodeName£¨elem£¬name£©{
+function nodeNameï¼ˆelemï¼Œnameï¼‰{
 
-  return elem.nodeName && elem.nodeName.toLowerCase£¨£©=== name.toLowerCase£¨£©;
+  return elem.nodeName && elem.nodeName.toLowerCaseï¼ˆï¼‰=== name.toLowerCaseï¼ˆï¼‰;
 
 };
-var rsingleTag =£¨/ ^ <£¨[az] [^ \ / \ 0>£º\ x20 \ t \ r \ n \ f] *£©[\ x20 \ t \ r \ n \ f] * \ /£¿>£¨ £¿£º<\ / \ 1> |£©$ / i£©;
+var rsingleTag =ï¼ˆ/ ^ <ï¼ˆ[az] [^ \ / \ 0>ï¼š\ x20 \ t \ r \ n \ f] *ï¼‰[\ x20 \ t \ r \ n \ f] * \ /ï¼Ÿ>ï¼ˆ ï¼Ÿï¼š<\ / \ 1> |ï¼‰$ / iï¼‰;
 
 
 
-//Îª¹ıÂËÆ÷ÊµÏÖÏàÍ¬µÄ¹¦ÄÜ¶ø²»ÊÇ
-function winnow£¨elements£¬qualifier£¬not£©{
-	if£¨isFunction£¨qualifier£©£©{
-		return jQuery.grep£¨elements£¬function£¨elem£¬i£©{
-			return !! qualifier.call£¨elem£¬i£¬elem£©£¡== not;
-		}£©;
+//ä¸ºè¿‡æ»¤å™¨å®ç°ç›¸åŒçš„åŠŸèƒ½è€Œä¸æ˜¯
+function winnowï¼ˆelementsï¼Œqualifierï¼Œnotï¼‰{
+	ifï¼ˆisFunctionï¼ˆqualifierï¼‰ï¼‰{
+		return jQuery.grepï¼ˆelementsï¼Œfunctionï¼ˆelemï¼Œiï¼‰{
+			return !! qualifier.callï¼ˆelemï¼Œiï¼Œelemï¼‰ï¼== not;
+		}ï¼‰;
 	}
 
-	//µ¥¸öÔªËØ
-	if£¨qualifier.nodeType£©{
-		return jQuery.grep£¨elements£¬function£¨elem£©{
-			return£¨elem === qualifier£©£¡== not;
-		}£©;
+	//å•ä¸ªå…ƒç´ 
+	ifï¼ˆqualifier.nodeTypeï¼‰{
+		return jQuery.grepï¼ˆelementsï¼Œfunctionï¼ˆelemï¼‰{
+			returnï¼ˆelem === qualifierï¼‰ï¼== not;
+		}ï¼‰;
 	}
 
-	//ÔªËØµÄArraylike£¨jQuery£¬arguments£¬Array£©
-	if£¨typeof qualifier£¡==¡°string¡±£©{
-		return jQuery.grep£¨elements£¬function£¨elem£©{
-			return£¨indexOf.call£¨qualifier£¬elem£©> -1£©£¡== not;
-		}£©;
+	//å…ƒç´ çš„Arraylikeï¼ˆjQueryï¼Œargumentsï¼ŒArrayï¼‰
+	ifï¼ˆtypeof qualifierï¼==â€œstringâ€ï¼‰{
+		return jQuery.grepï¼ˆelementsï¼Œfunctionï¼ˆelemï¼‰{
+			returnï¼ˆindexOf.callï¼ˆqualifierï¼Œelemï¼‰> -1ï¼‰ï¼== not;
+		}ï¼‰;
 	}
 
-	//Ö±½Ó¹ıÂË¼òµ¥ºÍ¸´ÔÓµÄÑ¡ÔñÆ÷
-	return jQuery.filter£¨ÏŞ¶¨·û£¬ÔªËØ£¬²»ÊÇ£©;
+	//ç›´æ¥è¿‡æ»¤ç®€å•å’Œå¤æ‚çš„é€‰æ‹©å™¨
+	return jQuery.filterï¼ˆé™å®šç¬¦ï¼Œå…ƒç´ ï¼Œä¸æ˜¯ï¼‰;
 }
 
-jQuery.filter = function£¨expr£¬elems£¬not£©{
+jQuery.filter = functionï¼ˆexprï¼Œelemsï¼Œnotï¼‰{
 	var elem = elems [0];
 
-	Èç¹û²» £© {
-		expr =¡°£ºnot£¨¡±+ expr +¡°£©¡±;
+	å¦‚æœä¸ ï¼‰ {
+		expr =â€œï¼šnotï¼ˆâ€+ expr +â€œï¼‰â€;
 	}
 
-	if£¨elems.length === 1 && elem.nodeType === 1£©{
-		·µ»ØjQuery.find.matchesSelector£¨elem£¬expr£©£¿[elem]£º[];
+	ifï¼ˆelems.length === 1 && elem.nodeType === 1ï¼‰{
+		è¿”å›jQuery.find.matchesSelectorï¼ˆelemï¼Œexprï¼‰ï¼Ÿ[elem]ï¼š[];
 	}
 
-	return jQuery.find.matches£¨expr£¬jQuery.grep£¨elems£¬function£¨elem£©{
+	return jQuery.find.matchesï¼ˆexprï¼ŒjQuery.grepï¼ˆelemsï¼Œfunctionï¼ˆelemï¼‰{
 		return elem.nodeType === 1;
-	}£©;;
+	}ï¼‰;;
 };
 
-jQuery.fn.extend£¨{
-	find£ºfunction£¨selector£©{
-		var i£¬ret£¬
-			len = this.length£¬
+jQuery.fn.extendï¼ˆ{
+	findï¼šfunctionï¼ˆselectorï¼‰{
+		var iï¼Œretï¼Œ
+			len = this.lengthï¼Œ
 			self = this;
 
-		if£¨typeof selector£¡==¡°string¡±£©{
-			return this.pushStack£¨jQuery£¨selector£©.filter£¨function£¨£©{
-				for£¨i = 0; i <len; i ++£©{
-					if£¨jQuery.contains£¨self [i]£¬this£©£©{
-						·µ»Øtrue;
+		ifï¼ˆtypeof selectorï¼==â€œstringâ€ï¼‰{
+			return this.pushStackï¼ˆjQueryï¼ˆselectorï¼‰.filterï¼ˆfunctionï¼ˆï¼‰{
+				forï¼ˆi = 0; i <len; i ++ï¼‰{
+					ifï¼ˆjQuery.containsï¼ˆself [i]ï¼Œthisï¼‰ï¼‰{
+						è¿”å›true;
 					}
 				}
-			}£©;;
+			}ï¼‰;;
 		}
 
-		ret = this.pushStack£¨[]£©;
+		ret = this.pushStackï¼ˆ[]ï¼‰;
 
-		for£¨i = 0; i <len; i ++£©{
-			jQuery.find£¨selector£¬self [i]£¬ret£©;
+		forï¼ˆi = 0; i <len; i ++ï¼‰{
+			jQuery.findï¼ˆselectorï¼Œself [i]ï¼Œretï¼‰;
 		}
 
-		·µ»Ølen> 1£¿jQuery.uniqueSort£¨ret£©£ºret;
-	}£¬
-	filter£ºfunction£¨selector£©{
-		return this.pushStack£¨winnow£¨this£¬selector || []£¬false£©£©;
-	}£¬
-	not£ºfunction£¨selector£©{
-		return this.pushStack£¨winnow£¨this£¬selector || []£¬true£©£©;
-	}£¬
-	ÊÇ£ºfunction£¨selector£©{
-		·µ»Ø!! winnow£¨
-			Õâ¸ö£¬
+		è¿”å›len> 1ï¼ŸjQuery.uniqueSortï¼ˆretï¼‰ï¼šret;
+	}ï¼Œ
+	filterï¼šfunctionï¼ˆselectorï¼‰{
+		return this.pushStackï¼ˆwinnowï¼ˆthisï¼Œselector || []ï¼Œfalseï¼‰ï¼‰;
+	}ï¼Œ
+	notï¼šfunctionï¼ˆselectorï¼‰{
+		return this.pushStackï¼ˆwinnowï¼ˆthisï¼Œselector || []ï¼Œtrueï¼‰ï¼‰;
+	}ï¼Œ
+	æ˜¯ï¼šfunctionï¼ˆselectorï¼‰{
+		è¿”å›!! winnowï¼ˆ
+			è¿™ä¸ªï¼Œ
 
-			//Èç¹ûÕâÊÇÎ»ÖÃ/Ïà¶ÔÑ¡ÔñÆ÷£¬Çë¼ì²é·µ»Ø¼¯ºÏÖĞµÄ³ÉÔ±×Ê¸ñ
-			// so $£¨¡°p£ºfirst¡±£©¡£is£¨¡°p£ºlast¡±£©¶ÔÓÚ´øÓĞÁ½¸ö¡°p¡±µÄdoc²»»á·µ»Øtrue¡£
-			typeof selector ===¡°string¡±&& rneedsContext.test£¨selector£©£¿
-				jQuery£¨Ñ¡ÔñÆ÷£©£º
-				Ñ¡ÔñÆ÷|| []£¬
-			¼Ù
-		£©¡£³¤¶È;
+			//å¦‚æœè¿™æ˜¯ä½ç½®/ç›¸å¯¹é€‰æ‹©å™¨ï¼Œè¯·æ£€æŸ¥è¿”å›é›†åˆä¸­çš„æˆå‘˜èµ„æ ¼
+			// so $ï¼ˆâ€œpï¼šfirstâ€ï¼‰ã€‚isï¼ˆâ€œpï¼šlastâ€ï¼‰å¯¹äºå¸¦æœ‰ä¸¤ä¸ªâ€œpâ€çš„docä¸ä¼šè¿”å›trueã€‚
+			typeof selector ===â€œstringâ€&& rneedsContext.testï¼ˆselectorï¼‰ï¼Ÿ
+				jQueryï¼ˆé€‰æ‹©å™¨ï¼‰ï¼š
+				é€‰æ‹©å™¨|| []ï¼Œ
+			å‡
+		ï¼‰ã€‚é•¿åº¦;
 	}
-}£©;
+}ï¼‰;
 
 
-//³õÊ¼»¯Ò»¸öjQuery¶ÔÏó
+//åˆå§‹åŒ–ä¸€ä¸ªjQueryå¯¹è±¡
 
 
-//¶Ô¸ùjQuery£¨ÎÄµµ£©µÄÖĞĞÄÒıÓÃ
-var rootjQuery£¬
+//å¯¹æ ¹jQueryï¼ˆæ–‡æ¡£ï¼‰çš„ä¸­å¿ƒå¼•ç”¨
+var rootjQueryï¼Œ
 
-	//¼ì²éHTML×Ö·û´®µÄ¼òµ¥·½·¨
-	//ÓÅÏÈ#id <tag>ÒÔ±ÜÃâXSSÍ¨¹ılocation.hash£¨££9521£©
-	//ÑÏ¸ñµÄHTMLÊ¶±ğ£¨££11290£º±ØĞëÒÔ<¿ªÍ·£©
-	//¿ì½İ¼òµ¥#id°¸ÀıµÄËÙ¶È
-	rquickExpr = / ^£¨£¿£º\ s *£¨<[\ w \ W] +>£©[^>] * |£££¨[\ w  - ] +£©£©$ /£¬
+	//æ£€æŸ¥HTMLå­—ç¬¦ä¸²çš„ç®€å•æ–¹æ³•
+	//ä¼˜å…ˆ#id <tag>ä»¥é¿å…XSSé€šè¿‡location.hashï¼ˆï¼ƒ9521ï¼‰
+	//ä¸¥æ ¼çš„HTMLè¯†åˆ«ï¼ˆï¼ƒ11290ï¼šå¿…é¡»ä»¥<å¼€å¤´ï¼‰
+	//å¿«æ·ç®€å•#idæ¡ˆä¾‹çš„é€Ÿåº¦
+	rquickExpr = / ^ï¼ˆï¼Ÿï¼š\ s *ï¼ˆ<[\ w \ W] +>ï¼‰[^>] * |ï¼ƒï¼ˆ[\ w  - ] +ï¼‰ï¼‰$ /ï¼Œ
 
-	init = jQuery.fn.init = function£¨selector£¬context£¬root£©{
-		var match£¬elem;
+	init = jQuery.fn.init = functionï¼ˆselectorï¼Œcontextï¼Œrootï¼‰{
+		var matchï¼Œelem;
 
-		// HANDLE£º$£¨¡°¡±£©£¬$£¨null£©£¬$£¨undefined£©£¬$£¨false£©
-		if£¨£¡selector£©{
-			¹é»¹Õâ¸ö;
+		// HANDLEï¼š$ï¼ˆâ€œâ€ï¼‰ï¼Œ$ï¼ˆnullï¼‰ï¼Œ$ï¼ˆundefinedï¼‰ï¼Œ$ï¼ˆfalseï¼‰
+		ifï¼ˆï¼selectorï¼‰{
+			å½’è¿˜è¿™ä¸ª;
 		}
 
-		//·½·¨init£¨£©½ÓÊÜ±¸ÓÃµÄrootjQuery
-		//ËùÒÔÇ¨ÒÆ¿ÉÒÔÖ§³ÖjQuery.sub£¨gh-2101£©
+		//æ–¹æ³•initï¼ˆï¼‰æ¥å—å¤‡ç”¨çš„rootjQuery
+		//æ‰€ä»¥è¿ç§»å¯ä»¥æ”¯æŒjQuery.subï¼ˆgh-2101ï¼‰
 		root = root || rootjQuery;
 
-		//´¦ÀíHTML×Ö·û´®
-		if£¨typeof selector ===¡°string¡±£©{
-			if£¨selector [0] ===¡°<¡±&&
-				selector [selector.length  -  1] ===¡°>¡±&&
-				selector.length> = 3£©{
+		//å¤„ç†HTMLå­—ç¬¦ä¸²
+		ifï¼ˆtypeof selector ===â€œstringâ€ï¼‰{
+			ifï¼ˆselector [0] ===â€œ<â€&&
+				selector [selector.length  -  1] ===â€œ>â€&&
+				selector.length> = 3ï¼‰{
 
 				// Assume that strings that start and end with <> are HTML and skip the regex check
 				match = [ null, selector, null ];
@@ -2941,139 +2941,139 @@ var rootjQuery£¬
 					context = context instanceof jQuery ? context[ 0 ] : context;
 
 					// Option to run scripts is true for back-compat
-					//Èç¹ûparseHTML²»´æÔÚ£¬Çë¹ÊÒâÅ×³ö´íÎó
-					jQuery.merge£¨this£¬jQuery.parseHTML£¨
-						Æ¥Åä[1]£¬
-						context && context.nodeType£¿context.ownerDocument || ÉÏÏÂÎÄ£ºÎÄ¼ş£¬
-						ÕæÕı
-					£©£©;
+					//å¦‚æœparseHTMLä¸å­˜åœ¨ï¼Œè¯·æ•…æ„æŠ›å‡ºé”™è¯¯
+					jQuery.mergeï¼ˆthisï¼ŒjQuery.parseHTMLï¼ˆ
+						åŒ¹é…[1]ï¼Œ
+						context && context.nodeTypeï¼Ÿcontext.ownerDocument || ä¸Šä¸‹æ–‡ï¼šæ–‡ä»¶ï¼Œ
+						çœŸæ­£
+					ï¼‰ï¼‰;
 
-					// HANDLE£º$£¨html£¬props£©
-					if£¨rsingleTag.test£¨match [1]£©&& jQuery.isPlainObject£¨context£©£©{
-						for£¨ÔÚÉÏÏÂÎÄÖĞÆ¥Åä£©{
+					// HANDLEï¼š$ï¼ˆhtmlï¼Œpropsï¼‰
+					ifï¼ˆrsingleTag.testï¼ˆmatch [1]ï¼‰&& jQuery.isPlainObjectï¼ˆcontextï¼‰ï¼‰{
+						forï¼ˆåœ¨ä¸Šä¸‹æ–‡ä¸­åŒ¹é…ï¼‰{
 
-							//Èç¹û¿ÉÄÜ£¬½«ÉÏÏÂÎÄµÄÊôĞÔ³ÆÎª·½·¨
-							if£¨isFunction£¨this [match]£©£©{
-								Õâ[Æ¥Åä]£¨context [match]£©;
+							//å¦‚æœå¯èƒ½ï¼Œå°†ä¸Šä¸‹æ–‡çš„å±æ€§ç§°ä¸ºæ–¹æ³•
+							ifï¼ˆisFunctionï¼ˆthis [match]ï¼‰ï¼‰{
+								è¿™[åŒ¹é…]ï¼ˆcontext [match]ï¼‰;
 
-							// ...ÒÔ¼°ÒÔÆäËû·½Ê½ÉèÖÃÎªÊôĞÔ
+							// ...ä»¥åŠä»¥å…¶ä»–æ–¹å¼è®¾ç½®ä¸ºå±æ€§
 							} else {
-								this.attr£¨match£¬context [match]£©;
+								this.attrï¼ˆmatchï¼Œcontext [match]ï¼‰;
 							}
 						}
 					}
 
-					¹é»¹Õâ¸ö;
+					å½’è¿˜è¿™ä¸ª;
 
-				// HANDLE£º$£¨££id£©
+				// HANDLEï¼š$ï¼ˆï¼ƒidï¼‰
 				} else {
-					elem = document.getElementById£¨match [2]£©;
+					elem = document.getElementByIdï¼ˆmatch [2]ï¼‰;
 
-					if£¨elem£©{
+					ifï¼ˆelemï¼‰{
 
-						//½«ÔªËØÖ±½Ó×¢ÈëjQuery¶ÔÏó
-						Õâ[0] = elem;
+						//å°†å…ƒç´ ç›´æ¥æ³¨å…¥jQueryå¯¹è±¡
+						è¿™[0] = elem;
 						this.length = 1;
 					}
-					¹é»¹Õâ¸ö;
+					å½’è¿˜è¿™ä¸ª;
 				}
 
-			// HANDLE£º$£¨expr£¬$£¨...£©£©
-			} else if£¨£¡context || context.jquery£©{
-				return£¨context || root£©.find£¨selector£©;
+			// HANDLEï¼š$ï¼ˆexprï¼Œ$ï¼ˆ...ï¼‰ï¼‰
+			} else ifï¼ˆï¼context || context.jqueryï¼‰{
+				returnï¼ˆcontext || rootï¼‰.findï¼ˆselectorï¼‰;
 
-			// HANDLE£º$£¨expr£¬context£©
-			//£¨ÕâÏàµ±ÓÚ£º$£¨context£©.find£¨expr£©
+			// HANDLEï¼š$ï¼ˆexprï¼Œcontextï¼‰
+			//ï¼ˆè¿™ç›¸å½“äºï¼š$ï¼ˆcontextï¼‰.findï¼ˆexprï¼‰
 			} else {
-				return this.constructor£¨context£©.find£¨selector£©;
+				return this.constructorï¼ˆcontextï¼‰.findï¼ˆselectorï¼‰;
 			}
 
-		//ÊÖ±ú£º$£¨DOMElement£©
-		} else if£¨selector.nodeType£©{
-			Õâ[0] =Ñ¡ÔñÆ÷;
+		//æ‰‹æŸ„ï¼š$ï¼ˆDOMElementï¼‰
+		} else ifï¼ˆselector.nodeTypeï¼‰{
+			è¿™[0] =é€‰æ‹©å™¨;
 			this.length = 1;
-			¹é»¹Õâ¸ö;
+			å½’è¿˜è¿™ä¸ª;
 
-		//ÊÖ±ú£º$£¨¹¦ÄÜ£©
-		//ÎÄµµ¾ÍĞ÷µÄ¿ì½İ·½Ê½
-		} else if£¨isFunction£¨selector£©£©{
-			return root.ready£¡== undefined£¿
-				root.ready£¨selector£©£º
+		//æ‰‹æŸ„ï¼š$ï¼ˆåŠŸèƒ½ï¼‰
+		//æ–‡æ¡£å°±ç»ªçš„å¿«æ·æ–¹å¼
+		} else ifï¼ˆisFunctionï¼ˆselectorï¼‰ï¼‰{
+			return root.readyï¼== undefinedï¼Ÿ
+				root.readyï¼ˆselectorï¼‰ï¼š
 
-				//Èç¹ûÃ»ÓĞ×¼±¸¾ÍÁ¢¼´Ö´ĞĞ
-				selector£¨jQuery£©;
+				//å¦‚æœæ²¡æœ‰å‡†å¤‡å°±ç«‹å³æ‰§è¡Œ
+				selectorï¼ˆjQueryï¼‰;
 		}
 
-		return jQuery.makeArray£¨selector£¬this£©;
+		return jQuery.makeArrayï¼ˆselectorï¼Œthisï¼‰;
 	};
 
-//Îªinitº¯ÊıÌá¹©jQueryÔ­ĞÍÒÔ¹©ÒÔºóÊµÀı»¯
+//ä¸ºinitå‡½æ•°æä¾›jQueryåŸå‹ä»¥ä¾›ä»¥åå®ä¾‹åŒ–
 init.prototype = jQuery.fn;
 
-//³õÊ¼»¯ÖĞĞÄ²Î¿¼
-rootjQuery = jQuery£¨document£©;
+//åˆå§‹åŒ–ä¸­å¿ƒå‚è€ƒ
+rootjQuery = jQueryï¼ˆdocumentï¼‰;
 
 
-var rparentsprev = / ^£¨?: parents | prev£¨£¿£ºUntil | All£©£©/£¬
+var rparentsprev = / ^ï¼ˆ?: parents | prevï¼ˆï¼Ÿï¼šUntil | Allï¼‰ï¼‰/ï¼Œ
 
-	//±£Ö¤ÔÚ´ÓÎ¨Ò»¼¯¿ªÊ¼Ê±Éú³ÉÎ¨Ò»¼¯µÄ·½·¨
+	//ä¿è¯åœ¨ä»å”¯ä¸€é›†å¼€å§‹æ—¶ç”Ÿæˆå”¯ä¸€é›†çš„æ–¹æ³•
 	guaranteeUnique = {
-		º¢×ÓÃÇ£ºÊÇµÄ£¬
-		ÄÚÈİ£ºtrue£¬
-		ÏÂÒ»¸ö£ºÊÇµÄ£¬
-		ÉÏÒ»Æª£ºÕæµÄ
+		å­©å­ä»¬ï¼šæ˜¯çš„ï¼Œ
+		å†…å®¹ï¼štrueï¼Œ
+		ä¸‹ä¸€ä¸ªï¼šæ˜¯çš„ï¼Œ
+		ä¸Šä¸€ç¯‡ï¼šçœŸçš„
 	};
 
-jQuery.fn.extend£¨{
-	has£ºfunction£¨target£©{
-		var targets = jQuery£¨target£¬this£©£¬
+jQuery.fn.extendï¼ˆ{
+	hasï¼šfunctionï¼ˆtargetï¼‰{
+		var targets = jQueryï¼ˆtargetï¼Œthisï¼‰ï¼Œ
 			l = targets.length;
 
-		return this.filter£¨function£¨£©{
+		return this.filterï¼ˆfunctionï¼ˆï¼‰{
 			var i = 0;
-			for£¨; i <l; i ++£©{
-				if£¨jQuery.contains£¨this£¬targets [i]£©£©{
-					·µ»Øtrue;
+			forï¼ˆ; i <l; i ++ï¼‰{
+				ifï¼ˆjQuery.containsï¼ˆthisï¼Œtargets [i]ï¼‰ï¼‰{
+					è¿”å›true;
 				}
 			}
-		}£©;
-	}£¬
+		}ï¼‰;
+	}ï¼Œ
 
-	×î½üµÄ£ºº¯Êı£¨Ñ¡ÔñÆ÷£¬ÉÏÏÂÎÄ£©{
-		var cur£¬
-			i = 0£¬
-			l = this.length£¬
-			Æ¥Åä= []£¬
-			targets = typeof selectors£¡==¡°string¡±&& jQuery£¨selectors£©;
+	æœ€è¿‘çš„ï¼šå‡½æ•°ï¼ˆé€‰æ‹©å™¨ï¼Œä¸Šä¸‹æ–‡ï¼‰{
+		var curï¼Œ
+			i = 0ï¼Œ
+			l = this.lengthï¼Œ
+			åŒ¹é…= []ï¼Œ
+			targets = typeof selectorsï¼==â€œstringâ€&& jQueryï¼ˆselectorsï¼‰;
 
-		//Î»ÖÃÑ¡ÔñÆ÷ÓÀÔ¶²»»áÆ¥Åä£¬ÒòÎªÃ»ÓĞ_selection_ÉÏÏÂÎÄ
-		if£¨£¡rneedsContext.test£¨selectors£©£©{
-			for£¨; i <l; i ++£©{
-				for£¨cur = this [i]; cur && cur£¡== context; cur = cur.parentNode£©{
+		//ä½ç½®é€‰æ‹©å™¨æ°¸è¿œä¸ä¼šåŒ¹é…ï¼Œå› ä¸ºæ²¡æœ‰_selection_ä¸Šä¸‹æ–‡
+		ifï¼ˆï¼rneedsContext.testï¼ˆselectorsï¼‰ï¼‰{
+			forï¼ˆ; i <l; i ++ï¼‰{
+				forï¼ˆcur = this [i]; cur && curï¼== context; cur = cur.parentNodeï¼‰{
 
-					//Ê¼ÖÕÌø¹ıÎÄµµÆ¬¶Î
-					if£¨cur.nodeType <11 &&£¨Ä¿±ê£¿
-						targets.index£¨cur£©> -1£º
+					//å§‹ç»ˆè·³è¿‡æ–‡æ¡£ç‰‡æ®µ
+					ifï¼ˆcur.nodeType <11 &&ï¼ˆç›®æ ‡ï¼Ÿ
+						targets.indexï¼ˆcurï¼‰> -1ï¼š
 
-						//²»Òª½«·ÇÔªËØ´«µİ¸øSizzle
+						//ä¸è¦å°†éå…ƒç´ ä¼ é€’ç»™Sizzle
 						cur.nodeType === 1 &&
-							jQuery.find.matchesSelector£¨cur£¬selectors£©£©£©{
+							jQuery.find.matchesSelectorï¼ˆcurï¼Œselectorsï¼‰ï¼‰ï¼‰{
 
-						matched.push£¨cur£©;
-						´òÆÆ;
+						matched.pushï¼ˆcurï¼‰;
+						æ‰“ç ´;
 					}
 				}
 			}
 		}
 
-		return this.pushStack£¨matched.length> 1£¿jQuery.uniqueSort£¨matched£©£ºmatched£©;
-	}£¬
+		return this.pushStackï¼ˆmatched.length> 1ï¼ŸjQuery.uniqueSortï¼ˆmatchedï¼‰ï¼šmatchedï¼‰;
+	}ï¼Œ
 
-	//È·¶¨¼¯ºÏÖĞÔªËØµÄÎ»ÖÃ
-	index£ºfunction£¨elem£©{
+	//ç¡®å®šé›†åˆä¸­å…ƒç´ çš„ä½ç½®
+	indexï¼šfunctionï¼ˆelemï¼‰{
 
-		//Ã»ÓĞ²ÎÊı£¬ÔÚ¸¸¼¶ÖĞ·µ»ØË÷Òı
-		if£¨£¡elem£©{
+		//æ²¡æœ‰å‚æ•°ï¼Œåœ¨çˆ¶çº§ä¸­è¿”å›ç´¢å¼•
+		ifï¼ˆï¼elemï¼‰{
 			return ( this[ 0 ] && this[ 0 ].parentNode ) ? this.first().prevAll().length : -1;
 		}
 
@@ -3133,170 +3133,170 @@ jQuery.each( {
 	prevAll: function( elem ) {
 		return dir( elem, "previousSibling" );
 	},
-	nextUntil£ºfunction£¨elem£¬i£¬until£©{
-		return dir£¨elem£¬¡°nextSibling¡±£¬Ö±µ½£©;
-	}£¬
-	prevUntil£ºfunction£¨elem£¬i£¬until£©{
-		return dir£¨elem£¬¡°previousSibling¡±£¬Ö±µ½£©;
-	}£¬
-	ĞÖµÜ½ãÃÃ£ºfunction£¨elem£©{
-		return siblings£¨£¨elem.parentNode || {}£©¡£firstirstChild£¬elem£©;
-	}£¬
-	children£ºfunction£¨elem£©{
-		·µ»ØĞÖµÜ½ãÃÃ£¨elem.firstChild£©;
-	}£¬
-	ÄÚÈİ£ºfunction£¨elem£©{
-        if£¨nodeName£¨elem£¬¡°iframe¡±£©£©{
+	nextUntilï¼šfunctionï¼ˆelemï¼Œiï¼Œuntilï¼‰{
+		return dirï¼ˆelemï¼Œâ€œnextSiblingâ€ï¼Œç›´åˆ°ï¼‰;
+	}ï¼Œ
+	prevUntilï¼šfunctionï¼ˆelemï¼Œiï¼Œuntilï¼‰{
+		return dirï¼ˆelemï¼Œâ€œpreviousSiblingâ€ï¼Œç›´åˆ°ï¼‰;
+	}ï¼Œ
+	å…„å¼Ÿå§å¦¹ï¼šfunctionï¼ˆelemï¼‰{
+		return siblingsï¼ˆï¼ˆelem.parentNode || {}ï¼‰ã€‚firstirstChildï¼Œelemï¼‰;
+	}ï¼Œ
+	childrenï¼šfunctionï¼ˆelemï¼‰{
+		è¿”å›å…„å¼Ÿå§å¦¹ï¼ˆelem.firstChildï¼‰;
+	}ï¼Œ
+	å†…å®¹ï¼šfunctionï¼ˆelemï¼‰{
+        ifï¼ˆnodeNameï¼ˆelemï¼Œâ€œiframeâ€ï¼‰ï¼‰{
             return elem.contentDocument;
         }
 
-        //Ö§³Ö£º½öÏŞIE 9  -  11£¬½öÏŞiOS 7£¬Androidä¯ÀÀÆ÷<= 4.3
-        //ÔÚä¯ÀÀÆ÷ÖĞ½«Ä£°åÔªËØÊÓÎª³£¹æÔªËØ
-        //²»Ö§³Ö
-        if£¨nodeName£¨elem£¬¡°template¡±£©£©{
+        //æ”¯æŒï¼šä»…é™IE 9  -  11ï¼Œä»…é™iOS 7ï¼ŒAndroidæµè§ˆå™¨<= 4.3
+        //åœ¨æµè§ˆå™¨ä¸­å°†æ¨¡æ¿å…ƒç´ è§†ä¸ºå¸¸è§„å…ƒç´ 
+        //ä¸æ”¯æŒ
+        ifï¼ˆnodeNameï¼ˆelemï¼Œâ€œtemplateâ€ï¼‰ï¼‰{
             elem = elem.content || ELEM;
         }
 
-        return jQuery.merge£¨[]£¬elem.childNodes£©;
+        return jQuery.mergeï¼ˆ[]ï¼Œelem.childNodesï¼‰;
 	}
-}£¬function£¨name£¬fn£©{
-	jQuery.fn [name] = function£¨until£¬selector£©{
-		var matched = jQuery.map£¨this£¬fn£¬until£©;
+}ï¼Œfunctionï¼ˆnameï¼Œfnï¼‰{
+	jQuery.fn [name] = functionï¼ˆuntilï¼Œselectorï¼‰{
+		var matched = jQuery.mapï¼ˆthisï¼Œfnï¼Œuntilï¼‰;
 
-		if£¨name.slice£¨-5£©£¡==¡°Until¡±£©{
+		ifï¼ˆname.sliceï¼ˆ-5ï¼‰ï¼==â€œUntilâ€ï¼‰{
 			selector = until;
 		}
 
-		if£¨selector && typeof selector ===¡°string¡±£©{
-			matched = jQuery.filter£¨selector£¬matched£©;
+		ifï¼ˆselector && typeof selector ===â€œstringâ€ï¼‰{
+			matched = jQuery.filterï¼ˆselectorï¼Œmatchedï¼‰;
 		}
 
-		if£¨this.length> 1£©{
+		ifï¼ˆthis.length> 1ï¼‰{
 
-			//É¾³ıÖØ¸´Ïî
-			if£¨£¡guaranteedUnique [name]£©{
-				jQuery.uniqueSort£¨Æ¥Åä£©;
+			//åˆ é™¤é‡å¤é¡¹
+			ifï¼ˆï¼guaranteedUnique [name]ï¼‰{
+				jQuery.uniqueSortï¼ˆåŒ¹é…ï¼‰;
 			}
 
-			//¸¸Ä¸*ºÍÇ°ÑÜÉúÆ·µÄÄæĞò
-			if£¨rparentsprev.test£¨name£©£©{
-				matched.reverse£¨£©;
+			//çˆ¶æ¯*å’Œå‰è¡ç”Ÿå“çš„é€†åº
+			ifï¼ˆrparentsprev.testï¼ˆnameï¼‰ï¼‰{
+				matched.reverseï¼ˆï¼‰;
 			}
 		}
 
-		return this.pushStack£¨matching£©;
+		return this.pushStackï¼ˆmatchingï¼‰;
 	};
-}£©;
-var rnothtmlwhite =£¨/ [^ \ x20 \ t \ r \ n \ f] + / g£©;
+}ï¼‰;
+var rnothtmlwhite =ï¼ˆ/ [^ \ x20 \ t \ r \ n \ f] + / gï¼‰;
 
 
 
-//½«×Ö·û´®¸ñÊ½µÄÑ¡Ïî×ª»»Îª¶ÔÏó¸ñÊ½µÄÑ¡Ïî
-function createOptions£¨options£©{
+//å°†å­—ç¬¦ä¸²æ ¼å¼çš„é€‰é¡¹è½¬æ¢ä¸ºå¯¹è±¡æ ¼å¼çš„é€‰é¡¹
+function createOptionsï¼ˆoptionsï¼‰{
 	var object = {};
-	jQuery.each£¨options.match£¨rnothtmlwhite£©|| []£¬function£¨_£¬flag£©{
+	jQuery.eachï¼ˆoptions.matchï¼ˆrnothtmlwhiteï¼‰|| []ï¼Œfunctionï¼ˆ_ï¼Œflagï¼‰{
 		object [flag] = true;
-	}£©;
-	·µ»Ø¶ÔÏó;
+	}ï¼‰;
+	è¿”å›å¯¹è±¡;
 }
 
 / *
- *Ê¹ÓÃÒÔÏÂ²ÎÊı´´½¨»Øµ÷ÁĞ±í£º
+ *ä½¿ç”¨ä»¥ä¸‹å‚æ•°åˆ›å»ºå›è°ƒåˆ—è¡¨ï¼š
  *
- * options£º¿ÉÑ¡µÄ¿Õ¸ñ·Ö¸ôÑ¡ÏîÁĞ±í£¬Ëü½«¸Ä±ä·½Ê½
- *»Øµ÷ÁĞ±í±íÏÖ»ò¸ü´«Í³µÄÑ¡Ïî¶ÔÏó
+ * optionsï¼šå¯é€‰çš„ç©ºæ ¼åˆ†éš”é€‰é¡¹åˆ—è¡¨ï¼Œå®ƒå°†æ”¹å˜æ–¹å¼
+ *å›è°ƒåˆ—è¡¨è¡¨ç°æˆ–æ›´ä¼ ç»Ÿçš„é€‰é¡¹å¯¹è±¡
  *
- *Ä¬ÈÏÇé¿öÏÂ£¬»Øµ÷ÁĞ±í½«ÏñÊÂ¼ş»Øµ÷ÁĞ±íÒ»Ñù£¬¿ÉÒÔ
- *¶à´Î¡°½â¹Í¡±¡£
+ *é»˜è®¤æƒ…å†µä¸‹ï¼Œå›è°ƒåˆ—è¡¨å°†åƒäº‹ä»¶å›è°ƒåˆ—è¡¨ä¸€æ ·ï¼Œå¯ä»¥
+ *å¤šæ¬¡â€œè§£é›‡â€ã€‚
  *
- *¿ÉÄÜµÄÑ¡Ôñ£º
+ *å¯èƒ½çš„é€‰æ‹©ï¼š
  *
- *Ò»´Î£º½«È·±£»Øµ÷ÁĞ±íÖ»ÄÜ±»´¥·¢Ò»´Î£¨ÈçÑÓÆÚ£©
+ *ä¸€æ¬¡ï¼šå°†ç¡®ä¿å›è°ƒåˆ—è¡¨åªèƒ½è¢«è§¦å‘ä¸€æ¬¡ï¼ˆå¦‚å»¶æœŸï¼‰
  *
- * memory£º½«¸ú×ÙÒÔÇ°µÄÖµ²¢½«µ÷ÓÃÌí¼ÓµÄÈÎºÎ»Øµ÷
- *ÁĞ±í±»Á¢¼´ÓÃ×îĞÂµÄ¡°¼ÇÒä¡±µãÈ¼ºó
- *Öµ£¨ÈçÑÓÆÚ£©
+ * memoryï¼šå°†è·Ÿè¸ªä»¥å‰çš„å€¼å¹¶å°†è°ƒç”¨æ·»åŠ çš„ä»»ä½•å›è°ƒ
+ *åˆ—è¡¨è¢«ç«‹å³ç”¨æœ€æ–°çš„â€œè®°å¿†â€ç‚¹ç‡ƒå
+ *å€¼ï¼ˆå¦‚å»¶æœŸï¼‰
  *
- *Î¨Ò»£º½«È·±£»Øµ÷Ö»ÄÜÌí¼ÓÒ»´Î£¨ÁĞ±íÖĞÃ»ÓĞÖØ¸´£©
+ *å”¯ä¸€ï¼šå°†ç¡®ä¿å›è°ƒåªèƒ½æ·»åŠ ä¸€æ¬¡ï¼ˆåˆ—è¡¨ä¸­æ²¡æœ‰é‡å¤ï¼‰
  *
- * stopOnFalse£ºµ±»Øµ÷·µ»ØfalseÊ±ÖĞ¶Ïµ÷ÓÃ
+ * stopOnFalseï¼šå½“å›è°ƒè¿”å›falseæ—¶ä¸­æ–­è°ƒç”¨
  *
  * /
-jQuery.Callbacks = function£¨options£©{
+jQuery.Callbacks = functionï¼ˆoptionsï¼‰{
 
-	//Èç¹ûĞèÒª£¬½«Ñ¡Ïî´ÓString¸ñÊ½×ª»»ÎªObject¸ñÊ½
-	//£¨ÎÒÃÇÏÈ¼ì²é»º´æ£©
-	options = typeof options ===¡°string¡±£¿
-		createOptions£¨options£©£º
-		jQuery.extend£¨{}£¬options£©;
+	//å¦‚æœéœ€è¦ï¼Œå°†é€‰é¡¹ä»Stringæ ¼å¼è½¬æ¢ä¸ºObjectæ ¼å¼
+	//ï¼ˆæˆ‘ä»¬å…ˆæ£€æŸ¥ç¼“å­˜ï¼‰
+	options = typeof options ===â€œstringâ€ï¼Ÿ
+		createOptionsï¼ˆoptionsï¼‰ï¼š
+		jQuery.extendï¼ˆ{}ï¼Œoptionsï¼‰;
 
-	var //±ê¼ÇÁĞ±íµ±Ç°ÊÇ·ñÕıÔÚ´¥·¢µÄ±êÖ¾
-		Éä»÷£¬
+	var //æ ‡è®°åˆ—è¡¨å½“å‰æ˜¯å¦æ­£åœ¨è§¦å‘çš„æ ‡å¿—
+		å°„å‡»ï¼Œ
 
-		//²»¿ÉÍü¼ÇÁĞ±íµÄÉÏ´Î´¥·¢Öµ
-		¼ÇÒä£¬
+		//ä¸å¯å¿˜è®°åˆ—è¡¨çš„ä¸Šæ¬¡è§¦å‘å€¼
+		è®°å¿†ï¼Œ
 
-		//±ê¼ÇÊÇ·ñÒÑ´¥·¢ÁĞ±í
-		½â¹Í£¬
+		//æ ‡è®°æ˜¯å¦å·²è§¦å‘åˆ—è¡¨
+		è§£é›‡ï¼Œ
 
-		//·ÀÖ¹Éä»÷µÄÆìÖÄ
-		Ëø¶¨£¬
+		//é˜²æ­¢å°„å‡»çš„æ——å¸œ
+		é”å®šï¼Œ
 
-		//Êµ¼Ê»Øµ÷ÁĞ±í
-		list = []£¬
+		//å®é™…å›è°ƒåˆ—è¡¨
+		list = []ï¼Œ
 
-		//¿ÉÖØ¸´ÁĞ±íµÄÖ´ĞĞÊı¾İ¶ÓÁĞ
-		queue = []£¬
+		//å¯é‡å¤åˆ—è¡¨çš„æ‰§è¡Œæ•°æ®é˜Ÿåˆ—
+		queue = []ï¼Œ
 
-		//µ±Ç°´¥·¢»Øµ÷µÄË÷Òı£¨¸ù¾İĞèÒªÍ¨¹ıÌí¼Ó/É¾³ıĞŞ¸Ä£©
-		firingIndex = -1£¬
+		//å½“å‰è§¦å‘å›è°ƒçš„ç´¢å¼•ï¼ˆæ ¹æ®éœ€è¦é€šè¿‡æ·»åŠ /åˆ é™¤ä¿®æ”¹ï¼‰
+		firingIndex = -1ï¼Œ
 
-		//Ïû·À»Øµ÷
-		fire = function£¨£©{
+		//æ¶ˆé˜²å›è°ƒ
+		fire = functionï¼ˆï¼‰{
 
-			//Ç¿ÖÆµ¥´ÎÉä»÷
-			ÒÑËø¶¨=ÒÑËø¶¨|| options.once;
+			//å¼ºåˆ¶å•æ¬¡å°„å‡»
+			å·²é”å®š=å·²é”å®š|| options.once;
 
-			//ÎªËùÓĞ¹ÒÆğµÄÖ´ĞĞÖ´ĞĞ»Øµ÷£¬
-			//×ğÖØfiringIndex¸²¸ÇºÍÔËĞĞÊ±¸ü¸Ä
+			//ä¸ºæ‰€æœ‰æŒ‚èµ·çš„æ‰§è¡Œæ‰§è¡Œå›è°ƒï¼Œ
+			//å°Šé‡firingIndexè¦†ç›–å’Œè¿è¡Œæ—¶æ›´æ”¹
 			fired = firing = true;
-			for£¨; queue.length; firingIndex = -1£©{
-				memory = queue.shift£¨£©;
-				while£¨++ firingIndex <list.length£©{
+			forï¼ˆ; queue.length; firingIndex = -1ï¼‰{
+				memory = queue.shiftï¼ˆï¼‰;
+				whileï¼ˆ++ firingIndex <list.lengthï¼‰{
 
-					//ÔËĞĞ»Øµ÷²¢¼ì²éÌáÇ°ÖÕÖ¹
-					if£¨list [firingIndex] .apply£¨memory [0]£¬memory [1]£©=== false &&
-						options.stopOnFalse£©{
+					//è¿è¡Œå›è°ƒå¹¶æ£€æŸ¥æå‰ç»ˆæ­¢
+					ifï¼ˆlist [firingIndex] .applyï¼ˆmemory [0]ï¼Œmemory [1]ï¼‰=== false &&
+						options.stopOnFalseï¼‰{
 
-						//Ìø×ªµ½½áÊø²¢Íü¼ÇÊı¾İ£¬ÒÔ±ã.add²»»áÖØĞÂÆô¶¯
+						//è·³è½¬åˆ°ç»“æŸå¹¶å¿˜è®°æ•°æ®ï¼Œä»¥ä¾¿.addä¸ä¼šé‡æ–°å¯åŠ¨
 						firingIndex = list.length;
 						memory = false;
 					}
 				}
 			}
 
-			//Èç¹ûÎÒÃÇÍê³ÉÁËÊı¾İ£¬ÇëÍü¼ÇÊı¾İ
-			if£¨£¡options.memory£©{
+			//å¦‚æœæˆ‘ä»¬å®Œæˆäº†æ•°æ®ï¼Œè¯·å¿˜è®°æ•°æ®
+			ifï¼ˆï¼options.memoryï¼‰{
 				memory = false;
 			}
 
 			fired = false;
 
-			//Èç¹ûÎÒÃÇÍê³ÉÁËÉä»÷£¬ÄÇ¾ÍÇåÀí¸É¾»°É
-			if£¨locked£©{
+			//å¦‚æœæˆ‘ä»¬å®Œæˆäº†å°„å‡»ï¼Œé‚£å°±æ¸…ç†å¹²å‡€å§
+			ifï¼ˆlockedï¼‰{
 
-				//Èç¹ûÎÒÃÇÓĞÎ´À´Ìí¼Óºô½ĞµÄÊı¾İ£¬Çë±£ÁôÒ»¸ö¿ÕÁĞ±í
-				if£¨memory£©{
+				//å¦‚æœæˆ‘ä»¬æœ‰æœªæ¥æ·»åŠ å‘¼å«çš„æ•°æ®ï¼Œè¯·ä¿ç•™ä¸€ä¸ªç©ºåˆ—è¡¨
+				ifï¼ˆmemoryï¼‰{
 					list = [];
 
-				//·ñÔò£¬´Ë¶ÔÏóÒÑÓÃÍê
+				//å¦åˆ™ï¼Œæ­¤å¯¹è±¡å·²ç”¨å®Œ
 				} else {
-					list =¡°¡±;
+					list =â€œâ€;
 				}
 			}
-		}£¬
+		}ï¼Œ
 
-		//Êµ¼Ê»Øµ÷¶ÔÏó
+		//å®é™…å›è°ƒå¯¹è±¡
 		self = {
 
 			// Add a callback or a collection of callbacks to the list
@@ -3304,154 +3304,154 @@ jQuery.Callbacks = function£¨options£©{
 				if ( list ) {
 
 					// If we have memory from a past run, we should fire after adding
-					if£¨memory &&£¡firing£©{
+					ifï¼ˆmemory &&ï¼firingï¼‰{
 						firingIndex = list.length  -  1;
-						queue.push£¨memory£©;
+						queue.pushï¼ˆmemoryï¼‰;
 					}
 
-					£¨function add£¨args£©{
-						jQuery.each£¨args£¬function£¨_£¬arg£©{
-							if£¨isFunction£¨arg£©£©{
-								if£¨£¡options.unique ||£¡self.has£¨arg£©£©{
-									list.push£¨arg£©;
+					ï¼ˆfunction addï¼ˆargsï¼‰{
+						jQuery.eachï¼ˆargsï¼Œfunctionï¼ˆ_ï¼Œargï¼‰{
+							ifï¼ˆisFunctionï¼ˆargï¼‰ï¼‰{
+								ifï¼ˆï¼options.unique ||ï¼self.hasï¼ˆargï¼‰ï¼‰{
+									list.pushï¼ˆargï¼‰;
 								}
-							} else if£¨arg && arg.length && toType£¨arg£©£¡==¡°string¡±£©{
+							} else ifï¼ˆarg && arg.length && toTypeï¼ˆargï¼‰ï¼==â€œstringâ€ï¼‰{
 
-								//µİ¹é¼ì²é
-								add£¨arg£©;
+								//é€’å½’æ£€æŸ¥
+								addï¼ˆargï¼‰;
 							}
-						}£©;
-					}£©£¨²ÎÊı£©;
+						}ï¼‰;
+					}ï¼‰ï¼ˆå‚æ•°ï¼‰;
 
-					if£¨memory &&£¡firing£©{
-						»ğ£¨£©;
+					ifï¼ˆmemory &&ï¼firingï¼‰{
+						ç«ï¼ˆï¼‰;
 					}
 				}
-				¹é»¹Õâ¸ö;
-			}£¬
+				å½’è¿˜è¿™ä¸ª;
+			}ï¼Œ
 
-			//´ÓÁĞ±íÖĞÉ¾³ı»Øµ÷
-			remove£ºfunction£¨£©{
-				jQuery.each£¨arguments£¬function£¨_£¬arg£©{
+			//ä»åˆ—è¡¨ä¸­åˆ é™¤å›è°ƒ
+			removeï¼šfunctionï¼ˆï¼‰{
+				jQuery.eachï¼ˆargumentsï¼Œfunctionï¼ˆ_ï¼Œargï¼‰{
 					var index;
-					while£¨£¨index = jQuery.inArray£¨arg£¬list£¬index£©£©> -1£©{
-						list.splice£¨index£¬1£©;
+					whileï¼ˆï¼ˆindex = jQuery.inArrayï¼ˆargï¼Œlistï¼Œindexï¼‰ï¼‰> -1ï¼‰{
+						list.spliceï¼ˆindexï¼Œ1ï¼‰;
 
-						//´¦Àí´¥·¢Ë÷Òı
-						if£¨index <= firingIndex£©{
+						//å¤„ç†è§¦å‘ç´¢å¼•
+						ifï¼ˆindex <= firingIndexï¼‰{
 							firingIndex--;
 						}
 					}
-				}£©;
-				¹é»¹Õâ¸ö;
-			}£¬
+				}ï¼‰;
+				å½’è¿˜è¿™ä¸ª;
+			}ï¼Œ
 
-			//¼ì²é¸ø¶¨µÄ»Øµ÷ÊÇ·ñÔÚÁĞ±íÖĞ¡£
-			//Èç¹ûÃ»ÓĞ¸ø³ö²ÎÊı£¬Ôò·µ»ØlistÊÇ·ñ¸½¼ÓÁË»Øµ÷¡£
-			has£ºfunction£¨fn£©{
-				·µ»Øfn£¿
-					jQuery.inArray£¨fn£¬list£©> -1£º
+			//æ£€æŸ¥ç»™å®šçš„å›è°ƒæ˜¯å¦åœ¨åˆ—è¡¨ä¸­ã€‚
+			//å¦‚æœæ²¡æœ‰ç»™å‡ºå‚æ•°ï¼Œåˆ™è¿”å›listæ˜¯å¦é™„åŠ äº†å›è°ƒã€‚
+			hasï¼šfunctionï¼ˆfnï¼‰{
+				è¿”å›fnï¼Ÿ
+					jQuery.inArrayï¼ˆfnï¼Œlistï¼‰> -1ï¼š
 					list.length> 0;
-			}£¬
+			}ï¼Œ
 
-			//´ÓÁĞ±íÖĞÉ¾³ıËùÓĞ»Øµ÷
-			empty£ºfunction£¨£©{
-				if£¨list£©{
+			//ä»åˆ—è¡¨ä¸­åˆ é™¤æ‰€æœ‰å›è°ƒ
+			emptyï¼šfunctionï¼ˆï¼‰{
+				ifï¼ˆlistï¼‰{
 					list = [];
 				}
-				¹é»¹Õâ¸ö;
-			}£¬
+				å½’è¿˜è¿™ä¸ª;
+			}ï¼Œ
 
-			//½ûÓÃ.fireºÍ.add
-			//ÖĞÖ¹ËùÓĞµ±Ç°/´ı´¦ÀíµÄÖ´ĞĞ
-			//Çå³ıËùÓĞ»Øµ÷ºÍÖµ
-			disable£ºfunction£¨£©{
+			//ç¦ç”¨.fireå’Œ.add
+			//ä¸­æ­¢æ‰€æœ‰å½“å‰/å¾…å¤„ç†çš„æ‰§è¡Œ
+			//æ¸…é™¤æ‰€æœ‰å›è°ƒå’Œå€¼
+			disableï¼šfunctionï¼ˆï¼‰{
 				locked = queue = [];
-				list = memory =¡°¡±;
-				¹é»¹Õâ¸ö;
-			}£¬
-			disabled£ºfunction£¨£©{
-				return£¡list;
-			}£¬
+				list = memory =â€œâ€;
+				å½’è¿˜è¿™ä¸ª;
+			}ï¼Œ
+			disabledï¼šfunctionï¼ˆï¼‰{
+				returnï¼list;
+			}ï¼Œ
 
-			//½ûÓÃ.fire
+			//ç¦ç”¨.fire
 			// Also disable .add unless we have memory (since it would have no effect)
 			// Abort any pending executions
 			lock: function() {
 				locked = queue = [];
 				if ( !memory && !firing ) {
-					list = memory =¡°¡±;
+					list = memory =â€œâ€;
 				}
-				¹é»¹Õâ¸ö;
-			}£¬
-			ÒÑËø¶¨£ºfunction£¨£©{
-				·µ»Ø!!Ëø¶¨;
-			}£¬
+				å½’è¿˜è¿™ä¸ª;
+			}ï¼Œ
+			å·²é”å®šï¼šfunctionï¼ˆï¼‰{
+				è¿”å›!!é”å®š;
+			}ï¼Œ
 
-			//Ê¹ÓÃ¸ø¶¨µÄÉÏÏÂÎÄºÍ²ÎÊıµ÷ÓÃËùÓĞ»Øµ÷
-			fireWith£ºfunction£¨context£¬args£©{
-				if£¨£¡locked£©{
+			//ä½¿ç”¨ç»™å®šçš„ä¸Šä¸‹æ–‡å’Œå‚æ•°è°ƒç”¨æ‰€æœ‰å›è°ƒ
+			fireWithï¼šfunctionï¼ˆcontextï¼Œargsï¼‰{
+				ifï¼ˆï¼lockedï¼‰{
 					args = args || [];
-					args = [context£¬args.slice£¿args.slice£¨£©£ºargs];
-					queue.push£¨args£©;
-					if£¨£¡firing£©{
-						»ğ£¨£©;
+					args = [contextï¼Œargs.sliceï¼Ÿargs.sliceï¼ˆï¼‰ï¼šargs];
+					queue.pushï¼ˆargsï¼‰;
+					ifï¼ˆï¼firingï¼‰{
+						ç«ï¼ˆï¼‰;
 					}
 				}
-				¹é»¹Õâ¸ö;
-			}£¬
+				å½’è¿˜è¿™ä¸ª;
+			}ï¼Œ
 
-			//Ê¹ÓÃ¸ø¶¨µÄ²ÎÊıµ÷ÓÃËùÓĞ»Øµ÷
-			fire£ºfunction£¨£©{
-				self.fireWith£¨this£¬arguments£©;
-				¹é»¹Õâ¸ö;
-			}£¬
+			//ä½¿ç”¨ç»™å®šçš„å‚æ•°è°ƒç”¨æ‰€æœ‰å›è°ƒ
+			fireï¼šfunctionï¼ˆï¼‰{
+				self.fireWithï¼ˆthisï¼Œargumentsï¼‰;
+				å½’è¿˜è¿™ä¸ª;
+			}ï¼Œ
 
-			//ÖªµÀ»Øµ÷º¯ÊıÊÇ·ñÖÁÉÙ±»µ÷ÓÃ¹ıÒ»´Î
-			fired£ºfunction£¨£©{
-				»ØÀ´!!±»½â¹Í
+			//çŸ¥é“å›è°ƒå‡½æ•°æ˜¯å¦è‡³å°‘è¢«è°ƒç”¨è¿‡ä¸€æ¬¡
+			firedï¼šfunctionï¼ˆï¼‰{
+				å›æ¥!!è¢«è§£é›‡
 			}
 		};
 
-	»Ø¹é×ÔÎÒ;
+	å›å½’è‡ªæˆ‘;
 };
 
 
-function Identity£¨v£©{
-	·µ»Øv;
+function Identityï¼ˆvï¼‰{
+	è¿”å›v;
 }
-function Thrower£¨ex£©{
-	Å×³öÇ°
+function Throwerï¼ˆexï¼‰{
+	æŠ›å‡ºå‰
 }
 
-function adoptValue£¨value£¬resolve£¬reject£¬noValue£©{
-	var·½·¨;
+function adoptValueï¼ˆvalueï¼Œresolveï¼Œrejectï¼ŒnoValueï¼‰{
+	varæ–¹æ³•;
 
-	³¢ÊÔ{
+	å°è¯•{
 
-		//Ê×ÏÈ¼ì²épromise·½ÃæÒÔÊÚÓèÍ¬²½ĞĞÎªÌØÈ¨
-		if£¨value && isFunction£¨£¨method = value.promise£©£©£©{
-			method.call£¨value£©.done£¨resolve£©.fail£¨reject£©;
+		//é¦–å…ˆæ£€æŸ¥promiseæ–¹é¢ä»¥æˆäºˆåŒæ­¥è¡Œä¸ºç‰¹æƒ
+		ifï¼ˆvalue && isFunctionï¼ˆï¼ˆmethod = value.promiseï¼‰ï¼‰ï¼‰{
+			method.callï¼ˆvalueï¼‰.doneï¼ˆresolveï¼‰.failï¼ˆrejectï¼‰;
 
-		//ÆäËûµÄÈË
-		} else if£¨value && isFunction£¨£¨method = value.then£©£©£©{
-			method.call£¨value£¬resolve£¬reject£©;
+		//å…¶ä»–çš„äºº
+		} else ifï¼ˆvalue && isFunctionï¼ˆï¼ˆmethod = value.thenï¼‰ï¼‰ï¼‰{
+			method.callï¼ˆvalueï¼Œresolveï¼Œrejectï¼‰;
 
-		//ÆäËû·Ç±°±ÉµÄÈË
+		//å…¶ä»–éå‘é„™çš„äºº
 		} else {
 
-			//Í¨¹ıÈÃArray££slice½«boolean`noValue`×ª»»ÎªÕûÊıÀ´¿ØÖÆ`resolve`²ÎÊı£º
-			// * false£º[value] .slice£¨0£©=> resolve£¨value£©
-			// * true£º[value] .slice£¨1£©=> resolve£¨£©
-			resolve.apply£¨undefined£¬[value] .slice£¨noValue£©£©;
+			//é€šè¿‡è®©Arrayï¼ƒsliceå°†boolean`noValue`è½¬æ¢ä¸ºæ•´æ•°æ¥æ§åˆ¶`resolve`å‚æ•°ï¼š
+			// * falseï¼š[value] .sliceï¼ˆ0ï¼‰=> resolveï¼ˆvalueï¼‰
+			// * trueï¼š[value] .sliceï¼ˆ1ï¼‰=> resolveï¼ˆï¼‰
+			resolve.applyï¼ˆundefinedï¼Œ[value] .sliceï¼ˆnoValueï¼‰ï¼‰;
 		}
 
-	//¶ÔÓÚPromises / A +£¬½«Òì³£×ª»»Îª¾Ü¾ø
-	//ÓÉÓÚjQuery.whenÃ»ÓĞ½â°ü£¬ÎÒÃÇ¿ÉÒÔÌø¹ı³öÏÖµÄ¶îÍâ¼ì²é
-	//ÑÓ³Ù££È»ºóÓĞÌõ¼şµØÒÖÖÆ¾Ü¾ø¡£
-	} catch£¨value£©{
+	//å¯¹äºPromises / A +ï¼Œå°†å¼‚å¸¸è½¬æ¢ä¸ºæ‹’ç»
+	//ç”±äºjQuery.whenæ²¡æœ‰è§£åŒ…ï¼Œæˆ‘ä»¬å¯ä»¥è·³è¿‡å‡ºç°çš„é¢å¤–æ£€æŸ¥
+	//å»¶è¿Ÿï¼ƒç„¶åæœ‰æ¡ä»¶åœ°æŠ‘åˆ¶æ‹’ç»ã€‚
+	} catchï¼ˆvalueï¼‰{
 
-		//Ö§³Ö£º½öÏŞAndroid 4.0
+		//æ”¯æŒï¼šä»…é™Android 4.0
 		// Strict mode functions invoked without .call/.apply get global-object context
 		reject.apply( undefined, [ value ] );
 	}
@@ -3468,229 +3468,229 @@ jQuery.extend( {
 					jQuery.Callbacks( "memory" ), 2 ],
 				[ "resolve", "done", jQuery.Callbacks( "once memory" ),
 					jQuery.Callbacks( "once memory" ), 0, "resolved" ],
-				[¡°¾Ü¾ø¡±£¬¡°Ê§°Ü¡±£¬jQuery.Callbacks£¨¡°Ôø¾­¼ÇÒä¡±£©£¬
-					jQuery.Callbacks£¨¡°Ò»´Î¼ÇÒä¡±£©£¬1£¬¡°¾Ü¾ø¡±]
+				[â€œæ‹’ç»â€ï¼Œâ€œå¤±è´¥â€ï¼ŒjQuery.Callbacksï¼ˆâ€œæ›¾ç»è®°å¿†â€ï¼‰ï¼Œ
+					jQuery.Callbacksï¼ˆâ€œä¸€æ¬¡è®°å¿†â€ï¼‰ï¼Œ1ï¼Œâ€œæ‹’ç»â€]
 			]
-			state =¡°pending¡±£¬
+			state =â€œpendingâ€ï¼Œ
 			promise = {
-				state£ºfunction£¨£©{
-					·µ»Ø×´Ì¬;
-				}£¬
-				always£ºfunction£¨£©{
-					deferred.done£¨arguments£©.fail£¨arguments£©;
-					¹é»¹Õâ¸ö;
-				}£¬
-				¡°catch¡±£ºfunction£¨fn£©{
-					return promise.then£¨null£¬fn£©;
-				}£¬
+				stateï¼šfunctionï¼ˆï¼‰{
+					è¿”å›çŠ¶æ€;
+				}ï¼Œ
+				alwaysï¼šfunctionï¼ˆï¼‰{
+					deferred.doneï¼ˆargumentsï¼‰.failï¼ˆargumentsï¼‰;
+					å½’è¿˜è¿™ä¸ª;
+				}ï¼Œ
+				â€œcatchâ€ï¼šfunctionï¼ˆfnï¼‰{
+					return promise.thenï¼ˆnullï¼Œfnï¼‰;
+				}ï¼Œ
 
-				//±£³Ö¹ÜµÀÒÔ½øĞĞ·´Ëã
-				pipe£ºfunction£¨/ * fnDone£¬fnFail£¬fnProgress * /£©{
+				//ä¿æŒç®¡é“ä»¥è¿›è¡Œåç®—
+				pipeï¼šfunctionï¼ˆ/ * fnDoneï¼ŒfnFailï¼ŒfnProgress * /ï¼‰{
 					var fns = arguments;
 
-					return jQuery.Deferred£¨function£¨newDefer£©{
-						jQuery.each£¨Ôª×é£¬º¯Êı£¨i£¬tuple£©{
+					return jQuery.Deferredï¼ˆfunctionï¼ˆnewDeferï¼‰{
+						jQuery.eachï¼ˆå…ƒç»„ï¼Œå‡½æ•°ï¼ˆiï¼Œtupleï¼‰{
 
-							//½«Ôª×é£¨½ø¶È£¬Íê³É£¬Ê§°Ü£©Ó³Éäµ½²ÎÊı£¨Íê³É£¬Ê§°Ü£¬½ø¶È£©
-							var fn = isFunction£¨fns [tuple [4]]£©&& fns [tuple [4]];
+							//å°†å…ƒç»„ï¼ˆè¿›åº¦ï¼Œå®Œæˆï¼Œå¤±è´¥ï¼‰æ˜ å°„åˆ°å‚æ•°ï¼ˆå®Œæˆï¼Œå¤±è´¥ï¼Œè¿›åº¦ï¼‰
+							var fn = isFunctionï¼ˆfns [tuple [4]]ï¼‰&& fns [tuple [4]];
 
-							// deferred.progress£¨function£¨£©{bind to newDefer or newDefer.notify}£©
-							// deferred.done£¨function£¨£©{bind to newDefer or newDefer.resolve}£©
-							// deferred.fail£¨function£¨£©{bind to newDefer or newDefer.reject}£©
-							deferred [tuple [1]]£¨function£¨£©{
-								var returns = fn && fn.apply£¨this£¬arguments£©;
-								if£¨·µ»Ø&& isFunction£¨returned.promise£©£©{
-									returned.promise£¨£©
-										.progress£¨newDefer.notify£©
-										.done£¨newDefer.resolve£©
-										.fail£¨newDefer.reject£©;
+							// deferred.progressï¼ˆfunctionï¼ˆï¼‰{bind to newDefer or newDefer.notify}ï¼‰
+							// deferred.doneï¼ˆfunctionï¼ˆï¼‰{bind to newDefer or newDefer.resolve}ï¼‰
+							// deferred.failï¼ˆfunctionï¼ˆï¼‰{bind to newDefer or newDefer.reject}ï¼‰
+							deferred [tuple [1]]ï¼ˆfunctionï¼ˆï¼‰{
+								var returns = fn && fn.applyï¼ˆthisï¼Œargumentsï¼‰;
+								ifï¼ˆè¿”å›&& isFunctionï¼ˆreturned.promiseï¼‰ï¼‰{
+									returned.promiseï¼ˆï¼‰
+										.progressï¼ˆnewDefer.notifyï¼‰
+										.doneï¼ˆnewDefer.resolveï¼‰
+										.failï¼ˆnewDefer.rejectï¼‰;
 								} else {
-									newDefer [tuple [0] +¡°With¡±]£¨
-										Õâ¸ö£¬
-										fn£¿[·µ»Ø]£ºÕùÂÛ
-									£©;
+									newDefer [tuple [0] +â€œWithâ€]ï¼ˆ
+										è¿™ä¸ªï¼Œ
+										fnï¼Ÿ[è¿”å›]ï¼šäº‰è®º
+									ï¼‰;
 								}
-							}£©;
-						}£©;
+							}ï¼‰;
+						}ï¼‰;
 						fns = null;
-					} £©¡£ÅµÑÔ£¨£©;
-				}£¬
-				then£ºfunction£¨onFulfilled£¬onRejected£¬onProgress£©{
+					} ï¼‰ã€‚è¯ºè¨€ï¼ˆï¼‰;
+				}ï¼Œ
+				thenï¼šfunctionï¼ˆonFulfilledï¼ŒonRejectedï¼ŒonProgressï¼‰{
 					var maxDepth = 0;
-					function resolve£¨depth£¬deferred£¬handler£¬special£©{
-						return function£¨£©{
-							var that = this£¬
-								args =²ÎÊı£¬
-								mightThrow = function£¨£©{
-									var·µ»Ø£¬È»ºó;
+					function resolveï¼ˆdepthï¼Œdeferredï¼Œhandlerï¼Œspecialï¼‰{
+						return functionï¼ˆï¼‰{
+							var that = thisï¼Œ
+								args =å‚æ•°ï¼Œ
+								mightThrow = functionï¼ˆï¼‰{
+									varè¿”å›ï¼Œç„¶å;
 
-									//Ö§³Ö£º³ĞÅµ/ A +µÚ2.3.3.3.3½Ú
+									//æ”¯æŒï¼šæ‰¿è¯º/ A +ç¬¬2.3.3.3.3èŠ‚
 									// https://promisesaplus.com/#point-59
-									//ºöÂÔË«ÖØ·Ö±æÂÊ³¢ÊÔ
-									if£¨Éî¶È<maxDepth£©{
-										·µ»Ø;
+									//å¿½ç•¥åŒé‡åˆ†è¾¨ç‡å°è¯•
+									ifï¼ˆæ·±åº¦<maxDepthï¼‰{
+										è¿”å›;
 									}
 
-									returned = handler.apply£¨that£¬args£©;
+									returned = handler.applyï¼ˆthatï¼Œargsï¼‰;
 
-									//Ö§³Ö£ºPromises / A +µÚ2.3.1½Ú
+									//æ”¯æŒï¼šPromises / A +ç¬¬2.3.1èŠ‚
 									// https://promisesaplus.com/#point-48
-									if£¨·µ»Ø=== deferred.promise£¨£©£©{
-										Å×³öĞÂµÄTypeError£¨¡°Thenable self-resolution¡±£©;
+									ifï¼ˆè¿”å›=== deferred.promiseï¼ˆï¼‰ï¼‰{
+										æŠ›å‡ºæ–°çš„TypeErrorï¼ˆâ€œThenable self-resolutionâ€ï¼‰;
 									}
 
-									//Ö§³Ö£ºPromises / A + section 2.3.3.1,3.5
+									//æ”¯æŒï¼šPromises / A + section 2.3.3.1,3.5
 									// https://promisesaplus.com/#point-54
 									// https://promisesaplus.com/#point-75
-									//Ö»¼ìË÷Ò»´Î`then`
-									È»ºó=·µ»Ø&&
+									//åªæ£€ç´¢ä¸€æ¬¡`then`
+									ç„¶å=è¿”å›&&
 
-										//Ö§³Ö£º³ĞÅµ/ A +µÚ2.3.4½Ú
+										//æ”¯æŒï¼šæ‰¿è¯º/ A +ç¬¬2.3.4èŠ‚
 										// https://promisesaplus.com/#point-64
-										//Ö»¼ì²é¶ÔÏóºÍº¯ÊıµÄ¿ÉÓÃĞÔ
-										£¨typeof·µ»Ø===¡°¶ÔÏó¡±||
-											typeof·µ»Ø===¡°º¯Êı¡±£©&&
+										//åªæ£€æŸ¥å¯¹è±¡å’Œå‡½æ•°çš„å¯ç”¨æ€§
+										ï¼ˆtypeofè¿”å›===â€œå¯¹è±¡â€||
+											typeofè¿”å›===â€œå‡½æ•°â€ï¼‰&&
 										returned.then;
 
-									//´¦ÀíÒ»¸ö·µ»ØµÄ
-									if£¨isFunction£¨then£©£©{
+									//å¤„ç†ä¸€ä¸ªè¿”å›çš„
+									ifï¼ˆisFunctionï¼ˆthenï¼‰ï¼‰{
 
-										//ÌØÊâ´¦ÀíÆ÷£¨Í¨Öª£©Ö»ÊÇµÈ´ı½â¾ö
-										if£¨special£©{
-											then.call£¨
-												»Ø£¬
-												½â¾ö£¨maxDepth£¬deferred£¬Identity£¬special£©£¬
-												½â¾ö£¨maxDepth£¬deferred£¬Thrower£¬special£©
-											£©;
+										//ç‰¹æ®Šå¤„ç†å™¨ï¼ˆé€šçŸ¥ï¼‰åªæ˜¯ç­‰å¾…è§£å†³
+										ifï¼ˆspecialï¼‰{
+											then.callï¼ˆ
+												å›ï¼Œ
+												è§£å†³ï¼ˆmaxDepthï¼Œdeferredï¼ŒIdentityï¼Œspecialï¼‰ï¼Œ
+												è§£å†³ï¼ˆmaxDepthï¼Œdeferredï¼ŒThrowerï¼Œspecialï¼‰
+											ï¼‰;
 
-										//Õı³£´¦ÀíÆ÷£¨½âÎö£©Ò²½øÈëÁË½ø³Ì
+										//æ­£å¸¸å¤„ç†å™¨ï¼ˆè§£æï¼‰ä¹Ÿè¿›å…¥äº†è¿›ç¨‹
 										} else {
 
-											// ...²¢ºöÂÔ¾ÉµÄ·Ö±æÂÊÖµ
+											// ...å¹¶å¿½ç•¥æ—§çš„åˆ†è¾¨ç‡å€¼
 											MAXDEPTH ++;
 
-											then.call£¨
-												»Ø£¬
-												½â¾ö£¨maxDepth£¬deferred£¬Identity£¬special£©£¬
-												½â¾ö£¨maxDepth£¬deferred£¬Thrower£¬special£©£¬
-												½â¾ö£¨maxDepth£¬deferred£¬Identity£¬
-													deferred.notifyWith£©
-											£©;
+											then.callï¼ˆ
+												å›ï¼Œ
+												è§£å†³ï¼ˆmaxDepthï¼Œdeferredï¼ŒIdentityï¼Œspecialï¼‰ï¼Œ
+												è§£å†³ï¼ˆmaxDepthï¼Œdeferredï¼ŒThrowerï¼Œspecialï¼‰ï¼Œ
+												è§£å†³ï¼ˆmaxDepthï¼Œdeferredï¼ŒIdentityï¼Œ
+													deferred.notifyWithï¼‰
+											ï¼‰;
 										}
 
-									//´¦ÀíËùÓĞÆäËû·µ»ØÖµ
+									//å¤„ç†æ‰€æœ‰å…¶ä»–è¿”å›å€¼
 									} else {
 
-										//Ö»ÓĞÌæ»»´¦Àí³ÌĞò²ÅÄÜ´«µİÉÏÏÂÎÄ
-										//ºÍ¶à¸öÖµ£¨·Ç¹æ·¶ĞĞÎª£©
-										if£¨handler£¡== Identity£©{
-											ÄÇ=Î´¶¨Òå;
-											args = [·µ»Ø];
+										//åªæœ‰æ›¿æ¢å¤„ç†ç¨‹åºæ‰èƒ½ä¼ é€’ä¸Šä¸‹æ–‡
+										//å’Œå¤šä¸ªå€¼ï¼ˆéè§„èŒƒè¡Œä¸ºï¼‰
+										ifï¼ˆhandlerï¼== Identityï¼‰{
+											é‚£=æœªå®šä¹‰;
+											args = [è¿”å›];
 										}
 
-										//´¦Àí¼ÛÖµ
-										//Ä¬ÈÏ½ø³ÌÒÑ½â¾ö
-										£¨special || deferred.resolveWith£©£¨that£¬args£©;
+										//å¤„ç†ä»·å€¼
+										//é»˜è®¤è¿›ç¨‹å·²è§£å†³
+										ï¼ˆspecial || deferred.resolveWithï¼‰ï¼ˆthatï¼Œargsï¼‰;
 									}
-								}£¬
+								}ï¼Œ
 
-								//Ö»ÓĞÆÕÍ¨´¦ÀíÆ÷£¨½âÎö£©²¶»ñ²¢¾Ü¾øÒì³£
-								¹ı³Ì=ÌØÊâ£¿
-									mayThrow£º
-									function£¨£©{
-										³¢ÊÔ{
-											mightThrow£¨£©;
-										} catch£¨e£©{
+								//åªæœ‰æ™®é€šå¤„ç†å™¨ï¼ˆè§£æï¼‰æ•è·å¹¶æ‹’ç»å¼‚å¸¸
+								è¿‡ç¨‹=ç‰¹æ®Šï¼Ÿ
+									mayThrowï¼š
+									functionï¼ˆï¼‰{
+										å°è¯•{
+											mightThrowï¼ˆï¼‰;
+										} catchï¼ˆeï¼‰{
 
-											if£¨jQuery.Deferred.exceptionHook£©{
-												jQuery.Deferred.exceptionHook£¨e£¬
-													process.stackTrace£©;
+											ifï¼ˆjQuery.Deferred.exceptionHookï¼‰{
+												jQuery.Deferred.exceptionHookï¼ˆeï¼Œ
+													process.stackTraceï¼‰;
 											}
 
-											//Ö§³Ö£º³ĞÅµ/ A +µÚ2.3.3.3.4.1½Ú
+											//æ”¯æŒï¼šæ‰¿è¯º/ A +ç¬¬2.3.3.3.4.1èŠ‚
 											// https://promisesaplus.com/#point-61
-											//ºöÂÔ½â¾öºóÒì³£
-											if£¨depth + 1> = maxDepth£©{
+											//å¿½ç•¥è§£å†³åå¼‚å¸¸
+											ifï¼ˆdepth + 1> = maxDepthï¼‰{
 
-												//Ö»ÓĞÌæ»»´¦Àí³ÌĞò²ÅÄÜ´«µİÉÏÏÂÎÄ
-												//ºÍ¶à¸öÖµ£¨·Ç¹æ·¶ĞĞÎª£©
-												if£¨handler£¡== Thrower£©{
-													ÄÇ=Î´¶¨Òå;
+												//åªæœ‰æ›¿æ¢å¤„ç†ç¨‹åºæ‰èƒ½ä¼ é€’ä¸Šä¸‹æ–‡
+												//å’Œå¤šä¸ªå€¼ï¼ˆéè§„èŒƒè¡Œä¸ºï¼‰
+												ifï¼ˆhandlerï¼== Throwerï¼‰{
+													é‚£=æœªå®šä¹‰;
 													args = [e];
 												}
 
-												deferred.rejectWith£¨that£¬args£©;
+												deferred.rejectWithï¼ˆthatï¼Œargsï¼‰;
 											}
 										}
 									};
 
-							//Ö§³Ö£º³ĞÅµ/ A +µÚ2.3.3.3.1½Ú
+							//æ”¯æŒï¼šæ‰¿è¯º/ A +ç¬¬2.3.3.3.1èŠ‚
 							// https://promisesaplus.com/#point-57
-							//Á¢¼´ÖØĞÂ½â¾ö³ĞÅµ£¬ÒÔ±ÜÃâ´íÎó¾Ü¾ø
-							//ºóĞø´íÎó
-							if£¨Éî¶È£©{
-								´¦Àí£¨£©;
+							//ç«‹å³é‡æ–°è§£å†³æ‰¿è¯ºï¼Œä»¥é¿å…é”™è¯¯æ‹’ç»
+							//åç»­é”™è¯¯
+							ifï¼ˆæ·±åº¦ï¼‰{
+								å¤„ç†ï¼ˆï¼‰;
 							} else {
 
-								//Èç¹ûÒì³££¬µ÷ÓÃ¿ÉÑ¡µÄ¹³×ÓÀ´¼ÇÂ¼¶ÑÕ»
-								//ÒòÎªµ±Ö´ĞĞÒì²½Ê±Ëü»á¶ªÊ§
-								if£¨jQuery.Deferred.getStackHook£©{
-									process.stackTrace = jQuery.Deferred.getStackHook£¨£©;
+								//å¦‚æœå¼‚å¸¸ï¼Œè°ƒç”¨å¯é€‰çš„é’©å­æ¥è®°å½•å †æ ˆ
+								//å› ä¸ºå½“æ‰§è¡Œå¼‚æ­¥æ—¶å®ƒä¼šä¸¢å¤±
+								ifï¼ˆjQuery.Deferred.getStackHookï¼‰{
+									process.stackTrace = jQuery.Deferred.getStackHookï¼ˆï¼‰;
 								}
-								window.setTimeout£¨process£©;
+								window.setTimeoutï¼ˆprocessï¼‰;
 							}
 						};
 					}
 
-					return jQuery.Deferred£¨function£¨newDefer£©{
+					return jQuery.Deferredï¼ˆfunctionï¼ˆnewDeferï¼‰{
 
-						// progress_handlers.add£¨...£©
-						Ôª×é[0] [3] .add£¨
-							½â¾ö£¨
-								0£¬
-								newDefer£¬
-								isFunction£¨onProgress£©£¿
-									onProgress£º
-									Éí·İ£¬
+						// progress_handlers.addï¼ˆ...ï¼‰
+						å…ƒç»„[0] [3] .addï¼ˆ
+							è§£å†³ï¼ˆ
+								0ï¼Œ
+								newDeferï¼Œ
+								isFunctionï¼ˆonProgressï¼‰ï¼Ÿ
+									onProgressï¼š
+									èº«ä»½ï¼Œ
 								newDefer.notifyWith
-							£©
-						£©;
+							ï¼‰
+						ï¼‰;
 
-						// fulfillilled_handlers.add£¨...£©
-						Ôª×é[1] [3] .add£¨
-							½â¾ö£¨
-								0£¬
-								newDefer£¬
-								isFunction£¨onFulfilled£©£¿
-									onFulfilled£º
-									Éí·Ö
-							£©
-						£©;
+						// fulfillilled_handlers.addï¼ˆ...ï¼‰
+						å…ƒç»„[1] [3] .addï¼ˆ
+							è§£å†³ï¼ˆ
+								0ï¼Œ
+								newDeferï¼Œ
+								isFunctionï¼ˆonFulfilledï¼‰ï¼Ÿ
+									onFulfilledï¼š
+									èº«åˆ†
+							ï¼‰
+						ï¼‰;
 
-						// rejected_handlers.add£¨...£©
-						Ôª×é[2] [3] .add£¨
-							½â¾ö£¨
-								0£¬
-								newDefer£¬
-								isFunction£¨onRejected£©£¿
-									onRejected£º
-									ÔË¶¯Ô±
-							£©
-						£©;
-					} £©¡£ÅµÑÔ£¨£©;
-				}£¬
+						// rejected_handlers.addï¼ˆ...ï¼‰
+						å…ƒç»„[2] [3] .addï¼ˆ
+							è§£å†³ï¼ˆ
+								0ï¼Œ
+								newDeferï¼Œ
+								isFunctionï¼ˆonRejectedï¼‰ï¼Ÿ
+									onRejectedï¼š
+									è¿åŠ¨å‘˜
+							ï¼‰
+						ï¼‰;
+					} ï¼‰ã€‚è¯ºè¨€ï¼ˆï¼‰;
+				}ï¼Œ
 
-				//»ñµÃÑÓÆÚµÄ³ĞÅµ
-				//Èç¹ûÌá¹©ÁËobj£¬Ôò½«promise·½ÃæÌí¼Óµ½¶ÔÏóÖĞ
-				promise£ºfunction£¨obj£©{
-					return obj£¡= null£¿jQuery.extend£¨obj£¬promise£©£ºpromise;
+				//è·å¾—å»¶æœŸçš„æ‰¿è¯º
+				//å¦‚æœæä¾›äº†objï¼Œåˆ™å°†promiseæ–¹é¢æ·»åŠ åˆ°å¯¹è±¡ä¸­
+				promiseï¼šfunctionï¼ˆobjï¼‰{
+					return objï¼= nullï¼ŸjQuery.extendï¼ˆobjï¼Œpromiseï¼‰ï¼špromise;
 				}
-			}£¬
+			}ï¼Œ
 			deferred = {};
 
-		//Ìí¼ÓÌØ¶¨ÓÚÁĞ±íµÄ·½·¨
-		jQuery.each£¨Ôª×é£¬º¯Êı£¨i£¬tuple£©{
-			var list = tuple [2]£¬
+		//æ·»åŠ ç‰¹å®šäºåˆ—è¡¨çš„æ–¹æ³•
+		jQuery.eachï¼ˆå…ƒç»„ï¼Œå‡½æ•°ï¼ˆiï¼Œtupleï¼‰{
+			var list = tuple [2]ï¼Œ
 				stateString = tuple [5];
 
 			// promise.progress = list.add
@@ -3698,310 +3698,310 @@ jQuery.extend( {
 			// promise.fail = list.add
 			promise [tuple [1]] = list.add;
 
-			//´¦Àí×´Ì¬
-			if£¨stateString£©{
-				list.add£¨
-					function£¨£©{
+			//å¤„ç†çŠ¶æ€
+			ifï¼ˆstateStringï¼‰{
+				list.addï¼ˆ
+					functionï¼ˆï¼‰{
 
-						// state =¡°ÒÑ½â¾ö¡±£¨¼´ÒÑÂÄĞĞ£©
-						// state =¡°rejected¡±
+						// state =â€œå·²è§£å†³â€ï¼ˆå³å·²å±¥è¡Œï¼‰
+						// state =â€œrejectedâ€
 						state = stateString;
-					}£¬
+					}ï¼Œ
 
 					// rejected_callbacks.disable
 					// fulfilled_callbacks.disable
-					Ôª×é[3  -  i] [2] .disable£¬
+					å…ƒç»„[3  -  i] [2] .disableï¼Œ
 
 					// rejected_handlers.disable
 					// fulfilled_handlers.disable
-					Ôª×é[3  -  i] [3] .disable£¬
+					å…ƒç»„[3  -  i] [3] .disableï¼Œ
 
 					// progress_callbacks.lock
-					Ôª×é[0] [2] .lock£¬
+					å…ƒç»„[0] [2] .lockï¼Œ
 
 					// progress_handlers.lock
-					Ôª×é[0] [3] .lock
-				£©;
+					å…ƒç»„[0] [3] .lock
+				ï¼‰;
 			}
 
 			// progress_handlers.fire
 			// fulfillilled_handlers.fire
 			// rejected_handlers.fire
-			list.add£¨Ôª×é[3] .fire£©;
+			list.addï¼ˆå…ƒç»„[3] .fireï¼‰;
 
-			// deferred.notify = function£¨£©{deferred.notifyWith£¨...£©}
-			// deferred.resolve = function£¨£©{deferred.resolveWith£¨...£©}
-			// deferred.reject = function£¨£©{deferred.rejectWith£¨...£©}
-			deferred [tuple [0]] = function£¨£©{
-				deferred [tuple [0] +¡°With¡±]£¨Õâ= = deferred£¿undefined£ºthis£¬arguments£©;
-				¹é»¹Õâ¸ö;
+			// deferred.notify = functionï¼ˆï¼‰{deferred.notifyWithï¼ˆ...ï¼‰}
+			// deferred.resolve = functionï¼ˆï¼‰{deferred.resolveWithï¼ˆ...ï¼‰}
+			// deferred.reject = functionï¼ˆï¼‰{deferred.rejectWithï¼ˆ...ï¼‰}
+			deferred [tuple [0]] = functionï¼ˆï¼‰{
+				deferred [tuple [0] +â€œWithâ€]ï¼ˆè¿™= = deferredï¼Ÿundefinedï¼šthisï¼Œargumentsï¼‰;
+				å½’è¿˜è¿™ä¸ª;
 			};
 
 			// deferred.notifyWith = list.fireWith
 			// deferred.resolveWith = list.fireWith
 			// deferred.rejectWith = list.fireWith
-			deferred [tuple [0] +¡°With¡±] = list.fireWith;
-		}£©;
+			deferred [tuple [0] +â€œWithâ€] = list.fireWith;
+		}ï¼‰;
 
-		//Ê¹ÑÓÆÚ³ĞÅµ
-		promise.promise£¨ÑÓÆÚ£©;
+		//ä½¿å»¶æœŸæ‰¿è¯º
+		promise.promiseï¼ˆå»¶æœŸï¼‰;
 
-		//Èç¹ûÓĞµÄ»°£¬µ÷ÓÃ¸ø¶¨µÄfunc
-		if£¨func£©{
-			func.call£¨ÑÓ³Ù£¬ÑÓÆÚ£©;
+		//å¦‚æœæœ‰çš„è¯ï¼Œè°ƒç”¨ç»™å®šçš„func
+		ifï¼ˆfuncï¼‰{
+			func.callï¼ˆå»¶è¿Ÿï¼Œå»¶æœŸï¼‰;
 		}
 
-		// È«²¿Íê³É£¡
-		ÍË»õÑÓÆÚ;
-	}£¬
+		// å…¨éƒ¨å®Œæˆï¼
+		é€€è´§å»¶æœŸ;
+	}ï¼Œ
 
-	//ÑÓÆÚ°ïÖúÕß
-	when£ºfunction£¨singleValue£©{
+	//å»¶æœŸå¸®åŠ©è€…
+	whenï¼šfunctionï¼ˆsingleValueï¼‰{
 		VAR
 
-			//Î´Íê³ÉµÄÏÂÊôµÄÊıÁ¿
-			remaining = arguments.length£¬
+			//æœªå®Œæˆçš„ä¸‹å±çš„æ•°é‡
+			remaining = arguments.lengthï¼Œ
 
-			//Î´´¦Àí²ÎÊıµÄÊıÁ¿
-			ÎÒ=Ê£ÏÂµÄ£¬
+			//æœªå¤„ç†å‚æ•°çš„æ•°é‡
+			æˆ‘=å‰©ä¸‹çš„ï¼Œ
 
-			//´ÓÊôÂÄĞĞÊı¾İ
-			resolveContexts = Array£¨i£©£¬
-			resolveValues = slice.call£¨arguments£©£¬
+			//ä»å±å±¥è¡Œæ•°æ®
+			resolveContexts = Arrayï¼ˆiï¼‰ï¼Œ
+			resolveValues = slice.callï¼ˆargumentsï¼‰ï¼Œ
 
-			//Ö÷ÈËÑÓÆÚ
-			master = jQuery.Deferred£¨£©£¬
+			//ä¸»äººå»¶æœŸ
+			master = jQuery.Deferredï¼ˆï¼‰ï¼Œ
 
-			//ÏÂÊô»Øµ÷¹¤³§
-			updateFunc = function£¨i£©{
-				returnº¯Êı£¨Öµ£©{
+			//ä¸‹å±å›è°ƒå·¥å‚
+			updateFunc = functionï¼ˆiï¼‰{
+				returnå‡½æ•°ï¼ˆå€¼ï¼‰{
 					resolveContexts [i] = this;
-					resolveValues [i] = arguments.length> 1£¿slice.call£¨arguments£©£ºvalue;
-					if£¨£¡£¨--remaining£©£©{
-						master.resolveWith£¨resolveContexts£¬resolveValues£©;
+					resolveValues [i] = arguments.length> 1ï¼Ÿslice.callï¼ˆargumentsï¼‰ï¼švalue;
+					ifï¼ˆï¼ï¼ˆ--remainingï¼‰ï¼‰{
+						master.resolveWithï¼ˆresolveContextsï¼ŒresolveValuesï¼‰;
 					}
 				};
 			};
 
-		//²ÉÓÃµ¥²ÎÊıºÍ¿Õ²ÎÊı£¬ÈçPromise.resolve
-		if£¨Ê£Óà<= 1£©{
-			adoptValue£¨singleValue£¬master.done£¨updateFunc£¨i£©£©¡£¡£resolve£¬master.reject£¬
-				£¡Ê£ÏÂµÄ£©;
+		//é‡‡ç”¨å•å‚æ•°å’Œç©ºå‚æ•°ï¼Œå¦‚Promise.resolve
+		ifï¼ˆå‰©ä½™<= 1ï¼‰{
+			adoptValueï¼ˆsingleValueï¼Œmaster.doneï¼ˆupdateFuncï¼ˆiï¼‰ï¼‰ã€‚ã€‚resolveï¼Œmaster.rejectï¼Œ
+				ï¼å‰©ä¸‹çš„ï¼‰;
 
-			//Ê¹ÓÃ.then£¨£©´ò¿ª¸¨ÖúÉè±¸£¨²Î¼ûgh-3000£©
-			if£¨master.state£¨£©===¡°pending¡±||
-				isFunction£¨resolveValues [i] && resolveValues [i] .then£©£©{
+			//ä½¿ç”¨.thenï¼ˆï¼‰æ‰“å¼€è¾…åŠ©è®¾å¤‡ï¼ˆå‚è§gh-3000ï¼‰
+			ifï¼ˆmaster.stateï¼ˆï¼‰===â€œpendingâ€||
+				isFunctionï¼ˆresolveValues [i] && resolveValues [i] .thenï¼‰ï¼‰{
 
-				return master.then£¨£©;
+				return master.thenï¼ˆï¼‰;
 			}
 		}
 
-		//ÏñPromise.allÊı×éÔªËØÒ»Ñù¾ÛºÏ¶à¸ö²ÎÊı
-		µ±ÎÒ -  £© {
-			adoptValue£¨resolveValues [i]£¬updateFunc£¨i£©£¬master.reject£©;
+		//åƒPromise.allæ•°ç»„å…ƒç´ ä¸€æ ·èšåˆå¤šä¸ªå‚æ•°
+		å½“æˆ‘ -  ï¼‰ {
+			adoptValueï¼ˆresolveValues [i]ï¼ŒupdateFuncï¼ˆiï¼‰ï¼Œmaster.rejectï¼‰;
 		}
 
-		return master.promise£¨£©;
+		return master.promiseï¼ˆï¼‰;
 	}
-}£©;
+}ï¼‰;
 
 
-//ÕâĞ©Í¨³£±íÊ¾³ÌĞòÔ±ÔÚ¿ª·¢¹ı³ÌÖĞ³ö´í£¬
-//¾¡¿ì¾¯¸æËûÃÇ£¬¶ø²»ÊÇÄ¬ÈÏÍÌÏÂËûÃÇ¡£
-var rerrorNames = / ^£¨Eval | Internal | Range | Reference | Syntax | Type | URI£©Error $ /;
+//è¿™äº›é€šå¸¸è¡¨ç¤ºç¨‹åºå‘˜åœ¨å¼€å‘è¿‡ç¨‹ä¸­å‡ºé”™ï¼Œ
+//å°½å¿«è­¦å‘Šä»–ä»¬ï¼Œè€Œä¸æ˜¯é»˜è®¤åä¸‹ä»–ä»¬ã€‚
+var rerrorNames = / ^ï¼ˆEval | Internal | Range | Reference | Syntax | Type | URIï¼‰Error $ /;
 
-jQuery.Deferred.exceptionHook = function£¨´íÎó£¬¶ÑÕ»£©{
+jQuery.Deferred.exceptionHook = functionï¼ˆé”™è¯¯ï¼Œå †æ ˆï¼‰{
 
-	//Ö§³Ö£º½öÏŞIE 8  -  9
-	//µ±dev¹¤¾ß´ò¿ªÊ±£¬¿ØÖÆÌ¨¾Í´æÔÚ£¬Õâ¿ÉÄÜËæÊ±·¢Éú
-	if£¨window.console && window.console.warn && error && rerrorNames.test£¨error.name£©£©{
-		window.console.warn£¨¡°jQuery.Deferred exception£º¡±+ error.message£¬error.stack£¬stack£©;
+	//æ”¯æŒï¼šä»…é™IE 8  -  9
+	//å½“devå·¥å…·æ‰“å¼€æ—¶ï¼Œæ§åˆ¶å°å°±å­˜åœ¨ï¼Œè¿™å¯èƒ½éšæ—¶å‘ç”Ÿ
+	ifï¼ˆwindow.console && window.console.warn && error && rerrorNames.testï¼ˆerror.nameï¼‰ï¼‰{
+		window.console.warnï¼ˆâ€œjQuery.Deferred exceptionï¼šâ€+ error.messageï¼Œerror.stackï¼Œstackï¼‰;
 	}
 };
 
 
 
 
-jQuery.readyException = function£¨error£©{
-	window.setTimeout£¨function£¨£©{
-		Å×³ö´íÎó;
-	}£©;
+jQuery.readyException = functionï¼ˆerrorï¼‰{
+	window.setTimeoutï¼ˆfunctionï¼ˆï¼‰{
+		æŠ›å‡ºé”™è¯¯;
+	}ï¼‰;
 };
 
 
 
 
-//ÔÚDOM×¼±¸¾ÍĞ÷Ê±Ê¹ÓÃµÄÑÓ³Ù
-var readyList = jQuery.Deferred£¨£©;
+//åœ¨DOMå‡†å¤‡å°±ç»ªæ—¶ä½¿ç”¨çš„å»¶è¿Ÿ
+var readyList = jQuery.Deferredï¼ˆï¼‰;
 
-jQuery.fn.ready = function£¨fn£©{
+jQuery.fn.ready = functionï¼ˆfnï¼‰{
 
 	readyList
-		.then£¨fn£©
+		.thenï¼ˆfnï¼‰
 
-		//ÔÚº¯ÊıÖĞ°ü×°jQuery.readyExceptionÒÔ±ã²éÕÒ
-		//ÔÚ´íÎó´¦ÀíÊ±·¢Éú£¬¶ø²»ÊÇ»Øµ÷
-		//×¢²á
-		.catch£¨function£¨error£©{
-			jQuery.readyException£¨error£©;
-		}£©;
+		//åœ¨å‡½æ•°ä¸­åŒ…è£…jQuery.readyExceptionä»¥ä¾¿æŸ¥æ‰¾
+		//åœ¨é”™è¯¯å¤„ç†æ—¶å‘ç”Ÿï¼Œè€Œä¸æ˜¯å›è°ƒ
+		//æ³¨å†Œ
+		.catchï¼ˆfunctionï¼ˆerrorï¼‰{
+			jQuery.readyExceptionï¼ˆerrorï¼‰;
+		}ï¼‰;
 
-	¹é»¹Õâ¸ö;
+	å½’è¿˜è¿™ä¸ª;
 };
 
-jQuery.extend£¨{
+jQuery.extendï¼ˆ{
 
-	// DOMÊÇ·ñ¿ÉÒÔÊ¹ÓÃ£¿Ò»µ©·¢Éú£¬ÉèÖÃÎªtrue¡£
-	isReady£ºfalse£¬
+	// DOMæ˜¯å¦å¯ä»¥ä½¿ç”¨ï¼Ÿä¸€æ—¦å‘ç”Ÿï¼Œè®¾ç½®ä¸ºtrueã€‚
+	isReadyï¼šfalseï¼Œ
 
-	//Ò»¸ö¼ÆÊıÆ÷£¬ÓÃÓÚ¸ú×ÙÖ®Ç°ÒªµÈ´ıµÄÏîÄ¿Êı
-	//¾ÍĞ÷ÊÂ¼ş´¥·¢ ¼û££6781
-	readyWait£º1£¬
+	//ä¸€ä¸ªè®¡æ•°å™¨ï¼Œç”¨äºè·Ÿè¸ªä¹‹å‰è¦ç­‰å¾…çš„é¡¹ç›®æ•°
+	//å°±ç»ªäº‹ä»¶è§¦å‘ è§ï¼ƒ6781
+	readyWaitï¼š1ï¼Œ
 
-	// DOM×¼±¸¾ÍĞ÷Ê±´¦Àí
-	ready£ºfunction£¨wait£©{
+	// DOMå‡†å¤‡å°±ç»ªæ—¶å¤„ç†
+	readyï¼šfunctionï¼ˆwaitï¼‰{
 
-		//Èç¹ûÓĞ´ı´¦ÀíµÄÔİÍ£ÖĞÖ¹»òÎÒÃÇÒÑ¾­×¼±¸¾ÍĞ÷ÖĞÖ¹
-		if£¨wait === true£¿--jQuery.readyWait£ºjQuery.isReady£©{
-			·µ»Ø;
+		//å¦‚æœæœ‰å¾…å¤„ç†çš„æš‚åœä¸­æ­¢æˆ–æˆ‘ä»¬å·²ç»å‡†å¤‡å°±ç»ªä¸­æ­¢
+		ifï¼ˆwait === trueï¼Ÿ--jQuery.readyWaitï¼šjQuery.isReadyï¼‰{
+			è¿”å›;
 		}
 
-		//¼Ç×¡DOM×¼±¸ºÃÁË
+		//è®°ä½DOMå‡†å¤‡å¥½äº†
 		jQuery.isReady = true;
 
-		//Èç¹ûÕı³£µÄDOM ReadyÊÂ¼ş±»´¥·¢£¬¼õÉÙ£¬²¢ÔÚĞèÒªÊ±µÈ´ı
-		if£¨µÈµÈ£¡== true && --jQuery.readyWait> 0£©{
-			·µ»Ø;
+		//å¦‚æœæ­£å¸¸çš„DOM Readyäº‹ä»¶è¢«è§¦å‘ï¼Œå‡å°‘ï¼Œå¹¶åœ¨éœ€è¦æ—¶ç­‰å¾…
+		ifï¼ˆç­‰ç­‰ï¼== true && --jQuery.readyWait> 0ï¼‰{
+			è¿”å›;
 		}
 
-		//Èç¹ûÓĞ°ó¶¨µÄº¯Êı£¬ÔòÖ´ĞĞ
-		readyList.resolveWith£¨document£¬[jQuery]£©;
+		//å¦‚æœæœ‰ç»‘å®šçš„å‡½æ•°ï¼Œåˆ™æ‰§è¡Œ
+		readyList.resolveWithï¼ˆdocumentï¼Œ[jQuery]ï¼‰;
 	}
-}£©;
+}ï¼‰;
 
 jQuery.ready.then = readyList.then;
 
-// readyÊÂ¼ş´¦Àí³ÌĞòºÍself cleanup·½·¨
-function completed£¨£©{
-	document.removeEventListener£¨¡°DOMContentLoaded¡±£¬ÒÑÍê³É£©;
-	window.removeEventListener£¨¡°load¡±£¬completed£©;
-	jQuery.ready£¨£©;
+// readyäº‹ä»¶å¤„ç†ç¨‹åºå’Œself cleanupæ–¹æ³•
+function completedï¼ˆï¼‰{
+	document.removeEventListenerï¼ˆâ€œDOMContentLoadedâ€ï¼Œå·²å®Œæˆï¼‰;
+	window.removeEventListenerï¼ˆâ€œloadâ€ï¼Œcompletedï¼‰;
+	jQuery.readyï¼ˆï¼‰;
 }
 
-//²¶»ñµ÷ÓÃ$£¨document£©.ready£¨£©µÄÇé¿ö
-//ÔÚä¯ÀÀÆ÷ÊÂ¼ş·¢Éúºó¡£
-//Ö§³Ö£ºIE <= 9  -  10
-//½Ï¾ÉµÄIEÓĞÊ±»á¹ıÔç·¢³ö¡°½»»¥Ê½¡±ĞÅºÅ
-if£¨document.readyState ===¡°complete¡±||
-	£¨document.readyState£¡==¡°loading¡±&&£¡document.documentElement.doScroll£©£©{
+//æ•è·è°ƒç”¨$ï¼ˆdocumentï¼‰.readyï¼ˆï¼‰çš„æƒ…å†µ
+//åœ¨æµè§ˆå™¨äº‹ä»¶å‘ç”Ÿåã€‚
+//æ”¯æŒï¼šIE <= 9  -  10
+//è¾ƒæ—§çš„IEæœ‰æ—¶ä¼šè¿‡æ—©å‘å‡ºâ€œäº¤äº’å¼â€ä¿¡å·
+ifï¼ˆdocument.readyState ===â€œcompleteâ€||
+	ï¼ˆdocument.readyStateï¼==â€œloadingâ€&&ï¼document.documentElement.doScrollï¼‰ï¼‰{
 
-	//Òì²½´¦ÀíËüÒÔÊ¹½Å±¾ÓĞ»ú»áÑÓ³Ù×¼±¸
-	window.setTimeout£¨jQuery.ready£©;
+	//å¼‚æ­¥å¤„ç†å®ƒä»¥ä½¿è„šæœ¬æœ‰æœºä¼šå»¶è¿Ÿå‡†å¤‡
+	window.setTimeoutï¼ˆjQuery.readyï¼‰;
 
 } else {
 
-	//Ê¹ÓÃ·½±ãµÄÊÂ¼ş»Øµ÷
-	document.addEventListener£¨¡°DOMContentLoaded¡±£¬ÒÑÍê³É£©;
+	//ä½¿ç”¨æ–¹ä¾¿çš„äº‹ä»¶å›è°ƒ
+	document.addEventListenerï¼ˆâ€œDOMContentLoadedâ€ï¼Œå·²å®Œæˆï¼‰;
 
-	//»ØÍËµ½window.onload£¬Õâ½«Ê¼ÖÕÓĞĞ§
-	window.addEventListener£¨¡°load¡±£¬completed£©;
+	//å›é€€åˆ°window.onloadï¼Œè¿™å°†å§‹ç»ˆæœ‰æ•ˆ
+	window.addEventListenerï¼ˆâ€œloadâ€ï¼Œcompletedï¼‰;
 }
 
 
 
 
-//»ñÈ¡ºÍÉèÖÃ¼¯ºÏÖµµÄ¶à¹¦ÄÜ·½·¨
-//Èç¹ûÖµÊÇº¯Êı£¬Ôò¿ÉÒÔÑ¡ÔñÖ´ĞĞÖµ/ s
-var access = function£¨elems£¬fn£¬key£¬value£¬chainable£¬emptyGet£¬raw£©{
-	var i = 0£¬
-		len = elems.length£¬
+//è·å–å’Œè®¾ç½®é›†åˆå€¼çš„å¤šåŠŸèƒ½æ–¹æ³•
+//å¦‚æœå€¼æ˜¯å‡½æ•°ï¼Œåˆ™å¯ä»¥é€‰æ‹©æ‰§è¡Œå€¼/ s
+var access = functionï¼ˆelemsï¼Œfnï¼Œkeyï¼Œvalueï¼Œchainableï¼ŒemptyGetï¼Œrawï¼‰{
+	var i = 0ï¼Œ
+		len = elems.lengthï¼Œ
 		bulk = key == null;
 
-	//ÉèÖÃĞí¶àÖµ
-	if£¨toType£¨key£©===¡°object¡±£©{
+	//è®¾ç½®è®¸å¤šå€¼
+	ifï¼ˆtoTypeï¼ˆkeyï¼‰===â€œobjectâ€ï¼‰{
 		chainable = true;
-		for£¨i in key£©{
-			·ÃÎÊ£¨elems£¬fn£¬i£¬key [i]£¬true£¬emptyGet£¬raw£©;
+		forï¼ˆi in keyï¼‰{
+			è®¿é—®ï¼ˆelemsï¼Œfnï¼Œiï¼Œkey [i]ï¼Œtrueï¼ŒemptyGetï¼Œrawï¼‰;
 		}
 
-	//ÉèÖÃÒ»¸öÖµ
-	} else if£¨value£¡== undefined£©{
+	//è®¾ç½®ä¸€ä¸ªå€¼
+	} else ifï¼ˆvalueï¼== undefinedï¼‰{
 		chainable = true;
 
-		if£¨£¡isFunction£¨value£©£©{
+		ifï¼ˆï¼isFunctionï¼ˆvalueï¼‰ï¼‰{
 			raw = true;
 		}
 
-		if£¨bulk£©{
+		ifï¼ˆbulkï¼‰{
 
-			//ÅúÁ¿²Ù×÷Õë¶ÔÕû¸ö¼¯ºÏÔËĞĞ
-			if£¨raw£©{
-				fn.call£¨elems£¬value£©;
+			//æ‰¹é‡æ“ä½œé’ˆå¯¹æ•´ä¸ªé›†åˆè¿è¡Œ
+			ifï¼ˆrawï¼‰{
+				fn.callï¼ˆelemsï¼Œvalueï¼‰;
 				fn = null;
 
-			// ...Ö´ĞĞº¯ÊıÖµÊ±³ıÍâ
+			// ...æ‰§è¡Œå‡½æ•°å€¼æ—¶é™¤å¤–
 			} else {
 				bulk = fn;
-				fn = function£¨elem£¬key£¬value£©{
-					return bulk.call£¨jQuery£¨elem£©£¬value£©;
+				fn = functionï¼ˆelemï¼Œkeyï¼Œvalueï¼‰{
+					return bulk.callï¼ˆjQueryï¼ˆelemï¼‰ï¼Œvalueï¼‰;
 				};
 			}
 		}
 
-		if£¨fn£©{
-			for£¨; i <len; i ++£©{
-				FN£¨
-					elems [i]£¬¹Ø¼ü£¬Ô­Ê¼£¿
-					¼ÛÖµ£º
-					value.call£¨elems [i]£¬i£¬fn£¨elems [i]£¬key£©£©
-				£©;
+		ifï¼ˆfnï¼‰{
+			forï¼ˆ; i <len; i ++ï¼‰{
+				FNï¼ˆ
+					elems [i]ï¼Œå…³é”®ï¼ŒåŸå§‹ï¼Ÿ
+					ä»·å€¼ï¼š
+					value.callï¼ˆelems [i]ï¼Œiï¼Œfnï¼ˆelems [i]ï¼Œkeyï¼‰ï¼‰
+				ï¼‰;
 			}
 		}
 	}
 
-	if£¨chainable£©{
-		·µ»ØÔªËØ;
+	ifï¼ˆchainableï¼‰{
+		è¿”å›å…ƒç´ ;
 	}
 
-	//»ñÈ¡
-	if£¨bulk£©{
-		return fn.call£¨elems£©;
+	//è·å–
+	ifï¼ˆbulkï¼‰{
+		return fn.callï¼ˆelemsï¼‰;
 	}
 
-	·µ»Ølen£¿fn£¨elems [0]£¬key£©£ºemptyGet;
+	è¿”å›lenï¼Ÿfnï¼ˆelems [0]ï¼Œkeyï¼‰ï¼šemptyGet;
 };
 
 
-//Æ¥ÅäÆÆÕÛºÅµÄ×Ö·û´®
-var rmsPrefix = / ^  -  ms- /£¬
-	rdashAlpha = /  - £¨[az]£©/ g;
+//åŒ¹é…ç ´æŠ˜å·çš„å­—ç¬¦ä¸²
+var rmsPrefix = / ^  -  ms- /ï¼Œ
+	rdashAlpha = /  - ï¼ˆ[az]ï¼‰/ g;
 
-//ÓÉcamelCaseÓÃ×÷replace£¨£©µÄ»Øµ÷
-function fcamelCase£¨all£¬letter£©{
-	return letter.toUpperCase£¨£©;
+//ç”±camelCaseç”¨ä½œreplaceï¼ˆï¼‰çš„å›è°ƒ
+function fcamelCaseï¼ˆallï¼Œletterï¼‰{
+	return letter.toUpperCaseï¼ˆï¼‰;
 }
 
-//½«ĞéÏß×ª»»ÎªcamelCase; ÓÉcssºÍÊı¾İÄ£¿éÊ¹ÓÃ
-//Ö§³Ö£ºIE <= 9  -  11£¬±ßÔµ12  -  15
-//Î¢ÈíÍüÁËÍÕ±³ËûÃÇµÄ¹©Ó¦ÉÌÇ°×º£¨££9572£©
-function camelCase£¨string£©{
-	return string.replace£¨rmsPrefix£¬¡°ms-¡±£©.replace£¨rdashAlpha£¬fcamelCase£©;
+//å°†è™šçº¿è½¬æ¢ä¸ºcamelCase; ç”±csså’Œæ•°æ®æ¨¡å—ä½¿ç”¨
+//æ”¯æŒï¼šIE <= 9  -  11ï¼Œè¾¹ç¼˜12  -  15
+//å¾®è½¯å¿˜äº†é©¼èƒŒä»–ä»¬çš„ä¾›åº”å•†å‰ç¼€ï¼ˆï¼ƒ9572ï¼‰
+function camelCaseï¼ˆstringï¼‰{
+	return string.replaceï¼ˆrmsPrefixï¼Œâ€œms-â€ï¼‰.replaceï¼ˆrdashAlphaï¼ŒfcamelCaseï¼‰;
 }
-var acceptData = function£¨owner£©{
+var acceptData = functionï¼ˆownerï¼‰{
 
-	//½ö½ÓÊÜ£º
-	//  - ½Úµã
+	//ä»…æ¥å—ï¼š
+	//  - èŠ‚ç‚¹
 	//  -  Node.ELEMENT_NODE
 	//  -  Node.DOCUMENT_NODE
-	//  - ¶ÔÏó
-	// - ÈÎºÎ
-	return owner.nodeType === 1 || owner.nodeType === 9 || £¡£¨+ owner.nodeType£©;
+	//  - å¯¹è±¡
+	// - ä»»ä½•
+	return owner.nodeType === 1 || owner.nodeType === 9 || ï¼ï¼ˆ+ owner.nodeTypeï¼‰;
 };
 
 
 
 
-function Data£¨£©{
+function Dataï¼ˆï¼‰{
 	this.expando = jQuery.expando + Data.uid ++;
 }
 
@@ -4009,98 +4009,98 @@ Data.uid = 1;
 
 Data.prototype = {
 
-	cache£ºfunction£¨owner£©{
+	cacheï¼šfunctionï¼ˆownerï¼‰{
 
-		//¼ì²éËùÓĞÕß¶ÔÏóÊÇ·ñÒÑÓĞ»º´æ
+		//æ£€æŸ¥æ‰€æœ‰è€…å¯¹è±¡æ˜¯å¦å·²æœ‰ç¼“å­˜
 		var value = owner [this.expando];
 
-		//Èç¹ûÃ»ÓĞ£¬Çë´´½¨Ò»¸ö
-		if£¨£¡value£©{
+		//å¦‚æœæ²¡æœ‰ï¼Œè¯·åˆ›å»ºä¸€ä¸ª
+		ifï¼ˆï¼valueï¼‰{
 			value = {};
 
-			//ÎÒÃÇ¿ÉÒÔ½ÓÊÜÏÖ´úä¯ÀÀÆ÷ÖĞ·ÇÔªËØ½ÚµãµÄÊı¾İ£¬
-			//µ«ÎÒÃÇ²»Ó¦¸Ã¿´µ½££8335¡£
-			//Ê¼ÖÕ·µ»ØÒ»¸ö¿Õ¶ÔÏó¡£
-			if£¨acceptData£¨owner£©£©{
+			//æˆ‘ä»¬å¯ä»¥æ¥å—ç°ä»£æµè§ˆå™¨ä¸­éå…ƒç´ èŠ‚ç‚¹çš„æ•°æ®ï¼Œ
+			//ä½†æˆ‘ä»¬ä¸åº”è¯¥çœ‹åˆ°ï¼ƒ8335ã€‚
+			//å§‹ç»ˆè¿”å›ä¸€ä¸ªç©ºå¯¹è±¡ã€‚
+			ifï¼ˆacceptDataï¼ˆownerï¼‰ï¼‰{
 
-				//Èç¹ûËüÊÇÒ»¸ö²»Ì«¿ÉÄÜ±»×Ö·û´®»¯»òÑ­»·µÄ½Úµã
-				//Ê¹ÓÃÆÕÍ¨×÷Òµ
-				if£¨owner.nodeType£©{
-					ËùÓĞÕß[this.expando] =¼ÛÖµ;
+				//å¦‚æœå®ƒæ˜¯ä¸€ä¸ªä¸å¤ªå¯èƒ½è¢«å­—ç¬¦ä¸²åŒ–æˆ–å¾ªç¯çš„èŠ‚ç‚¹
+				//ä½¿ç”¨æ™®é€šä½œä¸š
+				ifï¼ˆowner.nodeTypeï¼‰{
+					æ‰€æœ‰è€…[this.expando] =ä»·å€¼;
 
-				//·ñÔò½«Æä±£´æÔÚ·Ç¿ÉÃ¶¾ÙµÄÊôĞÔÖĞ
-				// configurable±ØĞëÎªtrue²ÅÄÜÔÊĞíÊôĞÔ
-				//É¾³ıÊı¾İÊ±É¾³ı
+				//å¦åˆ™å°†å…¶ä¿å­˜åœ¨éå¯æšä¸¾çš„å±æ€§ä¸­
+				// configurableå¿…é¡»ä¸ºtrueæ‰èƒ½å…è®¸å±æ€§
+				//åˆ é™¤æ•°æ®æ—¶åˆ é™¤
 				} else {
-					Object.defineProperty£¨owner£¬this.expando£¬{
-						¼ÛÖµ£º¼ÛÖµ£¬
-						¿ÉÅäÖÃ£ºtrue
-					}£©;
+					Object.definePropertyï¼ˆownerï¼Œthis.expandoï¼Œ{
+						ä»·å€¼ï¼šä»·å€¼ï¼Œ
+						å¯é…ç½®ï¼štrue
+					}ï¼‰;
 				}
 			}
 		}
 
-		»Ø±¨Öµ;
-	}£¬
-	set£ºfunction£¨owner£¬data£¬value£©{
-		var prop£¬
-			cache = this.cache£¨owner£©;
+		å›æŠ¥å€¼;
+	}ï¼Œ
+	setï¼šfunctionï¼ˆownerï¼Œdataï¼Œvalueï¼‰{
+		var propï¼Œ
+			cache = this.cacheï¼ˆownerï¼‰;
 
-		//¾ä±ú£º[ËùÓĞÕß£¬ÃÜÔ¿£¬Öµ] args
-		//Ê¼ÖÕÊ¹ÓÃcamelCase¼ü£¨gh-2257£©
-		if£¨typeof data ===¡°string¡±£©{
-			cache [camelCase£¨data£©] = value;
+		//å¥æŸ„ï¼š[æ‰€æœ‰è€…ï¼Œå¯†é’¥ï¼Œå€¼] args
+		//å§‹ç»ˆä½¿ç”¨camelCaseé”®ï¼ˆgh-2257ï¼‰
+		ifï¼ˆtypeof data ===â€œstringâ€ï¼‰{
+			cache [camelCaseï¼ˆdataï¼‰] = value;
 
-		//¾ä±ú£º[ËùÓĞÕß£¬{properties}] args
+		//å¥æŸ„ï¼š[æ‰€æœ‰è€…ï¼Œ{properties}] args
 		} else {
 
-			//½«ÊôĞÔÖğ¸ö¸´ÖÆµ½»º´æ¶ÔÏó
-			for£¨Êı¾İÖĞµÄµÀ¾ß£©{
-				cache [camelCase£¨prop£©] = data [prop];
+			//å°†å±æ€§é€ä¸ªå¤åˆ¶åˆ°ç¼“å­˜å¯¹è±¡
+			forï¼ˆæ•°æ®ä¸­çš„é“å…·ï¼‰{
+				cache [camelCaseï¼ˆpropï¼‰] = data [prop];
 			}
 		}
-		·µ»Ø»º´æ;
-	}£¬
-	get£ºfunction£¨owner£¬key£©{
-		·µ»Ø¼ü=== undefined£¿
-			this.cache£¨ËùÓĞÕß£©£º
+		è¿”å›ç¼“å­˜;
+	}ï¼Œ
+	getï¼šfunctionï¼ˆownerï¼Œkeyï¼‰{
+		è¿”å›é”®=== undefinedï¼Ÿ
+			this.cacheï¼ˆæ‰€æœ‰è€…ï¼‰ï¼š
 
-			//Ê¼ÖÕÊ¹ÓÃcamelCase¼ü£¨gh-2257£©
-			ËùÓĞÕß[this.expando] && owner [this.expando] [camelCase£¨key£©];
-	}£¬
-	access£ºfunction£¨owner£¬key£¬value£©{
+			//å§‹ç»ˆä½¿ç”¨camelCaseé”®ï¼ˆgh-2257ï¼‰
+			æ‰€æœ‰è€…[this.expando] && owner [this.expando] [camelCaseï¼ˆkeyï¼‰];
+	}ï¼Œ
+	accessï¼šfunctionï¼ˆownerï¼Œkeyï¼Œvalueï¼‰{
 
-		//ÔÚÒÔÏÂÈÎºÎÒ»ÖÖÇé¿öÏÂ£º
+		//åœ¨ä»¥ä¸‹ä»»ä½•ä¸€ç§æƒ…å†µä¸‹ï¼š
 		//
-		// 1.Î´Ö¸¶¨ÃÜÔ¿
-		// 2.Ö¸¶¨ÁË×Ö·û´®¼ü£¬µ«Î´Ìá¹©ÈÎºÎÖµ
+		// 1.æœªæŒ‡å®šå¯†é’¥
+		// 2.æŒ‡å®šäº†å­—ç¬¦ä¸²é”®ï¼Œä½†æœªæä¾›ä»»ä½•å€¼
 		//
-		//²ÉÓÃ¡°¶ÁÈ¡¡±Â·¾¶²¢ÔÊĞíget·½·¨È·¶¨
-		//Òª·µ»ØµÄÖµ·Ö±ğÎª£º
+		//é‡‡ç”¨â€œè¯»å–â€è·¯å¾„å¹¶å…è®¸getæ–¹æ³•ç¡®å®š
+		//è¦è¿”å›çš„å€¼åˆ†åˆ«ä¸ºï¼š
 		//
-		// 1.Õû¸ö»º´æ¶ÔÏó
-		// 2.´æ´¢ÔÚÃÜÔ¿ÖĞµÄÊı¾İ
+		// 1.æ•´ä¸ªç¼“å­˜å¯¹è±¡
+		// 2.å­˜å‚¨åœ¨å¯†é’¥ä¸­çš„æ•°æ®
 		//
-		if£¨key === undefined ||
-				£¨£¨key && typeof key ===¡°string¡±£©&& value === undefined£©£©{
+		ifï¼ˆkey === undefined ||
+				ï¼ˆï¼ˆkey && typeof key ===â€œstringâ€ï¼‰&& value === undefinedï¼‰ï¼‰{
 
-			return this.get£¨owner£¬key£©;
+			return this.getï¼ˆownerï¼Œkeyï¼‰;
 		}
 
-		//µ±¼ü²»ÊÇ×Ö·û´®£¬»òÕß¼üºÍÖµ¶¼ÊÇ
-		//Ê¹ÓÃÒÔÏÂÈÎÒ»·½Ê½Ö¸¶¨£¬ÉèÖÃ»òÀ©Õ¹£¨ÏÖÓĞ¶ÔÏó£©£º
+		//å½“é”®ä¸æ˜¯å­—ç¬¦ä¸²ï¼Œæˆ–è€…é”®å’Œå€¼éƒ½æ˜¯
+		//ä½¿ç”¨ä»¥ä¸‹ä»»ä¸€æ–¹å¼æŒ‡å®šï¼Œè®¾ç½®æˆ–æ‰©å±•ï¼ˆç°æœ‰å¯¹è±¡ï¼‰ï¼š
 		//
-		// 1.ÊôĞÔµÄ¶ÔÏó
-		// 2.Ò»¸ö¹Ø¼üºÍ¼ÛÖµ
+		// 1.å±æ€§çš„å¯¹è±¡
+		// 2.ä¸€ä¸ªå…³é”®å’Œä»·å€¼
 		//
-		this.set£¨ËùÓĞÕß£¬ÃÜÔ¿£¬Öµ£©;
+		this.setï¼ˆæ‰€æœ‰è€…ï¼Œå¯†é’¥ï¼Œå€¼ï¼‰;
 
-		//ÓÉÓÚ¡°set¡±Â·¾¶¿ÉÒÔÓĞÁ½¸ö¿ÉÄÜµÄÈë¿Úµã
-		//¸ù¾İ²ÉÈ¡µÄÂ·¾¶·µ»ØÔ¤ÆÚÊı¾İ[*]
-		·µ»ØÖµ£¡== undefined£¿¼ÛÖµ£º¹Ø¼ü;
-	}£¬
-	remove£ºfunction£¨owner£¬key£©{
-		var i£¬
+		//ç”±äºâ€œsetâ€è·¯å¾„å¯ä»¥æœ‰ä¸¤ä¸ªå¯èƒ½çš„å…¥å£ç‚¹
+		//æ ¹æ®é‡‡å–çš„è·¯å¾„è¿”å›é¢„æœŸæ•°æ®[*]
+		è¿”å›å€¼ï¼== undefinedï¼Ÿä»·å€¼ï¼šå…³é”®;
+	}ï¼Œ
+	removeï¼šfunctionï¼ˆownerï¼Œkeyï¼‰{
+		var iï¼Œ
 			cache = owner[ this.expando ];
 
 		if ( cache === undefined ) {
@@ -4164,161 +4164,161 @@ var dataUser = new Data();
 //		paths to a single mechanism.
 //	3. Use the same single mechanism to support "private" and "user" data.
 //	4. _Never_ expose "private" data to user code (TODO: Drop _data, _removeData)
-// 5.±ÜÃâÔÚÓÃ»§¶ÔÏóÉÏ¹«¿ªÊµÏÖÏ¸½Ú£¨ÀıÈç£¬expandoÊôĞÔ£©
-// 6.Îª2014ÄêµÄWeakMapÊµÊ©Éı¼¶Ìá¹©Ã÷È·µÄÍ¾¾¶
+// 5.é¿å…åœ¨ç”¨æˆ·å¯¹è±¡ä¸Šå…¬å¼€å®ç°ç»†èŠ‚ï¼ˆä¾‹å¦‚ï¼Œexpandoå±æ€§ï¼‰
+// 6.ä¸º2014å¹´çš„WeakMapå®æ–½å‡çº§æä¾›æ˜ç¡®çš„é€”å¾„
 
-var rbrace = / ^£¨£¿£º\ {[\ w \ W] * \} | \ [[\ w \ W] * \]£©$ /£¬
+var rbrace = / ^ï¼ˆï¼Ÿï¼š\ {[\ w \ W] * \} | \ [[\ w \ W] * \]ï¼‰$ /ï¼Œ
 	rmultiDash = / [AZ] / g;
 
-function getData£¨data£©{
-	if£¨data ===¡°true¡±£©{
-		·µ»Øtrue;
+function getDataï¼ˆdataï¼‰{
+	ifï¼ˆdata ===â€œtrueâ€ï¼‰{
+		è¿”å›true;
 	}
 
-	if£¨data ===¡°false¡±£©{
-		·µ»Øfalse;
+	ifï¼ˆdata ===â€œfalseâ€ï¼‰{
+		è¿”å›false;
 	}
 
-	if£¨data ===¡°null¡±£©{
+	ifï¼ˆdata ===â€œnullâ€ï¼‰{
 		return null;
 	}
 
-	//Èç¹û²»¸ü¸Ä×Ö·û´®£¬Ôò½ö×ª»»ÎªÊı×Ö
-	if£¨data === + data +¡°¡±£©{
-		·µ»Ø+Êı¾İ;
+	//å¦‚æœä¸æ›´æ”¹å­—ç¬¦ä¸²ï¼Œåˆ™ä»…è½¬æ¢ä¸ºæ•°å­—
+	ifï¼ˆdata === + data +â€œâ€ï¼‰{
+		è¿”å›+æ•°æ®;
 	}
 
-	if£¨rbrace.test£¨data£©£©{
-		return JSON.parse£¨data£©;
+	ifï¼ˆrbrace.testï¼ˆdataï¼‰ï¼‰{
+		return JSON.parseï¼ˆdataï¼‰;
 	}
 
-	·µ»ØÊı¾İ;
+	è¿”å›æ•°æ®;
 }
 
-function dataAttr£¨elem£¬key£¬data£©{
+function dataAttrï¼ˆelemï¼Œkeyï¼Œdataï¼‰{
 	var name;
 
-	//Èç¹ûÔÚÄÚ²¿ÕÒ²»µ½ÈÎºÎÄÚÈİ£¬Çë³¢ÊÔ»ñÈ¡ÈÎºÎÄÚÈİ
-	//À´×ÔHTML5 data- *ÊôĞÔµÄÊı¾İ
-	if£¨data === undefined && elem.nodeType === 1£©{
-		name =¡°data-¡±+ key.replace£¨rmultiDash£¬¡° -  $£¦¡±£©¡£toLowerCase£¨£©;
-		data = elem.getAttribute£¨name£©;
+	//å¦‚æœåœ¨å†…éƒ¨æ‰¾ä¸åˆ°ä»»ä½•å†…å®¹ï¼Œè¯·å°è¯•è·å–ä»»ä½•å†…å®¹
+	//æ¥è‡ªHTML5 data- *å±æ€§çš„æ•°æ®
+	ifï¼ˆdata === undefined && elem.nodeType === 1ï¼‰{
+		name =â€œdata-â€+ key.replaceï¼ˆrmultiDashï¼Œâ€œ -  $ï¼†â€ï¼‰ã€‚toLowerCaseï¼ˆï¼‰;
+		data = elem.getAttributeï¼ˆnameï¼‰;
 
-		if£¨typeof data ===¡°string¡±£©{
-			³¢ÊÔ{
-				data = getData£¨data£©;
-			} catch£¨e£©{}
+		ifï¼ˆtypeof data ===â€œstringâ€ï¼‰{
+			å°è¯•{
+				data = getDataï¼ˆdataï¼‰;
+			} catchï¼ˆeï¼‰{}
 
-			//È·±£ÎÒÃÇÉèÖÃÊı¾İ£¬ÒÔ±ãÒÔºó²»»á¸ü¸Ä
-			dataUser.set£¨elem£¬key£¬data£©;
+			//ç¡®ä¿æˆ‘ä»¬è®¾ç½®æ•°æ®ï¼Œä»¥ä¾¿ä»¥åä¸ä¼šæ›´æ”¹
+			dataUser.setï¼ˆelemï¼Œkeyï¼Œdataï¼‰;
 		} else {
 			data = undefined;
 		}
 	}
-	·µ»ØÊı¾İ;
+	è¿”å›æ•°æ®;
 }
 
-jQuery.extend£¨{
-	hasData£ºfunction£¨elem£©{
-		return dataUser.hasData£¨elem£©|| dataPriv.hasData£¨elem£©;
-	}£¬
+jQuery.extendï¼ˆ{
+	hasDataï¼šfunctionï¼ˆelemï¼‰{
+		return dataUser.hasDataï¼ˆelemï¼‰|| dataPriv.hasDataï¼ˆelemï¼‰;
+	}ï¼Œ
 
-	data£ºfunction£¨elem£¬name£¬data£©{
-		return dataUser.access£¨elem£¬name£¬data£©;
-	}£¬
+	dataï¼šfunctionï¼ˆelemï¼Œnameï¼Œdataï¼‰{
+		return dataUser.accessï¼ˆelemï¼Œnameï¼Œdataï¼‰;
+	}ï¼Œ
 
-	removeData£ºfunction£¨elem£¬name£©{
-		dataUser.remove£¨elem£¬name£©;
-	}£¬
+	removeDataï¼šfunctionï¼ˆelemï¼Œnameï¼‰{
+		dataUser.removeï¼ˆelemï¼Œnameï¼‰;
+	}ï¼Œ
 
-	// TODO£ºÏÖÔÚÒÑ¾­Ìæ»»ÁË¶Ô_dataºÍ_removeDataµÄËùÓĞµ÷ÓÃ
-	//Ö±½Óµ÷ÓÃdataPriv·½·¨£¬¿ÉÒÔ²»ÍÆ¼öÊ¹ÓÃÕâĞ©·½·¨¡£
-	_data£ºfunction£¨elem£¬name£¬data£©{
-		return dataPriv.access£¨elem£¬name£¬data£©;
-	}£¬
+	// TODOï¼šç°åœ¨å·²ç»æ›¿æ¢äº†å¯¹_dataå’Œ_removeDataçš„æ‰€æœ‰è°ƒç”¨
+	//ç›´æ¥è°ƒç”¨dataPrivæ–¹æ³•ï¼Œå¯ä»¥ä¸æ¨èä½¿ç”¨è¿™äº›æ–¹æ³•ã€‚
+	_dataï¼šfunctionï¼ˆelemï¼Œnameï¼Œdataï¼‰{
+		return dataPriv.accessï¼ˆelemï¼Œnameï¼Œdataï¼‰;
+	}ï¼Œ
 
-	_removeData£ºfunction£¨elem£¬name£©{
-		dataPriv.remove£¨elem£¬name£©;
+	_removeDataï¼šfunctionï¼ˆelemï¼Œnameï¼‰{
+		dataPriv.removeï¼ˆelemï¼Œnameï¼‰;
 	}
-}£©;
+}ï¼‰;
 
-jQuery.fn.extend£¨{
-	data£ºfunction£¨key£¬value£©{
-		var i£¬Ãû³Æ£¬Êı¾İ£¬
-			elem = this [0]£¬
+jQuery.fn.extendï¼ˆ{
+	dataï¼šfunctionï¼ˆkeyï¼Œvalueï¼‰{
+		var iï¼Œåç§°ï¼Œæ•°æ®ï¼Œ
+			elem = this [0]ï¼Œ
 			attrs = elem && elem.attributes;
 
-		//»ñÈ¡ËùÓĞÖµ
-		if£¨key === undefined£©{
-			if£¨this.length£©{
-				data = dataUser.get£¨elem£©;
+		//è·å–æ‰€æœ‰å€¼
+		ifï¼ˆkey === undefinedï¼‰{
+			ifï¼ˆthis.lengthï¼‰{
+				data = dataUser.getï¼ˆelemï¼‰;
 
-				if£¨elem.nodeType === 1 &&£¡dataPriv.get£¨elem£¬¡°hasDataAttrs¡±£©£©{
+				ifï¼ˆelem.nodeType === 1 &&ï¼dataPriv.getï¼ˆelemï¼Œâ€œhasDataAttrsâ€ï¼‰ï¼‰{
 					i = attrs.length;
-					µ±ÎÒ -  £© {
+					å½“æˆ‘ -  ï¼‰ {
 
-						//Ö§³Ö£º½öÏŞIE 11
-						// attrsÔªËØ¿ÉÒÔÎªnull£¨££14894£©
-						if£¨attrs [i]£©{
+						//æ”¯æŒï¼šä»…é™IE 11
+						// attrså…ƒç´ å¯ä»¥ä¸ºnullï¼ˆï¼ƒ14894ï¼‰
+						ifï¼ˆattrs [i]ï¼‰{
 							name = attrs [i] .name;
-							if£¨name.indexOf£¨¡°data-¡±£©=== 0£©{
-								name = camelCase£¨name.slice£¨5£©£©;
-								dataAttr£¨elem£¬name£¬data [name]£©;
+							ifï¼ˆname.indexOfï¼ˆâ€œdata-â€ï¼‰=== 0ï¼‰{
+								name = camelCaseï¼ˆname.sliceï¼ˆ5ï¼‰ï¼‰;
+								dataAttrï¼ˆelemï¼Œnameï¼Œdata [name]ï¼‰;
 							}
 						}
 					}
-					dataPriv.set£¨elem£¬¡°hasDataAttrs¡±£¬true£©;
+					dataPriv.setï¼ˆelemï¼Œâ€œhasDataAttrsâ€ï¼Œtrueï¼‰;
 				}
 			}
 
-			·µ»ØÊı¾İ;
+			è¿”å›æ•°æ®;
 		}
 
-		//ÉèÖÃ¶à¸öÖµ
-		if£¨typeof key ===¡°object¡±£©{
-			return this.each£¨function£¨£©{
-				dataUser.set£¨this£¬key£©;
-			}£©;
+		//è®¾ç½®å¤šä¸ªå€¼
+		ifï¼ˆtypeof key ===â€œobjectâ€ï¼‰{
+			return this.eachï¼ˆfunctionï¼ˆï¼‰{
+				dataUser.setï¼ˆthisï¼Œkeyï¼‰;
+			}ï¼‰;
 		}
 
-		return access£¨this£¬function£¨value£©{
-			varÊı¾İ;
+		return accessï¼ˆthisï¼Œfunctionï¼ˆvalueï¼‰{
+			varæ•°æ®;
 
-			//µ÷ÓÃjQuery¶ÔÏó£¨ÔªËØÆ¥Åä£©²»Îª¿Õ
-			//£¨Òò´ËÔÚ[0]´¦³öÏÖÒ»¸öÔªËØ£©ºÍ
-			//`value`²ÎÊıÎ´¶¨Òå¡£Ò»¸ö¿ÕµÄjQuery¶ÔÏó
-			//½«µ¼ÖÂelem = this [0]µÄ`undefined`
-			//Èç¹û³¢ÊÔ¶ÁÈ¡Êı¾İ»º´æ£¬ÔòÅ×³öÒì³£¡£
-			if£¨elem && value === undefined£©{
+			//è°ƒç”¨jQueryå¯¹è±¡ï¼ˆå…ƒç´ åŒ¹é…ï¼‰ä¸ä¸ºç©º
+			//ï¼ˆå› æ­¤åœ¨[0]å¤„å‡ºç°ä¸€ä¸ªå…ƒç´ ï¼‰å’Œ
+			//`value`å‚æ•°æœªå®šä¹‰ã€‚ä¸€ä¸ªç©ºçš„jQueryå¯¹è±¡
+			//å°†å¯¼è‡´elem = this [0]çš„`undefined`
+			//å¦‚æœå°è¯•è¯»å–æ•°æ®ç¼“å­˜ï¼Œåˆ™æŠ›å‡ºå¼‚å¸¸ã€‚
+			ifï¼ˆelem && value === undefinedï¼‰{
 
-				//³¢ÊÔ´Ó»º´æÖĞ»ñÈ¡Êı¾İ
-				//ÃÜÔ¿½«ÓÀÔ¶ÊÇÊı¾İÖĞµÄcamelCased
-				data = dataUser.get£¨elem£¬key£©;
-				if£¨data£¡== undefined£©{
-					·µ»ØÊı¾İ;
+				//å°è¯•ä»ç¼“å­˜ä¸­è·å–æ•°æ®
+				//å¯†é’¥å°†æ°¸è¿œæ˜¯æ•°æ®ä¸­çš„camelCased
+				data = dataUser.getï¼ˆelemï¼Œkeyï¼‰;
+				ifï¼ˆdataï¼== undefinedï¼‰{
+					è¿”å›æ•°æ®;
 				}
 
-				//³¢ÊÔ¡°·¢ÏÖ¡±ÖĞµÄÊı¾İ
-				// HTML5×Ô¶¨ÒåÊı¾İ -  * attrs
-				data = dataAttr£¨elem£¬key£©;
-				if£¨data£¡== undefined£©{
-					·µ»ØÊı¾İ;
+				//å°è¯•â€œå‘ç°â€ä¸­çš„æ•°æ®
+				// HTML5è‡ªå®šä¹‰æ•°æ® -  * attrs
+				data = dataAttrï¼ˆelemï¼Œkeyï¼‰;
+				ifï¼ˆdataï¼== undefinedï¼‰{
+					è¿”å›æ•°æ®;
 				}
 
-				//ÎÒÃÇÅ¬Á¦³¢ÊÔ£¬µ«Êı¾İ²»´æÔÚ¡£
-				·µ»Ø;
+				//æˆ‘ä»¬åŠªåŠ›å°è¯•ï¼Œä½†æ•°æ®ä¸å­˜åœ¨ã€‚
+				è¿”å›;
 			}
 
-			//ÉèÖÃÊı¾İ......
-			this.each£¨function£¨£©{
+			//è®¾ç½®æ•°æ®......
+			this.eachï¼ˆfunctionï¼ˆï¼‰{
 
-				//ÎÒÃÇ×ÜÊÇ´æ´¢camelCasedÃÜÔ¿
-				dataUser.set£¨this£¬key£¬value£©;
-			}£©;
-		}£¬null£¬value£¬arguments.length> 1£¬null£¬true£©;
-	}£¬
+				//æˆ‘ä»¬æ€»æ˜¯å­˜å‚¨camelCasedå¯†é’¥
+				dataUser.setï¼ˆthisï¼Œkeyï¼Œvalueï¼‰;
+			}ï¼‰;
+		}ï¼Œnullï¼Œvalueï¼Œarguments.length> 1ï¼Œnullï¼Œtrueï¼‰;
+	}ï¼Œ
 
-	removeData£ºfunction£¨key£©{
+	removeDataï¼šfunctionï¼ˆkeyï¼‰{
 		return this.each( function() {
 			dataUser.remove( this, key );
 		} );
@@ -4357,76 +4357,76 @@ jQuery.extend( {
 				jQuery.dequeue( elem, type );
 			};
 
-		//Èç¹ûfx¶ÓÁĞ³öÁĞ£¬ÇëÊ¼ÖÕÉ¾³ı½ø¶Èsentinel
-		if£¨fn ===¡°inprogress¡±£©{
-			fn = queue.shift£¨£©;
+		//å¦‚æœfxé˜Ÿåˆ—å‡ºåˆ—ï¼Œè¯·å§‹ç»ˆåˆ é™¤è¿›åº¦sentinel
+		ifï¼ˆfn ===â€œinprogressâ€ï¼‰{
+			fn = queue.shiftï¼ˆï¼‰;
 			startLength--;
 		}
 
-		if£¨fn£©{
+		ifï¼ˆfnï¼‰{
 
-			//Ìí¼Ó½ø¶ÈsentinelÒÔ·ÀÖ¹fx¶ÓÁĞ½øÈë
-			//×Ô¶¯³öÁĞ
-			if£¨type ===¡°fx¡±£©{
-				queue.unshift£¨¡°inprogress¡±£©;
+			//æ·»åŠ è¿›åº¦sentinelä»¥é˜²æ­¢fxé˜Ÿåˆ—è¿›å…¥
+			//è‡ªåŠ¨å‡ºåˆ—
+			ifï¼ˆtype ===â€œfxâ€ï¼‰{
+				queue.unshiftï¼ˆâ€œinprogressâ€ï¼‰;
 			}
 
-			//Çå³ı×îºóÒ»¸ö¶ÓÁĞÍ£Ö¹¹¦ÄÜ
+			//æ¸…é™¤æœ€åä¸€ä¸ªé˜Ÿåˆ—åœæ­¢åŠŸèƒ½
 			delete hooks.stop;
-			fn.call£¨elem£¬next£¬hooks£©;
+			fn.callï¼ˆelemï¼Œnextï¼Œhooksï¼‰;
 		}
 
-		if£¨£¡startLength && hooks£©{
-			hooks.empty.fire£¨£©;
+		ifï¼ˆï¼startLength && hooksï¼‰{
+			hooks.empty.fireï¼ˆï¼‰;
 		}
-	}£¬
+	}ï¼Œ
 
-	// not public  - Éú³ÉqueueHooks¶ÔÏó£¬»ò·µ»Øµ±Ç°¶ÔÏó
-	_queueHooks£ºfunction£¨elem£¬type£©{
-		var key = type +¡°queueHooks¡±;
-		return dataPriv.get£¨elem£¬key£©|| dataPriv.access£¨elem£¬key£¬{
-			empty£ºjQuery.Callbacks£¨¡°once memory¡±£©¡£add£¨function£¨£©{
-				dataPriv.remove£¨elem£¬[type +¡°queue¡±£¬key]£©;
-			}£©
-		}£©;
+	// not public  - ç”ŸæˆqueueHookså¯¹è±¡ï¼Œæˆ–è¿”å›å½“å‰å¯¹è±¡
+	_queueHooksï¼šfunctionï¼ˆelemï¼Œtypeï¼‰{
+		var key = type +â€œqueueHooksâ€;
+		return dataPriv.getï¼ˆelemï¼Œkeyï¼‰|| dataPriv.accessï¼ˆelemï¼Œkeyï¼Œ{
+			emptyï¼šjQuery.Callbacksï¼ˆâ€œonce memoryâ€ï¼‰ã€‚addï¼ˆfunctionï¼ˆï¼‰{
+				dataPriv.removeï¼ˆelemï¼Œ[type +â€œqueueâ€ï¼Œkey]ï¼‰;
+			}ï¼‰
+		}ï¼‰;
 	}
-}£©;
+}ï¼‰;
 
-jQuery.fn.extend£¨{
-	queue£ºfunction£¨type£¬data£©{
+jQuery.fn.extendï¼ˆ{
+	queueï¼šfunctionï¼ˆtypeï¼Œdataï¼‰{
 		var setter = 2;
 
-		if£¨typeof type£¡==¡°string¡±£©{
+		ifï¼ˆtypeof typeï¼==â€œstringâ€ï¼‰{
 			data = type;
-			type =¡°fx¡±;
+			type =â€œfxâ€;
 			setter--;
 		}
 
-		if£¨arguments.length <setter£©{
-			return jQuery.queue£¨this [0]£¬type£©;
+		ifï¼ˆarguments.length <setterï¼‰{
+			return jQuery.queueï¼ˆthis [0]ï¼Œtypeï¼‰;
 		}
 
-		·µ»ØÊı¾İ=== undefined£¿
-			Õâ¸ö £º
-			this.each£¨function£¨£©{
-				var queue = jQuery.queue£¨this£¬type£¬data£©;
+		è¿”å›æ•°æ®=== undefinedï¼Ÿ
+			è¿™ä¸ª ï¼š
+			this.eachï¼ˆfunctionï¼ˆï¼‰{
+				var queue = jQuery.queueï¼ˆthisï¼Œtypeï¼Œdataï¼‰;
 
-				//È·±£´Ë¶ÓÁĞµÄ¹Ò¹³
-				jQuery._queueHooks£¨this£¬type£©;
+				//ç¡®ä¿æ­¤é˜Ÿåˆ—çš„æŒ‚é’©
+				jQuery._queueHooksï¼ˆthisï¼Œtypeï¼‰;
 
-				if£¨type ===¡°fx¡±&& queue [0]£¡==¡°inprogress¡±£©{
-					jQuery.dequeue£¨this£¬type£©;
+				ifï¼ˆtype ===â€œfxâ€&& queue [0]ï¼==â€œinprogressâ€ï¼‰{
+					jQuery.dequeueï¼ˆthisï¼Œtypeï¼‰;
 				}
-			}£©;
-	}£¬
-	dequeue£ºfunction£¨type£©{
-		return this.each£¨function£¨£©{
-			jQuery.dequeue£¨this£¬type£©;
-		}£©;
-	}£¬
-	clearQueue£ºfunction£¨type£©{
-		return this.queue£¨type ||¡°fx¡±£¬[]£©;
-	}£¬
+			}ï¼‰;
+	}ï¼Œ
+	dequeueï¼šfunctionï¼ˆtypeï¼‰{
+		return this.eachï¼ˆfunctionï¼ˆï¼‰{
+			jQuery.dequeueï¼ˆthisï¼Œtypeï¼‰;
+		}ï¼‰;
+	}ï¼Œ
+	clearQueueï¼šfunctionï¼ˆtypeï¼‰{
+		return this.queueï¼ˆtype ||â€œfxâ€ï¼Œ[]ï¼‰;
+	}ï¼Œ
 
 	// Get a promise resolved when queues of a certain type
 	// are emptied (fx is the type by default)
@@ -4489,40 +4489,40 @@ var swap = function( elem, options, callback, args ) {
 	var ret, name,
 		old = {};
 
-	//¼Ç×¡¾ÉÖµ£¬È»ºó²åÈëĞÂÖµ
-	for£¨Ñ¡ÏîÖĞµÄÃû³Æ£©{
+	//è®°ä½æ—§å€¼ï¼Œç„¶åæ’å…¥æ–°å€¼
+	forï¼ˆé€‰é¡¹ä¸­çš„åç§°ï¼‰{
 		old [name] = elem.style [name];
 		elem.style [name] = options [name];
 	}
 
-	ret = callback.apply£¨elem£¬args || []£©;
+	ret = callback.applyï¼ˆelemï¼Œargs || []ï¼‰;
 
-	//»Ö¸´¾ÉÖµ
-	for£¨Ñ¡ÏîÖĞµÄÃû³Æ£©{
+	//æ¢å¤æ—§å€¼
+	forï¼ˆé€‰é¡¹ä¸­çš„åç§°ï¼‰{
 		elem.style [name] = old [name];
 	}
 
-	·µ»Ø;
+	è¿”å›;
 };
 
 
 
 
-function adjustCSS£¨elem£¬prop£¬valueParts£¬tween£©{
-	varµ÷Õû£¬¹æÄ££¬
-		maxIterations = 20£¬
-		currentValue =²¹¼ä£¿
-			function£¨£©{
-				return tween.cur£¨£©;
-			}£º
-			function£¨£©{
-				return jQuery.css£¨elem£¬prop£¬¡°¡±£©;
-			}£¬
-		initial = currentValue£¨£©£¬
-		unit = valueParts && valueParts [3] || £¨jQuery.cssNumber [prop]£¿¡°¡±£º¡°px¡±£©£¬
+function adjustCSSï¼ˆelemï¼Œpropï¼ŒvaluePartsï¼Œtweenï¼‰{
+	varè°ƒæ•´ï¼Œè§„æ¨¡ï¼Œ
+		maxIterations = 20ï¼Œ
+		currentValue =è¡¥é—´ï¼Ÿ
+			functionï¼ˆï¼‰{
+				return tween.curï¼ˆï¼‰;
+			}ï¼š
+			functionï¼ˆï¼‰{
+				return jQuery.cssï¼ˆelemï¼Œpropï¼Œâ€œâ€ï¼‰;
+			}ï¼Œ
+		initial = currentValueï¼ˆï¼‰ï¼Œ
+		unit = valueParts && valueParts [3] || ï¼ˆjQuery.cssNumber [prop]ï¼Ÿâ€œâ€ï¼šâ€œpxâ€ï¼‰ï¼Œ
 
-		//Ç±ÔÚµÄµ¥Î»²»Æ¥ÅäĞèÒªÆğÊ¼Öµ¼ÆËã
-		initialInUnit =£¨jQuery.cssNumber [prop] || unit£¡==¡°px¡±&& + initial£©&&
+		//æ½œåœ¨çš„å•ä½ä¸åŒ¹é…éœ€è¦èµ·å§‹å€¼è®¡ç®—
+		initialInUnit =ï¼ˆjQuery.cssNumber [prop] || unitï¼==â€œpxâ€&& + initialï¼‰&&
 			rcssNum.exec( jQuery.css( elem, prop ) );
 
 	if ( initialInUnit && initialInUnit[ 3 ] !== unit ) {
@@ -4575,69 +4575,69 @@ function adjustCSS£¨elem£¬prop£¬valueParts£¬tween£©{
 
 var defaultDisplayMap = {};
 
-function getDefaultDisplay£¨elem£©{
-	±äÎÂ£¬
-		doc = elem.ownerDocument£¬
-		nodeName = elem.nodeName£¬
+function getDefaultDisplayï¼ˆelemï¼‰{
+	å˜æ¸©ï¼Œ
+		doc = elem.ownerDocumentï¼Œ
+		nodeName = elem.nodeNameï¼Œ
 		display = defaultDisplayMap [nodeName];
 
-	if£¨display£©{
-		·µ»ØÏÔÊ¾;
+	ifï¼ˆdisplayï¼‰{
+		è¿”å›æ˜¾ç¤º;
 	}
 
-	temp = doc.body.appendChild£¨doc.createElement£¨nodeName£©£©;
-	display = jQuery.css£¨temp£¬¡°display¡±£©;
+	temp = doc.body.appendChildï¼ˆdoc.createElementï¼ˆnodeNameï¼‰ï¼‰;
+	display = jQuery.cssï¼ˆtempï¼Œâ€œdisplayâ€ï¼‰;
 
-	temp.parentNode.removeChild£¨temp£©;
+	temp.parentNode.removeChildï¼ˆtempï¼‰;
 
-	if£¨display ===¡°none¡±£©{
-		display =¡°block¡±;
+	ifï¼ˆdisplay ===â€œnoneâ€ï¼‰{
+		display =â€œblockâ€;
 	}
 	defaultDisplayMap [nodeName] = display;
 
-	·µ»ØÏÔÊ¾;
+	è¿”å›æ˜¾ç¤º;
 }
 
-function showHide£¨elements£¬show£©{
-	var display£¬elem£¬
-		values = []£¬
-		index = 0£¬
+function showHideï¼ˆelementsï¼Œshowï¼‰{
+	var displayï¼Œelemï¼Œ
+		values = []ï¼Œ
+		index = 0ï¼Œ
 		length = elements.length;
 
-	//È·¶¨ĞèÒª¸ü¸ÄµÄÔªËØµÄĞÂÏÔÊ¾Öµ
-	for£¨; index <length; index ++£©{
+	//ç¡®å®šéœ€è¦æ›´æ”¹çš„å…ƒç´ çš„æ–°æ˜¾ç¤ºå€¼
+	forï¼ˆ; index <length; index ++ï¼‰{
 		elem = elements [index];
-		if£¨£¡elem.style£©{
-			¼ÌĞø;
+		ifï¼ˆï¼elem.styleï¼‰{
+			ç»§ç»­;
 		}
 
 		display = elem.style.display;
-		if£¨show£©{
+		ifï¼ˆshowï¼‰{
 
-			//ÒòÎªÎÒÃÇÇ¿ÖÆ¶Ô¼¶ÁªÒş²ØÔªËØ½øĞĞ¿É¼ûĞÔ£¬ËùÒÔÁ¢¼´£¨ºÍÂı£©
-			//ÔÚµÚÒ»¸öÑ­»·ÖĞĞèÒª¼ì²é£¬³ı·ÇÎÒÃÇÓĞ·Ç¿ÕµÄÏÔÊ¾Öµ£¨»òÕß
-			//ÄÚÁª»ò¼´½«»Ö¸´£©
-			if£¨display ===¡°none¡±£©{
-				values [index] = dataPriv.get£¨elem£¬¡°display¡±£©|| ¿ÕÖµ;
-				if£¨£¡values [index]£©{
-					elem.style.display =¡°¡±;
+			//å› ä¸ºæˆ‘ä»¬å¼ºåˆ¶å¯¹çº§è”éšè—å…ƒç´ è¿›è¡Œå¯è§æ€§ï¼Œæ‰€ä»¥ç«‹å³ï¼ˆå’Œæ…¢ï¼‰
+			//åœ¨ç¬¬ä¸€ä¸ªå¾ªç¯ä¸­éœ€è¦æ£€æŸ¥ï¼Œé™¤éæˆ‘ä»¬æœ‰éç©ºçš„æ˜¾ç¤ºå€¼ï¼ˆæˆ–è€…
+			//å†…è”æˆ–å³å°†æ¢å¤ï¼‰
+			ifï¼ˆdisplay ===â€œnoneâ€ï¼‰{
+				values [index] = dataPriv.getï¼ˆelemï¼Œâ€œdisplayâ€ï¼‰|| ç©ºå€¼;
+				ifï¼ˆï¼values [index]ï¼‰{
+					elem.style.display =â€œâ€;
 				}
 			}
-			if£¨elem.style.display ===¡°¡±&& isHiddenWithinTree£¨elem£©£©{
-				values [index] = getDefaultDisplay£¨elem£©;
+			ifï¼ˆelem.style.display ===â€œâ€&& isHiddenWithinTreeï¼ˆelemï¼‰ï¼‰{
+				values [index] = getDefaultDisplayï¼ˆelemï¼‰;
 			}
 		} else {
-			if£¨display£¡==¡°none¡±£©{
-				values [index] =¡°none¡±;
+			ifï¼ˆdisplayï¼==â€œnoneâ€ï¼‰{
+				values [index] =â€œnoneâ€;
 
-				//¼Ç×¡ÎÒÃÇÒª¸²¸ÇµÄ¶«Î÷
-				dataPriv.set£¨elem£¬¡°display¡±£¬display£©;
+				//è®°ä½æˆ‘ä»¬è¦è¦†ç›–çš„ä¸œè¥¿
+				dataPriv.setï¼ˆelemï¼Œâ€œdisplayâ€ï¼Œdisplayï¼‰;
 			}
 		}
 	}
 
-	//ÔÚµÚ¶ş¸öÑ­»·ÖĞÉèÖÃÔªËØµÄÏÔÊ¾ÒÔ±ÜÃâ²»¶ÏµÄ»ØÁ÷
-	for£¨index = 0; index <length; index ++£©{
+	//åœ¨ç¬¬äºŒä¸ªå¾ªç¯ä¸­è®¾ç½®å…ƒç´ çš„æ˜¾ç¤ºä»¥é¿å…ä¸æ–­çš„å›æµ
+	forï¼ˆindex = 0; index <length; index ++ï¼‰{
 		if ( values[ index ] != null ) {
 			elements[ index ].style.display = values[ index ];
 		}
@@ -4658,461 +4658,461 @@ jQuery.fn.extend( {
 			return state ? this.show() : this.hide();
 		}
 
-		return this.each£¨function£¨£©{
-			if£¨isHiddenWithinTree£¨this£©£©{
-				jQuery£¨this£©.show£¨£©;
+		return this.eachï¼ˆfunctionï¼ˆï¼‰{
+			ifï¼ˆisHiddenWithinTreeï¼ˆthisï¼‰ï¼‰{
+				jQueryï¼ˆthisï¼‰.showï¼ˆï¼‰;
 			} else {
-				jQuery£¨this£©.hide£¨£©;
+				jQueryï¼ˆthisï¼‰.hideï¼ˆï¼‰;
 			}
-		}£©;
+		}ï¼‰;
 	}
-}£©;
-var rcheckableType =£¨/ ^£¨£¿£ºcheckbox | radio£©$ / i£©;
+}ï¼‰;
+var rcheckableType =ï¼ˆ/ ^ï¼ˆï¼Ÿï¼šcheckbox | radioï¼‰$ / iï¼‰;
 
-var rtagName =£¨/ <£¨[az] [^ \ / \ 0> \ x20 \ t \ r \ n \ f] +£©/ i£©;
+var rtagName =ï¼ˆ/ <ï¼ˆ[az] [^ \ / \ 0> \ x20 \ t \ r \ n \ f] +ï¼‰/ iï¼‰;
 
-var rscriptType =£¨/ ^ $ | ^ module $ | \ /£¨£¿£ºjava | ecma£©script / i£©;
+var rscriptType =ï¼ˆ/ ^ $ | ^ module $ | \ /ï¼ˆï¼Ÿï¼šjava | ecmaï¼‰script / iï¼‰;
 
 
 
-//ÎÒÃÇ±ØĞë¹Ø±ÕÕâĞ©±êÇ©²ÅÄÜÖ§³ÖXHTML£¨££13200£©
+//æˆ‘ä»¬å¿…é¡»å…³é—­è¿™äº›æ ‡ç­¾æ‰èƒ½æ”¯æŒXHTMLï¼ˆï¼ƒ13200ï¼‰
 var wrapMap = {
 
-	//Ö§³Ö£ºIE <= 9
-	Ñ¡Ïî£º[1£¬¡°<select multiple ='multiple'>¡±£¬¡°</ select>¡±]£¬
+	//æ”¯æŒï¼šIE <= 9
+	é€‰é¡¹ï¼š[1ï¼Œâ€œ<select multiple ='multiple'>â€ï¼Œâ€œ</ select>â€]ï¼Œ
 
-	// XHTML½âÎöÆ÷²»»áÉñÆæµØ²åÈëÔªËØ
-	//±ê¼ÇÌÀ½âÎöÆ÷µÄ·½Ê½ÏàÍ¬¡£ËùÒÔÎÒÃÇ²»ÄÜËõ¶Ì
-	//Í¨¹ıÊ¡ÂÔ<tbody>»òÆäËû±ØĞèÔªËØ¡£
-	thead£º[1£¬¡°<table>¡±£¬¡°</ table>¡±]£¬
-	col£º[2£¬¡°<table> <colgroup>¡±£¬¡°</ colgroup> </ table>¡±]£¬
-	tr£º[2£¬¡°<table> <tbody>¡±£¬¡°</ tbody> </ table>¡±]£¬
-	td£º[3£¬¡°<table> <tbody> <tr>¡±£¬¡°</ tr> </ tbody> </ table>¡±]£¬
+	// XHTMLè§£æå™¨ä¸ä¼šç¥å¥‡åœ°æ’å…¥å…ƒç´ 
+	//æ ‡è®°æ±¤è§£æå™¨çš„æ–¹å¼ç›¸åŒã€‚æ‰€ä»¥æˆ‘ä»¬ä¸èƒ½ç¼©çŸ­
+	//é€šè¿‡çœç•¥<tbody>æˆ–å…¶ä»–å¿…éœ€å…ƒç´ ã€‚
+	theadï¼š[1ï¼Œâ€œ<table>â€ï¼Œâ€œ</ table>â€]ï¼Œ
+	colï¼š[2ï¼Œâ€œ<table> <colgroup>â€ï¼Œâ€œ</ colgroup> </ table>â€]ï¼Œ
+	trï¼š[2ï¼Œâ€œ<table> <tbody>â€ï¼Œâ€œ</ tbody> </ table>â€]ï¼Œ
+	tdï¼š[3ï¼Œâ€œ<table> <tbody> <tr>â€ï¼Œâ€œ</ tr> </ tbody> </ table>â€]ï¼Œ
 
-	_default£º[0£¬¡°¡±£¬¡°¡±]
+	_defaultï¼š[0ï¼Œâ€œâ€ï¼Œâ€œâ€]
 };
 
-//Ö§³Ö£ºIE <= 9
+//æ”¯æŒï¼šIE <= 9
 wrapMap.optgroup = wrapMap.option;
 
 wrapMap.tbody = wrapMap.tfoot = wrapMap.colgroup = wrapMap.caption = wrapMap.thead;
 wrapMap.th = wrapMap.td;
 
 
-function getAll£¨context£¬tag£©{
+function getAllï¼ˆcontextï¼Œtagï¼‰{
 
-	//Ö§³Ö£ºIE <= 9  -  11
-	//Ê¹ÓÃtypeofÀ´±ÜÃâËŞÖ÷¶ÔÏóÉÏµÄÁã²ÎÊı·½·¨µ÷ÓÃ£¨££15151£©
+	//æ”¯æŒï¼šIE <= 9  -  11
+	//ä½¿ç”¨typeofæ¥é¿å…å®¿ä¸»å¯¹è±¡ä¸Šçš„é›¶å‚æ•°æ–¹æ³•è°ƒç”¨ï¼ˆï¼ƒ15151ï¼‰
 	var ret;
 
-	if£¨typeof context.getElementsByTagName£¡==¡°undefined¡±£©{
-		ret = context.getElementsByTagName£¨tag ||¡°*¡±£©;
+	ifï¼ˆtypeof context.getElementsByTagNameï¼==â€œundefinedâ€ï¼‰{
+		ret = context.getElementsByTagNameï¼ˆtag ||â€œ*â€ï¼‰;
 
-	} else if£¨typeof context.querySelectorAll£¡==¡°undefined¡±£©{
-		ret = context.querySelectorAll£¨tag ||¡°*¡±£©;
+	} else ifï¼ˆtypeof context.querySelectorAllï¼==â€œundefinedâ€ï¼‰{
+		ret = context.querySelectorAllï¼ˆtag ||â€œ*â€ï¼‰;
 
 	} else {
 		ret = [];
 	}
 
-	if£¨tag === undefined || tag && nodeName£¨context£¬tag£©£©{
-		return jQuery.merge£¨[context]£¬ret£©;
+	ifï¼ˆtag === undefined || tag && nodeNameï¼ˆcontextï¼Œtagï¼‰ï¼‰{
+		return jQuery.mergeï¼ˆ[context]ï¼Œretï¼‰;
 	}
 
-	·µ»Ø;
+	è¿”å›;
 }
 
 
-//½«½Å±¾±ê¼ÇÎªÒÑ¾­¹ıÆÀ¹À
-function setGlobalEval£¨elems£¬refElements£©{
-	var i = 0£¬
+//å°†è„šæœ¬æ ‡è®°ä¸ºå·²ç»è¿‡è¯„ä¼°
+function setGlobalEvalï¼ˆelemsï¼ŒrefElementsï¼‰{
+	var i = 0ï¼Œ
 		l = elems.length;
 
-	for£¨; i <l; i ++£©{
-		dataPriv.set£¨
-			elems [i]£¬
-			¡°globalEval¡±
-			£¡refElements || dataPriv.get£¨refElements [i]£¬¡°globalEval¡±£©
-		£©;
+	forï¼ˆ; i <l; i ++ï¼‰{
+		dataPriv.setï¼ˆ
+			elems [i]ï¼Œ
+			â€œglobalEvalâ€
+			ï¼refElements || dataPriv.getï¼ˆrefElements [i]ï¼Œâ€œglobalEvalâ€ï¼‰
+		ï¼‰;
 	}
 }
 
 
-var rhtml = / <|£¦£££¿\ w +; /;
+var rhtml = / <|ï¼†ï¼ƒï¼Ÿ\ w +; /;
 
-function buildFragment£¨elems£¬context£¬scripts£¬selection£¬ignored£©{
-	var elem£¬tmp£¬tag£¬wrap£¬contains£¬j£¬
-		fragment = context.createDocumentFragment£¨£©£¬
-		nodes = []£¬
-		i = 0£¬
+function buildFragmentï¼ˆelemsï¼Œcontextï¼Œscriptsï¼Œselectionï¼Œignoredï¼‰{
+	var elemï¼Œtmpï¼Œtagï¼Œwrapï¼Œcontainsï¼Œjï¼Œ
+		fragment = context.createDocumentFragmentï¼ˆï¼‰ï¼Œ
+		nodes = []ï¼Œ
+		i = 0ï¼Œ
 		l = elems.length;
 
-	for£¨; i <l; i ++£©{
+	forï¼ˆ; i <l; i ++ï¼‰{
 		elem = elems [i];
 
-		if£¨elem || elem === 0£©{
+		ifï¼ˆelem || elem === 0ï¼‰{
 
-			//Ö±½ÓÌí¼Ó½Úµã
-			if£¨toType£¨elem£©===¡°object¡±£©{
+			//ç›´æ¥æ·»åŠ èŠ‚ç‚¹
+			ifï¼ˆtoTypeï¼ˆelemï¼‰===â€œobjectâ€ï¼‰{
 
-				//Ö§³Ö£º½öÏŞAndroid <= 4.0£¬½öÏŞPhantomJS 1
-				// push.apply£¨_£¬arraylike£©Å×³ö¹ÅÀÏµÄWebKit
-				jQuery.merge£¨nodes£¬elem.nodeType£¿[elem]£ºelem£©;
+				//æ”¯æŒï¼šä»…é™Android <= 4.0ï¼Œä»…é™PhantomJS 1
+				// push.applyï¼ˆ_ï¼Œarraylikeï¼‰æŠ›å‡ºå¤è€çš„WebKit
+				jQuery.mergeï¼ˆnodesï¼Œelem.nodeTypeï¼Ÿ[elem]ï¼šelemï¼‰;
 
-			//½«·Çhtml×ª»»ÎªÎÄ±¾½Úµã
-			} else if£¨£¡rhtml.test£¨elem£©£©{
-				nodes.push£¨context.createTextNode£¨elem£©£©;
+			//å°†éhtmlè½¬æ¢ä¸ºæ–‡æœ¬èŠ‚ç‚¹
+			} else ifï¼ˆï¼rhtml.testï¼ˆelemï¼‰ï¼‰{
+				nodes.pushï¼ˆcontext.createTextNodeï¼ˆelemï¼‰ï¼‰;
 
-			//½«html×ª»»ÎªDOM½Úµã
+			//å°†htmlè½¬æ¢ä¸ºDOMèŠ‚ç‚¹
 			} else {
-				tmp = tmp || fragment.appendChild£¨context.createElement£¨¡°div¡±£©£©;
+				tmp = tmp || fragment.appendChildï¼ˆcontext.createElementï¼ˆâ€œdivâ€ï¼‰ï¼‰;
 
-				//·´ĞòÁĞ»¯±ê×¼±íÊ¾
-				tag =£¨rtagName.exec£¨elem£©|| [¡°¡±£¬¡°¡±]£©[1] .toLowerCase£¨£©;
+				//ååºåˆ—åŒ–æ ‡å‡†è¡¨ç¤º
+				tag =ï¼ˆrtagName.execï¼ˆelemï¼‰|| [â€œâ€ï¼Œâ€œâ€]ï¼‰[1] .toLowerCaseï¼ˆï¼‰;
 				wrap = wrapMap [tag] || wrapMap._default;
-				tmp.innerHTML = wrap [1] + jQuery.htmlPrefilter£¨elem£©+ wrap [2];
+				tmp.innerHTML = wrap [1] + jQuery.htmlPrefilterï¼ˆelemï¼‰+ wrap [2];
 
-				//Í¨¹ı°ü×°Æ÷ÏÂ½µµ½ÕıÈ·µÄÄÚÈİ
+				//é€šè¿‡åŒ…è£…å™¨ä¸‹é™åˆ°æ­£ç¡®çš„å†…å®¹
 				j = wrap [0];
-				while£¨j--£©{
+				whileï¼ˆj--ï¼‰{
 					tmp = tmp.lastChild;
 				}
 
-				//Ö§³Ö£º½öÏŞAndroid <= 4.0£¬½öÏŞPhantomJS 1
-				// push.apply£¨_£¬arraylike£©Å×³ö¹ÅÀÏµÄWebKit
-				jQuery.merge£¨nodes£¬tmp.childNodes£©;
+				//æ”¯æŒï¼šä»…é™Android <= 4.0ï¼Œä»…é™PhantomJS 1
+				// push.applyï¼ˆ_ï¼Œarraylikeï¼‰æŠ›å‡ºå¤è€çš„WebKit
+				jQuery.mergeï¼ˆnodesï¼Œtmp.childNodesï¼‰;
 
-				//¼Ç×¡¶¥¼¶ÈİÆ÷
+				//è®°ä½é¡¶çº§å®¹å™¨
 				tmp = fragment.firstChild;
 
-				//È·±£´´½¨µÄ½ÚµãÊÇ¹ÂÁ¢µÄ£¨££12392£©
-				tmp.textContent =¡°¡±;
+				//ç¡®ä¿åˆ›å»ºçš„èŠ‚ç‚¹æ˜¯å­¤ç«‹çš„ï¼ˆï¼ƒ12392ï¼‰
+				tmp.textContent =â€œâ€;
 			}
 		}
 	}
 
-	//´ÓÆ¬¶ÎÖĞÉ¾³ı°ü×°Æ÷
-	fragment.textContent =¡°¡±;
+	//ä»ç‰‡æ®µä¸­åˆ é™¤åŒ…è£…å™¨
+	fragment.textContent =â€œâ€;
 
 	i = 0;
-	while£¨£¨elem = nodes [i ++]£©£©{
+	whileï¼ˆï¼ˆelem = nodes [i ++]ï¼‰ï¼‰{
 
-		//Ìø¹ıÉÏÏÂÎÄ¼¯ºÏÖĞÒÑÓĞµÄÔªËØ£¨trac-4087£©
-		if£¨selection && jQuery.inArray£¨elem£¬selection£©> -1£©{
-			if£¨ignored£©{
-				ignored.push£¨elem£©;
+		//è·³è¿‡ä¸Šä¸‹æ–‡é›†åˆä¸­å·²æœ‰çš„å…ƒç´ ï¼ˆtrac-4087ï¼‰
+		ifï¼ˆselection && jQuery.inArrayï¼ˆelemï¼Œselectionï¼‰> -1ï¼‰{
+			ifï¼ˆignoredï¼‰{
+				ignored.pushï¼ˆelemï¼‰;
 			}
-			¼ÌĞø;
+			ç»§ç»­;
 		}
 
-		contains = jQuery.contains£¨elem.ownerDocument£¬elem£©;
+		contains = jQuery.containsï¼ˆelem.ownerDocumentï¼Œelemï¼‰;
 
-		//¸½¼Óµ½Æ¬¶Î
-		tmp = getAll£¨fragment.appendChild£¨elem£©£¬¡°script¡±£©;
+		//é™„åŠ åˆ°ç‰‡æ®µ
+		tmp = getAllï¼ˆfragment.appendChildï¼ˆelemï¼‰ï¼Œâ€œscriptâ€ï¼‰;
 
-		//±£Áô½Å±¾ÆÀ¹ÀÀúÊ·¼ÇÂ¼
-		if£¨contains£©{
-			setGlobalEval£¨tmp£©;
+		//ä¿ç•™è„šæœ¬è¯„ä¼°å†å²è®°å½•
+		ifï¼ˆcontainsï¼‰{
+			setGlobalEvalï¼ˆtmpï¼‰;
 		}
 
-		//²¶»ñ¿ÉÖ´ĞĞÎÄ¼ş
-		if£¨scripts£©{
+		//æ•è·å¯æ‰§è¡Œæ–‡ä»¶
+		ifï¼ˆscriptsï¼‰{
 			j = 0;
-			while£¨£¨elem = tmp [j ++]£©£©{
-				if£¨rscriptType.test£¨elem.type ||¡°¡±£©£©{
-					scripts.push£¨elem£©;
+			whileï¼ˆï¼ˆelem = tmp [j ++]ï¼‰ï¼‰{
+				ifï¼ˆrscriptType.testï¼ˆelem.type ||â€œâ€ï¼‰ï¼‰{
+					scripts.pushï¼ˆelemï¼‰;
 				}
 			}
 		}
 	}
 
-	·µ»ØÆ¬¶Î;
+	è¿”å›ç‰‡æ®µ;
 }
 
 
-£¨function£¨£©{
-	var fragment = document.createDocumentFragment£¨£©£¬
-		div = fragment.appendChild£¨document.createElement£¨¡°div¡±£©£©£¬
-		input = document.createElement£¨¡°input¡±£©;
+ï¼ˆfunctionï¼ˆï¼‰{
+	var fragment = document.createDocumentFragmentï¼ˆï¼‰ï¼Œ
+		div = fragment.appendChildï¼ˆdocument.createElementï¼ˆâ€œdivâ€ï¼‰ï¼‰ï¼Œ
+		input = document.createElementï¼ˆâ€œinputâ€ï¼‰;
 
-	//Ö§³Ö£º½öÏŞAndroid 4.0  -  4.3
-	//Èç¹ûÉèÖÃÁËÃû³Æ£¬¼ì²é×´Ì¬ÊÇ·ñ¶ªÊ§£¨££11217£©
-	//Ö§³Ö£ºWindows Web Apps£¨WWA£©
-	//`name`ºÍ`type`±ØĞëÊ¹ÓÃ.setAttribute for WWA£¨££14901£©
-	input.setAttribute£¨¡°type¡±£¬¡°radio¡±£©;
-	input.setAttribute£¨¡°checked¡±£¬¡°checked¡±£©;
-	input.setAttribute£¨¡°name¡±£¬¡°t¡±£©;
+	//æ”¯æŒï¼šä»…é™Android 4.0  -  4.3
+	//å¦‚æœè®¾ç½®äº†åç§°ï¼Œæ£€æŸ¥çŠ¶æ€æ˜¯å¦ä¸¢å¤±ï¼ˆï¼ƒ11217ï¼‰
+	//æ”¯æŒï¼šWindows Web Appsï¼ˆWWAï¼‰
+	//`name`å’Œ`type`å¿…é¡»ä½¿ç”¨.setAttribute for WWAï¼ˆï¼ƒ14901ï¼‰
+	input.setAttributeï¼ˆâ€œtypeâ€ï¼Œâ€œradioâ€ï¼‰;
+	input.setAttributeï¼ˆâ€œcheckedâ€ï¼Œâ€œcheckedâ€ï¼‰;
+	input.setAttributeï¼ˆâ€œnameâ€ï¼Œâ€œtâ€ï¼‰;
 
-	div.appendChild£¨ÊäÈë£©;
+	div.appendChildï¼ˆè¾“å…¥ï¼‰;
 
-	//Ö§³Ö£ºAndroid <= 4.1
-	//½Ï¾ÉµÄWebKit²»»áÔÚÆ¬¶ÎÖĞÕıÈ·¿ËÂ¡ÒÑ¼ì²é×´Ì¬
-	support.checkClone = div.cloneNode£¨true£©.cloneNode£¨true£©.lastChild.checked;
+	//æ”¯æŒï¼šAndroid <= 4.1
+	//è¾ƒæ—§çš„WebKitä¸ä¼šåœ¨ç‰‡æ®µä¸­æ­£ç¡®å…‹éš†å·²æ£€æŸ¥çŠ¶æ€
+	support.checkClone = div.cloneNodeï¼ˆtrueï¼‰.cloneNodeï¼ˆtrueï¼‰.lastChild.checked;
 
-	//Ö§³Ö£ºIE <= 11
-	//È·±£ÕıÈ·¿ËÂ¡textarea£¨ºÍ¸´Ñ¡¿ò£©defaultValue
-	div.innerHTML =¡°<textarea> x </ textarea>¡±;
-	support.noCloneChecked = !! div.cloneNode£¨true£©.lastChild.defaultValue;
-}£©£¨£©;
+	//æ”¯æŒï¼šIE <= 11
+	//ç¡®ä¿æ­£ç¡®å…‹éš†textareaï¼ˆå’Œå¤é€‰æ¡†ï¼‰defaultValue
+	div.innerHTML =â€œ<textarea> x </ textarea>â€;
+	support.noCloneChecked = !! div.cloneNodeï¼ˆtrueï¼‰.lastChild.defaultValue;
+}ï¼‰ï¼ˆï¼‰;
 var documentElement = document.documentElement;
 
 
 
 VAR
-	rkeyEvent = / ^ key /£¬
-	rmouseEvent = / ^£¨£¿£ºmouse | pointer | contextmenu | drag | drop£©| click /£¬
-	rtypenamespace = /^([^.]*)(?:\¡££¨¡£+£©|£©/;
+	rkeyEvent = / ^ key /ï¼Œ
+	rmouseEvent = / ^ï¼ˆï¼Ÿï¼šmouse | pointer | contextmenu | drag | dropï¼‰| click /ï¼Œ
+	rtypenamespace = /^([^.]*)(?:\ã€‚ï¼ˆã€‚+ï¼‰|ï¼‰/;
 
-function returnTrue£¨£©{
-	·µ»Øtrue;
+function returnTrueï¼ˆï¼‰{
+	è¿”å›true;
 }
 
-function returnFalse£¨£©{
-	·µ»Øfalse;
+function returnFalseï¼ˆï¼‰{
+	è¿”å›false;
 }
 
-//Ö§³Ö£ºIE <= 9
-//ÓĞ¹ØÏêÏ¸ĞÅÏ¢£¬Çë²ÎÔÄ££13393
-function safeActiveElement£¨£©{
-	³¢ÊÔ{
+//æ”¯æŒï¼šIE <= 9
+//æœ‰å…³è¯¦ç»†ä¿¡æ¯ï¼Œè¯·å‚é˜…ï¼ƒ13393
+function safeActiveElementï¼ˆï¼‰{
+	å°è¯•{
 		return document.activeElement;
-	} catch£¨err£©{}
+	} catchï¼ˆerrï¼‰{}
 }
 
-º¯Êıon£¨elem£¬types£¬selector£¬data£¬fn£¬one£©{
-	var origFn£¬type;
+å‡½æ•°onï¼ˆelemï¼Œtypesï¼Œselectorï¼Œdataï¼Œfnï¼Œoneï¼‰{
+	var origFnï¼Œtype;
 
-	//ÀàĞÍ¿ÉÒÔÊÇÀàĞÍ/´¦Àí³ÌĞòµÄÓ³Éä
-	if£¨typeof types ===¡°object¡±£©{
+	//ç±»å‹å¯ä»¥æ˜¯ç±»å‹/å¤„ç†ç¨‹åºçš„æ˜ å°„
+	ifï¼ˆtypeof types ===â€œobjectâ€ï¼‰{
 
-		//£¨ÀàĞÍ - ¶ÔÏó£¬Ñ¡ÔñÆ÷£¬Êı¾İ£©
-		if£¨typeof selector£¡==¡°string¡±£©{
+		//ï¼ˆç±»å‹ - å¯¹è±¡ï¼Œé€‰æ‹©å™¨ï¼Œæ•°æ®ï¼‰
+		ifï¼ˆtypeof selectorï¼==â€œstringâ€ï¼‰{
 
-			//£¨ÀàĞÍ - ¶ÔÏó£¬Êı¾İ£©
-			data = data || Ñ¡Ôñ;
+			//ï¼ˆç±»å‹ - å¯¹è±¡ï¼Œæ•°æ®ï¼‰
+			data = data || é€‰æ‹©;
 			selector = undefined;
 		}
-		for£¨type in types£©{
-			on£¨elem£¬type£¬selector£¬data£¬types [type]£¬one£©;
+		forï¼ˆtype in typesï¼‰{
+			onï¼ˆelemï¼Œtypeï¼Œselectorï¼Œdataï¼Œtypes [type]ï¼Œoneï¼‰;
 		}
-		·µ»ØÔªËØ;
+		è¿”å›å…ƒç´ ;
 	}
 
-	if£¨data == null && fn == null£©{
+	ifï¼ˆdata == null && fn == nullï¼‰{
 
-		//£¨ÀàĞÍ£¬fn£©
-		fn =Ñ¡ÔñÆ÷;
+		//ï¼ˆç±»å‹ï¼Œfnï¼‰
+		fn =é€‰æ‹©å™¨;
 		data = selector = undefined;
-	} else if£¨fn == null£©{
-		if£¨typeof selector ===¡°string¡±£©{
+	} else ifï¼ˆfn == nullï¼‰{
+		ifï¼ˆtypeof selector ===â€œstringâ€ï¼‰{
 
-			//£¨ÀàĞÍ£¬Ñ¡ÔñÆ÷£¬fn£©
-			fn =Êı¾İ;
+			//ï¼ˆç±»å‹ï¼Œé€‰æ‹©å™¨ï¼Œfnï¼‰
+			fn =æ•°æ®;
 			data = undefined;
 		} else {
 
-			//£¨ÀàĞÍ£¬Êı¾İ£¬fn£©
-			fn =Êı¾İ;
+			//ï¼ˆç±»å‹ï¼Œæ•°æ®ï¼Œfnï¼‰
+			fn =æ•°æ®;
 			data = selector;
 			selector = undefined;
 		}
 	}
-	if£¨fn === false£©{
+	ifï¼ˆfn === falseï¼‰{
 		fn = returnFalse;
-	} else if£¨£¡fn£©{
-		·µ»ØÔªËØ;
+	} else ifï¼ˆï¼fnï¼‰{
+		è¿”å›å…ƒç´ ;
 	}
 
-	if£¨one === 1£©{
+	ifï¼ˆone === 1ï¼‰{
 		origFn = fn;
-		fn = function£¨event£©{
+		fn = functionï¼ˆeventï¼‰{
 
-			//¿ÉÒÔÊ¹ÓÃ¿Õ¼¯£¬ÒòÎªÊÂ¼ş°üº¬ĞÅÏ¢
-			jQuery£¨£©¡£off£¨event£©;
-			return origFn.apply£¨this£¬arguments£©;
+			//å¯ä»¥ä½¿ç”¨ç©ºé›†ï¼Œå› ä¸ºäº‹ä»¶åŒ…å«ä¿¡æ¯
+			jQueryï¼ˆï¼‰ã€‚offï¼ˆeventï¼‰;
+			return origFn.applyï¼ˆthisï¼Œargumentsï¼‰;
 		};
 
-		//Ê¹ÓÃÏàÍ¬µÄguid£¬ÒÔ±ãµ÷ÓÃÕß¿ÉÒÔÊ¹ÓÃorigFnÉ¾³ı
-		fn.guid = origFn.guid || £¨origFn.guid = jQuery.guid ++£©;
+		//ä½¿ç”¨ç›¸åŒçš„guidï¼Œä»¥ä¾¿è°ƒç”¨è€…å¯ä»¥ä½¿ç”¨origFnåˆ é™¤
+		fn.guid = origFn.guid || ï¼ˆorigFn.guid = jQuery.guid ++ï¼‰;
 	}
-	return elem.each£¨function£¨£©{
-		jQuery.event.add£¨this£¬types£¬fn£¬data£¬selector£©;
-	}£©;
+	return elem.eachï¼ˆfunctionï¼ˆï¼‰{
+		jQuery.event.addï¼ˆthisï¼Œtypesï¼Œfnï¼Œdataï¼Œselectorï¼‰;
+	}ï¼‰;
 }
 
 / *
- * Helper¹¦ÄÜÓÃÓÚ¹ÜÀíÊÂ¼ş - ²»ÊÇ¹«¹²½Ó¿ÚµÄÒ»²¿·Ö¡£
- *ÎªDean EdwardsµÄaddEvent¿âÌá¹©ÁËĞí¶àÏë·¨µÄµÀ¾ß¡£
+ * HelperåŠŸèƒ½ç”¨äºç®¡ç†äº‹ä»¶ - ä¸æ˜¯å…¬å…±æ¥å£çš„ä¸€éƒ¨åˆ†ã€‚
+ *ä¸ºDean Edwardsçš„addEventåº“æä¾›äº†è®¸å¤šæƒ³æ³•çš„é“å…·ã€‚
  * /
 jQuery.event = {
 
-	È«Çò£º{}£¬
+	å…¨çƒï¼š{}ï¼Œ
 
-	add£ºfunction£¨elem£¬types£¬handler£¬data£¬selector£©{
+	addï¼šfunctionï¼ˆelemï¼Œtypesï¼Œhandlerï¼Œdataï¼Œselectorï¼‰{
 
-		var handleObjIn£¬eventHandle£¬tmp£¬
-			events£¬t£¬handleObj£¬
-			ÌØÊâ£¬´¦Àí³ÌĞò£¬ÀàĞÍ£¬ÃüÃû¿Õ¼ä£¬origType£¬
-			elemData = dataPriv.get£¨elem£©;
+		var handleObjInï¼ŒeventHandleï¼Œtmpï¼Œ
+			eventsï¼Œtï¼ŒhandleObjï¼Œ
+			ç‰¹æ®Šï¼Œå¤„ç†ç¨‹åºï¼Œç±»å‹ï¼Œå‘½åç©ºé—´ï¼ŒorigTypeï¼Œ
+			elemData = dataPriv.getï¼ˆelemï¼‰;
 
-		//²»Òª½«ÊÂ¼ş¸½¼Óµ½noData»òtext / comment½Úµã£¨µ«ÔÊĞíÆÕÍ¨¶ÔÏó£©
-		if£¨£¡elemData£©{
-			·µ»Ø;
+		//ä¸è¦å°†äº‹ä»¶é™„åŠ åˆ°noDataæˆ–text / commentèŠ‚ç‚¹ï¼ˆä½†å…è®¸æ™®é€šå¯¹è±¡ï¼‰
+		ifï¼ˆï¼elemDataï¼‰{
+			è¿”å›;
 		}
 
-		//µ÷ÓÃÕß¿ÉÒÔ´«Èë×Ô¶¨ÒåÊı¾İµÄ¶ÔÏóÀ´´úÌæ´¦Àí³ÌĞò
-		if£¨handler.handler£©{
+		//è°ƒç”¨è€…å¯ä»¥ä¼ å…¥è‡ªå®šä¹‰æ•°æ®çš„å¯¹è±¡æ¥ä»£æ›¿å¤„ç†ç¨‹åº
+		ifï¼ˆhandler.handlerï¼‰{
 			handleObjIn = handler;
 			handler = handleObjIn.handler;
 			selector = handleObjIn.selector;
 		}
 
-		//È·±£ÎŞĞ§Ñ¡ÔñÆ÷ÔÚ¸½¼ÓÊ±Å×³öÒì³£
-		//Èç¹ûelemÊÇ·ÇÔªËØ½Úµã£¨ÀıÈç£¬ÎÄµµ£©£¬Ôò¶ÔdocumentElementÇóÖµ
-		if£¨selector£©{
-			jQuery.find.matchesSelector£¨documentElement£¬selector£©;
+		//ç¡®ä¿æ— æ•ˆé€‰æ‹©å™¨åœ¨é™„åŠ æ—¶æŠ›å‡ºå¼‚å¸¸
+		//å¦‚æœelemæ˜¯éå…ƒç´ èŠ‚ç‚¹ï¼ˆä¾‹å¦‚ï¼Œæ–‡æ¡£ï¼‰ï¼Œåˆ™å¯¹documentElementæ±‚å€¼
+		ifï¼ˆselectorï¼‰{
+			jQuery.find.matchesSelectorï¼ˆdocumentElementï¼Œselectorï¼‰;
 		}
 
-		//È·±£´¦Àí³ÌĞò¾ßÓĞÎ¨Ò»ID£¬ÒÔºóÓÃÓÚ²éÕÒ/É¾³ıËü
-		if£¨£¡handler.guid£©{
+		//ç¡®ä¿å¤„ç†ç¨‹åºå…·æœ‰å”¯ä¸€IDï¼Œä»¥åç”¨äºæŸ¥æ‰¾/åˆ é™¤å®ƒ
+		ifï¼ˆï¼handler.guidï¼‰{
 			handler.guid = jQuery.guid ++;
 		}
 
-		//³õÊ¼»¯ÔªËØµÄÊÂ¼ş½á¹¹ºÍÖ÷´¦Àí³ÌĞò£¬Èç¹ûÕâÊÇµÚÒ»¸ö
-		if£¨£¡£¨events = elemData.events£©£©{
+		//åˆå§‹åŒ–å…ƒç´ çš„äº‹ä»¶ç»“æ„å’Œä¸»å¤„ç†ç¨‹åºï¼Œå¦‚æœè¿™æ˜¯ç¬¬ä¸€ä¸ª
+		ifï¼ˆï¼ï¼ˆevents = elemData.eventsï¼‰ï¼‰{
 			events = elemData.events = {};
 		}
-		if£¨£¡£¨eventHandle = elemData.handle£©£©{
-			eventHandle = elemData.handle = function£¨e£©{
+		ifï¼ˆï¼ï¼ˆeventHandle = elemData.handleï¼‰ï¼‰{
+			eventHandle = elemData.handle = functionï¼ˆeï¼‰{
 
-				//¶ªÆújQuery.event.trigger£¨£©ºÍµÄµÚ¶ş¸öÊÂ¼ş
-				//ÔÚÒ³ÃæĞ¶ÔØºóµ÷ÓÃÊÂ¼şÊ±
-				return typeof jQuery£¡==¡°undefined¡±&& jQuery.event.triggered£¡== e.type£¿
-					jQuery.event.dispatch.apply£¨elem£¬arguments£©£ºundefined;
+				//ä¸¢å¼ƒjQuery.event.triggerï¼ˆï¼‰å’Œçš„ç¬¬äºŒä¸ªäº‹ä»¶
+				//åœ¨é¡µé¢å¸è½½åè°ƒç”¨äº‹ä»¶æ—¶
+				return typeof jQueryï¼==â€œundefinedâ€&& jQuery.event.triggeredï¼== e.typeï¼Ÿ
+					jQuery.event.dispatch.applyï¼ˆelemï¼Œargumentsï¼‰ï¼šundefined;
 			};
 		}
 
-		//´¦ÀíÓÉ¿Õ¸ñ·Ö¸ôµÄ¶à¸öÊÂ¼ş
-		types =£¨types ||¡°¡±£©.match£¨rnothtmlwhite£©|| [¡°¡±];
+		//å¤„ç†ç”±ç©ºæ ¼åˆ†éš”çš„å¤šä¸ªäº‹ä»¶
+		types =ï¼ˆtypes ||â€œâ€ï¼‰.matchï¼ˆrnothtmlwhiteï¼‰|| [â€œâ€];
 		t = types.length;
-		while£¨t--£©{
-			tmp = rtypenamespace.exec£¨types [t]£©|| [];
+		whileï¼ˆt--ï¼‰{
+			tmp = rtypenamespace.execï¼ˆtypes [t]ï¼‰|| [];
 			type = origType = tmp [1];
-			namespaces =£¨tmp [2] ||¡°¡±£©¡£split£¨¡°¡£¡±£©¡£sort£¨£©;
+			namespaces =ï¼ˆtmp [2] ||â€œâ€ï¼‰ã€‚splitï¼ˆâ€œã€‚â€ï¼‰ã€‚sortï¼ˆï¼‰;
 
-			//ÄÇÀï*±ØĞë*ÊÇÒ»¸öÀàĞÍ£¬Ã»ÓĞ¸½¼ÓÃû³Æ¿Õ¼äµÄ´¦Àí³ÌĞò
-			if£¨£¡type£©{
-				¼ÌĞø;
+			//é‚£é‡Œ*å¿…é¡»*æ˜¯ä¸€ä¸ªç±»å‹ï¼Œæ²¡æœ‰é™„åŠ åç§°ç©ºé—´çš„å¤„ç†ç¨‹åº
+			ifï¼ˆï¼typeï¼‰{
+				ç»§ç»­;
 			}
 
-			//Èç¹ûÊÂ¼ş¸ü¸ÄÆäÀàĞÍ£¬ÇëÊ¹ÓÃÌØÊâÊÂ¼ş´¦Àí³ÌĞòÀ´¸ü¸ÄÀàĞÍ
+			//å¦‚æœäº‹ä»¶æ›´æ”¹å…¶ç±»å‹ï¼Œè¯·ä½¿ç”¨ç‰¹æ®Šäº‹ä»¶å¤„ç†ç¨‹åºæ¥æ›´æ”¹ç±»å‹
 			special = jQuery.event.special [type] || {};
 
-			//Èç¹û¶¨ÒåÁËÑ¡ÔñÆ÷£¬ÔòÈ·¶¨ÌØÊâÊÂ¼şapiÀàĞÍ£¬·ñÔò¸ø¶¨ÀàĞÍ
-			type =£¨selector£¿special.delegateType£ºspecial.bindType£©|| ÀàĞÍ;
+			//å¦‚æœå®šä¹‰äº†é€‰æ‹©å™¨ï¼Œåˆ™ç¡®å®šç‰¹æ®Šäº‹ä»¶apiç±»å‹ï¼Œå¦åˆ™ç»™å®šç±»å‹
+			type =ï¼ˆselectorï¼Ÿspecial.delegateTypeï¼šspecial.bindTypeï¼‰|| ç±»å‹;
 
-			//¸ù¾İĞÂÖØÖÃÀàĞÍ¸üĞÂÌØÊâ
+			//æ ¹æ®æ–°é‡ç½®ç±»å‹æ›´æ–°ç‰¹æ®Š
 			special = jQuery.event.special [type] || {};
 
-			// handleObj±»´«µİ¸øËùÓĞÊÂ¼ş´¦Àí³ÌĞò
-			handleObj = jQuery.extend£¨{
-				ÀàĞÍ£ºÀàĞÍ£¬
-				origType£ºorigType£¬
-				Êı¾İ£ºÊı¾İ£¬
-				handler£ºhandler£¬
-				guid£ºhandler.guid£¬
-				Ñ¡ÔñÆ÷£ºÑ¡ÔñÆ÷£¬
-				needsContext£ºselector && jQuery.expr.match.needsContext.test£¨selector£©£¬
-				namespace£ºnamespaces.join£¨¡°¡£¡±£©
-			}£¬handleObjIn£©;
+			// handleObjè¢«ä¼ é€’ç»™æ‰€æœ‰äº‹ä»¶å¤„ç†ç¨‹åº
+			handleObj = jQuery.extendï¼ˆ{
+				ç±»å‹ï¼šç±»å‹ï¼Œ
+				origTypeï¼šorigTypeï¼Œ
+				æ•°æ®ï¼šæ•°æ®ï¼Œ
+				handlerï¼šhandlerï¼Œ
+				guidï¼šhandler.guidï¼Œ
+				é€‰æ‹©å™¨ï¼šé€‰æ‹©å™¨ï¼Œ
+				needsContextï¼šselector && jQuery.expr.match.needsContext.testï¼ˆselectorï¼‰ï¼Œ
+				namespaceï¼šnamespaces.joinï¼ˆâ€œã€‚â€ï¼‰
+			}ï¼ŒhandleObjInï¼‰;
 
-			//Èç¹ûÎÒÃÇÊÇµÚÒ»¸ö£¬ÇëÆô¶¯ÊÂ¼ş´¦Àí³ÌĞò¶ÓÁĞ
-			if£¨£¡£¨handlers = events [type]£©£©{
+			//å¦‚æœæˆ‘ä»¬æ˜¯ç¬¬ä¸€ä¸ªï¼Œè¯·å¯åŠ¨äº‹ä»¶å¤„ç†ç¨‹åºé˜Ÿåˆ—
+			ifï¼ˆï¼ï¼ˆhandlers = events [type]ï¼‰ï¼‰{
 				handlers = events [type] = [];
 				handlers.delegateCount = 0;
 
-				//Èç¹ûÌØÊâÊÂ¼ş´¦Àí³ÌĞò·µ»Øfalse£¬Ôò½öÊ¹ÓÃaddEventListener
-				if£¨£¡special.setup ||
-					special.setup.call£¨elem£¬data£¬namespaces£¬eventHandle£©=== false£©{
+				//å¦‚æœç‰¹æ®Šäº‹ä»¶å¤„ç†ç¨‹åºè¿”å›falseï¼Œåˆ™ä»…ä½¿ç”¨addEventListener
+				ifï¼ˆï¼special.setup ||
+					special.setup.callï¼ˆelemï¼Œdataï¼Œnamespacesï¼ŒeventHandleï¼‰=== falseï¼‰{
 
-					if£¨elem.addEventListener£©{
-						elem.addEventListener£¨type£¬eventHandle£©;
+					ifï¼ˆelem.addEventListenerï¼‰{
+						elem.addEventListenerï¼ˆtypeï¼ŒeventHandleï¼‰;
 					}
 				}
 			}
 
-			if£¨special.add£©{
-				special.add.call£¨elem£¬handleObj£©;
+			ifï¼ˆspecial.addï¼‰{
+				special.add.callï¼ˆelemï¼ŒhandleObjï¼‰;
 
-				if£¨£¡handleObj.handler.guid£©{
+				ifï¼ˆï¼handleObj.handler.guidï¼‰{
 					handleObj.handler.guid = handler.guid;
 				}
 			}
 
-			//Ìí¼Óµ½ÔªËØµÄ´¦Àí³ÌĞòÁĞ±í£¬ÔÚÇ°ÃæÎ¯ÍĞ
-			if£¨selector£©{
-				handlers.splice£¨handlers.delegateCount ++£¬0£¬handleObj£©;
+			//æ·»åŠ åˆ°å…ƒç´ çš„å¤„ç†ç¨‹åºåˆ—è¡¨ï¼Œåœ¨å‰é¢å§”æ‰˜
+			ifï¼ˆselectorï¼‰{
+				handlers.spliceï¼ˆhandlers.delegateCount ++ï¼Œ0ï¼ŒhandleObjï¼‰;
 			} else {
-				handlers.push£¨handleObj£©;
+				handlers.pushï¼ˆhandleObjï¼‰;
 			}
 
-			//¸ú×ÙÔø¾­Ê¹ÓÃ¹ıÄÄĞ©ÊÂ¼ş£¬ÒÔ½øĞĞÊÂ¼şÓÅ»¯
+			//è·Ÿè¸ªæ›¾ç»ä½¿ç”¨è¿‡å“ªäº›äº‹ä»¶ï¼Œä»¥è¿›è¡Œäº‹ä»¶ä¼˜åŒ–
 			jQuery.event.global [type] = true;
 		}
 
-	}£¬
+	}ï¼Œ
 
-	//´ÓÔªËØÖĞ·ÖÀëÊÂ¼ş»òÊÂ¼ş¼¯
-	remove£ºfunction£¨elem£¬types£¬handler£¬selector£¬mappedTypes£©{
+	//ä»å…ƒç´ ä¸­åˆ†ç¦»äº‹ä»¶æˆ–äº‹ä»¶é›†
+	removeï¼šfunctionï¼ˆelemï¼Œtypesï¼Œhandlerï¼Œselectorï¼ŒmappedTypesï¼‰{
 
-		var j£¬origCount£¬tmp£¬
-			events£¬t£¬handleObj£¬
-			ÌØÊâ£¬´¦Àí³ÌĞò£¬ÀàĞÍ£¬ÃüÃû¿Õ¼ä£¬origType£¬
-			elemData = dataPriv.hasData£¨elem£©&& dataPriv.get£¨elem£©;
+		var jï¼ŒorigCountï¼Œtmpï¼Œ
+			eventsï¼Œtï¼ŒhandleObjï¼Œ
+			ç‰¹æ®Šï¼Œå¤„ç†ç¨‹åºï¼Œç±»å‹ï¼Œå‘½åç©ºé—´ï¼ŒorigTypeï¼Œ
+			elemData = dataPriv.hasDataï¼ˆelemï¼‰&& dataPriv.getï¼ˆelemï¼‰;
 
-		if£¨£¡elemData ||£¡£¨events = elemData.events£©£©{
-			·µ»Ø;
+		ifï¼ˆï¼elemData ||ï¼ï¼ˆevents = elemData.eventsï¼‰ï¼‰{
+			è¿”å›;
 		}
 
-		//¶ÔÓÚÀàĞÍÖĞµÄÃ¿¸ötype.namespaceÒ»´Î; ÀàĞÍ¿ÉÒÔÊ¡ÂÔ
-		types =£¨types ||¡°¡±£©.match£¨rnothtmlwhite£©|| [¡°¡±];
+		//å¯¹äºç±»å‹ä¸­çš„æ¯ä¸ªtype.namespaceä¸€æ¬¡; ç±»å‹å¯ä»¥çœç•¥
+		types =ï¼ˆtypes ||â€œâ€ï¼‰.matchï¼ˆrnothtmlwhiteï¼‰|| [â€œâ€];
 		t = types.length;
-		while£¨t--£©{
-			tmp = rtypenamespace.exec£¨types [t]£©|| [];
+		whileï¼ˆt--ï¼‰{
+			tmp = rtypenamespace.execï¼ˆtypes [t]ï¼‰|| [];
 			type = origType = tmp [1];
-			namespaces =£¨tmp [2] ||¡°¡±£©¡£split£¨¡°¡£¡±£©¡£sort£¨£©;
+			namespaces =ï¼ˆtmp [2] ||â€œâ€ï¼‰ã€‚splitï¼ˆâ€œã€‚â€ï¼‰ã€‚sortï¼ˆï¼‰;
 
-			//È¡Ïû°ó¶¨ÔªËØµÄËùÓĞÊÂ¼ş£¨ÔÚ´ËÃüÃû¿Õ¼äÉÏ£¬Èç¹ûÌá¹©£©
-			if£¨£¡type£©{
-				for£¨ÊäÈëÊÂ¼ş£©{
-					jQuery.event.remove£¨elem£¬type + types [t]£¬handler£¬selector£¬true£©;
+			//å–æ¶ˆç»‘å®šå…ƒç´ çš„æ‰€æœ‰äº‹ä»¶ï¼ˆåœ¨æ­¤å‘½åç©ºé—´ä¸Šï¼Œå¦‚æœæä¾›ï¼‰
+			ifï¼ˆï¼typeï¼‰{
+				forï¼ˆè¾“å…¥äº‹ä»¶ï¼‰{
+					jQuery.event.removeï¼ˆelemï¼Œtype + types [t]ï¼Œhandlerï¼Œselectorï¼Œtrueï¼‰;
 				}
-				¼ÌĞø;
+				ç»§ç»­;
 			}
 
 			special = jQuery.event.special [type] || {};
-			type =£¨selector£¿special.delegateType£ºspecial.bindType£©|| ÀàĞÍ;
-			´¦Àí³ÌĞò=ÊÂ¼ş[ÀàĞÍ] || [];
+			type =ï¼ˆselectorï¼Ÿspecial.delegateTypeï¼šspecial.bindTypeï¼‰|| ç±»å‹;
+			å¤„ç†ç¨‹åº=äº‹ä»¶[ç±»å‹] || [];
 			tmp = tmp [2] &&
-				new RegExp£¨¡°£¨^ | \\¡££©¡±+ namespaces.join£¨¡°\\¡££¨£¿£º¡£* \\¡£|£©¡±£©+¡°£¨\\¡£| $£©¡±£©;
+				new RegExpï¼ˆâ€œï¼ˆ^ | \\ã€‚ï¼‰â€+ namespaces.joinï¼ˆâ€œ\\ã€‚ï¼ˆï¼Ÿï¼šã€‚* \\ã€‚|ï¼‰â€ï¼‰+â€œï¼ˆ\\ã€‚| $ï¼‰â€ï¼‰;
 
-			//É¾³ıÆ¥ÅäµÄÊÂ¼ş
+			//åˆ é™¤åŒ¹é…çš„äº‹ä»¶
 			origCount = j = handlers.length;
-			while£¨j--£©{
+			whileï¼ˆj--ï¼‰{
 				handleObj = handlers [j];
 
-				if£¨£¨mappedTypes || origType === handleObj.origType£©&&
-					£¨£¡handler || handler.guid === handleObj.guid£©&&
-					£¨£¡tmp || tmp.test£¨handleObj.namespace£©£©&&
-					£¨£¡selector || selector === handleObj.selector ||
-						selector ===¡°**¡±&& handleObj.selector£©£©{
-					handlers.splice£¨j£¬1£©;
+				ifï¼ˆï¼ˆmappedTypes || origType === handleObj.origTypeï¼‰&&
+					ï¼ˆï¼handler || handler.guid === handleObj.guidï¼‰&&
+					ï¼ˆï¼tmp || tmp.testï¼ˆhandleObj.namespaceï¼‰ï¼‰&&
+					ï¼ˆï¼selector || selector === handleObj.selector ||
+						selector ===â€œ**â€&& handleObj.selectorï¼‰ï¼‰{
+					handlers.spliceï¼ˆjï¼Œ1ï¼‰;
 
-					if£¨handleObj.selector£©{
+					ifï¼ˆhandleObj.selectorï¼‰{
 						handlers.delegateCount--;
 					}
-					if£¨special.remove£©{
-						special.remove.call£¨elem£¬handleObj£©;
+					ifï¼ˆspecial.removeï¼‰{
+						special.remove.callï¼ˆelemï¼ŒhandleObjï¼‰;
 					}
 				}
 			}
@@ -5130,216 +5130,216 @@ jQuery.event = {
 			}
 		}
 
-		//É¾³ıÊı¾İºÍexpando£¨Èç¹û²»ÔÙÊ¹ÓÃËü£©
-		if£¨jQuery.isEmptyObject£¨events£©£©{
-			dataPriv.remove£¨elem£¬¡°handle events¡±£©;
+		//åˆ é™¤æ•°æ®å’Œexpandoï¼ˆå¦‚æœä¸å†ä½¿ç”¨å®ƒï¼‰
+		ifï¼ˆjQuery.isEmptyObjectï¼ˆeventsï¼‰ï¼‰{
+			dataPriv.removeï¼ˆelemï¼Œâ€œhandle eventsâ€ï¼‰;
 		}
-	}£¬
+	}ï¼Œ
 
-	dispatch£ºfunction£¨nativeEvent£©{
+	dispatchï¼šfunctionï¼ˆnativeEventï¼‰{
 
-		//´Ó±¾»úÊÂ¼ş¶ÔÏó´´½¨Ò»¸ö¿ÉĞ´µÄjQuery.Event
-		var event = jQuery.event.fix£¨nativeEvent£©;
+		//ä»æœ¬æœºäº‹ä»¶å¯¹è±¡åˆ›å»ºä¸€ä¸ªå¯å†™çš„jQuery.Event
+		var event = jQuery.event.fixï¼ˆnativeEventï¼‰;
 
-		var i£¬j£¬ret£¬matched£¬handleObj£¬handlerQueue£¬
-			args = new Array£¨arguments.length£©£¬
-			handlers =£¨dataPriv.get£¨this£¬¡°events¡±£©|| {}£©[event.type] || []£¬
+		var iï¼Œjï¼Œretï¼Œmatchedï¼ŒhandleObjï¼ŒhandlerQueueï¼Œ
+			args = new Arrayï¼ˆarguments.lengthï¼‰ï¼Œ
+			handlers =ï¼ˆdataPriv.getï¼ˆthisï¼Œâ€œeventsâ€ï¼‰|| {}ï¼‰[event.type] || []ï¼Œ
 			special = jQuery.event.special [event.type] || {};
 
-		//Ê¹ÓÃfix-ed jQuery.Event¶ø²»ÊÇ£¨Ö»¶Á£©±¾»úÊÂ¼ş
-		args [0] =ÊÂ¼ş;
+		//ä½¿ç”¨fix-ed jQuery.Eventè€Œä¸æ˜¯ï¼ˆåªè¯»ï¼‰æœ¬æœºäº‹ä»¶
+		args [0] =äº‹ä»¶;
 
-		for£¨i = 1; i <arguments.length; i ++£©{
-			args [i] =²ÎÊı[i];
+		forï¼ˆi = 1; i <arguments.length; i ++ï¼‰{
+			args [i] =å‚æ•°[i];
 		}
 
 		event.delegateTarget = this;
 
-		//ÎªÓ³ÉäÀàĞÍµ÷ÓÃpreDispatch¹Ò¹³£¬Èç¹ûĞèÒª£¬ÈÃËü±£ÊÍ
-		if£¨special.preDispatch && special.preDispatch.call£¨this£¬event£©=== false£©{
-			·µ»Ø;
+		//ä¸ºæ˜ å°„ç±»å‹è°ƒç”¨preDispatchæŒ‚é’©ï¼Œå¦‚æœéœ€è¦ï¼Œè®©å®ƒä¿é‡Š
+		ifï¼ˆspecial.preDispatch && special.preDispatch.callï¼ˆthisï¼Œeventï¼‰=== falseï¼‰{
+			è¿”å›;
 		}
 
-		//È·¶¨´¦Àí³ÌĞò
-		handlerQueue = jQuery.event.handlers.call£¨this£¬event£¬handlers£©;
+		//ç¡®å®šå¤„ç†ç¨‹åº
+		handlerQueue = jQuery.event.handlers.callï¼ˆthisï¼Œeventï¼Œhandlersï¼‰;
 
-		//ÏÈÔËĞĞ´úÀí; ËûÃÇ¿ÉÄÜÏëÍ£Ö¹ÔÚÎÒÃÇÉíÏÂ´«²¥
+		//å…ˆè¿è¡Œä»£ç†; ä»–ä»¬å¯èƒ½æƒ³åœæ­¢åœ¨æˆ‘ä»¬èº«ä¸‹ä¼ æ’­
 		i = 0;
-		while£¨£¨matched = handlerQueue [i ++]£©&&£¡event.isPropagationStopped£¨£©£©{
+		whileï¼ˆï¼ˆmatched = handlerQueue [i ++]ï¼‰&&ï¼event.isPropagationStoppedï¼ˆï¼‰ï¼‰{
 			event.currentTarget = matched.elem;
 
 			j = 0;
-			while£¨£¨handleObj = matched.handlers [j ++]£©&&
-				£¡event.isImmediatePropagationStopped£¨£©£©{
+			whileï¼ˆï¼ˆhandleObj = matched.handlers [j ++]ï¼‰&&
+				ï¼event.isImmediatePropagationStoppedï¼ˆï¼‰ï¼‰{
 
-				//´¥·¢ÊÂ¼ş±ØĞë1£©Ã»ÓĞÃüÃû¿Õ¼ä£¬»ò2£©ÓĞÃüÃû¿Õ¼ä
-				//Ò»¸ö×Ó¼¯»òµÈÓÚ°ó¶¨ÊÂ¼şÖĞµÄ×Ó¼¯£¨Á½Õß¶¼Ã»ÓĞÃüÃû¿Õ¼ä£©¡£
-				if£¨£¡event.rnamespace || event.rnamespace.test£¨handleObj.namespace£©£©{
+				//è§¦å‘äº‹ä»¶å¿…é¡»1ï¼‰æ²¡æœ‰å‘½åç©ºé—´ï¼Œæˆ–2ï¼‰æœ‰å‘½åç©ºé—´
+				//ä¸€ä¸ªå­é›†æˆ–ç­‰äºç»‘å®šäº‹ä»¶ä¸­çš„å­é›†ï¼ˆä¸¤è€…éƒ½æ²¡æœ‰å‘½åç©ºé—´ï¼‰ã€‚
+				ifï¼ˆï¼event.rnamespace || event.rnamespace.testï¼ˆhandleObj.namespaceï¼‰ï¼‰{
 
 					event.handleObj = handleObj;
 					event.data = handleObj.data;
 
-					ret =£¨£¨jQuery.event.special [handleObj.origType] || {}£©¡£handlele ||
-						handleObj.handler£©.apply£¨matched.elem£¬args£©;
+					ret =ï¼ˆï¼ˆjQuery.event.special [handleObj.origType] || {}ï¼‰ã€‚handlele ||
+						handleObj.handlerï¼‰.applyï¼ˆmatched.elemï¼Œargsï¼‰;
 
-					if£¨ret£¡== undefined£©{
-						if£¨£¨event.result = ret£©=== false£©{
-							event.preventDefault£¨£©;
-							event.stopPropagation£¨£©;
+					ifï¼ˆretï¼== undefinedï¼‰{
+						ifï¼ˆï¼ˆevent.result = retï¼‰=== falseï¼‰{
+							event.preventDefaultï¼ˆï¼‰;
+							event.stopPropagationï¼ˆï¼‰;
 						}
 					}
 				}
 			}
 		}
 
-		//ÎªÓ³ÉäÀàĞÍµ÷ÓÃpostDispatch¹Ò¹³
-		if£¨special.postDispatch£©{
-			special.postDispatch.call£¨this£¬event£©;
+		//ä¸ºæ˜ å°„ç±»å‹è°ƒç”¨postDispatchæŒ‚é’©
+		ifï¼ˆspecial.postDispatchï¼‰{
+			special.postDispatch.callï¼ˆthisï¼Œeventï¼‰;
 		}
 
 		return event.result;
-	}£¬
+	}ï¼Œ
 
-	´¦Àí³ÌĞò£ºfunction£¨event£¬handlers£©{
-		var i£¬handleObj£¬sel£¬matchedHandlers£¬matchedSelectors£¬
-			handlerQueue = []£¬
-			delegateCount = handlers.delegateCount£¬
+	å¤„ç†ç¨‹åºï¼šfunctionï¼ˆeventï¼Œhandlersï¼‰{
+		var iï¼ŒhandleObjï¼Œselï¼ŒmatchedHandlersï¼ŒmatchedSelectorsï¼Œ
+			handlerQueue = []ï¼Œ
+			delegateCount = handlers.delegateCountï¼Œ
 			cur = event.target;
 
-		//²éÕÒÎ¯ÍĞ´¦Àí³ÌĞò
-		if£¨delegateCount &&
+		//æŸ¥æ‰¾å§”æ‰˜å¤„ç†ç¨‹åº
+		ifï¼ˆdelegateCount &&
 
-			//Ö§³Ö£ºIE <= 9
-			//ºÚ¶´SVG <use>ÊµÀıÊ÷£¨trac-13180£©
+			//æ”¯æŒï¼šIE <= 9
+			//é»‘æ´SVG <use>å®ä¾‹æ ‘ï¼ˆtrac-13180ï¼‰
 			cur.nodeType &&
 
-			//Ö§³Ö£ºFirefox <= 42
-			//ÒÖÖÆÖ¸Ê¾·ÇÖ÷Ö¸Õë°´Å¥µÄ¹æ·¶Î¥¹æµã»÷£¨trac-3861£©
+			//æ”¯æŒï¼šFirefox <= 42
+			//æŠ‘åˆ¶æŒ‡ç¤ºéä¸»æŒ‡é’ˆæŒ‰é’®çš„è§„èŒƒè¿è§„ç‚¹å‡»ï¼ˆtrac-3861ï¼‰
 			// https://www.w3.org/TR/DOM-Level-3-Events/#event-type-click
-			//Ö§³Ö£º½öÏŞIE 11
-			// ...µ«²»ÊÇ¼ıÍ·¼ü¡°µã»÷¡±ÎŞÏßµçÊäÈë£¬¿ÉÒÔÓĞ¡°°´Å¥¡±-1£¨gh-2343£©
-			£¡£¨event.type ===¡°click¡±&& event.button> = 1£©£©{
+			//æ”¯æŒï¼šä»…é™IE 11
+			// ...ä½†ä¸æ˜¯ç®­å¤´é”®â€œç‚¹å‡»â€æ— çº¿ç”µè¾“å…¥ï¼Œå¯ä»¥æœ‰â€œæŒ‰é’®â€-1ï¼ˆgh-2343ï¼‰
+			ï¼ï¼ˆevent.type ===â€œclickâ€&& event.button> = 1ï¼‰ï¼‰{
 
-			for£¨; cur£¡== this; cur = cur.parentNode || this£©{
+			forï¼ˆ; curï¼== this; cur = cur.parentNode || thisï¼‰{
 
-				//²»Òª¼ì²é·ÇÔªËØ£¨££13208£©
-				//²»Òª´¦ÀíÒÑ½ûÓÃÔªËØµÄµã»÷´ÎÊı£¨££6911£¬££8165£¬££11382£¬££11764£©
-				if£¨cur.nodeType === 1 &&£¡£¨event.type ===¡°click¡±&& cur.disabled === true£©£©{
+				//ä¸è¦æ£€æŸ¥éå…ƒç´ ï¼ˆï¼ƒ13208ï¼‰
+				//ä¸è¦å¤„ç†å·²ç¦ç”¨å…ƒç´ çš„ç‚¹å‡»æ¬¡æ•°ï¼ˆï¼ƒ6911ï¼Œï¼ƒ8165ï¼Œï¼ƒ11382ï¼Œï¼ƒ11764ï¼‰
+				ifï¼ˆcur.nodeType === 1 &&ï¼ï¼ˆevent.type ===â€œclickâ€&& cur.disabled === trueï¼‰ï¼‰{
 					matchedHandlers = [];
 					matchedSelectors = {};
-					for£¨i = 0; i <delegateCount; i ++£©{
+					forï¼ˆi = 0; i <delegateCount; i ++ï¼‰{
 						handleObj = handlers [i];
 
-						//²»ÒªÓëObject.prototypeÊôĞÔ³åÍ»£¨££13203£©
-						sel = handleObj.selector +¡°¡±;
+						//ä¸è¦ä¸Object.prototypeå±æ€§å†²çªï¼ˆï¼ƒ13203ï¼‰
+						sel = handleObj.selector +â€œâ€;
 
-						if£¨matchedSelectors [sel] === undefined£©{
-							matchedSelectors [sel] = handleObj.needsContext£¿
-								jQuery£¨sel£¬this£©.index£¨cur£©> -1£º
-								jQuery.find£¨sel£¬this£¬null£¬[cur]£©¡£length;
+						ifï¼ˆmatchedSelectors [sel] === undefinedï¼‰{
+							matchedSelectors [sel] = handleObj.needsContextï¼Ÿ
+								jQueryï¼ˆselï¼Œthisï¼‰.indexï¼ˆcurï¼‰> -1ï¼š
+								jQuery.findï¼ˆselï¼Œthisï¼Œnullï¼Œ[cur]ï¼‰ã€‚length;
 						}
-						if£¨matchedSelectors [sel]£©{
-							matchedHandlers.push£¨handleObj£©;
+						ifï¼ˆmatchedSelectors [sel]ï¼‰{
+							matchedHandlers.pushï¼ˆhandleObjï¼‰;
 						}
 					}
-					if£¨matchedHandlers.length£©{
-						handlerQueue.push£¨{elem£ºcur£¬handlers£ºmatchedHandlers}£©;
+					ifï¼ˆmatchedHandlers.lengthï¼‰{
+						handlerQueue.pushï¼ˆ{elemï¼šcurï¼Œhandlersï¼šmatchedHandlers}ï¼‰;
 					}
 				}
 			}
 		}
 
-		//Ìí¼ÓÊ£ÓàµÄ£¨Ö±½Ó°ó¶¨µÄ£©´¦Àí³ÌĞò
+		//æ·»åŠ å‰©ä½™çš„ï¼ˆç›´æ¥ç»‘å®šçš„ï¼‰å¤„ç†ç¨‹åº
 		cur = this;
-		if£¨delegateCount <handlers.length£©{
-			handlerQueue.push£¨{elem£ºcur£¬handlers£ºhandlers.slice£¨delegateCount£©}£©;
+		ifï¼ˆdelegateCount <handlers.lengthï¼‰{
+			handlerQueue.pushï¼ˆ{elemï¼šcurï¼Œhandlersï¼šhandlers.sliceï¼ˆdelegateCountï¼‰}ï¼‰;
 		}
 
 		return handlerQueue;
-	}£¬
+	}ï¼Œ
 
-	addProp£ºfunction£¨name£¬hook£©{
-		Object.defineProperty£¨jQuery.Event.prototype£¬name£¬{
-			¿ÉÃ¶¾ÙµÄ£ºÊÇµÄ£¬
-			¿ÉÅäÖÃ£ºtrue£¬
+	addPropï¼šfunctionï¼ˆnameï¼Œhookï¼‰{
+		Object.definePropertyï¼ˆjQuery.Event.prototypeï¼Œnameï¼Œ{
+			å¯æšä¸¾çš„ï¼šæ˜¯çš„ï¼Œ
+			å¯é…ç½®ï¼štrueï¼Œ
 
-			get£ºisFunction£¨hook£©£¿
-				function£¨£©{
-					if£¨this.originalEvent£©{
-							return hook£¨this.originalEvent£©;
+			getï¼šisFunctionï¼ˆhookï¼‰ï¼Ÿ
+				functionï¼ˆï¼‰{
+					ifï¼ˆthis.originalEventï¼‰{
+							return hookï¼ˆthis.originalEventï¼‰;
 					}
-				}£º
-				function£¨£©{
-					if£¨this.originalEvent£©{
+				}ï¼š
+				functionï¼ˆï¼‰{
+					ifï¼ˆthis.originalEventï¼‰{
 							return this.originalEvent [name];
 					}
-				}£¬
+				}ï¼Œ
 
-			set£ºfunction£¨value£©{
-				Object.defineProperty£¨this£¬name£¬{
-					¿ÉÃ¶¾ÙµÄ£ºÊÇµÄ£¬
-					¿ÉÅäÖÃ£ºtrue£¬
-					¿ÉĞ´µÄ£ºÕæµÄ£¬
-					¼ÛÖµ£º¼ÛÖµ
-				}£©;
+			setï¼šfunctionï¼ˆvalueï¼‰{
+				Object.definePropertyï¼ˆthisï¼Œnameï¼Œ{
+					å¯æšä¸¾çš„ï¼šæ˜¯çš„ï¼Œ
+					å¯é…ç½®ï¼štrueï¼Œ
+					å¯å†™çš„ï¼šçœŸçš„ï¼Œ
+					ä»·å€¼ï¼šä»·å€¼
+				}ï¼‰;
 			}
-		}£©;
-	}£¬
+		}ï¼‰;
+	}ï¼Œ
 
-	ĞŞ¸´£ºfunction£¨originalEvent£©{
-		return originalEvent [jQuery.expando]£¿
-			originalEvent£º
-			new jQuery.Event£¨originalEvent£©;
-	}£¬
+	ä¿®å¤ï¼šfunctionï¼ˆoriginalEventï¼‰{
+		return originalEvent [jQuery.expando]ï¼Ÿ
+			originalEventï¼š
+			new jQuery.Eventï¼ˆoriginalEventï¼‰;
+	}ï¼Œ
 
-	ÌØ±ğ£º{
-		load£º{
+	ç‰¹åˆ«ï¼š{
+		loadï¼š{
 
-			//×èÖ¹´¥·¢µÄimage.loadÊÂ¼ş´ÓÃ°Åİµ½window.load
-			noBubble£ºÊÇµÄ
-		}£¬
-		½¹µã£º{
+			//é˜»æ­¢è§¦å‘çš„image.loadäº‹ä»¶ä»å†’æ³¡åˆ°window.load
+			noBubbleï¼šæ˜¯çš„
+		}ï¼Œ
+		ç„¦ç‚¹ï¼š{
 
-			//Èç¹û¿ÉÄÜ£¬Çë¼¤»îÔ­ÉúÊÂ¼ş£¬ÒÔÊ¹Ä£ºı/½¹µãË³ĞòÕıÈ·
-			trigger£ºfunction£¨£©{
-				if£¨this£¡== safeActiveElement£¨£©&& this.focus£©{
-					this.focus£¨£©;
-					·µ»Øfalse;
+			//å¦‚æœå¯èƒ½ï¼Œè¯·æ¿€æ´»åŸç”Ÿäº‹ä»¶ï¼Œä»¥ä½¿æ¨¡ç³Š/ç„¦ç‚¹é¡ºåºæ­£ç¡®
+			triggerï¼šfunctionï¼ˆï¼‰{
+				ifï¼ˆthisï¼== safeActiveElementï¼ˆï¼‰&& this.focusï¼‰{
+					this.focusï¼ˆï¼‰;
+					è¿”å›false;
 				}
-			}£¬
-			delegateType£º¡°focusin¡±
-		}£¬
-		Ä£ºı£º{
-			trigger£ºfunction£¨£©{
-				if£¨this === safeActiveElement£¨£©&& this.blur£©{
-					this.blur£¨£©;
-					·µ»Øfalse;
+			}ï¼Œ
+			delegateTypeï¼šâ€œfocusinâ€
+		}ï¼Œ
+		æ¨¡ç³Šï¼š{
+			triggerï¼šfunctionï¼ˆï¼‰{
+				ifï¼ˆthis === safeActiveElementï¼ˆï¼‰&& this.blurï¼‰{
+					this.blurï¼ˆï¼‰;
+					è¿”å›false;
 				}
-			}£¬
-			delegateType£º¡°focusout¡±
-		}£¬
-		µã»÷£º{
+			}ï¼Œ
+			delegateTypeï¼šâ€œfocusoutâ€
+		}ï¼Œ
+		ç‚¹å‡»ï¼š{
 
-			//¶ÔÓÚ¸´Ñ¡¿ò£¬´¥·¢±¾»úÊÂ¼ş£¬ÒÔ±ã¼ì²é×´Ì¬ÊÇÕıÈ·µÄ
-			trigger£ºfunction£¨£©{
-				if£¨this.type ===¡°checkbox¡±&& this.click && nodeName£¨this£¬¡°input¡±£©£©{
-					this.click£¨£©;
-					·µ»Øfalse;
+			//å¯¹äºå¤é€‰æ¡†ï¼Œè§¦å‘æœ¬æœºäº‹ä»¶ï¼Œä»¥ä¾¿æ£€æŸ¥çŠ¶æ€æ˜¯æ­£ç¡®çš„
+			triggerï¼šfunctionï¼ˆï¼‰{
+				ifï¼ˆthis.type ===â€œcheckboxâ€&& this.click && nodeNameï¼ˆthisï¼Œâ€œinputâ€ï¼‰ï¼‰{
+					this.clickï¼ˆï¼‰;
+					è¿”å›false;
 				}
-			}£¬
+			}ï¼Œ
 
-			//¶ÔÓÚ¿çä¯ÀÀÆ÷µÄÒ»ÖÂĞÔ£¬Çë²»ÒªÔÚÁ´½ÓÉÏ´¥·¢±¾»ú.click£¨£©
-			_default£ºfunction£¨event£©{
-				return nodeName£¨event.target£¬¡°a¡±£©;
+			//å¯¹äºè·¨æµè§ˆå™¨çš„ä¸€è‡´æ€§ï¼Œè¯·ä¸è¦åœ¨é“¾æ¥ä¸Šè§¦å‘æœ¬æœº.clickï¼ˆï¼‰
+			_defaultï¼šfunctionï¼ˆeventï¼‰{
+				return nodeNameï¼ˆevent.targetï¼Œâ€œaâ€ï¼‰;
 			}
-		}£¬
+		}ï¼Œ
 
-		beforeunload£º{
-			postDispatch£ºfunction£¨event£©{
+		beforeunloadï¼š{
+			postDispatchï¼šfunctionï¼ˆeventï¼‰{
 
-				//Ö§³Ö£ºFirefox 20+
-				//Èç¹ûÎ´ÉèÖÃreturnValue×Ö¶Î£¬Firefox²»»á·¢³ö¾¯±¨¡£
-				if£¨event.result£¡== undefined && event.originalEvent£©{
+				//æ”¯æŒï¼šFirefox 20+
+				//å¦‚æœæœªè®¾ç½®returnValueå­—æ®µï¼ŒFirefoxä¸ä¼šå‘å‡ºè­¦æŠ¥ã€‚
+				ifï¼ˆevent.resultï¼== undefined && event.originalEventï¼‰{
 					event.originalEvent.returnValue = event.result;
 				}
 			}
@@ -5347,387 +5347,387 @@ jQuery.event = {
 	}
 };
 
-jQuery.removeEvent = function£¨elem£¬type£¬handle£©{
+jQuery.removeEvent = functionï¼ˆelemï¼Œtypeï¼Œhandleï¼‰{
 
-	//ÆÕÍ¨¶ÔÏóĞèÒªÕâ¸ö¡°if¡±
-	if£¨elem.removeEventListener£©{
-		elem.removeEventListener£¨type£¬handle£©;
+	//æ™®é€šå¯¹è±¡éœ€è¦è¿™ä¸ªâ€œifâ€
+	ifï¼ˆelem.removeEventListenerï¼‰{
+		elem.removeEventListenerï¼ˆtypeï¼Œhandleï¼‰;
 	}
 };
 
-jQuery.Event = function£¨src£¬props£©{
+jQuery.Event = functionï¼ˆsrcï¼Œpropsï¼‰{
 
-	//ÔÊĞíÃ»ÓĞ'new'¹Ø¼ü×ÖµÄÊµÀı»¯
-	if£¨£¡£¨´ËÊµÀıÎªjQuery.Event£©£©{
-		·µ»ØĞÂµÄjQuery.Event£¨src£¬props£©;
+	//å…è®¸æ²¡æœ‰'new'å…³é”®å­—çš„å®ä¾‹åŒ–
+	ifï¼ˆï¼ï¼ˆæ­¤å®ä¾‹ä¸ºjQuery.Eventï¼‰ï¼‰{
+		è¿”å›æ–°çš„jQuery.Eventï¼ˆsrcï¼Œpropsï¼‰;
 	}
 
-	//ÊÂ¼ş¶ÔÏó
-	if£¨src && src.type£©{
+	//äº‹ä»¶å¯¹è±¡
+	ifï¼ˆsrc && src.typeï¼‰{
 		this.originalEvent = src;
 		this.type = src.type;
 
-		//Ã°ÅİÎÄµµµÄÊÂ¼ş¿ÉÄÜÒÑ±ê¼ÇÎªÒÑ×èÖ¹
-		//ÓÉÊ÷ÏÂÃæµÄ´¦Àí³ÌĞò×é³É; ·´Ó³ÕıÈ·µÄ¼ÛÖµ¡£
+		//å†’æ³¡æ–‡æ¡£çš„äº‹ä»¶å¯èƒ½å·²æ ‡è®°ä¸ºå·²é˜»æ­¢
+		//ç”±æ ‘ä¸‹é¢çš„å¤„ç†ç¨‹åºç»„æˆ; åæ˜ æ­£ç¡®çš„ä»·å€¼ã€‚
 		this.isDefaultPrevented = src.defaultPrevented ||
 				src.defaultPrevented === undefined &&
 
-				//Ö§³Ö£ºAndroid <= 2.3
-				src.returnValue === false£¿
-			returnTrue£º
+				//æ”¯æŒï¼šAndroid <= 2.3
+				src.returnValue === falseï¼Ÿ
+			returnTrueï¼š
 			returnFalse;
 
-		//´´½¨Ä¿±êÊôĞÔ
-		//Ö§³Ö£ºSafari <= 6  -  7
-		//Ä¿±ê²»Ó¦¸ÃÊÇÎÄ±¾½Úµã£¨££504£¬££13143£©
-		this.target =£¨src.target && src.target.nodeType === 3£©£¿
-			src.target.parentNode£º
+		//åˆ›å»ºç›®æ ‡å±æ€§
+		//æ”¯æŒï¼šSafari <= 6  -  7
+		//ç›®æ ‡ä¸åº”è¯¥æ˜¯æ–‡æœ¬èŠ‚ç‚¹ï¼ˆï¼ƒ504ï¼Œï¼ƒ13143ï¼‰
+		this.target =ï¼ˆsrc.target && src.target.nodeType === 3ï¼‰ï¼Ÿ
+			src.target.parentNodeï¼š
 			src.target;
 
 		this.currentTarget = src.currentTarget;
 		this.relatedTarget = src.relatedTarget;
 
-	// ÊÂ¼şÀàĞÍ
+	// äº‹ä»¶ç±»å‹
 	} else {
 		this.type = src;
 	}
 
-	//½«ÏÔÊ½Ìá¹©µÄÊôĞÔ·Åµ½ÊÂ¼ş¶ÔÏóÉÏ
-	if£¨µÀ¾ß£©{
-		jQuery.extend£¨this£¬props£©;
+	//å°†æ˜¾å¼æä¾›çš„å±æ€§æ”¾åˆ°äº‹ä»¶å¯¹è±¡ä¸Š
+	ifï¼ˆé“å…·ï¼‰{
+		jQuery.extendï¼ˆthisï¼Œpropsï¼‰;
 	}
 
-	//Èç¹û´«ÈëµÄÊÂ¼şÃ»ÓĞÊ±¼ä´Á£¬Çë´´½¨Ò»¸öÊ±¼ä´Á
-	this.timeStamp = src && src.timeStamp || Date.now£¨£©;
+	//å¦‚æœä¼ å…¥çš„äº‹ä»¶æ²¡æœ‰æ—¶é—´æˆ³ï¼Œè¯·åˆ›å»ºä¸€ä¸ªæ—¶é—´æˆ³
+	this.timeStamp = src && src.timeStamp || Date.nowï¼ˆï¼‰;
 
-	//½«Æä±ê¼ÇÎªÒÑĞŞ¸´
-	Õâ[jQuery.expando] = true;
+	//å°†å…¶æ ‡è®°ä¸ºå·²ä¿®å¤
+	è¿™[jQuery.expando] = true;
 };
 
-// jQuery.Event»ùÓÚECMAScriptÓïÑÔ°ó¶¨Ö¸¶¨µÄDOM3ÊÂ¼ş
+// jQuery.EventåŸºäºECMAScriptè¯­è¨€ç»‘å®šæŒ‡å®šçš„DOM3äº‹ä»¶
 // https://www.w3.org/TR/2003/WD-DOM-Level-3-Events-20030331/ecma-script-binding.html
 jQuery.Event.prototype = {
-	¹¹Ôìº¯Êı£ºjQuery.Event£¬
-	isDefaultPrevented£ºreturnFalse£¬
-	isPropagationStopped£ºreturnFalse£¬
-	isImmediatePropagationStopped£ºreturnFalse£¬
-	isSimulated£ºfalse£¬
+	æ„é€ å‡½æ•°ï¼šjQuery.Eventï¼Œ
+	isDefaultPreventedï¼šreturnFalseï¼Œ
+	isPropagationStoppedï¼šreturnFalseï¼Œ
+	isImmediatePropagationStoppedï¼šreturnFalseï¼Œ
+	isSimulatedï¼šfalseï¼Œ
 
-	preventDefault£ºfunction£¨£©{
+	preventDefaultï¼šfunctionï¼ˆï¼‰{
 		var e = this.originalEvent;
 
 		this.isDefaultPrevented = returnTrue;
 
-		if£¨e &&£¡this.isSimulated£©{
-			e.preventDefault£¨£©;
+		ifï¼ˆe &&ï¼this.isSimulatedï¼‰{
+			e.preventDefaultï¼ˆï¼‰;
 		}
-	}£¬
-	stopPropagation£ºfunction£¨£©{
+	}ï¼Œ
+	stopPropagationï¼šfunctionï¼ˆï¼‰{
 		var e = this.originalEvent;
 
 		this.isPropagationStopped = returnTrue;
 
-		if£¨e &&£¡this.isSimulated£©{
-			e.stopPropagation£¨£©;
+		ifï¼ˆe &&ï¼this.isSimulatedï¼‰{
+			e.stopPropagationï¼ˆï¼‰;
 		}
-	}£¬
-	stopImmediatePropagation£ºfunction£¨£©{
+	}ï¼Œ
+	stopImmediatePropagationï¼šfunctionï¼ˆï¼‰{
 		var e = this.originalEvent;
 
 		this.isImmediatePropagationStopped = returnTrue;
 
-		if£¨e &&£¡this.isSimulated£©{
-			e.stopImmediatePropagation£¨£©;
+		ifï¼ˆe &&ï¼this.isSimulatedï¼‰{
+			e.stopImmediatePropagationï¼ˆï¼‰;
 		}
 
-		this.stopPropagation£¨£©;
+		this.stopPropagationï¼ˆï¼‰;
 	}
 };
 
-//°üÀ¨ËùÓĞ³£¼ûµÄÊÂ¼şµÀ¾ß£¬°üÀ¨KeyEventºÍMouseEventÌØ¶¨µÄµÀ¾ß
-jQuery.each£¨{
-	altKey£ºÊÇµÄ£¬
-	ÆøÅİ£ºÕæµÄ£¬
-	¿ÉÈ¡ÏûµÄ£ºÊÇµÄ£¬
-	changedTouches£ºÊÇµÄ£¬
-	ctrlKey£ºÊÇµÄ£¬
-	Ï¸½Ú£ºÊÇµÄ£¬
-	eventPhase£ºÊÇµÄ£¬
-	metaKey£ºÊÇµÄ£¬
-	pageX£ºÊÇµÄ£¬
-	pageY£ºÊÇµÄ£¬
-	shiftKey£ºÊÇµÄ£¬
-	¹Ûµã£ºÊÇµÄ£¬
-	¡°char¡±£ºÊÇµÄ£¬
-	charCode£ºÊÇµÄ£¬
-	¹Ø¼ü£ºÊÇµÄ£¬
-	keyCode£ºtrue£¬
-	°´Å¥£ºÊÇµÄ£¬
-	°´Å¥£ºÊÇµÄ£¬
-	clientX£ºÊÇµÄ£¬
-	clientY£ºÊÇµÄ£¬
-	offsetX£ºtrue£¬
-	offsetY£ºtrue£¬
-	pointerId£ºtrue£¬
-	pointerType£ºtrue£¬
-	screenX£ºÊÇµÄ£¬
-	screenY£ºÊÇµÄ£¬
-	targetTouches£ºÊÇµÄ£¬
-	toElement£ºÊÇµÄ£¬
-	½Ó´¥£ºÕæµÄ£¬
+//åŒ…æ‹¬æ‰€æœ‰å¸¸è§çš„äº‹ä»¶é“å…·ï¼ŒåŒ…æ‹¬KeyEventå’ŒMouseEventç‰¹å®šçš„é“å…·
+jQuery.eachï¼ˆ{
+	altKeyï¼šæ˜¯çš„ï¼Œ
+	æ°”æ³¡ï¼šçœŸçš„ï¼Œ
+	å¯å–æ¶ˆçš„ï¼šæ˜¯çš„ï¼Œ
+	changedTouchesï¼šæ˜¯çš„ï¼Œ
+	ctrlKeyï¼šæ˜¯çš„ï¼Œ
+	ç»†èŠ‚ï¼šæ˜¯çš„ï¼Œ
+	eventPhaseï¼šæ˜¯çš„ï¼Œ
+	metaKeyï¼šæ˜¯çš„ï¼Œ
+	pageXï¼šæ˜¯çš„ï¼Œ
+	pageYï¼šæ˜¯çš„ï¼Œ
+	shiftKeyï¼šæ˜¯çš„ï¼Œ
+	è§‚ç‚¹ï¼šæ˜¯çš„ï¼Œ
+	â€œcharâ€ï¼šæ˜¯çš„ï¼Œ
+	charCodeï¼šæ˜¯çš„ï¼Œ
+	å…³é”®ï¼šæ˜¯çš„ï¼Œ
+	keyCodeï¼štrueï¼Œ
+	æŒ‰é’®ï¼šæ˜¯çš„ï¼Œ
+	æŒ‰é’®ï¼šæ˜¯çš„ï¼Œ
+	clientXï¼šæ˜¯çš„ï¼Œ
+	clientYï¼šæ˜¯çš„ï¼Œ
+	offsetXï¼štrueï¼Œ
+	offsetYï¼štrueï¼Œ
+	pointerIdï¼štrueï¼Œ
+	pointerTypeï¼štrueï¼Œ
+	screenXï¼šæ˜¯çš„ï¼Œ
+	screenYï¼šæ˜¯çš„ï¼Œ
+	targetTouchesï¼šæ˜¯çš„ï¼Œ
+	toElementï¼šæ˜¯çš„ï¼Œ
+	æ¥è§¦ï¼šçœŸçš„ï¼Œ
 
-	ÆäÖĞ£ºfunction£¨event£©{
+	å…¶ä¸­ï¼šfunctionï¼ˆeventï¼‰{
 		var button = event.button;
 
-		//Ìí¼Ó¹Ø¼üÊÂ¼ş
-		if£¨event.which == null && rkeyEvent.test£¨event.type£©£©{
-			return event.charCode£¡= null£¿event.charCode£ºevent.keyCode;
+		//æ·»åŠ å…³é”®äº‹ä»¶
+		ifï¼ˆevent.which == null && rkeyEvent.testï¼ˆevent.typeï¼‰ï¼‰{
+			return event.charCodeï¼= nullï¼Ÿevent.charCodeï¼ševent.keyCode;
 		}
 
-		//Ìí¼Óµã»÷£º1 === left; 2 ===ÖĞ; 3 ===¶Ô
-		if£¨£¡event.which && button£¡== undefined && rmouseEvent.test£¨event.type£©£©{
-			if£¨button£¦1£©{
-				·µ»Ø1;
+		//æ·»åŠ ç‚¹å‡»ï¼š1 === left; 2 ===ä¸­; 3 ===å¯¹
+		ifï¼ˆï¼event.which && buttonï¼== undefined && rmouseEvent.testï¼ˆevent.typeï¼‰ï¼‰{
+			ifï¼ˆbuttonï¼†1ï¼‰{
+				è¿”å›1;
 			}
 
-			if£¨button£¦2£©{
-				·µ»Ø3;
+			ifï¼ˆbuttonï¼†2ï¼‰{
+				è¿”å›3;
 			}
 
-			if£¨button£¦4£©{
-				·µ»Ø2;
+			ifï¼ˆbuttonï¼†4ï¼‰{
+				è¿”å›2;
 			}
 
-			·µ»Ø0;
+			è¿”å›0;
 		}
 
 		return event.which;
 	}
-£¬jQuery.event.addProp£©;
+ï¼ŒjQuery.event.addPropï¼‰;
 
-//Ê¹ÓÃÊó±êĞüÍ£/ÍË³öºÍÊÂ¼şÊ±¼ä¼ì²é´´½¨Êó±êÖĞĞÄ/Àë¿ªÊÂ¼ş
-//ÒÔ±ãÊÂ¼şÎ¯ÍĞÔÚjQueryÖĞ¹¤×÷¡£
-//¶Ôpointerenter / pointerleaveºÍpointerover / pointeroutÖ´ĞĞÏàÍ¬²Ù×÷
+//ä½¿ç”¨é¼ æ ‡æ‚¬åœ/é€€å‡ºå’Œäº‹ä»¶æ—¶é—´æ£€æŸ¥åˆ›å»ºé¼ æ ‡ä¸­å¿ƒ/ç¦»å¼€äº‹ä»¶
+//ä»¥ä¾¿äº‹ä»¶å§”æ‰˜åœ¨jQueryä¸­å·¥ä½œã€‚
+//å¯¹pointerenter / pointerleaveå’Œpointerover / pointeroutæ‰§è¡Œç›¸åŒæ“ä½œ
 //
-//Ö§³Ö£º½öÏŞSafari 7
-// Safari¾­³£·¢ËÍmouseenter; ¿´µ½£º
+//æ”¯æŒï¼šä»…é™Safari 7
+// Safariç»å¸¸å‘é€mouseenter; çœ‹åˆ°ï¼š
 // https://bugs.chromium.org/p/chromium/issues/detail?id=470258
-//ÓÃÓÚÃèÊö´íÎó£¨ËüÒ²´æÔÚÓÚ½Ï¾ÉµÄChrome°æ±¾ÖĞ£©¡£
-jQuery.each£¨{
-	mouseenter£º¡°mouseover¡±£¬
-	mouseleave£º¡°mouseout¡±£¬
-	pointerenter£º¡°Ö¸Õë¡±£¬
-	pointerleave£º¡°Ö¸Õë¡±
-}£¬function£¨orig£¬fix£©{
+//ç”¨äºæè¿°é”™è¯¯ï¼ˆå®ƒä¹Ÿå­˜åœ¨äºè¾ƒæ—§çš„Chromeç‰ˆæœ¬ä¸­ï¼‰ã€‚
+jQuery.eachï¼ˆ{
+	mouseenterï¼šâ€œmouseoverâ€ï¼Œ
+	mouseleaveï¼šâ€œmouseoutâ€ï¼Œ
+	pointerenterï¼šâ€œæŒ‡é’ˆâ€ï¼Œ
+	pointerleaveï¼šâ€œæŒ‡é’ˆâ€
+}ï¼Œfunctionï¼ˆorigï¼Œfixï¼‰{
 	jQuery.event.special [orig] = {
-		delegateType£ºĞŞ¸´£¬
-		bindType£ºfix£¬
+		delegateTypeï¼šä¿®å¤ï¼Œ
+		bindTypeï¼šfixï¼Œ
 
-		handle£ºfunction£¨event£©{
-			var ret£¬
-				target = this£¬
-				related = event.relatedTarget£¬
+		handleï¼šfunctionï¼ˆeventï¼‰{
+			var retï¼Œ
+				target = thisï¼Œ
+				related = event.relatedTargetï¼Œ
 				handleObj = event.handleObj;
 
-			//¶ÔÓÚmouseenter / leaveµ÷ÓÃ´¦Àí³ÌĞò£¨Èç¹ûÏà¹Ø£©ÔÚÄ¿±êÖ®Íâ¡£
-			//×¢Òâ£ºÈç¹ûÊó±êÀë¿ª/½øÈëä¯ÀÀÆ÷´°¿Ú£¬ÔòÎŞÏà¹ØÄ¿±ê
-			if£¨£¡related ||£¨related£¡== target &&£¡jQuery.contains£¨target£¬related£©£©£©{
+			//å¯¹äºmouseenter / leaveè°ƒç”¨å¤„ç†ç¨‹åºï¼ˆå¦‚æœç›¸å…³ï¼‰åœ¨ç›®æ ‡ä¹‹å¤–ã€‚
+			//æ³¨æ„ï¼šå¦‚æœé¼ æ ‡ç¦»å¼€/è¿›å…¥æµè§ˆå™¨çª—å£ï¼Œåˆ™æ— ç›¸å…³ç›®æ ‡
+			ifï¼ˆï¼related ||ï¼ˆrelatedï¼== target &&ï¼jQuery.containsï¼ˆtargetï¼Œrelatedï¼‰ï¼‰ï¼‰{
 				event.type = handleObj.origType;
-				ret = handleObj.handler.apply£¨this£¬arguments£©;
+				ret = handleObj.handler.applyï¼ˆthisï¼Œargumentsï¼‰;
 				event.type = fix;
 			}
-			·µ»Ø;
+			è¿”å›;
 		}
 	};
-}£©;
+}ï¼‰;
 
-jQuery.fn.extend£¨{
+jQuery.fn.extendï¼ˆ{
 
-	on£ºfunction£¨types£¬selector£¬data£¬fn£©{
-		·µ»Ø£¨this£¬types£¬selector£¬data£¬fn£©;
-	}£¬
-	Ò»£ºº¯Êı£¨ÀàĞÍ£¬Ñ¡ÔñÆ÷£¬Êı¾İ£¬fn£©{
-		return on£¨this£¬types£¬selector£¬data£¬fn£¬1£©;
-	}£¬
-	off£ºfunction£¨types£¬selector£¬fn£©{
-		var handleObj£¬type;
-		if£¨types && types.preventDefault && types.handleObj£©{
+	onï¼šfunctionï¼ˆtypesï¼Œselectorï¼Œdataï¼Œfnï¼‰{
+		è¿”å›ï¼ˆthisï¼Œtypesï¼Œselectorï¼Œdataï¼Œfnï¼‰;
+	}ï¼Œ
+	ä¸€ï¼šå‡½æ•°ï¼ˆç±»å‹ï¼Œé€‰æ‹©å™¨ï¼Œæ•°æ®ï¼Œfnï¼‰{
+		return onï¼ˆthisï¼Œtypesï¼Œselectorï¼Œdataï¼Œfnï¼Œ1ï¼‰;
+	}ï¼Œ
+	offï¼šfunctionï¼ˆtypesï¼Œselectorï¼Œfnï¼‰{
+		var handleObjï¼Œtype;
+		ifï¼ˆtypes && types.preventDefault && types.handleObjï¼‰{
 
-			//£¨event£©µ÷¶ÈjQuery.Event
+			//ï¼ˆeventï¼‰è°ƒåº¦jQuery.Event
 			handleObj = types.handleObj;
-			jQuery£¨types.delegateTarget£©.off£¨
-				handleObj.namespace£¿
-					handleObj.origType +¡°¡£¡± + handleObj.namespace£º
-					handleObj.origType£¬
-				handleObj.selector£¬
+			jQueryï¼ˆtypes.delegateTargetï¼‰.offï¼ˆ
+				handleObj.namespaceï¼Ÿ
+					handleObj.origType +â€œã€‚â€ + handleObj.namespaceï¼š
+					handleObj.origTypeï¼Œ
+				handleObj.selectorï¼Œ
 				handleObj.handler
-			£©;
-			¹é»¹Õâ¸ö;
+			ï¼‰;
+			å½’è¿˜è¿™ä¸ª;
 		}
-		if£¨typeof types ===¡°object¡±£©{
+		ifï¼ˆtypeof types ===â€œobjectâ€ï¼‰{
 
-			//£¨types-object [£¬selector]£©
-			for£¨type in types£©{
-				this.off£¨type£¬selector£¬types [type]£©;
+			//ï¼ˆtypes-object [ï¼Œselector]ï¼‰
+			forï¼ˆtype in typesï¼‰{
+				this.offï¼ˆtypeï¼Œselectorï¼Œtypes [type]ï¼‰;
 			}
-			¹é»¹Õâ¸ö;
+			å½’è¿˜è¿™ä¸ª;
 		}
-		if£¨selector === false || typeof selector ===¡°function¡±£©{
+		ifï¼ˆselector === false || typeof selector ===â€œfunctionâ€ï¼‰{
 
-			//£¨ÀàĞÍ[£¬fn]£©
-			fn =Ñ¡ÔñÆ÷;
+			//ï¼ˆç±»å‹[ï¼Œfn]ï¼‰
+			fn =é€‰æ‹©å™¨;
 			selector = undefined;
 		}
-		if£¨fn === false£©{
+		ifï¼ˆfn === falseï¼‰{
 			fn = returnFalse;
 		}
-		return this.each£¨function£¨£©{
-			jQuery.event.remove£¨this£¬types£¬fn£¬selector£©;
-		}£©;
+		return this.eachï¼ˆfunctionï¼ˆï¼‰{
+			jQuery.event.removeï¼ˆthisï¼Œtypesï¼Œfnï¼Œselectorï¼‰;
+		}ï¼‰;
 	}
-}£©;
+}ï¼‰;
 
 
 VAR
 
 	/ * eslint-disable max-len * /
 
-	//Çë²ÎÔÄhttps://github.com/eslint/eslint/issues/3229
-	rxhtmlTag = / <£¨£¿£¡area | br | col | embed | hr | img | input | link | meta | param£©£¨£¨[az] [^ \ / \ 0> \ x20 \ t \ r \ n \ f] *£©[^>] *£©\ /> / GI£¬
+	//è¯·å‚é˜…https://github.com/eslint/eslint/issues/3229
+	rxhtmlTag = / <ï¼ˆï¼Ÿï¼area | br | col | embed | hr | img | input | link | meta | paramï¼‰ï¼ˆï¼ˆ[az] [^ \ / \ 0> \ x20 \ t \ r \ n \ f] *ï¼‰[^>] *ï¼‰\ /> / GIï¼Œ
 
 	/ * eslint-enable * /
 
-	//Ö§³Ö£ºIE <= 10  -  11£¬½öÏŞEdge 12  -  13
-	//ÔÚIE / EdgeÖĞÊ¹ÓÃÕıÔò±í´ïÊ½×é»áµ¼ÖÂÑÏÖØµÄ¼õËÙ¡£
-	//Çë²ÎÔÄhttps://connect.microsoft.com/IE/feedback/details/1736512/
-	rnoInnerhtml = / <script | <style | <link / i£¬
+	//æ”¯æŒï¼šIE <= 10  -  11ï¼Œä»…é™Edge 12  -  13
+	//åœ¨IE / Edgeä¸­ä½¿ç”¨æ­£åˆ™è¡¨è¾¾å¼ç»„ä¼šå¯¼è‡´ä¸¥é‡çš„å‡é€Ÿã€‚
+	//è¯·å‚é˜…https://connect.microsoft.com/IE/feedback/details/1736512/
+	rnoInnerhtml = / <script | <style | <link / iï¼Œ
 
-	// checked =¡°Ñ¡ÖĞ¡±»òÑ¡ÖĞ
+	// checked =â€œé€‰ä¸­â€æˆ–é€‰ä¸­
 	rchecked = /checked\s*(?:[^=]|=\s*.checked.)/i,
-	rcleanScript = / ^ \ s * <£¡£¨£¿£º\ [CDATA \ [|  - £©|£¨£¿£º\] \] |  - £©> \ s * $ / g;
+	rcleanScript = / ^ \ s * <ï¼ï¼ˆï¼Ÿï¼š\ [CDATA \ [|  - ï¼‰|ï¼ˆï¼Ÿï¼š\] \] |  - ï¼‰> \ s * $ / g;
 
-//ÔÚÆä¸¸±íÉÏÊ×Ñ¡tbodyÒÔ°üº¬ĞÂĞĞ
-function manipulationTarget£¨elem£¬content£©{
-	if£¨nodeName£¨elem£¬¡°table¡±£©&&
-		nodeName£¨content.nodeType£¡== 11£¿content£ºcontent.firstChild£¬¡°tr¡±£©£©{
+//åœ¨å…¶çˆ¶è¡¨ä¸Šé¦–é€‰tbodyä»¥åŒ…å«æ–°è¡Œ
+function manipulationTargetï¼ˆelemï¼Œcontentï¼‰{
+	ifï¼ˆnodeNameï¼ˆelemï¼Œâ€œtableâ€ï¼‰&&
+		nodeNameï¼ˆcontent.nodeTypeï¼== 11ï¼Ÿcontentï¼šcontent.firstChildï¼Œâ€œtrâ€ï¼‰ï¼‰{
 
-		·µ»ØjQuery£¨elem£©.children£¨¡°tbody¡±£©[0] || ELEM;
+		è¿”å›jQueryï¼ˆelemï¼‰.childrenï¼ˆâ€œtbodyâ€ï¼‰[0] || ELEM;
 	}
 
-	·µ»ØÔªËØ;
+	è¿”å›å…ƒç´ ;
 }
 
-//Ìæ»»/»Ö¸´½Å±¾ÔªËØµÄtypeÊôĞÔÒÔ½øĞĞ°²È«µÄDOM²Ù×÷
-function disableScript£¨elem£©{
-	elem.type =£¨elem.getAttribute£¨¡°type¡±£©£¡== null£©+¡°/¡±+ elem.type;
-	·µ»ØÔªËØ;
+//æ›¿æ¢/æ¢å¤è„šæœ¬å…ƒç´ çš„typeå±æ€§ä»¥è¿›è¡Œå®‰å…¨çš„DOMæ“ä½œ
+function disableScriptï¼ˆelemï¼‰{
+	elem.type =ï¼ˆelem.getAttributeï¼ˆâ€œtypeâ€ï¼‰ï¼== nullï¼‰+â€œ/â€+ elem.type;
+	è¿”å›å…ƒç´ ;
 }
-function restoreScript£¨elem£©{
-	if£¨£¨elem.type ||¡°¡±£©.slice£¨0,5£©===¡°true /¡±£©{
-		elem.type = elem.type.slice£¨5£©;
+function restoreScriptï¼ˆelemï¼‰{
+	ifï¼ˆï¼ˆelem.type ||â€œâ€ï¼‰.sliceï¼ˆ0,5ï¼‰===â€œtrue /â€ï¼‰{
+		elem.type = elem.type.sliceï¼ˆ5ï¼‰;
 	} else {
-		elem.removeAttribute£¨¡°type¡±£©;
+		elem.removeAttributeï¼ˆâ€œtypeâ€ï¼‰;
 	}
 
-	·µ»ØÔªËØ;
+	è¿”å›å…ƒç´ ;
 }
 
-function cloneCopyEvent£¨src£¬dest£©{
-	var i£¬l£¬type£¬pdataOld£¬pdataCur£¬udataOld£¬udataCur£¬events;
+function cloneCopyEventï¼ˆsrcï¼Œdestï¼‰{
+	var iï¼Œlï¼Œtypeï¼ŒpdataOldï¼ŒpdataCurï¼ŒudataOldï¼ŒudataCurï¼Œevents;
 
-	if£¨dest.nodeType£¡== 1£©{
-		·µ»Ø;
+	ifï¼ˆdest.nodeTypeï¼== 1ï¼‰{
+		è¿”å›;
 	}
 
-	// 1.¸´ÖÆË½ÈËÊı¾İ£ºÊÂ¼ş£¬´¦Àí³ÌĞòµÈ
-	if£¨dataPriv.hasData£¨src£©£©{
-		pdataOld = dataPriv.access£¨src£©;
-		pdataCur = dataPriv.set£¨dest£¬pdataOld£©;
+	// 1.å¤åˆ¶ç§äººæ•°æ®ï¼šäº‹ä»¶ï¼Œå¤„ç†ç¨‹åºç­‰
+	ifï¼ˆdataPriv.hasDataï¼ˆsrcï¼‰ï¼‰{
+		pdataOld = dataPriv.accessï¼ˆsrcï¼‰;
+		pdataCur = dataPriv.setï¼ˆdestï¼ŒpdataOldï¼‰;
 		events = pdataOld.events;
 
-		if£¨events£©{
-			É¾³ıpdataCur.handle;
+		ifï¼ˆeventsï¼‰{
+			åˆ é™¤pdataCur.handle;
 			pdataCur.events = {};
 
-			for£¨ÊäÈëÊÂ¼ş£©{
-				for£¨i = 0£¬l = events [type] .length; i <l; i ++£©{
-					jQuery.event.add£¨dest£¬type£¬events [type] [i]£©;
+			forï¼ˆè¾“å…¥äº‹ä»¶ï¼‰{
+				forï¼ˆi = 0ï¼Œl = events [type] .length; i <l; i ++ï¼‰{
+					jQuery.event.addï¼ˆdestï¼Œtypeï¼Œevents [type] [i]ï¼‰;
 				}
 			}
 		}
 	}
 
-	// 2.¸´ÖÆÓÃ»§Êı¾İ
-	if£¨dataUser.hasData£¨src£©£©{
-		udataOld = dataUser.access£¨src£©;
-		udataCur = jQuery.extend£¨{}£¬udataOld£©;
+	// 2.å¤åˆ¶ç”¨æˆ·æ•°æ®
+	ifï¼ˆdataUser.hasDataï¼ˆsrcï¼‰ï¼‰{
+		udataOld = dataUser.accessï¼ˆsrcï¼‰;
+		udataCur = jQuery.extendï¼ˆ{}ï¼ŒudataOldï¼‰;
 
-		dataUser.set£¨dest£¬udataCur£©;
+		dataUser.setï¼ˆdestï¼ŒudataCurï¼‰;
 	}
 }
 
-//ĞŞ¸´IE´íÎó£¬Çë²ÎÔÄÖ§³Ö²âÊÔ
-function fixInput£¨src£¬dest£©{
-	var nodeName = dest.nodeName.toLowerCase£¨£©;
+//ä¿®å¤IEé”™è¯¯ï¼Œè¯·å‚é˜…æ”¯æŒæµ‹è¯•
+function fixInputï¼ˆsrcï¼Œdestï¼‰{
+	var nodeName = dest.nodeName.toLowerCaseï¼ˆï¼‰;
 
-	//ÎŞ·¨±£³Ö¿ËÂ¡¸´Ñ¡¿ò»òµ¥Ñ¡°´Å¥µÄÒÑ¼ì²é×´Ì¬¡£
-	if£¨nodeName ===¡°input¡±&& rcheckableType.test£¨src.type£©£©{
+	//æ— æ³•ä¿æŒå…‹éš†å¤é€‰æ¡†æˆ–å•é€‰æŒ‰é’®çš„å·²æ£€æŸ¥çŠ¶æ€ã€‚
+	ifï¼ˆnodeName ===â€œinputâ€&& rcheckableType.testï¼ˆsrc.typeï¼‰ï¼‰{
 		dest.checked = src.checked;
 
-	//¿ËÂ¡Ñ¡ÏîÊ±£¬ÎŞ·¨½«ËùÑ¡Ñ¡Ïî·µ»Øµ½Ä¬ÈÏÑ¡¶¨×´Ì¬
-	} else if£¨nodeName ===¡°input¡±|| nodeName ===¡°textarea¡±£©{
+	//å…‹éš†é€‰é¡¹æ—¶ï¼Œæ— æ³•å°†æ‰€é€‰é€‰é¡¹è¿”å›åˆ°é»˜è®¤é€‰å®šçŠ¶æ€
+	} else ifï¼ˆnodeName ===â€œinputâ€|| nodeName ===â€œtextareaâ€ï¼‰{
 		dest.defaultValue = src.defaultValue;
 	}
 }
 
-function domManip£¨collection£¬args£¬callback£¬ignored£©{
+function domManipï¼ˆcollectionï¼Œargsï¼Œcallbackï¼Œignoredï¼‰{
 
-	//Õ¹Æ½ÈÎºÎÇ¶Ì×Êı×é
-	args = concat.apply£¨[]£¬args£©;
+	//å±•å¹³ä»»ä½•åµŒå¥—æ•°ç»„
+	args = concat.applyï¼ˆ[]ï¼Œargsï¼‰;
 
-	varÆ¬¶Î£¬µÚÒ»¸ö£¬½Å±¾£¬hasScripts£¬node£¬doc£¬
-		i = 0£¬
-		l = collection.length£¬
-		iNoClone = l  -  1£¬
-		value = args [0]£¬
-		valueIsFunction = isFunction£¨value£©;
+	varç‰‡æ®µï¼Œç¬¬ä¸€ä¸ªï¼Œè„šæœ¬ï¼ŒhasScriptsï¼Œnodeï¼Œdocï¼Œ
+		i = 0ï¼Œ
+		l = collection.lengthï¼Œ
+		iNoClone = l  -  1ï¼Œ
+		value = args [0]ï¼Œ
+		valueIsFunction = isFunctionï¼ˆvalueï¼‰;
 
-	//ÎÒÃÇÎŞ·¨ÔÚWebKitÖĞ¿ËÂ¡°üº¬checkedµÄ½ÚµãÆ¬¶Î
-	if£¨valueIsFunction ||
-			£¨l> 1 && typeof value ===¡°string¡±&&
-				£¡support.checkClone && rchecked.test£¨value£©£©£©{
-		return collection.each£¨function£¨index£©{
-			var self = collection.eq£¨index£©;
-			if£¨valueIsFunction£©{
-				args [0] = value.call£¨this£¬index£¬self.html£¨£©£©;
+	//æˆ‘ä»¬æ— æ³•åœ¨WebKitä¸­å…‹éš†åŒ…å«checkedçš„èŠ‚ç‚¹ç‰‡æ®µ
+	ifï¼ˆvalueIsFunction ||
+			ï¼ˆl> 1 && typeof value ===â€œstringâ€&&
+				ï¼support.checkClone && rchecked.testï¼ˆvalueï¼‰ï¼‰ï¼‰{
+		return collection.eachï¼ˆfunctionï¼ˆindexï¼‰{
+			var self = collection.eqï¼ˆindexï¼‰;
+			ifï¼ˆvalueIsFunctionï¼‰{
+				args [0] = value.callï¼ˆthisï¼Œindexï¼Œself.htmlï¼ˆï¼‰ï¼‰;
 			}
-			domManip£¨×ÔÎÒ£¬args£¬»Øµ÷£¬±»ºöÂÔ£©;
-		}£©;
+			domManipï¼ˆè‡ªæˆ‘ï¼Œargsï¼Œå›è°ƒï¼Œè¢«å¿½ç•¥ï¼‰;
+		}ï¼‰;
 	}
 
-	if£¨l£©{
-		fragment = buildFragment£¨args£¬collection [0] .ownerDocument£¬false£¬collection£¬ignored£©;
+	ifï¼ˆlï¼‰{
+		fragment = buildFragmentï¼ˆargsï¼Œcollection [0] .ownerDocumentï¼Œfalseï¼Œcollectionï¼Œignoredï¼‰;
 		first = fragment.firstChild;
 
-		if£¨fragment.childNodes.length === 1£©{
+		ifï¼ˆfragment.childNodes.length === 1ï¼‰{
 			fragment = first;
 		}
 
-		//ĞèÒªĞÂÄÚÈİ»ò¶Ô±»ºöÂÔÔªËØ¸ĞĞËÈ¤²ÅÄÜµ÷ÓÃ»Øµ÷
-		if£¨first || ignored£©{
-			scripts = jQuery.map£¨getAll£¨fragment£¬¡°script¡±£©£¬disableScript£©;
+		//éœ€è¦æ–°å†…å®¹æˆ–å¯¹è¢«å¿½ç•¥å…ƒç´ æ„Ÿå…´è¶£æ‰èƒ½è°ƒç”¨å›è°ƒ
+		ifï¼ˆfirst || ignoredï¼‰{
+			scripts = jQuery.mapï¼ˆgetAllï¼ˆfragmentï¼Œâ€œscriptâ€ï¼‰ï¼ŒdisableScriptï¼‰;
 			hasScripts = scripts.length;
 
-			//½«Ô­Ê¼Æ¬¶ÎÓÃÓÚ×îºóÒ»Ïî
-			//¶ø²»ÊÇµÚÒ»¸ö£¬ÒòÎªËü¿ÉÒÔ½áÊø
-			//ÔÚÄ³Ğ©Çé¿öÏÂ±»´íÎóµØÇå¿Õ£¨££8070£©¡£
-			for£¨; i <l; i ++£©{
+			//å°†åŸå§‹ç‰‡æ®µç”¨äºæœ€åä¸€é¡¹
+			//è€Œä¸æ˜¯ç¬¬ä¸€ä¸ªï¼Œå› ä¸ºå®ƒå¯ä»¥ç»“æŸ
+			//åœ¨æŸäº›æƒ…å†µä¸‹è¢«é”™è¯¯åœ°æ¸…ç©ºï¼ˆï¼ƒ8070ï¼‰ã€‚
+			forï¼ˆ; i <l; i ++ï¼‰{
 				node = fragment;
 
-				if£¨i£¡== iNoClone£©{
-					node = jQuery.clone£¨node£¬true£¬true£©;
+				ifï¼ˆiï¼== iNoCloneï¼‰{
+					node = jQuery.cloneï¼ˆnodeï¼Œtrueï¼Œtrueï¼‰;
 
-					//±£Áô¶Ô¿ËÂ¡½Å±¾µÄÒıÓÃ£¬ÒÔ±ãÒÔºó»Ö¸´
+					//ä¿ç•™å¯¹å…‹éš†è„šæœ¬çš„å¼•ç”¨ï¼Œä»¥ä¾¿ä»¥åæ¢å¤
 					if ( hasScripts ) {
 
 						// Support: Android <=4.0 only, PhantomJS 1 only
@@ -5770,38 +5770,38 @@ function domManip£¨collection£¬args£¬callback£¬ignored£©{
 	return collection;
 }
 
-function remove£¨elem£¬selector£¬keepData£©{
-	var½Úµã£¬
-		nodes = selector£¿jQuery.filter£¨selector£¬elem£©£ºelem£¬
+function removeï¼ˆelemï¼Œselectorï¼ŒkeepDataï¼‰{
+	varèŠ‚ç‚¹ï¼Œ
+		nodes = selectorï¼ŸjQuery.filterï¼ˆselectorï¼Œelemï¼‰ï¼šelemï¼Œ
 		i = 0;
 
-	for£¨;£¨node = nodes [i]£©£¡= null; i ++£©{
-		if£¨£¡keepData && node.nodeType === 1£©{
-			jQuery.cleanData£¨getAll£¨node£©£©;
+	forï¼ˆ;ï¼ˆnode = nodes [i]ï¼‰ï¼= null; i ++ï¼‰{
+		ifï¼ˆï¼keepData && node.nodeType === 1ï¼‰{
+			jQuery.cleanDataï¼ˆgetAllï¼ˆnodeï¼‰ï¼‰;
 		}
 
-		if£¨node.parentNode£©{
-			if£¨keepData && jQuery.contains£¨node.ownerDocument£¬node£©£©{
-				setGlobalEval£¨getAll£¨node£¬¡°script¡±£©£©;
+		ifï¼ˆnode.parentNodeï¼‰{
+			ifï¼ˆkeepData && jQuery.containsï¼ˆnode.ownerDocumentï¼Œnodeï¼‰ï¼‰{
+				setGlobalEvalï¼ˆgetAllï¼ˆnodeï¼Œâ€œscriptâ€ï¼‰ï¼‰;
 			}
-			node.parentNode.removeChild£¨node£©;
+			node.parentNode.removeChildï¼ˆnodeï¼‰;
 		}
 	}
 
-	·µ»ØÔªËØ;
+	è¿”å›å…ƒç´ ;
 }
 
-jQuery.extend£¨{
-	htmlPrefilter£ºfunction£¨html£©{
-		return html.replace£¨rxhtmlTag£¬¡°<$ 1> </ $ 2>¡±£©;
-	}£¬
+jQuery.extendï¼ˆ{
+	htmlPrefilterï¼šfunctionï¼ˆhtmlï¼‰{
+		return html.replaceï¼ˆrxhtmlTagï¼Œâ€œ<$ 1> </ $ 2>â€ï¼‰;
+	}ï¼Œ
 
-	clone£ºfunction£¨elem£¬dataAndEvents£¬deepDataAndEvents£©{
-		var i£¬l£¬srcElements£¬destElements£¬
-			clone = elem.cloneNode£¨true£©£¬
-			inPage = jQuery.contains£¨elem.ownerDocument£¬elem£©;
+	cloneï¼šfunctionï¼ˆelemï¼ŒdataAndEventsï¼ŒdeepDataAndEventsï¼‰{
+		var iï¼Œlï¼ŒsrcElementsï¼ŒdestElementsï¼Œ
+			clone = elem.cloneNodeï¼ˆtrueï¼‰ï¼Œ
+			inPage = jQuery.containsï¼ˆelem.ownerDocumentï¼Œelemï¼‰;
 
-		//ĞŞ¸´IE¿ËÂ¡ÎÊÌâ
+		//ä¿®å¤IEå…‹éš†é—®é¢˜
 		if ( !support.noCloneChecked && ( elem.nodeType === 1 || elem.nodeType === 11 ) &&
 				!jQuery.isXMLDoc( elem ) ) {
 
@@ -5809,38 +5809,38 @@ jQuery.extend£¨{
 			destElements = getAll( clone );
 			srcElements = getAll( elem );
 
-			for£¨i = 0£¬l = srcElements.length; i <l; i ++£©{
-				fixInput£¨srcElements [i]£¬destElements [i]£©;
+			forï¼ˆi = 0ï¼Œl = srcElements.length; i <l; i ++ï¼‰{
+				fixInputï¼ˆsrcElements [i]ï¼ŒdestElements [i]ï¼‰;
 			}
 		}
 
-		//½«ÊÂ¼ş´ÓÔ­Ê¼¸´ÖÆµ½¿ËÂ¡
-		if£¨dataAndEvents£©{
-			if£¨deepDataAndEvents£©{
-				srcElements = srcElements || getAll£¨elem£©;
-				destElements = destElements || getAll£¨clone£©;
+		//å°†äº‹ä»¶ä»åŸå§‹å¤åˆ¶åˆ°å…‹éš†
+		ifï¼ˆdataAndEventsï¼‰{
+			ifï¼ˆdeepDataAndEventsï¼‰{
+				srcElements = srcElements || getAllï¼ˆelemï¼‰;
+				destElements = destElements || getAllï¼ˆcloneï¼‰;
 
-				for£¨i = 0£¬l = srcElements.length; i <l; i ++£©{
-					cloneCopyEvent£¨srcElements [i]£¬destElements [i]£©;
+				forï¼ˆi = 0ï¼Œl = srcElements.length; i <l; i ++ï¼‰{
+					cloneCopyEventï¼ˆsrcElements [i]ï¼ŒdestElements [i]ï¼‰;
 				}
 			} else {
-				cloneCopyEvent£¨elem£¬clone£©;
+				cloneCopyEventï¼ˆelemï¼Œcloneï¼‰;
 			}
 		}
 
-		//±£Áô½Å±¾ÆÀ¹ÀÀúÊ·¼ÇÂ¼
-		destElements = getAll£¨clone£¬¡°script¡±£©;
-		if£¨destElements.length> 0£©{
-			setGlobalEval£¨destElements£¬£¡inPage && getAll£¨elem£¬¡°script¡±£©£©;
+		//ä¿ç•™è„šæœ¬è¯„ä¼°å†å²è®°å½•
+		destElements = getAllï¼ˆcloneï¼Œâ€œscriptâ€ï¼‰;
+		ifï¼ˆdestElements.length> 0ï¼‰{
+			setGlobalEvalï¼ˆdestElementsï¼Œï¼inPage && getAllï¼ˆelemï¼Œâ€œscriptâ€ï¼‰ï¼‰;
 		}
 
-		//·µ»Ø¿ËÂ¡µÄ¼¯ºÏ
-		·µ»Ø¿ËÂ¡;
-	}£¬
+		//è¿”å›å…‹éš†çš„é›†åˆ
+		è¿”å›å…‹éš†;
+	}ï¼Œ
 
-	cleanData£ºfunction£¨elems£©{
-		var data£¬elem£¬type£¬
-			special = jQuery.event.special£¬
+	cleanDataï¼šfunctionï¼ˆelemsï¼‰{
+		var dataï¼Œelemï¼Œtypeï¼Œ
+			special = jQuery.event.specialï¼Œ
 			i = 0;
 
 		for ( ; ( elem = elems[ i ] ) !== undefined; i++ ) {
@@ -6178,42 +6178,42 @@ function curCSS( elem, name, computed ) {
 		// https://drafts.csswg.org/cssom/#resolved-values
 		if ( !support.pixelBoxStyles() && rnumnonpx.test( ret ) && rboxStyle.test( name ) ) {
 
-			//¼Ç×¡Ô­Ê¼Öµ
+			//è®°ä½åŸå§‹å€¼
 			width = style.width;
 			minWidth = style.minWidth;
 			maxWidth = style.maxWidth;
 
-			//ÊäÈëĞÂÖµÒÔ»ñÈ¡¼ÆËãÖµ
+			//è¾“å…¥æ–°å€¼ä»¥è·å–è®¡ç®—å€¼
 			style.minWidth = style.maxWidth = style.width = ret;
 			ret = computed.width;
 
-			//»Ö¸´¸ü¸ÄµÄÖµ
+			//æ¢å¤æ›´æ”¹çš„å€¼
 			style.width = width;
 			style.minWidth = minWidth;
 			style.maxWidth = maxWidth;
 		}
 	}
 
-	return ret£¡== undefined£¿
+	return retï¼== undefinedï¼Ÿ
 
-		//Ö§³Ö£ºIE <= 9  -  11
-		// IE½«zIndexÖµ×÷ÎªÕûÊı·µ»Ø¡£
-		ret +¡°¡±£º
+		//æ”¯æŒï¼šIE <= 9  -  11
+		// IEå°†zIndexå€¼ä½œä¸ºæ•´æ•°è¿”å›ã€‚
+		ret +â€œâ€ï¼š
 		RET;
 }
 
 
-function addGetHookIf£¨conditionFn£¬hookFn£©{
+function addGetHookIfï¼ˆconditionFnï¼ŒhookFnï¼‰{
 
-	//¶¨Òå¹³×Ó£¬Èç¹ûÈ·ÊµĞèÒª£¬ÎÒÃÇ½«ÔÚµÚÒ»´ÎÔËĞĞÊ±¼ì²é¡£
-	·µ»Ø{
-		get£ºfunction£¨£©{
-			if£¨conditionFn£¨£©£©{
+	//å®šä¹‰é’©å­ï¼Œå¦‚æœç¡®å®éœ€è¦ï¼Œæˆ‘ä»¬å°†åœ¨ç¬¬ä¸€æ¬¡è¿è¡Œæ—¶æ£€æŸ¥ã€‚
+	è¿”å›{
+		getï¼šfunctionï¼ˆï¼‰{
+			ifï¼ˆconditionFnï¼ˆï¼‰ï¼‰{
 
-				//²»ĞèÒª¹³×Ó£¨»òÕßÒòÎªËü²»¿ÉÄÜÊ¹ÓÃËü
-				//È±ÉÙÒÀÀµÏî£©£¬É¾³ıËü¡£
-				É¾³ıthis.get;
-				·µ»Ø;
+				//ä¸éœ€è¦é’©å­ï¼ˆæˆ–è€…å› ä¸ºå®ƒä¸å¯èƒ½ä½¿ç”¨å®ƒ
+				//ç¼ºå°‘ä¾èµ–é¡¹ï¼‰ï¼Œåˆ é™¤å®ƒã€‚
+				åˆ é™¤this.get;
+				è¿”å›;
 			}
 
 			// Hook needed; redefine it so that the support test is not executed again.
@@ -6351,27 +6351,27 @@ function getWidthOrHeight( elem, dimension, extra ) {
 	// Start with computed style
 	var styles = getStyles( elem ),
 		val = curCSS( elem, dimension, styles ),
-		isBorderBox = jQuery.css£¨elem£¬¡°boxSizing¡±£¬false£¬styles£©===¡°border-box¡±£¬
+		isBorderBox = jQuery.cssï¼ˆelemï¼Œâ€œboxSizingâ€ï¼Œfalseï¼Œstylesï¼‰===â€œborder-boxâ€ï¼Œ
 		valueIsBorderBox = isBorderBox;
 
-	//Ö§³Ö£ºFirefox <= 54
-	//¸ù¾İĞèÒª·µ»Ø»ìÏıµÄ·ÇÏñËØÖµ»ò¼Ù×°ÎŞÖª¡£
-	if£¨rnumnonpx.test£¨val£©£©{
-		if£¨£¡extra£©{
-			·µ»Ø;
+	//æ”¯æŒï¼šFirefox <= 54
+	//æ ¹æ®éœ€è¦è¿”å›æ··æ·†çš„éåƒç´ å€¼æˆ–å‡è£…æ— çŸ¥ã€‚
+	ifï¼ˆrnumnonpx.testï¼ˆvalï¼‰ï¼‰{
+		ifï¼ˆï¼extraï¼‰{
+			è¿”å›;
 		}
-		val =¡°auto¡±;
+		val =â€œautoâ€;
 	}
 
-	//Èç¹ûä¯ÀÀÆ÷·µ»Ø²»¿É¿¿µÄÖµ£¬Çë¼ì²éÑùÊ½
-	//ÎªgetComputedStyleÄ¬Ä¬µØ»Ø¹éµ½¿É¿¿µÄelem.style
+	//å¦‚æœæµè§ˆå™¨è¿”å›ä¸å¯é çš„å€¼ï¼Œè¯·æ£€æŸ¥æ ·å¼
+	//ä¸ºgetComputedStyleé»˜é»˜åœ°å›å½’åˆ°å¯é çš„elem.style
 	valueIsBorderBox = valueIsBorderBox &&
-		£¨support.boxSizingReliable£¨£©|| val === elem.style [dimension]£©;
+		ï¼ˆsupport.boxSizingReliableï¼ˆï¼‰|| val === elem.style [dimension]ï¼‰;
 
-	//µ±ÖµÎª¡°auto¡±Ê±£¬»ØÍËµ½offsetWidth / offsetHeight
-	//¶ÔÓÚÃ»ÓĞÃ÷È·ÉèÖÃµÄÄÚÁªÔªËØ»á·¢ÉúÕâÖÖÇé¿ö£¨gh-3571£©
-	//Ö§³Ö£º½öÏŞAndroid <= 4.1  -  4.3
-	//¶ÔÓÚÎó±¨µÄÄÚÁªÎ¬¶È£¨gh-3602£©Ò²Ê¹ÓÃoffsetWidth / offsetHeight
+	//å½“å€¼ä¸ºâ€œautoâ€æ—¶ï¼Œå›é€€åˆ°offsetWidth / offsetHeight
+	//å¯¹äºæ²¡æœ‰æ˜ç¡®è®¾ç½®çš„å†…è”å…ƒç´ ä¼šå‘ç”Ÿè¿™ç§æƒ…å†µï¼ˆgh-3571ï¼‰
+	//æ”¯æŒï¼šä»…é™Android <= 4.1  -  4.3
+	//å¯¹äºè¯¯æŠ¥çš„å†…è”ç»´åº¦ï¼ˆgh-3602ï¼‰ä¹Ÿä½¿ç”¨offsetWidth / offsetHeight
 	if ( val === "auto" ||
 		!parseFloat( val ) && jQuery.css( elem, "display", false, styles ) === "inline" ) {
 
@@ -6423,35 +6423,35 @@ jQuery.extend( {
 		"fillOpacity": true,
 		"flexGrow": true,
 		"flexShrink": true,
-		¡°fontWeight¡±£ºÊÇµÄ£¬
-		¡°lineHeight¡±£ºÊÇµÄ£¬
-		¡°²»Í¸Ã÷¡±£ºÊÇµÄ£¬
-		¡°ÖÈĞò¡±£ºÊÇµÄ£¬
-		¡°¹Â¶ù¡±£ºÊÇµÄ£¬
-		¡°¹Ñ¸¾¡±£ºÊÇµÄ£¬
-		¡°zIndex¡±£ºÊÇµÄ£¬
-		¡°Ëõ·Å¡±£ºÊÇµÄ
-	}£¬
+		â€œfontWeightâ€ï¼šæ˜¯çš„ï¼Œ
+		â€œlineHeightâ€ï¼šæ˜¯çš„ï¼Œ
+		â€œä¸é€æ˜â€ï¼šæ˜¯çš„ï¼Œ
+		â€œç§©åºâ€ï¼šæ˜¯çš„ï¼Œ
+		â€œå­¤å„¿â€ï¼šæ˜¯çš„ï¼Œ
+		â€œå¯¡å¦‡â€ï¼šæ˜¯çš„ï¼Œ
+		â€œzIndexâ€ï¼šæ˜¯çš„ï¼Œ
+		â€œç¼©æ”¾â€ï¼šæ˜¯çš„
+	}ï¼Œ
 
-	//Ìí¼ÓÒÔÇ°ÒªĞŞ¸´ÆäÃû³ÆµÄÊôĞÔ
-	//ÉèÖÃ»ò»ñÈ¡Öµ
-	cssProps£º{}£¬
+	//æ·»åŠ ä»¥å‰è¦ä¿®å¤å…¶åç§°çš„å±æ€§
+	//è®¾ç½®æˆ–è·å–å€¼
+	cssPropsï¼š{}ï¼Œ
 
-	//ÔÚDOM½ÚµãÉÏ»ñÈ¡²¢ÉèÖÃÑùÊ½ÊôĞÔ
-	style£ºfunction£¨elem£¬name£¬value£¬extra£©{
+	//åœ¨DOMèŠ‚ç‚¹ä¸Šè·å–å¹¶è®¾ç½®æ ·å¼å±æ€§
+	styleï¼šfunctionï¼ˆelemï¼Œnameï¼Œvalueï¼Œextraï¼‰{
 
-		//²»ÒªÔÚÎÄ±¾ºÍ×¢ÊÍ½ÚµãÉÏÉèÖÃÑùÊ½
-		if£¨£¡elem || elem.nodeType === 3 || elem.nodeType === 8 ||£¡elem.style£©{
-			·µ»Ø;
+		//ä¸è¦åœ¨æ–‡æœ¬å’Œæ³¨é‡ŠèŠ‚ç‚¹ä¸Šè®¾ç½®æ ·å¼
+		ifï¼ˆï¼elem || elem.nodeType === 3 || elem.nodeType === 8 ||ï¼elem.styleï¼‰{
+			è¿”å›;
 		}
 
-		//È·±£ÎÒÃÇÕıÔÚÊ¹ÓÃÕıÈ·µÄÃû³Æ
-		var ret£¬type£¬hooks£¬
-			origName = camelCase£¨name£©£¬
-			isCustomProp = rcustomProp.test£¨name£©£¬
+		//ç¡®ä¿æˆ‘ä»¬æ­£åœ¨ä½¿ç”¨æ­£ç¡®çš„åç§°
+		var retï¼Œtypeï¼Œhooksï¼Œ
+			origName = camelCaseï¼ˆnameï¼‰ï¼Œ
+			isCustomProp = rcustomProp.testï¼ˆnameï¼‰ï¼Œ
 			style = elem.style;
 
-		//È·±£ÎÒÃÇÕıÔÚÊ¹ÓÃÕıÈ·µÄÃû³Æ¡£ÎÒÃÇÃ»ÓĞ
+		//ç¡®ä¿æˆ‘ä»¬æ­£åœ¨ä½¿ç”¨æ­£ç¡®çš„åç§°ã€‚æˆ‘ä»¬æ²¡æœ‰
 		// want to query the value if it is a CSS custom property
 		// since they are user-defined.
 		if ( !isCustomProp ) {
@@ -6592,69 +6592,69 @@ jQuery.each( [ "height", "width" ], function( i, dimension ) {
 			// faking a content-box to get border and padding (gh-3699)
 			if ( isBorderBox && support.scrollboxSize() === styles.position ) {
 				subtract -= Math.ceil(
-					elem [¡°offset¡±+ dimension [0] .toUpperCase£¨£©+ dimension.slice£¨1£©]  - 
-					parseFloat£¨styles [dimension]£© - 
-					boxModelAdjustment£¨elem£¬dimension£¬¡°border¡±£¬false£¬styles£© - 
+					elem [â€œoffsetâ€+ dimension [0] .toUpperCaseï¼ˆï¼‰+ dimension.sliceï¼ˆ1ï¼‰]  - 
+					parseFloatï¼ˆstyles [dimension]ï¼‰ - 
+					boxModelAdjustmentï¼ˆelemï¼Œdimensionï¼Œâ€œborderâ€ï¼Œfalseï¼Œstylesï¼‰ - 
 					0.5
-				£©;
+				ï¼‰;
 			}
 
-			//Èç¹ûĞèÒª½øĞĞÖµµ÷Õû£¬Ôò×ª»»ÎªÏñËØ
-			if£¨¼õÈ¥&&£¨matches = rcssNum.exec£¨value£©£©&&
-				£¨Æ¥Åä[3] ||¡°px¡±£©£¡==¡°px¡±£©{
+			//å¦‚æœéœ€è¦è¿›è¡Œå€¼è°ƒæ•´ï¼Œåˆ™è½¬æ¢ä¸ºåƒç´ 
+			ifï¼ˆå‡å»&&ï¼ˆmatches = rcssNum.execï¼ˆvalueï¼‰ï¼‰&&
+				ï¼ˆåŒ¹é…[3] ||â€œpxâ€ï¼‰ï¼==â€œpxâ€ï¼‰{
 
 				elem.style [dimension] = value;
-				value = jQuery.css£¨elem£¬dimension£©;
+				value = jQuery.cssï¼ˆelemï¼Œdimensionï¼‰;
 			}
 
-			return setPositiveNumber£¨elem£¬value£¬subtract£©;
+			return setPositiveNumberï¼ˆelemï¼Œvalueï¼Œsubtractï¼‰;
 		}
 	};
-}£©;
+}ï¼‰;
 
-jQuery.cssHooks.marginLeft = addGetHookIf£¨support.reliableMarginLeft£¬
-	function£¨elem£¬calculated£©{
-		if£¨computed£©{
-			return£¨parseFloat£¨curCSS£¨elem£¬¡°marginLeft¡±£©£©||
-				elem.getBoundingClientRect£¨£©¡£left  - 
-					swap£¨elem£¬{marginLeft£º0}£¬function£¨£©{
-						return elem.getBoundingClientRect£¨£©¡£left;
-					}£©
-				£©+¡°px¡±;
+jQuery.cssHooks.marginLeft = addGetHookIfï¼ˆsupport.reliableMarginLeftï¼Œ
+	functionï¼ˆelemï¼Œcalculatedï¼‰{
+		ifï¼ˆcomputedï¼‰{
+			returnï¼ˆparseFloatï¼ˆcurCSSï¼ˆelemï¼Œâ€œmarginLeftâ€ï¼‰ï¼‰||
+				elem.getBoundingClientRectï¼ˆï¼‰ã€‚left  - 
+					swapï¼ˆelemï¼Œ{marginLeftï¼š0}ï¼Œfunctionï¼ˆï¼‰{
+						return elem.getBoundingClientRectï¼ˆï¼‰ã€‚left;
+					}ï¼‰
+				ï¼‰+â€œpxâ€;
 		}
 	}
-£©;
+ï¼‰;
 
-//¶¯»­Ê¹ÓÃÕâĞ©¹³×ÓÀ´À©Õ¹ÊôĞÔ
-jQuery.each£¨{
-	±£Ö¤½ğ£º¡°¡±£¬
-	Ìî³ä£º¡°¡±£¬
-	±ß¿ò£º¡°¿í¶È¡±
-}£¬function£¨prefix£¬suffix£©{
+//åŠ¨ç”»ä½¿ç”¨è¿™äº›é’©å­æ¥æ‰©å±•å±æ€§
+jQuery.eachï¼ˆ{
+	ä¿è¯é‡‘ï¼šâ€œâ€ï¼Œ
+	å¡«å……ï¼šâ€œâ€ï¼Œ
+	è¾¹æ¡†ï¼šâ€œå®½åº¦â€
+}ï¼Œfunctionï¼ˆprefixï¼Œsuffixï¼‰{
 	jQuery.cssHooks [prefix + suffix] = {
-		expand£ºfunction£¨value£©{
-			var i = 0£¬
-				expanded = {}£¬
+		expandï¼šfunctionï¼ˆvalueï¼‰{
+			var i = 0ï¼Œ
+				expanded = {}ï¼Œ
 
-				//Èç¹û²»ÊÇ×Ö·û´®£¬Ôò¼ÙÉèÒ»¸öÊı×Ö
-				parts = typeof value ===¡°string¡±£¿value.split£¨¡°¡±£©£º[value];
+				//å¦‚æœä¸æ˜¯å­—ç¬¦ä¸²ï¼Œåˆ™å‡è®¾ä¸€ä¸ªæ•°å­—
+				parts = typeof value ===â€œstringâ€ï¼Ÿvalue.splitï¼ˆâ€œâ€ï¼‰ï¼š[value];
 
-			for£¨; i <4; i ++£©{
+			forï¼ˆ; i <4; i ++ï¼‰{
 				expanded [prefix + cssExpand [i] + suffix] =
-					²¿·Ö[i] || ²¿·Ö[i  -  2] || Áã¼ş[0];
+					éƒ¨åˆ†[i] || éƒ¨åˆ†[i  -  2] || é›¶ä»¶[0];
 			}
 
-			»Ø¹éÀ©´ó;
+			å›å½’æ‰©å¤§;
 		}
 	};
 
-	if£¨Ç°×º£¡==¡°margin¡±£©{
+	ifï¼ˆå‰ç¼€ï¼==â€œmarginâ€ï¼‰{
 		jQuery.cssHooks [prefix + suffix] .set = setPositiveNumber;
 	}
-}£©;
+}ï¼‰;
 
-jQuery.fn.extend£¨{
-	css£ºfunction£¨name£¬value£©{
+jQuery.fn.extendï¼ˆ{
+	cssï¼šfunctionï¼ˆnameï¼Œvalueï¼‰{
 		return access( this, function( elem, name, value ) {
 			var styles, len,
 				map = {},
@@ -8078,46 +8078,46 @@ jQuery.extend( {
 							// Don't return options that are disabled or in a disabled optgroup
 							!option.disabled &&
 							( !option.parentNode.disabled ||
-								£¡nodeName£¨option.parentNode£¬¡°optgroup¡±£©£©£©{
+								ï¼nodeNameï¼ˆoption.parentNodeï¼Œâ€œoptgroupâ€ï¼‰ï¼‰ï¼‰{
 
-						//»ñÈ¡Ñ¡ÏîµÄÌØ¶¨Öµ
-						value = jQuery£¨option£©.val£¨£©;
+						//è·å–é€‰é¡¹çš„ç‰¹å®šå€¼
+						value = jQueryï¼ˆoptionï¼‰.valï¼ˆï¼‰;
 
-						//ÎÒÃÇ²»ĞèÒªÒ»¸öÊı×éÓÃÓÚÒ»¸öÑ¡Ôñ
-						Èç¹ûÒ»¸ö £© {
-							»Ø±¨Öµ;
+						//æˆ‘ä»¬ä¸éœ€è¦ä¸€ä¸ªæ•°ç»„ç”¨äºä¸€ä¸ªé€‰æ‹©
+						å¦‚æœä¸€ä¸ª ï¼‰ {
+							å›æŠ¥å€¼;
 						}
 
-						// Multi-Selects·µ»ØÒ»¸öÊı×é
-						values.push£¨value£©;
+						// Multi-Selectsè¿”å›ä¸€ä¸ªæ•°ç»„
+						values.pushï¼ˆvalueï¼‰;
 					}
 				}
 
-				»Ø±¨Öµ;
-			}£¬
+				å›æŠ¥å€¼;
+			}ï¼Œ
 
-			set£ºfunction£¨elem£¬value£©{
-				var optionSet£¬option£¬
-					options = elem.options£¬
-					values = jQuery.makeArray£¨value£©£¬
+			setï¼šfunctionï¼ˆelemï¼Œvalueï¼‰{
+				var optionSetï¼Œoptionï¼Œ
+					options = elem.optionsï¼Œ
+					values = jQuery.makeArrayï¼ˆvalueï¼‰ï¼Œ
 					i = options.length;
 
-				µ±ÎÒ -  £© {
+				å½“æˆ‘ -  ï¼‰ {
 					option = options [i];
 
 					/ * eslint-disable no-cond-assign * /
 
-					if£¨option.selected =
-						jQuery.inArray£¨jQuery.valHooks.option.get£¨option£©£¬values£©> -1
-					£©{
+					ifï¼ˆoption.selected =
+						jQuery.inArrayï¼ˆjQuery.valHooks.option.getï¼ˆoptionï¼‰ï¼Œvaluesï¼‰> -1
+					ï¼‰{
 						optionSet = true;
 					}
 
 					/ * eslint-enable no-cond-assign * /
 				}
 
-				//Ç¿ÖÆä¯ÀÀÆ÷ÔÚÉèÖÃ·ÇÆ¥ÅäÖµÊ±±íÏÖÒ»ÖÂ
-				if£¨£¡optionSet£©{
+				//å¼ºåˆ¶æµè§ˆå™¨åœ¨è®¾ç½®éåŒ¹é…å€¼æ—¶è¡¨ç°ä¸€è‡´
+				ifï¼ˆï¼optionSetï¼‰{
 					elem.selectedIndex = -1;
 				}
 				return values;
@@ -8136,38 +8136,38 @@ jQuery.each( [ "radio", "checkbox" ], function() {
 		}
 	};
 	if ( !support.checkOn ) {
-		jQuery.valHooks [this] .get = function£¨elem£©{
-			return elem.getAttribute£¨¡°value¡±£©=== null£¿¡°on¡±£ºelem.value;
+		jQuery.valHooks [this] .get = functionï¼ˆelemï¼‰{
+			return elem.getAttributeï¼ˆâ€œvalueâ€ï¼‰=== nullï¼Ÿâ€œonâ€ï¼šelem.value;
 		};
 	}
-}£©;
+}ï¼‰;
 
 
 
 
-//·µ»ØjQueryÒÔ½ö°üº¬ÊôĞÔ
+//è¿”å›jQueryä»¥ä»…åŒ…å«å±æ€§
 
 
-support.focusin =¡°onfocusin¡±ÔÚ´°¿ÚÖĞ;
+support.focusin =â€œonfocusinâ€åœ¨çª—å£ä¸­;
 
 
-var rfocusMorph = / ^£¨£¿£ºfocusinfocus | focusoutblur£©$ /£¬
-	stopPropagationCallback = function£¨e£©{
-		e.stopPropagation£¨£©;
+var rfocusMorph = / ^ï¼ˆï¼Ÿï¼šfocusinfocus | focusoutblurï¼‰$ /ï¼Œ
+	stopPropagationCallback = functionï¼ˆeï¼‰{
+		e.stopPropagationï¼ˆï¼‰;
 	};
 
-jQuery.extend£¨jQuery.event£¬{
+jQuery.extendï¼ˆjQuery.eventï¼Œ{
 
-	trigger£ºfunction£¨event£¬data£¬elem£¬onlyHandlers£©{
+	triggerï¼šfunctionï¼ˆeventï¼Œdataï¼Œelemï¼ŒonlyHandlersï¼‰{
 
-		var i£¬cur£¬tmp£¬bubbleType£¬ontype£¬handle£¬special£¬lastElement£¬
-			eventPath = [elem || ÎÄ¼ş]£¬
-			type = hasOwn.call£¨event£¬¡°type¡±£©£¿event.type£ºevent£¬
-			namespaces = hasOwn.call£¨event£¬¡°namespace¡±£©£¿event.namespace.split£¨¡°¡£¡±£©£º[];
+		var iï¼Œcurï¼Œtmpï¼ŒbubbleTypeï¼Œontypeï¼Œhandleï¼Œspecialï¼ŒlastElementï¼Œ
+			eventPath = [elem || æ–‡ä»¶]ï¼Œ
+			type = hasOwn.callï¼ˆeventï¼Œâ€œtypeâ€ï¼‰ï¼Ÿevent.typeï¼ševentï¼Œ
+			namespaces = hasOwn.callï¼ˆeventï¼Œâ€œnamespaceâ€ï¼‰ï¼Ÿevent.namespace.splitï¼ˆâ€œã€‚â€ï¼‰ï¼š[];
 
-		cur = lastElement = tmp = elem = elem || ÎÄÏ×;
+		cur = lastElement = tmp = elem = elem || æ–‡çŒ®;
 
-		//²»ÒªÔÚÎÄ±¾ºÍ×¢ÊÍ½ÚµãÉÏÖ´ĞĞÊÂ¼ş
+		//ä¸è¦åœ¨æ–‡æœ¬å’Œæ³¨é‡ŠèŠ‚ç‚¹ä¸Šæ‰§è¡Œäº‹ä»¶
 		if ( elem.nodeType === 3 || elem.nodeType === 8 ) {
 			return;
 		}
@@ -8229,45 +8229,45 @@ jQuery.extend£¨jQuery.event£¬{
 			}
 
 			// Only add window if we got to document (e.g., not plain obj or detached DOM)
-			if£¨tmp ===£¨elem.ownerDocument || document£©£©{
-				eventPath.push£¨tmp.defaultView || tmp.parentWindow || window£©;
+			ifï¼ˆtmp ===ï¼ˆelem.ownerDocument || documentï¼‰ï¼‰{
+				eventPath.pushï¼ˆtmp.defaultView || tmp.parentWindow || windowï¼‰;
 			}
 		}
 
-		//ÊÂ¼şÂ·¾¶ÉÏµÄÏû·À´¦Àí³ÌĞò
+		//äº‹ä»¶è·¯å¾„ä¸Šçš„æ¶ˆé˜²å¤„ç†ç¨‹åº
 		i = 0;
-		while£¨£¨cur = eventPath [i ++]£©&&£¡event.isPropagationStopped£¨£©£©{
+		whileï¼ˆï¼ˆcur = eventPath [i ++]ï¼‰&&ï¼event.isPropagationStoppedï¼ˆï¼‰ï¼‰{
 			lastElement = cur;
-			event.type = i> 1£¿
-				bubbleType£º
-				special.bindType || ÀàĞÍ;
+			event.type = i> 1ï¼Ÿ
+				bubbleTypeï¼š
+				special.bindType || ç±»å‹;
 
-			// jQuery´¦Àí³ÌĞò
-			handle =£¨dataPriv.get£¨cur£¬¡°events¡±£©|| {}£©[event.type] &&
-				dataPriv.get£¨cur£¬¡°handle¡±£©;
-			if£¨handle£©{
-				handle.apply£¨cur£¬data£©;
+			// jQueryå¤„ç†ç¨‹åº
+			handle =ï¼ˆdataPriv.getï¼ˆcurï¼Œâ€œeventsâ€ï¼‰|| {}ï¼‰[event.type] &&
+				dataPriv.getï¼ˆcurï¼Œâ€œhandleâ€ï¼‰;
+			ifï¼ˆhandleï¼‰{
+				handle.applyï¼ˆcurï¼Œdataï¼‰;
 			}
 
-			//Ô­Éú´¦Àí³ÌĞò
+			//åŸç”Ÿå¤„ç†ç¨‹åº
 			handle = ontype && cur [ontype];
-			if£¨handle && handle.apply && acceptData£¨cur£©£©{
-				event.result = handle.apply£¨cur£¬data£©;
-				if£¨event.result === false£©{
-					event.preventDefault£¨£©;
+			ifï¼ˆhandle && handle.apply && acceptDataï¼ˆcurï¼‰ï¼‰{
+				event.result = handle.applyï¼ˆcurï¼Œdataï¼‰;
+				ifï¼ˆevent.result === falseï¼‰{
+					event.preventDefaultï¼ˆï¼‰;
 				}
 			}
 		}
 		event.type = type;
 
-		//Èç¹ûÃ»ÓĞÈË×èÖ¹Ä¬ÈÏ²Ù×÷£¬ÇëÁ¢¼´Ö´ĞĞ
-		if£¨£¡onlyHandlers &&£¡event.isDefaultPrevented£¨£©£©{
+		//å¦‚æœæ²¡æœ‰äººé˜»æ­¢é»˜è®¤æ“ä½œï¼Œè¯·ç«‹å³æ‰§è¡Œ
+		ifï¼ˆï¼onlyHandlers &&ï¼event.isDefaultPreventedï¼ˆï¼‰ï¼‰{
 
-			if£¨£¨£¡special._default ||
-				special._default.apply£¨eventPath.pop£¨£©£¬data£©=== false£©&&
-				acceptData£¨elem£©£©{
+			ifï¼ˆï¼ˆï¼special._default ||
+				special._default.applyï¼ˆeventPath.popï¼ˆï¼‰ï¼Œdataï¼‰=== falseï¼‰&&
+				acceptDataï¼ˆelemï¼‰ï¼‰{
 
-				//ÔÚÄ¿±êÉÏµ÷ÓÃÓëÊÂ¼şÍ¬ÃûµÄ±¾»úDOM·½·¨¡£
+				//åœ¨ç›®æ ‡ä¸Šè°ƒç”¨ä¸äº‹ä»¶åŒåçš„æœ¬æœºDOMæ–¹æ³•ã€‚
 				// Don't do default actions on window, that's where global variables be (#6170)
 				if ( ontype && isFunction( elem[ type ] ) && !isWindow( elem ) ) {
 
@@ -9756,39 +9756,39 @@ jQuery.ajaxPrefilter( "json jsonp", function( s, originalSettings, jqXHR ) {
 
 			// Otherwise restore preexisting value
 			} else {
-				window [callbackName] =¸²¸Ç;
+				window [callbackName] =è¦†ç›–;
 			}
 
-			//±£´æÎªÃâ·Ñ
-			if£¨s [callbackName]£©{
+			//ä¿å­˜ä¸ºå…è´¹
+			ifï¼ˆs [callbackName]ï¼‰{
 
-				//È·±£ÖØĞÂÊ¹ÓÃÕâĞ©Ñ¡Ïî²¢²»»áÊ¹ÊÂÇé±äµÃ¼¬ÊÖ
+				//ç¡®ä¿é‡æ–°ä½¿ç”¨è¿™äº›é€‰é¡¹å¹¶ä¸ä¼šä½¿äº‹æƒ…å˜å¾—æ£˜æ‰‹
 				s.jsonpCallback = originalSettings.jsonpCallback;
 
-				//±£´æ»Øµ÷Ãû³ÆÒÔ±¸½«À´Ê¹ÓÃ
-				oldCallbacks.push£¨callbackName£©;
+				//ä¿å­˜å›è°ƒåç§°ä»¥å¤‡å°†æ¥ä½¿ç”¨
+				oldCallbacks.pushï¼ˆcallbackNameï¼‰;
 			}
 
-			//Èç¹ûËüÊÇÒ»¸öº¯ÊıÔòµ÷ÓÃ£¬ÎÒÃÇÓĞÒ»¸öÏìÓ¦
-			if£¨responseContainer && isFunction£¨¸²¸Ç£©£©{
-				¸²¸Ç£¨responseContainer [0]£©;
+			//å¦‚æœå®ƒæ˜¯ä¸€ä¸ªå‡½æ•°åˆ™è°ƒç”¨ï¼Œæˆ‘ä»¬æœ‰ä¸€ä¸ªå“åº”
+			ifï¼ˆresponseContainer && isFunctionï¼ˆè¦†ç›–ï¼‰ï¼‰{
+				è¦†ç›–ï¼ˆresponseContainer [0]ï¼‰;
 			}
 
 			responseContainer = overwritten = undefined;
-		}£©;
+		}ï¼‰;
 
-		//Î¯ÅÉ¸ø½Å±¾
-		·µ»Ø¡°½Å±¾¡±;
+		//å§”æ´¾ç»™è„šæœ¬
+		è¿”å›â€œè„šæœ¬â€;
 	}
-}£©;
+}ï¼‰;
 
 
 
 
-//Ö§³Ö£º½öÏŞSafari 8
-//ÔÚSafari 8ÖĞÍ¨¹ıdocument.implementation.createHTMLDocument´´½¨µÄÎÄµµ
-//ÕÛµşĞÖµÜĞÎÊ½£ºµÚ¶ş¸ö³ÉÎªµÚÒ»¸öµÄº¢×Ó¡£
-//Òò´Ë£¬±ØĞëÔÚSafari 8ÖĞ½ûÓÃ´Ë°²È«´ëÊ©¡£
+//æ”¯æŒï¼šä»…é™Safari 8
+//åœ¨Safari 8ä¸­é€šè¿‡document.implementation.createHTMLDocumentåˆ›å»ºçš„æ–‡æ¡£
+//æŠ˜å å…„å¼Ÿå½¢å¼ï¼šç¬¬äºŒä¸ªæˆä¸ºç¬¬ä¸€ä¸ªçš„å­©å­ã€‚
+//å› æ­¤ï¼Œå¿…é¡»åœ¨Safari 8ä¸­ç¦ç”¨æ­¤å®‰å…¨æªæ–½ã€‚
 // https://bugs.webkit.org/show_bug.cgi?id=137337
 support.createHTMLDocument = ( function() {
 	var body = document.implementation.createHTMLDocument( "" ).body;
@@ -9833,47 +9833,47 @@ jQuery.parseHTML = function( data, context, keepScripts ) {
 	parsed = rsingleTag.exec( data );
 	scripts = !keepScripts && [];
 
-	//µ¥¸ö±êÇ©
-	if£¨ÒÑ½âÎö£©{
-		return [context.createElement£¨parsed [1]£©];
+	//å•ä¸ªæ ‡ç­¾
+	ifï¼ˆå·²è§£æï¼‰{
+		return [context.createElementï¼ˆparsed [1]ï¼‰];
 	}
 
-	parsed = buildFragment£¨[data]£¬context£¬scripts£©;
+	parsed = buildFragmentï¼ˆ[data]ï¼Œcontextï¼Œscriptsï¼‰;
 
-	if£¨scripts && scripts.length£©{
-		jQuery£¨½Å±¾£©.remove£¨£©;
+	ifï¼ˆscripts && scripts.lengthï¼‰{
+		jQueryï¼ˆè„šæœ¬ï¼‰.removeï¼ˆï¼‰;
 	}
 
-	return jQuery.merge£¨[]£¬parsed.childNodes£©;
+	return jQuery.mergeï¼ˆ[]ï¼Œparsed.childNodesï¼‰;
 };
 
 
 / **
- *½«ÍøÖ·¼ÓÔØµ½Ò³ÃæÖĞ
+ *å°†ç½‘å€åŠ è½½åˆ°é¡µé¢ä¸­
  * /
-jQuery.fn.load = function£¨url£¬params£¬callback£©{
-	varÑ¡ÔñÆ÷£¬ÀàĞÍ£¬ÏìÓ¦£¬
-		×ÔÎÒ=Õâ¸ö£¬
-		off = url.indexOf£¨¡°¡±£©;
+jQuery.fn.load = functionï¼ˆurlï¼Œparamsï¼Œcallbackï¼‰{
+	varé€‰æ‹©å™¨ï¼Œç±»å‹ï¼Œå“åº”ï¼Œ
+		è‡ªæˆ‘=è¿™ä¸ªï¼Œ
+		off = url.indexOfï¼ˆâ€œâ€ï¼‰;
 
-	if£¨off> -1£©{
-		selector = stripAndCollapse£¨url.slice£¨off£©£©;
-		url = url.slice£¨0£¬off£©;
+	ifï¼ˆoff> -1ï¼‰{
+		selector = stripAndCollapseï¼ˆurl.sliceï¼ˆoffï¼‰ï¼‰;
+		url = url.sliceï¼ˆ0ï¼Œoffï¼‰;
 	}
 
-	//Èç¹ûËüÊÇÒ»¸ö¹¦ÄÜ
-	if£¨isFunction£¨params£©£©{
+	//å¦‚æœå®ƒæ˜¯ä¸€ä¸ªåŠŸèƒ½
+	ifï¼ˆisFunctionï¼ˆparamsï¼‰ï¼‰{
 
-		//ÎÒÃÇ¼ÙÉèÕâÊÇ»Øµ÷
+		//æˆ‘ä»¬å‡è®¾è¿™æ˜¯å›è°ƒ
 		callback = params;
 		params = undefined;
 
-	//·ñÔò£¬¹¹½¨Ò»¸ö²ÎÊı×Ö·û´®
-	} else if£¨params && typeof params ===¡°object¡±£©{
-		type =¡°POST¡±;
+	//å¦åˆ™ï¼Œæ„å»ºä¸€ä¸ªå‚æ•°å­—ç¬¦ä¸²
+	} else ifï¼ˆparams && typeof params ===â€œobjectâ€ï¼‰{
+		type =â€œPOSTâ€;
 	}
 
-	//Èç¹ûÎÒÃÇÒªĞŞ¸ÄÔªËØ£¬Çë·¢³öÇëÇó
+	//å¦‚æœæˆ‘ä»¬è¦ä¿®æ”¹å…ƒç´ ï¼Œè¯·å‘å‡ºè¯·æ±‚
 	if ( self.length > 0 ) {
 		jQuery.ajax( {
 			url: url,

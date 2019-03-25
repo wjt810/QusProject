@@ -1,6 +1,9 @@
 package springboot.service.qusadmin;
 
 import java.util.List;
+
+import org.apache.ibatis.annotations.Param;
+
 import springboot.pojo.QusAdmin;
 
 public interface QusAdminService {
@@ -15,8 +18,15 @@ public interface QusAdminService {
 	List<QusAdmin> AddAdmin(QusAdmin qusAdmin);
 	
 	//修改管理员信息
-	List<QusAdmin> UpdateAdmin(int a_id);
+	Integer UpdateAdmin(QusAdmin admin);
 	
 	//删除管理员
-	List<QusAdmin>	DelAdmin(int a_id);
+	Integer deleteAdmin(@Param("a_id") Integer a_id);
+	
+	/**
+	 * 根据a_id查询管理员信息
+	 * @param a_id
+	 * @return
+	 */
+	QusAdmin getAdminById(@Param("a_id") Integer a_id);
 }

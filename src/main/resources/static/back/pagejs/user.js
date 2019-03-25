@@ -44,7 +44,7 @@ layui.config({
         if(window.sessionStorage.getItem('a_picpath')){
         	$("#a_picpath").attr("src",window.sessionStorage.getItem('a_picpath'));
         }else{
-        	$("#a_picpath").attr("src","back/images/face.jpg");
+        	$("#a_picpath").attr("src",${admin.a_picpath});
         }
 
         //提交个人资料

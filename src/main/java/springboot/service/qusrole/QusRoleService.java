@@ -1,5 +1,7 @@
 package springboot.service.qusrole;
 
+import java.util.List;
+
 import springboot.pojo.QusRole;
 
 public interface QusRoleService {
@@ -9,4 +11,10 @@ public interface QusRoleService {
 	 * @return
 	 */
 	public QusRole getRoleById(Integer role_id);
+	
+	/**
+	 * 角色信息
+	 * @return
+	 */
+	public List<QusRole> getRoleList();
 }

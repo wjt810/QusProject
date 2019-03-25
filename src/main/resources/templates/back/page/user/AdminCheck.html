@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<title>查看管理员</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" th:href="@{/back/layui/css/layui.css}" media="all" />
+	<link rel="stylesheet" th:href="@{/back/css/user.css}" media="all" />
+	<style type="text/css">
+		.layui-form-item .layui-inline{ width:33.333%; float:left; margin-right:0; }
+		@media(max-width:1240px){
+			.layui-form-item .layui-inline{ width:100%; float:none; }
+		}
+	</style>
+</head>
+<body class="childrenBody">
+	<form class="layui-form" enctype="multipart/form-data"method="post">
+		<div class="user_left">
+		<input name="a_id" type="hidden" id="a_id" th:value="${admin.a_id}"/>
+			<div class="layui-form-item">
+			    <label class="layui-form-label">用户名</label>
+			    <div class="layui-input-block">
+			    	<input id="a_name" name="a_name" type="text" th:value="${admin.a_name}" class="layui-input" placeholder="请输入用户名" disabled="disabled">
+			    </div>
+			</div>
+			<div class="layui-form-item">
+			    <label class="layui-form-label">真实姓名</label>
+			    <div class="layui-input-block">
+			    	<input id="a_realName" name="a_realName" type="text" th:value="${admin.a_realName}" placeholder="请输入真实姓名" lay-verify="required" class="layui-input" disabled="disabled">
+			    </div>
+			</div>
+			<div class="layui-form-item" pane="">
+			    <label class="layui-form-label">性别</label>
+			    <div class="layui-input-block" id="a_sex" th:if="${admin.a_sex==0}">
+			    	<input type="radio" name="sex" value="男" title="男" checked="checked">
+	     			<input type="radio" name="sex" value="女" title="女">
+			    </div>
+			    <div class="layui-input-block" id="a_sex" th:if="${admin.a_sex==1}">
+			    	<input type="radio" name="sex" value="男" title="男">
+	     			<input type="radio" name="sex" value="女" title="女" checked="checked">
+			    </div>
+			</div>
+			<div class="layui-form-item">
+			    <label class="layui-form-label">手机号码</label>
+			    <div class="layui-input-block">
+			    	<input id="a_phone" name="a_phone" type="tel" th:value="${admin.a_phone}" placeholder="请输入手机号码" lay-verify="required|phone" class="layui-input" disabled="disabled">
+			    </div>
+			</div>
+			<div class="layui-form-item">
+			    <label class="layui-form-label">出生年月</label>
+			    <div class="layui-input-block">
+			    	<input id="a_born" name="a_born" type="text" th:value="${hh}" placeholder="请输入出生年月" lay-verify="required|date" class="layui-input" disabled="disabled">
+			    </div>
+			</div>
+			<div class="layui-form-item">
+			    <label class="layui-form-label" style="margin-right: 0;">地址</label>
+			    <div class="layui-input-block">
+			    	<input id="a_address" name="a_address" type="text" th:value="${admin.a_address}" lay-verify="required|address" class="layui-input" disabled="disabled">
+			    </div>
+			</div>
+			<div class="layui-form-item">
+			    <label class="layui-form-label">邮箱</label>
+			    <div class="layui-input-block">
+			    	<input id="a_email" name="a_email" type="text" th:value="${admin.a_email}" placeholder="请输入邮箱" 
+			    	lay-verify="required|email" class="layui-input" disabled="disabled">
+			    </div>
+			</div>
+			<div class="layui-form-item">
+			    <label class="layui-form-label">自我描述</label>
+			    <div class="layui-input-block">
+			    	<textarea id="a_des" name="a_des" placeholder="请输入内容" class="layui-textarea" disabled="disabled">[[${admin.a_des}]]</textarea>
+			    </div>
+			</div>
+		</div>
+		<div class="user_right">
+			<button disabled="disabled">个人头像</button><br><br/>
+			<img th:src="${admin.a_picpath}" class="layui-circle" id="a_picpath" name="a_picpath" width="150" height="150" >
+		</div>
+		<div class="layui-form-item" style="margin-left: 5%;">
+		    <div class="layui-input-block"> 
+				<button type="button" class="layui-btn layui-btn-primary">返回</button>
+		    </div>
+		</div>
+	</form>
+	<script type="text/javascript" th:src="@{/back/layui/layui.js}"></script>
+	<script type="text/javascript" th:src="@{/back/pagejs/address.js}"></script>
+<!-- 	<script type="text/javascript" th:src="@{/back/pagejs/user.js}"></script>-->
+ 	<script type="text/javascript" th:src="@{/back/pagejs/AdminAdd.js}"></script>
+</body>
+</html>

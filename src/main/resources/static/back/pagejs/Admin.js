@@ -1,5 +1,5 @@
 layui.config({
-	base : "back/js/"
+	base : "/back/js/"
 }).use(['form','layer','jquery','laypage'],function(){
 	var form = layui.form(),
 		layer = parent.layer === undefined ? layui.layer : parent.layer,
@@ -8,7 +8,7 @@ layui.config({
 
 	//加载页面数据
 	var usersData = '';
-	$.get("admin/list", function(data){
+	$.get("admin/lists", function(data){
 		usersData = data;
 		if(window.sessionStorage.getItem("addUser")){
 			var addUsers = window.sessionStorage.getItem("addUser");
@@ -25,7 +25,7 @@ layui.config({
 			var index = layer.msg('查询中，请稍候',{icon: 16,time:false,shade:0.8});
             setTimeout(function(){
             	$.ajax({
-					url : "back/json/adminList.json",
+					url : "admin/lists",
 					type : "get",
 					dataType : "json",
 					success : function(data){
@@ -53,22 +53,22 @@ layui.config({
 		            			}
 		            		}
 		            		//用户名
-		            		if(usersStr.userName.indexOf(selectStr) > -1){
-			            		usersStr["userName"] = changeStr(usersStr.userName);
+		            		if(usersStr.a_name.indexOf(selectStr) > -1){
+			            		usersStr["a_name"] = changeStr(usersStr.a_name);
 		            		}
-		            		//用户邮箱
-		            		if(usersStr.userEmail.indexOf(selectStr) > -1){
-			            		usersStr["userEmail"] = changeStr(usersStr.userEmail);
+		            		//手机号
+		            		if(usersStr.a_phone.indexOf(selectStr) > -1){
+			            		usersStr["a_phone"] = changeStr(usersStr.a_phone);
+		            		}
+		            		//邮箱
+		            		if(usersStr.a_email.indexOf(selectStr) > -1){
+			            		usersStr["a_email"] = changeStr(usersStr.a_email);
 		            		}
 		            		//性别
-		            		if(usersStr.userSex.indexOf(selectStr) > -1){
-			            		usersStr["userSex"] = changeStr(usersStr.userSex);
+		            		if(usersStr.a_sex.indexOf(selectStr) > -1){
+			            		usersStr["a_sex"] = changeStr(usersStr.a_sex);
 		            		}
-		            		//会员等级
-		            		if(usersStr.userGrade.indexOf(selectStr) > -1){
-			            		usersStr["userGrade"] = changeStr(usersStr.userGrade);
-		            		}
-		            		if(usersStr.userName.indexOf(selectStr)>-1 || usersStr.userEmail.indexOf(selectStr)>-1 || usersStr.userSex.indexOf(selectStr)>-1 || usersStr.userGrade.indexOf(selectStr)>-1){
+		            		if(usersStr.a_name.indexOf(selectStr)>-1 || usersStr.a_phone.indexOf(selectStr)>-1 || usersStr.a_email.indexOf(selectStr)>-1 || usersStr.a_sex.indexOf(selectStr)>-1){
 		            			userArray.push(usersStr);
 		            		}
 		            	}
@@ -135,7 +135,19 @@ layui.config({
 	            	//删除数据
 	            	for(var j=0;j<$checked.length;j++){
 	            		for(var i=0;i<usersData.length;i++){
-							if(usersData[i].usersId == $checked.eq(j).parents("tr").find(".users_del").attr("data-id")){
+							if(usersData[i].a_id == $checked.eq(j).parents("tr").find(".users_del").attr("data-id")){
+								$.ajax({
+									url : "/admin/deleteAdmin",
+									type : "get",
+									data : {a_id:usersData[i].a_id},
+									dataType : "json",
+									success : function(data){
+										layer.msg("删除成功！");
+									},
+									fail : function(err) {
+										layer.msg(err)
+									}
+								})
 								usersData.splice(i,1);
 								usersList(usersData);
 							}
@@ -154,10 +166,12 @@ layui.config({
 
 	//操作
 	$("body").on("click",".users_edit",function(){  //编辑
+		var _this = $(this);
+		var a_id = _this.attr("data-id")
 		var index = layui.layer.open({
 			title : "修改管理员",
 			type : 2,
-			content : "adminModify",
+			content : "/admin/adminModify?a_id="+a_id,
 			success : function(layero, index){
 				layui.layer.tips('点击此处返回文章列表', '.layui-layer-setwin .layui-layer-close', {
 					tips: 3
@@ -170,13 +184,42 @@ layui.config({
 		})
 		layui.layer.full(index);
 	})
+	
+	form.on("submit",function(data){
+				$.ajax({
+					url : "adminModifySave",
+					type : "get",
+					data : {a_id:$("#a_id").val(),a_name:$("#a_name").val(),a_realName:$("#a_realName").val(),a_sex:$("#a_sex").val(),
+							a_phone:$("#a_phone").val(),a_born:$("#a_born").val(),a_address:$("#a_address").val(),
+							a_email:$("#a_email").val(),a_des:$("#a_des").val(),a_picpath:$("#a_picpath").val(),
+							},
+					dataType : "json",
+					success : function(data){
+						var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
+							parent.layer.close(index);    //关闭弹出层
+							window.parent.location.reload();   //刷新父界面
+					}
+			})
+		})
 
 	$("body").on("click",".users_del",function(){  //删除
 		var _this = $(this);
 		layer.confirm('确定删除此用户？',{icon:3, title:'提示信息'},function(index){
-			//_this.parents("tr").remove();
+			_this.parents("tr").remove();
 			for(var i=0;i<usersData.length;i++){
-				if(usersData[i].usersId == _this.attr("data-id")){
+				if(usersData[i].a_id == _this.attr("data-id")){
+					$.ajax({
+						url : "/admin/deleteAdmin",
+						type : "get",
+						data : {a_id:usersData[i].a_id},
+						dataType : "json",
+						success : function(data){
+							layer.msg("删除成功！");
+						},
+						fail : function(err) {
+							layer.msg(err)
+						}
+					})
 					usersData.splice(i,1);
 					usersList(usersData);
 				}
@@ -185,11 +228,13 @@ layui.config({
 		});
 	})
 
- 	$("body").on("click",".users_edit",function(){  //查看店铺
+ 	$("body").on("click",".users_show",function(){  //查看管理员
+ 		var _this = $(this);
+		var a_id = _this.attr("data-id")
  		var index = layui.layer.open({
  			title : "查看管理员",
  			type : 2,
- 			content : "adminShow",
+ 			content : "/admin/adminShow?a_id="+a_id,
  			success : function(layero, index){
  				layui.layer.tips('点击此处返回文章列表', '.layui-layer-setwin .layui-layer-close', {
  					tips: 3
@@ -222,9 +267,9 @@ layui.config({
 			    	}
 					dataHtml += '<td>'+currData[i].a_born+'</td>'
 			    	+  '<td>'
-					+    '<a class="layui-btn layui-btn-mini users_edit"><i class="iconfont icon-edit"></i> 编辑</a>'
-					+    '<a class="layui-btn layui-btn-mini users_edit"><i class="iconfont icon-edit"></i> 查看</a>'
-					+    '<a class="layui-btn layui-btn-danger layui-btn-mini users_del" data-id="'+data[i].usersId+'"><i class="layui-icon">&#xe640;</i> 删除</a>'
+					+    '<a class="layui-btn layui-btn-mini users_edit" data-id="'+data[i].a_id+'"><i class="iconfont icon-edit"></i> 编辑</a>'
+					+    '<a class="layui-btn layui-btn-mini users_show" data-id="'+data[i].a_id+'"><i class="iconfont icon-edit"></i> 查看</a>'
+					+    '<a class="layui-btn layui-btn-danger layui-btn-mini users_del" data-id="'+data[i].a_id+'"><i class="layui-icon">&#xe640;</i> 删除</a>'
 			        +  '</td>'
 			    	+'</tr>';
 				}
@@ -235,7 +280,7 @@ layui.config({
 		}
 
 		//分页
-		var nums = 13; //每页出现的数据量
+		var nums = 6; //每页出现的数据量
 		laypage({
 			cont : "page",
 			pages : Math.ceil(usersData.length/nums),

@@ -1,18 +1,26 @@
 package springboot.controller;
 
 import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
+import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -21,7 +29,7 @@ import springboot.service.qusappointment.QusAppointmentService;
 import springboot.service.qusdoctor.QusDoctorService;
 import springboot.service.qusorder.QusOrderService;
 
-@RestController
+@Controller
 @RequestMapping("doctor")
 public class QusDoctorController {
 	Logger logger = LoggerFactory.getLogger(UserController.class);
@@ -39,6 +47,7 @@ public class QusDoctorController {
 	 * 医生列表
 	 * @return
 	 */
+	@ResponseBody
 	@RequestMapping("/doctorList")
 	public List<QusDoctor> getDoctorList(){
 		List<QusDoctor> doctorList=qusDoctorService.getDoctorList();
@@ -52,6 +61,7 @@ public class QusDoctorController {
 		}
 		return doctorList;
 	}
+	@ResponseBody
 	@RequestMapping(value="/submitAddInfo",method=RequestMethod.POST)
 	public String submitAddInfo(HttpServletRequest request) {//,@RequestParam()   ,@RequestParam("picture")MultipartFile fileUpload
 		//d_name role sex email phone cDate province city area time room1 room2 description
@@ -90,6 +100,7 @@ public class QusDoctorController {
 	/**
 	 *删除医生
 	 */
+	@ResponseBody
 	@RequestMapping("deleteById.html")
 	public int deleteDoctor(HttpServletRequest request) {
 		String docIdStr = request.getParameter("docId");
@@ -118,4 +129,40 @@ public class QusDoctorController {
 		}
 		return result;
 	}
+	//实现跳转
+	@RequestMapping(value="/upload")
+	public String upload() {
+		return "test/upload";
+	}
+	//实现添加图片
+	@RequestMapping(value="/upload1")
+	public String uploadPic() {
+		return "test/upload";
+	}
+    @RequestMapping(value="upload/uploadPic.do",method=RequestMethod.POST)  //@RequestParam("picture")MultipartFile picture,
+    public JSONObject uploadPic(@RequestParam(value="file",required=false) MultipartFile file, HttpServletRequest request, HttpServletResponse response) throws IllegalStateException, IOException {  
+    	if(file!=null){
+    		String prefix="";
+    		String dateStr="";
+            String originalName = file.getOriginalFilename();
+            System.out.println("fileName:\t"+originalName);
+           /* prefix=originalName.substring(originalName.lastIndexOf(".")+1);
+             dateStr = format.format(new Date());
+            String filepath = request.getServletContext().getRealPath("/static") + uploadDir + dateStr + "." + prefix;
+            filepath = filepath.replace("\\", "/");
+            File files=new File(filepath);
+            //打印查看上传路径
+            System.out.println(filepath);
+            if(!files.getParentFile().exists()){
+                files.getParentFile().mkdirs();
+            }
+            file.transferTo(files);*/
+        }
+    	Map<String,Object> map2=new HashMap<>();
+        Map<String,Object> map=new HashMap<>();
+        map.put("code",0);
+        map.put("msg","");
+        map.put("data",map2);
+    	 return new JSONObject("hello");
+    } 
 }
