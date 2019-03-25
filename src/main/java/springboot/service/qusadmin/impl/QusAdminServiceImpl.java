@@ -28,7 +28,7 @@ public class QusAdminServiceImpl implements QusAdminService{
 	}
 
 	@Override
-	public List<QusAdmin> AddAdmin(QusAdmin qusAdmin) {
+	public int AddAdmin(QusAdmin qusAdmin) {
 		return qusAdminDao.AddAdmin(qusAdmin);
 	}
 

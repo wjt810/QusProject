@@ -23,22 +23,23 @@ public interface QusAdminDao {
 	
 	//添加管理员
 	@Insert("INSERT INTO qus_admin (a_name, a_password, a_sex, a_phone, a_realName, a_email, a_des, a_born, "
-			+ "a_address, a_roleid, a_createBy, a_picpath, a_modifyBy)\r\n" + 
+			+ "a_address, a_roleid, a_createBy, a_picpath)" + 
 			"VALUES (#{a_name},#{a_password},#{a_sex},#{a_phone},#{a_realName},#{a_email},#{a_des},#{a_born},"
-			+ "#{a_address},#{a_roleid},#{a_createBy},#{a_picpath},#{a_modifyBy});")
-	List<QusAdmin> AddAdmin(QusAdmin qusAdmin);
+			+ "#{a_address},#{a_roleid},#{a_createBy},#{a_picpath});")
+	int AddAdmin(QusAdmin qusAdmin);
 	
 	//修改管理员信息
 	@Update("<script> UPDATE qus_admin SET " 
 			+"<if test='a_name != null'> a_name = #{a_name} ,</if>" 
-			+"<if test='a_password != null'> a_password = #{a_password}, </if>"  
 			+"<if test='a_sex != null'> a_sex = #{a_sex}, </if>"  
 			+"<if test='a_phone != null'> a_phone =#{a_phone} , </if>" 
 			+"<if test='a_realName != null'> a_realName =#{a_realName} , </if>" 
 			+"<if test='a_email != null'> a_email = #{a_email} , </if>"  
 			+"<if test='a_des != null'> a_des = #{a_des} , </if>" 
 			+"<if test='a_born != null'> a_born = #{a_born}, </if>" 
-			+"<if test='a_address != null'> a_address = #{a_address} </if>"
+			+"<if test='a_address != null'> a_address = #{a_address}, </if>"
+			+"<if test='a_picpath != null'> a_picpath = #{a_picpath}, </if>"
+			+"<if test='a_modify != null'> a_modify = #{a_modify} </if>"
 			+"	WHERE a_id = #{a_id};"
 			+"</script>")
 	Integer UpdateAdmin(QusAdmin admin);

@@ -36,16 +36,6 @@ public class UserController {
      @Resource
      private QusRoleService qusRoleService;
 	/**
-	 * 进入首页
-	 * @return
-	 */
-	
-	@RequestMapping("/list")
-	public ModelAndView test() {
-		ModelAndView mv = new ModelAndView("back/index");
-		return mv;
-	}
-	/**
 	 * 登录
 	 * @return
 	 */
