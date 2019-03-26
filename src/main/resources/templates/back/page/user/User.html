@@ -27,43 +27,45 @@
 			</div>
 		</div>
 		<div class="layui-form-item">
-			<div class="layui-inline">
 			    <label class="layui-form-label">性别</label>
-			    <div class="layui-input-block userSex">
-			      	<input type="radio" name="sex" value="男" title="男">
-			      	<input type="radio" name="sex" value="女" title="女">
+			    <div class="layui-input-block" id="sex" th:if="${user.u_sex==0}">
+			    	<input type="radio" name="u_sex" value="男" title="男" checked="checked">
+	     			<input type="radio" name="u_sex" value="女" title="女">
 			    </div>
-		    </div>
+			    <div class="layui-input-block" id="a_sex" th:if="${user.u_sex==1}">
+			    	<input type="radio" name="u_sex" value="男" title="男">
+	     			<input type="radio" name="u_sex" value="女" title="女" checked="checked">
+			    </div>
 		</div>
 		<div class="layui-form-item">
 		    <label class="layui-form-label">手机号码</label>
 		    <div class="layui-input-block">
-		    	<input type="tel" id="u_phone" name="u_phone" value="${user.u_phone}" lay-verify="required|phone" class="layui-input">
+		    	<input type="tel" id="u_phone" name="u_phone" th:value="${user.u_phone}" lay-verify="required|phone" class="layui-input">
 		    </div>
 		</div>
 		<div class="layui-form-item">
 			    <label class="layui-form-label">科室名称</label>
 			    <div class="layui-input-inline">
 	                <select id="room1" name="room1" class="newsLook" lay-filter="room1">
-						<option th:selected="${user.qusDoctor.qusRoom1.r1_id}" th:value="${user.qusDoctor.qusRoom1.r1_id}">[[${user.r1_name}]]</option>
+						<option th:selected="${user.r1_id}" th:value="${user.r1_id}">[[${user.r1_name}]]</option>
 					</select>
 	            </div>
 	            <div class="layui-input-inline">
 	                <select id="room2" name="room2" class="newsLook" lay-filter="room2">
-						<option th:selected="${user.qusDoctor.qusRoom2.r2_id}" th:value="${user.qusDoctor.qusRoom2.r2_id}">[[${user.r2_name}]]</option>
+						<option th:selected="${user.r2_id}" th:value="${user.r2_id}">[[${user.r2_name}]]</option>
 					</select>
 	            </div>
 		</div>
 		<div class="layui-form-item">
 			<label class="layui-form-label">就诊医生</label>
 			<div class="layui-input-block">
-				<input type="text" class="layui-input doctorName" id="d_name" name="d_name" value="user.d_name" lay-verify="required">
+				<input type="text" class="layui-input doctorName" id="d_name" name="d_name" th:value="${user.d_name}" lay-verify="required">
 			</div>
 		</div>
 		<div class="layui-form-item">
 		    <label class="layui-form-label">预约时间</label>
 		    <div class="layui-input-block">
-		    	<input type="text" id="app_time" name="app_time"  value="${user.app_time}" lay-verify="required|date" onclick="layui.laydate({elem: this,max: laydate.now()})" class="layui-input">
+		    	<input type="text" id="app_time" name="app_time"  th:value="${hh}" lay-verify="required|date" onclick="layui.laydate({elem: this,max: laydate.now()})" class="layui-input">
 		    </div>
 		</div>
 		<div class="layui-form-item">
@@ -75,14 +77,18 @@
 					<option>退号</option>
 				</select> -->
 				<select id="sta_name" name="sta_name" class="newsLook" lay-filter="sta_name">
-						<option th:selected="${user.app_sta_id}" th:value="${user.app_sta_id}">[[${user.sta_name}]]</option>
+					
+					<!-- <option th:selected="${user.app_sta_id}" th:value="${user.app_sta_id}">[[${user.sta_name}]]</option> -->
+					<option th:selected="${user.app_sta_id==1}" th:value="1">就诊</option>
+					<option th:selected="${user.app_sta_id==2}" th:value="2">准备中</option>
+					<option th:selected="${user.app_sta_id==3}" th:value="3">退号</option>
 				</select>
 			</div>
 			<div class="layui-input-inline">
 					<label class="layui-form-label">优先级</label>
 					<select name="app_priority" id="app_priority" lay-filter="app_priority">
-						<option th:selected="${user.app_priority==0}" th:value="0">优先</option>
-				     	<option th:selected="${user.app_priority==1}" th:value="1">普通</option>
+						<option th:selected="${user.app_priority=='0'}" th:value="0">优先</option>
+				     	<option th:selected="${user.app_priority=='1'}" th:value="1">普通</option>
 					</select>
 			</div>
 		</div>
@@ -93,7 +99,8 @@
 		    </div>
 		</div>
 	</form>
-	<script type="text/javascript" src="back/layui/layui.js"></script>
-	<script type="text/javascript" src="back/pagejs/addUser.js"></script>
+	<script type="text/javascript" th:src="@{/back/layui/layui.js}"></script>
+	<!-- <script type="text/javascript" th:src="@{/back/pagejs/addUser.js}"></script> -->
+	<script type="text/javascript" th:src="@{/back/pagejs/Users.js}"></script>
 </body>
 </html>

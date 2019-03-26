@@ -8,7 +8,7 @@ layui.config({
 
 	//加载页面数据
 	var usersData = '';
-	$.get("user/userList", function(data){
+	$.get("/user/userList", function(data){
 		usersData = data;
 		if(window.sessionStorage.getItem("addUser")){
 			var addUsers = window.sessionStorage.getItem("addUser");
@@ -25,7 +25,7 @@ layui.config({
 			var index = layer.msg('查询中，请稍候',{icon: 16,time:false,shade:0.8});
             setTimeout(function(){
             	$.ajax({
-					url : "user/userList",
+					url : "/user/userList",
 					type : "get",
 					dataType : "json",
 					success : function(data){
@@ -138,7 +138,6 @@ layui.config({
 	$("body").on("click",".users_edit",function(){  //编辑修改
 		var _this = $(this);
 		var app_id = _this.attr("data-id");
-		alert(app_id);
 		var index = layui.layer.open({
 			title : "修改用户",
 			type : 2,
@@ -155,7 +154,25 @@ layui.config({
 		})
 		layui.layer.full(index);
 	})
-
+	//保存修改
+	form.on("submit",function(data){
+		alert("sdfghj");
+				$.ajax({
+					url : "/user/UserSave",
+					type : "get",
+					data : {app_id:$("#app_id").val(),u_name:$("#u_name").val(),u_sex:$('input:radio:checked').val(),
+							u_phone:$("#u_phone").val(),app_time:$("#app_time").val(),
+							app_priority:$("#app_priority").val()},
+					dataType : "json",
+					success : function(data){
+						var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
+							parent.layer.close(index);    //关闭弹出层
+							window.parent.location.reload();   //刷新父界面
+					}
+			})
+		})
+	
+	
 	$("body").on("click",".users_del",function(){  //删除
 		var _this = $(this);
 		layer.confirm('确定删除此用户？',{icon:3, title:'提示信息'},function(index){

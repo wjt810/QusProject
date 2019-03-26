@@ -47,6 +47,25 @@ public class QusAppointment {
 	private String r1_name;//科室名称
 	private String r2_name;//二级科室
 	
+	private Integer r1_id;
+	private Integer r2_id;
+	
+	public Integer getR1_id() {
+		return r1_id;
+	}
+
+	public void setR1_id(Integer r1_id) {
+		this.r1_id = r1_id;
+	}
+
+	public Integer getR2_id() {
+		return r2_id;
+	}
+
+	public void setR2_id(Integer r2_id) {
+		this.r2_id = r2_id;
+	}
+
 	public Integer getU_id() {
 		return u_id;
 	}

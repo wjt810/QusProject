@@ -37,20 +37,41 @@ layui.config({
         })
 
         //修改密码
-        form.on("submit(changePwd)",function(data){
-        	//var index = layer.msg('提交中，请稍候',{icon: 16,time:false,shade:0.8});
-            /*setTimeout(function(){
-                layer.close(index);
-                
-                $(".a_password").val('');
-                */
-//            },2000);
-        	//return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
-            layer.msg("密码修改成功！");
-            location.href="/backLogin";
+        	form.on("submit",function(data){
+				var oldPwd = $("#oldPwd").val();
+				var newPwd = $("#newPwd").val();
+				var confirmPwd = $("#confirmPwd").val();
+				var pwd = $("#pwd").val();
+				if(oldPwd == pwd){
+					if(newPwd == confirmPwd){
+						$.ajax({
+							type:"GET",
+							url:"/admin/changPwd",
+							dataType:"JSON",
+							data:{"newPwd":newPwd},
+							success:function(data){
+								//alert("修改成功");
+								/* var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
+			 					parent.layer.close(index);    //关闭弹出层 */
+			 					//location.href="/backLogin";
+							},
+							error :function(){
+								layer.msg("密码修改成功！");
+								window.open("/back/login.html");
+								//window.location.href="/loginOut";
+								/*var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
+			 					parent.layer.close(index);    //关闭弹出层
+*/							}
+						})
+					}else{
+						$(".mes").attr("display","block");
+					}
+				}else{
+					layer.msg("旧密码不正确");
+					return false;
+				}
+			})
         })
-
-})
 
  //加载省数据
 function loadProvince() {

@@ -12,7 +12,7 @@ import springboot.pojo.QusUser;
 
 public interface QusUserDao {
 	//用户列表
-	@Select("SELECT u.u_id,u.u_name,u.u_sex,u.u_phone,m.app_time,m.app_priority,s.sta_name,m.app_sta_id,d.d_name,r1.r1_name,r2.r2_name" + 
+	@Select("SELECT u.u_id,u.u_name,u.u_sex,u.u_phone,m.app_time,m.app_id,m.app_priority,s.sta_name,m.app_sta_id,d.d_name,r1.r1_name,r1.r1_id,r2.r2_id,r2.r2_name" + 
 			"	FROM qus_user u,qus_appointment m,qus_status s,qus_doctor d,qus_room1 r1,qus_room2 r2" + 
 			"	WHERE s.sta_id=m.app_sta_id AND u.u_id=m.app_user_id AND d.d_id=m.app_doc_id " + 
 			"	AND r1.r1_id=d.d_r1_id AND r2.r2_id=d.d_r2_id ")
@@ -33,7 +33,7 @@ public interface QusUserDao {
 	 * @param id
 	 * @return
 	 */
-	@Select("SELECT u.u_id,u.u_name,u.u_sex,u.u_phone,m.app_time,m.app_id,m.app_priority,m.app_sta_id,s.sta_name,d.d_name,r1.r1_name,r2.r2_name  " + 
+	@Select("SELECT u.u_id,u.u_name,u.u_sex,u.u_phone,m.app_time,m.app_id,m.app_priority,m.app_sta_id,s.sta_name,d.d_name,r1.r1_name,r1.r1_id,r2.r2_id,r2.r2_name" + 
 			"	FROM qus_user u,qus_appointment m,qus_status s,qus_doctor d,qus_order o,qus_room1 r1,qus_room2 r2" + 
 			"	WHERE s.sta_id=m.app_sta_id AND u.u_id=m.app_user_id AND d.d_id=m.app_doc_id AND m.app_id=o.o_app_id" + 
 			"	AND r1.r1_id=d.d_r1_id AND r2.r2_id=d.d_r2_id AND m.app_id=#{app_id}")
@@ -45,15 +45,16 @@ public interface QusUserDao {
 	 * @param user
 	 * @return
 	 */
-	@Update("<script> update qus_user set"
-			+"<if test='u_name != null'> u_name=#{u_name},</if>"
-			+"<if test='u_sex != null '> u_sex=#{u_sex},</if>"
-			+"<if test='u_phone !=null'> u_phone=#{u_phone},</if>"
-			
-			+" where u_id=#{u_id}"
+	@Update("<script> UPDATE qus_appointment a,qus_user u"
+			+"<if test=' u_name != null'>  u.u_name=#{u_name},</if>"
+			+"<if test='u_sex != null '> u.u_sex=#{u_sex},</if>"
+			+"<if test='u_phone !=null'> u.u_phone=#{u_phone},</if>"
+			+"<if test='app_time !=null'> a.app_time=#{app_time},</if>"
+			+"<if test='app_priority !=null'> a.app_priority=#{app_priority}</if>"
+			+" where a.app_id=#{app_id}"
 			+"</script>"
 			)
-	int updateUser(QusUser user);
+	int updateUser(QusAppointment user);
 	
 	
 	/**
