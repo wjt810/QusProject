@@ -56,7 +56,7 @@ public class PusInfoController {
 	}
 	@RequestMapping("/addInfo.html")
 	public int addNewsInfo(HttpServletRequest request,HttpSession session,@RequestParam("info_title") String info_title,
-			@RequestParam("`")String info_content) throws ParseException {
+			@RequestParam("info_content")String info_content) throws ParseException {
 		QusInfo info = new QusInfo();
 		
 		info.setInfo_content(info_content);

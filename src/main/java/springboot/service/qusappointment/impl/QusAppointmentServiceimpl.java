@@ -42,5 +42,21 @@ public class QusAppointmentServiceimpl implements QusAppointmentService {
 	public Integer deleteAppByuserId(Integer u_id) {
 		return qusAppointmentDao.deleteAppByuserId(u_id);
 	}
+	
+	/**
+	 * 添加约单
+	 */
+	@Override
+	public int addAppInfo(QusAppointment qusAppointment) {
+		return qusAppointmentDao.addAppInfo(qusAppointment);
+	}
+	
+	/**
+	 * 查询预约单的最后一条数据
+	 */
+	@Override
+	public QusAppointment getAppEndInfo() {
+		return qusAppointmentDao.getAppEndInfo();
+	}
 
 }

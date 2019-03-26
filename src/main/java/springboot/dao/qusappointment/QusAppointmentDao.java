@@ -1,5 +1,7 @@
 package springboot.dao.qusappointment;
 import org.apache.ibatis.annotations.Delete;
+import org.apache.ibatis.annotations.Insert;
+
 import java.util.List;
 import org.apache.ibatis.annotations.One;
 import org.apache.ibatis.annotations.Param;
@@ -51,4 +53,22 @@ public interface QusAppointmentDao {
 	
 	
 //	public List<QusAppointment> getUserByAppList();
+	
+	
+	/**
+	 * 添加约单（用户预约）
+	 * @param qusAppointment
+	 * @return
+	 */
+	@Insert("INSERT INTO qus_appointment (app_time, app_status, app_user_id, app_doc_id," 
+			+ "	app_priority, app_code, app_sta_id)"
+			+ "	VALUES(#{app_time},#{app_status},#{app_user_id},#{app_doc_id},#{app_priority},#{app_code},#{app_sta_id})")
+	public int addAppInfo(QusAppointment qusAppointment);
+	
+	/**
+	 * 获取预订单的最后一条数据
+	 * @return
+	 */
+	@Select("SELECT * FROM qus_appointment ORDER BY app_id DESC LIMIT 1")
+	public QusAppointment getAppEndInfo();
 }
