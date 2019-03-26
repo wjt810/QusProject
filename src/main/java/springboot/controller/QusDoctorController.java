@@ -151,7 +151,7 @@ public class QusDoctorController {
 		return "test/upload";
 	}
 
-	@RequestMapping(value="upload/uploadPic.do",method=RequestMethod.POST)  //@RequestParam("picture")MultipartFile picture,
+	/*@RequestMapping(value="upload/uploadPic.do",method=RequestMethod.POST)  //@RequestParam("picture")MultipartFile picture,
     public JSONObject uploadPic(@RequestParam(value="file",required=false) MultipartFile file, 
     		HttpServletRequest request, HttpServletResponse response) throws IllegalStateException, 
     IOException {  
@@ -160,7 +160,7 @@ public class QusDoctorController {
     		String dateStr="";
             String originalName = file.getOriginalFilename();
             System.out.println("fileName:\t"+originalName);
-           /* prefix=originalName.substring(originalName.lastIndexOf(".")+1);
+            prefix=originalName.substring(originalName.lastIndexOf(".")+1);
              dateStr = format.format(new Date());
             String filepath = request.getServletContext().getRealPath("/static") + uploadDir + dateStr + "." + prefix;
             filepath = filepath.replace("\\", "/");
@@ -170,7 +170,7 @@ public class QusDoctorController {
             if(!files.getParentFile().exists()){
                 files.getParentFile().mkdirs();
             }
-            file.transferTo(files);*/
+            file.transferTo(files);
         }
     	Map<String,Object> map2=new HashMap<>();
         Map<String,Object> map=new HashMap<>();
@@ -178,6 +178,6 @@ public class QusDoctorController {
         map.put("msg","");
         map.put("data",map2);
     	 return new JSONObject("hello");
-	}
+	}*/
 
 }

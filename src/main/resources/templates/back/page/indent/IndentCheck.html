@@ -65,8 +65,8 @@
 			<label class="layui-form-label">订单类型</label>
 			<div class="layui-input-block">
 				<select name="type" class="newsLook" lay-filter="browseLook" disabled="disabled">
-					 <option th:selected="${order.o_type='0'}" value="0">挂号</option>
-				     <option th:selected="${order.o_type='1'}" value="1">咨询</option>
+					 <option th:selected="${order.o_type==0}" value="0">挂号</option>
+				     <option th:selected="${order.o_type==1}" value="1">咨询</option>
 				</select>
 			</div>
 		</div>

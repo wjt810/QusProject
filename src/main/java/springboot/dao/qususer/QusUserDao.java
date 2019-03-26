@@ -71,4 +71,38 @@ public interface QusUserDao {
 	 */
 	@Delete("DELETE FROM qus_user WHERE u_id=#{u_id}")
 	public int deleteUserByuserId(@Param("u_id")Integer u_id);
+	
+	
+	
+	/**
+	 * 
+	 * 
+	 * 前台显示代码
+	 * 
+	 * 
+	 * 
+	 */
+	
+	
+	/**
+	 * 用户登录
+	 * @param u_name 名称
+	 * @param u_password 密码
+	 * @return
+	 */
+	@Select("SELECT * FROM qus_user WHERE u_name=#{u_name} and u_password = #{u_password}")
+	public List<QusUser> getUserLogin(@Param("u_name") String u_name,@Param("u_password") String u_password);
+	
+	/**
+	 * 根据id查找用户的信息
+	 * @param u_id
+	 * @return
+	 */
+	@Select("SELECT * FROM qus_user where u_id=#{u_id}")
+	public QusUser findUserById(@Param("u_id")Integer u_id);
+	
+	
+	@Update("UPDATE qus_user SET u_password =#{pwd} WHERE u_id = #{id}")
+	public int changePwd(@Param("pwd")String pwd,@Param("id")Integer id);
+	
 }

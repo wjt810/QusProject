@@ -108,4 +108,26 @@ public class QusUserTest {
 		QusAppointment user=qusUserService.getUserById(app_id);
 		System.out.println(user.getApp_id());
 	}
+	
+	
+	@Test
+	public void testUserLogin() {
+		String u_name="熊欣欣";
+		String u_password="123123";
+		List<QusUser> userList=qusUserService.getUserLogin(u_name, u_password);
+		if(userList.size()>0) {
+			if(userList.get(0).getU_role_id()==4) {
+				System.out.println("登录成功");
+			}
+		}else {
+			System.out.println("登录失败");
+		}
+	}
+	
+	@Test
+	public void testUserByUid() {
+		Integer u_id=2;
+		QusUser user=qusUserService.findUserById(u_id);
+		System.out.println(user.getU_card());
+	}
 }

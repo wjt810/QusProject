@@ -1,14 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head lang="en">
     <meta charset="UTF-8">
     <title>预约流程</title>
     <link rel="stylesheet" type="text/css" href="pre/res/static/css/main.css">
     <link rel="stylesheet" type="text/css" href="pre/res/layui/css/layui.css">
     <script type="text/javascript" src="pre/res/layui/layui.js"></script>
-    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
-    <link rel="stylesheet" href="css/bootstrap.css"/>
-    <script src="js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="pre/js/jquery-1.12.4.js"></script>
+    <link rel="stylesheet" href="/pre/css/bootstrap.css"/>
+    <script src="pre/js/jquery-1.8.2.min.js"></script>
+    <!--导航条-->
+	<link href="http://www.mingyihui.net/templates/skins/red2017/css/header.css?v=20171018" rel="stylesheet">
     <!--<link href="http://www.mingyihui.net/templates/skins/red2017/css/login.css?V" rel="stylesheet">
     <link href="http://www.mingyihui.net/templates/skins/red2017/css/iconfont.css?V" rel="stylesheet">
     <link href="http://passport.mingyihui.net/templates/skins/red2017/pc/css/login1.css?v=20171017}" rel="stylesheet">
@@ -26,11 +28,13 @@
           content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
 </head>
-<body>
 <style>
-    .title{
+   .title{
         font-family: "微软雅黑";
         color:green;
+    }
+    .title:hover{
+        background: rgba(50,200,50,0.3);
     }
     .mallLogo a:hover{
         text-decoration: none;
@@ -51,6 +55,10 @@
         color: white;
         text-decoration: none;
     }
+     .fl #right{
+            position: relative;
+            left:650px;
+        }
 </style>
 <style>
     .crumbs a{
@@ -66,31 +74,43 @@
         background-color:green ;
         color: white;
     }
+    
 </style>
+<body id="list-cont">
 <!--导航条-->
-<div class="site-nav-bg">
-    <div class="site-nav w1200">
-        <p class="sn-back-home">
-            <i class="layui-icon layui-icon-home"></i>
-            <a href="/pre">首页</a>
-        </p>
-        <div class="sn-quick-menu">
-            <div class="login"><a href="/login">登录</a></div>
-            <div class="sp-cart"><a href="/shopcart">我的约单</a><span>2</span></div>
-            <div class="nav1">
-                <ul class="layui-nav">
-                    <li class="layui-nav-item" lay-unselect="">
-                        <a href="/information">个人中心</a>
-                        <dl class="layui-nav-child">
-                            <dd><a href="javascript:;">修改信息</a></dd>
-                            <dd><a href="javascript:;">安全管理</a></dd>
-                            <dd><a href="javascript:;">退出</a></dd>
-                        </dl>
+<div class="g_top">
+    <div class="w1200 g_top_contant">
+        <div class="w1200 g_top_contant">
+            <!--未登录-->
+            <div class="fl" id="notLogin">
+                <ul class="login-registration">
+                    <li class="on popup_li" th:if="${session.user == null}"><!-- javascript:jumpLogin(); -->
+                        <a href="/pre/login" target="_self"style="color: green;">登录</a>
                     </li>
-                    <li class="layui-nav-item" lay-unselect="">
-                        <a href="/about">关于我们</a>
+                    <li class="on zhuce">
+                        <a href="javascript:jumpRegister();" target="_self"style="color: green;">注册</a>
                     </li>
                 </ul>
+                <ul class="login-registration">
+                    <li class="on popup_li">
+                        <span class="top_nav_icon"></span>
+                    </li>
+                </ul>
+                <ul class="login-registration" id="right">
+                    <li class="on zhuce">
+                        <a href="/set" target="_self"style="color: green;">我的约单</a>
+                    </li>
+                    <li class="on zhuce">
+                        <a href="/index" target="_self"style="color: green;">个人中心</a>
+                    </li>
+                    <li class="on zhuce">
+                        <a href="/about" target="_self"style="color: green;">关于我们</a>
+                    </li>
+                    <li class="layui-nav-item" lay-unselect="">
+                        <a href="#">退出</a>
+                    </li>
+                </ul>
+                <div class="clr"></div>
             </div>
         </div>
     </div>
@@ -183,7 +203,7 @@
                                 </div>
                             </li>
                         </ul>
-                        <button class="orderNext"style="background: green;position: relative;right: 100px;" onclick="tijiao()">提交</button>
+                        <!-- <button class="orderNext"style="background: green;position: relative;right: 100px;" onclick="tijiao()">提交</button> -->
                     </div>
 
                 </div>

@@ -74,9 +74,9 @@
 			<label class="layui-form-label">状态</label>
 			<div class="layui-input-block">
 				<select name="status" id="status" class="newsLook" lay-filter="browseLook">
-					<option th:selected="${order.o_status==0}" th:value="0">已付款</option>
-					<option th:selected="${order.o_status==1}" th:value="1">已取消</option>
-					<option th:selected="${order.o_status==2}" th:value="2">已完成</option>
+					<option th:selected="${order.o_status=='0'}" th:value="0">已付款</option>
+					<option th:selected="${order.o_status=='1'}" th:value="1">已取消</option>
+					<option th:selected="${order.o_status=='2'}" th:value="2">已完成</option>
 				</select>
 			</div>
 		</div>

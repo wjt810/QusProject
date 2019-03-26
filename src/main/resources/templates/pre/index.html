@@ -7,8 +7,10 @@
     <link rel="stylesheet" type="text/css" href="pre/res/layui/css/layui.css">
     <script type="text/javascript" src="pre/res/layui/layui.js"></script>
     <script type="text/javascript" src="pre/js/jquery-1.12.4.js"></script>
-    <link rel="stylesheet" href="pre/css/bootstrap.css"/>
-    <script src="js/bootstrap.js"></script>
+    <link rel="stylesheet" th:href="@{/pre/css/bootstrap.css}"/>
+    <script type="text/javascript" th:src="@{/pre/js/bootstrap.js}"></script>
+    <!--导航条-->
+	<link href="http://www.mingyihui.net/templates/skins/red2017/css/header.css?v=20171018" rel="stylesheet">
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
@@ -84,42 +86,56 @@
         color: white;
         text-decoration: none;
     }
+     .fl #right{
+            position: relative;
+            left:650px;
+        }
 </style>
 <body id="list-cont">
 <!--导航条-->
-    <div class="site-nav-bg">
-        <div class="site-nav w1200">
-            <p class="sn-back-home">
-                <i class="layui-icon layui-icon-home"></i>
-                <a href="/pre">首页</a>
-            </p>
-            <div class="sn-quick-menu">
-                <div class="login"><a href="/login">登录</a></div>
-                <div class="sp-cart"><a href="/shopcart">我的约单</a><span>2</span></div>
-                <div class="nav1">
-                    <ul class="layui-nav">
-                        <li class="layui-nav-item" lay-unselect="">
-                            <a href="/information">个人中心</a>
-                            <dl class="layui-nav-child">
-                                <dd><a href="javascript:;">修改信息</a></dd>
-                                <dd><a href="javascript:;">安全管理</a></dd>
-                                <dd><a href="javascript:;">退出</a></dd>
-                            </dl>
-                        </li>
-                        <li class="layui-nav-item" lay-unselect="">
-                            <a href="/about">关于我们</a>
-                        </li>
-                    </ul>
-                </div>
+<div class="g_top">
+    <div class="w1200 g_top_contant">
+        <div class="w1200 g_top_contant">
+            <!--未登录-->
+            <div class="fl" id="notLogin">
+                <ul class="login-registration">
+                    <li class="on popup_li" th:if="${session.user != null}"><!-- javascript:jumpLogin(); -->
+                        <a href="/pre/login" target="_self" style="color: green;">登录</a>
+                    </li>
+                    <li class="on zhuce">
+                        <a href="javascript:jumpRegister();" target="_self"style="color: green;">注册</a>
+                    </li>
+                </ul>
+                <ul class="login-registration">
+                    <li class="on popup_li">
+                        <span class="top_nav_icon"></span>
+                    </li>
+                </ul>
+                <ul class="login-registration" id="right">
+                    <li class="on zhuce">
+                        <a href="/set" target="_self"style="color: green;">我的约单</a>
+                    </li>
+                    <li class="on zhuce">
+                        <a href="/index" target="_self"style="color: green;">个人中心</a>
+                    </li>
+                    <li class="on zhuce">
+                        <a href="/about" target="_self"style="color: green;">关于我们</a>
+                    </li>
+                    <li class="layui-nav-item" lay-unselect="">
+                        <a href="#">退出</a>
+                    </li>
+                </ul>
+                <div class="clr"></div>
             </div>
         </div>
     </div>
+</div>
 <!--头部-->
 <div class="header">
     <div class="headerLayout w1200">
         <div class="headerCon">
             <h1 class="mallLogo">
-                <a href="pre/index.html" title="logo"class="title">
+                <a href="/pre" title="logo"class="title">
                     <img src="pre/images/logo.jpg"style="width: 82px;height: 60px;">预医网
                 </a>
             </h1>

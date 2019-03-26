@@ -19,7 +19,16 @@ public class QusAppointment {
 	private String app_code; // varchar(50)预约编号
 	private Integer app_sta_id;  //用户状态
 	
+	private String time;
 	
+	public String getTime() {
+		return time;
+	}
+
+	public void setTime(String time) {
+		this.time = time;
+	}
+
 	public Integer getApp_sta_id() {
 		return app_sta_id;
 	}

@@ -2,7 +2,9 @@ package springboot.controller;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -13,6 +15,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -108,5 +111,19 @@ public class UsersController {
 		return count3;
 	}
 	
+	@RequestMapping("/changePwd")
+	@ResponseBody
+	public Object changePwd(@RequestParam("pwd")String pwd) {
+		Map<String, String> map = new HashMap<String,String>();
+		QusUser user=qusUserService.findUserById(2);
+		if(qusUserService.changPwd(pwd, user.getU_id())) {
+			System.out.println("密码修改成功");
+			map.put("result", "success");
+		}else {
+			System.out.println("密码修改失败");	
+			map.put("result", "error");
+		}
+		return map;
+	}
 	
 }

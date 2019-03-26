@@ -39,4 +39,35 @@ public interface QusUserService {
 	
 	
 	
+	
+	/**
+	 * 
+	 * 
+	 * 前台代码
+	 * 
+	 * 
+	 */
+	
+	/**
+	 * 用户登录
+	 * @param u_name
+	 * @param u_password
+	 * @return
+	 */
+	public List<QusUser> getUserLogin(String u_name,String u_password);
+	
+	/**
+	 * 根据id查找用户的信息
+	 * @param u_id
+	 * @return
+	 */
+	public QusUser findUserById(Integer u_id);
+	
+	/**
+	 * 修改密码
+	 * @param pwd
+	 * @param id
+	 * @return
+	 */
+	public Boolean changPwd(String pwd,Integer id);
 }

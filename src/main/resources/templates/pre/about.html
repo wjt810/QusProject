@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>关于我们</title>
@@ -8,11 +8,11 @@
     <script type="text/javascript" src="pre/res/layui/layui.js"></script>
     <style id="znBdcsStyle" type="text/css">
         div#popup-searchbox{position:fixed;bottom:0;z-index:10;font-size:12px}#popup-searchbox .popupbox-item{border:solid 1px;position:relative}#popup-box-detail .bdcs-container .bdcs-hot{margin-top:5px}#popup-top{border-bottom:solid 1px #ececec}#popup-back{padding-right:5px;padding-left:5px;display:inline-block;*display:inline;*zoom:1;font-size:18px;border-left:solid 1px;height:29px;cursor:pointer;float:right}#popup-top .top-bg{margin-left:10px;float:left}#popup-box-detail{padding:20px}#popup-searchbox input{border:solid 1px;margin-right:0;text-indent:.5em}#popup-box-detail #popup-search-form-submit{}#popup-searchbox .popup-icon{height:40px;width:40px;background:url(http://znsv.baidu.com/static/customer-search/img/search-icon.png) no-repeat center center}#popup-searchbox .pop-submit-magnifier{background:url(http://znsv.baidu.com/static/customer-search/img/search-icon.png) no-repeat center center;text-indent:-999em}#popup-searchbox #popup-search-form-submit{padding:0;width:40px;text-align:center;position:relative}html[data-useragent*='MSIE 10.0'] #popup-box #popup-searchbox #popup-search-form-submit{top:0}#popup-box-detail a{font-size:12px;text-decoration:none;padding:3px;display:inline-block}#popup-hot{float:none;width:100%;margin-top:10px;overflow:hidden}.popup-search-sug-list-item{cursor:pointer}.popup-search-sug-list-item-value{position:relative;left:5px}.popup-search-sug-list-item-author-novel,.popup-search-sug-list-item-author-music,.popup-search-sug-list-item-type-movie{color:#BABABA}.popup-search-sug-list-item-author-novel,.popup-search-sug-list-item-author-music{position:relative;left:5px}.popup-search-sug-list-item-music{overflow:hidden;*zoom:1}#popup-search-sug .popup-search-sug-list-item-current{background-color:#F5F5F5}#popup-search-sug .popup-search-sug-list-item-value-movie{float:left}#popup-search-sug .popup-search-sug-list-item-type-movie{float:right;margin-right:5px}#popup-search-form-input{border-radius:0;float:none;padding:0;vertical-align:middle}#popup-search-form-submit{border-radius:0;float:none;vertical-align:middle}div#popup-searchbox .popup-channel-meun{position:relative;width:75px;display:inline-block;vertical-align:middle;background:#fff;cursor:pointer}div#popup-searchbox .popup-channel-current{border:1px solid;position:relative;width:100%;border-right:0}div#popup-searchbox .popup-channel-current span{margin-left:8px}div#popup-searchbox .popup-channel-current i{overflow:hidden;width:0;height:0;border-width:6px 6px 0;border-color:#9E9E9E #fff;border-style:solid;display:block;position:absolute;right:10px;top:15px}div.cse-popup-channel-container{display:block;position:absolute;z-index:30061000000}div.cse-popup-channel-container .popup-channel-list{display:none;width:99%;list-style:none;background:#fff;border:1px solid #DDD;border-top:0;margin:0;padding:0;overflow:auto;height:62px}div.cse-popup-channel-container .popup-channel-list li{background:0 0;line-height:21px;list-style:none;padding-left:7px;cursor:pointer;display:block}div.cse-popup-channel-container .popup-channel-list li:hover{background:#DDD}#popup-searchbox .popupbox-item{height:150px;width:350px;border-color:#ececec;}#popup-top{background-color:#f5f5f5;height:30px;color:#666666;font-family:微软雅黑;font-size:14px;font-weight:normal;}#popup-box-detail{background-color:#fff;}#popup-searchbox .popup-icon{background-color:#1a89ed;}#popup-searchbox input{height:35px;width:250px;border-color:#ececec;background-color:#fff;color:#666666;font-family:微软雅黑;font-size:12px;font-weight:normal;}#popup-searchbox input:focus{border-color:#1a89ed;}#popup-searchbox #popup-search-form-submit{background-color:#1a89ed;border-color:#1a89ed;color:#ffffff;font-family:微软雅黑;font-size:14px;font-weight:normal;}#popup-top{border-bottom-color:}#popup-back{border-left-color:}#popup-back{color:}#popup-searchbox #popup-search-form-submit{position:relative;left:0px}#popup-hot{width:310px}#popup-box-detail{height:120px}#popup-searchbox #popup-search-form-submit{height:35px}#popup-search-form-input{line-height:35px;}#popup-searchbox{position:fixed;left:0px;}#bdcs-rec{display:none;}</style>
-    <script src="js/bootstrap.js"></script>
+    <script src="pre/js/bootstrap.js"></script>
     <script src="http://www.googletagservices.com/activeview/js/current/osd.js?cb=%2Fr20100101"></script>
     <script src="http://pagead2.googlesyndication.com/pub-config/r20160913/ca-pub-4047296578432934.js"></script>
     <script id="google_shimpl" src="http://pagead2.googlesyndication.com/pagead/js/r20190214/r20190131/show_ads_impl.js"></script>
-    <script src="http://znsv.baidu.com/customer_search/api/js?sid=11363081882486450138&amp;plate_url=http%3A%2F%2Fwww.mingyihui.net%2Fask%2F%2Fconsult%2Fservices.html&amp;t=430729" type="text/javascript" async=""></script><script src="http://www.google-analytics.com/analytics.js" async=""></script><script src=" http://hm.baidu.com/h.js?d9d2e52c92d7e2ea3334b898b5eda1c6"></script>
+   
     <link href="http://www.mingyihui.net/templates/skins/red2017/css/reset.css?v=20160924" rel="stylesheet">
     <link href="http://www.mingyihui.net/templates/skins/red2017/css/style.css?v=20160924" rel="stylesheet">
     <link href="http://www.mingyihui.net/templates/skins/red2017/css/popup.css?v=20160924" rel="stylesheet">
@@ -23,7 +23,8 @@
     <script src="http://www.mingyihui.net/templates/skins/red2017/js/myjs.js?v=20160924" type="text/javascript"></script><!--右边悬浮二维码-->
     <link rel="stylesheet" type="text/css" href="pre/res/static/css/main.css"><!--尾部样式导入-->
     <link rel="stylesheet" type="text/css" href="pre/res/layui/css/layui.css"><!--预医网logo样式-->
-    <link rel="stylesheet" href="css/bootstrap.css"/><!--板块的小部件样式-->
+    <link rel="stylesheet" href="pre/css/bootstrap.css"/><!--板块的小部件样式-->
+    <link rel="stylesheet" th:href="@{/pre/css/header.css}"/>
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
@@ -71,29 +72,48 @@
         left: 20px;
         top: 30px;
     }
+    .fl #right{
+            position: relative;
+            left:650px;
+        }
+    .login-registration a{
+    	font-size:14px;
 </style>
 <body>
-<!--首页and导航-->
-<div class="site-nav-bg">
-    <div class="site-nav w1200">
-        <p class="sn-back-home">
-            <i class="layui-icon layui-icon-home"></i>
-            <a href="/pre">首页</a>
-        </p>
-        <div class="sn-quick-menu">
-            <div class="login"><a href="/login">登录</a></div>
-            <div class="sp-cart"><a href="/shopcart">我的约单</a><span>2</span></div>
-            <div class="nav1">
-                <ul class="layui-nav">
-                    <li class="layui-nav-item" lay-unselect="">
-                        <a href="javascript:;">个人中心</a>
-                        <dl class="layui-nav-child">
-                            <dd><a href="javascript:;">修改信息</a></dd>
-                            <dd><a href="javascript:;">安全管理</a></dd>
-                            <dd><a href="javascript:;">退出</a></dd>
-                        </dl>
+<!--导航条-->
+<div class="g_top">
+    <div class="w1200 g_top_contant">
+        <div class="w1200 g_top_contant">
+            <!--未登录-->
+            <div class="fl" id="notLogin">
+                <ul class="login-registration">
+                    <li class="on popup_li" th:if="${session.user == null}"><!-- javascript:jumpLogin(); -->
+                        <a href="/pre/login" target="_self"style="color: green;">登录</a>
+                    </li>
+                    <li class="on zhuce">
+                        <a href="javascript:jumpRegister();" target="_self"style="color: green;">注册</a>
                     </li>
                 </ul>
+                <ul class="login-registration">
+                    <li class="on popup_li">
+                        <span class="top_nav_icon"></span>
+                    </li>
+                </ul>
+                <ul class="login-registration" id="right">
+                    <li class="on zhuce">
+                        <a href="/set" target="_self"style="color: green;">我的约单</a>
+                    </li>
+                    <li class="on zhuce">
+                        <a href="/index" target="_self"style="color: green;">个人中心</a>
+                    </li>
+                    <li class="on zhuce">
+                        <a href="/about" target="_self"style="color: green;">关于我们</a>
+                    </li>
+                    <li class="layui-nav-item" lay-unselect="">
+                        <a href="#">退出</a>
+                    </li>
+                </ul>
+                <div class="clr"></div>
             </div>
         </div>
     </div>
@@ -128,8 +148,8 @@
     <!-- 右边浮动窗口 -->
     <div class="H_posi">
         <ul>
-            <li class="shouji"><a href="javascript:;" target="_self"></a><img src="images/weixin.png"></li>
-            <li class="erweima"><a href="javascript:;" target="_self"></a><img src="images/qqyuyiwang.jpg"></li>
+            <li class="shouji"><a href="javascript:;" target="_self"></a><img src="pre/images/weixin.png"></li>
+            <li class="erweima"><a href="javascript:;" target="_self"></a><img src="pre/images/qqyuyiwang.jpg"></li>
             <li class="H_on"><a href="#" target="_self"></a></li>
             <li class="top"><a href="#top" target="_self"></a></li>
         </ul>

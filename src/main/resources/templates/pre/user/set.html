@@ -1,15 +1,14 @@
-
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="utf-8">
   <title>帐号设置</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="keywords" content="fly,layui,前端社区">
   <meta name="description" content="Fly社区是模块化前端UI框架Layui的官网社区，致力于为web开发提供强劲动力">
-  <link rel="stylesheet" href="pre/res1/layui/css/layui.css">
-  <link rel="stylesheet" href="pre/css/global.css">
-  <link rel="stylesheet" type="text/css" href="pre/res1/static/css/main.css">
+  <link rel="stylesheet" th:href="@{/pre/res1/layui/css/layui.css}">
+  <link rel="stylesheet" th:href="@{/pre/css/global.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/pre/res1/static/css/main.css}">
 </head>
 <body>
 
@@ -24,13 +23,13 @@
     <ul class="layui-nav fly-nav-user">
       <li class="layui-nav-item" style="margin-top: 12px">
         <a class="fly-nav-avatar" href="javascript:;">
-          <cite class="layui-hide-xs">贤心</cite>
+          <cite class="layui-hide-xs">[[${session.user.u_name}]]</cite>
           <i class="iconfont icon-renzheng layui-hide-xs" title="认证信息：layui 作者"></i>
           <img src="https://tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg">
         </a>
         <dl class="layui-nav-child">
-          <dd><a href="/set"><i class="layui-icon">&#xe665;</i>管理中心</a></dd>
-          <hr style="margin: 5px 0;">
+          <!-- <dd><a href="/set"><i class="layui-icon">&#xe665;</i>管理中心</a></dd>
+          <hr style="margin: 5px 0;"> -->
           <dd><a href="" style="text-align: center;">退出</a></dd>
         </dl>
       </li>
@@ -53,12 +52,6 @@
         管理中心
       </a>
     </li>
-    <li class="layui-nav-item">
-      <a href="/message">
-        <i class="layui-icon">&#xe665;</i>
-        管理中心
-      </a>
-    </li>
   </ul>
 
   <div class="site-tree-mobile layui-hide">
@@ -76,7 +69,7 @@
     <div class="layui-tab layui-tab-brief" lay-filter="user">
       <ul class="layui-tab-title" id="LAY_mine">
         <li class="layui-this" lay-id="info">我的约单</li>
-        <li lay-id="avatar">我的优惠卷</li>
+        <li lay-id="avatar"></li>
         <li lay-id="pass">密码</li>
         <li lay-id="bind">帐号绑定</li>
       </ul>
@@ -84,16 +77,22 @@
         <div class="layui-form layui-form-pane layui-tab-item layui-show">
           <table class="layui-table" lay-skin="line">
             <tr>
-              <th>约单号</th>
+              <th>预约编号</th>
+              <th>预约时间</th>
+              <th>预约状态</th>
+              <th>预约医生</th>
+              <th>是否优先</th>
+              <th>约单状态</th>
             </tr>
-            <tr>
-              <td>001</td>
-            </tr>
-            <tr>
-              <td>002</td>
-            </tr>
-            <tr>
-              <td>003</td>
+            <tr th:each="app:${applist}">
+              <td th:text="${app.app_code}"></td>
+              <td th:text="${app.time}"></td>
+              <td th:text="${app.qusStatus.sta_name}"></td>
+              <td th:text="${app.qusDoctor.d_name}"></td>
+              <td th:if="${app.app_priority == 0}">优先</td>
+              <td th:if="${app.app_priority == 1}">不优先</td>
+              <td th:if="${app.app_status == 0}">失效</td>
+              <td th:if="${app.app_status == 1}">有效</td>
             </tr>
           </table>
           </div>
@@ -112,28 +111,35 @@
           </div>
           
           <div class="layui-form layui-form-pane layui-tab-item">
-            <form action="/user/repass" method="post">
+            <form action="/pre" method="post">
+            	<div class="layui-form-item mes" style="display:none">
+					<label class="layui-form-label"></label>
+					<div class="layui-input-block">
+						<input type="text" id="pwd" th:value="${session.user.u_password}" disabled
+							class="layui-input layui-disabled">
+					</div>
+				</div>
               <div class="layui-form-item">
                 <label for="L_nowpass" class="layui-form-label">当前密码</label>
                 <div class="layui-input-inline">
-                  <input type="password" id="L_nowpass" name="nowpass" required lay-verify="required" autocomplete="off" class="layui-input">
+                  <input type="password" id="oldPwd" name="nowpass" required lay-verify="required" autocomplete="off" class="layui-input">
                 </div>
               </div>
               <div class="layui-form-item">
                 <label for="L_pass" class="layui-form-label">新密码</label>
                 <div class="layui-input-inline">
-                  <input type="password" id="L_pass" name="pass" required lay-verify="required" autocomplete="off" class="layui-input">
+                  <input type="password" id="newPwd" name="pass" required lay-verify="required" autocomplete="off" class="layui-input">
                 </div>
                 <div class="layui-form-mid layui-word-aux">6到16个字符</div>
               </div>
               <div class="layui-form-item">
                 <label for="L_repass" class="layui-form-label">确认密码</label>
                 <div class="layui-input-inline">
-                  <input type="password" id="L_repass" name="repass" required lay-verify="required" autocomplete="off" class="layui-input">
+                  <input type="password" id="confirmPwd" name="repass" required lay-verify="required" autocomplete="off" class="layui-input">
                 </div>
               </div>
               <div class="layui-form-item">
-                <button class="layui-btn" key="set-mine" lay-filter="*" lay-submit>确认修改</button>
+                <button class="layui-btn" key="set-mine" lay-filter="changePwd" lay-submit="">确认修改</button>
               </div>
             </form>
           </div>
@@ -142,7 +148,7 @@
             <div class="layui-form-item">
               <label for="L_nowpass" class="layui-form-label">旧手机号</label>
               <div class="layui-input-inline">
-                <input type="password" id="L_nowpass" name="oldPhone" required lay-verify="required" autocomplete="off" class="layui-input">
+                <input type="password" id="oldPhone" name="oldPhone" required lay-verify="required" autocomplete="off" class="layui-input">
               </div>
             </div>
 
@@ -151,14 +157,14 @@
                 <label for="L_nowpass" class="layui-form-label">验证码</label>
               </div>
               <div class="layui-input-inline">
-                <input type="password" id="L_nowpass" name="code" required lay-verify="required" autocomplete="off" class="layui-input">
+                <input type="password" id="code" name="code" required lay-verify="required" autocomplete="off" class="layui-input">
               </div>
             </div>
 
             <div class="layui-form-item">
               <label for="L_nowpass" class="layui-form-label">新手机号</label>
               <div class="layui-input-inline">
-                <input type="password" id="L_nowpass" name="newPhone" required lay-verify="required" autocomplete="off" class="layui-input">
+                <input type="password" id="newPhone" name="newPhone" required lay-verify="required" autocomplete="off" class="layui-input">
               </div>
             </div>
 
@@ -173,23 +179,60 @@
 
 
 
-<script src="pre/res1/layui/layui.all.js"></script>
-<script>
+<script th:src="@{/pre/res1/layui/layui.all.js}"></script>
+<script type="text/javascript" th:src="@{/pre/js/jquery-1.8.2.min.js}"></script>
+<script type="text/javascript">
+layui.use(['form','layer','upload','laydate'],function(){
+	var form = layui.form;
+	var layer = parent.layer === undefined ? layui.layer : parent.layer;
+	
+	form.on("submit(changePwd)",function(data){
+		var oldPwd = $("#oldPwd").val();
+		var newPwd = $("#newPwd").val();
+		var confirmPwd = $("#confirmPwd").val();
+		var pwd = $("#pwd").val();
+		if(oldPwd == pwd){
+			if(newPwd == confirmPwd){
+				$.ajax({
+					type:"GET",
+					url:"/user/changePwd",
+					dataType:"JSON",
+					data:{"pwd":newPwd},
+					success:function(data){
+	 					if(data.result == "success"){
+	 			        	layer.msg("修改成功！");
+	 					}
+					}
+				})
+			}else{
+				layer.msg("两次密码不一致");
+				return false;
+			}
+		}else{
+			layer.msg("旧密码不正确");
+			return false;
+		}
+	}) 
+})
+	
+	
+</script>
+<!-- <script>
 layui.cache.page = 'user';
 layui.cache.user = {
   username: '游客'
   ,uid: -1
-  ,avatar: 'pre/res/images/avatar/00.jpg'
+  ,avatar: '/pre/res/images/avatar/00.jpg'
   ,experience: 83
   ,sex: '男'
 };
 layui.config({
   version: "2.0.0"
-  ,base: 'pre/res/mods/'
+  ,base: '/pre/res/mods/'
 }).extend({
   fly: 'index'
 }).use('fly');
-</script>
+</script> -->
 
 </body>
 </html>

@@ -1,150 +1,136 @@
 <!DOCTYPE html>
-<html>
-<head lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
     <meta charset="UTF-8">
-    <title>登录</title>
-
+    <title>预医网登录</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/pre/res/static/css/main.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/pre/res/layui/css/layui.css}">
+    <script type="text/javascript" th:src="@{/pre/res/layui/layui.js}"></script>
+    <script type="text/javascript" th:src="@{/pre/js/jquery-1.12.4.js}"></script>
+    <link rel="stylesheet" th:href="@{/pre/css/bootstrap.css}"/>
+    <link rel="stylesheet" th:href="@{/pre/css/header.css}"/>
+    <script type="text/javascript" th:src="@{/pre/js/bootstrap.js}"></script>
+    <!--导航条-->
+    <link href="http://www.mingyihui.net/templates/skins/red2017/css/header.css?v=20171018" rel="stylesheet">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0 "/>
-    <link rel="stylesheet" href="css/bootstrap.css"/>
-    <script src="js/jquery-1.12.4.js"></script>
-    <script src="js/bootstrap.js"></script>
-</head>
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <style>
+        a, a:focus, a:hover {
+            text-decoration: none;
+        }
+        a, fieldset, img {
+            border: 0;
+        }
+        abbr, address, article, aside, audio, b, blockquote, body, canvas, caption, cite, code, dd, del, details, dfn, div, dl, dt, em, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, p, pre, q, samp, section, small, span, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, ul, var, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            outline: 0;
+            vertical-align: baseline;
+            background: 0 0;
+            font-family: "微软雅黑";
+            font-size: 12px;
+        }
+        body {
+            line-height: 1;
+        }
+        .loginMain {
+            height: 900px;
+            width: 100%;
+            background: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+        .imgCodeBox {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            background: rgba(0, 0, 0, .8);
+            z-index: 99;
+            display: none;
+        }
+
+        input, select {
+            vertical-align: middle;
+            outline: 0;
+        }
+        input {
+            -webkit-box-shadow: 0 0 0 1000px #fff inset;
+        }
+        .imgCodeth input {
+            width: 200px;
+            height: 30px;
+            font-size: 14px;
+            font-weight: 700;
+            border: 1px solid #999;
+            padding-left: 5px;
+        }
+        .imgBg img {
+            float: left;
+            margin-right: 10px;
+        }
+        .imgBg span {
+            font-size: 14px;
+            color: #e62435;
+            line-height: 2;
+            cursor: pointer;
+        }
+        .loginBg {
+            width: 100%;
+            height: 340px;
+            background: green;
+        }
+        .loginInpText {
+            position: absolute;
+            top:200px;
+            left: 50%;
+            width: 800px;
+            height: 350px;
+            background: #fff;
+            border-radius: 16px;
+            z-index: 99;
+            transform: translate(-50%, 90px);
+            -webkit-box-shadow: 0px 9px 30px 0px rgba(230, 36, 53, 0.1);
+            -moz-box-shadow: 0px 9px 30px 0px rgba(230, 36, 53, 0.1);
+            box-shadow: 0px 9px 30px 0px rgba(230,36,53,0.1);
+        }
+        .inputBox {
+            overflow: hidden;
+            padding: 65px;
+            position: relative;
+        }
         .inputBox .helpText {
             position: absolute;
-            top: 54px;
-            right: 22px;
+            top: 20px;
+            right: 20px;
             font-size: 14px;
             color: #333;
         }
-
-        .inputBox_l,
-        .inputBox_c,
-        .inputBox_r {
+        .backPage {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .inputBox_l, .inputBox_c, .inputBox_r {
             float: left;
         }
-        .agreement img {
-            float: right;
-            width: 14px;
-            height: 14px;
-            padding-right: 5px;
+        .inputBox_c {
+            width: 170px;
+            height: 300px;
+            position: relative;
         }
-        .agreement a {
-            float: right;
-            color: #666;
-            font-size: 12px;
-            line-height: 1.2;
+        .inputBox_r {
+            position: relative;
+            top:-40px;
         }
         .inputBox_r ul li {
             overflow: hidden;
         }
-        .inputBox_r ul li svg {
-            width: 15px;
-            height: 15px;
-        }
-        .inputBox_l h2 {
-            font-size: 28px;
-            color: #333;
-            line-height: 40px;
-        }
-        .inputBox_l h2 span {
-            color: #e62435;
-        }
-        .inputBox_l .tips {
-            font-size: 14px;
-            color: #666;
-            line-height: 20px;
-            width: 315px;
-        }
-        .inputBox_l .tips span {
-            color: #e62435;
-        }
-        .inputTelBox input {
-            width: 100%;
-            height: 44px;
-            padding-top: 5px;
-            border: 0;
-            line-height: 44px;
-            font-size: 22px;
-            color: #333;
-            font-weight: 700;
-            caret-color: #e62435;
-            -webkit-box-shadow: 0 0 0 1000px #fff inset;
-        }
-
-        /*下一步*/
-        .nextBind,
-        .nextInfor {
-            color: #fff;
-            width: 305px;
-            height: 50px;
-            background: green;
-            border-radius: 4px;
-            font-size: 16px;
-            text-align: center;
-            margin: 30px 0 15px 0;
-            line-height: 50px;
-            cursor: pointer;
-        }
-
-        .weixinlog {
-            width: 305px;
-            height: 42px;
-            background: rgba(255, 255, 255, 1);
-            border-radius: 4px;
-            border: 1px solid #999;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-        }
-
-        .weixinlog img {
-            width: 22px;
-            height: 18px;
-            padding-right: 5px;
-        }
-
-        .weixinlog span {
-            font-size: 16px;
-            color: #333;
-        }
-
-        .inputBox_c {
-            width: 140px;
-            height: 300px;
-            position: relative;
-        }
-
-        .inputBox_c p {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: #ddd;
-        }
-
-        .inputBox_c p::before {
-            content: "";
-            top: 35px;
-            width: 1px;
-            height: 115px;
-            position: absolute;
-            left: 4px;
-            background: #ddd;
-        }
-
-        .inputBox_c p::after {
-            content: "";
-            bottom: 35px;
-            width: 1px;
-            height: 115px;
-            position: absolute;
-            left: 4px;
-            background: #ddd;
-        }
-
         .inputBox_r ul li {
             border: 1px solid #ddd;
             width: 140px;
@@ -156,123 +142,69 @@
             justify-content: center;
             align-items: center;
         }
-
         .inputBox_r ul li:first-child {
             margin-top: 70px;
         }
-
         .inputBox_r ul li img {
             width: 15px;
             height: 15px;
             margin-right: 5px;
         }
-
         .inputBox_r ul li span {
             font-size: 14px;
             color: #333;
             line-height: 1.2;
         }
-
-        .inputInforText {
-            padding: 50px 0;
-            overflow: hidden;
-        }
-
-        .inputInforText input {
-            float: left;
-            width: 60px;
-            height: 80px;
-            border: 1px solid #ccc;
-            margin-right: 25px;
-            border-radius: 4px;
-            font-size: 48px;
-            color: #333;
-            text-align: center;
-            line-height: 80px;
-            -webkit-box-shadow: 0 0 0 1000px #fff inset;
-        }
-
-        .inputInforText span {
-            float: left;
-            width: 40px;
-            height: 80px;
-            border: 1px solid #ccc;
-            margin-right: 5px;
-            border-radius: 4px;
-            font-size: 48px;
-            color: #333;
-            text-align: center;
-            line-height: 80px;
-        }
-
-        .inforsendTime {
-            text-align: center;
-            font-size: 14px;
-            color: #999;
-            padding-top: 30px;
-        }
-
-        .backPage {
+        .inputBox_c p {
             position: absolute;
-            top: 20px;
-            left: 20px;
-            overflow: hidden;
-            cursor: pointer;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #ddd;
         }
-
-        .backPage img {
-            float: left;
-            width: 9px;
-            height: 15px;
-            margin-right: 5px;
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 400;
+            font-size: 100%;
         }
-
-        .backPage span {
-            float: left;
-            font-size: 14px;
+        .inputBox_l h2 {
+            font-size: 28px;
             color: #333;
+            line-height: 40px;
         }
-
-        .disSendCode {
-            color: #e62435;
+        .inputBox_l .tips {
             font-size: 14px;
-            text-align: center;
+            color: #666;
+            line-height: 20px;
+            width: 315px;
+        }
+        .accountInput {
+            padding: 30px 0 10px 0;
+            overflow: hidden;
+            border-bottom: 1px solid #e62435;
+            position: relative;
+        }
+        .disPassword {
+            font-size: 14px;
+            color: #e62435;
+            padding: 5px 0;
             font-weight: 700;
+            width: 310px;
+            line-height: 1.5;
+            display: none;
+        }
+        .accountSubmit {
+            width: 100%;
+            height: 52px;
+            background: #ccc;
+            color: #fff;
+            text-align: center;
+            line-height: 52px;
+            border-radius: 2px;
+            margin: 0 auto;
+            display: block;
+            margin-top: 30px;
             cursor: pointer;
-        }
-
-        .otherSend {
-            background: #fff;
-            width: 220px;
-            height: 160px;
-            box-shadow: 0px 3px 15px 0px rgba(230, 36, 53, 0.1);
-            z-index: 99;
-        }
-
-        .otherSend li {
-            overflow: hidden;
-            height: 50px;
-            cursor: pointer;
-        }
-
-        .otherSend li span {
-            float: left;
-            font-size: 14px;
-            color: #333;
-            line-height: 50px;
-            padding-left: 10px;
-        }
-
-        .otherSend li img {
-            width: 6px;
-            height: 10px;
-            float: right;
-            margin-right: 10px;
-            margin-top: 22px;
-        }
-        .editInfor span {
-            color: #e62435;
-            font-size: 22px;
+            font-size: 16px;
         }
         .accountInput span {
             font-size: 16px;
@@ -289,1559 +221,203 @@
             border: 0;
             margin-bottom: 1px;
             caret-color: #e62435;
-            -webkit-box-shadow: 0 0 0 1000px #fff inset;
         }
-
         .accountInput a {
             position: absolute;
             top: 40px;
-            right: 0;
+            right: 0px;
             font-size: 14px;
             color: #999;
         }
-        .imgBg img {
+        .backPage img {
             float: left;
-            margin-right: 10px;
-        }
-
-        .imgBg span {
-            font-size: 14px;
-            color: #e62435;
-            line-height: 2;
-            cursor: pointer;
-        }
-
-        .imgCodeth input {
-            width: 200px;
-            height: 30px;
-            font-size: 14px;
-            font-weight: 700;
-            border: 1px solid #999;
-            padding-left: 5px;
-            -webkit-box-shadow: 0 0 0 1000px #fff inset;
-        }
-        /*验证完成图标*/
-        .geetest_holder.geetest_wind .geetest_success_btn .geetest_success_box .geetest_success_correct .geetest_success_icon,
-        .geetest_holder.geetest_wind .geetest_logo,
-        .geetest_holder.geetest_wind .geetest_success_logo,
-        .geetest_holder.geetest_wind.geetest_radar_error .geetest_logo,
-        .geetest_holder.geetest_wind.geetest_radar_error .geetest_radar .geetest_status .geetest_hook,
-        .geetest_holder.geetest_wind.geetest_ie.geetest_radar_success .geetest_ie_radar,
-        .geetest_holder.geetest_wind.geetest_ie.geetest_not_compatible .geetest_ie_radar,
-        .geetest_holder.geetest_wind.geetest_ie.geetest_radar_error .geetest_ie_radar,
-        .geetest_wind.geetest_panel .geetest_panel_box .geetest_panel_success .geetest_panel_success_box .geetest_panel_success_correct .geetest_panel_success_icon,
-        .geetest_wind.geetest_panel .geetest_panel_box .geetest_panel_error .geetest_panel_error_icon,
-        .geetest_wind.geetest_panel .geetest_panel_box .geetest_panel_footer .geetest_panel_footer_logo {
-            background-repeat:no-repeat;
-            background-image:url('http://static.geetest.com/static/wind/sprite.1.5.4.png')
-        }
-        .geetest_holder.geetest_wind {
-            position:relative;
-            width:260px;
-            min-width:260px;
-            height:44px
-        }
-        .geetest_holder.geetest_wind * {
-            font-family:"PingFangSC-Regular", "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", "STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif;
-            box-sizing:border-box
-        }
-        .geetest_holder.geetest_wind .geetest_btn {
-            position:relative;
-            width:100%;
-            height:100%
-        }
-        .geetest_holder.geetest_wind .geetest_ghost_success {
-            position:absolute;
-            _position:fixed;
-            right:0;
-            top:0;
-            height:100%;
-            width:0;
-            overflow:hidden;
-            -moz-transition:all .3s linear;
-            -o-transition:all .3s linear;
-            -webkit-transition:all .3s linear;
-            transition:all .3s linear
-        }
-        .geetest_holder.geetest_wind .geetest_radar_btn,
-        .geetest_holder.geetest_wind .geetest_success_btn {
-            position:absolute;
-            top:0;
-            border:1px solid #ccc;
-            border-radius:2px;
-            width:100%;
-            min-width:160px;
-            height:100%;
-            cursor:pointer;
-            opacity:1
-        }
-        .geetest_holder.geetest_wind .geetest_success_btn {
-            cursor:default;
-            border-color:#26C267
-        }
-        .geetest_holder.geetest_wind .geetest_radar_btn {
-            left:0;
-            background-image:linear-gradient(180deg, #ffffff 0%,#f3f3f3 100%);
-            background-color:#ffffff\9
-        }
-        .geetest_holder.geetest_wind .geetest_radar_btn:hover {
-            background-image:linear-gradient(0deg, #ffffff 0%,#f3f3f3 100%);
-            background-color:#ffffff\9
-        }
-        .geetest_holder.geetest_wind .geetest_offline {
-            display:none;
-            position:absolute;
-            right:0;
-            top:0;
-            border:4px solid #FE984C;
-            border-bottom-color:transparent;
-            border-left-color:transparent;
-            width:0;
-            height:0;
-            _border-width:0;
-            _background:#FE984C;
-            _height:6px;
-            _width:6px;
-            font-size:0
-        }
-        .geetest_holder.geetest_wind.geetest_fallback .geetest_offline {
-            display:block
-        }
-        .geetest_holder.geetest_wind .geetest_success_btn {
-            position:absolute;
-            right:0;
-            *right:-2px;
-            top:0;
-            background:#EEFFF5;
-            -moz-transition:width ease;
-            -o-transition:width ease;
-            -webkit-transition:width ease;
-            transition:width ease
-        }
-        .geetest_holder.geetest_wind .geetest_success_btn:hover {
-            background:#EEFFF5
-        }
-        .geetest_holder.geetest_wind .geetest_success_btn .geetest_success_box {
-            position:absolute;
-            top:9px;
-            left:7px;
-            border-radius:50%;
-            width:24px;
-            height:24px
-        }
-        .geetest_holder.geetest_wind .geetest_success_btn .geetest_success_box .geetest_success_show {
-            position:relative;
-            left:0;
-            top:0;
-            width:24px;
-            height:24px;
-            background-color:#EEFFF5;
-            display:none \9
-        }
-        .geetest_holder.geetest_wind .geetest_success_btn .geetest_success_box .geetest_success_show .geetest_success_pie {
-            position:absolute;
-            left:50%;
-            top:0;
-            border:2px solid #80D6AC;
-            border-left:none;
-            border-radius:0 100% 100% 0 / 0 50% 50% 0;
-            width:50%;
-            height:100%;
-            -moz-transform:rotate(25deg);
-            -ms-transform:rotate(25deg);
-            -webkit-transform:rotate(25deg);
-            transform:rotate(25deg);
-            -moz-transform-origin:0 50%;
-            -ms-transform-origin:0 50%;
-            -webkit-transform-origin:0 50%;
-            transform-origin:0 50%
-        }
-        .geetest_holder.geetest_wind .geetest_success_btn .geetest_success_box .geetest_success_show .geetest_success_filter {
-            position:absolute;
-            left:0;
-            top:0;
-            border:2px solid #80D6AC;
-            border-right:none;
-            border-radius:100% 0 0 100% / 50% 0 0 50%;
-            width:50%;
-            height:100%;
-            -moz-transform:rotate(25deg);
-            -ms-transform:rotate(25deg);
-            -webkit-transform:rotate(25deg);
-            transform:rotate(25deg);
-            -moz-transform-origin:100% 50%;
-            -ms-transform-origin:100% 50%;
-            -webkit-transform-origin:100% 50%;
-            transform-origin:100% 50%;
-            opacity:0
-        }
-        .geetest_holder.geetest_wind .geetest_success_btn .geetest_success_box .geetest_success_show .geetest_success_mask {
-            border:none;
-            border-radius:0;
-            background-color:#EEFFF5;
-            position:absolute;
-            left:50%;
-            top:0;
-            width:50%;
-            height:100%;
-            -moz-transform:rotate(25deg);
-            -ms-transform:rotate(25deg);
-            -webkit-transform:rotate(25deg);
-            transform:rotate(25deg);
-            -moz-transform-origin:0 50%;
-            -ms-transform-origin:0 50%;
-            -webkit-transform-origin:0 50%;
-            transform-origin:0 50%
-        }
-        .geetest_holder.geetest_wind .geetest_success_btn .geetest_success_box .geetest_success_correct {
-            position:absolute;
-            right:-4px;
-            top:-4px;
-            border-radius:50%;
-            width:28px;
-            height:28px;
-            overflow:hidden;
-            -moz-transform:translate3d(0, 0, 0);
-            -ms-transform:translate3d(0, 0, 0);
-            -webkit-transform:translate3d(0, 0, 0);
-            transform:translate3d(0, 0, 0)
-        }
-        .geetest_holder.geetest_wind .geetest_success_btn .geetest_success_box .geetest_success_correct .geetest_success_icon {
-            position:absolute;
-            top:6px;
-            right:6px;
-            width:18px;
-            height:18px;
-            background-size:322.22222%;
-            background-position:0 71.53558%;
-            -moz-transform:translate(-28px, 28px);
-            -ms-transform:translate(-28px, 28px);
-            -webkit-transform:translate(-28px, 28px);
-            transform:translate(-28px, 28px)
-        }
-        @media (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 192dpi), (min-resolution: 1.5dppx) {
-            .geetest_holder.geetest_wind .geetest_success_btn .geetest_success_box .geetest_success_correct .geetest_success_icon {
-                background-size:331.42857%;
-                background-position:0 70.46414%
-            }
-        }
-        .geetest_holder.geetest_wind .geetest_radar {
-            position:absolute;
-            margin:6px;
-            width:30px;
-            height:30px;
-            -moz-transition:all .5s ease;
-            -o-transition:all .5s ease;
-            -webkit-transition:all .5s ease;
-            transition:all .5s ease
-        }
-        .geetest_holder.geetest_wind .geetest_radar .geetest_sector,
-        .geetest_holder.geetest_wind .geetest_radar .geetest_ring,
-        .geetest_holder.geetest_wind .geetest_radar .geetest_dot,
-        .geetest_holder.geetest_wind .geetest_radar .geetest_cross,
-        .geetest_holder.geetest_wind .geetest_radar .geetest_scan,
-        .geetest_holder.geetest_wind .geetest_radar .geetest_status {
-            position:absolute;
-            border-radius:50%;
-            width:100%;
-            height:100%;
-            -moz-transform:scale(0.4);
-            -ms-transform:scale(0.4);
-            -webkit-transform:scale(0.4);
-            transform:scale(0.4);
-            -moz-transition:all .5s ease;
-            -o-transition:all .5s ease;
-            -webkit-transition:all .5s ease;
-            transition:all .5s ease
-        }
-        .geetest_holder.geetest_wind .geetest_radar .geetest_sector {
-            box-shadow:inset 0 0 0 1px #3873ff;
-            background-color:#80A6FC;
-            background-image:linear-gradient(115deg, rgba(0,0,0,0) 50%,#c6d5f8 50%),linear-gradient(65deg, #c6d5f8 50%,rgba(0,0,0,0) 50%);
-            opacity:0;
-            -moz-transition:all ease;
-            -o-transition:all ease;
-            -webkit-transition:all ease;
-            transition:all ease
-        }
-        .geetest_holder.geetest_wind .geetest_radar .geetest_ring {
-            box-shadow:inset 0 0 0 1px #3873ff;
-            background:#C6D5F8
-        }
-        .geetest_holder.geetest_wind .geetest_radar .geetest_cross {
-            overflow:hidden
-        }
-        .geetest_holder.geetest_wind .geetest_radar .geetest_cross .geetest_v,
-        .geetest_holder.geetest_wind .geetest_radar .geetest_cross .geetest_h {
-            position:absolute;
-            left:50%;
-            top:50%;
-            background:#F8F8F8;
-            -moz-transform:translate(-50%, -50%);
-            -ms-transform:translate(-50%, -50%);
-            -webkit-transform:translate(-50%, -50%);
-            transform:translate(-50%, -50%)
-        }
-        .geetest_holder.geetest_wind .geetest_radar .geetest_cross .geetest_v {
-            width:100%;
-            height:4px
-        }
-        .geetest_holder.geetest_wind .geetest_radar .geetest_cross .geetest_h {
-            width:4px;
-            height:100%
-        }
-        .geetest_holder.geetest_wind .geetest_radar .geetest_scan {
-            overflow:hidden
-        }
-        .geetest_holder.geetest_wind .geetest_radar .geetest_scan .geetest_h {
-            position:absolute;
-            top:-6%;
-            width:100%;
-            height:6%;
-            background:#aedbfb;
-            opacity:0;
-            box-shadow:0 0 1px #aedbfb;
-            -moz-transition:opacity .5s ease;
-            -o-transition:opacity .5s ease;
-            -webkit-transition:opacity .5s ease;
-            transition:opacity .5s ease
-        }
-        .geetest_holder.geetest_wind .geetest_radar .geetest_status {
-            opacity:0;
-            background:#DD725E;
-            -moz-transform:scale(0);
-            -ms-transform:scale(0);
-            -webkit-transform:scale(0);
-            transform:scale(0)
-        }
-        .geetest_holder.geetest_wind .geetest_radar .geetest_status .geetest_bg {
-            position:absolute;
-            top:40%;
-            left:0;
-            border-radius:50%;
-            height:20%;
-            width:0;
-            background:#eee;
-            -moz-transition:all 1s ease;
-            -o-transition:all 1s ease;
-            -webkit-transition:all 1s ease;
-            transition:all 1s ease
-        }
-        .geetest_holder.geetest_wind .geetest_radar .geetest_status .geetest_hook {
-            position:absolute;
-            border-radius:50%;
-            width:100%;
-            height:100%;
-            background-size:cover
-        }
-        .geetest_holder.geetest_wind .geetest_radar_tip,
-        .geetest_holder.geetest_wind .geetest_success_radar_tip {
-            position:absolute;
-            top:0;
-            left:0;
-            box-sizing:border-box;
-            padding:0 46px 0 46px;
-            height:42px;
-            width:100%;
-            line-height:42px;
-            font-size:14px;
-            color:#666;
-            white-space:nowrap;
-            text-align:left;
-            -moz-transform:translate3d(0, 0, 0);
-            -ms-transform:translate3d(0, 0, 0);
-            -webkit-transform:translate3d(0, 0, 0);
-            transform:translate3d(0, 0, 0)
-        }
-        .geetest_holder.geetest_wind .geetest_radar_tip .geetest_reset_tip_content,
-        .geetest_holder.geetest_wind .geetest_success_radar_tip .geetest_reset_tip_content {
-            margin-left:5px;
-            color:#005aff;
-            cursor:pointer;
-            display:none
-        }
-        .geetest_holder.geetest_wind .geetest_radar_tip .geetest_radar_error_code,
-        .geetest_holder.geetest_wind .geetest_success_radar_tip .geetest_radar_error_code {
-            display:none
-        }
-        .geetest_holder.geetest_wind .geetest_radar_tip.geetest_multi_line {
-            white-space:normal;
-            word-break:break-all;
-            line-height:20px
-        }
-        .geetest_holder.geetest_wind .geetest_radar_tip.geetest_reversal {
-            padding:0 46px 0 46px;
-            direction:rtl;
-            text-align:right
-        }
-        .geetest_holder.geetest_wind .geetest_success_radar_tip {
-            color:#18A452
-        }
-        .geetest_holder.geetest_wind .geetest_success_radar_tip.geetest_reversal_success {
-            padding:0 46px 0 46px;
-            direction:rtl;
-            text-align:right
-        }
-        .geetest_holder.geetest_wind .geetest_success_radar_tip_timeinfo {
-            margin-left:10px;
-            font-size:12px
-        }
-        .geetest_holder.geetest_wind .geetest_logo,
-        .geetest_holder.geetest_wind .geetest_success_logo {
-            position:absolute;
-            right:12px;
-            width:20px;
-            height:20px;
-            top:11px;
-            background-size:290%;
-            background-position:0 40.07634%
-        }
-        @media (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 192dpi), (min-resolution: 1.5dppx) {
-            .geetest_holder.geetest_wind .geetest_logo,
-            .geetest_holder.geetest_wind .geetest_success_logo {
-                background-size:290%;
-                background-position:0 38.96104%
-            }
-        }
-        .geetest_holder.geetest_wind .geetest_success_logo {
-            background-size:290%;
-            background-position:0 80.91603%
-        }
-        @media (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 192dpi), (min-resolution: 1.5dppx) {
-            .geetest_holder.geetest_wind .geetest_success_logo {
-                background-size:290%;
-                background-position:0 79.65368%
-            }
-        }
-        .geetest_holder.geetest_wind .geetest_wait {
-            top:0;
-            position:absolute;
-            margin:17px 12px;
-            font-size:0;
-            opacity:0;
-            -moz-transition:opacity .5s ease;
-            -o-transition:opacity .5s ease;
-            -webkit-transition:opacity .5s ease;
-            transition:opacity .5s ease
-        }
-        .geetest_holder.geetest_wind .geetest_wait .geetest_wait_dot {
-            width:5px;
-            height:5px;
-            background:#b1babe;
-            border-radius:50%;
-            display:inline-block;
-            margin:2px;
-            vertical-align:top
-        }
-        .geetest_holder.geetest_wind.geetest_ready .geetest_slide,
-        .geetest_holder.geetest_wind.geetest_reset .geetest_slide,
-        .geetest_holder.geetest_wind.geetest_radar_click_hide .geetest_slide,
-        .geetest_holder.geetest_wind.geetest_slide_click_hide .geetest_slide {
-            display:none
-        }
-        .geetest_holder.geetest_wind.geetest_ready .geetest_radar .geetest_dot,
-        .geetest_holder.geetest_wind.geetest_reset .geetest_radar .geetest_dot,
-        .geetest_holder.geetest_wind.geetest_radar_click_hide .geetest_radar .geetest_dot,
-        .geetest_holder.geetest_wind.geetest_slide_click_hide .geetest_radar .geetest_dot {
-            background:#AFBABF
-        }
-        .geetest_holder.geetest_wind.geetest_radar_click_hide .geetest_radar .geetest_dot,
-        .geetest_holder.geetest_wind.geetest_slide_click_hide .geetest_radar .geetest_dot {
-            background:#3873ff
-        }
-        .geetest_holder.geetest_wind.geetest_ready .geetest_slide {
-            display:none
-        }
-        .geetest_holder.geetest_wind.geetest_ready .geetest_radar .geetest_dot {
-            background:#AFBABF
-        }
-        .geetest_holder.geetest_wind.geetest_start_detect .geetest_radar .geetest_ring {
-            -moz-transform:scale(1);
-            -ms-transform:scale(1);
-            -webkit-transform:scale(1);
-            transform:scale(1)
-        }
-        .geetest_holder.geetest_wind.geetest_start_detect .geetest_radar .geetest_dot {
-            background:#3873ff
-        }
-        .geetest_holder.geetest_wind.geetest_detect .geetest_radar .geetest_sector {
-            opacity:1
-        }
-        .geetest_holder.geetest_wind.geetest_detect .geetest_radar .geetest_ring {
-            -moz-transform:scale(1);
-            -ms-transform:scale(1);
-            -webkit-transform:scale(1);
-            transform:scale(1)
-        }
-        .geetest_holder.geetest_wind.geetest_detect .geetest_radar .geetest_dot {
-            background:#3873ff
-        }
-        .geetest_holder.geetest_wind.geetest_wait_compute .geetest_radar .geetest_ring {
-            -moz-transform:scale(1);
-            -ms-transform:scale(1);
-            -webkit-transform:scale(1);
-            transform:scale(1);
-            -moz-animation:geetest_wait_compute 0.8s linear infinite both;
-            -webkit-animation:geetest_wait_compute 0.8s linear infinite both;
-            animation:geetest_wait_compute 0.8s linear infinite both
-        }
-        @keyframes geetest_wait_compute {
-            60% {
-                -moz-transform:scale(0.75);
-                -ms-transform:scale(0.75);
-                -webkit-transform:scale(0.75);
-                transform:scale(0.75)
-            }
-        }
-        @-webkit-keyframes geetest_wait_compute {
-            60% {
-                -moz-transform:scale(0.75);
-                -ms-transform:scale(0.75);
-                -webkit-transform:scale(0.75);
-                transform:scale(0.75)
-            }
-        }
-        .geetest_holder.geetest_wind.geetest_wait_compute .geetest_radar .geetest_dot {
-            background:#3873ff
-        }
-        .geetest_holder.geetest_wind.geetest_start_compute .geetest_radar .geetest_ring {
-            -moz-transform:scale(1);
-            -ms-transform:scale(1);
-            -webkit-transform:scale(1);
-            transform:scale(1)
-        }
-        .geetest_holder.geetest_wind.geetest_start_compute .geetest_radar .geetest_dot {
-            background:#3873ff
-        }
-        .geetest_holder.geetest_wind.geetest_compute_1 .geetest_radar .geetest_ring {
-            box-shadow:inset 0 0 0 2px #3873ff;
-            -moz-transform:scale(0.4);
-            -ms-transform:scale(0.4);
-            -webkit-transform:scale(0.4);
-            transform:scale(0.4)
-        }
-        .geetest_holder.geetest_wind.geetest_compute_1 .geetest_radar .geetest_dot {
-            background:#3873ff
-        }
-        .geetest_holder.geetest_wind.geetest_compute_2 .geetest_radar .geetest_ring {
-            box-shadow:inset 0 0 0 2px #3873ff;
-            -moz-transform:scale(1);
-            -ms-transform:scale(1);
-            -webkit-transform:scale(1);
-            transform:scale(1);
-            background:#F8F8F8
-        }
-        .geetest_holder.geetest_wind.geetest_compute_2 .geetest_radar .geetest_cross {
-            width:100%;
-            height:100%;
-            -moz-transform:scale(1.1) rotate(90deg);
-            -ms-transform:scale(1.1) rotate(90deg);
-            -webkit-transform:scale(1.1) rotate(90deg);
-            transform:scale(1.1) rotate(90deg)
-        }
-        .geetest_holder.geetest_wind.geetest_compute_2 .geetest_radar .geetest_dot {
-            background:#3873ff
-        }
-        .geetest_holder.geetest_wind.geetest_compute_2 .geetest_radar .geetest_scan {
-            -moz-transform:scale(1);
-            -ms-transform:scale(1);
-            -webkit-transform:scale(1);
-            transform:scale(1)
-        }
-        .geetest_holder.geetest_wind.geetest_compute_2 .geetest_radar .geetest_scan .geetest_h {
-            opacity:1;
-            -moz-animation:geetest_scan 1.5s linear infinite both;
-            -webkit-animation:geetest_scan 1.5s linear infinite both;
-            animation:geetest_scan 1.5s linear infinite both
-        }
-        @keyframes geetest_scan {
-            50% {
-                top:100%
-            }
-        }
-        @-webkit-keyframes geetest_scan {
-            50% {
-                top:100%
-            }
-        }
-        .geetest_holder.geetest_wind.geetest_radar_success .geetest_radar_btn {
-            cursor:default
-        }
-        .geetest_holder.geetest_wind.geetest_radar_success .geetest_radar .geetest_cross {
-            display:none
-        }
-        .geetest_holder.geetest_wind.geetest_radar_success .geetest_ring {
-            opacity:0
-        }
-        .geetest_holder.geetest_wind .geetest_ghost_success.geetest_success_animate {
-            width:100%
-        }
-        .geetest_holder.geetest_wind .geetest_ghost_success.geetest_success_animate .geetest_success_icon {
-            -moz-animation:geetest_success_correct 0.7s ease both;
-            -webkit-animation:geetest_success_correct 0.7s ease both;
-            animation:geetest_success_correct 0.7s ease both
-        }
-        @keyframes geetest_success_correct {
-            0% {
-                -moz-transform:translate(-28px, 28px);
-                -ms-transform:translate(-28px, 28px);
-                -webkit-transform:translate(-28px, 28px);
-                transform:translate(-28px, 28px)
-            }
-            30% {
-                -moz-transform:translate(-28px, 28px);
-                -ms-transform:translate(-28px, 28px);
-                -webkit-transform:translate(-28px, 28px);
-                transform:translate(-28px, 28px)
-            }
-            90% {
-                -moz-transform:translate(3px, -2px);
-                -ms-transform:translate(3px, -2px);
-                -webkit-transform:translate(3px, -2px);
-                transform:translate(3px, -2px)
-            }
-            100% {
-                -moz-transform:translate(1px, 0);
-                -ms-transform:translate(1px, 0);
-                -webkit-transform:translate(1px, 0);
-                transform:translate(1px, 0)
-            }
-        }
-        @-webkit-keyframes geetest_success_correct {
-            0% {
-                -moz-transform:translate(-28px, 28px);
-                -ms-transform:translate(-28px, 28px);
-                -webkit-transform:translate(-28px, 28px);
-                transform:translate(-28px, 28px)
-            }
-            30% {
-                -moz-transform:translate(-28px, 28px);
-                -ms-transform:translate(-28px, 28px);
-                -webkit-transform:translate(-28px, 28px);
-                transform:translate(-28px, 28px)
-            }
-            90% {
-                -moz-transform:translate(3px, -2px);
-                -ms-transform:translate(3px, -2px);
-                -webkit-transform:translate(3px, -2px);
-                transform:translate(3px, -2px)
-            }
-            100% {
-                -moz-transform:translate(1px, 0);
-                -ms-transform:translate(1px, 0);
-                -webkit-transform:translate(1px, 0);
-                transform:translate(1px, 0)
-            }
-        }
-        .geetest_holder.geetest_wind .geetest_ghost_success.geetest_success_animate .geetest_success_pie {
-            -moz-animation:geetest_success_pie 0.7s ease both;
-            -webkit-animation:geetest_success_pie 0.7s ease both;
-            animation:geetest_success_pie 0.7s ease both
-        }
-        @keyframes geetest_success_pie {
-            25% {
-                -moz-transform:rotate(25deg);
-                -ms-transform:rotate(25deg);
-                -webkit-transform:rotate(25deg);
-                transform:rotate(25deg)
-            }
-            100% {
-                -moz-transform:rotate(-275deg);
-                -ms-transform:rotate(-275deg);
-                -webkit-transform:rotate(-275deg);
-                transform:rotate(-275deg)
-            }
-        }
-        @-webkit-keyframes geetest_success_pie {
-            25% {
-                -moz-transform:rotate(25deg);
-                -ms-transform:rotate(25deg);
-                -webkit-transform:rotate(25deg);
-                transform:rotate(25deg)
-            }
-            100% {
-                -moz-transform:rotate(-275deg);
-                -ms-transform:rotate(-275deg);
-                -webkit-transform:rotate(-275deg);
-                transform:rotate(-275deg)
-            }
-        }
-        .geetest_holder.geetest_wind .geetest_ghost_success.geetest_success_animate .geetest_success_mask {
-            -moz-animation:geetest_success_mask 0.7s linear both;
-            -webkit-animation:geetest_success_mask 0.7s linear both;
-            animation:geetest_success_mask 0.7s linear both
-        }
-        @keyframes geetest_success_mask {
-            50.9% {
-                opacity:1
-            }
-            51% {
-                opacity:0
-            }
-            100% {
-                opacity:0
-            }
-        }
-        @-webkit-keyframes geetest_success_mask {
-            50.9% {
-                opacity:1
-            }
-            51% {
-                opacity:0
-            }
-            100% {
-                opacity:0
-            }
-        }
-        .geetest_holder.geetest_wind .geetest_ghost_success.geetest_success_animate .geetest_success_filter {
-            -moz-animation:geetest_success_filter 0.7s linear both;
-            -webkit-animation:geetest_success_filter 0.7s linear both;
-            animation:geetest_success_filter 0.7s linear both
-        }
-        @keyframes geetest_success_filter {
-            50.9% {
-                opacity:0
-            }
-            51% {
-                opacity:1
-            }
-            100% {
-                opacity:1
-            }
-        }
-        @-webkit-keyframes geetest_success_filter {
-            50.9% {
-                opacity:0
-            }
-            51% {
-                opacity:1
-            }
-            100% {
-                opacity:1
-            }
-        }
-        .geetest_holder.geetest_wind.geetest_radar_error .geetest_radar_btn {
-            border-color:#ccc;
-            background:#eee;
-            cursor:default
-        }
-        .geetest_holder.geetest_wind.geetest_radar_error .geetest_logo {
-            background-size:290%;
-            background-position:0 40.07634%
-        }
-        @media (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 192dpi), (min-resolution: 1.5dppx) {
-            .geetest_holder.geetest_wind.geetest_radar_error .geetest_logo {
-                background-size:290%;
-                background-position:0 38.96104%
-            }
-        }
-        .geetest_holder.geetest_wind.geetest_radar_error .geetest_radar .geetest_status {
-            -moz-transform:scale(0.6);
-            -ms-transform:scale(0.6);
-            -webkit-transform:scale(0.6);
-            transform:scale(0.6);
-            opacity:1
-        }
-        .geetest_holder.geetest_wind.geetest_radar_error .geetest_radar .geetest_status .geetest_bg {
-            width:100%
-        }
-        .geetest_holder.geetest_wind.geetest_radar_error .geetest_radar .geetest_status .geetest_hook {
-            background-size:362.5%;
-            background-position:0 6.76692%
-        }
-        @media (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 192dpi), (min-resolution: 1.5dppx) {
-            .geetest_holder.geetest_wind.geetest_radar_error .geetest_radar .geetest_status .geetest_hook {
-                background-size:362.5%;
-                background-position:0 6.38298%
-            }
-        }
-        .geetest_holder.geetest_wind.geetest_radar_error .geetest_radar_tip {
-            color:#666
-        }
-        .geetest_holder.geetest_wind.geetest_radar_error .geetest_radar_tip .geetest_reset_tip_content {
-            display:inline
-        }
-        .geetest_holder.geetest_wind.geetest_radar_error .geetest_radar_tip .geetest_radar_error_code {
-            display:block;
-            font-size:12px;
-            position:absolute;
-            bottom:0;
-            right:1px;
-            color:#c3c3c3;
-            line-height:1
-        }
-        .geetest_holder.geetest_wind.geetest_radar_click .geetest_radar_btn {
-            background:#eaeaea
-        }
-        .geetest_holder.geetest_wind.geetest_radar_click .geetest_dot {
-            background:#AFBABF
-        }
-        .geetest_holder.geetest_wind.geetest_radar_click .geetest_radar_tip {
-            opacity:.4
-        }
-        .geetest_holder.geetest_wind.geetest_radar_click_ready .geetest_radar_btn {
-            background:#eaeaea;
-            cursor:default
-        }
-        .geetest_holder.geetest_wind.geetest_radar_click_ready .geetest_slide {
-            display:none
-        }
-        .geetest_holder.geetest_wind.geetest_radar_click_ready .geetest_radar {
-            opacity:0
-        }
-        .geetest_holder.geetest_wind.geetest_radar_click_ready .geetest_cross {
-            display:none
-        }
-        .geetest_holder.geetest_wind.geetest_radar_click_ready .geetest_radar_tip {
-            opacity:.4
-        }
-        .geetest_holder.geetest_wind.geetest_radar_click_ready .geetest_wait {
-            opacity:1
-        }
-        .geetest_holder.geetest_wind.geetest_radar_click_hide .geetest_cross {
-            display:none
-        }
-        .geetest_holder.geetest_wind .geetest_ie_radar {
-            display:none
-        }
-        .geetest_holder.geetest_wind .geetest_slide {
-            display:none
-        }
-        .geetest_holder.geetest_wind.geetest_ie .geetest_radar {
-            display:none
-        }
-        .geetest_holder.geetest_wind.geetest_ie .geetest_ie_radar {
-            display:block;
-            position:absolute;
-            top:16px;
-            left:16px;
-            width:12px;
-            height:12px;
-            border-radius:50%;
-            background-color:#AFBABF;
-            font-size:0
-        }
-        .geetest_holder.geetest_wind.geetest_ie.geetest_not_compatible .geetest_ie_radar,
-        .geetest_holder.geetest_wind.geetest_ie.geetest_radar_success .geetest_ie_radar,
-        .geetest_holder.geetest_wind.geetest_ie.geetest_radar_error .geetest_ie_radar {
-            top:14px;
-            left:14px;
-            width:16px;
-            height:16px;
-            background-color:#fff
-        }
-        .geetest_holder.geetest_wind.geetest_ie.geetest_radar_success .geetest_ie_radar {
-            background-size:322.22222%;
-            background-position:0 71.53558%
-        }
-        @media (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 192dpi), (min-resolution: 1.5dppx) {
-            .geetest_holder.geetest_wind.geetest_ie.geetest_radar_success .geetest_ie_radar {
-                background-size:331.42857%;
-                background-position:0 70.46414%
-            }
-        }
-        .geetest_holder.geetest_wind.geetest_ie.geetest_not_compatible .geetest_ie_radar,
-        .geetest_holder.geetest_wind.geetest_ie.geetest_radar_error .geetest_ie_radar {
-            background-size:362.5%;
-            background-position:0 6.76692%
-        }
-        @media (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 192dpi), (min-resolution: 1.5dppx) {
-            .geetest_holder.geetest_wind.geetest_ie.geetest_not_compatible .geetest_ie_radar,
-            .geetest_holder.geetest_wind.geetest_ie.geetest_radar_error .geetest_ie_radar {
-                background-size:362.5%;
-                background-position:0 6.38298%
-            }
-        }
-        .geetest_holder.geetest_wind.geetest_ie .geetest_wait {
-            visibility:hidden
-        }
-        .geetest_holder.geetest_wind.geetest_ie.geetest_radar_click_ready .geetest_wait,
-        .geetest_holder.geetest_wind.geetest_ie.geetest_slide_click_ready .geetest_wait {
-            visibility:visible
-        }
-        .geetest_holder.geetest_wind.geetest_ie.geetest_radar_click_ready .geetest_ie_radar,
-        .geetest_holder.geetest_wind.geetest_ie.geetest_slide_click_ready .geetest_ie_radar {
-            display:none
-        }
-        .geetest_holder.geetest_wind.geetest_ie .geetest_success_icon {
-            transform:none !important
-        }
-        .geetest_wind.geetest_fullpage_click {
-            position:absolute;
-            display:none;
-            opacity:0;
-            z-index:2147483647;
-            -moz-transition:opacity .3s ease;
-            -o-transition:opacity .3s ease;
-            -webkit-transition:opacity .3s ease;
-            transition:opacity .3s ease
-        }
-        .geetest_wind.geetest_fullpage_click .geetest_fullpage_ghost {
-            position:fixed;
-            height:100%;
-            width:100%;
-            left:0;
-            top:0
-        }
-        .geetest_wind.geetest_fullpage_click .geetest_fullpage_click_wrap {
-            position:absolute
-        }
-        .geetest_wind.geetest_fullpage_click .geetest_fullpage_click_wrap.geetest_shake {
-            -moz-animation:geetest_shake 0.2s linear infinite both;
-            -webkit-animation:geetest_shake 0.2s linear infinite both;
-            animation:geetest_shake 0.2s linear infinite both
-        }
-        @keyframes geetest_shake {
-            25% {
-                margin-left:-6px
-            }
-            75% {
-                margin-left:6px
-            }
-            100% {
-                margin-left:0
-            }
-        }
-        @-webkit-keyframes geetest_shake {
-            25% {
-                margin-left:-6px
-            }
-            75% {
-                margin-left:6px
-            }
-            100% {
-                margin-left:0
-            }
-        }
-        .geetest_wind.geetest_fullpage_click .geetest_fullpage_click_box {
-            border-radius:2px
-        }
-        .geetest_wind.geetest_fullpage_click.geetest_float {
-            font-size:0
-        }
-        .geetest_wind.geetest_fullpage_click.geetest_float .geetest_fullpage_pointer {
-            margin-left:-15px
-        }
-        .geetest_wind.geetest_fullpage_click.geetest_float .geetest_fullpage_pointer .geetest_fullpage_pointer_out {
-            position:absolute;
-            border:8px solid #cccccc;
-            border-color:transparent #cccccc transparent transparent;
-            _display:none
-        }
-        .geetest_wind.geetest_fullpage_click.geetest_float .geetest_fullpage_pointer .geetest_fullpage_pointer_in {
-            position:absolute;
-            border:7px solid #fff;
-            margin:1px 0 1px 2px;
-            border-color:transparent #fff transparent transparent;
-            _display:none
-        }
-        .geetest_wind.geetest_fullpage_click.geetest_float .geetest_fullpage_click_box {
-            position:absolute;
-            box-shadow:0 0 10px #cccccc;
-            border:1px solid #cccccc;
-            left:0;
-            background:white;
-            margin:-10px 5px 5px 0
-        }
-        .geetest_wind.geetest_fullpage_click.geetest_float.geetest_slide .geetest_fullpage_click_box {
-            max-width:320px
-        }
-        .geetest_wind.geetest_fullpage_click.geetest_popup {
-            width:100%;
-            height:100%;
-            left:0;
-            top:0
-        }
-        .geetest_wind.geetest_fullpage_click.geetest_popup .geetest_fullpage_ghost {
-            background:rgba(0,0,0,0.5);
-            background:#AAAAAA \9
-        }
-        .geetest_wind.geetest_fullpage_click.geetest_popup .geetest_fullpage_click_wrap {
-            position:fixed;
-            top:50%;
-            left:50%;
-            max-width:356px;
-            min-width:260px;
-            width:80%;
-            width:356px \9;
-            margin-left:-178px \9;
-            margin-top:-245px \9;
-            _margin-left:0;
-            _margin-top:0;
-            -moz-transform:translate(-50%, -50%);
-            -ms-transform:translate(-50%, -50%);
-            -webkit-transform:translate(-50%, -50%);
-            transform:translate(-50%, -50%)
-        }
-        .geetest_wind.geetest_goto {
-            position:fixed;
-            display:none;
-            opacity:0;
-            width:100%;
-            height:100%;
-            left:0;
-            top:0;
-            z-index:2147483647;
-            -moz-transition:opacity .3s ease;
-            -o-transition:opacity .3s ease;
-            -webkit-transition:opacity .3s ease;
-            transition:opacity .3s ease
-        }
-        .geetest_wind.geetest_goto .geetest_goto_ghost {
-            position:fixed;
-            height:100%;
-            width:100%;
-            left:0;
-            top:0;
-            background:rgba(0,0,0,0.5)
-        }
-        .geetest_wind.geetest_goto .geetest_goto_wrap {
-            position:fixed;
-            top:50%;
-            left:50%;
-            width:95%;
-            max-width:300px;
-            border-radius:2px;
-            overflow:hidden;
-            font-size:16px;
-            -moz-transform:translate(-50%, -50%);
-            -ms-transform:translate(-50%, -50%);
-            -webkit-transform:translate(-50%, -50%);
-            transform:translate(-50%, -50%)
-        }
-        .geetest_wind.geetest_goto .geetest_goto_wrap .geetest_goto_content {
-            position:relative;
-            background-color:white;
-            box-sizing:border-box;
-            height:0;
-            width:100%;
-            padding-bottom:41.33%;
-            border-bottom:1px solid #e8e8e8;
-            color:#383838;
-            text-align:center
-        }
-        .geetest_wind.geetest_goto .geetest_goto_wrap .geetest_goto_content .geetest_goto_content_tip {
-            position:absolute;
-            width:80%;
-            line-height:16px;
-            top:50%;
-            left:50%;
-            -moz-transform:translate(-50%, -50%);
-            -ms-transform:translate(-50%, -50%);
-            -webkit-transform:translate(-50%, -50%);
-            transform:translate(-50%, -50%)
-        }
-        .geetest_wind.geetest_goto .geetest_goto_wrap a.geetest_goto_confirm,
-        .geetest_wind.geetest_goto .geetest_goto_wrap .geetest_goto_cancel {
-            box-sizing:border-box;
-            width:50%;
-            display:inline-block;
-            vertical-align:top;
-            background-color:#f6f6f6;
-            height:46px;
-            line-height:46px;
-            text-align:center
-        }
-        .geetest_wind.geetest_goto .geetest_goto_wrap a.geetest_goto_confirm {
-            color:#0169eb;
-            text-decoration:none
-        }
-        .geetest_wind.geetest_goto .geetest_goto_wrap .geetest_goto_cancel {
-            color:#383838;
-            border-right:1px solid #e8e8e8
-        }
-        .geetest_wind.geetest_panel {
-            display:none;
-            opacity:0;
-            position:fixed;
-            z-index:2147483647;
-            left:0;
-            top:0;
-            height:100%;
-            width:100%;
-            -moz-transition:opacity .5s;
-            -o-transition:opacity .5s;
-            -webkit-transition:opacity .5s;
-            transition:opacity .5s
-        }
-        .geetest_wind.geetest_panel * {
-            font-family:"PingFangSC-Regular", "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", "STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif
-        }
-        .geetest_wind.geetest_panel .geetest_panel_ghost {
-            position:absolute;
-            left:0;
-            top:0;
-            width:100%;
-            height:100%;
-            opacity:.6;
-            filter:alpha(opacity=60);
-            background-color:black;
-            _width:2000px;
-            _height:1000px
-        }
-        .geetest_wind.geetest_panel .geetest_panel_box {
-            position:absolute;
-            top:50%;
-            left:50%;
-            width:220px;
-            height:140px;
-            margin-left:-110px;
-            margin-top:-70px;
-            box-shadow:0 1px 8px rgba(128,128,128,0.3);
-            border:1px solid #d1d1d1;
-            border-radius:2px;
-            overflow:hidden;
-            background-color:white;
-            -moz-transition:width .5s ease,height .5s ease;
-            -o-transition:width .5s ease,height .5s ease;
-            -webkit-transition:width .5s ease,height .5s ease;
-            transition:width .5s ease,height .5s ease;
-            -moz-transform:translate(-50%, -50%);
-            -ms-transform:translate(-50%, -50%);
-            -webkit-transform:translate(-50%, -50%);
-            transform:translate(-50%, -50%);
-            -moz-transform:translate3d(-50%, -50%, 0);
-            -ms-transform:translate3d(-50%, -50%, 0);
-            -webkit-transform:translate3d(-50%, -50%, 0);
-            transform:translate3d(-50%, -50%, 0);
-            _top:0;
-            _left:0;
-            _margin-left:0;
-            _margin-top:0
-        }
-        .geetest_wind.geetest_panel .geetest_panel_box:last-child {
-            margin-left:0 !important;
-            margin-top:0 !important
-        }
-        .geetest_wind.geetest_panel .geetest_panel_box .geetest_panel_offline {
-            display:none;
-            position:absolute;
-            right:0;
-            top:0;
-            border:4px solid #FE984C;
-            border-bottom-color:transparent;
-            border-left-color:transparent;
-            width:0;
-            height:0;
-            _border-width:0;
-            _background:#FE984C;
-            _height:6px;
-            _width:6px;
-            font-size:0
-        }
-        .geetest_wind.geetest_panel .geetest_panel_box .geetest_panel_loading,
-        .geetest_wind.geetest_panel .geetest_panel_box .geetest_panel_success,
-        .geetest_wind.geetest_panel .geetest_panel_box .geetest_panel_error {
-            width:100%;
-            height:113px
-        }
-        .geetest_wind.geetest_panel .geetest_panel_box .geetest_temp,
-        .geetest_wind.geetest_panel .geetest_panel_box .geetest_panel_loading .geetest_panel_loading_title,
-        .geetest_wind.geetest_panel .geetest_panel_box .geetest_panel_loading .geetest_panel_loading_content,
-        .geetest_wind.geetest_panel .geetest_panel_box .geetest_panel_success .geetest_panel_success_title,
-        .geetest_wind.geetest_panel .geetest_panel_box .geetest_panel_error .geetest_panel_error_title,
-        .geetest_wind.geetest_panel .geetest_panel_box .geetest_panel_error .geetest_panel_error_content {
-            text-align:center;
-            font-size:14px;
-            height:14px;
-            line-height:14px
-        }
-        .geetest_wind.geetest_panel .geetest_panel_box .geetest_panel_success,
-        .geetest_wind.geetest_panel .geetest_panel_box .geetest_panel_error {
-            display:none
-        }
-        .geetest_wind.geetest_panel .geetest_panel_box .geetest_panel_loading {
-            padding:29px 0 0 0;
-            height:84px
-        }
-        .geetest_wind.geetest_panel .geetest_panel_box .geetest_panel_loading .geetest_panel_loading_icon {
-            margin:0 auto;
-            width:32px;
-            height:32px;
-            background-size:contain;
-            background-image:url('http://static.geetest.com/static/wind/sprite/panel_loading.1.5.4.gif')
-        }
-        @media (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 192dpi), (min-resolution: 1.5dppx) {
-            .geetest_wind.geetest_panel .geetest_panel_box .geetest_panel_loading .geetest_panel_loading_icon {
-                background-size:contain;
-                background-image:url('http://static.geetest.com/static/wind/sprite2x/panel_loading.1.5.4.gif')
-            }
-        }
-        .geetest_wind.geetest_panel .geetest_panel_box .geetest_panel_loading .geetest_panel_loading_title {
-            margin:10px 0 0 0;
-            color:#0088f6
-        }
-        .geetest_wind.geetest_panel .geetest_panel_box .geetest_panel_loading .geetest_panel_loading_content {
-            margin:8px 0 0 0;
-            color:#595959
-        }
-        .geetest_wind.geetest_panel .geetest_panel_box .geetest_panel_success {
-            padding:40px 0 0 0;
-            height:73px;
-            box-sizing:content-box
-        }
-        .geetest_wind.geetest_panel .geetest_panel_box .geetest_panel_success .geetest_panel_success_box {
-            margin:0 auto;
-            width:24px;
-            height:24px;
-            position:relative
-        }
-        .geetest_wind.geetest_panel .geetest_panel_box .geetest_panel_success .geetest_panel_success_box * {
-            box-sizing:border-box
-        }
-        .geetest_wind.geetest_panel .geetest_panel_box .geetest_panel_success .geetest_panel_success_box .geetest_panel_success_show {
-            position:relative;
-            left:0;
-            top:0;
-            width:24px;
-            height:24px;
-            display:none \9
-        }
-        .geetest_wind.geetest_panel .geetest_panel_box .geetest_panel_success .geetest_panel_success_box .geetest_panel_success_show .geetest_panel_success_pie {
-            position:absolute;
-            left:50%;
-            top:0;
-            border:2px solid #80D6AC;
-            border-left:none;
-            border-radius:0 100% 100% 0 / 0 50% 50% 0;
-            width:50%;
-            height:100%;
-            -moz-transform:rotate(25deg);
-            -ms-transform:rotate(25deg);
-            -webkit-transform:rotate(25deg);
-            transform:rotate(25deg);
-            -moz-transform-origin:0 50%;
-            -ms-transform-origin:0 50%;
-            -webkit-transform-origin:0 50%;
-            transform-origin:0 50%
-        }
-        .geetest_wind.geetest_panel .geetest_panel_box .geetest_panel_success .geetest_panel_success_box .geetest_panel_success_show .geetest_panel_success_filter {
-            position:absolute;
-            left:0;
-            top:0;
-            border:2px solid #80D6AC;
-            border-right:none;
-            border-radius:100% 0 0 100% / 50% 0 0 50%;
-            width:50%;
-            height:100%;
-            -moz-transform:rotate(25deg);
-            -ms-transform:rotate(25deg);
-            -webkit-transform:rotate(25deg);
-            transform:rotate(25deg);
-            -moz-transform-origin:100% 50%;
-            -ms-transform-origin:100% 50%;
-            -webkit-transform-origin:100% 50%;
-            transform-origin:100% 50%;
-            opacity:0
-        }
-        .geetest_wind.geetest_panel .geetest_panel_box .geetest_panel_success .geetest_panel_success_box .geetest_panel_success_show .geetest_panel_success_mask {
-            border:none;
-            border-radius:0;
-            background-color:#ffffff;
-            position:absolute;
-            left:50%;
-            top:0;
-            width:50%;
-            height:100%;
-            -moz-transform:rotate(25deg);
-            -ms-transform:rotate(25deg);
-            -webkit-transform:rotate(25deg);
-            transform:rotate(25deg);
-            -moz-transform-origin:0 50%;
-            -ms-transform-origin:0 50%;
-            -webkit-transform-origin:0 50%;
-            transform-origin:0 50%
-        }
-        .geetest_wind.geetest_panel .geetest_panel_box .geetest_panel_success .geetest_panel_success_box .geetest_panel_success_correct {
-            position:absolute;
-            right:-4px;
-            top:-4px;
-            border-radius:50%;
-            width:28px;
-            height:28px;
-            overflow:hidden;
-            -moz-transform:translate3d(0, 0, 0);
-            -ms-transform:translate3d(0, 0, 0);
-            -webkit-transform:translate3d(0, 0, 0);
-            transform:translate3d(0, 0, 0)
-        }
-        .geetest_wind.geetest_panel .geetest_panel_box .geetest_panel_success .geetest_panel_success_box .geetest_panel_success_correct .geetest_panel_success_icon {
-            position:absolute;
-            top:6px;
-            right:6px;
-            width:18px;
-            height:18px;
-            background-size:322.22222%;
-            background-position:0 71.53558%;
-            -moz-transform:translate(-28px, 28px);
-            -ms-transform:translate(-28px, 28px);
-            -webkit-transform:translate(-28px, 28px);
-            transform:translate(-28px, 28px)
-        }
-        @media (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 192dpi), (min-resolution: 1.5dppx) {
-            .geetest_wind.geetest_panel .geetest_panel_box .geetest_panel_success .geetest_panel_success_box .geetest_panel_success_correct .geetest_panel_success_icon {
-                background-size:331.42857%;
-                background-position:0 70.46414%
-            }
-        }
-        .geetest_wind.geetest_panel .geetest_panel_box .geetest_panel_success .geetest_panel_success_title {
-            margin:10px 0 0 0;
-            color:#00aa00
-        }
-        .geetest_wind.geetest_panel .geetest_panel_box .geetest_panel_error {
-            padding:23px 0 0 0;
-            height:90px;
-            position:relative
-        }
-        .geetest_wind.geetest_panel .geetest_panel_box .geetest_panel_error .geetest_panel_error_icon {
-            margin:0 auto;
-            width:24px;
-            height:24px;
-            background-size:241.66667%;
-            background-position:0 50.77519%
-        }
-        @media (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 192dpi), (min-resolution: 1.5dppx) {
-            .geetest_wind.geetest_panel .geetest_panel_box .geetest_panel_error .geetest_panel_error_icon {
-                background-size:241.66667%;
-                background-position:0 49.77974%
-            }
-        }
-        .geetest_wind.geetest_panel .geetest_panel_box .geetest_panel_error .geetest_panel_error_title {
-            margin:10px 0 0 0;
-            color:#595959
-        }
-        .geetest_wind.geetest_panel .geetest_panel_box .geetest_panel_error .geetest_panel_error_content {
-            margin:3px 0 0 0;
-            color:#0088f7;
-            text-decoration:underline;
-            cursor:pointer
-        }
-        .geetest_wind.geetest_panel .geetest_panel_box .geetest_panel_error .geetest_panel_error_code {
-            font-size:12px;
-            color:#c3c3c3;
-            position:absolute;
-            right:1px;
-            bottom:0
-        }
-        .geetest_wind.geetest_panel .geetest_panel_box .geetest_panel_footer {
-            border-top:1px solid #efefef;
-            padding:8px 0 8px;
-            width:100%;
-            height:11px;
-            text-align:center
-        }
-        .geetest_wind.geetest_panel .geetest_panel_box .geetest_panel_footer .geetest_panel_footer_logo,
-        .geetest_wind.geetest_panel .geetest_panel_box .geetest_panel_footer .geetest_panel_footer_copyright {
-            display:inline-block;
-            vertical-align:top;
-            line-height:11px
-        }
-        .geetest_wind.geetest_panel .geetest_panel_box .geetest_panel_footer .geetest_panel_footer_logo {
-            margin:-1px 4px 0 0;
-            width:11px;
-            height:11px;
-            background-size:527.27273%;
-            background-position:0 24.35424%
-        }
-        @media (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 192dpi), (min-resolution: 1.5dppx) {
-            .geetest_wind.geetest_panel .geetest_panel_box .geetest_panel_footer .geetest_panel_footer_logo {
-                background-size:527.27273%;
-                background-position:0 23.75%
-            }
-        }
-        .geetest_wind.geetest_panel .geetest_panel_box .geetest_panel_footer .geetest_panel_footer_copyright {
-            color:#cacaca;
-            font-size:10px
-        }
-        .geetest_wind.geetest_panel .geetest_panel_box.geetest_shake {
-            -moz-animation:geetest_shake 0.2s linear infinite both;
-            -webkit-animation:geetest_shake 0.2s linear infinite both;
-            animation:geetest_shake 0.2s linear infinite both
-        }
-        .geetest_wind.geetest_panel .geetest_panel_box.geetest_panelshowslide {
-            width:278px;
-            height:285px;
-            margin-left:-139px;
-            margin-top:-143px
-        }
-        .geetest_wind.geetest_panel .geetest_panel_box.geetest_panelshowbeeline {
-            width:300px;
-            height:150px;
-            margin-left:-139px;
-            margin-top:-143px
-        }
-        .geetest_wind.geetest_panel .geetest_panel_box.geetest_panelshowclick {
-            width:320px;
-            height:410px;
-            margin-left:-160px;
-            margin-top:-205px
-        }
-        .geetest_wind.geetest_panel .geetest_panel_box.geetest_ie6panelshowclick {
-            width:348px;
-            height:445px;
-            marginLeft:-174px;
-            marginTop:-223px
-        }
-        .geetest_wind.geetest_panel.geetest_fallback .geetest_panel_offline {
-            display:block
-        }
-        .geetest_wind.geetest_panel.geetest_ie .geetest_panel_success_icon {
-            transform:none !important
-        }
-        .geetest_wind.geetest_panel .geetest_panel_success.geetest_success_animate .geetest_panel_success_icon {
-            -moz-animation:geetest_success_correct 0.7s ease both;
-            -webkit-animation:geetest_success_correct 0.7s ease both;
-            animation:geetest_success_correct 0.7s ease both
-        }
-        .geetest_wind.geetest_panel .geetest_panel_success.geetest_success_animate .geetest_panel_success_pie {
-            -moz-animation:geetest_success_pie 0.7s ease both;
-            -webkit-animation:geetest_success_pie 0.7s ease both;
-            animation:geetest_success_pie 0.7s ease both
-        }
-        .geetest_wind.geetest_panel .geetest_panel_success.geetest_success_animate .geetest_panel_success_mask {
-            -moz-animation:geetest_success_mask 0.7s linear both;
-            -webkit-animation:geetest_success_mask 0.7s linear both;
-            animation:geetest_success_mask 0.7s linear both
-        }
-        .geetest_wind.geetest_panel .geetest_panel_success.geetest_success_animate .geetest_panel_success_filter {
-            -moz-animation:geetest_success_filter 0.7s linear both;
-            -webkit-animation:geetest_success_filter 0.7s linear both;
-            animation:geetest_success_filter 0.7s linear both
-        }
-        .inputBox {
-            overflow: hidden;
-            padding: 65px;
-            position: relative;
-        }
-
-        .inputBox .helpText {
-            position: absolute;
-            top: 54px;
-            right: 22px;
+            width: 9px;
+            height: 15px;
+            margin-right: 5px;
+        }
+        .backPage span {
+            float: left;
             font-size: 14px;
             color: #333;
         }
+
+        .inputInforText input {
+            float: left;
+            width: 60px;
+            height: 80px;
+            border: 1px solid #ccc;
+            margin-right: 25px;
+            border-radius: 4px;
+            font-size: 48px;
+            color: #333;
+            text-align: center;
+            line-height: 80px;
+        }
+        .inputBox_l .tips span {
+            color: #e62435;
+        }
+        .inputTelBox {
+            width: 305px;
+            height: 54px;
+            border-bottom: 1px solid #e62435;
+        }
+        .agreement {
+            overflow: hidden;
+            padding: 10px 0;
+        }
+
+        .weixinlog {
+            width: 305px;
+            height: 42px;
+            background: rgba(255, 255, 255, 1);
+            border-radius: 4px;
+            border: 1px solid #999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        .weixinlog img {
+            width: 22px;
+            height: 18px;
+            padding-right: 5px;
+        }
+        .weixinlog span {
+            font-size: 16px;
+            color: #333;
+        }
+        .agreement a {
+            float: right;
+            color: #666;
+            font-size: 12px;
+            line-height: 1.2;
+        }
+        .agreement img {
+            float: right;
+            width: 14px;
+            height: 14px;
+            padding-right: 5px;
+        }
+        .inputTelBox input {
+            width: 100%;
+            height: 44px;
+            padding-top: 5px;
+            border: 0;
+            line-height: 44px;
+            font-size: 22px;
+            color: #333;
+            font-weight: 700;
+            caret-color: #e62435;
+        }
+        .myhlogo {
+            margin: 0 auto;
+            padding: 60px 0;
+            width: 228px;
+            height: 90px;
+            display: block;
+        }
     </style>
+</head>
 <body>
-<div class="inputBox codeBox">
-        <!--左边-->
-        <a href="about.html" target="_blank" class="helpText">关于我们</a>
-        <span onclick="closeLoginbox();" style="position: absolute;top: 3px;right: 20px;font-size: 30px;color:#666;cursor: pointer;">×</span>
-        <span style="position: absolute;top: 16px;left: 23px;font-size: 14px;">预医网用户登录验证</span>
-        <span style="display: block;width: 100%;height: 1px;position: absolute;top: 46px;left: 0;background:#c0c0c0"></span>
-    <div class="inputBox_l">
-            <h2>请您输入手机号码</h2>
-            <p class="tips">为了及时通知您，请输入您的常用手机号码</p>
-        <div class="inputTelBox">
-            <input type="tel" name="tel" maxlength="13" class="telInput">
-        </div>
-        <!-- 添加极验-->
-        <div class="jiyan1" style="margin-top: 20px">
-            <div id="embed-captcha"><div class="geetest_holder geetest_wind geetest_detect" style="width: 300px;">
-                <div class="geetest_form">
-                    <input type="hidden" name="geetest_challenge">
-                    <input type="hidden" name="geetest_validate">
-                    <input type="hidden" name="geetest_seccode">
+<div class="loginMain">
+    <div class="loginBg">
+        <img class="myhlogo" style="height:200px;" th:src="@{/pre/images/logo.jpg}">
+    </div>
+    <div class="loginInpText">
+        <!-- 输入手机号码 -->
+        <div class="inputBox codeBox">
+            <div class="inputBox_l">
+                <div style="position:relative;top:-50px;">
+                    <span style="font-size:16px">预医网登录</span>
                 </div>
-                <div class="geetest_btn">
-                    <div class="geetest_radar_btn">
-                        <!--点击按钮进行验证-->
-                        <div class="geetest_radar">
-                            <div class="geetest_ring">
-                                <div class="geetest_small">
-
-                                </div>
-                            </div>
-                            <div class="geetest_sector" style="transform: rotate(81.048deg);">
-                                <div class="geetest_small">
-
-                                </div>
-                            </div>
-                            <div class="geetest_cross">
-                                <div class="geetest_h">
-
-                                </div>
-                                <div class="geetest_v">
-
-                                </div>
-                            </div>
-                            <div class="geetest_dot">
-
-                            </div>
-                            <div class="geetest_scan">
-                                <div class="geetest_h"></div>
-                            </div>
-                        </div>
-                        <div class="geetest_radar_tip" tabindex="0" aria-label="点击按钮进行验证" style="outline-width: 0px;">
-                            <span class="geetest_radar_tip_content">点击按钮进行验证</span>
-                            <span class="geetest_reset_tip_content">请点击重试</span>
-                            <span class="geetest_radar_error_code"></span>
-                        </div>
-                        <a class="geetest_logo" target="_blank" href="http://www.geetest.com/first_page"></a>
-                        <div class="geetest_other_offline geetest_offline"></div>
-                    </div><div class="geetest_ghost_success">
-                    <div class="geetest_success_btn">
-                        <div class="geetest_success_box">
-                            <div class="geetest_success_show">
-                                <div class="geetest_success_pie">
-                                </div>
-                                <div class="geetest_success_filter">
-                                </div><div class="geetest_success_mask">
-                            </div>
-                            </div>
-                            <div class="geetest_success_correct">
-                                <div class="geetest_success_icon"></div>
-                            </div>
-                        </div>
-                        <div class="geetest_success_radar_tip">
-                            <span class="geetest_success_radar_tip_content">
-                            </span>
-                            <span class="geetest_success_radar_tip_timeinfo"></span>
-                        </div><a class="geetest_success_logo" target="_blank" href="http://www.geetest.com/first_page"></a>
-                        <div class="geetest_success_offline geetest_offline"></div></div></div><div class="geetest_slide_icon">
-
+                <div class="inputTelBox">
+                    <input name="tel" class="telInput" type="tel" placeholder="请输入您的账号" >
                 </div>
+                <div class="inputTelBox">
+                    <input name="tel" class="telInput" type="password"placeholder="请输入您的密码">
                 </div>
-                <div class="geetest_wait">
-                    <span class="geetest_wait_dot geetest_dot_1"></span>
-                    <span class="geetest_wait_dot geetest_dot_2"></span>
-                    <span class="geetest_wait_dot geetest_dot_3"></span>
-                </div><div class="geetest_fullpage_click">
-                <div class="geetest_fullpage_ghost"></div>
-                <div class="geetest_fullpage_click_wrap">
-                    <div class="geetest_fullpage_click_box"></div><div class="geetest_fullpage_pointer"><div class="geetest_fullpage_pointer_out"></div><div class="geetest_fullpage_pointer_in"></div></div></div></div><div class="geetest_goto" style="display: none;"><div class="geetest_goto_ghost"></div><div class="geetest_goto_wrap"><div class="geetest_goto_content"><div class="geetest_goto_content_tip"></div></div><div class="geetest_goto_cancel"></div><a class="geetest_goto_confirm"></a></div></div><div class="geetest_panel"><div class="geetest_panel_ghost"></div><div class="geetest_panel_box"><div class="geetest_other_offline geetest_panel_offline"></div><div class="geetest_panel_loading"><div class="geetest_panel_loading_icon"></div><div class="geetest_panel_loading_content"></div></div><div class="geetest_panel_success"><div class="geetest_panel_success_box"><div class="geetest_panel_success_show"><div class="geetest_panel_success_pie"></div><div class="geetest_panel_success_filter"></div><div class="geetest_panel_success_mask"></div></div><div class="geetest_panel_success_correct"><div class="geetest_panel_success_icon"></div></div></div><div class="geetest_panel_success_title"></div></div><div class="geetest_panel_error"><div class="geetest_panel_error_icon"></div><div class="geetest_panel_error_title"></div><div class="geetest_panel_error_content"></div><div class="geetest_panel_error_code"></div></div><div class="geetest_panel_footer"><div class="geetest_panel_footer_logo"></div><div class="geetest_panel_footer_copyright"></div></div><div class="geetest_panel_next"></div></div></div></div></div>
-            <p id="wait" class="show" style="text-align: center; font-size: 14px; padding: 10px; display: none;">正在加载验证码......</p>
+                <div class="agreement">
+                    <a href="http://www.mingyihui.net/article_4111.html">同意《预医网用户协议》</a>
+                    <img src="http://passport.mingyihui.net/templates/skins/red2017/pc/images/select1.png">
+                </div>
+                <div class="weixinlog wxClick">
+                    <img src="http://passport.mingyihui.net/templates/skins/red2017/pc/images/Combined Shape.png">
+                    <span>一键登录</span>
+                </div>
+            </div>
+            <div class="inputBox_c">
+                <p>或</p>
+            </div>
+            <div class="inputBox_r">
+                <ul>
+                    <li class="accountClick" data-account="1">
+                        <img src="http://passport.mingyihui.net/templates/skins/red2017/pc/images/Shape.png">
+                        <span>使用微信登录</span>
+                    </li>
+                    <li class="qqClick">
+                        <img alt="" src="http://passport.mingyihui.net/templates/skins/red2017/pc/images/Shape1.png">
+                        <span>使用QQ登录</span>
+                    </li>
+                    <li class="wbClick">
+                        <img alt="" src="http://passport.mingyihui.net/templates/skins/red2017/pc/images/Shape2.png">
+                        <span>使用微博登录</span>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div class="agreement">
-            <a href="http://www.mingyihui.net/article_4111.html">同意《预医网用户协议》</a>
-            <img src="http://passport.mingyihui.net/templates/skins/red2017/pc/images/select1.png">
-        </div>
-        <div class="nextInfor jiyanClick">下一步</div>
-        <div class="weixinlog wxClick">
-            <img src="http://passport.mingyihui.net/templates/skins/red2017/pc/images/Shape.png">
-            <span>微信一键登录</span>
+        <!-- 账号登录 -->
+        <div class="inputBox AccountBox" style="display:none">
+            <a class="helpText" href="http://www.mingyihui.net/article_5823.html" target="_blank">帮助</a>
+            <div class="backPage backPage5">
+                <img alt="" src="http://passport.mingyihui.net/templates/skins/red2017/pc/images/back.png">
+                <span>返回上一步</span>
+            </div>
+            <div class="inputBox_l">
+                <h2>请您输入账号密码</h2>
+                <p class="tips">账号可以是手机号码/用户名/邮箱</p>
+                <div class="accountInput">
+                    <span>账号</span>
+                    <input class="accountText accepInput" type="text" maxlength="20">
+                </div>
+                <div class="accountInput">
+                    <span>密码</span>
+                    <input class="accountPw accepInput" type="password" maxlength="20">
+                    <a href="">忘记密码？</a>
+                </div>
+                <p class="disPassword">密码错误，您可再次输入密码，或者使用短信验证码快速登录</p>
+                <span class="accountSubmit">登录</span>
+            </div>
+            <div class="inputBox_c">
+                <span>|</span>
+                <p>或</p>
+                <span>|</span>
+            </div>
+            <div class="inputBox_r">
+                <ul>
+                    <li class="inforClick" style="margin-top:30px;">
+                        <img alt="" src="http://passport.mingyihui.net/templates/skins/red2017/pc/images/infor.png">
+                        <span>短信验证登录</span>
+                    </li>
+                    <li class="wxClick">
+                        <img alt="" src="http://passport.mingyihui.net/templates/skins/red2017/pc/images/Shape.png">
+                        <span>使用微信登录</span>
+                    </li>
+                    <li class="qqClick">
+                        <img alt="" src="http://passport.mingyihui.net/templates/skins/red2017/pc/images/Shape1.png">
+                        <span>使用QQ登录</span>
+                    </li>
+                    <li class="wbClick">
+                        <img alt="" src="http://passport.mingyihui.net/templates/skins/red2017/pc/images/Shape2.png">
+                        <span>使用微博登录</span>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
-       <!-- 右边-->
-    <div class="inputBox_c">
-        <p>或</p>
-    </div>
-    <div class="inputBox_r">
-        <ul>
-            <li class="accountClick" data-account="1">
-                <img src="http://passport.mingyihui.net/templates/skins/red2017/pc/images/Combined Shape.png" alt="">
-                <span>账号密码登录</span>
-            </li>
-            <li class="qqClick">
-                <img src="http://passport.mingyihui.net/templates/skins/red2017/pc/images/Shape1.png" alt="">
-                <span>使用QQ登录</span>
-            </li>
-            <li class="wbClick">
-                <img src="http://passport.mingyihui.net/templates/skins/red2017/pc/images/Shape2.png" alt="">
-                <span>使用微博登录</span>
-            </li>
-        </ul>
-    </div>
+</div>
+<!--尾部-->
+<div class="footer">
+   <img th:src="@{/pre/images/尾部.png}"style="position:relative;left:-140px;">
 </div>
 </body>
 </html>

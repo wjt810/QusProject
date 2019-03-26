@@ -71,4 +71,39 @@ public class QusUserServiceImpl implements QusUserService {
 	}
 	
 	
+	
+	/**
+	 * 
+	 * **************************************************************************
+	 * ********************************前台代码**********************************
+	 * **************************************************************************
+	 * 
+	 */
+	
+	/**
+	 * 用户登录
+	 */
+	@Override
+	public List<QusUser> getUserLogin(String u_name, String u_password) {
+		return qusUserDao.getUserLogin(u_name, u_password);
+	}
+	/**
+	 * 根据id查找用户信息
+	 */
+	@Override
+	public QusUser findUserById(Integer u_id) {
+		return qusUserDao.findUserById(u_id);
+	}
+	
+	
+	@Override
+	public Boolean changPwd(String pwd, Integer id) {
+		int re = qusUserDao.changePwd(pwd, id);
+		if(re>0) {
+			return true;
+		}
+		return false;
+	}
+	
+	
 }
