@@ -1,13 +1,18 @@
 package springboot.controller;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -46,9 +51,12 @@ public class UsersController {
 		Integer app_id=Integer.parseInt(request.getParameter("app_id"));
 		System.out.println(app_id);
 		QusAppointment user=qusUserService.getUserById(app_id); 
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+	    String hh=simpleDateFormat.format(user.getApp_time());
 		ModelAndView mv = new ModelAndView("back/page/user/User.html");
 		//传入数据
 		mv.addObject("user",user);
+		mv.addObject("hh",hh);
 		return mv;
 		
 	}
@@ -56,7 +64,25 @@ public class UsersController {
 	/**
 	 * 修改
 	 * @return
+	 * @throws ParseException 
 	 */
+	@RequestMapping(value="/UserSave")
+	public int modifyAdminSave(@RequestParam("app_id") String app_id,@RequestParam("u_name") String u_name,@RequestParam("u_sex") String u_sex,
+			@RequestParam("u_phone") String u_phone,@RequestParam("app_time") String app_time,
+			@RequestParam("app_priority") String app_priority,HttpServletRequest request,HttpSession session) throws ParseException {
+		QusAppointment user=new QusAppointment();
+		user.setApp_id(Integer.parseInt(app_id));
+		user.setU_name(u_name);
+		user.setU_sex(u_sex);
+		user.setU_phone(u_phone);
+		SimpleDateFormat farmat=new SimpleDateFormat("yyyy-MM-dd");
+		user.setApp_time(farmat.parse(app_time));
+		user.setApp_priority(Integer.parseInt(app_priority));
+		int count=qusUserService.updateUser(user);
+		
+		return count;
+		
+	}
 	
 	
 	/**

@@ -12,7 +12,7 @@ public interface QusUserService {
 	List<QusAppointment> getUserList();
 
 	//根据id修改用户信息
-	int updateUser(QusUser user);
+	int updateUser(QusAppointment user);
 	//模糊查询用户列表
 	List<QusUser>getByUser(String name);
 	

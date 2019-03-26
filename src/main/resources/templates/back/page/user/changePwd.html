@@ -67,7 +67,7 @@
 			var form = layui.form(),
 			layer = parent.layer === undefined ? layui.layer : parent.layer;
 			
-			form.on("submit",function(data){
+			/* form.on("submit",function(data){
 				var oldPwd = $("#oldPwd").val();
 				var newPwd = $("#newPwd").val();
 				var confirmPwd = $("#confirmPwd").val();
@@ -94,9 +94,10 @@
 						$(".mes").attr("display","block");
 					}
 				}else{
-					alert("旧密码不正确");
+					layer.msg("旧密码不正确");
+					return false;
 				}
-			})
+			}) */
 		})
 		</script>
 </body>

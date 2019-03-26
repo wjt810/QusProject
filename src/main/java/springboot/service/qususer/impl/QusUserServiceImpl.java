@@ -39,7 +39,7 @@ public class QusUserServiceImpl implements QusUserService {
 	 * 根据id来修改用户信息
 	 */
 	@Override
-	public int updateUser(QusUser user) {
+	public int updateUser(QusAppointment user) {
 		// TODO Auto-generated method stub
 		return  qusUserDao.updateUser(user);
 	}

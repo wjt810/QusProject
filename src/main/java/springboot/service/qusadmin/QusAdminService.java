@@ -15,7 +15,7 @@ public interface QusAdminService {
 	List<QusAdmin> AdminLogin(String a_name,String a_password);
 	
 	//添加管理员
-	List<QusAdmin> AddAdmin(QusAdmin qusAdmin);
+	int AddAdmin(QusAdmin qusAdmin);
 	
 	//修改管理员信息
 	Integer UpdateAdmin(QusAdmin admin);

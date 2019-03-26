@@ -185,23 +185,6 @@ layui.config({
 		layui.layer.full(index);
 	})
 	
-	form.on("submit",function(data){
-				$.ajax({
-					url : "adminModifySave",
-					type : "get",
-					data : {a_id:$("#a_id").val(),a_name:$("#a_name").val(),a_realName:$("#a_realName").val(),a_sex:$("#a_sex").val(),
-							a_phone:$("#a_phone").val(),a_born:$("#a_born").val(),a_address:$("#a_address").val(),
-							a_email:$("#a_email").val(),a_des:$("#a_des").val(),a_picpath:$("#a_picpath").val(),
-							},
-					dataType : "json",
-					success : function(data){
-						var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
-							parent.layer.close(index);    //关闭弹出层
-							window.parent.location.reload();   //刷新父界面
-					}
-			})
-		})
-
 	$("body").on("click",".users_del",function(){  //删除
 		var _this = $(this);
 		layer.confirm('确定删除此用户？',{icon:3, title:'提示信息'},function(index){
@@ -267,9 +250,9 @@ layui.config({
 			    	}
 					dataHtml += '<td>'+currData[i].a_born+'</td>'
 			    	+  '<td>'
-					+    '<a class="layui-btn layui-btn-mini users_edit" data-id="'+data[i].a_id+'"><i class="iconfont icon-edit"></i> 编辑</a>'
-					+    '<a class="layui-btn layui-btn-mini users_show" data-id="'+data[i].a_id+'"><i class="iconfont icon-edit"></i> 查看</a>'
-					+    '<a class="layui-btn layui-btn-danger layui-btn-mini users_del" data-id="'+data[i].a_id+'"><i class="layui-icon">&#xe640;</i> 删除</a>'
+					+    '<a class="layui-btn layui-btn-mini users_edit" data-id="'+currData[i].a_id+'"><i class="iconfont icon-edit"></i> 编辑</a>'
+					+    '<a class="layui-btn layui-btn-mini users_show" data-id="'+currData[i].a_id+'"><i class="iconfont icon-edit"></i> 查看</a>'
+					+    '<a class="layui-btn layui-btn-danger layui-btn-mini users_del" data-id="'+currData[i].a_id+'"><i class="layui-icon">&#xe640;</i> 删除</a>'
 			        +  '</td>'
 			    	+'</tr>';
 				}

@@ -19,9 +19,10 @@
 	</style>
 </head>
 <body class="childrenBody">
-	<form class="layui-form">
+	<form class="layui-form" enctype="multipart/form-data" method="post">
 		<div class="user_left">
 		<input name="a_id" type="hidden" id="a_id" th:value="${admin.a_id}"/>
+		<input name="a_modify" type="hidden" id="a_modify" th:value="${admin.a_id}"/>
 			<div class="layui-form-item">
 			    <label class="layui-form-label">用户名</label>
 			    <div class="layui-input-block">
@@ -37,12 +38,12 @@
 			<div class="layui-form-item" pane="">
 			    <label class="layui-form-label">性别</label>
 			    <div class="layui-input-block" id="a_sex" th:if="${admin.a_sex==0}">
-			    	<input type="radio" name="a_sex" value="男" title="男" checked="checked">
-	     			<input type="radio" name="a_sex" value="女" title="女">
+			    	<input type="radio" name="a_sex" id="0" value="0" title="男" checked="checked">
+	     			<input type="radio" name="a_sex" id="1" value="1" title="女">
 			    </div>
 			    <div class="layui-input-block" id="a_sex" th:if="${admin.a_sex==1}">
-			    	<input type="radio" name="a_sex" value="男" title="男">
-	     			<input type="radio" name="a_sex" value="女" title="女" checked="checked">
+			    	<input type="radio" name="a_sex" id="0" value="0" title="男">
+	     			<input type="radio" name="a_sex" id="1" value="1" title="女" checked="checked">
 			    </div>
 			</div>
 			<div class="layui-form-item">
@@ -76,15 +77,21 @@
 			    	<textarea id="a_des" name="a_des" placeholder="请输入内容" class="layui-textarea">[[${admin.a_des}]]</textarea>
 			    </div>
 			</div>
+			<div class="layui-form-item">
+			    <label class="layui-form-label">选择照片</label>
+			    <div class="layui-input-block">
+			    	<input type="file" id="a_picpath" name="a_picpath" th:value="${admin.a_picpath}">
+			    </div>
+			</div>
 		</div>
-		<div class="user_right"><!-- class="layui-upload-file" -->
+		<!-- <div class="user_right">class="layui-upload-file"
 			<input type="file" name="dddd" th:value="请选择一个头像">
 			<p>选择图片</p>
 			<img th:src="${admin.a_picpath}" class="layui-circle" id="a_picpath" name="a_picpath" width="150" height="150" >
-		</div>
+		</div> -->
 		<div class="layui-form-item" style="margin-left: 5%;">
 		    <div class="layui-input-block"> 
-				<button type="submit" class="layui-btn layui-btn-normal" lay-submit="">立即提交</button>
+				<button class="layui-btn layui-btn-normal" type="submit" lay-submit="" lay-filter="*">立即提交</button>
 				<button type="reset" class="layui-btn">重置</button>
 		    </div>
 		</div>
@@ -93,7 +100,31 @@
 	<script type="text/javascript" th:src="@{/back/pagejs/address.js}"></script>
 	<!-- <script type="text/javascript" th:src="@{/back/pagejs/user.js}"></script> -->
  	<script type="text/javascript" th:src="@{/back/pagejs/AdminAdd.js}"></script>
- 	
+ 	<script type="text/javascript" th:src="@{/back/js/jquery-1.8.2.min.js}"></script>
+ 	<script type="text/javascript">
+		layui.use(['jquery','form'],function(){
+			var form = layui.form();
+			
+			form.on("submit",function(data){
+				$.ajax({
+					url : "/admin/adminModifySave",
+					type : "POST",
+					data : {
+						a_id:$("#a_id").val(),a_modify:$("#a_modify").val(),a_name:$("#a_name").val(),a_realName:$("#a_realName").val(),
+						a_sex:$('input:radio:checked').val(),a_phone:$("#a_phone").val(),a_born:$("#a_born").val(),
+						a_address:$("#a_address").val(),a_email:$("#a_email").val(),a_des:$("#a_des").val(),
+						a_picpath:$("#a_picpath").val(),file:$("#a_picpath").val()},
+					dataType : "JSON",
+					success : function(data){
+						var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
+							parent.layer.close(index);    //关闭弹出层
+							window.parent.location.reload();   //刷新父界面
+					}
+				})
+			})
+
+		})
+	</script>
  	<!-- <script type="text/javascript">
  		layui.use(['jquery','form','upload'],function(){
  			var form = layui.form();

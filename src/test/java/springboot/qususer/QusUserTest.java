@@ -63,8 +63,8 @@ public class QusUserTest {
 		user.setU_card("412721200005140636");
 		user.setU_phone("19903695465");
 		user.setU_role_id(2);
-		int count =qusUserService.updateUser(user);
-		System.out.println(count);
+		//int count =qusUserService.updateUser(user);
+		//System.out.println(count);
 	}
 	/**
 	 * 模糊查询

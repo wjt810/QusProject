@@ -39,17 +39,15 @@ public class QusAdmin {
 		this.a_createBy = a_createBy;
 	}
 
-	public Integer getA_modifyBy() {
-		return a_modifyBy;
+	private Integer a_modify;//更新人id
+	public Integer getA_modify() {
+		return a_modify;
 	}
 
-	public void setA_modifyBy(Integer a_modifyBy) {
-		this.a_modifyBy = a_modifyBy;
+	public void setA_modify(Integer a_modify) {
+		this.a_modify = a_modify;
 	}
 
-	private Integer a_modifyBy;//更新人id
-
-	
 	public String getA_picpath() {
 		return a_picpath;
 	}
@@ -153,7 +151,7 @@ public class QusAdmin {
 		return "QusAdmin [a_id=" + a_id + ", a_name=" + a_name + ", a_password=" + a_password + ", a_sex=" + a_sex
 				+ ", a_phone=" + a_phone + ", a_realName=" + a_realName + ", a_email=" + a_email + ", a_des=" + a_des
 				+ ", a_born=" + a_born + ", a_address=" + a_address + ", a_createBy=" + a_createBy + ", a_picpath="
-				+ a_picpath + ", a_modifyBy=" + a_modifyBy + ", a_roleid=" + a_roleid + "]";
+				+ a_picpath + ", a_modifyBy=" + a_modify + ", a_roleid=" + a_roleid + "]";
 	}
 
 }

@@ -23,29 +23,8 @@ layui.config({
 
         //添加验证规则
         form.verify({
-           /* oldPwd : function(value, item){
-                if(value != "123456"){
-                    return "密码错误，请重新输入！";
-                }
-            },*/
-            /*newPwd : function(value, item){
-                if(value.length < 6){
-                    return "密码长度不能小于6位";
-                }
-            },
-            confirmPwd : function(value, item){
-                if(!new RegExp($("#newPwd").val()).test(value)){
-                    return "两次输入密码不一致，请重新输入！";
-                }
-            }*/
+          
         })
-
-        //判断是否修改过头像，如果修改过则显示修改后的头像，否则显示默认头像
-       /* if(window.sessionStorage.getItem('a_picpath')){
-        	$("#a_picpath").attr("src",window.sessionStorage.getItem('a_picpath'));
-        }else{
-        	$("#a_picpath").attr("src",${admin.a_picpath});
-        }*/
 
         //提交个人资料
         form.on("submit(changeUser)",function(data){
@@ -58,20 +37,41 @@ layui.config({
         })
 
         //修改密码
-        form.on("submit(changePwd)",function(data){
-        	//var index = layer.msg('提交中，请稍候',{icon: 16,time:false,shade:0.8});
-            /*setTimeout(function(){
-                layer.close(index);
-                
-                $(".a_password").val('');
-                */
-//            },2000);
-        	//return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
-            layer.msg("密码修改成功！");
-            location.href="/backLogin";
+        	form.on("submit",function(data){
+				var oldPwd = $("#oldPwd").val();
+				var newPwd = $("#newPwd").val();
+				var confirmPwd = $("#confirmPwd").val();
+				var pwd = $("#pwd").val();
+				if(oldPwd == pwd){
+					if(newPwd == confirmPwd){
+						$.ajax({
+							type:"GET",
+							url:"/admin/changPwd",
+							dataType:"JSON",
+							data:{"newPwd":newPwd},
+							success:function(data){
+								//alert("修改成功");
+								/* var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
+			 					parent.layer.close(index);    //关闭弹出层 */
+			 					//location.href="/backLogin";
+							},
+							error :function(){
+								layer.msg("密码修改成功！");
+								window.open("/back/login.html");
+								//window.location.href="/loginOut";
+								/*var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
+			 					parent.layer.close(index);    //关闭弹出层
+*/							}
+						})
+					}else{
+						$(".mes").attr("display","block");
+					}
+				}else{
+					layer.msg("旧密码不正确");
+					return false;
+				}
+			})
         })
-
-})
 
  //加载省数据
 function loadProvince() {

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="utf-8">
 	<title>管理员添加</title>
@@ -19,30 +19,31 @@
 	</style>
 </head>
 <body class="childrenBody">
-	<form class="layui-form" action="admin/upload"enctype="multipart/form-data"method="post">
+	<form class="layui-form" id="adminAdd" enctype="multipart/form-data" method="post" onsubmit="return false">
 		<div class="user_left">
+		<input name="a_createBy" type="hidden" id="a_createBy" th:value="${session.qusAdmin.a_id}"/>
 			<div class="layui-form-item">
 			    <label class="layui-form-label">用户名</label>
 			    <div class="layui-input-block">
-			    	<input id="a_name" name="a_name" type="text" value="" class="layui-input" placeholder="请输入用户名">
+			    	<input id="a_name" name="a_name" type="text" value="" class="layui-input a_name" placeholder="请输入用户名">
 			    </div>
 			</div>
 			<div class="layui-form-item">
 			    <label class="layui-form-label">真实姓名</label>
 			    <div class="layui-input-block">
-			    	<input id="a_realName" name="a_realName" type="text" value="" placeholder="请输入真实姓名" lay-verify="required" class="layui-input">
+			    	<input id="a_realName" name="a_realName" type="text" value="" placeholder="请输入真实姓名" lay-verify="required" class="layui-input a_realName">
 			    </div>
 			</div>
 			<div class="layui-form-item">
 			    <label class="layui-form-label">密码</label>
 			    <div class="layui-input-block">
-			    	<input id="a_password" name="a_password" type="password" value="" placeholder="请输入密码" lay-verify="required|newPwd" class="layui-input pwd">
+			    	<input id="a_password" name="a_password" type="password" value="" placeholder="请输入密码" lay-verify="required|newPwd" class="layui-input a_password">
 			    </div>
 			</div>
 			<div class="layui-form-item">
 			    <label class="layui-form-label">确认密码</label>
 			    <div class="layui-input-block">
-			    	<input type="password" value="" placeholder="请二次确认密码" lay-verify="required|confirmPwd" class="layui-input pwd">
+			    	<input type="password" value="" placeholder="请二次确认密码" lay-verify="required|confirmPwd" class="layui-input a_password">
 			    </div>
 			</div>
 			<div class="layui-form-item" pane="">
@@ -65,23 +66,24 @@
 			    </div>
 			</div>
 			<div class="layui-form-item">
-			    <label class="layui-form-label" style="margin-right: 0;">地址</label>
+			    <label class="layui-form-label">地址</label>
 				<div id="" class="layui-input-block">
-					<div id="a_address" name="a_address"  class="layui-input-inline">
-						<select name="province" lay-filter="province" style="width: 50px;">
+				    <input id="a_address" name="a_address" type="text" value="" placeholder="请输入地址" lay-verify="required|address" class="layui-input">
+					<!-- <div id="a_address" name="a_address"  class="layui-input-inline">
+						<select id="province" name="province" onchange="province()" lay-filter="province" style="width: 50px;">
 							<option value="">请选择省</option>
 						</select>
 					</div>
 					<div class="layui-input-inline">
-						<select name="city" lay-filter="city" style="width: 50px;" disabled>
+						<select id="city" name="city" lay-filter="city" onchange="city()" style="width: 50px;" disabled>
 							<option value="">请选择市</option>
 						</select>
 					</div>
 					<div class="layui-input-inline">
-						<select name="area" lay-filter="area" style="width: 50px;" disabled>
+						<select id="area" name="area" lay-filter="area" onchange="area()" style="width: 50px;" disabled>
 							<option value="">请选择县/区</option>
 						</select>
-					</div>
+					</div> -->
 				</div>
 			</div>
 			<div class="layui-form-item">
@@ -97,15 +99,19 @@
 			    	<textarea id="a_des" name="a_des" placeholder="请输入内容" class="layui-textarea"></textarea>
 			    </div>
 			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">选择头像</label>
+				<div class="user_right">
+					<input type="file" name="file" id="a_picpath" class="a_picpath" value="选择头像" lay-title="请选择一个头像">
+					<!-- <p>请选择一张图片</p>
+					<img src="" class="layui-circle" id="a_picpath" name="a_picpath" > -->
+				</div>
+			</div>
 		</div>
-		<div class="user_right">
-			<input type="file" name="dddd" class="layui-upload-file" lay-title="请选择一个头像">
-			<p>请选择一张图片</p>
-			<img src="" class="layui-circle"id="a_picpath" name="a_picpath" >
-		</div>
+		
 		<div class="layui-form-item" style="margin-left: 5%;">
 		    <div class="layui-input-block"> 
-		    	<button type="submit" >立即提交</button>
+		    	<button type="button" class="layui-btn layui-btn" lay-filter="addUser" onclick="addAdmin()">立即提交</button>
 				<button type="reset" class="layui-btn layui-btn-primary">重置</button>
 		    </div>
 		</div>
@@ -114,5 +120,58 @@
 	<script type="text/javascript" src="back/pagejs/address.js"></script>
 	<script type="text/javascript" src="back/pagejs/user.js"></script>
 	<script type="text/javascript" src="back/pagejs/AdminAdd.js"></script>
+	<script type="text/javascript" th:src="@{/back/js/jquery-1.8.2.min.js}"></script>
+	<script>
+	 layui.use(['form','select'],function(){
+			var form = layui.form();
+			
+			var province,city,area;
+			
+			function province(){
+				province = $("#province").val();
+				alert(province);
+			}
+			function city(){
+				city = $("#city").val();
+				alert(city);
+			}
+			function area(){
+				area = $("#area").val();
+				alert(area);
+			}
+			
+		})
+	
+		function addAdmin() {
+			var formData = new FormData($("#adminAdd")[0]);
+			$.ajax({
+				url : "admin/addAdminSave",
+				type : 'POST',
+				data : formData,
+				cache: false,
+				async: false,
+				processData : false,  //必须false才会避开jQuery对 formdata 的默认处理
+				contentType : false,  //必须false才会自动加上正确的Content-Type
+				success: function (data) {
+					console.log("成功");
+						 layer.alert("增加成功", {icon: 6}, function () {
+							window.parent.location.reload(); //刷新父页面
+							// 获得frame索引
+							var index = parent.layer.getFrameIndex(window.name);
+							//关闭当前frame
+							parent.layer.close(index);
+						});
+					
+					},
+					error: function (data) {
+						console.log("失败");
+						/*
+						layer.msg(data.message, {time: 2000});
+						*/
+						}
+					});
+			}
+		</script>
+
 </body>
 </html>

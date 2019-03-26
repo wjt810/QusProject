@@ -13,38 +13,46 @@ layui.config({
 	 	if(window.sessionStorage.getItem("addUser")){
 	 		addUserArray = JSON.parse(window.sessionStorage.getItem("addUser"));
 	 	}
+	 	var active = {
+	 		    content: function(){
+	 		      alert(layedit.getContent(editIndex)); //获取编辑器内容
+	 		    }
+	 	};
 
-	 	var userStatus,userGrade,userEndTime;
-	 	//会员等级
-	 	if(data.field.userGrade == '0'){
- 			userGrade = "注册会员";
- 		}else if(data.field.userGrade == '1'){
- 			userGrade = "中级会员";
- 		}else if(data.field.userGrade == '2'){
- 			userGrade = "高级会员";
- 		}else if(data.field.userGrade == '3'){
- 			userGrade = "超级会员";
- 		}
- 		//会员状态
- 		if(data.field.userStatus == '0'){
- 			userStatus = "正常使用";
- 		}else if(data.field.userStatus == '1'){
- 			userStatus = "限制用户";
- 		}
-
- 		addUser = '{"a_id":"'+ new Date().getTime() +'",';//id
- 		addUser += '"a_name":"'+ $(".a_name").val() +'",';  //登录名
- 		addUser += '"a_sex":"'+ data.field.sex +'",'; //性别
- 		addUser += '"a_password":"'+ $(".a_password").val() +'",';  //登录名
- 		addUser += '"a_realName":"'+ a_realName +'",'; //管理员真实姓名
- 		addUser += '"a_email":"'+ a_email +'",'; //管理员邮箱
- 		addUser += '"a_des":"'+ a_des +'",'; //管理员简介
- 		addUser += '"a_address":"'+ a_address +'",'; //管理员邮箱
- 		addUser += '"a_picpath":"'+ a_picpath +'",'; //管理员头像
- 		addUser += '"a_born":"'+ formatTime(new Date()) +'"}';  //出生日期
- 		console.log(addUser);
- 		addUserArray.unshift(JSON.parse(addUser));
- 		window.sessionStorage.setItem("addUser",JSON.stringify(addUserArray));
+	 	//向数据库中插入数据
+	 	/*var a_roleid=1;
+	 	
+	 	$.ajax({
+ 			url : "adminAddSave",
+ 			type : "get",
+ 			data : {a_name:$("#a_name").val(),a_sex:$("#a_sex").val(),a_password:$("#a_password").val(),a_realName:$("#a_realName").val(),
+ 				a_email:$("#a_email").val(),info_content:layedit.getText(editIndex),a_address:$("#a_address").val(),a_picpath:$("#a_picpath").val(),
+ 				a_born:$(".a_born").val()},
+ 			dataType : "json",
+ 			success : function(data){
+ 				layui.msg("成功");
+ 				$.ajax({
+ 		 			url : "getMaxId",
+ 		 			type : "get",
+ 		 			dataType : "json",
+ 		 			success : function(data){
+ 		 		 		addUser = '{"a_name":"'+ $(".a_name").val() +'",';  //登录名
+ 		 		 		addUser += '"a_sex":"'+ data.field.sex +'",'; //性别
+ 		 		 		addUser += '"a_password":"'+ $(".a_password").val() +'",';  //登录名
+ 		 		 		addUser += '"a_realName":"'+ $(".a_realName").val() +'",'; //管理员真实姓名
+ 		 		 		addUser += '"a_email":"'+ $(".a_email").val() +'",'; //管理员邮箱
+ 		 		 		addUser += '"a_des":"'+ layedit.getContent(editIndex) +'",'; //管理员简介使用larui的方式来获取textarea中的数据
+ 		 		 		addUser += '"a_address":"'+ $(".a_address").val()+'",'; //管理员邮箱
+ 		 		 		addUser += '"a_picpath":"'+ $(".a_picpath").val() +'",'; //管理员头像
+ 		 		 		addUser += '"a_born":"'+ $(".a_born").val()'"}';  //出生日期
+ 		 		 		console.log(addUser);
+ 		 		 		addUserArray.unshift(JSON.parse(addUser));
+ 		 		 		window.sessionStorage.setItem("addUser",JSON.stringify(addUserArray));
+ 		 			}
+ 		 		})
+ 			}
+ 		})
+ 		
  		//弹出loading
  		var index = top.layer.msg('数据提交中，请稍候',{icon: 16,time:false,shade:0.8});
         setTimeout(function(){
@@ -54,9 +62,8 @@ layui.config({
 	 		//刷新父页面
 	 		parent.location.reload();
         },2000);
- 		return false;
+ 		return false;*/
  	})
-	
 })
 
 //格式化时间

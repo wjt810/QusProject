@@ -1,7 +1,9 @@
 package springboot.controller;
 
 import java.io.File.*;
+import java.net.URLEncoder;
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.io.*;
 import java.util.*;
@@ -14,6 +16,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -45,23 +48,52 @@ Logger logger = LoggerFactory.getLogger(AdminController.class);
 	}
 	 
 	
-	//添加管理员
-	@RequestMapping(value="/adminAdd")
-	public ModelAndView addUser(@ModelAttribute("QusAdmin") QusAdmin qusAdmin){
-		ModelAndView mv=new ModelAndView("/back/AdminAdd");
-		return mv;
-	}
 	//保存用户
-	@RequestMapping(value="/upload",method=RequestMethod.POST)
-	public ModelAndView userSave(QusAdmin qusAdmin,HttpSession session){
-		Integer createdBy=((QusAdmin) session.getAttribute("qusAdmin")).getA_id();
-		qusAdmin.setA_createBy(createdBy);
-		if(qusAdminService.AddAdmin(qusAdmin) != null){
-			ModelAndView mv=new ModelAndView("/back/list");
-			return mv;
+	@RequestMapping(value="/addAdminSave",method=RequestMethod.POST)
+	public int studentInfoSave(@RequestParam("file") MultipartFile file,HttpServletRequest request,HttpSession session) throws Exception {
+		String filename = URLEncoder.encode(file.getOriginalFilename(), "utf-8");
+		InputStream inputStream = file.getInputStream();
+		//上传到第三方服务器（例如使用FTP传到自己搭建的FTP服务器）ftp://ftphost:port/imageDir/
+		QusAdmin qusAdmin=new QusAdmin();
+		qusAdmin.setA_picpath("D:/STS/stsWork/QusProject/src/main/resources/static/back/images/" + filename);
+		//在Dao层将学生信息存到数据库
+		String a_name=request.getParameter("a_name");
+		String a_realName=request.getParameter("a_realName");
+		String sex=request.getParameter("sex");
+		int a_sex=0;
+		if(sex=="男") {
+			a_sex=0;
+		}else if(sex=="女") {
+			a_sex=1; 
 		}
-		ModelAndView mv=new ModelAndView("back/adminAdd");
-		return mv;
+		//int a_sex=request.getParameter("a_sex");
+		String a_password=request.getParameter("a_password");
+		String a_phone=request.getParameter("a_phone");
+		String a_born=request.getParameter("a_born");
+		SimpleDateFormat sf=new SimpleDateFormat("yyyy-MM-dd");
+		Date sfs=(Date)sf.parseObject(a_born);
+		
+		String a_address=request.getParameter("a_address");
+		
+		String a_email=request.getParameter("a_email");
+		String a_des=request.getParameter("a_des");
+		qusAdmin.setA_name(a_name);
+		qusAdmin.setA_realName(a_realName);
+		qusAdmin.setA_sex(a_sex);
+		qusAdmin.setA_password(a_password);
+		qusAdmin.setA_phone(a_phone);
+		qusAdmin.setA_born(sfs);  //出生日期
+		qusAdmin.setA_address(a_address);
+		qusAdmin.setA_email(a_email);
+		qusAdmin.setA_des(a_des);
+		qusAdmin.setA_roleid(1);
+		//创建者id
+		String createdBy=request.getParameter("a_createBy");
+		qusAdmin.setA_createBy(Integer.parseInt(createdBy));
+		
+		int count=qusAdminService.AddAdmin(qusAdmin);
+		
+		return count;
 	}
 	
 	/**
@@ -117,68 +149,38 @@ Logger logger = LoggerFactory.getLogger(AdminController.class);
 	/**
 	 * 保存修改内容
 	 * @return
+	 * @throws IOException 
+	 * @throws ParseException 
 	 */
-	@RequestMapping("/adminModifySave")
-	public int modifyAdminSave(@RequestParam("a_id") String a_id,@RequestParam("a_name") String a_name,
+	@RequestMapping(value="/adminModifySave",method=RequestMethod.POST)
+	public int modifyAdminSave(@RequestParam("a_id") String a_id,@RequestParam("a_modify") String a_modify,@RequestParam("a_name") String a_name,
 			@RequestParam("a_realName") String a_realName,@RequestParam("a_sex") String a_sex,
-			@RequestParam("a_phone") String a_phone,@RequestParam("a_born") Date a_born,
+			@RequestParam("a_phone") String a_phone,@RequestParam("a_born") String a_born,
 			@RequestParam("a_email") String a_email,@RequestParam("a_des") String a_des,
-			@RequestParam("a_picpath") String a_picpath,@RequestParam("a_address") String a_address,
-			HttpServletRequest request) {
-		QusAdmin admin=new QusAdmin();
+			@RequestParam("a_address") String a_address,@RequestParam("a_picpath") String a_picpath,
+			HttpServletRequest request,HttpSession session) throws IOException, ParseException {
+		QusAdmin admin=new QusAdmin();//,MultipartFile file
+		SimpleDateFormat farmat=new SimpleDateFormat("yyyy-MM-dd");
 		admin.setA_id(Integer.parseInt(a_id));
 		admin.setA_name(a_name);
 		admin.setA_realName(a_realName);
 		admin.setA_sex(Integer.parseInt(a_sex));
 		admin.setA_phone(a_phone);
-		admin.setA_born(a_born);
+		admin.setA_born(farmat.parse(a_born));
 		admin.setA_email(a_email);
 		admin.setA_des(a_des);
 		admin.setA_picpath(a_picpath);
 		admin.setA_address(a_address);
+		admin.setA_modify(Integer.parseInt(a_modify));
+		
+		/*a_picpath = URLEncoder.encode(file.getOriginalFilename(), "utf-8");
+		InputStream inputStream = file.getInputStream();
+		//上传到第三方服务器（例如使用FTP传到自己搭建的FTP服务器）ftp://ftphost:port/imageDir/
+		admin.setA_picpath("http://localhost:8880/static/back/images/" + a_picpath);*/
+		
 		int count=qusAdminService.UpdateAdmin(admin);
 		return count;
 	}
-	
-	//文件上传
-	 /* @GetMapping("/upload")
-	    public String upload() {
-	        return "upload";
-	    }
-	    @PostMapping("/upload")
-	    @ResponseBody
-	    public String upload(@RequestParam("file") MultipartFile file) {
-	        if (file.isEmpty()) {
-	            return "上传失败，请选择文件";
-	        }
-
-	        String fileName = file.getOriginalFilename();
-	        String filePath = "C:\\Users\\a\\Pictures\\Saved Pictures";
-	        File dest = new File(filePath + fileName);
-	        try {
-	            file.transferTo(dest);
-	            logger.info("上传成功");
-	            return "上传成功";
-	        } catch (IOException e) {
-	        	logger.error(e.toString(), e);
-	        }
-	        return "上传失败！";
-	    }
-	*/
-		/*
-		//保存修改的用户信息
-		@RequestMapping(value="/usermodifysave.html",method=RequestMethod.POST)
-		public ModelAndView modifyUserSave(QusAdmin qusAdmin,HttpSession sessin){
-			Integer modifyId=((QusAdmin) sessin.getAttribute("qusAdmin")).getA_id();
-			qusAdmin.setA_modifyBy(modifyId);
-			if(qusAdminService.UpdateAdmin(modifyId) != null){
-				ModelAndView mv=new ModelAndView("back/index");
-				return mv;
-			}
-			ModelAndView mv=new ModelAndView("back/modify");
-			return mv;
-		}
-	*/
 	
 	@RequestMapping("/changPwd")
 	public void changPwd(HttpServletRequest request,HttpSession session,
