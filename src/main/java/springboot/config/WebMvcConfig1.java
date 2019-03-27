@@ -27,12 +27,7 @@ public class WebMvcConfig1 implements WebMvcConfigurer {
 	public void addInterceptors(InterceptorRegistry registry) {
 		registry.addInterceptor(getLoginHandlerIntercepter())//不拦截登陆页面和注册页面,和静态资源
 		.excludePathPatterns(Arrays.asList("/static/**","/webjars/**","/backLogin","/login"))
-		.addPathPatterns("/**");  
+		.addPathPatterns("/login");
 	}
-/*	@Override
-	public void addInterceptors(InterceptorRegistry registry) {
-		registry.addInterceptor(getLoginHandlerIntercepter()).addPathPatterns("/sys/**"); 
-		//registry.addInterceptor(getLoginHandlerIntercepter()).excludePathPatterns("/static/**","/backLogin","/login","/login.html"); //不拦截登陆页面和注册页面,和静态资源
-	}*/
 
 }
