@@ -8,7 +8,9 @@ import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
@@ -20,8 +22,8 @@ import springboot.service.qusadmin.QusAdminService;
 import springboot.service.qusdoctor.QusDoctorService;
 import springboot.service.qusrole.QusRoleService;
 import springboot.service.qususer.QusUserService;
-@RestController
-//@Controller
+//@RestController
+@Controller
 public class UserController {
 	
 	Logger logger = LoggerFactory.getLogger(UserController.class);
@@ -40,35 +42,39 @@ public class UserController {
 	 * 登录
 	 * @return
 	 */
-	@RequestMapping("backLogin")
+	@RequestMapping("/backLogin")
 	public ModelAndView login() {
 		ModelAndView mv = new ModelAndView("back/login");
 		return mv;
 	}
-
-	@RequestMapping("/login")
-	public ModelAndView doLogin(
-			@RequestParam String a_name,
-			@RequestParam String a_password, 
+	
+	@RequestMapping(value="/login")
+	public String doLogin(
+			@RequestParam(value="a_name",required=false) String a_name,
+			@RequestParam(value="a_password",required=false) String a_password, 
 			HttpSession session,
 			HttpServletRequest request) {
+		String path = null;
 		ModelAndView mv=new ModelAndView();
-		List<QusAdmin> qusAdmin = qusAdminService.AdminLogin(a_name,a_password);
-		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        String hh=simpleDateFormat.format(qusAdmin.get(0).getA_born());
-			if(qusAdmin.size()>0) {
-				if(qusAdmin.get(0).getA_roleid()==1) {
-					session.setAttribute("qusAdmin", qusAdmin.get(0));
-					session.setAttribute("born", hh);
-					System.out.println("管理员");
-					mv=new ModelAndView("/back/index");
+		if(a_name!=null&&a_name!="") {
+			List<QusAdmin> qusAdmin = qusAdminService.AdminLogin(a_name,a_password);
+			SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+	        String hh=simpleDateFormat.format(qusAdmin.get(0).getA_born());
+				if(qusAdmin.size()>0) {
+					if(qusAdmin.get(0).getA_roleid()==1) {
+						session.setAttribute("qusAdmin", qusAdmin.get(0));
+						session.setAttribute("born", hh);
+						path = "/back/index";
+					}
+				}else{
+					System.out.println("无此账户");
+					request.setAttribute("error", "用户名或密码不正确");
+					path = "/back/login";
 				}
-			}else{
-				System.out.println("无此账户");
-				request.setAttribute("error", "用户名或密码不正确");
-				mv=new ModelAndView("/back/login");
-			}
-			return mv;
+		}else {
+			path = "/back/login";
+		}
+			return path;
 	}
 	
 	/**
