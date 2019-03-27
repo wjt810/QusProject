@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>所有医生列表</title>
-    <link rel="stylesheet" type="text/css" href="pre/res1/static/css/main.css">
-    <link rel="stylesheet" type="text/css" href="pre/res1/layui/css/layui.css">
-    <script type="text/javascript" src="pre/res1/layui/layui.js"></script>
+    <link rel="stylesheet" type="text/css" th:href="@{/pre/res1/static/css/main.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/pre/res1/layui/css/layui.css}">
+    <script type="text/javascript" th:src="@{/pre/res1/layui/layui.js}"></script>
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
@@ -87,7 +87,7 @@
                 <a href="#" title="母婴商城">
                     <h1 class="mallLogo">
                         <a href="/pre" title="logo"class="title">
-                            <img src="pre/res1/static/img/logo.jpg"style="width: 82px;height: 60px;">预医网
+                            <img src="/pre/res1/static/img/logo.jpg"style="width: 82px;height: 60px;">预医网
                         </a>
                     </h1>
                 </a>
@@ -135,7 +135,7 @@
                 <div class="item" th:each="doc:${doclist}">
                 	<div class="doc_id" style="display:none" th:text="${doc.d_id}"></div>
                     <div class="img">
-                        <img src="pre/res1/static/img/1.jpg" alt="" width="260" height="280">
+                        <img th:src="${doc.d_picpath}" alt="" width="260" height="280">
                     </div>
                     <div class="text">
                         <h4 th:text="${doc.d_name}"></h4>
@@ -143,8 +143,9 @@
                         <p class="info-cont"><span>擅长:</span><i th:text="${doc.d_description}"></i><a href="">详细介绍>></a> </p>
                     </div>
                     <div class="registration left">
-                    	<sa href="/phone"><span>电话咨询</span></a>
-                    	<a  class="on" href="/order"><span>预约挂号</span></a>
+                    
+                    	<a href="/phone"><span>电话咨询</span></a><!-- th:href="'javascript:goRead(${doc.d_id});'" -->
+                    	<a class="on" th:onclick="'javascript:goRead('+${doc.d_id}+')'"><span>预约挂号</span></a>
                     	<a href="/online"><span>在线咨询</span></a>
                    	</div>
                 </div>
@@ -153,48 +154,32 @@
         </div>
     </div>
 </div>
-<!-- 模版引擎导入 -->
-<!-- <script type="text/html1" id="demo">
-  {{# layui.each(d.listCont,function(index,item){}}
-  <div class="item">
-    <div class="img">
-      <img src="../res1/img/new1.jpg" alt="">
-    </div>
-    <div class="text">
-      <h4>周岁内的宝宝消化不良拉肚子怎么办?</h4>
-      <p class="data">2016-12-24 16:33:26</p>
-      <p class="info-cont">宝宝在周岁之前体质相对较弱，特别是薄弱肠道，一不注意就会拉肚子;那么宝宝消化不良拉肚子</p>
-    </div>
-  </div>
-  {{# })}}
-</script> -->
+<script type="text/javascript" th:src="@{/pre/js/jquery-1.8.2.min.js}"></script>
 <script>
-    layui.config({
+    /* layui.config({
         base: 'pre/res/static/js/util/' //你存放新模块的目录，注意，不是layui的模块目录
-    }).use(['mm', 'laypage'], function () {
-        var
-                mm = layui.mm, laypage = layui.laypage;
+    }).use(['mm','laypage'], function () {
+        var mm = layui.mm, laypage = layui.laypage;
         laypage.render({
             elem: 'demo0'
             , count: 100 //数据总数
         });
-        // 模版引擎导入
-        // var html1 = demo.innerHTML;
-        // var listCont = document.getElementById('list-cont');
-        //  mm.request({
-        //    url: '../json/information.json',
-        //    success : function(res1){
-        //      console.log(res1)
-        //      listCont.innerHTML = mm.renderHtml(html1,res1)
-        //    },
-        //    error: function(res1){
-        //      console.log(res1);
-        //    }
-        //  })
-    });
-
+        
+      
+        
+        function goRead(d_id){
+        	alert(d_id);
+        	window.location.href = "/orderShow?d_id="+d_id;
+        }   
+        
+    }); */
+	
+    function goRead(d_id){
+    	alert(d_id);
+    	window.location.href = "/orderShow?d_id="+d_id;
+    }   
+    
 </script>
-
 
 </body>
 </html>

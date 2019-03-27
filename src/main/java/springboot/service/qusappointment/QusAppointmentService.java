@@ -25,4 +25,18 @@ public interface QusAppointmentService {
 	 * @return
 	 */
 	public Integer deleteAppByuserId(Integer u_id);
+	
+	
+	
+	/**
+	 * 添加约单
+	 * @param qusAppointment
+	 * @return
+	 */
+	public int addAppInfo(QusAppointment qusAppointment);
+	
+	/**
+	 * 获取预约单的最后一条数据 
+	 */
+	public QusAppointment getAppEndInfo();
 }

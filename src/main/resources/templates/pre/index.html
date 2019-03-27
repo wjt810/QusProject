@@ -8,7 +8,7 @@
     <script type="text/javascript" src="pre/res/layui/layui.js"></script>
     <script type="text/javascript" src="pre/js/jquery-1.12.4.js"></script>
     <link rel="stylesheet" href="pre/css/bootstrap.css"/>
-    <script src="js/bootstrap.js"></script>
+    <script type="text/javascript" th:src="@{/pre/js/bootstrap.js}"></script>
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
@@ -166,7 +166,7 @@
                             <div class="zj" style="display:none">
                                 <div class="zj_l_c" >
                                 <p th:each="room2:${room1.room2s}" style="padding-left:30px;">
-                                    <a href="#" th:text="${room2.r2_name}"></a>&nbsp;&nbsp;
+                                    <a href="#" class="room2" th:text="${room2.r2_name}" th:r2-id="${room2.r2_id}"></a>&nbsp;&nbsp;
                                 </p></div>
                             </div>
                         </li>
@@ -217,7 +217,7 @@
                             <div carousel-item>
                                 <div class="item-box">
                                     <div class="item" th:each="doc:${doclist}" th:if="${docStat.even}">
-                                        <a href="/details"><img src="pre/images/医生1.1.jpg"style="width: 150px;height: 200px"></a>
+                                        <a href="/details"><img th:src="${doc.d_picpath}" style="width: 150px;height: 200px"></a>
                                         <div class="title"><i th:text="${doc.d_name}"></i>:<i th:text="${doc.qusRoom2.r2_name}"></i></div>
                                         <div class="price">
                                             <span th:text="${doc.d_price}"></span>
@@ -227,7 +227,7 @@
                                 </div>
                                 <div class="item-box">
                                     <div class="item" th:each="doc,docStat:${doclist}" th:if="${docStat.odd}">
-                                        <a href="javascript:;"><img src="pre/images/医生1.5.jpg"style="width: 150px;height: 200px"></a>
+                                        <a href="javascript:;"><img th:src="${doc.d_picpath}" style="width: 150px;height: 200px"></a>
                                         <div class="id" th:text="${doc.d_id}" style="display:none;"></div>
                                         <div class="title"><i th:text="${doc.d_name}"></i>:<i th:text="${doc.qusRoom2.r2_name}"></i></div>
                                         <div class="price">
@@ -325,12 +325,12 @@
         <div class="product-list-cont w1200">
             <h4>专家推荐</h4>
             <div class="product-item-box layui-clear">
-                <div class="list-item" th:each="doc,docStat:${doclist}" th:if="${docStat.even}">
+                <div class="list-item" th:each="doc,docStat:${doclist}" th:if="${docStat.index < 10}">
                     <img src="pre/images/稀缺号.png" alt="" style="margin-left: 120px;position:relative;z-index:2;"/>
                     <div style="position:relative;z-index:1;top: -90px;">
                     	<div class="d_id" style="display:none" th:text="${doc.d_id}"></div>
                         <a href="javascript:;">
-                            <img src="pre/images/专家1.png" width="126"height="190px"></a>
+                            <img th:src="${doc.d_picpath}" width="126"height="190px"></a>
                             <p><i style="color:rgba(50,200,50,0.6);" th:text="${doc.d_name}"></i>&nbsp;:&nbsp; 
                             <i th:text="${doc.d_description}"></i></p>
                         <div class="border">
@@ -393,16 +393,13 @@
         $(".room").click(function(){
         	var _this = $(this);
         	var r1_id = _this.attr("r1-id");
-        	alert(r1_id);
-        	$.ajax({
-        		url : "/doctor/seldoc",
-        		type : "GET",
-        		dataType : "JSON",
-        		data:{"r1_id":r1_id},
-        		success : function(data){
-        			
-        		}
-        	})
+        	window.location.href="/doctor/seldoc?r1_id="+r1_id;
+    	})
+    	
+    	$(".room2").click(function(){
+        	var _this = $(this);
+        	var r2_id = _this.attr("r2-id");
+        	window.location.href="/doctor/seldoc?r2_id="+r2_id;
     	})
         
     });
