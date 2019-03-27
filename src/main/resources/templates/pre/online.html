@@ -8,8 +8,9 @@
     <script src="http://www.googletagservices.com/activeview/js/current/osd.js?cb=%2Fr20100101"></script>
     <script src="http://pagead2.googlesyndication.com/pub-config/r20160913/ca-pub-4047296578432934.js"></script>
     <script id="google_shimpl" src="http://pagead2.googlesyndication.com/pagead/js/r20190214/r20190131/show_ads_impl.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="http://znsv.baidu.com/customer_search/api/js?sid=11363081882486450138&amp;plate_url=http%3A%2F%2Fwww.mingyihui.net%2Fask%2F%2Fconsult%2Fservices.html&amp;t=430729" type="text/javascript" async=""></script><script src="http://www.google-analytics.com/analytics.js" async=""></script><script src=" http://hm.baidu.com/h.js?d9d2e52c92d7e2ea3334b898b5eda1c6"></script>
+    <script src="/pre/js/bootstrap.js"></script>
+    <script src="http://znsv.baidu.com/customer_search/api/js?sid=11363081882486450138&amp;plate_url=http%3A%2F%2Fwww.mingyihui.net%2Fask%2F%2Fconsult%2Fservices.html&amp;t=430729" type="text/javascript" async=""></script>
+    <script src="http://www.google-analytics.com/analytics.js" async=""></script>
     <link href="http://www.mingyihui.net/templates/skins/red2017/css/reset.css?v=20160924" rel="stylesheet">
     <link href="http://www.mingyihui.net/templates/skins/red2017/css/style.css?v=20160924" rel="stylesheet">
     <link href="http://www.mingyihui.net/templates/skins/red2017/css/popup.css?v=20160924" rel="stylesheet">
@@ -20,7 +21,7 @@
     <script src="http://www.mingyihui.net/templates/skins/red2017/js/myjs.js?v=20160924" type="text/javascript"></script><!--右边悬浮二维码-->
     <link rel="stylesheet" type="text/css" href="pre/res/static/css/main.css"><!--尾部样式导入-->
     <link rel="stylesheet" type="text/css" href="pre/res/layui/css/layui.css"><!--预医网logo样式-->
-    <link rel="stylesheet" href="css/bootstrap.css"/><!--板块的小部件样式-->
+    <link rel="stylesheet" type="text/css" href="pre/css/bootstrap.css"/><!--板块的小部件样式-->
 </head>
 <body>
 <style>
@@ -84,8 +85,12 @@
             <!--未登录-->
             <div class="fl" id="notLogin">
                 <ul class="login-registration">
-                    <li class="on popup_li">
-                        <a href="javascript:jumpLogin();" target="_self"style="color: green;">登录</a>
+                     <li class="on popup_li" th:if="${session.user == null}"><!-- javascript:jumpLogin(); -->
+                        <a href="@{/pre/login}" target="_self" style="color: green;">登录</a>
+                    </li>
+                    <li class="on popup_li" th:if="${session.user != null}"><!-- javascript:jumpLogin(); -->
+                        <!-- <a href="/pre/login" target="_self" style="color: green;">登录</a> -->
+                      	 <p style="top:-10px;">用户：<span style="color: blue;">[[${session.user.u_name}]]</span></p>
                     </li>
                     <li class="on zhuce">
                         <a href="javascript:jumpRegister();" target="_self"style="color: green;">注册</a>
@@ -94,9 +99,6 @@
                 <ul class="login-registration">
                     <li class="on popup_li">
                         <span class="top_nav_icon"></span>
-                    </li>
-                    <li class="on zhuce">
-                        <a href="javascript:;" target="_self"style="color: green;">医生注册</a>
                     </li>
                 </ul>
                 <div class="clr"></div>

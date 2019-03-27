@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head lang="en">
     <meta charset="UTF-8">
     <title>预约流程</title>
-    <link rel="stylesheet" type="text/css" href="pre/res/static/css/main.css">
-    <link rel="stylesheet" type="text/css" href="pre/res/layui/css/layui.css">
-    <script type="text/javascript" src="pre/res/layui/layui.js"></script>
-    <script type="text/javascript" src="pre/js/jquery-1.12.4.js"></script>
-    <link rel="stylesheet" href="/pre/css/bootstrap.css"/>
-    <script src="pre/js/jquery-1.8.2.min.js"></script>
+    <link rel="stylesheet" type="text/css" th:href="@{/pre/res/static/css/main.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/pre/res/layui/css/layui.css}">
+    <script type="text/javascript" th:src="@{/pre/res/layui/layui.js}"></script>
+    <script type="text/javascript" th:src="@{/pre/js/jquery-1.12.4.js}"></script>
+    <link rel="stylesheet" href="@{/pre/css/bootstrap.css}"/>
+    <script src="@{/pre/js/jquery-1.8.2.min.js}"></script>
     <!--导航条-->
 	<link href="http://www.mingyihui.net/templates/skins/red2017/css/header.css?v=20171018" rel="stylesheet">
     <!--<link href="http://www.mingyihui.net/templates/skins/red2017/css/login.css?V" rel="stylesheet">
@@ -27,6 +27,12 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    
+    <script type="text/javascript">
+    	function tijiao(){
+    		window.location.href = "/shouqian";
+    	}
+    </script>
 </head>
 <style>
    .title{
@@ -84,8 +90,12 @@
             <!--未登录-->
             <div class="fl" id="notLogin">
                 <ul class="login-registration">
-                    <li class="on popup_li" th:if="${session.user == null}"><!-- javascript:jumpLogin(); -->
-                        <a href="/pre/login" target="_self"style="color: green;">登录</a>
+                     <li class="on popup_li" th:if="${session.user == null}"><!-- javascript:jumpLogin(); -->
+                        <a href="pre/login" target="_self" style="color: green;">登录</a>
+                    </li>
+                    <li class="on popup_li" th:if="${session.user != null}"><!-- javascript:jumpLogin(); -->
+                        <!-- <a href="/pre/login" target="_self" style="color: green;">登录</a> -->
+                      	 <p style="top:-10px;">用户：<span style="color: blue;">[[${session.user.u_name}]]</span></p>
                     </li>
                     <li class="on zhuce">
                         <a href="javascript:jumpRegister();" target="_self"style="color: green;">注册</a>
@@ -97,17 +107,17 @@
                     </li>
                 </ul>
                 <ul class="login-registration" id="right">
-                    <li class="on zhuce">
+                    <li class="on zhuce" th:if="${session.user != null}">
                         <a href="/set" target="_self"style="color: green;">我的约单</a>
                     </li>
-                    <li class="on zhuce">
+                    <li class="on zhuce" th:if="${session.user != null}">
                         <a href="/index" target="_self"style="color: green;">个人中心</a>
                     </li>
                     <li class="on zhuce">
                         <a href="/about" target="_self"style="color: green;">关于我们</a>
                     </li>
                     <li class="layui-nav-item" lay-unselect="">
-                        <a href="#">退出</a>
+                        <a href="/loginout">退出</a>
                     </li>
                 </ul>
                 <div class="clr"></div>
@@ -121,7 +131,7 @@
         <div class="headerCon">
             <h1 class="mallLogo">
                 <a href="/pre" title="logo"class="title">
-                    <img src="pre/images/logo.jpg"style="width: 82px;height: 60px;">预医网
+                    <img th:src="@{/pre/images/logo.jpg}"style="width: 82px;height: 60px;">预医网
                 </a>
             </h1>
             <div class="mallSearch">
@@ -147,42 +157,37 @@
 </div>
 <!--医生详情-->
 <div class="content content-nav-base datails-content">
+			<input name="doc_id" type="hidden" id="doc_id" th:value="${doc.d_id}"/>
+            <input name="app_id" type="hidden" id="app_id" th:value="${app.app_id}"/>
     <div class="data-cont-wrap w1200">
         <div class="product-intro layui-clear">
-               <img src="pre/images/医生1.1.jpg"style="width: 250px;height: 350px;margin-top: 25px;margin-left: 80px">
+               <img th:src="${doc.d_picpath}"style="width: 250px;height: 350px;margin-top: 25px;margin-left: 80px">
             <div class="itemInfo-wrap">
                 <div class="itemInfo">
                    <hr/><br/>
                     <div class="title">
-                        <h4>潘湘斌:结构性心脏病</h4>
+                        <h4><i>[[${doc.d_name }]]</i>:<i>[[${doc.qusRoom1.r1_name + doc.qusRoom2.r2_name}]]</i></h4>
                         <span><i class="layui-icon layui-icon-rate-solid"></i>收藏</span>
                     </div>
-                    <span style="color: yellowgreen;">研究生导师，卫生部“经外科途径心血管疾病介入诊疗专家组”秘书长,中国医学科学院阜外心血管病医院心脏外科医师。</span><br/>
-                    <span style="color: yellowgreen;"><a href="details.html">医生详情&nbsp;&gt;&nbsp;&nbsp;&gt;&nbsp;</a></span>
+                    <span style="color: yellowgreen;">[[${doc.d_description }]]</span><br/>
                     <div class="summary"style="margin-top: 20px;height: 200px;;">
                         <p class="address-box">
                             <span>选择就诊日期</span>
-                            <input type="date"style="height: 19px;"/>
-                            <select name="time" id="time1">
-                                <option value="1">上午</option>
-                                <option value="1">8:00--9:00</option>
-                                <option value="1">9:00--10:00</option>
-                                <option value="1">10:00--11:00</option>
-                                <option value="1">11:00--12:00</option>
+                            <input type="date" name="dates" id="dates" style="height: 19px;"/>
+                            <input type="time" name="times" id="times" style="height: 19px;"/>
+                           <br/>&nbsp;(上下午各有4小时，每个小时由医生安排时间)<br/>
+                           
+                           	<span>优先级</span>
+                        	<select name="app_priority" id="app_priority">
+                        		<option value=" ">选择优先级</option>
+                                <option value="0">优先</option>
+                                <option value="1">不优先</option>
                             </select>
-                            <select name="time" id="time2">
-                                <option value="1">下午</option>
-                                <option value="1">2:30--3:30</option>
-                                <option value="1">3:30--4:30</option>
-                                <option value="1">4:30--5:30</option>
-                                <option value="1">5:30--6:30</option>
-                            </select><br/>
-                                &nbsp;(上下午各有4小时，每个小时由医生安排时间)
-                            <p class="activity"><span>预约费用</span><strong class="price"><i>￥</i>49.00</strong>(活动价)</p>
+                            <p class="activity"><span>预约费用</span><strong class="price"><i>￥</i>[[${doc.d_price }]]</strong>(活动价)</p>
                         </p>
                     </div>
                     <div class="choose-btn">
-                        <button class="order1">立刻预约</button>
+                        <button class="order1" onclick="tijiao()">立刻预约</button>
                         <button class="online order"onclick="window.location.href='/online'">在线咨询</button>
                         <button class="phone order"onclick="window.location.href='/phone'">电话咨询</button>
                     </div>
@@ -192,20 +197,19 @@
                                 <div class="orderPayBox">
                                     <div class="orderDoctor">
                                         <span style="padding: 1px 2px;background: green;font-size: 14px;margin: 0 10px;color: #fff;margin-top: 4px;display: inline-block;border-radius: 3px;float: left;">惠</span>
-                                        <span class="price" style="font-size:16px;color: #000;margin-right: 10px;">￥99.90元</span>
-                                        <span style="color: #ccc;text-decoration:line-through;font-size: 14px;float: left;line-height: 32px;">原价：￥49.90</span>
+                                        <span class="price" style="font-size:16px;color: #000;margin-right: 10px;">￥[[${doc.d_price}]]</span>
+                                        <span style="color: #ccc;text-decoration:line-through;font-size: 14px;float: left;line-height: 32px;">原价：￥99.90</span>
                                     </div>
                                     <p class="orderExplain">说明：1--2小时内审核；2--1小时内没有审核成功,则自动全额退款。</p>
                                     <p class="orderExplain">
                                         <span style="color:green;font-weight: bolder">10512873</span>个预约
-                                        <span class="evaluateText" style="font-size: 14px;font-weight: bolder;color: green;">98.8%好评（共103604701人评价）</span>
+                                        <span class="evaluateText" style="font-size: 14px;font-weight: bolder;color: green;">98.8%好评</span>
                                     </p>
                                 </div>
                             </li>
                         </ul>
                         <!-- <button class="orderNext"style="background: green;position: relative;right: 100px;" onclick="tijiao()">提交</button> -->
                     </div>
-
                 </div>
             </div>
         </div>

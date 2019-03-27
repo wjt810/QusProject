@@ -267,7 +267,6 @@ layui.config({
 			    		dataHtml += '<td>'+"已取消"+'</td>';
 			    	}
 					dataHtml +='<td>'
-					+  '<a class="layui-btn layui-btn-mini links_edit" data-id="'+currData[i].o_id+'"><i class="iconfont icon-edit"></i> 编辑</a>'
 					+  '<a class="layui-btn layui-btn-mini links_see" data-id="'+currData[i].o_id+'"><i class="iconfont icon-edit"></i> 查看</a>'
 					+  '<a class="layui-btn layui-btn-danger layui-btn-mini links_del" data-id="'+data[i].o_id+'"><i class="layui-icon">&#xe640;</i> 删除</a>'
 			        +'</td>'

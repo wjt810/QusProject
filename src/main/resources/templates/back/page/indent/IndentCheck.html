@@ -55,10 +55,8 @@
 		<div class="layui-form-item">
 			<label class="layui-form-label">预约编号</label>
 			<div class="layui-input-block">
-				<div class="layui-input-block">
 				<input name="app_id" id="app_id" type="hidden" th:value="${order.o_app_id}"/>
-					<input type="text" class="layui-input code" name="code" lay-verify="required" th:value="${order.qusAppointment.app_code}" disabled="disabled">
-				</div>
+				<input type="text" class="layui-input code" name="code" lay-verify="required" th:value="${order.qusAppointment.app_code}" disabled="disabled">
 			</div>
 		</div>
 		<div class="layui-form-item">

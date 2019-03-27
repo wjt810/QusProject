@@ -126,13 +126,21 @@ public class QusDoctorController {
 	}
 
 	@RequestMapping("/seldoc")
-	public ModelAndView seldoc(HttpSession session, @RequestParam("r1_id") Integer r1_id) {
+	public ModelAndView seldoc(HttpSession session, @RequestParam(value = "r1_id", required = false) Integer r1_id,
+			@RequestParam(value = "r2_id", required = false) Integer r2_id) {
 		ModelAndView mv = new ModelAndView("pre/information");
 		List<QusDoctor> doclist = qusDoctorService.getDoctorList();
 		List<QusDoctor> dlist = new ArrayList<QusDoctor>();
 		for (QusDoctor qusDoctor : doclist) {
-			if (qusDoctor.getD_r1_id() == r1_id) {
-				dlist.add(qusDoctor);
+			if (r1_id != null && r1_id != 0) {
+				if (qusDoctor.getD_r1_id() == r1_id) {
+					dlist.add(qusDoctor);
+				}
+			}
+			if (r2_id != null && r2_id != 0) {
+				if (qusDoctor.getD_r2_id() == r2_id) {
+					dlist.add(qusDoctor);
+				}
 			}
 		}
 		mv.addObject("doclist", dlist);
@@ -150,34 +158,5 @@ public class QusDoctorController {
 	public String uploadPic() {
 		return "test/upload";
 	}
-
-	/*@RequestMapping(value="upload/uploadPic.do",method=RequestMethod.POST)  //@RequestParam("picture")MultipartFile picture,
-    public JSONObject uploadPic(@RequestParam(value="file",required=false) MultipartFile file, 
-    		HttpServletRequest request, HttpServletResponse response) throws IllegalStateException, 
-    IOException {  
-    	if(file!=null){
-    		String prefix="";
-    		String dateStr="";
-            String originalName = file.getOriginalFilename();
-            System.out.println("fileName:\t"+originalName);
-            prefix=originalName.substring(originalName.lastIndexOf(".")+1);
-             dateStr = format.format(new Date());
-            String filepath = request.getServletContext().getRealPath("/static") + uploadDir + dateStr + "." + prefix;
-            filepath = filepath.replace("\\", "/");
-            File files=new File(filepath);
-            //打印查看上传路径
-            System.out.println(filepath);
-            if(!files.getParentFile().exists()){
-                files.getParentFile().mkdirs();
-            }
-            file.transferTo(files);
-        }
-    	Map<String,Object> map2=new HashMap<>();
-        Map<String,Object> map=new HashMap<>();
-        map.put("code",0);
-        map.put("msg","");
-        map.put("data",map2);
-    	 return new JSONObject("hello");
-	}*/
 
 }

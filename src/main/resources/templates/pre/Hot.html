@@ -106,8 +106,12 @@
             <!--未登录-->
             <div class="fl" id="notLogin">
                 <ul class="login-registration">
-                    <li class="on popup_li">
-                        <a href="/pre/login" target="_self"style="color: green;">登录</a>
+                     <li class="on popup_li" th:if="${session.user == null}"><!-- javascript:jumpLogin(); -->
+                        <a href="@{/pre/login}" target="_self" style="color: green;">登录</a>
+                    </li>
+                    <li class="on popup_li" th:if="${session.user != null}"><!-- javascript:jumpLogin(); -->
+                        <!-- <a href="/pre/login" target="_self" style="color: green;">登录</a> -->
+                      	 <p style="top:-10px;">用户：<span style="color: blue;">[[${session.user.u_name}]]</span></p>
                     </li>
                     <li class="on zhuce">
                         <a href="javascript:jumpRegister();" target="_self"style="color: green;">注册</a>

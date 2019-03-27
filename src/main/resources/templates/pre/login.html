@@ -309,19 +309,22 @@
             font-weight: 700;
             caret-color: #e62435;
         }
-        .myhlogo {
+         .myhlogo {
             margin: 0 auto;
             padding: 60px 0;
             width: 228px;
             height: 90px;
             display: block;
         }
+    }
     </style>
 </head>
+
 <body>
+<form th:action="@{/userLogin}" method="post">
 <div class="loginMain">
-    <div class="loginBg">
-        <img class="myhlogo" style="height:200px;" th:src="@{/pre/images/logo.jpg}">
+	<div class="loginBg">
+        <img class="myhlogo" style="height:200px;" src="/static/pre/images/logo.png">
     </div>
     <div class="loginInpText">
         <!-- 输入手机号码 -->
@@ -331,10 +334,10 @@
                     <span style="font-size:16px">预医网登录</span>
                 </div>
                 <div class="inputTelBox">
-                    <input name="tel" class="telInput" type="tel" placeholder="请输入您的账号" >
+                    <input name="u_name" id="u_name" class="telInput" type="tel" placeholder="请输入您的用户名" >
                 </div>
                 <div class="inputTelBox">
-                    <input name="tel" class="telInput" type="password"placeholder="请输入您的密码">
+                    <input name="u_password" id="u_password" class="telInput" type="password"placeholder="请输入您的密码">
                 </div>
                 <div class="agreement">
                     <a href="http://www.mingyihui.net/article_4111.html">同意《预医网用户协议》</a>
@@ -342,7 +345,8 @@
                 </div>
                 <div class="weixinlog wxClick">
                     <img src="http://passport.mingyihui.net/templates/skins/red2017/pc/images/Combined Shape.png">
-                    <span>一键登录</span>
+                    <!-- <span>一键登录</span> -->
+                    <button type="submit" style="height: 43px;width: 80px;">一键登录</button>
                 </div>
             </div>
             <div class="inputBox_c">
@@ -415,9 +419,11 @@
         </div>
     </div>
 </div>
+</form>
 <!--尾部-->
 <div class="footer">
    <img th:src="@{/pre/images/尾部.png}"style="position:relative;left:-140px;">
 </div>
+
 </body>
 </html>

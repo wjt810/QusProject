@@ -113,12 +113,14 @@ public class UsersController {
 	
 	@RequestMapping("/changePwd")
 	@ResponseBody
-	public Object changePwd(@RequestParam("pwd")String pwd) {
+	public Object changePwd(@RequestParam("pwd")String pwd,HttpSession session) {
 		Map<String, String> map = new HashMap<String,String>();
 		QusUser user=qusUserService.findUserById(2);
 		if(qusUserService.changPwd(pwd, user.getU_id())) {
 			System.out.println("密码修改成功");
 			map.put("result", "success");
+			session.setAttribute("user", null);
+			
 		}else {
 			System.out.println("密码修改失败");	
 			map.put("result", "error");
