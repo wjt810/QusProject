@@ -32,11 +32,21 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+
+		<!--Provided start -->
+		<!--War包部署到外部的Tomcat中已经包含了这些，所以需要添加以下依赖 否则会和内嵌的Tomcat 容器发生冲突 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+		</dependency>
+
+
 		<!-- jsp -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
 		</dependency>
+
 		<dependency>
 			<groupId>org.apache.tomcat.embed</groupId>
 			<artifactId>tomcat-embed-jasper</artifactId>
@@ -97,11 +107,24 @@
 			<scope>provided</scope>
 			<optional>true</optional>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->
+		<!-- https://mvnrepository.com/artifact/commons-codec/commons-codec 数据库加密 -->
 		<dependency>
 			<groupId>commons-codec</groupId>
 			<artifactId>commons-codec</artifactId>
 			<version>1.9</version>
+		</dependency>
+
+		<!--支付接口 还有一个 commons.logging.jar -->
+		<dependency>
+			<groupId>com.alipay.sdk</groupId>
+			<artifactId>alipay-sdk-java</artifactId>
+			<version>3.7.4.ALL</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>4.0.1</version>
+			<scope>provided</scope>
 		</dependency>
 
 	</dependencies>
@@ -122,5 +145,26 @@
 				</configuration>
 			</plugin>
 		</plugins>
+
+		<!--jsp html -->
+		<resources>
+			<!-- 打包时将jsp文件拷贝到META-INF目录下 -->
+			<resource>
+				<!-- 指定resources插件处理哪个目录下的资源文件 -->
+				<directory>src/main/webapp</directory>
+				<!--注意此次必须要放在此目录下才能被访问到 -->
+				<targetPath>META-INF/resources</targetPath>
+				<includes>
+					<include>**/**</include>
+				</includes>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>**/**</include>
+				</includes>
+				<filtering>false</filtering>
+			</resource>
+		</resources>
 	</build>
 </project>
