@@ -1,8 +1,9 @@
 package springboot.pojo;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class QusRole {
+public class QusRole implements Serializable{
 	private int role_id;      //int(11)
 	private String role_name; //varchar(50)角色名称
 	

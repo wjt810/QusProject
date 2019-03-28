@@ -1,6 +1,8 @@
 package springboot.pojo;
 
-public class QusStatus {
+import java.io.Serializable;
+
+public class QusStatus implements Serializable{
 	private int sta_id;     // int(11)状态Id
 	private String sta_name;   //  varchar(50)状态名称
 	public int getSta_id() {

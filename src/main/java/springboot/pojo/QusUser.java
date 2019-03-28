@@ -1,6 +1,8 @@
 package springboot.pojo;
 
-public class QusUser {
+import java.io.Serializable;
+
+public class QusUser implements Serializable{
 
 	/*
 	 * test  --lyd

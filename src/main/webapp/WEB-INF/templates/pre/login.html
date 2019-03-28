@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>预医网登录</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/pre/res/static/css/main.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/pre/res/layui/css/layui.css}">
+    <script type="text/javascript" th:src="@{/pre/res/layui/layui.js}"></script>
+    <script type="text/javascript" th:src="@{/pre/js/jquery-1.12.4.js}"></script>
+    <link rel="stylesheet" th:href="@{/pre/css/bootstrap.css}"/>
+    <link rel="stylesheet" th:href="@{/pre/css/header.css}"/>
+    <script type="text/javascript" th:src="@{/pre/js/bootstrap.js}"></script>
+    <!--导航条-->
+    <link href="http://www.mingyihui.net/templates/skins/red2017/css/header.css?v=20171018" rel="stylesheet">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <style>
+        a, a:focus, a:hover {
+            text-decoration: none;
+        }
+        a, fieldset, img {
+            border: 0;
+        }
+        abbr, address, article, aside, audio, b, blockquote, body, canvas, caption, cite, code, dd, del, details, dfn, div, dl, dt, em, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, p, pre, q, samp, section, small, span, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, ul, var, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            outline: 0;
+            vertical-align: baseline;
+            background: 0 0;
+            font-family: "微软雅黑";
+            font-size: 12px;
+        }
+        body {
+            line-height: 1;
+        }
+        .loginMain {
+            height: 900px;
+            width: 100%;
+            background: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+        .imgCodeBox {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            background: rgba(0, 0, 0, .8);
+            z-index: 99;
+            display: none;
+        }
+
+        input, select {
+            vertical-align: middle;
+            outline: 0;
+        }
+        input {
+            -webkit-box-shadow: 0 0 0 1000px #fff inset;
+        }
+        .imgCodeth input {
+            width: 200px;
+            height: 30px;
+            font-size: 14px;
+            font-weight: 700;
+            border: 1px solid #999;
+            padding-left: 5px;
+        }
+        .imgBg img {
+            float: left;
+            margin-right: 10px;
+        }
+        .imgBg span {
+            font-size: 14px;
+            color: #e62435;
+            line-height: 2;
+            cursor: pointer;
+        }
+        .loginBg {
+            width: 100%;
+            height: 340px;
+            background: green;
+        }
+        .loginInpText {
+            position: absolute;
+            top:200px;
+            left: 50%;
+            width: 800px;
+            height: 350px;
+            background: #fff;
+            border-radius: 16px;
+            z-index: 99;
+            transform: translate(-50%, 90px);
+            -webkit-box-shadow: 0px 9px 30px 0px rgba(230, 36, 53, 0.1);
+            -moz-box-shadow: 0px 9px 30px 0px rgba(230, 36, 53, 0.1);
+            box-shadow: 0px 9px 30px 0px rgba(230,36,53,0.1);
+        }
+        .inputBox {
+            overflow: hidden;
+            padding: 65px;
+            position: relative;
+        }
+        .inputBox .helpText {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 14px;
+            color: #333;
+        }
+        .backPage {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .inputBox_l, .inputBox_c, .inputBox_r {
+            float: left;
+        }
+        .inputBox_c {
+            width: 170px;
+            height: 300px;
+            position: relative;
+        }
+        .inputBox_r {
+            position: relative;
+            top:-40px;
+        }
+        .inputBox_r ul li {
+            overflow: hidden;
+        }
+        .inputBox_r ul li {
+            border: 1px solid #ddd;
+            width: 140px;
+            height: 42px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .inputBox_r ul li:first-child {
+            margin-top: 70px;
+        }
+        .inputBox_r ul li img {
+            width: 15px;
+            height: 15px;
+            margin-right: 5px;
+        }
+        .inputBox_r ul li span {
+            font-size: 14px;
+            color: #333;
+            line-height: 1.2;
+        }
+        .inputBox_c p {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #ddd;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 400;
+            font-size: 100%;
+        }
+        .inputBox_l h2 {
+            font-size: 28px;
+            color: #333;
+            line-height: 40px;
+        }
+        .inputBox_l .tips {
+            font-size: 14px;
+            color: #666;
+            line-height: 20px;
+            width: 315px;
+        }
+        .accountInput {
+            padding: 30px 0 10px 0;
+            overflow: hidden;
+            border-bottom: 1px solid #e62435;
+            position: relative;
+        }
+        .disPassword {
+            font-size: 14px;
+            color: #e62435;
+            padding: 5px 0;
+            font-weight: 700;
+            width: 310px;
+            line-height: 1.5;
+            display: none;
+        }
+        .accountSubmit {
+            width: 100%;
+            height: 52px;
+            background: #ccc;
+            color: #fff;
+            text-align: center;
+            line-height: 52px;
+            border-radius: 2px;
+            margin: 0 auto;
+            display: block;
+            margin-top: 30px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .accountInput span {
+            font-size: 16px;
+            float: left;
+            padding-right: 20px;
+            line-height: 1.8;
+        }
+        .accountInput input {
+            float: left;
+            font-size: 22px;
+            font-weight: 700;
+            color: #333;
+            height: 30px;
+            border: 0;
+            margin-bottom: 1px;
+            caret-color: #e62435;
+        }
+        .accountInput a {
+            position: absolute;
+            top: 40px;
+            right: 0px;
+            font-size: 14px;
+            color: #999;
+        }
+        .backPage img {
+            float: left;
+            width: 9px;
+            height: 15px;
+            margin-right: 5px;
+        }
+        .backPage span {
+            float: left;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .inputInforText input {
+            float: left;
+            width: 60px;
+            height: 80px;
+            border: 1px solid #ccc;
+            margin-right: 25px;
+            border-radius: 4px;
+            font-size: 48px;
+            color: #333;
+            text-align: center;
+            line-height: 80px;
+        }
+        .inputBox_l .tips span {
+            color: #e62435;
+        }
+        .inputTelBox {
+            width: 305px;
+            height: 54px;
+            border-bottom: 1px solid #e62435;
+        }
+        .agreement {
+            overflow: hidden;
+            padding: 10px 0;
+        }
+
+        .weixinlog {
+            width: 305px;
+            height: 42px;
+            background: rgba(255, 255, 255, 1);
+            border-radius: 4px;
+            border: 1px solid #999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        .weixinlog img {
+            width: 22px;
+            height: 18px;
+            padding-right: 5px;
+        }
+        .weixinlog span {
+            font-size: 16px;
+            color: #333;
+        }
+        .agreement a {
+            float: right;
+            color: #666;
+            font-size: 12px;
+            line-height: 1.2;
+        }
+        .agreement img {
+            float: right;
+            width: 14px;
+            height: 14px;
+            padding-right: 5px;
+        }
+        .inputTelBox input {
+            width: 100%;
+            height: 44px;
+            padding-top: 5px;
+            border: 0;
+            line-height: 44px;
+            font-size: 22px;
+            color: #333;
+            font-weight: 700;
+            caret-color: #e62435;
+        }
+         .myhlogo {
+            margin: 0 auto;
+            padding: 60px 0;
+            width: 228px;
+            height: 90px;
+            display: block;
+        }
+    }
+    </style>
+</head>
+
+<body>
+<form th:action="@{/userLogin}" method="post">
+<div class="loginMain">
+	<div class="loginBg">
+        <img class="myhlogo" style="height:200px;" src="/pre/images/logo.png">
+    </div>
+    <div class="loginInpText">
+        <!-- 输入手机号码 -->
+        <div class="inputBox codeBox">
+            <div class="inputBox_l">
+                <div style="position:relative;top:-50px;">
+                    <span style="font-size:16px">预医网登录</span>
+                </div>
+                <div class="inputTelBox">
+                    <input name="u_name" id="u_name" class="telInput" type="tel" placeholder="请输入您的用户名" >
+                </div>
+                <div class="inputTelBox">
+                    <input name="u_password" id="u_password" class="telInput" type="password"placeholder="请输入您的密码">
+                </div>
+                <div class="agreement">
+                    <a href="http://www.mingyihui.net/article_4111.html">同意《预医网用户协议》</a>
+                    <img src="http://passport.mingyihui.net/templates/skins/red2017/pc/images/select1.png">
+                </div>
+                <div class="weixinlog wxClick">
+                    <img src="http://passport.mingyihui.net/templates/skins/red2017/pc/images/Combined Shape.png">
+                    <!-- <span>一键登录</span> -->
+                    <button type="submit" style="height: 43px;width: 80px;">一键登录</button>
+                </div>
+            </div>
+            <div class="inputBox_c">
+                <p>或</p>
+            </div>
+            <div class="inputBox_r">
+                <ul>
+                    <li class="accountClick" data-account="1">
+                        <img src="http://passport.mingyihui.net/templates/skins/red2017/pc/images/Shape.png">
+                        <span>使用微信登录</span>
+                    </li>
+                    <li class="qqClick">
+                        <img alt="" src="http://passport.mingyihui.net/templates/skins/red2017/pc/images/Shape1.png">
+                        <span>使用QQ登录</span>
+                    </li>
+                    <li class="wbClick">
+                        <img alt="" src="http://passport.mingyihui.net/templates/skins/red2017/pc/images/Shape2.png">
+                        <span>使用微博登录</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 账号登录 -->
+        <div class="inputBox AccountBox" style="display:none">
+            <a class="helpText" href="http://www.mingyihui.net/article_5823.html" target="_blank">帮助</a>
+            <div class="backPage backPage5">
+                <img alt="" src="http://passport.mingyihui.net/templates/skins/red2017/pc/images/back.png">
+                <span>返回上一步</span>
+            </div>
+            <div class="inputBox_l">
+                <h2>请您输入账号密码</h2>
+                <p class="tips">账号可以是手机号码/用户名/邮箱</p>
+                <div class="accountInput">
+                    <span>账号</span>
+                    <input class="accountText accepInput" type="text" maxlength="20">
+                </div>
+                <div class="accountInput">
+                    <span>密码</span>
+                    <input class="accountPw accepInput" type="password" maxlength="20">
+                    <a href="">忘记密码？</a>
+                </div>
+                <p class="disPassword">密码错误，您可再次输入密码，或者使用短信验证码快速登录</p>
+                <span class="accountSubmit">登录</span>
+            </div>
+            <div class="inputBox_c">
+                <span>|</span>
+                <p>或</p>
+                <span>|</span>
+            </div>
+            <div class="inputBox_r">
+                <ul>
+                    <li class="inforClick" style="margin-top:30px;">
+                        <img alt="" src="http://passport.mingyihui.net/templates/skins/red2017/pc/images/infor.png">
+                        <span>短信验证登录</span>
+                    </li>
+                    <li class="wxClick">
+                        <img alt="" src="http://passport.mingyihui.net/templates/skins/red2017/pc/images/Shape.png">
+                        <span>使用微信登录</span>
+                    </li>
+                    <li class="qqClick">
+                        <img alt="" src="http://passport.mingyihui.net/templates/skins/red2017/pc/images/Shape1.png">
+                        <span>使用QQ登录</span>
+                    </li>
+                    <li class="wbClick">
+                        <img alt="" src="http://passport.mingyihui.net/templates/skins/red2017/pc/images/Shape2.png">
+                        <span>使用微博登录</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</form>
+<!--尾部-->
+<div class="footer">
+   <img th:src="@{/pre/images/尾部.png}"style="position:relative;left:-140px;">
+</div>
+
+</body>
+</html>
