@@ -56,6 +56,15 @@ public class QusOrderServiceimpl implements QusOrderService {
 	public int selectOrderByDocId(Integer docId) {
 		return qusOrderDao.selectOrderByDocId(docId);
 	}
+	
+	
+	/**
+	 * 添加订单
+	 */
+	@Override
+	public int addOrder(QusOrder order) {
+		return qusOrderDao.addOrder(order);
+	}
 
 
 }

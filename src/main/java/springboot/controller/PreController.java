@@ -12,8 +12,10 @@ import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.config.YamlProcessor.ResolutionMethod;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
@@ -22,10 +24,12 @@ import com.mysql.cj.Session;
 
 import springboot.pojo.QusAppointment;
 import springboot.pojo.QusDoctor;
+import springboot.pojo.QusOrder;
 import springboot.pojo.QusRoom1;
 import springboot.pojo.QusUser;
 import springboot.service.qusappointment.QusAppointmentService;
 import springboot.service.qusdoctor.QusDoctorService;
+import springboot.service.qusorder.QusOrderService;
 import springboot.service.qusroom.QusRoomService;
 import springboot.service.qususer.QusUserService;
 
@@ -44,6 +48,9 @@ public class PreController {
 	
 	@Resource
 	private QusAppointmentService  qusAppointmentService;
+
+	@Resource
+	private QusOrderService  qusOrderService;
 
 	/**
 	 * 进入首页
@@ -187,26 +194,39 @@ public class PreController {
 	 * @return
 	 * @throws ParseException 
 	 */
-	@RequestMapping("/shouqian")
-	public ModelAndView test9(HttpServletRequest request,HttpSession session/*,@RequestParam("dates")String dates,
-			@RequestParam("times")String times,@RequestParam("doc_id")String doc_id,
+	@RequestMapping(value="/shouqian",method=RequestMethod.POST)
+	public ModelAndView test9(HttpServletRequest request,HttpSession session/*,@RequestParam("time")String time,
+			@RequestParam("doc_id")String doc_id,
 			@RequestParam("app_id")String app_id,@RequestParam("app_priority")String app_priority*/) throws ParseException {
 		QusAppointment app=new QusAppointment();
-		String dates=request.getParameter("dates");
-		String times=request.getParameter("times");
+		String time=request.getParameter("time");
 		String doc_id=request.getParameter("doc_id");
 		String app_priority=request.getParameter("app_priority");
 		String app_id=request.getParameter("app_id");
-		
-		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		app.setApp_time(simpleDateFormat.parse(dates+times));
+		String newtime=time.replace("T", " ");
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm");
+		app.setApp_time(simpleDateFormat.parse(newtime));
 		app.setApp_status(1);
 		app.setApp_user_id(((QusUser)session.getAttribute("user")).getU_id());
 		app.setApp_doc_id(Integer.parseInt(doc_id));
 		app.setApp_priority(Integer.parseInt(app_priority));
 		app.setApp_code(Integer.toString((Integer.parseInt(app_id)+1)));
 		app.setApp_sta_id(2);
+		int count=qusAppointmentService.addAppInfo(app);
+		String price=request.getParameter("price");
+		
+		QusOrder order=new QusOrder();
+		QusAppointment o_app_id=qusAppointmentService.getAppEndInfo();
+		order.setO_doc_id(Integer.parseInt(doc_id));
+		order.setO_user_id(((QusUser)session.getAttribute("user")).getU_id());
+		order.setO_price(Double.parseDouble(price));
+		order.setO_status(0);
+		order.setO_type(0);
+		order.setO_app_id(o_app_id.getApp_id());
+		int count1=qusOrderService.addOrder(order);
+		
 		ModelAndView mv=new ModelAndView("pre/shouqian");
+		mv.addObject("price", price);
 		return mv;
 	}
 	/**
@@ -294,13 +314,49 @@ public class PreController {
 	}
 	
 	/**
-	 * 显示用户列表
+	 * 显示注册列表
 	 * @return
 	 */
 	@RequestMapping("/reg")
 	public ModelAndView reg(){
 		ModelAndView mv=new ModelAndView("pre/user/reg");
+		return mv;
+	}
+	
+	/**
+	 * 注册成功
+	 * @param request
+	 * @return
+	 */
+	@RequestMapping(value="/regSave",method=RequestMethod.POST)
+	public ModelAndView regSave(HttpServletRequest request) {
+		String username=request.getParameter("username");
+		String sex=request.getParameter("sex");
+		int u_sex=0;
+		if(sex=="男") {
+			u_sex=0;
+		}else if(sex=="女") {
+			u_sex=1; 
+		}
+		String pass=request.getParameter("pass");
+		String card=request.getParameter("card");
+		String phone=request.getParameter("phone");
+		QusUser user=new QusUser();
+		user.setU_name(username);
+		user.setU_password(pass);
+		user.setU_sex(u_sex);
+		user.setU_phone(phone);
+		user.setU_card(card);
+		user.setU_role_id(4);
+		int count=qusUserService.addUser(user);
+		ModelAndView mv=new ModelAndView();
+		if(count>0) {
+			mv.setViewName("pre/login");
+		}else {
+			mv.setViewName("pre/user/reg");
+		}
 		
 		return mv;
+		
 	}
 }

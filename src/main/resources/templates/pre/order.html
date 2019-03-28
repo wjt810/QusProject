@@ -7,8 +7,8 @@
     <link rel="stylesheet" type="text/css" th:href="@{/pre/res/layui/css/layui.css}">
     <script type="text/javascript" th:src="@{/pre/res/layui/layui.js}"></script>
     <script type="text/javascript" th:src="@{/pre/js/jquery-1.12.4.js}"></script>
-    <link rel="stylesheet" href="@{/pre/css/bootstrap.css}"/>
-    <script src="@{/pre/js/jquery-1.8.2.min.js}"></script>
+    <link rel="stylesheet" th:href="@{/pre/css/bootstrap.css}"/>
+    <script th:src="@{/pre/js/jquery-1.8.2.min.js}"></script>
     <!--导航条-->
 	<link href="http://www.mingyihui.net/templates/skins/red2017/css/header.css?v=20171018" rel="stylesheet">
     <!--<link href="http://www.mingyihui.net/templates/skins/red2017/css/login.css?V" rel="stylesheet">
@@ -94,11 +94,10 @@
                         <a href="pre/login" target="_self" style="color: green;">登录</a>
                     </li>
                     <li class="on popup_li" th:if="${session.user != null}"><!-- javascript:jumpLogin(); -->
-                        <!-- <a href="/pre/login" target="_self" style="color: green;">登录</a> -->
                       	 <p style="top:-10px;">用户：<span style="color: blue;">[[${session.user.u_name}]]</span></p>
                     </li>
                     <li class="on zhuce">
-                        <a href="javascript:jumpRegister();" target="_self"style="color: green;">注册</a>
+                        <a href="/reg" target="_self"style="color: green;">注册</a>
                     </li>
                 </ul>
                 <ul class="login-registration">
@@ -157,8 +156,10 @@
 </div>
 <!--医生详情-->
 <div class="content content-nav-base datails-content">
-			<input name="doc_id" type="hidden" id="doc_id" th:value="${doc.d_id}"/>
-            <input name="app_id" type="hidden" id="app_id" th:value="${app.app_id}"/>
+    <form th:action="@{/shouqian}" method="post">
+    <input name="doc_id" type="hidden" id="doc_id" th:value="${doc.d_id}"/>
+    <input name="app_id" type="hidden" id="app_id" th:value="${app.app_id}"/>
+    <input name="price" type="hidden" id="price" th:value="${doc.d_price}"/>
     <div class="data-cont-wrap w1200">
         <div class="product-intro layui-clear">
                <img th:src="${doc.d_picpath}"style="width: 250px;height: 350px;margin-top: 25px;margin-left: 80px">
@@ -173,8 +174,7 @@
                     <div class="summary"style="margin-top: 20px;height: 200px;;">
                         <p class="address-box">
                             <span>选择就诊日期</span>
-                            <input type="date" name="dates" id="dates" style="height: 19px;"/>
-                            <input type="time" name="times" id="times" style="height: 19px;"/>
+                            <input type="datetime-local" name="time" id="time" style="height: 19px;"/>
                            <br/>&nbsp;(上下午各有4小时，每个小时由医生安排时间)<br/>
                            
                            	<span>优先级</span>
@@ -183,11 +183,11 @@
                                 <option value="0">优先</option>
                                 <option value="1">不优先</option>
                             </select>
-                            <p class="activity"><span>预约费用</span><strong class="price"><i>￥</i>[[${doc.d_price }]]</strong>(活动价)</p>
+                            <p class="activity"><span>预约费用</span><strong class="price"><i>￥</i><span>[[${doc.d_price }]]</span></strong>(活动价)</p>
                         </p>
                     </div>
-                    <div class="choose-btn">
-                        <button class="order1" onclick="tijiao()">立刻预约</button>
+                    <div class="choose-btn"><!-- onclick="tijiao()" -->
+                        <button class="submit">立刻预约</button>
                         <button class="online order"onclick="window.location.href='/online'">在线咨询</button>
                         <button class="phone order"onclick="window.location.href='/phone'">电话咨询</button>
                     </div>
@@ -214,6 +214,7 @@
             </div>
         </div>
     </div>
+    </form>
 </div>
 
 

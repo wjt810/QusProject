@@ -104,6 +104,14 @@ public class QusUserServiceImpl implements QusUserService {
 		}
 		return false;
 	}
+	/**
+	 * 注册
+	 */
+	@Override
+	public int addUser(QusUser user) {
+		// TODO Auto-generated method stub
+		return qusUserDao.addUser(user);
+	}
 	
 	
 }

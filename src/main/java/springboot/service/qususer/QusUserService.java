@@ -70,4 +70,11 @@ public interface QusUserService {
 	 * @return
 	 */
 	public Boolean changPwd(String pwd,Integer id);
+	
+	/**
+	 * 注册
+	 * @param user
+	 * @return
+	 */
+	public int addUser(QusUser user);
 }

@@ -3,6 +3,7 @@ package springboot.dao.qusorder;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Delete;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.One;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Result;
@@ -91,4 +92,13 @@ public interface QusOrderDao {
 	@Select("SELECT COUNT(*) FROM qus_doctor d, qus_order o WHERE o.o_doc_id=d.d_id AND d.d_id =#{docId}")
 	public int selectOrderByDocId(@Param("docId")Integer docId);
 	
+	
+	
+	
+	/**
+	 * 添加订单
+	 */
+	@Insert("INSERT INTO qus_sys.qus_order (o_doc_id, o_user_id, o_app_id, o_price, o_status, o_type)" + 
+			"	VALUES(#{o_doc_id},#{o_user_id},#{o_app_id},#{o_price},#{o_status},#{o_type})")
+	public int addOrder(QusOrder order);
 }

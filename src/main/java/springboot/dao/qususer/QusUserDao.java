@@ -3,6 +3,7 @@ package springboot.dao.qususer;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Delete;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
@@ -104,5 +105,16 @@ public interface QusUserDao {
 	
 	@Update("UPDATE qus_user SET u_password =#{pwd} WHERE u_id = #{id}")
 	public int changePwd(@Param("pwd")String pwd,@Param("id")Integer id);
+	
+	/**
+	 * 注册用户
+	 * @param user
+	 * @return
+	 */
+	@Insert("INSERT INTO qus_user (u_name, u_password, u_sex, " 
+			+ "	u_card, u_phone, u_role_id)"
+			+ "	VALUES(#{u_name}, #{u_password},"
+			+ "	 #{u_sex}, #{u_card}, #{u_phone}, #{u_role_id});")
+	public int addUser(QusUser user);
 	
 }

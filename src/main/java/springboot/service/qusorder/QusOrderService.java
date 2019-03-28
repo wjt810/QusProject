@@ -41,4 +41,11 @@ public interface QusOrderService {
 	 * @return
 	 */
 	public int selectOrderByDocId(Integer docId);
+	
+	/**
+	 * 添加订单
+	 * @param order
+	 * @return
+	 */
+	public int addOrder(QusOrder order);
 }
