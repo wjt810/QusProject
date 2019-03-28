@@ -4,8 +4,10 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.serializer.RedisSerializer;
+import org.springframework.data.redis.serializer.StringRedisSerializer;
 import org.springframework.stereotype.Service;
-
 import springboot.dao.qususer.QusUserDao;
 import springboot.pojo.QusAppointment;
 import springboot.pojo.QusUser;
@@ -13,6 +15,9 @@ import springboot.service.qususer.QusUserService;
 
 @Service
 public class QusUserServiceImpl implements QusUserService {
+	
+	@Resource
+	private RedisTemplate<Object, Object> redisTemplate;
 	
 	@Resource
 	private QusUserDao qusUserDao;     //用户表
@@ -23,6 +28,17 @@ public class QusUserServiceImpl implements QusUserService {
 	 */
 	@Override
 	public List<QusAppointment> getUserList() {
+		//字符串序列化器
+		RedisSerializer serializer = new StringRedisSerializer();
+		redisTemplate.setKeySerializer(serializer);//让key 不乱码
+		List<QusAppointment> userlists = (List<QusAppointment>)redisTemplate.opsForValue().get("getUserList1");//查找缓存
+		if(userlists==null) {
+			System.out.println("开始查询数据库");
+			userlists = qusUserDao.getUserList();
+			redisTemplate.opsForValue().set("getUserList1",userlists);
+		}else {
+			System.out.println("我走的是缓存");
+		}
 		return qusUserDao.getUserList();
 	}
 	/**
@@ -34,7 +50,6 @@ public class QusUserServiceImpl implements QusUserService {
 		return qusUserDao.getUser(id);
 	}
 	
-	
 	/**
 	 * 根据id来修改用户信息
 	 */
@@ -43,13 +58,11 @@ public class QusUserServiceImpl implements QusUserService {
 		// TODO Auto-generated method stub
 		return  qusUserDao.updateUser(user);
 	}
-	
 	/**
 	 * 
 	 */
 	@Override
 	public List<QusUser> getByUser(String name) {
-		// TODO Auto-generated method stub
 		return qusUserDao.getByUserList(name);
 	}
 	

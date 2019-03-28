@@ -43,6 +43,7 @@ public class UsersController {
 	 * 获取user列表
 	 * @return
 	 */
+	
 	@RequestMapping("/userList")
 	public List<QusAppointment> userList() {
 		List<QusAppointment> qusUserList= qusUserService.getUserList();

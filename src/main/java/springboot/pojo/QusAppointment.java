@@ -1,5 +1,6 @@
 package springboot.pojo;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -8,7 +9,7 @@ import java.util.Date;
  * @author dell
  *
  */
-public class QusAppointment {
+public class QusAppointment implements Serializable{
 
 	private Integer app_id; // int(11)预约单id
 	private Date app_time; // datetime预约日期

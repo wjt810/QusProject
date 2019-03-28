@@ -1,6 +1,8 @@
 package springboot.pojo;
 
-public class QusOrder {
+import java.io.Serializable;
+
+public class QusOrder implements Serializable{
 
 	private Integer o_id; // int(11)订单id
 	private Integer o_doc_id; // int(11)医生id

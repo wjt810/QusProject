@@ -1,6 +1,8 @@
 package springboot.pojo;
 
-public class QusRoom2 {
+import java.io.Serializable;
+
+public class QusRoom2 implements Serializable{
 
 	private Integer r2_id; // int(11)
 	private String r2_name; // varchar(50)二级科室名称

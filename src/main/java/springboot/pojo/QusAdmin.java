@@ -1,5 +1,6 @@
 package springboot.pojo;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -12,7 +13,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
  * @author dell
  *
  */
-public class QusAdmin {
+public class QusAdmin implements Serializable{
 
 	private Integer a_id; // int(11)管理员id
 	private String a_name; // varchar(50)昵称

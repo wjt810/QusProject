@@ -206,6 +206,7 @@ public class PreController {
 		app.setApp_priority(Integer.parseInt(app_priority));
 		app.setApp_code(Integer.toString((Integer.parseInt(app_id)+1)));
 		app.setApp_sta_id(2);
+		
 		ModelAndView mv=new ModelAndView("pre/shouqian");
 		return mv;
 	}

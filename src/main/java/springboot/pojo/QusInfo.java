@@ -1,8 +1,9 @@
 package springboot.pojo;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class QusInfo {
+public class QusInfo implements Serializable{
 
 	private Integer info_id; // int(11)信息id
 	private String info_title; // varchar(50)信息标题

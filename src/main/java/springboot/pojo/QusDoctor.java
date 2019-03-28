@@ -1,5 +1,6 @@
 package springboot.pojo;
 
+import java.io.Serializable;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -13,7 +14,7 @@ import org.thymeleaf.util.DateUtils;
  * @author dell
  *
  */
-public class QusDoctor {
+public class QusDoctor implements Serializable {
 
 	private Integer d_id; // int(11)医生id
 	private String d_name; // varchar(50)医生名称
