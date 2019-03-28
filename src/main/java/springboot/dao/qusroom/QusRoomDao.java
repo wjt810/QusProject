@@ -27,7 +27,7 @@ public interface QusRoomDao {
 	 */
 	@Select("<script>"
 			+ "SELECT * FROM qus_room1 where 1=1 "
-			+ "<if test='r1_id != null'> AND r1_id = #{r1_id}</if>"
+			+ "<if test='r1_id != null'> AND r1_id = #{r1_id}</if> order by r1_id desc"
 			+ "</script>")
 	@Results({
 		@Result(property="r1_id",column="r1_id"),

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html  xmlns:th="http://www.thymeleaf.org">
 <head lang="en">
     <meta charset="UTF-8">
     <title>支付界面</title>
@@ -149,8 +149,11 @@
         <img src="#" alt="">
         <h1>收银台</h1>
         <div class="priceShow">
-        <p>本次订单服务支付金额：</p>
-        <span>￥[[${price}]]</span>
+        <p>本次订单服务支付金额：</p><!--  th:name="WIDtotal_amount" id="WIDtotal_amount" th:value="${price}" -->
+        <span>￥<i>[[${price}]]</i></span>
+        <input name="price" type="hidden" id="WIDtotal_amount" th:value="${price}"/>
+         <input name="WIDout_trade_no" type="hidden" id="WIDout_trade_no"/>
+        <!-- <input id="WIDtotal_amount" name="WIDtotal_amount" /> -->
         <p>支付成功之后，医生会在1小时内回复您的咨询</p>
     </div>
     </div>
@@ -267,7 +270,25 @@
     });
     $(".zixunPopulBox i").on("click",function(){
         $(".zixunPopul").hide();
-    });
+    }); 
+    function GetDateNow() {
+		var vNow = new Date();
+		var sNow = "";
+		sNow += String(vNow.getFullYear());
+		sNow += String(vNow.getMonth() + 1);
+		sNow += String(vNow.getDate());
+		sNow += String(vNow.getHours());
+		sNow += String(vNow.getMinutes());
+		sNow += String(vNow.getSeconds());
+		sNow += String(vNow.getMilliseconds());
+		$("#WIDout_trade_no").val()=sNow;
+		//document.getElementById("WIDout_trade_no").value =  sNow;
+	}
+    function start(){
+    	//GetDateNow();
+    	//alert($("#WIDout_trade_no").val());
+		window.location.href = "/pagepay?WIDtotal_amount="+$("#WIDtotal_amount").val()+"&WIDout_trade_no=897678908";//$("#WIDout_trade_no").val();?WIDtotal_amount="+$("#WIDtotal_amount").val()
+	}
 </script>
 <style>
     .footer {

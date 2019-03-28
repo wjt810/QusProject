@@ -55,7 +55,7 @@ Logger logger = LoggerFactory.getLogger(AdminController.class);
 		InputStream inputStream = file.getInputStream();
 		//上传到第三方服务器（例如使用FTP传到自己搭建的FTP服务器）ftp://ftphost:port/imageDir/
 		QusAdmin qusAdmin=new QusAdmin();
-		qusAdmin.setA_picpath("/static/back/images/" + filename);
+		qusAdmin.setA_picpath("/back/images/" + filename);
 		//在Dao层将学生信息存到数据库
 		String a_name=request.getParameter("a_name");
 		String a_realName=request.getParameter("a_realName");

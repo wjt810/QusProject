@@ -26,7 +26,7 @@ public class PusInfoController {
 	@Resource
 	QusInfoService  qusInfoService;
 	//分页查询    
-	@RequestMapping("/back/json/infoList.html")
+	@RequestMapping("/infoList")
 	public List<QusInfo> getQusList(HttpServletRequest request) throws ParseException{
 		QusAdmin admin = new QusAdmin();
 		admin.setA_name("a_name");

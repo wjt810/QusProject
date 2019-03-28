@@ -8,7 +8,7 @@ layui.config({
 
 	//加载页面数据
 	var newsData = '';
-	$.get("back/json/infoList.html", function(data){
+	$.get("/infoList", function(data){
 		var newArray = [];
 		//单击首页“待审核文章”加载的信息
 		/*if($(".top_tab li.layui-this cite",parent.document).text() == "待审核文章"){
@@ -44,7 +44,7 @@ layui.config({
 			var index = layer.msg('查询中，请稍候',{icon: 16,time:false,shade:0.8});
             setTimeout(function(){
             	$.ajax({
-					url : "back/json/infoList.html",
+					url : "infoList",
 					type : "get",
 					dataType : "json",
 					success : function(data){
